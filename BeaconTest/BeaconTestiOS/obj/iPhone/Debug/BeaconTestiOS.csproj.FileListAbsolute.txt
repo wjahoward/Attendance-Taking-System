@@ -1,0 +1,12 @@
+C:\Users\sngyi\source\repos\BeaconTest\BeaconTestiOS\bin\iPhone\Debug\BeaconTestiOS.exe
+C:\Users\sngyi\source\repos\BeaconTest\BeaconTestiOS\bin\iPhone\Debug\BeaconTestiOS.pdb
+C:\Users\sngyi\source\repos\BeaconTest\BeaconTestiOS\obj\iPhone\Debug\ibtool\_BundleResourceWithLogicalName.items
+C:\Users\sngyi\source\repos\BeaconTest\BeaconTestiOS\obj\iPhone\Debug\actool\_PartialAppManifest.items
+C:\Users\sngyi\source\repos\BeaconTest\BeaconTestiOS\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
+C:\Users\sngyi\source\repos\BeaconTest\BeaconTestiOS\obj\iPhone\Debug\coremlc\_PartialAppManifest.items
+C:\Users\sngyi\source\repos\BeaconTest\BeaconTestiOS\obj\iPhone\Debug\coremlc\_BundleResourceWithLogicalName.items
+C:\Users\sngyi\source\repos\BeaconTest\BeaconTestiOS\obj\iPhone\Debug\optimized\
+C:\Users\sngyi\source\repos\BeaconTest\BeaconTestiOS\obj\iPhone\Debug\BeaconTestiOS.csprojResolveAssemblyReference.cache
+C:\Users\sngyi\source\repos\BeaconTest\BeaconTestiOS\obj\iPhone\Debug\BeaconTestiOS.csproj.CoreCompileInputs.cache
+C:\Users\sngyi\source\repos\BeaconTest\BeaconTestiOS\obj\iPhone\Debug\BeaconTestiOS.exe
+C:\Users\sngyi\source\repos\BeaconTest\BeaconTestiOS\obj\iPhone\Debug\BeaconTestiOS.pdb
