@@ -1,0 +1,23 @@
+Function=xamarin_timezone_get_data
+	/Users/admin/Projects/BeaconTest/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/mscorlib.dll
+Function=xamarin_GetFolderPath
+	/Users/admin/Projects/BeaconTest/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/mscorlib.dll
+Function=xamarin_log
+	/Users/admin/Projects/BeaconTest/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/mscorlib.dll
+Function=CreateZStream
+	/Users/admin/Projects/BeaconTest/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/System.dll
+Function=CloseZStream
+	/Users/admin/Projects/BeaconTest/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/System.dll
+Function=Flush
+	/Users/admin/Projects/BeaconTest/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/System.dll
+Function=ReadZStream
+	/Users/admin/Projects/BeaconTest/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/System.dll
+Function=WriteZStream
+	/Users/admin/Projects/BeaconTest/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/System.dll
+Function=xamarin_start_wwan
+	/Users/admin/Projects/BeaconTest/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/System.dll
+Function=xamarin_get_block_descriptor
+	/Users/admin/Projects/BeaconTest/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/Xamarin.iOS.dll
+Function=UIApplicationMain
+	/Users/admin/Projects/BeaconTest/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/Xamarin.iOS.dll
+Function=mono_pmip
