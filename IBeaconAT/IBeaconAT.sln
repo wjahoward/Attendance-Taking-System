@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBeaconAT", "IBeaconAT\IBeaconAT.csproj", "{BADF645E-89CF-44D0-BCF0-19A55DEC2C7F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BADF645E-89CF-44D0-BCF0-19A55DEC2C7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BADF645E-89CF-44D0-BCF0-19A55DEC2C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BADF645E-89CF-44D0-BCF0-19A55DEC2C7F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BADF645E-89CF-44D0-BCF0-19A55DEC2C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BADF645E-89CF-44D0-BCF0-19A55DEC2C7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BADF645E-89CF-44D0-BCF0-19A55DEC2C7F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB87E012-6CC1-413B-92F4-A1F468B5D422}
+	EndGlobalSection
+EndGlobal

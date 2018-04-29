@@ -1,0 +1,8 @@
+IBeaconAT.BeaconTransmitter, IBeaconAT;md5fca9647c0c2d733f5ccc13259bf2da7e.BeaconTransmitter
+IBeaconAT.BeaconTransmitter, IBeaconAT, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5fca9647c0c2d733f5ccc13259bf2da7e.BeaconTransmitter
+IBeaconAT.BeaconTransmitter;md5fca9647c0c2d733f5ccc13259bf2da7e.BeaconTransmitter
+ibeaconat.BeaconTransmitter;md5fca9647c0c2d733f5ccc13259bf2da7e.BeaconTransmitter
+IBeaconAT.MainActivity, IBeaconAT;md5fca9647c0c2d733f5ccc13259bf2da7e.MainActivity
+IBeaconAT.MainActivity, IBeaconAT, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5fca9647c0c2d733f5ccc13259bf2da7e.MainActivity
+IBeaconAT.MainActivity;md5fca9647c0c2d733f5ccc13259bf2da7e.MainActivity
+ibeaconat.MainActivity;md5fca9647c0c2d733f5ccc13259bf2da7e.MainActivity
