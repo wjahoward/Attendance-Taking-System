@@ -1,0 +1,16 @@
+BeaconTest.MainActivity, BeaconTest;md5cfcf231072e1aa98593e274cc0846a07.MainActivity
+BeaconTest.MainActivity, BeaconTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5cfcf231072e1aa98593e274cc0846a07.MainActivity
+BeaconTest.MainActivity;md5cfcf231072e1aa98593e274cc0846a07.MainActivity
+beacontest.MainActivity;md5cfcf231072e1aa98593e274cc0846a07.MainActivity
+BeaconTest.ListSource, BeaconTest;md5cfcf231072e1aa98593e274cc0846a07.ListSource
+BeaconTest.ListSource, BeaconTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5cfcf231072e1aa98593e274cc0846a07.ListSource
+BeaconTest.ListSource;md5cfcf231072e1aa98593e274cc0846a07.ListSource
+beacontest.ListSource;md5cfcf231072e1aa98593e274cc0846a07.ListSource
+BeaconTest.MonitorNotifier, BeaconTest;md5cfcf231072e1aa98593e274cc0846a07.MonitorNotifier
+BeaconTest.MonitorNotifier, BeaconTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5cfcf231072e1aa98593e274cc0846a07.MonitorNotifier
+BeaconTest.MonitorNotifier;md5cfcf231072e1aa98593e274cc0846a07.MonitorNotifier
+beacontest.MonitorNotifier;md5cfcf231072e1aa98593e274cc0846a07.MonitorNotifier
+BeaconTest.RangeNotifier, BeaconTest;md5cfcf231072e1aa98593e274cc0846a07.RangeNotifier
+BeaconTest.RangeNotifier, BeaconTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5cfcf231072e1aa98593e274cc0846a07.RangeNotifier
+BeaconTest.RangeNotifier;md5cfcf231072e1aa98593e274cc0846a07.RangeNotifier
+beacontest.RangeNotifier;md5cfcf231072e1aa98593e274cc0846a07.RangeNotifier
