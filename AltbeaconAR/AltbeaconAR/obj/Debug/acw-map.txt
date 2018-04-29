@@ -1,0 +1,16 @@
+AltbeaconAR.MainActivity, AltbeaconAR;md5795db6f3291437dafeb539fcc319cb11.MainActivity
+AltbeaconAR.MainActivity, AltbeaconAR, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5795db6f3291437dafeb539fcc319cb11.MainActivity
+AltbeaconAR.MainActivity;md5795db6f3291437dafeb539fcc319cb11.MainActivity
+altbeaconar.MainActivity;md5795db6f3291437dafeb539fcc319cb11.MainActivity
+AltbeaconAR.ListSource, AltbeaconAR;md5795db6f3291437dafeb539fcc319cb11.ListSource
+AltbeaconAR.ListSource, AltbeaconAR, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5795db6f3291437dafeb539fcc319cb11.ListSource
+AltbeaconAR.ListSource;md5795db6f3291437dafeb539fcc319cb11.ListSource
+altbeaconar.ListSource;md5795db6f3291437dafeb539fcc319cb11.ListSource
+AltbeaconAR.MonitorNotifier, AltbeaconAR;md5795db6f3291437dafeb539fcc319cb11.MonitorNotifier
+AltbeaconAR.MonitorNotifier, AltbeaconAR, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5795db6f3291437dafeb539fcc319cb11.MonitorNotifier
+AltbeaconAR.MonitorNotifier;md5795db6f3291437dafeb539fcc319cb11.MonitorNotifier
+altbeaconar.MonitorNotifier;md5795db6f3291437dafeb539fcc319cb11.MonitorNotifier
+AltbeaconAR.RangeNotifier, AltbeaconAR;md5795db6f3291437dafeb539fcc319cb11.RangeNotifier
+AltbeaconAR.RangeNotifier, AltbeaconAR, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5795db6f3291437dafeb539fcc319cb11.RangeNotifier
+AltbeaconAR.RangeNotifier;md5795db6f3291437dafeb539fcc319cb11.RangeNotifier
+altbeaconar.RangeNotifier;md5795db6f3291437dafeb539fcc319cb11.RangeNotifier
