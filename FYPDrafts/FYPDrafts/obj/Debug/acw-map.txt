@@ -1,0 +1,4 @@
+FYPDrafts.MainActivity, FYPDrafts;md5978f52c8f2db3c1cb4c9b0c9ae95b432.MainActivity
+FYPDrafts.MainActivity, FYPDrafts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5978f52c8f2db3c1cb4c9b0c9ae95b432.MainActivity
+FYPDrafts.MainActivity;md5978f52c8f2db3c1cb4c9b0c9ae95b432.MainActivity
+fypdrafts.MainActivity;md5978f52c8f2db3c1cb4c9b0c9ae95b432.MainActivity
