@@ -23,9 +23,9 @@ namespace BeaconTest.iOS
             Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
             //Turn phone into beacon
-            //var controller = new BeaconController ();
+            var controller = new BeaconRangingController ();
             //Detect Beacons
-            var controller = new BeaconViewController();
+            //var controller = new BeaconViewController();
             UINavigationController navigationController = new UINavigationController(controller);
             Window.RootViewController = navigationController;
 

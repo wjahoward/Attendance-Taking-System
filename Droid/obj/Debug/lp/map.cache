@@ -1,10 +1,10 @@
-System.Runtime
 Newtonsoft.Json
 Plugin.Connectivity.Abstractions
 Plugin.Connectivity
 Plugin.CurrentActivity
 Plugin.Share.Abstractions
 Plugin.Share
+System.Runtime
 Xamarin.Android.Support.Animated.Vector.Drawable
 Xamarin.Android.Support.Annotations
 Xamarin.Android.Support.Compat

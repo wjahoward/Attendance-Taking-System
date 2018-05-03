@@ -1,7 +1,7 @@
 # Version: 11.9.1.24 (xcode9.3: f62de472)
-# [first argument, ignore] # --cache=/Users/admin/Projects/BeaconTest/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache
+# [first argument, ignore] # --cache=/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/lib/mtouch/mtouch.exe \
-	--dev=/Users/admin/Projects/BeaconTest/iOS/bin/iPhone/Debug/device-builds/iphone7.1-11.2.6/BeaconTest.iOS.app \
+	--dev=/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/device-builds/iphone7.1-11.2.6/BeaconTest.iOS.app \
 	--executable=BeaconTest.iOS \
 	--fastdev \
 	--debug \
@@ -12,14 +12,16 @@
 	--aot-options=-O=float32 \
 	--http-message-handler=HttpClientHandler \
 	--abi=arm64 \
-	--symbollist=/Users/admin/Projects/BeaconTest/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-symbols.list \
+	--symbollist=/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-symbols.list \
 	--dsym=no \
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll \
-	-r=/Users/admin/Projects/BeaconTest/packages/Newtonsoft.Json.9.0.1/lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll \
-	-r=/Users/admin/Projects/BeaconTest/packages/Xam.Plugin.Connectivity.3.0.2/lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll \
-	-r=/Users/admin/Projects/BeaconTest/packages/Xam.Plugin.Connectivity.3.0.2/lib/Xamarin.iOS10/Plugin.Connectivity.dll \
-	-r=/Users/admin/Projects/BeaconTest/packages/Plugin.Share.7.0.1/lib/Xamarin.iOS10/Plugin.Share.Abstractions.dll \
-	-r=/Users/admin/Projects/BeaconTest/packages/Plugin.Share.7.0.1/lib/Xamarin.iOS10/Plugin.Share.dll \
+	-r=/Users/admin/Desktop/FYP/packages/Newtonsoft.Json.9.0.1/lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll \
+	-r=/Users/admin/Desktop/FYP/packages/Plugin.BLE.1.3.0/lib/Xamarin.iOS10/Plugin.BLE.Abstractions.dll \
+	-r=/Users/admin/Desktop/FYP/packages/Plugin.BLE.1.3.0/lib/Xamarin.iOS10/Plugin.BLE.dll \
+	-r=/Users/admin/Desktop/FYP/packages/Xam.Plugin.Connectivity.3.0.2/lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll \
+	-r=/Users/admin/Desktop/FYP/packages/Xam.Plugin.Connectivity.3.0.2/lib/Xamarin.iOS10/Plugin.Connectivity.dll \
+	-r=/Users/admin/Desktop/FYP/packages/Plugin.Share.7.0.1/lib/Xamarin.iOS10/Plugin.Share.Abstractions.dll \
+	-r=/Users/admin/Desktop/FYP/packages/Plugin.Share.7.0.1/lib/Xamarin.iOS10/Plugin.Share.dll \
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Core.dll \
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.dll \
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Net.Http.dll \
@@ -162,10 +164,12 @@
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Xml.XPath.XDocument.dll \
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Xml.XPath.XmlDocument.dll \
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Xml.Xsl.Primitives.dll \
-	-r=/Users/admin/Projects/BeaconTest/packages/Newtonsoft.Json.9.0.1/lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll \
-	-r=/Users/admin/Projects/BeaconTest/packages/Xam.Plugin.Connectivity.3.0.2/lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll \
-	-r=/Users/admin/Projects/BeaconTest/packages/Xam.Plugin.Connectivity.3.0.2/lib/Xamarin.iOS10/Plugin.Connectivity.dll \
-	-r=/Users/admin/Projects/BeaconTest/packages/Plugin.Share.7.0.1/lib/Xamarin.iOS10/Plugin.Share.Abstractions.dll \
-	-r=/Users/admin/Projects/BeaconTest/packages/Plugin.Share.7.0.1/lib/Xamarin.iOS10/Plugin.Share.dll \
+	-r=/Users/admin/Desktop/FYP/packages/Newtonsoft.Json.9.0.1/lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll \
+	-r=/Users/admin/Desktop/FYP/packages/Plugin.BLE.1.3.0/lib/Xamarin.iOS10/Plugin.BLE.Abstractions.dll \
+	-r=/Users/admin/Desktop/FYP/packages/Plugin.BLE.1.3.0/lib/Xamarin.iOS10/Plugin.BLE.dll \
+	-r=/Users/admin/Desktop/FYP/packages/Xam.Plugin.Connectivity.3.0.2/lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll \
+	-r=/Users/admin/Desktop/FYP/packages/Xam.Plugin.Connectivity.3.0.2/lib/Xamarin.iOS10/Plugin.Connectivity.dll \
+	-r=/Users/admin/Desktop/FYP/packages/Plugin.Share.7.0.1/lib/Xamarin.iOS10/Plugin.Share.Abstractions.dll \
+	-r=/Users/admin/Desktop/FYP/packages/Plugin.Share.7.0.1/lib/Xamarin.iOS10/Plugin.Share.dll \
 	'--target-framework=Xamarin.iOS,v1.0' \
-	--root-assembly=/Users/admin/Projects/BeaconTest/iOS/bin/iPhone/Debug/BeaconTest.iOS.exe \
+	--root-assembly=/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/BeaconTest.iOS.exe \

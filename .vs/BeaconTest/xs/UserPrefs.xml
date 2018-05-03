@@ -1,0 +1,21 @@
+﻿<Properties StartupConfiguration="{C87C25DB-29DA-4F9B-B39D-93F40244D7ED}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/MainViewController.xib">
+    <Files>
+      <File FileName="iOS/ViewControllers/BeaconTransmitController.cs" Line="35" Column="37" />
+      <File FileName="iOS/BeaconRangingController.cs" Line="29" Column="11" />
+      <File FileName="iOS/BeaconRangingController.xib" />
+      <File FileName="iOS/AppDelegate.cs" Line="28" Column="15" />
+      <File FileName="iOS/Main.cs" Line="12" Column="1" />
+      <File FileName="iOS/Info.plist" />
+      <File FileName="iOS/MainViewController.cs" Line="21" Column="10" />
+      <File FileName="iOS/MainViewController.xib" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.BeaconTest.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.19280f8eaa8157d50d46c5bba11b2e2839592436" />
+</Properties>

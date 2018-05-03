@@ -98,6 +98,12 @@
     <Reference Include="Plugin.Connectivity">
       <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.2\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.BLE.Abstractions">
+      <HintPath>..\packages\Plugin.BLE.1.3.0\lib\Xamarin.iOS10\Plugin.BLE.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.BLE">
+      <HintPath>..\packages\Plugin.BLE.1.3.0\lib\Xamarin.iOS10\Plugin.BLE.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -138,10 +144,19 @@
     </Compile>
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Main.cs" />
-    <Compile Include="ViewControllers\BeaconViewController.cs" />
+    <Compile Include="ViewControllers\BeaconTransmitController.cs" />
     <Compile Include="ViewControllers\BeaconViewController.designer.cs">
-      <DependentUpon>BeaconViewController.cs</DependentUpon>
+      <DependentUpon>BeaconTransmitController.cs</DependentUpon>
     </Compile>
+    <Compile Include="BeaconRangingController.cs" />
+    <Compile Include="BeaconRangingController.designer.cs">
+      <DependentUpon>BeaconRangingController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainViewController.cs" />
+    <Compile Include="MainViewController.designer.cs">
+      <DependentUpon>MainViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmptyClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -151,7 +166,9 @@
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
-    <InterfaceDefinition Include="ViewControllers\BeaconViewController.xib" />
+    <InterfaceDefinition Include="ViewControllers\BeaconTransmitController.xib" />
+    <InterfaceDefinition Include="BeaconRangingController.xib" />
+    <InterfaceDefinition Include="MainViewController.xib" />
   </ItemGroup>
   <Import Project="..\BeaconTest\BeaconTest.projitems" Label="Shared" Condition="Exists('..\BeaconTest\BeaconTest.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

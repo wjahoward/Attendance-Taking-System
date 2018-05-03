@@ -48,5 +48,13 @@
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSLocationAlwaysInUsageDescription</key>
+	<string></string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>New Entry</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>New Entry</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>New Entry</string>
 </dict>
 </plist>
