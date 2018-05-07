@@ -6,7 +6,7 @@
     android:minWidth="25px"
     android:minHeight="25px">
     <TextView
-        android:text="Monday, 16 April 2018"
+        android:text="Present"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,6 +38,13 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:id="@+id/space1" />
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/Asset25"
+            android:id="@+id/imageView1"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="15dp" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -64,5 +71,12 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:id="@+id/space2" />
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/Asset25"
+            android:id="@+id/imageView1"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="15dp" />
     </LinearLayout>
 </LinearLayout>
