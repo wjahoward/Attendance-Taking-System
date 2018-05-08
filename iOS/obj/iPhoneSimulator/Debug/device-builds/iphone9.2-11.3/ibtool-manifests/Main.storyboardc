@@ -8,12 +8,27 @@
 	<dict/>
 	<key>com.apple.ibtool.document.warnings</key>
 	<dict>
-		<key>17514</key>
+		<key>14220</key>
 		<array>
 			<dict>
 				<key>affected-objects</key>
 				<array>
-					<string>17514</string>
+					<string>14220</string>
+				</array>
+				<key>message</key>
+				<string>“Student Attendance Controller“ is unreachable because it has no entry points, and no identifier for runtime access via -[UIStoryboard instantiateViewControllerWithIdentifier:].</string>
+				<key>type</key>
+				<string>IBIssueTypeUnsupportedConfiguration</string>
+				<key>type-value</key>
+				<integer>9</integer>
+			</dict>
+		</array>
+		<key>28425</key>
+		<array>
+			<dict>
+				<key>affected-objects</key>
+				<array>
+					<string>28425</string>
 				</array>
 				<key>message</key>
 				<string>Prototype table cells must have reuse identifiers</string>

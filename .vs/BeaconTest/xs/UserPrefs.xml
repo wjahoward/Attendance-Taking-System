@@ -1,13 +1,14 @@
 ﻿<Properties StartupConfiguration="{C87C25DB-29DA-4F9B-B39D-93F40244D7ED}|Default">
   <MonoDevelop.Ide.ItemProperties.BeaconTest.Droid PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Main.storyboard">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="iOS/MainViewController.cs" Line="1" Column="1" />
+      <File FileName="iOS/MainViewController.cs" Line="20" Column="86" />
       <File FileName="iOS/LecturerAttendanceController.cs" Line="1" Column="1" />
-      <File FileName="iOS/LecturerGenerateController.cs" Line="1" Column="1" />
-      <File FileName="iOS/AttendanceCell.cs" Line="1" Column="1" />
-      <File FileName="iOS/BeaconRangingController.cs" Line="50" Column="27" />
-      <File FileName="BeaconTest/Resources.cs" Line="7" Column="66" />
+      <File FileName="iOS/LecturerGenerateController.cs" Line="45" Column="46" />
+      <File FileName="iOS/AttendanceCell.cs" Line="52" Column="33" />
+      <File FileName="iOS/BeaconRangingController.cs" Line="42" Column="54" />
+      <File FileName="BeaconTest/Resources.cs" Line="9" Column="63" />
+      <File FileName="iOS/BeaconTransmitController.cs" Line="25" Column="44" />
       <File FileName="iOS/Main.storyboard" />
     </Files>
   </MonoDevelop.Ide.Workbench>
@@ -17,5 +18,5 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.BeaconTest.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.15A46B50-481A-4C02-9B4E-AE9BE484A8F7" />
+  <MonoDevelop.Ide.ItemProperties.BeaconTest.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2E543EBB-078A-4516-AA35-AF74B70BCE66" />
 </Properties>

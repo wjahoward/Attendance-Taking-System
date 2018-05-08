@@ -19,7 +19,15 @@ namespace BeaconTest.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            this.NavigationController.NavigationBar.BarTintColor = UIColor.FromRGB(BeaconTest.Resources.primaryColourRGB[0], BeaconTest.Resources.primaryColourRGB[1], BeaconTest.Resources.primaryColourRGB[2]);
+            this.NavigationController.NavigationBar.TintColor = UIColor.White;
+            this.NavigationController.NavigationBar.TitleTextAttributes = new UIStringAttributes()
+            {
+                ForegroundColor = UIColor.White
+            };
+
             tableView = TimetableTableView; // defaults to Plain style
+            tableView.RowHeight = 70;
             var frame = CGRect.Empty;
             frame.Height = 0;
             frame.Width = 0;
@@ -27,14 +35,14 @@ namespace BeaconTest.iOS
             List<LecturerAttendanceTableViewItem> attendanceTableViewItems = new List<LecturerAttendanceTableViewItem>();
             attendanceTableViewItems.Add(new LecturerAttendanceTableViewItem("Lesson 1") { SubHeading = "Venue 1", ImageName = "Vegetables.jpg" });
             attendanceTableViewItems.Add(new LecturerAttendanceTableViewItem("Lesson 2") { SubHeading = "Venue 2", ImageName = "Fruits.jpg" });
-            tableView.Source = new TableSource(attendanceTableViewItems, this.NavigationController);
+            var tableSource = new TableSource(attendanceTableViewItems, this.NavigationController);
+            tableView.Source = tableSource;
 
             //Add(tableView);
         }
 
         public class TableSource : UITableViewSource
         {
-
             List<LecturerAttendanceTableViewItem> attendanceTableViewItems = new List<LecturerAttendanceTableViewItem>();
             //string CellIdentifier = "TableCell";
             NSString cellIdentifier = new NSString("TableCell");
@@ -67,6 +75,7 @@ namespace BeaconTest.iOS
                 }
                 return cell;
             }
+
 			public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 			{
                 //base.RowSelected(tableView, indexPath);

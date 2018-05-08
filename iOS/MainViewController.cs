@@ -17,6 +17,8 @@ namespace BeaconTest.iOS
         {
             base.ViewDidLoad();
 
+            LoginButton.Layer.CornerRadius = BeaconTest.Resources.buttonCornerRadius;
+
             LoginButton.TouchUpInside += (object sender, EventArgs e) => {
                 username = UsernameTextField.Text;
                 password = PasswordField.Text;
