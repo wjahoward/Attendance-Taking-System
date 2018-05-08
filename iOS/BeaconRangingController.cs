@@ -39,6 +39,7 @@ namespace BeaconTest.iOS
         {
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
+            StudentSubmitButton.Layer.CornerRadius = BeaconTest.Resources.buttonCornerRadius;
 
             locationManager = new CLLocationManager();
             locationManager.AuthorizationChanged += LocationManager_AuthorizationChanged;

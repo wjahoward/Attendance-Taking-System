@@ -23,4 +23,18 @@
     <Compile Include="$(MSBuildThisFileDirectory)DataAccess.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Resources.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Resources\Cross Icon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\Time Icon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\Tick Icon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\Bluetooth Devices Icon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\User Profile Icon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\Retry Icon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\Bluetooth Device Icon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\Bluetooth Transmission Icon.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Resources\Location Icon.png" />
+  </ItemGroup>
 </Project>

@@ -6,6 +6,7 @@ namespace BeaconTest
         public DataAccess()
         {
         }
+<<<<<<< .merge_file_0TNF0f
 
         public static string AuthenticationUrl = "testfyp.database.windows.net/api/Authentication?username=&password=";
         public static string LecturerPostUrl = "testfyp.database.windows.net/api/Lecturer";
@@ -13,3 +14,7 @@ namespace BeaconTest
     }
 }
 
+=======
+    }
+}
+>>>>>>> .merge_file_fjguC0

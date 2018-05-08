@@ -17,6 +17,11 @@ MonoSymbolArchive=False
 AndroidUseLatestPlatformSdk=false
 TargetFrameworkVersion=v7.1
 AndroidCreatePackagePerAbi=
+<<<<<<< HEAD
 OS=Windows_NT
 DesignTimeBuild=
+=======
+OS=Unix
+DesignTimeBuild=true
+>>>>>>> xamarin.ios-UI
 AndroidIncludeDebugSymbols=True

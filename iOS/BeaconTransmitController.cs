@@ -37,6 +37,7 @@ namespace BeaconTest.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            ViewAttendanceButton.Layer.CornerRadius = BeaconTest.Resources.buttonCornerRadius;
             var locationManager = new CLLocationManager();
             locationManager.RequestWhenInUseAuthorization();
         }
