@@ -216,3 +216,6 @@ C:/Users/JasmineLim/Documents/GitHub/FYP/Droid/obj/Debug/android/assets/System.R
 C:/Users/JasmineLim/Documents/GitHub/FYP/Droid/obj/Debug/android/assets/System.ServiceModel.Internals.pdb
 C:/Users/JasmineLim/Documents/GitHub/FYP/Droid/obj/Debug/android/assets/System.Xml.Linq.pdb
 C:/Users/JasmineLim/Documents/GitHub/FYP/Droid/obj/Debug/android/assets/System.Xml.pdb
+C:\Users\Howard\Source\Repos\FYP2\Droid\obj\Debug\BeaconTest.Droid.csprojResolveAssemblyReference.cache
+C:\Users\Howard\Source\Repos\FYP2\Droid\obj\Debug\BeaconTest.Droid.dll
+C:\Users\Howard\Source\Repos\FYP2\Droid\obj\Debug\BeaconTest.Droid.pdb
