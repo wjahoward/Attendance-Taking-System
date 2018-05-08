@@ -23,10 +23,10 @@ namespace BeaconTest.iOS
         const string beaconId = "123";
         const string uuid = "C9407F30-F5F8-466E-AFF9-25556B57FE6D";
 
-        public BeaconRangingController() : base("BeaconRangingController", null)
+        public BeaconRangingController(IntPtr handle) : base(handle)
         {
             
-        }]
+        }
 
         public async Task DetectBeaconOn(int scanDuration)
         {
@@ -47,6 +47,17 @@ namespace BeaconTest.iOS
             locationManager.DidRangeBeacons += LocationManager_DidRangeBeacons;
             locationManager.RequestAlwaysAuthorization();
 
+            StudentSubmitButton.TouchUpInside += (object sender, EventArgs e) => 
+            {
+                //Create Alert
+                var okAlertController = UIAlertController.Create("Submitted!", "You have submitted your ATS at 00:00:00", UIAlertControllerStyle.Alert);
+
+                //Add Action
+                okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+
+                // Present Alert
+                PresentViewController(okAlertController, true, null);
+            };
         }
 
 		private void LocationManager_RegionLeft(object sender, CLRegionEventArgs e)
@@ -63,7 +74,7 @@ namespace BeaconTest.iOS
             UIApplication.SharedApplication.PresentLocalNotificationNow(notification);*/
             Debug.WriteLine("Found Beacon");
             Debug.WriteLine(e.Region.Identifier);
-            NearestBeacon.Text = "Found Beacon";
+            FoundBeacon.Text = "Found Beacon";
         }
 
         private async void LocationManager_DidRangeBeacons(object sender, CLRegionBeaconsRangedEventArgs e)
@@ -73,7 +84,7 @@ namespace BeaconTest.iOS
             {
                 Debug.WriteLine("Found Beacon");
                 Debug.WriteLine(e.Beacons[0].ProximityUuid);
-                NearestBeacon.Text = "Found Beacon";
+                FoundBeacon.Text = "Found Beacon";
             }
         }
 

@@ -1051,7 +1051,7 @@ _mono_aot_file_info:
 	.long 56,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 56,13,202,44,224,146,80,95,87,239,168,154,52,128,231,148
+	.byte 12,172,162,51,249,167,77,212,199,103,77,150,147,92,103,234
 	.globl _mono_aot_module_System_Runtime_Serialization_info
 	.align 3
 _mono_aot_module_System_Runtime_Serialization_info:

@@ -73,8 +73,6 @@
 /Users/admin/Desktop/FYP/Droid/obj/Debug/res/values-v21/styles.xml
 /Users/admin/Desktop/FYP/Droid/obj/Debug/R.cs.flag
 /Users/admin/Desktop/FYP/Droid/obj/Debug/uploadflags.txt
-/Users/admin/Desktop/FYP/packages/Xam.Plugin.Connectivity.3.0.2/lib/MonoAndroid10/Plugin.Connectivity.dll
-/Users/admin/Desktop/FYP/packages/Plugin.Share.7.0.1/lib/MonoAndroid10/Plugin.Share.dll
 /Users/admin/Desktop/FYP/Droid/bin/Debug/Mono.Android.pdb
 /Users/admin/Desktop/FYP/Droid/obj/Debug/linksrc/BeaconTest.Droid.pdb
 /Users/admin/Desktop/FYP/Droid/obj/Debug/linksrc/Mono.Android.pdb

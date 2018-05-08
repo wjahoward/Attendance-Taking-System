@@ -15,6 +15,8 @@
 	--dsym=no \
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll \
 	-r=/Users/admin/Desktop/FYP/packages/Newtonsoft.Json.9.0.1/lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll \
+	-r=/Users/admin/Desktop/FYP/packages/Plugin.BLE.1.3.0/lib/Xamarin.iOS10/Plugin.BLE.Abstractions.dll \
+	-r=/Users/admin/Desktop/FYP/packages/Plugin.BLE.1.3.0/lib/Xamarin.iOS10/Plugin.BLE.dll \
 	-r=/Users/admin/Desktop/FYP/packages/Xam.Plugin.Connectivity.3.0.2/lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll \
 	-r=/Users/admin/Desktop/FYP/packages/Xam.Plugin.Connectivity.3.0.2/lib/Xamarin.iOS10/Plugin.Connectivity.dll \
 	-r=/Users/admin/Desktop/FYP/packages/Plugin.Share.7.0.1/lib/Xamarin.iOS10/Plugin.Share.Abstractions.dll \
@@ -162,6 +164,8 @@
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Xml.XPath.XmlDocument.dll \
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Xml.Xsl.Primitives.dll \
 	-r=/Users/admin/Desktop/FYP/packages/Newtonsoft.Json.9.0.1/lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll \
+	-r=/Users/admin/Desktop/FYP/packages/Plugin.BLE.1.3.0/lib/Xamarin.iOS10/Plugin.BLE.Abstractions.dll \
+	-r=/Users/admin/Desktop/FYP/packages/Plugin.BLE.1.3.0/lib/Xamarin.iOS10/Plugin.BLE.dll \
 	-r=/Users/admin/Desktop/FYP/packages/Xam.Plugin.Connectivity.3.0.2/lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll \
 	-r=/Users/admin/Desktop/FYP/packages/Xam.Plugin.Connectivity.3.0.2/lib/Xamarin.iOS10/Plugin.Connectivity.dll \
 	-r=/Users/admin/Desktop/FYP/packages/Plugin.Share.7.0.1/lib/Xamarin.iOS10/Plugin.Share.Abstractions.dll \

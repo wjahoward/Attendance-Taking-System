@@ -122,41 +122,35 @@
     <ImageAsset Include="Assets.xcassets\Contents.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ViewControllers\DetailViewControllers\BrowseItemDetailViewController.cs" />
-    <Compile Include="ViewControllers\DetailViewControllers\BrowseItemDetailViewController.designer.cs">
-      <DependentUpon>BrowseItemDetailViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\AboutViewController.cs" />
-    <Compile Include="ViewControllers\AboutViewController.designer.cs">
-      <DependentUpon>AboutViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\BrowseViewController.cs" />
-    <Compile Include="ViewControllers\BrowseViewController.designer.cs">
-      <DependentUpon>BrowseViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\ItemNewViewController.cs" />
-    <Compile Include="ViewControllers\ItemNewViewController.designer.cs">
-      <DependentUpon>ItemNewViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\TabBarController.cs" />
-    <Compile Include="ViewControllers\TabBarController.designer.cs">
-      <DependentUpon>TabBarController.cs</DependentUpon>
-    </Compile>
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Main.cs" />
-    <Compile Include="ViewControllers\BeaconTransmitController.cs" />
-    <Compile Include="ViewControllers\BeaconViewController.designer.cs">
-      <DependentUpon>BeaconTransmitController.cs</DependentUpon>
-    </Compile>
+    <Compile Include="EmptyClass.cs" />
     <Compile Include="BeaconRangingController.cs" />
     <Compile Include="BeaconRangingController.designer.cs">
       <DependentUpon>BeaconRangingController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BeaconTransmitController.cs" />
+    <Compile Include="BeaconTransmitController.designer.cs">
+      <DependentUpon>BeaconTransmitController.cs</DependentUpon>
     </Compile>
     <Compile Include="MainViewController.cs" />
     <Compile Include="MainViewController.designer.cs">
       <DependentUpon>MainViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmptyClass.cs" />
+    <Compile Include="LecturerAttendanceController.cs" />
+    <Compile Include="LecturerAttendanceController.designer.cs">
+      <DependentUpon>LecturerAttendanceController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentAttendanceController.cs" />
+    <Compile Include="StudentAttendanceController.designer.cs">
+      <DependentUpon>StudentAttendanceController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LecturerAttendanceTableViewItem.cs" />
+    <Compile Include="AttendanceCell.cs" />
+    <Compile Include="LecturerGenerateController.cs" />
+    <Compile Include="LecturerGenerateController.designer.cs">
+      <DependentUpon>LecturerGenerateController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -164,11 +158,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
-    <InterfaceDefinition Include="ViewControllers\BeaconTransmitController.xib" />
-    <InterfaceDefinition Include="BeaconRangingController.xib" />
-    <InterfaceDefinition Include="MainViewController.xib" />
   </ItemGroup>
   <Import Project="..\BeaconTest\BeaconTest.projitems" Label="Shared" Condition="Exists('..\BeaconTest\BeaconTest.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

@@ -1,7 +1,14 @@
 ﻿<Properties StartupConfiguration="{C87C25DB-29DA-4F9B-B39D-93F40244D7ED}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/RangeNotifier.cs">
+  <MonoDevelop.Ide.ItemProperties.BeaconTest.Droid PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/BeaconRangingController.cs">
     <Files>
-      <File FileName="Droid/RangeNotifier.cs" Line="1" Column="1" />
+      <File FileName="iOS/MainViewController.cs" Line="25" Column="18" />
+      <File FileName="iOS/Main.storyboard" />
+      <File FileName="iOS/LecturerAttendanceController.cs" Line="2" Column="18" />
+      <File FileName="iOS/Main.cs" Line="12" Column="1" />
+      <File FileName="iOS/LecturerGenerateController.cs" Line="74" Column="87" />
+      <File FileName="iOS/AttendanceCell.cs" Line="5" Column="1" />
+      <File FileName="iOS/BeaconRangingController.cs" Line="30" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
@@ -10,5 +17,5 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.BeaconTest.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
+  <MonoDevelop.Ide.ItemProperties.BeaconTest.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.19280f8eaa8157d50d46c5bba11b2e2839592436" />
 </Properties>

@@ -1718,7 +1718,7 @@ bl _p_23
 .word 0xf94047a1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9419830
+.word 0xf9419c30
 .word 0xd63f0200
 .word 0xf90043a0
 .word 0xf9402fb1
@@ -1821,7 +1821,7 @@ ldr x1, [x16, #456]
 .word 0xf9403ba1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9418030
+.word 0xf9417c30
 .word 0xd63f0200
 .word 0xf90043a0
 .word 0xf9402fb1
@@ -1897,7 +1897,7 @@ ldr x1, [x16, #464]
 .word 0xaa1903e0
 .word 0xaa1903e0
 .word 0xf9400321
-.word 0xf9418430
+.word 0xf9417c30
 .word 0xd63f0200
 .word 0xf90043a0
 .word 0xf9402fb1
@@ -3478,7 +3478,7 @@ bl _p_58
 .word 0xf940a3a1
 .word 0xaa1803e0
 .word 0xf9400302
-.word 0xf9418450
+.word 0xf9418050
 .word 0xd63f0200
 .word 0xf9402fb1
 .word 0xf9454a31
@@ -3545,7 +3545,7 @@ bl _p_58
 .word 0xf940a3a1
 .word 0xaa1803e0
 .word 0xf9400302
-.word 0xf9418050
+.word 0xf9417c50
 .word 0xd63f0200
 .word 0xf9402fb1
 .word 0xf9465631
@@ -4882,7 +4882,7 @@ ldr x1, [x16, #16]
 .word 0xf9401401
 .word 0xaa1703e0
 .word 0xf94002e2
-.word 0xf9418050
+.word 0xf9417c50
 .word 0xd63f0200
 .word 0xf9402fb1
 .word 0xf949de31
@@ -23246,7 +23246,7 @@ _mono_aot_file_info:
 	.long 320,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 98,127,64,212,178,38,27,153,253,45,11,203,168,87,72,155
+	.byte 99,238,68,108,139,140,176,128,38,80,195,196,205,85,65,122
 	.globl _mono_aot_module_Plugin_Share_info
 	.align 3
 _mono_aot_module_Plugin_Share_info:

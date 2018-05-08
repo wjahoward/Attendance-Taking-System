@@ -18,20 +18,19 @@ namespace BeaconTest.iOS
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            App.Initialize();
+            /*App.Initialize();
 
             Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
             //Turn phone into beacon
-            var controller = new BeaconRangingController ();
+            var controller = new MainViewController();
             //Detect Beacons
             //var controller = new BeaconViewController();
             UINavigationController navigationController = new UINavigationController(controller);
             Window.RootViewController = navigationController;
 
             // make the window visible
-            Window.MakeKeyAndVisible();
-
+            Window.MakeKeyAndVisible();*/
             return true;
         }
 
