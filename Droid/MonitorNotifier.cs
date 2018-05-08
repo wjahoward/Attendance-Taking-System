@@ -10,7 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace Android_iBeacon
+namespace BeaconTest.Droid
 {
     public class MonitorEventArgs : EventArgs
     {

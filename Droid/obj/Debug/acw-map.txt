@@ -1,3 +1,7 @@
+BeaconTest.Droid.EnterCode, BeaconTest.Droid;md59b63201be766be467e51e22bd0302580.EnterCode
+BeaconTest.Droid.EnterCode, BeaconTest.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b63201be766be467e51e22bd0302580.EnterCode
+BeaconTest.Droid.EnterCode;md59b63201be766be467e51e22bd0302580.EnterCode
+beacontest.droid.EnterCode;md59b63201be766be467e51e22bd0302580.EnterCode
 BeaconTest.Droid.MainApplication, BeaconTest.Droid;md59b63201be766be467e51e22bd0302580.MainApplication
 BeaconTest.Droid.MainApplication, BeaconTest.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b63201be766be467e51e22bd0302580.MainApplication
 BeaconTest.Droid.MainApplication;md59b63201be766be467e51e22bd0302580.MainApplication
@@ -18,10 +22,6 @@ BeaconTest.Droid.MainActivity, BeaconTest.Droid;md59b63201be766be467e51e22bd0302
 BeaconTest.Droid.MainActivity, BeaconTest.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b63201be766be467e51e22bd0302580.MainActivity
 BeaconTest.Droid.MainActivity;md59b63201be766be467e51e22bd0302580.MainActivity
 beacontest.droid.MainActivity;md59b63201be766be467e51e22bd0302580.MainActivity
-BeaconTest.Droid.TabsAdapter, BeaconTest.Droid;md59b63201be766be467e51e22bd0302580.TabsAdapter
-BeaconTest.Droid.TabsAdapter, BeaconTest.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b63201be766be467e51e22bd0302580.TabsAdapter
-BeaconTest.Droid.TabsAdapter;md59b63201be766be467e51e22bd0302580.TabsAdapter
-beacontest.droid.TabsAdapter;md59b63201be766be467e51e22bd0302580.TabsAdapter
 BeaconTest.Droid.SplashActivity, BeaconTest.Droid;md59b63201be766be467e51e22bd0302580.SplashActivity
 BeaconTest.Droid.SplashActivity, BeaconTest.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b63201be766be467e51e22bd0302580.SplashActivity
 BeaconTest.Droid.SplashActivity;md59b63201be766be467e51e22bd0302580.SplashActivity
@@ -46,6 +46,22 @@ BeaconTest.Droid.BaseRecycleViewAdapter, BeaconTest.Droid;md59b63201be766be467e5
 BeaconTest.Droid.BaseRecycleViewAdapter, BeaconTest.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b63201be766be467e51e22bd0302580.BaseRecycleViewAdapter
 BeaconTest.Droid.BaseRecycleViewAdapter;md59b63201be766be467e51e22bd0302580.BaseRecycleViewAdapter
 beacontest.droid.BaseRecycleViewAdapter;md59b63201be766be467e51e22bd0302580.BaseRecycleViewAdapter
+BeaconTest.Droid.BeaconTransmitter, BeaconTest.Droid;md59b63201be766be467e51e22bd0302580.BeaconTransmitter
+BeaconTest.Droid.BeaconTransmitter, BeaconTest.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b63201be766be467e51e22bd0302580.BeaconTransmitter
+BeaconTest.Droid.BeaconTransmitter;md59b63201be766be467e51e22bd0302580.BeaconTransmitter
+beacontest.droid.BeaconTransmitter;md59b63201be766be467e51e22bd0302580.BeaconTransmitter
+BeaconTest.Droid.Timetable, BeaconTest.Droid;md59b63201be766be467e51e22bd0302580.Timetable
+BeaconTest.Droid.Timetable, BeaconTest.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b63201be766be467e51e22bd0302580.Timetable
+BeaconTest.Droid.Timetable;md59b63201be766be467e51e22bd0302580.Timetable
+beacontest.droid.Timetable;md59b63201be766be467e51e22bd0302580.Timetable
+BeaconTest.Droid.MonitorNotifier, BeaconTest.Droid;md59b63201be766be467e51e22bd0302580.MonitorNotifier
+BeaconTest.Droid.MonitorNotifier, BeaconTest.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b63201be766be467e51e22bd0302580.MonitorNotifier
+BeaconTest.Droid.MonitorNotifier;md59b63201be766be467e51e22bd0302580.MonitorNotifier
+beacontest.droid.MonitorNotifier;md59b63201be766be467e51e22bd0302580.MonitorNotifier
+BeaconTest.Droid.RangeNotifier, BeaconTest.Droid;md59b63201be766be467e51e22bd0302580.RangeNotifier
+BeaconTest.Droid.RangeNotifier, BeaconTest.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md59b63201be766be467e51e22bd0302580.RangeNotifier
+BeaconTest.Droid.RangeNotifier;md59b63201be766be467e51e22bd0302580.RangeNotifier
+beacontest.droid.RangeNotifier;md59b63201be766be467e51e22bd0302580.RangeNotifier
 Plugin.Connectivity.ConnectivityChangeBroadcastReceiver, Plugin.Connectivity;md5a7903531ac28e2eb4c8576cdf2655bda.ConnectivityChangeBroadcastReceiver
 Plugin.Connectivity.ConnectivityChangeBroadcastReceiver, Plugin.Connectivity, Version=3.0.2.0, Culture=neutral, PublicKeyToken=null;md5a7903531ac28e2eb4c8576cdf2655bda.ConnectivityChangeBroadcastReceiver
 Plugin.Connectivity.ConnectivityChangeBroadcastReceiver;md5a7903531ac28e2eb4c8576cdf2655bda.ConnectivityChangeBroadcastReceiver

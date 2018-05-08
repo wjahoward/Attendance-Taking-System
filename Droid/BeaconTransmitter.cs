@@ -14,7 +14,7 @@ using Android.Widget;
 using Java.Lang;
 using Java.Util;
 
-namespace Android_iBeacon
+namespace BeaconTest.Droid
 {
     public class BeaconTransmitter : AdvertiseCallback
     {
