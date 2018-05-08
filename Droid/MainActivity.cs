@@ -4,7 +4,7 @@ using Android.OS;
 
 namespace Android_iBeacon
 {
-    [Activity(Label = "Android_iBeacon", MainLauncher = true)]
+    /*[Activity(Label = "Android_iBeacon", MainLauncher = true)]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -27,6 +27,6 @@ namespace Android_iBeacon
                 StartActivity(typeof(Student));
             };
         }
-    }
+    }*/
 }
 

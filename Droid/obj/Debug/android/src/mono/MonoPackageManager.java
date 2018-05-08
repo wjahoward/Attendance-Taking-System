@@ -107,6 +107,7 @@ class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "BeaconTest.Droid.dll" comes first in this list. */
 		"BeaconTest.Droid.dll",
+		"AndroidAltBeaconLibrary.dll",
 		"Newtonsoft.Json.dll",
 		"Plugin.Connectivity.Abstractions.dll",
 		"Plugin.Connectivity.dll",

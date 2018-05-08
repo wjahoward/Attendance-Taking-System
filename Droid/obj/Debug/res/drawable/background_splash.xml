@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -11,3 +12,6 @@
   </item>
 
 </layer-list>
+=======
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"><item><shape android:shape="rectangle"><solid android:color="#2BDDC3" /></shape></item><item><bitmap android:gravity="center" android:src="@drawable/asset1" /></item></layer-list>
+>>>>>>> 48da232d46515e7f1da6d634e3e1f0ac2d9ff369

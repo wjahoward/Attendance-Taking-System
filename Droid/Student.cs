@@ -11,9 +11,9 @@ using Android.Graphics;
 using System.Threading.Tasks;
 using System.Linq;
 
-namespace Android_iBeacon
-{
-    [Activity(Label = "Student", LaunchMode = Android.Content.PM.LaunchMode.SingleInstance)]
+//namespace Android_iBeacon
+//{
+    /*[Activity(Label = "Student", LaunchMode = Android.Content.PM.LaunchMode.SingleInstance)]
     public class Student : Activity, IDialogInterfaceOnDismissListener, IBeaconConsumer
     {
         readonly RangeNotifier rangeNotifier;
@@ -372,4 +372,4 @@ namespace Android_iBeacon
             NotifyDataSetChanged();
         }
     }
-}
+}*/
