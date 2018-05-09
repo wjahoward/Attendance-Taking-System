@@ -3,20 +3,22 @@ using UIKit;
 
 namespace BeaconTest.iOS
 {
-    public class LecturerAttendanceTableViewItem
+    public class LecturerModuleTableViewItem
     {
-        public LecturerAttendanceTableViewItem()
+        public LecturerModuleTableViewItem()
         {
         }
 
-        public LecturerAttendanceTableViewItem(string heading)
-        { Heading = heading; }
+        public LecturerModuleTableViewItem(string heading)
+        { ModuleName = heading; }
 
-        public string Heading { get; set; }
+        public string ModuleName { get; set; }
 
-        public string SubHeading { get; set; }
+		public string ModuleCode { get; set; }
 
-        public string ImageName { get; set; }
+		public string Time { get; set; }
+
+        public string Venue { get; set; }
 
         public UITableViewCellStyle CellStyle
         {

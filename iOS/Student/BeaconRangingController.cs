@@ -59,6 +59,12 @@ namespace BeaconTest.iOS
                 // Present Alert
                 PresentViewController(okAlertController, true, null);
             };
+
+			EnterAttendanceCodeButton.TouchUpInside += (object sender, EventArgs e) => 
+			{
+				AttendanceCodeTextField.Hidden = false;
+				AttendanceCodeTextField.Selected = true;;
+			};
         }
 
 		private void LocationManager_RegionLeft(object sender, CLRegionEventArgs e)
