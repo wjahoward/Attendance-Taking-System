@@ -1,16 +1,12 @@
 ﻿<Properties StartupConfiguration="{C87C25DB-29DA-4F9B-B39D-93F40244D7ED}|Default">
   <MonoDevelop.Ide.ItemProperties.BeaconTest.Droid PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="BeaconTest/DataAccess.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Main.storyboard">
     <Files>
-      <File FileName="iOS/MainViewController.cs" Line="1" Column="1" />
-      <File FileName="iOS/LecturerAttendanceController.cs" Line="1" Column="1" />
-      <File FileName="iOS/LecturerGenerateController.cs" Line="1" Column="1" />
-      <File FileName="iOS/AttendanceCell.cs" Line="1" Column="1" />
-      <File FileName="iOS/BeaconRangingController.cs" Line="1" Column="1" />
-      <File FileName="BeaconTest/Resources.cs" Line="1" Column="1" />
-      <File FileName="iOS/BeaconTransmitController.cs" Line="1" Column="1" />
+      <File FileName="BeaconTest/DataAccess.cs" Line="39" Column="18" />
+      <File FileName="../TestAzureAPI/TestAzureApi/APIs/StudentController.cs" Line="13" Column="1" />
+      <File FileName="iOS/MainViewController.cs" Line="26" Column="19" />
+      <File FileName="iOS/Main.cs" Line="12" Column="1" />
       <File FileName="iOS/Main.storyboard" />
-      <File FileName="BeaconTest/DataAccess.cs" Line="8" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

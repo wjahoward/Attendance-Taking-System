@@ -23,12 +23,12 @@
 				<integer>9</integer>
 			</dict>
 		</array>
-		<key>17514</key>
+		<key>28425</key>
 		<array>
 			<dict>
 				<key>affected-objects</key>
 				<array>
-					<string>17514</string>
+					<string>28425</string>
 				</array>
 				<key>message</key>
 				<string>Prototype table cells must have reuse identifiers</string>

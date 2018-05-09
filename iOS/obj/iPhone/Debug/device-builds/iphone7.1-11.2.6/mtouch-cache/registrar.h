@@ -9,16 +9,19 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <CoreBluetooth/CoreBluetooth.h>
-#import <CloudKit/CloudKit.h>
-#import <QuartzCore/QuartzCore.h>
-#import <CoreLocation/CoreLocation.h>
 #import <SafariServices/SafariServices.h>
-#import <Intents/Intents.h>
+#import <CoreLocation/CoreLocation.h>
+#import <QuartzCore/QuartzCore.h>
 #import <CoreGraphics/CoreGraphics.h>
 
+@class UIApplicationDelegate;
+@class CBCentralManagerDelegate;
+@class CBPeripheralManagerDelegate;
+@class UITableViewSource;
+@class UIKit_UIControlEventProxy;
+@class UIActivityItemSource;
 @class __MonoMac_NSActionDispatcher;
 @class __MonoMac_NSAsyncActionDispatcher;
-@class UIKit_UIControlEventProxy;
 @class AppDelegate;
 @class MainViewController;
 @class StudentAttendanceController;
@@ -31,12 +34,37 @@
 @class LecturerAttendanceController;
 @class BeaconTest_iOS_LecturerGenerateController_TableSource;
 @class LecturerGenerateController;
-@class __NSObject_Disposer;
 @class CoreLocation_CLLocationManager__CLLocationManagerDelegate;
 @class UIKit_UIScrollView__UIScrollViewDelegate;
+@class __NSObject_Disposer;
 @class Plugin_Share_ShareActivityItemSource;
 
-@interface AppDelegate : NSObject<UIApplicationDelegate> {
+@interface UIApplicationDelegate : NSObject<UIApplicationDelegate> {
+}
+	-(id) init;
+@end
+
+@interface CBCentralManagerDelegate : NSObject<CBCentralManagerDelegate> {
+}
+	-(id) init;
+@end
+
+@interface CBPeripheralManagerDelegate : NSObject<CBPeripheralManagerDelegate> {
+}
+	-(id) init;
+@end
+
+@interface UITableViewSource : NSObject<UIScrollViewDelegate, UIScrollViewDelegate> {
+}
+	-(id) init;
+@end
+
+@interface UIActivityItemSource : NSObject<UIActivityItemSource> {
+}
+	-(id) init;
+@end
+
+@interface AppDelegate : NSObject<UIApplicationDelegate, UIApplicationDelegate> {
 }
 	-(void) release;
 	-(id) retain;
@@ -159,7 +187,7 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
-@interface BeaconTest_iOS_LecturerAttendanceController_TableSource : NSObject<UIScrollViewDelegate> {
+@interface BeaconTest_iOS_LecturerAttendanceController_TableSource : NSObject<UIScrollViewDelegate, UIScrollViewDelegate, UIScrollViewDelegate> {
 }
 	-(void) release;
 	-(id) retain;
@@ -183,7 +211,7 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
-@interface BeaconTest_iOS_LecturerGenerateController_TableSource : NSObject<UIScrollViewDelegate> {
+@interface BeaconTest_iOS_LecturerGenerateController_TableSource : NSObject<UIScrollViewDelegate, UIScrollViewDelegate, UIScrollViewDelegate> {
 }
 	-(void) release;
 	-(id) retain;

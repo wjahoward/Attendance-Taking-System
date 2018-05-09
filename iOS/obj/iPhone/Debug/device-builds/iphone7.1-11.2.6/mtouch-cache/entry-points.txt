@@ -16,6 +16,8 @@ Function=WriteZStream
 	/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/System.dll
 Function=xamarin_start_wwan
 	/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/System.dll
+Function=xamarin_find_protocol_wrapper_type
+	/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/Xamarin.iOS.dll
 Function=xamarin_get_block_descriptor
 	/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/Xamarin.iOS.dll
 Function=UIApplicationMain

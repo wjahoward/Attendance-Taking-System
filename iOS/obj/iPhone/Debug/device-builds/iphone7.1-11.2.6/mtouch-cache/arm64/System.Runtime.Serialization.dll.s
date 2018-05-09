@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.8.0 (tarball Thu Mar 29 18:51:02 EDT 2018)"
+	.asciz "Mono AOT Compiler 5.10.1 (tarball Wed Apr 25 14:36:22 EDT 2018)"
 	.asciz "System.Runtime.Serialization.dll"
 	.asciz ""
 
@@ -132,7 +132,7 @@ LDIFF_SYM3=ut_end - ut_0
 	.align 4
 	.no_dead_strip System_Runtime_Serialization_KeyValue_2_K_REF_V_REF_get_Key
 System_Runtime_Serialization_KeyValue_2_K_REF_V_REF_get_Key:
-.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/mcs/class/referencesource/System.Runtime.Serialization/System/Runtime/Serialization/CollectionDataContract.cs"
+.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.10.1.177/src/Xamarin.iOS/mcs/class/referencesource/System.Runtime.Serialization/System/Runtime/Serialization/CollectionDataContract.cs"
 .loc 1 41 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -236,7 +236,7 @@ Lme_3:
 	.align 4
 	.no_dead_strip System_Runtime_Serialization_DataContractAttribute__ctor
 System_Runtime_Serialization_DataContractAttribute__ctor:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/mcs/class/referencesource/System.Runtime.Serialization/System/Runtime/Serialization/DataContractAttribute.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.10.1.177/src/Xamarin.iOS/mcs/class/referencesource/System.Runtime.Serialization/System/Runtime/Serialization/DataContractAttribute.cs"
 .loc 2 19 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -331,7 +331,7 @@ Lme_7:
 	.align 4
 	.no_dead_strip System_Runtime_Serialization_DataMemberAttribute__ctor
 System_Runtime_Serialization_DataMemberAttribute__ctor:
-.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/mcs/class/referencesource/System.Runtime.Serialization/System/Runtime/Serialization/DataMemberAttribute.cs"
+.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.10.1.177/src/Xamarin.iOS/mcs/class/referencesource/System.Runtime.Serialization/System/Runtime/Serialization/DataMemberAttribute.cs"
 .loc 3 12 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -465,7 +465,7 @@ b System_Runtime_Serialization_DateTimeOffsetAdapter_get_UtcDateTime
 	.align 4
 	.no_dead_strip System_Runtime_Serialization_DateTimeOffsetAdapter_get_UtcDateTime
 System_Runtime_Serialization_DateTimeOffsetAdapter_get_UtcDateTime:
-.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/mcs/class/referencesource/System.Runtime.Serialization/System/Runtime/Serialization/DateTimeOffsetAdapter.cs"
+.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.10.1.177/src/Xamarin.iOS/mcs/class/referencesource/System.Runtime.Serialization/System/Runtime/Serialization/DateTimeOffsetAdapter.cs"
 .loc 4 30 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -544,7 +544,7 @@ Lme_12:
 	.align 4
 	.no_dead_strip System_Runtime_Serialization_EnumMemberAttribute_get_Value
 System_Runtime_Serialization_EnumMemberAttribute_get_Value:
-.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/mcs/class/referencesource/System.Runtime.Serialization/System/Runtime/Serialization/EnumMemberAttribute.cs"
+.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.10.1.177/src/Xamarin.iOS/mcs/class/referencesource/System.Runtime.Serialization/System/Runtime/Serialization/EnumMemberAttribute.cs"
 .loc 5 19 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -560,7 +560,7 @@ Lme_13:
 	.align 4
 	.no_dead_strip System_Runtime_Serialization_KnownTypeAttribute__ctor_System_Type
 System_Runtime_Serialization_KnownTypeAttribute__ctor_System_Type:
-.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/mcs/class/referencesource/System.Runtime.Serialization/System/Runtime/Serialization/KnownTypeAttribute.cs"
+.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.10.1.177/src/Xamarin.iOS/mcs/class/referencesource/System.Runtime.Serialization/System/Runtime/Serialization/KnownTypeAttribute.cs"
 .loc 6 20 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -968,7 +968,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "D97A0E74-F53E-4A6E-AA60-1F387584FB79"
+	.asciz "1E6AA043-AE29-49B7-AC01-B2568E1A5271"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -977,7 +977,7 @@ assembly_name:
 	.align 3
 _mono_aot_file_info:
 
-	.long 141,0
+	.long 143,0
 	.align 3
 	.quad mono_aot_System_Runtime_Serialization_got
 	.align 3
@@ -994,6 +994,8 @@ _mono_aot_file_info:
 	.quad jit_code_end
 	.align 3
 	.quad method_addresses
+	.align 3
+	.quad 0
 	.align 3
 	.quad 0
 	.align 3
@@ -1046,12 +1048,12 @@ _mono_aot_file_info:
 	.quad unbox_trampoline_addresses
 
 	.long 25,272,9,26,66,391195135,0,1772
-	.long 128,8,8,9,0,25,2456,672
+	.long 128,8,8,9,0,25,2464,680
 	.long 472,240,0,376,440,320,0,200
-	.long 56,0,0,0,0,0,0,0
+	.long 56,672,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
-	.long 0
-	.byte 12,172,162,51,249,167,77,212,199,103,77,150,147,92,103,234
+	.long 0,0
+	.byte 102,112,186,73,152,195,198,181,46,123,169,235,193,140,80,226
 	.globl _mono_aot_module_System_Runtime_Serialization_info
 	.align 3
 _mono_aot_module_System_Runtime_Serialization_info:

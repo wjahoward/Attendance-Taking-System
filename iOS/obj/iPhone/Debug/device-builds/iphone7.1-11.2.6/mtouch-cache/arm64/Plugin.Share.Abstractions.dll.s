@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.8.0 (tarball Thu Mar 29 18:51:02 EDT 2018)"
+	.asciz "Mono AOT Compiler 5.10.1 (tarball Wed Apr 25 14:36:22 EDT 2018)"
 	.asciz "Plugin.Share.Abstractions.dll"
 	.asciz ""
 
@@ -1834,7 +1834,7 @@ assembly_name:
 	.align 3
 _mono_aot_file_info:
 
-	.long 141,0
+	.long 143,0
 	.align 3
 	.quad mono_aot_Plugin_Share_Abstractions_got
 	.align 3
@@ -1851,6 +1851,8 @@ _mono_aot_file_info:
 	.quad jit_code_end
 	.align 3
 	.quad method_addresses
+	.align 3
+	.quad 0
 	.align 3
 	.quad 0
 	.align 3
@@ -1903,12 +1905,12 @@ _mono_aot_file_info:
 	.quad unbox_trampoline_addresses
 
 	.long 61,536,6,41,70,391195135,0,2262
-	.long 128,8,8,9,0,25,2952,680
+	.long 128,8,8,9,0,25,2960,688
 	.long 496,224,0,384,464,280,0,216
-	.long 72,0,0,0,0,0,0,0
+	.long 72,680,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
-	.long 0
-	.byte 140,143,159,149,207,44,65,239,121,132,224,196,172,161,26,126
+	.long 0,0
+	.byte 158,157,141,251,23,151,205,139,236,106,130,157,218,52,85,241
 	.globl _mono_aot_module_Plugin_Share_Abstractions_info
 	.align 3
 _mono_aot_module_Plugin_Share_Abstractions_info:

@@ -15,15 +15,28 @@ namespace BeaconTest.iOS
 
         public override void ViewDidLoad()
         {
-            base.ViewDidLoad();
+			base.ViewDidLoad();
 
             LoginButton.Layer.CornerRadius = BeaconTest.Resources.buttonCornerRadius;
 
             LoginButton.TouchUpInside += (object sender, EventArgs e) => {
+
                 username = UsernameTextField.Text;
                 password = PasswordField.Text;
+            
+				bool valid = DataAccess.LoginAsync(username, password).Result;
 
-                if (username.Trim().Equals("student") && password.Trim().Equals("password"))
+				if(valid)
+				{
+					var viewController = this.Storyboard.InstantiateViewController("LecturerNavigationController");
+
+                    if (viewController != null)
+                    {
+                        this.PresentViewController(viewController, true, null);
+                    }
+				}
+
+                /*if (username.Trim().Equals("student") && password.Trim().Equals("password"))
                 {
                     var viewController = this.Storyboard.InstantiateViewController("StudentSubmitController");
 
@@ -40,7 +53,7 @@ namespace BeaconTest.iOS
                     {
                         this.PresentViewController(viewController, true, null);
                     }
-                }
+                }*/
                 else{
                     //Create Alert
                     var okAlertController = UIAlertController.Create("Invalid Login Credentials", "The username or password you have entered is invalid", UIAlertControllerStyle.Alert);

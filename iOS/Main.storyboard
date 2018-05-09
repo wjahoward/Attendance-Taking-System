@@ -322,17 +322,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="First" width="32" height="30"/>
-        <image name="Second" width="32" height="30"/>
-        <image name="XamarinLogo" width="220" height="51"/>
         <image name="Cross Icon.png" width="535" height="535"/>
-        <image name="Tick Icon.png" width="535" height="535"/>
-        <image name="Time Icon.png" width="535" height="534"/>
-        <image name="Bluetooth Device Icon.png" width="535" height="534"/>
-        <image name="Bluetooth Devices Icon.png" width="534" height="534"/>
-        <image name="Bluetooth Transmission Icon.png" width="534" height="534"/>
         <image name="Location Icon.png" width="534" height="535"/>
-        <image name="Retry Icon.png" width="534" height="534"/>
-        <image name="User Profile Icon.png" width="534" height="535"/>
     </resources>
 </document>

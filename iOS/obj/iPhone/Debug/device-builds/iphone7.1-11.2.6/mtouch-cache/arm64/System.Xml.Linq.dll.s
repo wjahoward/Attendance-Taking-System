@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.8.0 (tarball Thu Mar 29 18:51:02 EDT 2018)"
+	.asciz "Mono AOT Compiler 5.10.1 (tarball Wed Apr 25 14:36:22 EDT 2018)"
 	.asciz "System.Xml.Linq.dll"
 	.asciz ""
 
@@ -121,7 +121,7 @@ jit_code_start:
 	.align 4
 	.no_dead_strip System_Xml_Linq_XName__ctor_System_Xml_Linq_XNamespace_string
 System_Xml_Linq_XName__ctor_System_Xml_Linq_XNamespace_string:
-.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/mcs/class/referencesource/System.Xml.Linq/System/Xml/Linq/XLinq.cs"
+.file 1 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.10.1.177/src/Xamarin.iOS/mcs/class/referencesource/System.Xml.Linq/System/Xml/Linq/XLinq.cs"
 .loc 1 47 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -363,7 +363,7 @@ bl _p_9
 .word 0xf94017a1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd2801220
+.word 0xd2801340
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -394,7 +394,7 @@ bl _p_9
 .word 0xf94017a1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd2801220
+.word 0xd2801340
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -406,11 +406,11 @@ ldr x0, [x16, #0]
 .word 0xd2800121
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -574,7 +574,7 @@ ldr x0, [x16, #0]
 .word 0xd2800ba1
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -628,7 +628,7 @@ ldr x0, [x16, #0]
 .word 0xd2800ba1
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -663,7 +663,7 @@ System_Xml_Linq_NameSerializer_System_Runtime_Serialization_ISerializable_GetObj
 .word 0xf9000fa1
 .word 0xf90013a2
 .word 0xf90017a3
-.word 0xd2801ee0
+.word 0xd2802000
 .word 0xf2a04000
 bl _mono_create_corlib_exception_0
 bl _p_11
@@ -803,7 +803,7 @@ ldr x0, [x16, #0]
 .word 0xd2800e21
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -914,7 +914,7 @@ ldr x0, [x16, #0]
 .word 0xd2802161
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -1146,7 +1146,7 @@ ldr x3, [x16, #384]
 .word 0x54000061
 .word 0xc811fc20
 .word 0x35ffff91
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xaa1003e2
 .word 0xd349fc21
 .word 0xd29ffffe
@@ -1289,7 +1289,7 @@ ldr x1, [x16, #408]
 .word 0x910003bf
 .word 0xa8c67bfd
 .word 0xd65f03c0
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_12
 
@@ -1350,7 +1350,7 @@ ldr x1, [x16, #408]
 .word 0x910003bf
 .word 0xa8c27bfd
 .word 0xd65f03c0
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_12
 
@@ -1426,7 +1426,7 @@ ldr x1, [x16, #416]
 .word 0x54000061
 .word 0xc811ff20
 .word 0x35ffff91
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xaa1003e1
 .word 0xd349ff21
 .word 0xd29ffffe
@@ -1447,7 +1447,7 @@ ldr x2, [x16, #16]
 .word 0x910003bf
 .word 0xa8c57bfd
 .word 0xd65f03c0
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_12
 
@@ -1569,7 +1569,7 @@ bl _p_38
 bl _p_39
 .word 0xaa0003f9
 .loc 1 615 0
-.word 0xd50330bf
+.word 0xd5033bbf
 .loc 1 624 0
 .word 0xf94017a0
 .word 0xf9000819
@@ -1742,7 +1742,7 @@ System_Xml_Linq_XHashtable_1_XHashtableState_TValue_REF_Resize:
 .word 0x54000061
 .word 0x8811fc01
 .word 0x35ffff91
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xaa1003f8
 .word 0x14000042
 .loc 1 690 0
@@ -1800,7 +1800,7 @@ System_Xml_Linq_XHashtable_1_XHashtableState_TValue_REF_Resize:
 .word 0x54000061
 .word 0x8811fc01
 .word 0x35ffff91
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xaa1003f8
 .loc 1 696 0
 .word 0x1400000c
@@ -1927,11 +1927,11 @@ bl _p_45
 .word 0xa8c57bfd
 .word 0xd65f03c0
 .loc 1 713 0
-.word 0xd2801fe0
+.word 0xd2802100
 .word 0xf2a04000
 bl _mono_create_corlib_exception_0
 bl _p_11
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -2007,7 +2007,7 @@ ldr x2, [x16, #16]
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -2077,7 +2077,7 @@ bl _p_47
 .word 0x8b010210
 .word 0x8811fc10
 .word 0x35ffffb1
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xaa1003f6
 .loc 1 784 0
 .word 0xaa1603e0
@@ -2127,7 +2127,7 @@ ldr x1, [x16, #16]
 .word 0x91008000
 .word 0xb9000817
 .loc 1 793 0
-.word 0xd50330bf
+.word 0xd5033bbf
 .loc 1 804 0
 .word 0xb90043bf
 .word 0x14000038
@@ -2156,7 +2156,7 @@ ldr x1, [x16, #16]
 .word 0x54000061
 .word 0x8811fc16
 .word 0x35ffff91
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xaa1003e0
 .word 0xb90043a0
 .word 0x14000016
@@ -2179,7 +2179,7 @@ ldr x1, [x16, #16]
 .word 0x54000061
 .word 0x8811fc16
 .word 0x35ffff91
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xaa1003e0
 .word 0xb90043a0
 .loc 1 817 0
@@ -2234,10 +2234,10 @@ ldr x2, [x16, #16]
 .word 0x910003bf
 .word 0xa8c67bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
-.word 0xd2801f00
+.word 0xd2802020
 .word 0xaa1103e1
 bl _p_12
 
@@ -2440,7 +2440,7 @@ bl _p_27
 .word 0x910003bf
 .word 0xa8c77bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -2505,7 +2505,7 @@ System_Xml_Linq_XHashtable_1_XHashtableState_TValue_REF_ComputeHashCode_string_i
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -2827,11 +2827,11 @@ ldr x0, [x16, #0]
 .word 0xd28024e1
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -2889,7 +2889,7 @@ ldr x0, [x16, #456]
 .word 0xf9400f21
 .word 0xaa1a03e0
 .word 0xf9400342
-.word 0xf9408050
+.word 0xf9407c50
 .word 0xd63f0200
 .word 0x53001c00
 .word 0x340003a0
@@ -2915,7 +2915,7 @@ ldr x0, [x16, #456]
 .word 0xaa1a03e0
 .word 0xaa1703e1
 .word 0xf9400342
-.word 0xf9408050
+.word 0xf9407c50
 .word 0xd63f0200
 .word 0x53001c00
 .word 0x34000060
@@ -2942,11 +2942,11 @@ ldr x0, [x16, #0]
 .word 0xd28027a1
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -3059,7 +3059,7 @@ bl _p_54
 .word 0x910003bf
 .word 0xa8c57bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -3504,7 +3504,7 @@ ldr x1, [x16, #520]
 .word 0x910003bf
 .word 0xa8c27bfd
 .word 0xd65f03c0
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_12
 
@@ -3762,7 +3762,7 @@ ldr x1, [x16, #16]
 .word 0x910003bf
 .word 0xa8c57bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -3788,7 +3788,7 @@ System_Xml_Linq_XObject__Annotationsd__16_1_T_REF_System_Collections_IEnumerator
 .word 0xa9be7bfd
 .word 0x910003fd
 .word 0xf9000ba0
-.word 0xd2801ee0
+.word 0xd2802000
 .word 0xf2a04000
 bl _mono_create_corlib_exception_0
 bl _p_11
@@ -4087,7 +4087,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -4414,7 +4414,7 @@ ldr x0, [x16, #0]
 .word 0xd28030a1
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -4460,7 +4460,7 @@ ldr x0, [x16, #0]
 .word 0xd2803221
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -4555,7 +4555,7 @@ ldr x0, [x16, #0]
 .word 0xd28030a1
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -4621,7 +4621,7 @@ ldr x0, [x16, #0]
 .word 0xd28033a1
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -4750,7 +4750,7 @@ ldr x0, [x16, #0]
 .word 0xd28033a1
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -4883,11 +4883,11 @@ ldr x0, [x16, #0]
 .word 0xd2803221
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_12
 
@@ -5006,7 +5006,7 @@ ldr x1, [x16, #672]
 .word 0x54000061
 .word 0xc811fc18
 .word 0x35ffff91
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xaa1003e1
 .word 0xd349fc00
 .word 0xd29ffffe
@@ -5039,10 +5039,10 @@ ldr x1, [x16, #664]
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_12
-.word 0xd2801f00
+.word 0xd2802020
 .word 0xaa1103e1
 bl _p_12
 
@@ -5373,7 +5373,7 @@ bl _p_96
 .word 0x910003bf
 .word 0xa8c97bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -5598,7 +5598,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -5611,7 +5611,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -5960,7 +5960,7 @@ bl _p_104
 .word 0x910003bf
 .word 0xa8c97bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -6268,7 +6268,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -6434,7 +6434,7 @@ bl _p_92
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_12
 
@@ -6493,7 +6493,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -6622,7 +6622,7 @@ ldr x1, [x16, #16]
 .word 0x910003bf
 .word 0xa8c37bfd
 .word 0xd65f03c0
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_12
 
@@ -6699,7 +6699,7 @@ ldr x1, [x16, #664]
 .word 0x910003bf
 .word 0xa8c37bfd
 .word 0xd65f03c0
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_12
 
@@ -7174,7 +7174,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801220
+.word 0xd2801340
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -7187,11 +7187,11 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801220
+.word 0xd2801340
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_12
 
@@ -7597,7 +7597,7 @@ bl _p_18
 .word 0xf9403fa1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -7625,7 +7625,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -7638,7 +7638,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -8323,7 +8323,7 @@ bl _p_18
 .word 0xf9404fa1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -8415,7 +8415,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -8428,7 +8428,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -8549,11 +8549,11 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_12
 
@@ -8759,7 +8759,7 @@ ldr x1, [x16, #664]
 .word 0x910003bf
 .word 0xa8c37bfd
 .word 0xd65f03c0
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_12
 
@@ -8914,7 +8914,7 @@ System_Xml_Linq_XContainer__Nodesd__18_System_Collections_IEnumerator_Reset:
 .word 0xa9be7bfd
 .word 0x910003fd
 .word 0xf9000ba0
-.word 0xd2801ee0
+.word 0xd2802000
 .word 0xf2a04000
 bl _mono_create_corlib_exception_0
 bl _p_11
@@ -9112,7 +9112,7 @@ ldr x0, [x16, #0]
 .word 0xd2800ce1
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -9222,7 +9222,7 @@ ldr x0, [x16, #0]
 .word 0xd2803221
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -9462,7 +9462,7 @@ ldr x0, [x16, #0]
 .word 0xd28030a1
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -9676,7 +9676,7 @@ ldr x0, [x16, #0]
 .word 0xd2806921
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -9742,7 +9742,7 @@ ldr x0, [x16, #0]
 .word 0xd2806c61
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -9805,7 +9805,7 @@ bl _p_18
 .word 0xf9401fa1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -9818,7 +9818,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -9976,7 +9976,7 @@ ldr x0, [x16, #0]
 .word 0xd28033a1
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -10029,7 +10029,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -10082,7 +10082,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -10142,7 +10142,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -10687,7 +10687,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -10804,7 +10804,7 @@ bl _p_18
 .word 0xf9401fa1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd2801220
+.word 0xd2801340
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -10843,7 +10843,7 @@ bl _p_18
 .word 0xf9401fa1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd2801220
+.word 0xd2801340
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -11008,7 +11008,7 @@ System_Xml_Linq_XElement__GetAttributesd__105_System_Collections_IEnumerator_Res
 .word 0xa9be7bfd
 .word 0x910003fd
 .word 0xf9000ba0
-.word 0xd2801ee0
+.word 0xd2802000
 .word 0xf2a04000
 bl _mono_create_corlib_exception_0
 bl _p_11
@@ -11288,7 +11288,7 @@ bl _p_161
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_12
 
@@ -12390,7 +12390,7 @@ ldr x0, [x16, #0]
 .word 0xd28033a1
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -12413,7 +12413,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801220
+.word 0xd2801340
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -12439,7 +12439,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801220
+.word 0xd2801340
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -12587,7 +12587,7 @@ System_Xml_Linq_XDocument_IsWhitespace_string:
 .word 0x910003bf
 .word 0xa8c37bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -12703,7 +12703,7 @@ bl _p_18
 .word 0xf94027a1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd2801220
+.word 0xd2801340
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -12743,7 +12743,7 @@ bl _p_18
 .word 0xf94027a1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd2801220
+.word 0xd2801340
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -12753,7 +12753,7 @@ bl _p_11
 .word 0x910003bf
 .word 0xa8c67bfd
 .word 0xd65f03c0
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_12
 
@@ -12840,7 +12840,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -12872,7 +12872,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801220
+.word 0xd2801340
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -12917,7 +12917,7 @@ ldr x0, [x16, #0]
 .word 0xd28030a1
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -12963,7 +12963,7 @@ ldr x0, [x16, #0]
 .word 0xd2803221
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -13058,7 +13058,7 @@ ldr x0, [x16, #0]
 .word 0xd28030a1
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -13095,7 +13095,7 @@ ldr x0, [x16, #0]
 .word 0xd28033a1
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -13183,7 +13183,7 @@ ldr x0, [x16, #0]
 .word 0xd280a321
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -13245,7 +13245,7 @@ ldr x0, [x16, #0]
 .word 0xd2803221
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -13326,7 +13326,7 @@ ldr x0, [x16, #0]
 .word 0xd28030a1
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -13393,7 +13393,7 @@ ldr x0, [x16, #0]
 .word 0xd28033a1
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -13473,7 +13473,7 @@ bl _p_9
 .word 0xf94017a1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd2801220
+.word 0xd2801340
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -13611,7 +13611,7 @@ ldr x0, [x16, #0]
 .word 0xd2803221
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -14015,7 +14015,7 @@ ldr x0, [x16, #0]
 .word 0xd2803221
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -14171,7 +14171,7 @@ ldr x0, [x16, #0]
 .word 0xd28033a1
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -14267,7 +14267,7 @@ ldr x0, [x16, #0]
 .word 0xd28030a1
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -14279,7 +14279,7 @@ ldr x0, [x16, #0]
 .word 0xd2800ce1
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -14341,7 +14341,7 @@ ldr x0, [x16, #0]
 .word 0xd2803221
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -14500,7 +14500,7 @@ ldr x0, [x16, #0]
 .word 0xd28030a1
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -14730,7 +14730,7 @@ ldr x0, [x16, #976]
 .word 0x910003bf
 .word 0xa8c37bfd
 .word 0xd65f03c0
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_12
 
@@ -14877,7 +14877,7 @@ bl _p_9
 .word 0xf9401fa1
 bl _p_10
 .word 0xaa0003e1
-.word 0xd2801220
+.word 0xd2801340
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -14890,7 +14890,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801220
+.word 0xd2801340
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -14903,7 +14903,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801220
+.word 0xd2801340
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -14916,7 +14916,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801220
+.word 0xd2801340
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -14929,7 +14929,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801220
+.word 0xd2801340
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -14942,7 +14942,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801220
+.word 0xd2801340
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -14955,7 +14955,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801220
+.word 0xd2801340
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -15048,7 +15048,7 @@ ldr x0, [x16, #0]
 .word 0xd28033a1
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -15927,7 +15927,7 @@ bl _p_197
 .word 0x910003bf
 .word 0xa8c87bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -15968,7 +15968,7 @@ ldr x0, [x16, #0]
 bl _p_8
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -16876,7 +16876,7 @@ _PrivateImplementationDetails_ComputeStringHash_string:
 .word 0x910003bf
 .word 0xa8c37bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -17090,7 +17090,7 @@ bl _p_214
 .word 0xd63f0020
 .word 0xaa0003f8
 .loc 1 615 0
-.word 0xd50330bf
+.word 0xd5033bbf
 .loc 1 624 0
 .word 0xf9401fa0
 .word 0xf9400741
@@ -17316,7 +17316,7 @@ bl _p_217
 .word 0x54000061
 .word 0x8811fc01
 .word 0x35ffff91
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xaa1003f6
 .word 0x1400006a
 .loc 1 690 0
@@ -17407,7 +17407,7 @@ bl _p_218
 .word 0x54000061
 .word 0x8811fc01
 .word 0x35ffff91
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xaa1003f6
 .loc 1 696 0
 .word 0x14000013
@@ -17594,11 +17594,11 @@ bl _p_221
 .word 0xa8c67bfd
 .word 0xd65f03c0
 .loc 1 713 0
-.word 0xd2801fe0
+.word 0xd2802100
 .word 0xf2a04000
 bl _mono_create_corlib_exception_0
 bl _p_11
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -17723,7 +17723,7 @@ bl _mono_gsharedvt_value_copy
 .word 0x910003bf
 .word 0xa8c77bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -17827,7 +17827,7 @@ bl _p_231
 .word 0x8b010210
 .word 0x8811fc10
 .word 0x35ffffb1
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xaa1003f5
 .loc 1 784 0
 .word 0xaa1503e0
@@ -17894,7 +17894,7 @@ bl _mono_gsharedvt_value_copy
 .word 0x8b010000
 .word 0xb9000016
 .loc 1 793 0
-.word 0xd50330bf
+.word 0xd5033bbf
 .loc 1 804 0
 .word 0xb90053bf
 .word 0x14000044
@@ -17929,7 +17929,7 @@ bl _mono_gsharedvt_value_copy
 .word 0x54000061
 .word 0x8811fc15
 .word 0x35ffff91
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xaa1003e0
 .word 0xb90053a0
 .word 0x1400001c
@@ -17958,7 +17958,7 @@ bl _mono_gsharedvt_value_copy
 .word 0x54000061
 .word 0x8811fc15
 .word 0x35ffff91
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xaa1003e0
 .word 0xb90053a0
 .loc 1 817 0
@@ -18036,10 +18036,10 @@ bl _mono_gsharedvt_value_copy
 .word 0x910003bf
 .word 0xa8c87bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
-.word 0xd2801f00
+.word 0xd2802020
 .word 0xaa1103e1
 bl _p_12
 
@@ -18350,7 +18350,7 @@ bl _p_27
 .word 0x910003bf
 .word 0xa8c87bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -18420,7 +18420,7 @@ bl _p_235
 .word 0x910003bf
 .word 0xa8c57bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -18699,7 +18699,7 @@ bl _mono_gsharedvt_value_copy
 .word 0x910003bf
 .word 0xa8c77bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -19244,7 +19244,7 @@ bl _mono_gsharedvt_value_copy
 .word 0x910003bf
 .word 0xa8c77bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -19321,7 +19321,7 @@ bl _p_252
 .word 0xf9400fa0
 .word 0xb9800000
 .word 0xf9000fbf
-.word 0xd2801ee0
+.word 0xd2802000
 .word 0xf2a04000
 bl _mono_create_corlib_exception_0
 bl _p_11
@@ -19793,7 +19793,7 @@ bl _p_265
 .word 0xaa0003f8
 .word 0xb5ffff80
 .word 0x17ffffcc
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -19869,7 +19869,7 @@ bl _p_265
 .word 0xaa0003f8
 .word 0xb5ffff80
 .word 0x17ffffcc
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -19947,7 +19947,7 @@ bl _p_265
 .word 0xaa0003f7
 .word 0xb5ffff80
 .word 0x17ffffcb
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -19956,29 +19956,43 @@ Lme_11d:
 	.align 4
 	.no_dead_strip System_Array_InternalArray__IEnumerable_GetEnumerator_T_REF
 System_Array_InternalArray__IEnumerable_GetEnumerator_T_REF:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/mcs/class/corlib/System/Array.cs"
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.10.1.177/src/Xamarin.iOS/mcs/class/corlib/System/Array.cs"
 .loc 2 71 0 prologue_end
 .word 0xa9bb7bfd
 .word 0x910003fd
 .word 0xf9001faf
 .word 0xf9000ba0
+.word 0xf9400ba0
+.word 0xb9801800
+.word 0x35000140
+.loc 2 72 0
+.word 0xf9401fa0
+bl _p_266
+.word 0x3980b410
+.word 0xb5000050
+bl _p_77
+.word 0xf9401fa0
+bl _p_267
+.word 0xf9400000
+.word 0x14000025
+.loc 2 74 0
 .word 0xd2800000
 .word 0xf90017a0
 .word 0xf9001ba0
 .word 0x9100a3a0
 .word 0xf90023a0
 .word 0xf9401fa0
-bl _p_266
+bl _p_268
 .word 0xaa0003ef
 .word 0xf94023a0
 .word 0xf9400ba1
-bl _p_267
+bl _p_269
 .word 0xf94017a0
 .word 0xf9000fa0
 .word 0xf9401ba0
 .word 0xf90013a0
 .word 0xf9401fa0
-bl _p_266
+bl _p_268
 .word 0xd2800401
 bl _p_18
 .word 0x91004003
@@ -20037,14 +20051,14 @@ Lme_120:
 	.align 4
 	.no_dead_strip System_Array_InternalArray__ICollection_Clear
 System_Array_InternalArray__ICollection_Clear:
-.loc 2 76 0 prologue_end
+.loc 2 79 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
 .word 0xf9000ba0
-.word 0xd2856fc0
-bl _p_268
+.word 0xd2882340
+bl _p_270
 .word 0xaa0003e1
-.word 0xd2801ee0
+.word 0xd2802000
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -20057,16 +20071,16 @@ Lme_121:
 	.align 4
 	.no_dead_strip System_Array_InternalArray__ICollection_Add_T_REF_T_REF
 System_Array_InternalArray__ICollection_Add_T_REF_T_REF:
-.loc 2 81 0 prologue_end
+.loc 2 84 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
 .word 0xf90013af
 .word 0xf9000ba0
 .word 0xf9000fa1
-.word 0xd28575c0
-bl _p_268
+.word 0xd2882940
+bl _p_270
 .word 0xaa0003e1
-.word 0xd2801ee0
+.word 0xd2802000
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -20079,16 +20093,16 @@ Lme_122:
 	.align 4
 	.no_dead_strip System_Array_InternalArray__ICollection_Remove_T_REF_T_REF
 System_Array_InternalArray__ICollection_Remove_T_REF_T_REF:
-.loc 2 86 0 prologue_end
+.loc 2 89 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
 .word 0xf90013af
 .word 0xf9000ba0
 .word 0xf9000fa1
-.word 0xd28575c0
-bl _p_268
+.word 0xd2882940
+bl _p_270
 .word 0xaa0003e1
-.word 0xd2801ee0
+.word 0xd2802000
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -20101,7 +20115,7 @@ Lme_123:
 	.align 4
 	.no_dead_strip System_Array_InternalArray__ICollection_Contains_T_REF_T_REF
 System_Array_InternalArray__ICollection_Contains_T_REF_T_REF:
-.loc 2 91 0 prologue_end
+.loc 2 94 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
 .word 0xa9015fb6
@@ -20115,27 +20129,27 @@ System_Array_InternalArray__ICollection_Contains_T_REF_T_REF:
 .word 0xd280003e
 .word 0x6b1e001f
 .word 0x5400044c
-.loc 2 94 0
+.loc 2 97 0
 .word 0xb9801b38
-.loc 2 95 0
+.loc 2 98 0
 .word 0xd2800017
 .word 0x14000016
-.loc 2 97 0
+.loc 2 100 0
 .word 0xf9401fa0
-bl _p_269
+bl _p_271
 .word 0x93407ee0
 .word 0xd37df000
 .word 0x8b000320
 .word 0x91008000
 .word 0xf9400016
-.loc 2 98 0
+.loc 2 101 0
 .word 0xb500009a
-.loc 2 99 0
+.loc 2 102 0
 .word 0xb5000196
-.loc 2 100 0
+.loc 2 103 0
 .word 0xd2800020
 .word 0x1400000e
-.loc 2 106 0
+.loc 2 109 0
 .word 0xaa1a03e0
 .word 0xaa1603e1
 .word 0xf9400342
@@ -20143,14 +20157,14 @@ bl _p_269
 .word 0xd63f0200
 .word 0x53001c00
 .word 0x34000060
-.loc 2 107 0
+.loc 2 110 0
 .word 0xd2800020
 .word 0x14000005
-.loc 2 95 0
+.loc 2 98 0
 .word 0x110006f7
 .word 0x6b1802ff
 .word 0x54fffd4b
-.loc 2 111 0
+.loc 2 114 0
 .word 0xd2800000
 .word 0xa9415fb6
 .word 0xa94267b8
@@ -20158,11 +20172,11 @@ bl _p_269
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
-.loc 2 92 0
-.word 0xd2857d40
-bl _p_268
+.loc 2 95 0
+.word 0xd28830c0
+bl _p_270
 .word 0xaa0003e1
-.word 0xd2802080
+.word 0xd28021a0
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_11
@@ -20172,7 +20186,7 @@ Lme_124:
 	.align 4
 	.no_dead_strip System_Array_InternalArray__ICollection_CopyTo_T_REF_T_REF___int
 System_Array_InternalArray__ICollection_CopyTo_T_REF_T_REF___int:
-.loc 2 116 0 prologue_end
+.loc 2 119 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
 .word 0xf9000bb6
@@ -20195,8 +20209,8 @@ System_Array_InternalArray__ICollection_CopyTo_T_REF_T_REF___int:
 .word 0xaa1603e1
 .word 0xf94013a2
 .word 0xb9802ba3
-bl _p_270
-.loc 2 117 0
+bl _p_272
+.loc 2 120 0
 .word 0xf9400bb6
 .word 0x910003bf
 .word 0xa8c47bfd
@@ -20277,7 +20291,7 @@ bl _p_265
 .word 0xaa0003f8
 .word 0xb5ffff80
 .word 0x17ffffc9
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -20360,7 +20374,7 @@ bl _p_265
 .word 0xaa0003f7
 .word 0xb5ffff80
 .word 0x17ffffc6
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -20378,7 +20392,7 @@ wrapper_delegate_invoke_System_Xml_Linq_XHashtable_1_ExtractKeyDelegate_TValue_G
 .word 0xf90027a1
 .word 0xf94023a0
 .word 0xf9400000
-bl _p_271
+bl _p_273
 .word 0xaa0003fa
 .word 0xb9800340
 .word 0xd2800019
@@ -20404,7 +20418,7 @@ ldr x0, [x16, #1664]
 .word 0xf9002ba0
 .word 0xf94023a0
 .word 0xf9400000
-bl _p_272
+bl _p_274
 .word 0xaa0003e2
 .word 0xf9402baf
 .word 0xaa1803e0
@@ -20418,7 +20432,7 @@ bl _p_272
 .word 0xf9002ba0
 .word 0xf94023a0
 .word 0xf9400000
-bl _p_273
+bl _p_275
 .word 0xaa0003e1
 .word 0xf9402baf
 .word 0xf94027a0
@@ -20439,7 +20453,7 @@ bl _p_273
 .word 0xf9002fa0
 .word 0xf94023a0
 .word 0xf9400000
-bl _p_274
+bl _p_276
 .word 0xaa0003e2
 .word 0xf9402fa0
 .word 0xf9002ba0
@@ -20464,7 +20478,7 @@ bl _p_265
 .word 0xaa0003f8
 .word 0xb5ffff80
 .word 0x17ffffb6
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_12
 
@@ -20483,7 +20497,7 @@ wrapper_delegate_begin_invoke_System_Xml_Linq_XHashtable_1_ExtractKeyDelegate_TV
 .word 0xf90023a3
 .word 0xf94017a0
 .word 0xf9400000
-bl _p_275
+bl _p_277
 .word 0xaa0003fa
 .word 0xb9800340
 .word 0xf90027bf
@@ -20517,7 +20531,7 @@ bl _p_275
 .word 0xf9000340
 .word 0xf94017a0
 .word 0xaa1703e1
-bl _p_276
+bl _p_278
 .word 0xa94163b7
 .word 0xf94013ba
 .word 0x910003bf
@@ -20536,7 +20550,7 @@ wrapper_delegate_end_invoke_System_Xml_Linq_XHashtable_1_ExtractKeyDelegate_TVal
 .word 0xf90017a1
 .word 0xf94013a0
 .word 0xf9400000
-bl _p_277
+bl _p_279
 .word 0xaa0003fa
 .word 0xb9800340
 .word 0xf9001bbf
@@ -20564,7 +20578,7 @@ bl _p_277
 .word 0xf9000320
 .word 0xf94013a0
 .word 0xaa1903e1
-bl _p_278
+bl _p_280
 .word 0xa9416bb9
 .word 0x910003bf
 .word 0xa8c47bfd
@@ -20579,7 +20593,7 @@ b System_Array_InternalEnumerator_1_T_REF__ctor_System_Array
 	.align 4
 	.no_dead_strip System_Array_InternalEnumerator_1_T_REF__ctor_System_Array
 System_Array_InternalEnumerator_1_T_REF__ctor_System_Array:
-.loc 2 215 0 prologue_end
+.loc 2 218 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
 .word 0xf90013af
@@ -20599,11 +20613,11 @@ ldr x3, [x16, #16]
 .word 0x8b030042
 .word 0xd280003e
 .word 0x3900005e
-.loc 2 216 0
+.loc 2 219 0
 .word 0x9280003e
 .word 0xf2bffffe
 .word 0xb900081e
-.loc 2 217 0
+.loc 2 220 0
 .word 0x910003bf
 .word 0xa8c37bfd
 .word 0xd65f03c0
@@ -23139,54 +23153,54 @@ add x16, x16, mono_aot_System_Xml_Linq_got@PAGEOFF
 ldr x16, [x16, #3800]
 br x16
 .word 6876
-	.no_dead_strip plt_System_Array_InternalEnumerator_1_T_REF__ctor_System_Array
-plt_System_Array_InternalEnumerator_1_T_REF__ctor_System_Array:
+	.no_dead_strip plt__rgctx_fetch_69
+plt__rgctx_fetch_69:
 _p_267:
 adrp x16, mono_aot_System_Xml_Linq_got@PAGE+0
 add x16, x16, mono_aot_System_Xml_Linq_got@PAGEOFF
 ldr x16, [x16, #3808]
 br x16
 .word 6884
-	.no_dead_strip plt__jit_icall_mono_helper_ldstr_mscorlib
-plt__jit_icall_mono_helper_ldstr_mscorlib:
+	.no_dead_strip plt__rgctx_fetch_70
+plt__rgctx_fetch_70:
 _p_268:
 adrp x16, mono_aot_System_Xml_Linq_got@PAGE+0
 add x16, x16, mono_aot_System_Xml_Linq_got@PAGEOFF
 ldr x16, [x16, #3816]
 br x16
-.word 6903
-	.no_dead_strip plt__rgctx_fetch_69
-plt__rgctx_fetch_69:
+.word 6900
+	.no_dead_strip plt_System_Array_InternalEnumerator_1_T_REF__ctor_System_Array
+plt_System_Array_InternalEnumerator_1_T_REF__ctor_System_Array:
 _p_269:
 adrp x16, mono_aot_System_Xml_Linq_got@PAGE+0
 add x16, x16, mono_aot_System_Xml_Linq_got@PAGEOFF
 ldr x16, [x16, #3824]
 br x16
-.word 6950
-	.no_dead_strip plt_System_Array_Copy_System_Array_int_System_Array_int_int
-plt_System_Array_Copy_System_Array_int_System_Array_int_int:
+.word 6908
+	.no_dead_strip plt__jit_icall_mono_helper_ldstr_mscorlib
+plt__jit_icall_mono_helper_ldstr_mscorlib:
 _p_270:
 adrp x16, mono_aot_System_Xml_Linq_got@PAGE+0
 add x16, x16, mono_aot_System_Xml_Linq_got@PAGEOFF
 ldr x16, [x16, #3832]
 br x16
-.word 6973
-	.no_dead_strip plt__rgctx_fetch_70
-plt__rgctx_fetch_70:
+.word 6927
+	.no_dead_strip plt__rgctx_fetch_71
+plt__rgctx_fetch_71:
 _p_271:
 adrp x16, mono_aot_System_Xml_Linq_got@PAGE+0
 add x16, x16, mono_aot_System_Xml_Linq_got@PAGEOFF
 ldr x16, [x16, #3840]
 br x16
-.word 6988
-	.no_dead_strip plt__rgctx_fetch_71
-plt__rgctx_fetch_71:
+.word 6974
+	.no_dead_strip plt_System_Array_Copy_System_Array_int_System_Array_int_int
+plt_System_Array_Copy_System_Array_int_System_Array_int_int:
 _p_272:
 adrp x16, mono_aot_System_Xml_Linq_got@PAGE+0
 add x16, x16, mono_aot_System_Xml_Linq_got@PAGEOFF
 ldr x16, [x16, #3848]
 br x16
-.word 7006
+.word 6997
 	.no_dead_strip plt__rgctx_fetch_72
 plt__rgctx_fetch_72:
 _p_273:
@@ -23194,7 +23208,7 @@ adrp x16, mono_aot_System_Xml_Linq_got@PAGE+0
 add x16, x16, mono_aot_System_Xml_Linq_got@PAGEOFF
 ldr x16, [x16, #3856]
 br x16
-.word 7020
+.word 7012
 	.no_dead_strip plt__rgctx_fetch_73
 plt__rgctx_fetch_73:
 _p_274:
@@ -23202,7 +23216,7 @@ adrp x16, mono_aot_System_Xml_Linq_got@PAGE+0
 add x16, x16, mono_aot_System_Xml_Linq_got@PAGEOFF
 ldr x16, [x16, #3864]
 br x16
-.word 7034
+.word 7030
 	.no_dead_strip plt__rgctx_fetch_74
 plt__rgctx_fetch_74:
 _p_275:
@@ -23210,35 +23224,51 @@ adrp x16, mono_aot_System_Xml_Linq_got@PAGE+0
 add x16, x16, mono_aot_System_Xml_Linq_got@PAGEOFF
 ldr x16, [x16, #3872]
 br x16
-.word 7076
-	.no_dead_strip plt__jit_icall_mono_delegate_begin_invoke
-plt__jit_icall_mono_delegate_begin_invoke:
+.word 7044
+	.no_dead_strip plt__rgctx_fetch_75
+plt__rgctx_fetch_75:
 _p_276:
 adrp x16, mono_aot_System_Xml_Linq_got@PAGE+0
 add x16, x16, mono_aot_System_Xml_Linq_got@PAGEOFF
 ldr x16, [x16, #3880]
 br x16
-.word 7094
-	.no_dead_strip plt__rgctx_fetch_75
-plt__rgctx_fetch_75:
+.word 7058
+	.no_dead_strip plt__rgctx_fetch_76
+plt__rgctx_fetch_76:
 _p_277:
 adrp x16, mono_aot_System_Xml_Linq_got@PAGE+0
 add x16, x16, mono_aot_System_Xml_Linq_got@PAGEOFF
 ldr x16, [x16, #3888]
 br x16
-.word 7133
-	.no_dead_strip plt__jit_icall_mono_delegate_end_invoke
-plt__jit_icall_mono_delegate_end_invoke:
+.word 7100
+	.no_dead_strip plt__jit_icall_mono_delegate_begin_invoke
+plt__jit_icall_mono_delegate_begin_invoke:
 _p_278:
 adrp x16, mono_aot_System_Xml_Linq_got@PAGE+0
 add x16, x16, mono_aot_System_Xml_Linq_got@PAGEOFF
 ldr x16, [x16, #3896]
 br x16
-.word 7151
+.word 7118
+	.no_dead_strip plt__rgctx_fetch_77
+plt__rgctx_fetch_77:
+_p_279:
+adrp x16, mono_aot_System_Xml_Linq_got@PAGE+0
+add x16, x16, mono_aot_System_Xml_Linq_got@PAGEOFF
+ldr x16, [x16, #3904]
+br x16
+.word 7157
+	.no_dead_strip plt__jit_icall_mono_delegate_end_invoke
+plt__jit_icall_mono_delegate_end_invoke:
+_p_280:
+adrp x16, mono_aot_System_Xml_Linq_got@PAGE+0
+add x16, x16, mono_aot_System_Xml_Linq_got@PAGEOFF
+ldr x16, [x16, #3912]
+br x16
+.word 7175
 plt_end:
 .section __DATA, __bss
 	.align 3
-.lcomm mono_aot_System_Xml_Linq_got, 3904
+.lcomm mono_aot_System_Xml_Linq_got, 3920
 got_end:
 .section __TEXT, __const
 	.align 3
@@ -23269,7 +23299,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "4DF864CC-3BB8-444B-8F00-BC5F15152446"
+	.asciz "F33F37CB-6905-46D9-8836-2354F6FC4E29"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -23278,7 +23308,7 @@ assembly_name:
 	.align 3
 _mono_aot_file_info:
 
-	.long 141,0
+	.long 143,0
 	.align 3
 	.quad mono_aot_System_Xml_Linq_got
 	.align 3
@@ -23295,6 +23325,8 @@ _mono_aot_file_info:
 	.quad jit_code_end
 	.align 3
 	.quad method_addresses
+	.align 3
+	.quad 0
 	.align 3
 	.quad 0
 	.align 3
@@ -23346,13 +23378,13 @@ _mono_aot_file_info:
 	.align 3
 	.quad unbox_trampoline_addresses
 
-	.long 209,3904,279,300,66,391195135,0,43569
-	.long 128,8,8,9,0,25,46832,3256
+	.long 209,3920,281,300,66,391195135,0,43625
+	.long 128,8,8,9,0,25,46896,3264
 	.long 2976,1728,0,2344,2896,2048,0,1392
-	.long 432,0,0,0,0,0,0,0
+	.long 432,3256,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
-	.long 0
-	.byte 116,249,239,172,240,212,153,146,176,246,69,50,96,120,139,41
+	.long 0,0
+	.byte 213,186,3,15,114,141,251,93,36,194,135,180,102,201,21,7
 	.globl _mono_aot_module_System_Xml_Linq_info
 	.align 3
 _mono_aot_module_System_Xml_Linq_info:
@@ -24340,7 +24372,7 @@ LTDIE_19:
 LDIFF_SYM142=LTDIE_1 - Ldebug_info_start
 	.long LDIFF_SYM142
 	.byte 2,35,0,6
-	.asciz "dictionary"
+	.asciz "_dictionary"
 
 LDIFF_SYM143=LTDIE_17_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM143
@@ -24368,7 +24400,7 @@ LTDIE_20:
 LDIFF_SYM147=LTDIE_1 - Ldebug_info_start
 	.long LDIFF_SYM147
 	.byte 2,35,0,6
-	.asciz "dictionary"
+	.asciz "_dictionary"
 
 LDIFF_SYM148=LTDIE_17_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM148
@@ -24396,47 +24428,47 @@ LTDIE_17:
 LDIFF_SYM152=LTDIE_1 - Ldebug_info_start
 	.long LDIFF_SYM152
 	.byte 2,35,0,6
-	.asciz "buckets"
+	.asciz "_buckets"
 
 LDIFF_SYM153=LDIE_SZARRAY - Ldebug_info_start
 	.long LDIFF_SYM153
 	.byte 2,35,16,6
-	.asciz "entries"
+	.asciz "_entries"
 
 LDIFF_SYM154=LDIE_SZARRAY - Ldebug_info_start
 	.long LDIFF_SYM154
 	.byte 2,35,24,6
-	.asciz "count"
+	.asciz "_count"
 
 LDIFF_SYM155=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM155
 	.byte 2,35,64,6
-	.asciz "version"
+	.asciz "_freeList"
 
 LDIFF_SYM156=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM156
 	.byte 2,35,68,6
-	.asciz "freeList"
+	.asciz "_freeCount"
 
 LDIFF_SYM157=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM157
 	.byte 2,35,72,6
-	.asciz "freeCount"
+	.asciz "_version"
 
 LDIFF_SYM158=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM158
 	.byte 2,35,76,6
-	.asciz "comparer"
+	.asciz "_comparer"
 
 LDIFF_SYM159=LTDIE_18_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM159
 	.byte 2,35,32,6
-	.asciz "keys"
+	.asciz "_keys"
 
 LDIFF_SYM160=LTDIE_19_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM160
 	.byte 2,35,40,6
-	.asciz "values"
+	.asciz "_values"
 
 LDIFF_SYM161=LTDIE_20_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM161
@@ -29313,7 +29345,7 @@ LTDIE_66:
 LDIFF_SYM848=LTDIE_1 - Ldebug_info_start
 	.long LDIFF_SYM848
 	.byte 2,35,0,6
-	.asciz "dictionary"
+	.asciz "_dictionary"
 
 LDIFF_SYM849=LTDIE_64_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM849
@@ -29341,7 +29373,7 @@ LTDIE_67:
 LDIFF_SYM853=LTDIE_1 - Ldebug_info_start
 	.long LDIFF_SYM853
 	.byte 2,35,0,6
-	.asciz "dictionary"
+	.asciz "_dictionary"
 
 LDIFF_SYM854=LTDIE_64_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM854
@@ -29369,47 +29401,47 @@ LTDIE_64:
 LDIFF_SYM858=LTDIE_1 - Ldebug_info_start
 	.long LDIFF_SYM858
 	.byte 2,35,0,6
-	.asciz "buckets"
+	.asciz "_buckets"
 
 LDIFF_SYM859=LDIE_SZARRAY - Ldebug_info_start
 	.long LDIFF_SYM859
 	.byte 2,35,16,6
-	.asciz "entries"
+	.asciz "_entries"
 
 LDIFF_SYM860=LDIE_SZARRAY - Ldebug_info_start
 	.long LDIFF_SYM860
 	.byte 2,35,24,6
-	.asciz "count"
+	.asciz "_count"
 
 LDIFF_SYM861=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM861
 	.byte 2,35,64,6
-	.asciz "version"
+	.asciz "_freeList"
 
 LDIFF_SYM862=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM862
 	.byte 2,35,68,6
-	.asciz "freeList"
+	.asciz "_freeCount"
 
 LDIFF_SYM863=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM863
 	.byte 2,35,72,6
-	.asciz "freeCount"
+	.asciz "_version"
 
 LDIFF_SYM864=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM864
 	.byte 2,35,76,6
-	.asciz "comparer"
+	.asciz "_comparer"
 
 LDIFF_SYM865=LTDIE_65_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM865
 	.byte 2,35,32,6
-	.asciz "keys"
+	.asciz "_keys"
 
 LDIFF_SYM866=LTDIE_66_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM866
 	.byte 2,35,40,6
-	.asciz "values"
+	.asciz "_values"
 
 LDIFF_SYM867=LTDIE_67_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM867
@@ -29442,7 +29474,7 @@ LTDIE_69:
 LDIFF_SYM872=LTDIE_1 - Ldebug_info_start
 	.long LDIFF_SYM872
 	.byte 2,35,0,6
-	.asciz "dictionary"
+	.asciz "_dictionary"
 
 LDIFF_SYM873=LTDIE_68_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM873
@@ -29470,7 +29502,7 @@ LTDIE_70:
 LDIFF_SYM877=LTDIE_1 - Ldebug_info_start
 	.long LDIFF_SYM877
 	.byte 2,35,0,6
-	.asciz "dictionary"
+	.asciz "_dictionary"
 
 LDIFF_SYM878=LTDIE_68_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM878
@@ -29498,47 +29530,47 @@ LTDIE_68:
 LDIFF_SYM882=LTDIE_1 - Ldebug_info_start
 	.long LDIFF_SYM882
 	.byte 2,35,0,6
-	.asciz "buckets"
+	.asciz "_buckets"
 
 LDIFF_SYM883=LDIE_SZARRAY - Ldebug_info_start
 	.long LDIFF_SYM883
 	.byte 2,35,16,6
-	.asciz "entries"
+	.asciz "_entries"
 
 LDIFF_SYM884=LDIE_SZARRAY - Ldebug_info_start
 	.long LDIFF_SYM884
 	.byte 2,35,24,6
-	.asciz "count"
+	.asciz "_count"
 
 LDIFF_SYM885=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM885
 	.byte 2,35,64,6
-	.asciz "version"
+	.asciz "_freeList"
 
 LDIFF_SYM886=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM886
 	.byte 2,35,68,6
-	.asciz "freeList"
+	.asciz "_freeCount"
 
 LDIFF_SYM887=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM887
 	.byte 2,35,72,6
-	.asciz "freeCount"
+	.asciz "_version"
 
 LDIFF_SYM888=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM888
 	.byte 2,35,76,6
-	.asciz "comparer"
+	.asciz "_comparer"
 
 LDIFF_SYM889=LTDIE_65_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM889
 	.byte 2,35,32,6
-	.asciz "keys"
+	.asciz "_keys"
 
 LDIFF_SYM890=LTDIE_69_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM890
 	.byte 2,35,40,6
-	.asciz "values"
+	.asciz "_values"
 
 LDIFF_SYM891=LTDIE_70_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM891
@@ -29571,7 +29603,7 @@ LTDIE_72:
 LDIFF_SYM896=LTDIE_1 - Ldebug_info_start
 	.long LDIFF_SYM896
 	.byte 2,35,0,6
-	.asciz "dictionary"
+	.asciz "_dictionary"
 
 LDIFF_SYM897=LTDIE_71_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM897
@@ -29599,7 +29631,7 @@ LTDIE_73:
 LDIFF_SYM901=LTDIE_1 - Ldebug_info_start
 	.long LDIFF_SYM901
 	.byte 2,35,0,6
-	.asciz "dictionary"
+	.asciz "_dictionary"
 
 LDIFF_SYM902=LTDIE_71_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM902
@@ -29627,47 +29659,47 @@ LTDIE_71:
 LDIFF_SYM906=LTDIE_1 - Ldebug_info_start
 	.long LDIFF_SYM906
 	.byte 2,35,0,6
-	.asciz "buckets"
+	.asciz "_buckets"
 
 LDIFF_SYM907=LDIE_SZARRAY - Ldebug_info_start
 	.long LDIFF_SYM907
 	.byte 2,35,16,6
-	.asciz "entries"
+	.asciz "_entries"
 
 LDIFF_SYM908=LDIE_SZARRAY - Ldebug_info_start
 	.long LDIFF_SYM908
 	.byte 2,35,24,6
-	.asciz "count"
+	.asciz "_count"
 
 LDIFF_SYM909=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM909
 	.byte 2,35,64,6
-	.asciz "version"
+	.asciz "_freeList"
 
 LDIFF_SYM910=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM910
 	.byte 2,35,68,6
-	.asciz "freeList"
+	.asciz "_freeCount"
 
 LDIFF_SYM911=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM911
 	.byte 2,35,72,6
-	.asciz "freeCount"
+	.asciz "_version"
 
 LDIFF_SYM912=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM912
 	.byte 2,35,76,6
-	.asciz "comparer"
+	.asciz "_comparer"
 
 LDIFF_SYM913=LTDIE_18_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM913
 	.byte 2,35,32,6
-	.asciz "keys"
+	.asciz "_keys"
 
 LDIFF_SYM914=LTDIE_72_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM914
 	.byte 2,35,40,6
-	.asciz "values"
+	.asciz "_values"
 
 LDIFF_SYM915=LTDIE_73_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM915
@@ -29700,7 +29732,7 @@ LTDIE_75:
 LDIFF_SYM920=LTDIE_1 - Ldebug_info_start
 	.long LDIFF_SYM920
 	.byte 2,35,0,6
-	.asciz "dictionary"
+	.asciz "_dictionary"
 
 LDIFF_SYM921=LTDIE_74_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM921
@@ -29728,7 +29760,7 @@ LTDIE_76:
 LDIFF_SYM925=LTDIE_1 - Ldebug_info_start
 	.long LDIFF_SYM925
 	.byte 2,35,0,6
-	.asciz "dictionary"
+	.asciz "_dictionary"
 
 LDIFF_SYM926=LTDIE_74_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM926
@@ -29756,47 +29788,47 @@ LTDIE_74:
 LDIFF_SYM930=LTDIE_1 - Ldebug_info_start
 	.long LDIFF_SYM930
 	.byte 2,35,0,6
-	.asciz "buckets"
+	.asciz "_buckets"
 
 LDIFF_SYM931=LDIE_SZARRAY - Ldebug_info_start
 	.long LDIFF_SYM931
 	.byte 2,35,16,6
-	.asciz "entries"
+	.asciz "_entries"
 
 LDIFF_SYM932=LDIE_SZARRAY - Ldebug_info_start
 	.long LDIFF_SYM932
 	.byte 2,35,24,6
-	.asciz "count"
+	.asciz "_count"
 
 LDIFF_SYM933=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM933
 	.byte 2,35,64,6
-	.asciz "version"
+	.asciz "_freeList"
 
 LDIFF_SYM934=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM934
 	.byte 2,35,68,6
-	.asciz "freeList"
+	.asciz "_freeCount"
 
 LDIFF_SYM935=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM935
 	.byte 2,35,72,6
-	.asciz "freeCount"
+	.asciz "_version"
 
 LDIFF_SYM936=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM936
 	.byte 2,35,76,6
-	.asciz "comparer"
+	.asciz "_comparer"
 
 LDIFF_SYM937=LTDIE_65_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM937
 	.byte 2,35,32,6
-	.asciz "keys"
+	.asciz "_keys"
 
 LDIFF_SYM938=LTDIE_75_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM938
 	.byte 2,35,40,6
-	.asciz "values"
+	.asciz "_values"
 
 LDIFF_SYM939=LTDIE_76_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM939
@@ -29864,7 +29896,7 @@ LTDIE_79:
 LDIFF_SYM948=LTDIE_1 - Ldebug_info_start
 	.long LDIFF_SYM948
 	.byte 2,35,0,6
-	.asciz "dictionary"
+	.asciz "_dictionary"
 
 LDIFF_SYM949=LTDIE_78_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM949
@@ -29892,7 +29924,7 @@ LTDIE_80:
 LDIFF_SYM953=LTDIE_1 - Ldebug_info_start
 	.long LDIFF_SYM953
 	.byte 2,35,0,6
-	.asciz "dictionary"
+	.asciz "_dictionary"
 
 LDIFF_SYM954=LTDIE_78_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM954
@@ -29920,47 +29952,47 @@ LTDIE_78:
 LDIFF_SYM958=LTDIE_1 - Ldebug_info_start
 	.long LDIFF_SYM958
 	.byte 2,35,0,6
-	.asciz "buckets"
+	.asciz "_buckets"
 
 LDIFF_SYM959=LDIE_SZARRAY - Ldebug_info_start
 	.long LDIFF_SYM959
 	.byte 2,35,16,6
-	.asciz "entries"
+	.asciz "_entries"
 
 LDIFF_SYM960=LDIE_SZARRAY - Ldebug_info_start
 	.long LDIFF_SYM960
 	.byte 2,35,24,6
-	.asciz "count"
+	.asciz "_count"
 
 LDIFF_SYM961=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM961
 	.byte 2,35,64,6
-	.asciz "version"
+	.asciz "_freeList"
 
 LDIFF_SYM962=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM962
 	.byte 2,35,68,6
-	.asciz "freeList"
+	.asciz "_freeCount"
 
 LDIFF_SYM963=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM963
 	.byte 2,35,72,6
-	.asciz "freeCount"
+	.asciz "_version"
 
 LDIFF_SYM964=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM964
 	.byte 2,35,76,6
-	.asciz "comparer"
+	.asciz "_comparer"
 
 LDIFF_SYM965=LTDIE_18_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM965
 	.byte 2,35,32,6
-	.asciz "keys"
+	.asciz "_keys"
 
 LDIFF_SYM966=LTDIE_79_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM966
 	.byte 2,35,40,6
-	.asciz "values"
+	.asciz "_values"
 
 LDIFF_SYM967=LTDIE_80_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM967
@@ -30345,7 +30377,7 @@ LTDIE_91:
 LDIFF_SYM1031=LTDIE_1 - Ldebug_info_start
 	.long LDIFF_SYM1031
 	.byte 2,35,0,6
-	.asciz "dictionary"
+	.asciz "_dictionary"
 
 LDIFF_SYM1032=LTDIE_90_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM1032
@@ -30373,7 +30405,7 @@ LTDIE_92:
 LDIFF_SYM1036=LTDIE_1 - Ldebug_info_start
 	.long LDIFF_SYM1036
 	.byte 2,35,0,6
-	.asciz "dictionary"
+	.asciz "_dictionary"
 
 LDIFF_SYM1037=LTDIE_90_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM1037
@@ -30401,47 +30433,47 @@ LTDIE_90:
 LDIFF_SYM1041=LTDIE_1 - Ldebug_info_start
 	.long LDIFF_SYM1041
 	.byte 2,35,0,6
-	.asciz "buckets"
+	.asciz "_buckets"
 
 LDIFF_SYM1042=LDIE_SZARRAY - Ldebug_info_start
 	.long LDIFF_SYM1042
 	.byte 2,35,16,6
-	.asciz "entries"
+	.asciz "_entries"
 
 LDIFF_SYM1043=LDIE_SZARRAY - Ldebug_info_start
 	.long LDIFF_SYM1043
 	.byte 2,35,24,6
-	.asciz "count"
+	.asciz "_count"
 
 LDIFF_SYM1044=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM1044
 	.byte 2,35,64,6
-	.asciz "version"
+	.asciz "_freeList"
 
 LDIFF_SYM1045=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM1045
 	.byte 2,35,68,6
-	.asciz "freeList"
+	.asciz "_freeCount"
 
 LDIFF_SYM1046=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM1046
 	.byte 2,35,72,6
-	.asciz "freeCount"
+	.asciz "_version"
 
 LDIFF_SYM1047=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM1047
 	.byte 2,35,76,6
-	.asciz "comparer"
+	.asciz "_comparer"
 
 LDIFF_SYM1048=LTDIE_65_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM1048
 	.byte 2,35,32,6
-	.asciz "keys"
+	.asciz "_keys"
 
 LDIFF_SYM1049=LTDIE_91_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM1049
 	.byte 2,35,40,6
-	.asciz "values"
+	.asciz "_values"
 
 LDIFF_SYM1050=LTDIE_92_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM1050
@@ -42416,7 +42448,7 @@ Lfde276_end:
 	.asciz "System.Array:InternalArray__ICollection_Clear"
 	.asciz "System_Array_InternalArray__ICollection_Clear"
 
-	.byte 2,76
+	.byte 2,79
 	.quad System_Array_InternalArray__ICollection_Clear
 	.quad Lme_121
 
@@ -42450,7 +42482,7 @@ Lfde277_end:
 	.asciz "System.Array:InternalArray__ICollection_Add<T_REF>"
 	.asciz "System_Array_InternalArray__ICollection_Add_T_REF_T_REF"
 
-	.byte 2,81
+	.byte 2,84
 	.quad System_Array_InternalArray__ICollection_Add_T_REF_T_REF
 	.quad Lme_122
 
@@ -42489,7 +42521,7 @@ Lfde278_end:
 	.asciz "System.Array:InternalArray__ICollection_Remove<T_REF>"
 	.asciz "System_Array_InternalArray__ICollection_Remove_T_REF_T_REF"
 
-	.byte 2,86
+	.byte 2,89
 	.quad System_Array_InternalArray__ICollection_Remove_T_REF_T_REF
 	.quad Lme_123
 
@@ -42528,7 +42560,7 @@ Lfde279_end:
 	.asciz "System.Array:InternalArray__ICollection_Contains<T_REF>"
 	.asciz "System_Array_InternalArray__ICollection_Contains_T_REF_T_REF"
 
-	.byte 2,91
+	.byte 2,94
 	.quad System_Array_InternalArray__ICollection_Contains_T_REF_T_REF
 	.quad Lme_124
 
@@ -42582,7 +42614,7 @@ Lfde280_end:
 	.asciz "System.Array:InternalArray__ICollection_CopyTo<T_REF>"
 	.asciz "System_Array_InternalArray__ICollection_CopyTo_T_REF_T_REF___int"
 
-	.byte 2,116
+	.byte 2,119
 	.quad System_Array_InternalArray__ICollection_CopyTo_T_REF_T_REF___int
 	.quad Lme_125
 
@@ -43085,7 +43117,7 @@ LDIFF_SYM2662=LTDIE_167 - Ldebug_info_start
 	.asciz "System.Array/InternalEnumerator`1<T_REF>:.ctor"
 	.asciz "System_Array_InternalEnumerator_1_T_REF__ctor_System_Array"
 
-	.byte 2,215,1
+	.byte 2,218,1
 	.quad System_Array_InternalEnumerator_1_T_REF__ctor_System_Array
 	.quad Lme_12b
 

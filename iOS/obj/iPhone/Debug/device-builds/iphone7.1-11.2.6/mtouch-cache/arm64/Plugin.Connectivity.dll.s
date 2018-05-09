@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.8.0 (tarball Thu Mar 29 18:51:02 EDT 2018)"
+	.asciz "Mono AOT Compiler 5.10.1 (tarball Wed Apr 25 14:36:22 EDT 2018)"
 	.asciz "Plugin.Connectivity.dll"
 	.asciz ""
 
@@ -616,10 +616,10 @@ ldr x0, [x16, #208]
 .word 0x910003bf
 .word 0xa8c67bfd
 .word 0xd65f03c0
-.word 0xd2801f00
+.word 0xd2802020
 .word 0xaa1103e1
 bl _p_10
-.word 0xd2801220
+.word 0xd2801340
 .word 0xaa1103e1
 bl _p_10
 
@@ -782,10 +782,10 @@ ldr x0, [x16, #208]
 .word 0x910003bf
 .word 0xa8c57bfd
 .word 0xd65f03c0
-.word 0xd2801f00
+.word 0xd2802020
 .word 0xaa1103e1
 bl _p_10
-.word 0xd2801220
+.word 0xd2801340
 .word 0xaa1103e1
 bl _p_10
 
@@ -965,10 +965,10 @@ bl _p_13
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
-.word 0xd2801f00
+.word 0xd2802020
 .word 0xaa1103e1
 bl _p_10
-.word 0xd2801220
+.word 0xd2801340
 .word 0xaa1103e1
 bl _p_10
 
@@ -978,7 +978,7 @@ Lme_7:
 	.no_dead_strip Plugin_Connectivity_ConnectivityImplementation_ReachabilityChanged_object_System_EventArgs
 Plugin_Connectivity_ConnectivityImplementation_ReachabilityChanged_object_System_EventArgs:
 .loc 1 1 0
-.word 0xa9ae7bfd
+.word 0xa9b17bfd
 .word 0x910003fd
 .word 0xf9000ba0
 .word 0xf9000fa1
@@ -990,21 +990,21 @@ ldr x16, [x16, #448]
 .word 0xf90017b0
 .word 0xf9400a11
 .word 0xf9001bb1
-.word 0x910363a0
+.word 0x910283a0
 .word 0xd2800000
-.word 0xf9006fa0
-.word 0xf90073a0
-.word 0xf90077a0
-.word 0xf9007ba0
-.word 0xf9007fa0
-.word 0xf90083a0
-.word 0xf90087a0
-.word 0x9102e3a0
-.word 0xd2800000
+.word 0xf90053a0
+.word 0xf90057a0
+.word 0xf9005ba0
 .word 0xf9005fa0
 .word 0xf90063a0
 .word 0xf90067a0
 .word 0xf9006ba0
+.word 0x910203a0
+.word 0xd2800000
+.word 0xf90043a0
+.word 0xf90047a0
+.word 0xf9004ba0
+.word 0xf9004fa0
 .word 0xf94017b1
 .word 0xf9407631
 .word 0xb4000051
@@ -1017,9 +1017,9 @@ ldr x16, [x16, #448]
 .word 0xf9409631
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910363a1
+.word 0x910283a1
 .word 0xf9400ba0
-.word 0xf90083a0
+.word 0xf90067a0
 .word 0x9100a021
 .word 0xd349fc21
 .word 0xd29ffffe
@@ -1036,20 +1036,20 @@ ldr x2, [x16, #16]
 .word 0xf940de31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910363a0
-.word 0xf9008ba0
-.word 0x910263a0
+.word 0x910283a0
+.word 0xf90073a0
+.word 0x910183a0
 .word 0xaa0003e8
 bl _p_14
 .word 0xf94017b1
 .word 0xf9410231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf9408ba0
-.word 0x910263a1
+.word 0xf94073a0
+.word 0x910183a1
 .word 0x91002002
 .word 0xaa0203e0
-.word 0xf9404fa1
+.word 0xf94033a1
 .word 0xf9000041
 .word 0xd349fc02
 .word 0xd29ffffe
@@ -1063,7 +1063,7 @@ ldr x3, [x16, #16]
 .word 0xd280003e
 .word 0x3900005e
 .word 0x91002000
-.word 0xf94053a1
+.word 0xf94037a1
 .word 0xf9000001
 .word 0xd349fc02
 .word 0xd29ffffe
@@ -1077,7 +1077,7 @@ ldr x3, [x16, #16]
 .word 0xd280003e
 .word 0x3900005e
 .word 0x91002000
-.word 0xf94057a1
+.word 0xf9403ba1
 .word 0xf9000001
 .word 0xd349fc02
 .word 0xd29ffffe
@@ -1091,7 +1091,7 @@ ldr x3, [x16, #16]
 .word 0xd280003e
 .word 0x3900005e
 .word 0x91002001
-.word 0xf9405ba0
+.word 0xf9403fa0
 .word 0xf9000020
 .word 0xd349fc21
 .word 0xd29ffffe
@@ -1108,33 +1108,17 @@ ldr x2, [x16, #16]
 .word 0xf941ee31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910363a0
+.word 0x910283a0
 .word 0x92800000
 .word 0xf2bfffe0
 .word 0x9280001e
 .word 0xf2bffffe
-.word 0xb900dbbe
+.word 0xb900a3be
 .word 0xf94017b1
 .word 0xf9421631
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910363a0
-.word 0x910183a0
-.word 0xf9406fa0
-.word 0xf90033a0
-.word 0xf94073a0
-.word 0xf90037a0
-.word 0xf94077a0
-.word 0xf9003ba0
-.word 0xf9407ba0
-.word 0xf9003fa0
-.word 0xf9407fa0
-.word 0xf90043a0
-.word 0xf94083a0
-.word 0xf90047a0
-.word 0xf94087a0
-.word 0xf9004ba0
-.word 0x910183a0
+.word 0x910283a0
 .word 0x91002000
 .word 0x910103a1
 .word 0xf9400001
@@ -1146,40 +1130,40 @@ ldr x2, [x16, #16]
 .word 0xf9400c00
 .word 0xf9002fa0
 .word 0x910103a0
-.word 0x9102e3a0
+.word 0x910203a0
 .word 0xf94023a0
-.word 0xf9005fa0
+.word 0xf90043a0
 .word 0xf94027a0
-.word 0xf90063a0
+.word 0xf90047a0
 .word 0xf9402ba0
-.word 0xf90067a0
+.word 0xf9004ba0
 .word 0xf9402fa0
-.word 0xf9006ba0
+.word 0xf9004fa0
 .word 0xf94017b1
-.word 0xf942ba31
+.word 0xf9427a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x9102e3a0
-.word 0x910363a1
+.word 0x910203a0
+.word 0x910283a1
 
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x15, [x16, #456]
 bl _p_15
 .word 0xf94017b1
-.word 0xf942e231
+.word 0xf942a231
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94017b1
-.word 0xf942f231
+.word 0xf942b231
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94017b1
-.word 0xf9430231
+.word 0xf942c231
 .word 0xb4000051
 .word 0xd63f0220
 .word 0x910003bf
-.word 0xa8d27bfd
+.word 0xa8cf7bfd
 .word 0xd65f03c0
 
 Lme_8:
@@ -1606,7 +1590,7 @@ Lme_a:
 	.no_dead_strip Plugin_Connectivity_ConnectivityImplementation_IsReachable_string_int
 Plugin_Connectivity_ConnectivityImplementation_IsReachable_string_int:
 .loc 1 1 0
-.word 0xa9ae7bfd
+.word 0xa9b27bfd
 .word 0x910003fd
 .word 0xf9000ba0
 .word 0xf9000fa1
@@ -1618,21 +1602,21 @@ ldr x16, [x16, #504]
 .word 0xf90017b0
 .word 0xf9400a11
 .word 0xf9001bb1
-.word 0x910323a0
+.word 0x910223a0
 .word 0xd2800000
-.word 0xf90067a0
-.word 0xf9006ba0
-.word 0xf9006fa0
-.word 0xf90073a0
-.word 0xf90077a0
-.word 0xf9007ba0
-.word 0xf9007fa0
-.word 0xf90083a0
-.word 0x9102c3a0
-.word 0xd2800000
+.word 0xf90047a0
+.word 0xf9004ba0
+.word 0xf9004fa0
+.word 0xf90053a0
+.word 0xf90057a0
 .word 0xf9005ba0
 .word 0xf9005fa0
 .word 0xf90063a0
+.word 0x9101c3a0
+.word 0xd2800000
+.word 0xf9003ba0
+.word 0xf9003fa0
+.word 0xf90043a0
 .word 0xf94017b1
 .word 0xf9407631
 .word 0xb4000051
@@ -1645,9 +1629,9 @@ ldr x16, [x16, #504]
 .word 0xf9409631
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910323a1
+.word 0x910223a1
 .word 0xf9400ba0
-.word 0xf9007ba0
+.word 0xf9005ba0
 .word 0x9100a021
 .word 0xd349fc21
 .word 0xd29ffffe
@@ -1664,9 +1648,9 @@ ldr x2, [x16, #16]
 .word 0xf940de31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910323a1
+.word 0x910223a1
 .word 0xf9400fa0
-.word 0xf90077a0
+.word 0xf90057a0
 .word 0x91008021
 .word 0xd349fc21
 .word 0xd29ffffe
@@ -1683,31 +1667,31 @@ ldr x2, [x16, #16]
 .word 0xf9412631
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910323a0
+.word 0x910223a0
 .word 0xb98023a0
-.word 0xb900fba0
+.word 0xb900bba0
 .word 0xf94017b1
 .word 0xf9414231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910323a0
-.word 0xf9008fa0
+.word 0x910223a0
+.word 0xf9006fa0
 
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x15, [x16, #512]
-.word 0x910263a0
+.word 0x910163a0
 .word 0xaa0003e8
 bl _p_27
 .word 0xf94017b1
 .word 0xf9417231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf9408fa0
-.word 0x910263a1
+.word 0xf9406fa0
+.word 0x910163a1
 .word 0x91002002
 .word 0xaa0203e0
-.word 0xf9404fa1
+.word 0xf9402fa1
 .word 0xf9000041
 .word 0xd349fc02
 .word 0xd29ffffe
@@ -1721,7 +1705,7 @@ ldr x3, [x16, #16]
 .word 0xd280003e
 .word 0x3900005e
 .word 0x91002000
-.word 0xf94053a1
+.word 0xf94033a1
 .word 0xf9000001
 .word 0xd349fc02
 .word 0xd29ffffe
@@ -1735,7 +1719,7 @@ ldr x3, [x16, #16]
 .word 0xd280003e
 .word 0x3900005e
 .word 0x91002001
-.word 0xf94057a0
+.word 0xf94037a0
 .word 0xf9000020
 .word 0xd349fc21
 .word 0xd29ffffe
@@ -1752,35 +1736,17 @@ ldr x2, [x16, #16]
 .word 0xf9422a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910323a0
+.word 0x910223a0
 .word 0x92800000
 .word 0xf2bfffe0
 .word 0x9280001e
 .word 0xf2bffffe
-.word 0xb900cbbe
+.word 0xb9008bbe
 .word 0xf94017b1
 .word 0xf9425231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910323a0
-.word 0x910163a0
-.word 0xf94067a0
-.word 0xf9002fa0
-.word 0xf9406ba0
-.word 0xf90033a0
-.word 0xf9406fa0
-.word 0xf90037a0
-.word 0xf94073a0
-.word 0xf9003ba0
-.word 0xf94077a0
-.word 0xf9003fa0
-.word 0xf9407ba0
-.word 0xf90043a0
-.word 0xf9407fa0
-.word 0xf90047a0
-.word 0xf94083a0
-.word 0xf9004ba0
-.word 0x910163a0
+.word 0x910223a0
 .word 0x91002000
 .word 0x910103a1
 .word 0xf9400001
@@ -1790,42 +1756,42 @@ ldr x2, [x16, #16]
 .word 0xf9400800
 .word 0xf9002ba0
 .word 0x910103a0
-.word 0x9102c3a0
+.word 0x9101c3a0
 .word 0xf94023a0
-.word 0xf9005ba0
+.word 0xf9003ba0
 .word 0xf94027a0
-.word 0xf9005fa0
+.word 0xf9003fa0
 .word 0xf9402ba0
-.word 0xf90063a0
+.word 0xf90043a0
 .word 0xf94017b1
-.word 0xf942ee31
+.word 0xf942a631
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x9102c3a0
-.word 0x910323a1
+.word 0x9101c3a0
+.word 0x910223a1
 
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x15, [x16, #520]
 bl _p_28
 .word 0xf94017b1
-.word 0xf9431631
+.word 0xf942ce31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94017b1
-.word 0xf9432631
+.word 0xf942de31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910323a0
+.word 0x910223a0
 .word 0x91002000
 
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x15, [x16, #512]
 bl _p_29
-.word 0xf9008ba0
+.word 0xf9006ba0
 .word 0xf94017b1
-.word 0xf9435231
+.word 0xf9430a31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9401bb1
@@ -1833,16 +1799,16 @@ bl _p_29
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94017b1
-.word 0xf9437231
+.word 0xf9432a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf9408ba0
+.word 0xf9406ba0
 .word 0xf94017b1
-.word 0xf9438631
+.word 0xf9433e31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0x910003bf
-.word 0xa8d27bfd
+.word 0xa8ce7bfd
 .word 0xd65f03c0
 
 Lme_b:
@@ -1851,7 +1817,7 @@ Lme_b:
 	.no_dead_strip Plugin_Connectivity_ConnectivityImplementation_IsRemoteReachable_string_int_int
 Plugin_Connectivity_ConnectivityImplementation_IsRemoteReachable_string_int_int:
 .loc 1 1 0
-.word 0xa9ae7bfd
+.word 0xa9b27bfd
 .word 0x910003fd
 .word 0xf9000ba0
 .word 0xf9000fa1
@@ -1864,21 +1830,21 @@ ldr x16, [x16, #528]
 .word 0xf9001bb0
 .word 0xf9400a11
 .word 0xf9001fb1
-.word 0x910343a0
+.word 0x910243a0
 .word 0xd2800000
-.word 0xf9006ba0
-.word 0xf9006fa0
-.word 0xf90073a0
-.word 0xf90077a0
-.word 0xf9007ba0
-.word 0xf9007fa0
-.word 0xf90083a0
-.word 0xf90087a0
-.word 0x9102e3a0
-.word 0xd2800000
+.word 0xf9004ba0
+.word 0xf9004fa0
+.word 0xf90053a0
+.word 0xf90057a0
+.word 0xf9005ba0
 .word 0xf9005fa0
 .word 0xf90063a0
 .word 0xf90067a0
+.word 0x9101e3a0
+.word 0xd2800000
+.word 0xf9003fa0
+.word 0xf90043a0
+.word 0xf90047a0
 .word 0xf9401bb1
 .word 0xf9407a31
 .word 0xb4000051
@@ -1891,9 +1857,9 @@ ldr x16, [x16, #528]
 .word 0xf9409a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910343a1
+.word 0x910243a1
 .word 0xf9400ba0
-.word 0xf90083a0
+.word 0xf90063a0
 .word 0x9100c021
 .word 0xd349fc21
 .word 0xd29ffffe
@@ -1910,9 +1876,9 @@ ldr x2, [x16, #16]
 .word 0xf940e231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910343a1
+.word 0x910243a1
 .word 0xf9400fa0
-.word 0xf9007ba0
+.word 0xf9005ba0
 .word 0x91008021
 .word 0xd349fc21
 .word 0xd29ffffe
@@ -1929,38 +1895,38 @@ ldr x2, [x16, #16]
 .word 0xf9412a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910343a0
+.word 0x910243a0
 .word 0xb98023a0
-.word 0xb900fba0
+.word 0xb900bba0
 .word 0xf9401bb1
 .word 0xf9414631
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910343a0
+.word 0x910243a0
 .word 0xb9802ba0
-.word 0xb900ffa0
+.word 0xb900bfa0
 .word 0xf9401bb1
 .word 0xf9416231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910343a0
-.word 0xf9008fa0
+.word 0x910243a0
+.word 0xf9006fa0
 
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x15, [x16, #512]
-.word 0x910283a0
+.word 0x910183a0
 .word 0xaa0003e8
 bl _p_27
 .word 0xf9401bb1
 .word 0xf9419231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf9408fa0
-.word 0x910283a1
+.word 0xf9406fa0
+.word 0x910183a1
 .word 0x91002002
 .word 0xaa0203e0
-.word 0xf94053a1
+.word 0xf94033a1
 .word 0xf9000041
 .word 0xd349fc02
 .word 0xd29ffffe
@@ -1974,7 +1940,7 @@ ldr x3, [x16, #16]
 .word 0xd280003e
 .word 0x3900005e
 .word 0x91002000
-.word 0xf94057a1
+.word 0xf94037a1
 .word 0xf9000001
 .word 0xd349fc02
 .word 0xd29ffffe
@@ -1988,7 +1954,7 @@ ldr x3, [x16, #16]
 .word 0xd280003e
 .word 0x3900005e
 .word 0x91002001
-.word 0xf9405ba0
+.word 0xf9403ba0
 .word 0xf9000020
 .word 0xd349fc21
 .word 0xd29ffffe
@@ -2005,35 +1971,17 @@ ldr x2, [x16, #16]
 .word 0xf9424a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910343a0
+.word 0x910243a0
 .word 0x92800000
 .word 0xf2bfffe0
 .word 0x9280001e
 .word 0xf2bffffe
-.word 0xb900d3be
+.word 0xb90093be
 .word 0xf9401bb1
 .word 0xf9427231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910343a0
-.word 0x910183a0
-.word 0xf9406ba0
-.word 0xf90033a0
-.word 0xf9406fa0
-.word 0xf90037a0
-.word 0xf94073a0
-.word 0xf9003ba0
-.word 0xf94077a0
-.word 0xf9003fa0
-.word 0xf9407ba0
-.word 0xf90043a0
-.word 0xf9407fa0
-.word 0xf90047a0
-.word 0xf94083a0
-.word 0xf9004ba0
-.word 0xf94087a0
-.word 0xf9004fa0
-.word 0x910183a0
+.word 0x910243a0
 .word 0x91002000
 .word 0x910123a1
 .word 0xf9400001
@@ -2043,42 +1991,42 @@ ldr x2, [x16, #16]
 .word 0xf9400800
 .word 0xf9002fa0
 .word 0x910123a0
-.word 0x9102e3a0
+.word 0x9101e3a0
 .word 0xf94027a0
-.word 0xf9005fa0
+.word 0xf9003fa0
 .word 0xf9402ba0
-.word 0xf90063a0
+.word 0xf90043a0
 .word 0xf9402fa0
-.word 0xf90067a0
+.word 0xf90047a0
 .word 0xf9401bb1
-.word 0xf9430e31
+.word 0xf942c631
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x9102e3a0
-.word 0x910343a1
+.word 0x9101e3a0
+.word 0x910243a1
 
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x15, [x16, #536]
 bl _p_30
 .word 0xf9401bb1
-.word 0xf9433631
+.word 0xf942ee31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9401bb1
-.word 0xf9434631
+.word 0xf942fe31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910343a0
+.word 0x910243a0
 .word 0x91002000
 
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x15, [x16, #512]
 bl _p_29
-.word 0xf9008ba0
+.word 0xf9006ba0
 .word 0xf9401bb1
-.word 0xf9437231
+.word 0xf9432a31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9401fb1
@@ -2086,16 +2034,16 @@ bl _p_29
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9401bb1
-.word 0xf9439231
+.word 0xf9434a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf9408ba0
+.word 0xf9406ba0
 .word 0xf9401bb1
-.word 0xf943a631
+.word 0xf9435e31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0x910003bf
-.word 0xa8d27bfd
+.word 0xa8ce7bfd
 .word 0xd65f03c0
 
 Lme_c:
@@ -2368,10 +2316,10 @@ bl _p_35
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
-.word 0xd2801f00
+.word 0xd2802020
 .word 0xaa1103e1
 bl _p_10
-.word 0xd2801220
+.word 0xd2801340
 .word 0xaa1103e1
 bl _p_10
 
@@ -3155,7 +3103,7 @@ ldr x1, [x16, #664]
 .word 0x54000061
 .word 0xc811fc16
 .word 0x35ffff91
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xaa1003e1
 .word 0xf9002fa1
 .word 0xd349fc00
@@ -3199,7 +3147,7 @@ ldr x1, [x16, #16]
 .word 0x910003bf
 .word 0xa8c67bfd
 .word 0xd65f03c0
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_10
 
@@ -3300,7 +3248,7 @@ ldr x1, [x16, #664]
 .word 0x54000061
 .word 0xc811fc16
 .word 0x35ffff91
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xaa1003e1
 .word 0xf9002fa1
 .word 0xd349fc00
@@ -3344,7 +3292,7 @@ ldr x1, [x16, #16]
 .word 0x910003bf
 .word 0xa8c67bfd
 .word 0xd65f03c0
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_10
 
@@ -3354,7 +3302,7 @@ Lme_15:
 	.no_dead_strip Plugin_Connectivity_Reachability_OnChange_SystemConfiguration_NetworkReachabilityFlags
 Plugin_Connectivity_Reachability_OnChange_SystemConfiguration_NetworkReachabilityFlags:
 .loc 1 1 0
-.word 0xa9b07bfd
+.word 0xa9b37bfd
 .word 0x910003fd
 .word 0xf9000ba0
 
@@ -3364,20 +3312,20 @@ ldr x16, [x16, #680]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
-.word 0x910303a0
+.word 0x910243a0
 .word 0xd2800000
-.word 0xf90063a0
-.word 0xf90067a0
-.word 0xf9006ba0
-.word 0xf9006fa0
-.word 0xf90073a0
-.word 0xf90077a0
-.word 0x910283a0
-.word 0xd2800000
+.word 0xf9004ba0
+.word 0xf9004fa0
 .word 0xf90053a0
 .word 0xf90057a0
 .word 0xf9005ba0
 .word 0xf9005fa0
+.word 0x9101c3a0
+.word 0xd2800000
+.word 0xf9003ba0
+.word 0xf9003fa0
+.word 0xf90043a0
+.word 0xf90047a0
 .word 0xf9400fb1
 .word 0xf9406a31
 .word 0xb4000051
@@ -3390,20 +3338,20 @@ ldr x16, [x16, #680]
 .word 0xf9408a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910303a0
-.word 0xf9007ba0
-.word 0x910203a0
+.word 0x910243a0
+.word 0xf90063a0
+.word 0x910143a0
 .word 0xaa0003e8
 bl _p_14
 .word 0xf9400fb1
 .word 0xf940ae31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf9407ba0
-.word 0x910203a1
+.word 0xf94063a0
+.word 0x910143a1
 .word 0x91002002
 .word 0xaa0203e0
-.word 0xf94043a1
+.word 0xf9402ba1
 .word 0xf9000041
 .word 0xd349fc02
 .word 0xd29ffffe
@@ -3417,7 +3365,7 @@ ldr x3, [x16, #16]
 .word 0xd280003e
 .word 0x3900005e
 .word 0x91002000
-.word 0xf94047a1
+.word 0xf9402fa1
 .word 0xf9000001
 .word 0xd349fc02
 .word 0xd29ffffe
@@ -3431,7 +3379,7 @@ ldr x3, [x16, #16]
 .word 0xd280003e
 .word 0x3900005e
 .word 0x91002000
-.word 0xf9404ba1
+.word 0xf94033a1
 .word 0xf9000001
 .word 0xd349fc02
 .word 0xd29ffffe
@@ -3445,7 +3393,7 @@ ldr x3, [x16, #16]
 .word 0xd280003e
 .word 0x3900005e
 .word 0x91002001
-.word 0xf9404fa0
+.word 0xf94037a0
 .word 0xf9000020
 .word 0xd349fc21
 .word 0xd29ffffe
@@ -3462,31 +3410,17 @@ ldr x2, [x16, #16]
 .word 0xf9419a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910303a0
+.word 0x910243a0
 .word 0x92800000
 .word 0xf2bfffe0
 .word 0x9280001e
 .word 0xf2bffffe
-.word 0xb900c3be
+.word 0xb90093be
 .word 0xf9400fb1
 .word 0xf941c231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910303a0
-.word 0x910143a0
-.word 0xf94063a0
-.word 0xf9002ba0
-.word 0xf94067a0
-.word 0xf9002fa0
-.word 0xf9406ba0
-.word 0xf90033a0
-.word 0xf9406fa0
-.word 0xf90037a0
-.word 0xf94073a0
-.word 0xf9003ba0
-.word 0xf94077a0
-.word 0xf9003fa0
-.word 0x910143a0
+.word 0x910243a0
 .word 0x91002000
 .word 0x9100c3a1
 .word 0xf9400001
@@ -3498,40 +3432,40 @@ ldr x2, [x16, #16]
 .word 0xf9400c00
 .word 0xf90027a0
 .word 0x9100c3a0
-.word 0x910283a0
+.word 0x9101c3a0
 .word 0xf9401ba0
-.word 0xf90053a0
+.word 0xf9003ba0
 .word 0xf9401fa0
-.word 0xf90057a0
+.word 0xf9003fa0
 .word 0xf94023a0
-.word 0xf9005ba0
+.word 0xf90043a0
 .word 0xf94027a0
-.word 0xf9005fa0
+.word 0xf90047a0
 .word 0xf9400fb1
-.word 0xf9425e31
+.word 0xf9422631
 .word 0xb4000051
 .word 0xd63f0220
-.word 0x910283a0
-.word 0x910303a1
+.word 0x9101c3a0
+.word 0x910243a1
 
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x15, [x16, #688]
 bl _p_45
 .word 0xf9400fb1
-.word 0xf9428631
+.word 0xf9424e31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9400fb1
-.word 0xf9429631
+.word 0xf9425e31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9400fb1
-.word 0xf942a631
+.word 0xf9426e31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0x910003bf
-.word 0xa8d07bfd
+.word 0xa8cd7bfd
 .word 0xd65f03c0
 
 Lme_16:
@@ -5253,9 +5187,9 @@ ldr x0, [x16, #0]
 .word 0xd2803a41
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_3
@@ -6093,10 +6027,10 @@ bl _p_3
 .word 0x910003bf
 .word 0xa8cf7bfd
 .word 0xd65f03c0
-.word 0xd2801f00
+.word 0xd2802020
 .word 0xaa1103e1
 bl _p_10
-.word 0xd2801220
+.word 0xd2801340
 .word 0xaa1103e1
 bl _p_10
 
@@ -6374,9 +6308,9 @@ ldr x0, [x16, #0]
 .word 0xd2803a41
 bl _p_69
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_3
@@ -6877,13 +6811,13 @@ bl _p_75
 .word 0x910003bf
 .word 0xa8d17bfd
 .word 0xd65f03c0
-.word 0xd2801f00
+.word 0xd2802020
 .word 0xaa1103e1
 bl _p_10
-.word 0xd2801220
+.word 0xd2801340
 .word 0xaa1103e1
 bl _p_10
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_10
 
@@ -7239,7 +7173,7 @@ bl _p_95
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x15, [x16, #1176]
-.word 0x928012f0
+.word 0x928008f0
 .word 0xf2bffff0
 .word 0xf8706830
 .word 0xd63f0200
@@ -7294,7 +7228,7 @@ ldr x2, [x16, #16]
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x15, [x16, #1184]
-.word 0x928005f0
+.word 0x928001f0
 .word 0xf2bffff0
 .word 0xf8706830
 .word 0xd63f0200
@@ -7757,9 +7691,9 @@ ldr x16, [x16, #1216]
 .word 0xf9405231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd2801ee0
+.word 0xd2802000
 .word 0xf2a04000
-.word 0xd2801ee0
+.word 0xd2802000
 .word 0xf2a04000
 bl _mono_create_corlib_exception_0
 bl _p_3
@@ -8415,8 +8349,8 @@ b System_Array_InternalEnumerator_1_T_INT__ctor_System_Array
 	.align 4
 	.no_dead_strip System_Array_InternalEnumerator_1_T_INT__ctor_System_Array
 System_Array_InternalEnumerator_1_T_INT__ctor_System_Array:
-.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/mcs/class/corlib/System/Array.cs"
-.loc 2 215 0 prologue_end
+.file 2 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.10.1.177/src/Xamarin.iOS/mcs/class/corlib/System/Array.cs"
+.loc 2 218 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
 .word 0xf9000bb9
@@ -8457,7 +8391,7 @@ ldr x2, [x16, #16]
 .word 0x8b020021
 .word 0xd280003e
 .word 0x3900003e
-.loc 2 216 0
+.loc 2 219 0
 .word 0xf94013b1
 .word 0xf940a631
 .word 0xb4000051
@@ -8468,7 +8402,7 @@ ldr x2, [x16, #16]
 .word 0x9280003e
 .word 0xf2bffffe
 .word 0xb9000b3e
-.loc 2 217 0
+.loc 2 220 0
 .word 0xf94013b1
 .word 0xf940ce31
 .word 0xb4000051
@@ -8491,7 +8425,7 @@ b System_Array_InternalEnumerator_1_T_INT_Dispose
 	.align 4
 	.no_dead_strip System_Array_InternalEnumerator_1_T_INT_Dispose
 System_Array_InternalEnumerator_1_T_INT_Dispose:
-.loc 2 221 0 prologue_end
+.loc 2 224 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
 .word 0xf9001baf
@@ -8515,19 +8449,8 @@ ldr x16, [x16, #1296]
 .word 0xf9405631
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf9400ba0
-.word 0x92800021
-.word 0xf2bfffe1
-.word 0x9280003e
-.word 0xf2bffffe
-.word 0xb900081e
-.loc 2 222 0
 .word 0xf9400fb1
-.word 0xf9407e31
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xf9400fb1
-.word 0xf9408e31
+.word 0xf9406631
 .word 0xb4000051
 .word 0xd63f0220
 .word 0x910003bf
@@ -8543,7 +8466,7 @@ b System_Array_InternalEnumerator_1_T_INT_MoveNext
 	.align 4
 	.no_dead_strip System_Array_InternalEnumerator_1_T_INT_MoveNext
 System_Array_InternalEnumerator_1_T_INT_MoveNext:
-.loc 2 226 0 prologue_end
+.loc 2 228 0 prologue_end
 .word 0xa9bb7bfd
 .word 0x910003fd
 .word 0xa9016bb9
@@ -8577,7 +8500,7 @@ ldr x16, [x16, #1304]
 .word 0xf2bffffe
 .word 0x6b1e001f
 .word 0x54000201
-.loc 2 227 0
+.loc 2 229 0
 .word 0xf94013b1
 .word 0xf9408e31
 .word 0xb4000051
@@ -8593,7 +8516,7 @@ ldr x16, [x16, #1304]
 .word 0xd63f0220
 .word 0xf94023a0
 .word 0xb9000b40
-.loc 2 229 0
+.loc 2 231 0
 .word 0xf94017b1
 .word 0xf9400231
 .word 0xb4000051
@@ -8648,7 +8571,7 @@ b System_Array_InternalEnumerator_1_T_INT_get_Current
 	.align 4
 	.no_dead_strip System_Array_InternalEnumerator_1_T_INT_get_Current
 System_Array_InternalEnumerator_1_T_INT_get_Current:
-.loc 2 234 0 prologue_end
+.loc 2 236 0 prologue_end
 .word 0xa9b97bfd
 .word 0x910003fd
 .word 0xf9000bba
@@ -8681,22 +8604,22 @@ ldr x16, [x16, #1312]
 .word 0xf2bffffe
 .word 0x6b1e001f
 .word 0x540001e1
-.loc 2 235 0
+.loc 2 237 0
 .word 0xf9400fb1
 .word 0xf9408a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd2865100
-.word 0xd2865100
+.word 0xd288f240
+.word 0xd288f240
 bl _p_99
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_3
-.loc 2 236 0
+.loc 2 238 0
 .word 0xf9400fb1
 .word 0xf940c231
 .word 0xb4000051
@@ -8709,22 +8632,22 @@ bl _p_3
 .word 0xf2bffffe
 .word 0x6b1e001f
 .word 0x540001e1
-.loc 2 237 0
+.loc 2 239 0
 .word 0xf9400fb1
 .word 0xf940f231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd2865bc0
-.word 0xd2865bc0
+.word 0xd288fd00
+.word 0xd288fd00
 bl _p_99
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_3
-.loc 2 239 0
+.loc 2 241 0
 .word 0xf9400fb1
 .word 0xf9412a31
 .word 0xb4000051
@@ -8786,7 +8709,7 @@ b System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_Reset
 	.align 4
 	.no_dead_strip System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_Reset
 System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_Reset:
-.loc 2 245 0 prologue_end
+.loc 2 247 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
 .word 0xf9001baf
@@ -8816,7 +8739,7 @@ ldr x16, [x16, #1320]
 .word 0x9280003e
 .word 0xf2bffffe
 .word 0xb900081e
-.loc 2 246 0
+.loc 2 248 0
 .word 0xf9400fb1
 .word 0xf9407e31
 .word 0xb4000051
@@ -8838,7 +8761,7 @@ b System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_get_Cur
 	.align 4
 	.no_dead_strip System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_get_Current
 System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_get_Current:
-.loc 2 250 0 prologue_end
+.loc 2 252 0 prologue_end
 .word 0xa9ba7bfd
 .word 0x910003fd
 .word 0xf9001baf
@@ -8904,10 +8827,11 @@ Lme_3d:
 	.no_dead_strip System_Array_InternalArray__IEnumerable_GetEnumerator_T_INT
 System_Array_InternalArray__IEnumerable_GetEnumerator_T_INT:
 .loc 2 71 0 prologue_end
-.word 0xa9b87bfd
+.word 0xa9b97bfd
 .word 0x910003fd
+.word 0xf9000bba
 .word 0xf9002baf
-.word 0xf9000ba0
+.word 0xaa0003fa
 
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
@@ -8916,7 +8840,7 @@ ldr x16, [x16, #1336]
 .word 0xf9400a11
 .word 0xf90013b1
 .word 0xf9400fb1
-.word 0xf9403631
+.word 0xf9403a31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94013b1
@@ -8924,11 +8848,38 @@ ldr x16, [x16, #1336]
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9400fb1
-.word 0xf9405631
+.word 0xf9405a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf9400ba0
-.word 0xf90037a0
+.word 0xaa1a03e0
+.word 0xb9801b40
+.word 0xf90033a0
+.word 0xf9400fb1
+.word 0xf9407631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94033a0
+.word 0x350001c0
+.loc 2 72 0
+.word 0xf9400fb1
+.word 0xf9408e31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9402ba0
+bl _p_105
+.word 0x3980b410
+.word 0xb5000050
+bl _p_106
+.word 0xf9402ba0
+bl _p_107
+.word 0xf9400000
+.word 0x14000037
+.loc 2 74 0
+.word 0xf9400fb1
+.word 0xf940c231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xaa1a03e0
 .word 0x910103a0
 .word 0xd2800000
 .word 0xf90023a0
@@ -8936,14 +8887,14 @@ ldr x16, [x16, #1336]
 .word 0x910103a0
 .word 0xf90033a0
 .word 0xf9402ba0
-bl _p_105
-.word 0xf9003ba0
+bl _p_108
+.word 0xf90037a0
 .word 0xf9402ba0
-bl _p_106
+bl _p_109
 .word 0xaa0003e2
 .word 0xf94033a0
-.word 0xf94037a1
-.word 0xf9403baf
+.word 0xf94037af
+.word 0xaa1a03e1
 .word 0xd63f0040
 .word 0x910103a0
 .word 0x9100c3a0
@@ -8952,11 +8903,11 @@ bl _p_106
 .word 0xf94027a0
 .word 0xf9001fa0
 .word 0xf9400fb1
-.word 0xf940c631
+.word 0xf9412e31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9402ba0
-bl _p_105
+bl _p_108
 .word 0xd2800401
 .word 0xd2800401
 bl _p_6
@@ -8980,11 +8931,12 @@ ldr x4, [x16, #16]
 .word 0xf9401fa2
 .word 0xf9000022
 .word 0xf9400fb1
-.word 0xf9413231
+.word 0xf9419a31
 .word 0xb4000051
 .word 0xd63f0220
+.word 0xf9400bba
 .word 0x910003bf
-.word 0xa8c87bfd
+.word 0xa8c77bfd
 .word 0xd65f03c0
 
 Lme_3e:
@@ -9022,7 +8974,7 @@ add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x0, [x16, #1352]
 .word 0xb9400000
 .word 0x34000140
-bl _p_107
+bl _p_110
 .word 0xaa0003f3
 .word 0xaa1303e0
 .word 0xaa1303e1
@@ -9117,7 +9069,7 @@ bl _p_3
 .word 0x910003bf
 .word 0xa8c87bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_10
 
@@ -9130,7 +9082,7 @@ b System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_TResult_BOOL_Create
 	.align 4
 	.no_dead_strip System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_TResult_BOOL_Create
 System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_TResult_BOOL_Create:
-.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/mcs/class/referencesource/mscorlib/system/runtime/compilerservices/AsyncMethodBuilder.cs"
+.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.10.1.177/src/Xamarin.iOS/mcs/class/referencesource/mscorlib/system/runtime/compilerservices/AsyncMethodBuilder.cs"
 .loc 3 444 0 prologue_end
 .word 0xa9b97bfd
 .word 0x910003fd
@@ -9262,7 +9214,7 @@ ldr x16, [x16, #1368]
 .word 0xd63f0220
 .word 0xf9400ba0
 .word 0xf9400fa1
-bl _p_108
+bl _p_111
 .loc 3 486 0
 .word 0xf94013b1
 .word 0xf9407631
@@ -9328,18 +9280,18 @@ ldr x16, [x16, #1376]
 .word 0xd63f0220
 .word 0xaa1a03e0
 .word 0xf94023a0
-bl _p_109
+bl _p_112
 .word 0x3980b410
 .word 0xb5000050
-bl _p_110
+bl _p_106
 .word 0xf94023a0
-bl _p_109
+bl _p_112
 .word 0xd2800a01
 .word 0xd2800a01
 bl _p_6
 .word 0xf9002fa0
 .word 0xf94023a0
-bl _p_111
+bl _p_113
 .word 0xaa0003e1
 .word 0xf9402fa0
 .word 0xf9002ba0
@@ -9443,11 +9395,11 @@ ldr x16, [x16, #1384]
 .word 0xaa1903e0
 .word 0xaa1a03e0
 .word 0xf94023a0
-bl _p_112
+bl _p_114
 .word 0xf9002fa0
 .word 0xf940033e
 .word 0xf94023a0
-bl _p_113
+bl _p_115
 .word 0xaa0003e2
 .word 0xf9402faf
 .word 0xaa1903e0
@@ -9483,7 +9435,7 @@ ldr x2, [x16, #16]
 .word 0xf9413e31
 .word 0xb4000051
 .word 0xd63f0220
-bl _p_114
+bl _p_116
 .word 0x53001c00
 .word 0xf9002ba0
 .word 0xf94017b1
@@ -9501,7 +9453,7 @@ bl _p_114
 .word 0xaa1803e0
 .word 0xaa1803e0
 .word 0xf940031e
-bl _p_115
+bl _p_117
 .word 0x93407c00
 .word 0xf9002ba0
 .word 0xf94017b1
@@ -9512,7 +9464,7 @@ bl _p_115
 .word 0xd2800020
 .word 0xd2800000
 .word 0xd2800022
-bl _p_116
+bl _p_118
 .loc 3 603 0
 .word 0xf9401bb1
 .word 0xf9400231
@@ -9536,7 +9488,7 @@ ldr x0, [x16, #1392]
 .word 0xaa1803e0
 .word 0xaa1803e0
 .word 0xf940031e
-bl _p_115
+bl _p_117
 .word 0x93407c00
 .word 0xf9002ba0
 .word 0xf94017b1
@@ -9544,7 +9496,7 @@ bl _p_115
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9402ba0
-bl _p_117
+bl _p_119
 .loc 3 608 0
 .word 0xf9401bb1
 .word 0xf9400231
@@ -9557,13 +9509,13 @@ bl _p_117
 .word 0xaa1803e0
 .word 0xaa1a03e0
 .word 0xf94023a0
-bl _p_118
+bl _p_120
 .word 0x3980b410
 .word 0xb5000050
-bl _p_110
+bl _p_106
 .word 0xf940031e
 .word 0xf94023a0
-bl _p_119
+bl _p_121
 .word 0xaa0003e2
 .word 0xaa1803e0
 .word 0xaa1a03e1
@@ -9581,21 +9533,21 @@ bl _p_119
 .word 0xf942ae31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd292a2e0
+.word 0xd2933860
 .word 0xf2a00020
-.word 0xd292a2e0
+.word 0xd2933860
 .word 0xf2a00020
 bl _p_99
-bl _p_120
+bl _p_122
 .word 0xf9002ba0
 .word 0xf94017b1
 .word 0xf942da31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9402ba1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_3
@@ -9695,11 +9647,11 @@ ldr x2, [x16, #16]
 .word 0xd2800018
 .word 0xd2800000
 .word 0xf94023a0
-bl _p_121
+bl _p_123
 .word 0xf9002ba0
 .word 0xf940033e
 .word 0xf94023a0
-bl _p_122
+bl _p_124
 .word 0xaa0003e2
 .word 0xf9402baf
 .word 0xaa1903e0
@@ -9765,15 +9717,15 @@ ldr x16, [x16, #1408]
 .word 0xf9408a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd2926480
+.word 0xd292fa00
 .word 0xf2a00020
-.word 0xd2926480
+.word 0xd292fa00
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_3
@@ -9799,11 +9751,11 @@ bl _p_3
 .word 0xd63f0220
 .word 0xaa1903e0
 .word 0xf94037a0
-bl _p_123
+bl _p_125
 .word 0xf90047a0
 .word 0xf940033e
 .word 0xf94037a0
-bl _p_124
+bl _p_126
 .word 0xaa0003e1
 .word 0xf94047af
 .word 0xaa1903e0
@@ -9851,13 +9803,13 @@ ldr x1, [x16, #1416]
 .word 0xaa1803e0
 .word 0xaa1a03e0
 .word 0xf94037a0
-bl _p_125
+bl _p_127
 .word 0x3980b410
 .word 0xb5000050
-bl _p_110
+bl _p_106
 .word 0xf940031e
 .word 0xf94037a0
-bl _p_126
+bl _p_128
 .word 0xaa0003e2
 .word 0xaa1803e0
 .word 0xaa1a03e1
@@ -9877,7 +9829,7 @@ bl _p_126
 .word 0xf9003ba0
 .word 0xaa1703e0
 .word 0xf94002fe
-bl _p_127
+bl _p_129
 .word 0xf9403bbe
 .word 0xf90003c0
 .word 0xf94027b1
@@ -9886,13 +9838,13 @@ bl _p_127
 .word 0xd63f0220
 .word 0xaa1703e0
 .word 0xf94037a0
-bl _p_125
+bl _p_127
 .word 0x3980b410
 .word 0xb5000050
-bl _p_110
+bl _p_106
 .word 0xf940031e
 .word 0xf94037a0
-bl _p_128
+bl _p_130
 .word 0xaa0003e3
 .word 0xaa1803e0
 .word 0x910183a1
@@ -9913,21 +9865,21 @@ bl _p_128
 .word 0xf942ba31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd292a2e0
+.word 0xd2933860
 .word 0xf2a00020
-.word 0xd292a2e0
+.word 0xd2933860
 .word 0xf2a00020
 bl _p_99
-bl _p_120
+bl _p_122
 .word 0xf90043a0
 .word 0xf94027b1
 .word 0xf942e631
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94043a1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_3
@@ -9985,14 +9937,14 @@ ldr x16, [x16, #1424]
 .word 0xf9400ba0
 .word 0xf9002fa0
 .word 0xf9401fa0
-bl _p_129
+bl _p_131
 .word 0xaa0003e1
 .word 0xf9402fa0
 .word 0xf9002ba1
 .word 0xf940001e
 .word 0xf90027a0
 .word 0xf9401fa0
-bl _p_130
+bl _p_132
 .word 0xaa0003e1
 .word 0xf94027a0
 .word 0xf9402baf
@@ -10006,7 +9958,7 @@ bl _p_130
 .word 0x394063a1
 .word 0xaa0203e0
 .word 0xf940005e
-bl _p_131
+bl _p_133
 .loc 3 694 0
 .word 0xf94013b1
 .word 0xf940ce31
@@ -10056,14 +10008,14 @@ ldr x16, [x16, #1432]
 .word 0xf9400ba0
 .word 0xf9002fa0
 .word 0xf9401ba0
-bl _p_132
+bl _p_134
 .word 0xaa0003e1
 .word 0xf9402fa0
 .word 0xf9002ba1
 .word 0xf940001e
 .word 0xf90027a0
 .word 0xf9401ba0
-bl _p_133
+bl _p_135
 .word 0xaa0003e1
 .word 0xf94027a0
 .word 0xf9402baf
@@ -10129,7 +10081,7 @@ ldr x16, [x16, #1440]
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9403ba0
-bl _p_134
+bl _p_136
 
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
@@ -10150,7 +10102,7 @@ ldr x1, [x16, #1448]
 .word 0xd63f0220
 .word 0xaa1a03e0
 .word 0xf9403ba0
-bl _p_135
+bl _p_137
 .word 0xd2800301
 .word 0xd2800301
 bl _p_6
@@ -10199,10 +10151,10 @@ ldr x0, [x16, #1472]
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9403ba0
-bl _p_136
+bl _p_138
 .word 0xaa0003ef
 .word 0xaa1703e0
-bl _p_137
+bl _p_139
 .word 0xf90043a0
 .word 0xf9401fb1
 .word 0xf941aa31
@@ -10216,7 +10168,7 @@ bl _p_137
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9403ba0
-bl _p_134
+bl _p_136
 
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
@@ -10237,7 +10189,7 @@ ldr x1, [x16, #1480]
 .word 0xd63f0220
 .word 0xaa1a03e0
 .word 0xf9403ba0
-bl _p_135
+bl _p_137
 .word 0xd2800301
 .word 0xd2800301
 bl _p_6
@@ -10306,10 +10258,10 @@ ldr x0, [x16, #1496]
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9403ba0
-bl _p_136
+bl _p_138
 .word 0xaa0003ef
 .word 0xf94047a0
-bl _p_137
+bl _p_139
 .word 0xf90043a0
 .word 0xf9401fb1
 .word 0xf9433631
@@ -10323,7 +10275,7 @@ bl _p_137
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9403ba0
-bl _p_134
+bl _p_136
 
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
@@ -10339,7 +10291,7 @@ ldr x1, [x16, #1504]
 .word 0x34000300
 .word 0xaa1a03e0
 .word 0xf9403ba0
-bl _p_135
+bl _p_137
 .word 0xd2800301
 .word 0xd2800301
 bl _p_6
@@ -10362,7 +10314,7 @@ ldr x2, [x16, #1512]
 .word 0xb9401000
 .word 0x340035e0
 .word 0xf9403ba0
-bl _p_134
+bl _p_136
 
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
@@ -10378,7 +10330,7 @@ ldr x1, [x16, #1520]
 .word 0x34000300
 .word 0xaa1a03e0
 .word 0xf9403ba0
-bl _p_135
+bl _p_137
 .word 0xd2800301
 .word 0xd2800301
 bl _p_6
@@ -10401,7 +10353,7 @@ ldr x2, [x16, #1528]
 .word 0x39404000
 .word 0x34003140
 .word 0xf9403ba0
-bl _p_134
+bl _p_136
 
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
@@ -10417,7 +10369,7 @@ ldr x1, [x16, #1536]
 .word 0x34000300
 .word 0xaa1a03e0
 .word 0xf9403ba0
-bl _p_135
+bl _p_137
 .word 0xd2800301
 .word 0xd2800301
 bl _p_6
@@ -10440,7 +10392,7 @@ ldr x2, [x16, #1544]
 .word 0x39804000
 .word 0x34002ca0
 .word 0xf9403ba0
-bl _p_134
+bl _p_136
 
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
@@ -10456,7 +10408,7 @@ ldr x1, [x16, #1552]
 .word 0x34000300
 .word 0xaa1a03e0
 .word 0xf9403ba0
-bl _p_135
+bl _p_137
 .word 0xd2800301
 .word 0xd2800301
 bl _p_6
@@ -10479,7 +10431,7 @@ ldr x2, [x16, #1560]
 .word 0x79402000
 .word 0x34002800
 .word 0xf9403ba0
-bl _p_134
+bl _p_136
 
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
@@ -10508,7 +10460,7 @@ ldr x0, [x16, #1576]
 .word 0xb9006fa0
 .word 0xaa1a03e0
 .word 0xf9403ba0
-bl _p_135
+bl _p_137
 .word 0xd2800301
 .word 0xd2800301
 bl _p_6
@@ -10543,7 +10495,7 @@ ldr x2, [x16, #1584]
 .word 0x910143a2
 .word 0xf9402ba2
 .word 0xf9402fa3
-bl _p_138
+bl _p_140
 .word 0x53001c00
 .word 0xf90043a0
 .word 0xf9401fb1
@@ -10553,7 +10505,7 @@ bl _p_138
 .word 0xf94043a0
 .word 0x35001f20
 .word 0xf9403ba0
-bl _p_134
+bl _p_136
 
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
@@ -10569,7 +10521,7 @@ ldr x1, [x16, #1592]
 .word 0x34000300
 .word 0xaa1a03e0
 .word 0xf9403ba0
-bl _p_135
+bl _p_137
 .word 0xd2800301
 .word 0xd2800301
 bl _p_6
@@ -10592,7 +10544,7 @@ ldr x2, [x16, #1600]
 .word 0xf9400800
 .word 0xb4001a80
 .word 0xf9403ba0
-bl _p_134
+bl _p_136
 
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
@@ -10608,7 +10560,7 @@ ldr x1, [x16, #1608]
 .word 0x34000300
 .word 0xaa1a03e0
 .word 0xf9403ba0
-bl _p_135
+bl _p_137
 .word 0xd2800301
 .word 0xd2800301
 bl _p_6
@@ -10631,7 +10583,7 @@ ldr x2, [x16, #1616]
 .word 0xf9400800
 .word 0xb40015e0
 .word 0xf9403ba0
-bl _p_134
+bl _p_136
 
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
@@ -10647,7 +10599,7 @@ ldr x1, [x16, #1624]
 .word 0x34000300
 .word 0xaa1a03e0
 .word 0xf9403ba0
-bl _p_135
+bl _p_137
 .word 0xd2800301
 .word 0xd2800301
 bl _p_6
@@ -10670,7 +10622,7 @@ ldr x2, [x16, #1632]
 .word 0x79802000
 .word 0x34001140
 .word 0xf9403ba0
-bl _p_134
+bl _p_136
 
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
@@ -10686,7 +10638,7 @@ ldr x1, [x16, #1640]
 .word 0x34000300
 .word 0xaa1a03e0
 .word 0xf9403ba0
-bl _p_135
+bl _p_137
 .word 0xd2800301
 .word 0xd2800301
 bl _p_6
@@ -10709,7 +10661,7 @@ ldr x2, [x16, #1648]
 .word 0x79402000
 .word 0x34000ca0
 .word 0xf9403ba0
-bl _p_134
+bl _p_136
 
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
@@ -10728,7 +10680,7 @@ ldr x1, [x16, #1656]
 .word 0xf90047a0
 .word 0xaa1a03e0
 .word 0xf9403ba0
-bl _p_135
+bl _p_137
 .word 0xd2800301
 .word 0xd2800301
 bl _p_6
@@ -10751,7 +10703,7 @@ ldr x3, [x16, #1664]
 .word 0x54001161
 .word 0x91004022
 .word 0xf9400821
-bl _p_139
+bl _p_141
 .word 0x53001c00
 .word 0xf90043a0
 .word 0xf9401fb1
@@ -10761,7 +10713,7 @@ bl _p_139
 .word 0xf94043a0
 .word 0x35000660
 .word 0xf9403ba0
-bl _p_134
+bl _p_136
 
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
@@ -10780,7 +10732,7 @@ ldr x1, [x16, #1672]
 .word 0xf90047a0
 .word 0xaa1a03e0
 .word 0xf9403ba0
-bl _p_135
+bl _p_137
 .word 0xd2800301
 .word 0xd2800301
 bl _p_6
@@ -10803,7 +10755,7 @@ ldr x3, [x16, #1680]
 .word 0x54000b21
 .word 0x91004022
 .word 0xf9400821
-bl _p_140
+bl _p_142
 .word 0x53001c00
 .word 0xf90043a0
 .word 0xf9401fb1
@@ -10822,12 +10774,12 @@ bl _p_140
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9403ba0
-bl _p_141
+bl _p_143
 .word 0x3980b410
 .word 0xb5000050
-bl _p_110
+bl _p_106
 .word 0xf9403ba0
-bl _p_142
+bl _p_144
 .word 0xf9400000
 .word 0x14000034
 .loc 3 789 0
@@ -10843,12 +10795,12 @@ bl _p_142
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9403ba0
-bl _p_141
+bl _p_143
 .word 0x3980b410
 .word 0xb5000050
-bl _p_110
+bl _p_106
 .word 0xf9403ba0
-bl _p_142
+bl _p_144
 .word 0xf9400000
 .word 0x14000021
 .loc 3 795 0
@@ -10862,18 +10814,18 @@ bl _p_142
 .word 0xd63f0220
 .word 0xaa1a03e0
 .word 0xf9403ba0
-bl _p_143
+bl _p_145
 .word 0x3980b410
 .word 0xb5000050
-bl _p_110
+bl _p_106
 .word 0xf9403ba0
-bl _p_143
+bl _p_145
 .word 0xd2800a01
 .word 0xd2800a01
 bl _p_6
 .word 0xf90047a0
 .word 0xf9403ba0
-bl _p_144
+bl _p_146
 .word 0xaa0003e2
 .word 0xf94047a0
 .word 0xf90043a0
@@ -10893,10 +10845,10 @@ bl _p_144
 .word 0x910003bf
 .word 0xa8c97bfd
 .word 0xd65f03c0
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_10
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_10
 
@@ -10937,10 +10889,10 @@ ldr x16, [x16, #1688]
 .word 0xd280001a
 .word 0xd2800000
 .word 0xf9401ba0
-bl _p_145
+bl _p_147
 .word 0xf90027a0
 .word 0xf9401ba0
-bl _p_146
+bl _p_148
 .word 0xaa0003e1
 .word 0xf94027af
 .word 0xd2800000
@@ -10951,7 +10903,7 @@ bl _p_146
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9401ba0
-bl _p_147
+bl _p_149
 .word 0xf94023a1
 .word 0xf9000001
 .word 0xf9400fb1
@@ -10968,7 +10920,7 @@ Lme_4a:
 	.align 4
 	.no_dead_strip System_Threading_Tasks_Task_1_TResult_BOOL__ctor
 System_Threading_Tasks_Task_1_TResult_BOOL__ctor:
-.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/mcs/class/referencesource/mscorlib/system/threading/Tasks/Future.cs"
+.file 4 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.10.1.177/src/Xamarin.iOS/mcs/class/referencesource/mscorlib/system/threading/Tasks/Future.cs"
 .loc 4 91 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -10993,7 +10945,7 @@ ldr x16, [x16, #1696]
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9400ba0
-bl _p_148
+bl _p_150
 .loc 4 93 0
 .word 0xf9400fb1
 .word 0xf9406a31
@@ -11042,7 +10994,7 @@ ldr x16, [x16, #1704]
 .word 0xb98023a2
 .word 0xd2800023
 .word 0xd2800023
-bl _p_149
+bl _p_151
 .loc 4 99 0
 .word 0xf94017b1
 .word 0xf9408231
@@ -11100,7 +11052,7 @@ ldr x16, [x16, #1712]
 .word 0xd2800002
 .word 0x9100e3a3
 .word 0xf9401fa3
-bl _p_150
+bl _p_152
 .loc 4 106 0
 .word 0xf94013b1
 .word 0xf940a631
@@ -11165,7 +11117,7 @@ ldr x16, [x16, #1720]
 .word 0xaa1803e1
 .word 0x910163a3
 .word 0xf9402fa3
-bl _p_150
+bl _p_152
 .loc 4 112 0
 .word 0xf94023b1
 .word 0xf940a231
@@ -11241,7 +11193,7 @@ ldr x16, [x16, #1728]
 .word 0xf90043a0
 .word 0xaa1a03e0
 .word 0xaa1a03e0
-bl _p_151
+bl _p_153
 .word 0xf90047a0
 .word 0xf94023b1
 .word 0xf940a231
@@ -11259,7 +11211,7 @@ bl _p_151
 .word 0xf9003ba0
 .word 0xf9400fa0
 .word 0xf9400000
-bl _p_152
+bl _p_154
 .word 0xaa0003e9
 .word 0xf9403ba0
 .word 0xf9403fa1
@@ -11285,7 +11237,7 @@ bl _p_152
 .word 0xd63f0220
 .word 0xf9400fa0
 .word 0x910183a1
-bl _p_153
+bl _p_155
 .loc 4 327 0
 .word 0xf94023b1
 .word 0xf9414631
@@ -11354,7 +11306,7 @@ ldr x16, [x16, #1736]
 .word 0xf90043a0
 .word 0xf9400ba0
 .word 0xf9400000
-bl _p_154
+bl _p_156
 .word 0xaa0003e7
 .word 0xf94043a0
 .word 0xf94047a1
@@ -11372,7 +11324,7 @@ bl _p_154
 .word 0xd63f0220
 .word 0xf9400ba0
 .word 0xf9402ba1
-bl _p_153
+bl _p_155
 .loc 4 337 0
 .word 0xf9402fb1
 .word 0xf9411231
@@ -11436,7 +11388,7 @@ ldr x16, [x16, #1744]
 .word 0x9101a3a4
 .word 0xf94037a4
 .word 0xaa1903e6
-bl _p_155
+bl _p_157
 .loc 4 354 0
 .word 0xf9402bb1
 .word 0xf940be31
@@ -11451,18 +11403,18 @@ bl _p_155
 .word 0xf940de31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd2919cc0
+.word 0xd2923240
 .word 0xf2a00020
-.word 0xd2919cc0
+.word 0xd2923240
 .word 0xf2a00020
 bl _p_99
 .word 0xf9003ba0
-.word 0xd291a0c0
+.word 0xd2923640
 .word 0xf2a00020
-.word 0xd291a0c0
+.word 0xd2923640
 .word 0xf2a00020
 bl _p_99
-bl _p_120
+bl _p_122
 .word 0xf9003fa0
 .word 0xf9402bb1
 .word 0xf9412231
@@ -11470,9 +11422,9 @@ bl _p_120
 .word 0xd63f0220
 .word 0xf9403ba1
 .word 0xf9403fa2
-.word 0xd2801260
+.word 0xd2801380
 .word 0xf2a04000
-.word 0xd2801260
+.word 0xd2801380
 .word 0xf2a04000
 bl _mono_create_corlib_exception_2
 bl _p_3
@@ -11548,7 +11500,7 @@ ldr x16, [x16, #1752]
 .word 0xf90043a0
 .word 0xf9400fa0
 .word 0xf9400000
-bl _p_156
+bl _p_158
 .word 0xaa0003e9
 .word 0xf94043a0
 .word 0xf94047a1
@@ -11567,7 +11519,7 @@ bl _p_156
 .word 0xd63f0220
 .word 0xf9400fa0
 .word 0xf9400381
-bl _p_153
+bl _p_155
 .loc 4 366 0
 .word 0xf94033b1
 .word 0xf9412631
@@ -11632,7 +11584,7 @@ ldr x16, [x16, #1760]
 .word 0x9101c3a4
 .word 0xf9403ba4
 .word 0xaa1903e6
-bl _p_155
+bl _p_157
 .loc 4 384 0
 .word 0xf9402fb1
 .word 0xf940be31
@@ -11647,18 +11599,18 @@ bl _p_155
 .word 0xf940de31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd2919cc0
+.word 0xd2923240
 .word 0xf2a00020
-.word 0xd2919cc0
+.word 0xd2923240
 .word 0xf2a00020
 bl _p_99
 .word 0xf90043a0
-.word 0xd291a0c0
+.word 0xd2923640
 .word 0xf2a00020
-.word 0xd291a0c0
+.word 0xd2923640
 .word 0xf2a00020
 bl _p_99
-bl _p_120
+bl _p_122
 .word 0xf90047a0
 .word 0xf9402fb1
 .word 0xf9412231
@@ -11666,9 +11618,9 @@ bl _p_120
 .word 0xd63f0220
 .word 0xf94043a1
 .word 0xf94047a2
-.word 0xd2801260
+.word 0xd2801380
 .word 0xf2a04000
-.word 0xd2801260
+.word 0xd2801380
 .word 0xf2a04000
 bl _mono_create_corlib_exception_2
 bl _p_3
@@ -11731,15 +11683,15 @@ ldr x16, [x16, #1768]
 .word 0xf9409231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd291b560
+.word 0xd2924ae0
 .word 0xf2a00020
-.word 0xd291b560
+.word 0xd2924ae0
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_3
@@ -11755,15 +11707,15 @@ bl _p_3
 .word 0xf940ea31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd291b7a0
+.word 0xd2924d20
 .word 0xf2a00020
-.word 0xd291b7a0
+.word 0xd2924d20
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_3
@@ -11781,18 +11733,18 @@ bl _p_3
 .word 0xf9414a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd2919cc0
+.word 0xd2923240
 .word 0xf2a00020
-.word 0xd2919cc0
+.word 0xd2923240
 .word 0xf2a00020
 bl _p_99
 .word 0xf90043a0
-.word 0xd291a0c0
+.word 0xd2923640
 .word 0xf2a00020
-.word 0xd291a0c0
+.word 0xd2923640
 .word 0xf2a00020
 bl _p_99
-bl _p_120
+bl _p_122
 .word 0xf90047a0
 .word 0xf9402fb1
 .word 0xf9418e31
@@ -11800,9 +11752,9 @@ bl _p_120
 .word 0xd63f0220
 .word 0xf94043a1
 .word 0xf94047a2
-.word 0xd2801260
+.word 0xd2801380
 .word 0xf2a04000
-.word 0xd2801260
+.word 0xd2801380
 .word 0xf2a04000
 bl _mono_create_corlib_exception_2
 bl _p_3
@@ -11828,13 +11780,13 @@ bl _p_3
 .word 0xf9402ba0
 .word 0xf9005ba0
 .word 0xf9403fa0
-bl _p_157
+bl _p_159
 .word 0xd2800a01
 .word 0xd2800a01
 bl _p_6
 .word 0xf9004ba0
 .word 0xf9403fa0
-bl _p_158
+bl _p_160
 .word 0xaa0003e9
 .word 0xf9404ba0
 .word 0xf9404fa2
@@ -11861,7 +11813,7 @@ bl _p_158
 .word 0xaa1403e0
 .word 0xd2800001
 .word 0xf940029e
-bl _p_159
+bl _p_161
 .loc 4 413 0
 .word 0xf9402fb1
 .word 0xf9429631
@@ -11929,15 +11881,15 @@ ldr x16, [x16, #1776]
 .word 0xf940a631
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd291b560
+.word 0xd2924ae0
 .word 0xf2a00020
-.word 0xd291b560
+.word 0xd2924ae0
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_3
@@ -11953,15 +11905,15 @@ bl _p_3
 .word 0xf940fe31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd291b7a0
+.word 0xd2924d20
 .word 0xf2a00020
-.word 0xd291b7a0
+.word 0xd2924d20
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_3
@@ -11979,18 +11931,18 @@ bl _p_3
 .word 0xf9415e31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd2919cc0
+.word 0xd2923240
 .word 0xf2a00020
-.word 0xd2919cc0
+.word 0xd2923240
 .word 0xf2a00020
 bl _p_99
 .word 0xf9004ba0
-.word 0xd291a0c0
+.word 0xd2923640
 .word 0xf2a00020
-.word 0xd291a0c0
+.word 0xd2923640
 .word 0xf2a00020
 bl _p_99
-bl _p_120
+bl _p_122
 .word 0xf9004fa0
 .word 0xf94033b1
 .word 0xf941a231
@@ -11998,9 +11950,9 @@ bl _p_120
 .word 0xd63f0220
 .word 0xf9404ba1
 .word 0xf9404fa2
-.word 0xd2801260
+.word 0xd2801380
 .word 0xf2a04000
-.word 0xd2801260
+.word 0xd2801380
 .word 0xf2a04000
 bl _mono_create_corlib_exception_2
 bl _p_3
@@ -12028,13 +11980,13 @@ bl _p_3
 .word 0xf9402fa0
 .word 0xf90067a0
 .word 0xf94043a0
-bl _p_160
+bl _p_162
 .word 0xd2800a01
 .word 0xd2800a01
 bl _p_6
 .word 0xf90053a0
 .word 0xf94043a0
-bl _p_161
+bl _p_163
 .word 0xaa0003e9
 .word 0xf94053a0
 .word 0xf94057a2
@@ -12063,7 +12015,7 @@ bl _p_161
 .word 0xaa1303e0
 .word 0xd2800001
 .word 0xf940027e
-bl _p_159
+bl _p_161
 .loc 4 437 0
 .word 0xf94033b1
 .word 0xf942ba31
@@ -12143,7 +12095,7 @@ bl _p_24
 .word 0xf2a08001
 .word 0xd2800002
 .word 0xf2a0ac02
-bl _p_162
+bl _p_164
 .word 0x53001c00
 .word 0xf90023a0
 .word 0xf94017b1
@@ -12173,7 +12125,7 @@ bl _p_162
 .word 0xf9002ba0
 .word 0xf9400fa0
 .word 0xb9804401
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xf9402ba0
 .word 0xd280001e
 .word 0xf2a0201e
@@ -12181,7 +12133,7 @@ bl _p_162
 .word 0x885f7c10
 .word 0x8811fc01
 .word 0x35ffffd1
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xaa1003e0
 .word 0xf94017b1
 .word 0xf9417e31
@@ -12195,7 +12147,7 @@ bl _p_162
 .word 0xf9400fa0
 .word 0xf9401c00
 .word 0xf90027a0
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xf94027a0
 .word 0xf90023a0
 .word 0xaa0003f9
@@ -12214,7 +12166,7 @@ bl _p_162
 .word 0xaa1903e0
 .word 0xaa1903e0
 .word 0xf940033e
-bl _p_163
+bl _p_165
 .loc 4 488 0
 .word 0xf9401bb1
 .word 0xf9400231
@@ -12225,7 +12177,7 @@ bl _p_163
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9400fa0
-bl _p_164
+bl _p_166
 .loc 4 490 0
 .word 0xf94017b1
 .word 0xf9421e31
@@ -12249,7 +12201,7 @@ bl _p_164
 .word 0x910003bf
 .word 0xa8c67bfd
 .word 0xd65f03c0
-.word 0xd2801f00
+.word 0xd2802020
 .word 0xaa1103e1
 bl _p_10
 
@@ -12297,7 +12249,7 @@ ldr x16, [x16, #1792]
 .word 0xf90023a0
 .word 0xf9400fa0
 .word 0xf9400000
-bl _p_165
+bl _p_167
 .word 0xaa0003e2
 .word 0xf94023a0
 .word 0xaa1a03e1
@@ -12331,12 +12283,12 @@ bl _p_165
 .word 0xf9400fa0
 .word 0xb9804400
 .word 0xf90027a0
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xf94027a0
 .word 0xd280001e
 .word 0xf2a0201e
 .word 0x2a1e0001
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xf94023a0
 .word 0xb9004401
 .loc 4 519 0
@@ -12382,7 +12334,7 @@ ldr x16, [x16, #1800]
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9400ba0
-bl _p_166
+bl _p_168
 .word 0x53001c00
 .word 0xf9001ba0
 .word 0xf9400fb1
@@ -12400,7 +12352,7 @@ bl _p_166
 .word 0xf9001fa0
 .word 0xf9400ba0
 .word 0xf9400000
-bl _p_167
+bl _p_169
 .word 0xaa0003e2
 .word 0xf9401fa0
 .word 0xd2800021
@@ -12516,7 +12468,7 @@ bl _p_24
 .word 0xf2bfffe1
 .word 0x9100e3a2
 .word 0xf9401fa2
-bl _p_168
+bl _p_170
 .word 0x53001c00
 .word 0xf94013b1
 .word 0xf940e231
@@ -12538,7 +12490,7 @@ bl _p_168
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9400ba0
-bl _p_169
+bl _p_171
 .word 0x53001c00
 .word 0xf94013b1
 .word 0xf9413631
@@ -12554,7 +12506,7 @@ bl _p_169
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9400ba0
-bl _p_170
+bl _p_172
 .word 0x53001c00
 .word 0xf9002ba0
 .word 0xf94013b1
@@ -12570,7 +12522,7 @@ bl _p_170
 .word 0xf9400ba0
 .word 0xd2800021
 .word 0xd2800021
-bl _p_171
+bl _p_173
 .loc 4 567 0
 .word 0xf94017b1
 .word 0xf9400231
@@ -12632,7 +12584,7 @@ ldr x16, [x16, #1824]
 .word 0xf9400fa0
 .word 0xd2800021
 .word 0xd2800021
-bl _p_172
+bl _p_174
 .word 0xf94017b1
 .word 0xf9409a31
 .word 0xb4000051
@@ -12651,7 +12603,7 @@ bl _p_172
 .word 0xf2a08001
 .word 0xd2800002
 .word 0xf2a0ac02
-bl _p_162
+bl _p_164
 .word 0x53001c00
 .word 0xf90023a0
 .word 0xf94017b1
@@ -12667,7 +12619,7 @@ bl _p_162
 .word 0xd63f0220
 .word 0xf9400fa0
 .word 0xf94013a1
-bl _p_173
+bl _p_175
 .loc 4 605 0
 .word 0xf94017b1
 .word 0xf9411e31
@@ -12676,7 +12628,7 @@ bl _p_173
 .word 0xf9400fa0
 .word 0xd2800001
 .word 0xd2800001
-bl _p_174
+bl _p_176
 .loc 4 606 0
 .word 0xf94017b1
 .word 0xf9413e31
@@ -12744,7 +12696,7 @@ ldr x16, [x16, #1832]
 .word 0xf9002fa0
 .word 0xf9400ba0
 .word 0xf9400000
-bl _p_175
+bl _p_177
 .word 0xaa0003e3
 .word 0xf9402fa0
 .word 0x910103a1
@@ -12815,7 +12767,7 @@ ldr x16, [x16, #1840]
 .word 0xf2a08001
 .word 0xd2800002
 .word 0xf2a0ac02
-bl _p_162
+bl _p_164
 .word 0x53001c00
 .word 0xf90033a0
 .word 0xf9401fb1
@@ -12837,14 +12789,14 @@ bl _p_162
 .word 0xf9401ba2
 .word 0x910143a1
 .word 0xf9402ba1
-bl _p_176
+bl _p_178
 .loc 4 653 0
 .word 0xf9401fb1
 .word 0xf9410a31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9400fa0
-bl _p_177
+bl _p_179
 .loc 4 654 0
 .word 0xf9401fb1
 .word 0xf9412231
@@ -12902,12 +12854,12 @@ ldr x16, [x16, #1848]
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94017a0
-bl _p_178
+bl _p_180
 .word 0x3980b410
 .word 0xb5000050
-bl _p_110
+bl _p_106
 .word 0xf94017a0
-bl _p_179
+bl _p_181
 .word 0xf9400000
 .word 0xf9400bb1
 .word 0xf9408231
@@ -12953,11 +12905,11 @@ ldr x16, [x16, #1856]
 .word 0xf90023a0
 .word 0xf94013a0
 .word 0xf9400000
-bl _p_180
+bl _p_182
 .word 0xaa0003e2
 .word 0xf9400441
 .word 0xf94023a0
-bl _p_181
+bl _p_183
 .word 0xaa0003fa
 .loc 4 678 0
 .word 0xf94017b1
@@ -13002,11 +12954,11 @@ bl _p_181
 .word 0xf90027a0
 .word 0xf94013a0
 .word 0xf9400000
-bl _p_182
+bl _p_184
 .word 0xaa0003e2
 .word 0xf9400441
 .word 0xf94027a0
-bl _p_181
+bl _p_183
 .word 0xaa0003f9
 .loc 4 684 0
 .word 0xf94017b1
@@ -13093,11 +13045,11 @@ ldr x16, [x16, #1864]
 .word 0xf9002ba0
 .word 0xf94013a0
 .word 0xf9400000
-bl _p_183
+bl _p_185
 .word 0xf90033a0
 .word 0xf94013a0
 .word 0xf9400000
-bl _p_184
+bl _p_186
 .word 0xaa0003e2
 .word 0xf9402ba0
 .word 0xf9402fa1
@@ -13165,11 +13117,11 @@ ldr x16, [x16, #1872]
 .word 0xf9003ba0
 .word 0xf94013a0
 .word 0xf9400000
-bl _p_185
+bl _p_187
 .word 0xf90047a0
 .word 0xf94013a0
 .word 0xf9400000
-bl _p_186
+bl _p_188
 .word 0xaa0003e3
 .word 0xf9403ba0
 .word 0xf9403fa1
@@ -13231,13 +13183,13 @@ ldr x16, [x16, #1880]
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94017a0
-bl _p_187
+bl _p_189
 .word 0xd2800501
 .word 0xd2800501
 bl _p_6
 .word 0xf9002ba0
 .word 0xf94017a0
-bl _p_188
+bl _p_190
 .word 0xaa0003e1
 .word 0xf9402ba0
 .word 0xf90027a0
@@ -13247,7 +13199,7 @@ bl _p_188
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94017a0
-bl _p_189
+bl _p_191
 .word 0xf94027a1
 .word 0xf9000001
 .loc 4 87 0
@@ -13256,36 +13208,36 @@ bl _p_189
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94017a0
-bl _p_190
+bl _p_192
 .word 0x3980b410
 .word 0xb5000050
-bl _p_110
+bl _p_106
 .word 0xf94017a0
-bl _p_191
+bl _p_193
 .word 0xf9400000
 .word 0xf9001fa0
 .word 0xeb1f001f
 .word 0x10000011
 .word 0x540003c0
 .word 0xf94017a0
-bl _p_192
-bl _p_193
+bl _p_194
+bl _p_195
 .word 0xf90023a0
 .word 0xf94017a0
-bl _p_194
+bl _p_196
 .word 0xd2800e01
 .word 0xd2800e01
 bl _p_6
 .word 0xf9401fa1
 .word 0xf94023a2
 .word 0xf9001ba0
-bl _p_195
+bl _p_197
 .word 0xf9400bb1
 .word 0xf9412631
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94017a0
-bl _p_189
+bl _p_191
 .word 0xf9401ba1
 .word 0x91002000
 .word 0xf9000001
@@ -13296,7 +13248,7 @@ bl _p_189
 .word 0x910003bf
 .word 0xa8c67bfd
 .word 0xd65f03c0
-.word 0xd2801220
+.word 0xd2801340
 .word 0xaa1103e1
 bl _p_10
 
@@ -13305,7 +13257,7 @@ Lme_62:
 	.align 4
 	.no_dead_strip System_Threading_Tasks_TaskFactory_1_TResult_BOOL__ctor
 System_Threading_Tasks_TaskFactory_1_TResult_BOOL__ctor:
-.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/mcs/class/referencesource/mscorlib/system/threading/Tasks/FutureFactory.cs"
+.file 5 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.10.1.177/src/Xamarin.iOS/mcs/class/referencesource/mscorlib/system/threading/Tasks/FutureFactory.cs"
 .loc 5 93 0 prologue_end
 .word 0xa9bb7bfd
 .word 0x910003fd
@@ -13345,7 +13297,7 @@ ldr x16, [x16, #1888]
 .word 0xf90023a0
 .word 0xf9400ba0
 .word 0xf9400000
-bl _p_196
+bl _p_198
 .word 0xaa0003e5
 .word 0xf94023a0
 .word 0x9100c3a1
@@ -13408,7 +13360,7 @@ ldr x16, [x16, #1896]
 .word 0xd63f0220
 .word 0xaa1903e0
 .word 0xaa1903e0
-bl _p_197
+bl _p_199
 .loc 5 211 0
 .word 0xf94023b1
 .word 0xf9409631
@@ -13416,7 +13368,7 @@ bl _p_197
 .word 0xd63f0220
 .word 0xaa1803e0
 .word 0xaa1803e0
-bl _p_198
+bl _p_200
 .loc 5 213 0
 .word 0xf94023b1
 .word 0xf940b231
@@ -13536,7 +13488,7 @@ ldr x16, [x16, #1904]
 .word 0xd63f0220
 .word 0xaa1903e0
 .word 0xaa1903e0
-bl _p_151
+bl _p_153
 .word 0xf9003fa0
 .word 0xf94023b1
 .word 0xf940a231
@@ -13556,17 +13508,17 @@ bl _p_151
 .word 0xf9004ba0
 .word 0xf9400fa0
 .word 0xf9400000
-bl _p_199
+bl _p_201
 .word 0x3980b410
 .word 0xb5000050
-bl _p_110
+bl _p_106
 .word 0xf9400fa0
 .word 0xf9400000
-bl _p_199
+bl _p_201
 .word 0xf9004fa0
 .word 0xf9400fa0
 .word 0xf9400000
-bl _p_200
+bl _p_202
 .word 0xaa0003e7
 .word 0xf9403fa0
 .word 0xf94043a1
@@ -13792,7 +13744,7 @@ bl _p_42
 .word 0xf9004ba0
 .word 0xaa0103e0
 .word 0xf940003e
-bl _p_127
+bl _p_129
 .word 0xf9404bbe
 .word 0xf90003c0
 .word 0xf9401fb1
@@ -13802,15 +13754,15 @@ bl _p_127
 .word 0xf94037a0
 .word 0xf90077a0
 .word 0xf9402fa0
-bl _p_201
+bl _p_203
 .word 0x3980b410
 .word 0xb5000050
-bl _p_110
+bl _p_106
 .word 0xf9407ba0
 .word 0xf940001e
 .word 0xf90073a0
 .word 0xf9402fa0
-bl _p_202
+bl _p_204
 .word 0xaa0003e3
 .word 0xf94073a0
 .word 0xf94077a2
@@ -13853,15 +13805,15 @@ bl _p_202
 .word 0xf94033a0
 .word 0xf9007ba0
 .word 0xf9402fa0
-bl _p_201
+bl _p_203
 .word 0x3980b410
 .word 0xb5000050
-bl _p_110
+bl _p_106
 .word 0xf9407fa0
 .word 0xf940001e
 .word 0xf90077a0
 .word 0xf9402fa0
-bl _p_203
+bl _p_205
 .word 0xaa0003e2
 .word 0xf94077a0
 .word 0xf9407ba1
@@ -13909,15 +13861,15 @@ ldr x1, [x16, #1920]
 .word 0xf94017a0
 .word 0xf9401c00
 .word 0xf90073a0
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xf94073a0
 .word 0xf9401002
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xd2800000
 .word 0xaa0203e0
 .word 0xd2800001
 .word 0xf940005e
-bl _p_204
+bl _p_206
 .loc 5 572 0
 .word 0xf9401fb1
 .word 0xf944c231
@@ -13933,7 +13885,7 @@ bl _p_204
 .word 0xf944e631
 .word 0xb4000051
 .word 0xd63f0220
-bl _p_114
+bl _p_116
 .word 0x53001c00
 .word 0xf90073a0
 .word 0xf9401fb1
@@ -13955,7 +13907,7 @@ bl _p_114
 .word 0xf94017a1
 .word 0xaa0103e0
 .word 0xf940003e
-bl _p_115
+bl _p_117
 .word 0x93407c00
 .word 0xf90073a0
 .word 0xf9401fb1
@@ -13966,7 +13918,7 @@ bl _p_115
 .word 0xd2800020
 .word 0xd2800000
 .word 0xd2800022
-bl _p_116
+bl _p_118
 .loc 5 578 0
 .word 0xf94023b1
 .word 0xf9400231
@@ -13994,7 +13946,7 @@ ldr x0, [x16, #1392]
 .word 0xf94017a1
 .word 0xaa0103e0
 .word 0xf940003e
-bl _p_115
+bl _p_117
 .word 0x93407c00
 .word 0xf90073a0
 .word 0xf9401fb1
@@ -14002,7 +13954,7 @@ bl _p_115
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94073a0
-bl _p_117
+bl _p_119
 .loc 5 582 0
 .word 0xf94023b1
 .word 0xf9400231
@@ -14028,15 +13980,15 @@ bl _p_117
 .word 0x3941c3a0
 .word 0xf90077a0
 .word 0xf9402fa0
-bl _p_201
+bl _p_203
 .word 0x3980b410
 .word 0xb5000050
-bl _p_110
+bl _p_106
 .word 0xf9407ba0
 .word 0xf940001e
 .word 0xf90073a0
 .word 0xf9402fa0
-bl _p_205
+bl _p_207
 .word 0xaa0003e2
 .word 0xf94073a0
 .word 0xf94077a1
@@ -14066,15 +14018,15 @@ bl _p_205
 .word 0x3941c3a0
 .word 0xf90077a0
 .word 0xf9402fa0
-bl _p_201
+bl _p_203
 .word 0x3980b410
 .word 0xb5000050
-bl _p_110
+bl _p_106
 .word 0xf9407ba0
 .word 0xf940001e
 .word 0xf90073a0
 .word 0xf9402fa0
-bl _p_206
+bl _p_208
 .word 0xaa0003e2
 .word 0xf94073a0
 .word 0xf94077a1
@@ -14151,11 +14103,11 @@ ldr x16, [x16, #1928]
 .word 0xf9003ba0
 .word 0xf9400ba0
 .word 0xf9400000
-bl _p_207
+bl _p_209
 .word 0xf9003fa0
 .word 0xf9400ba0
 .word 0xf9400000
-bl _p_208
+bl _p_210
 .word 0xaa0003e5
 .word 0xf9402fa0
 .word 0xf94033a1
@@ -14211,13 +14163,13 @@ ldr x16, [x16, #1936]
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94033a0
-bl _p_209
+bl _p_211
 .word 0xd2800501
 .word 0xd2800501
 bl _p_6
 .word 0xf90057a0
 .word 0xf94033a0
-bl _p_210
+bl _p_212
 .word 0xaa0003e1
 .word 0xf94057a0
 .word 0xf90053a0
@@ -14274,15 +14226,15 @@ ldr x2, [x16, #16]
 .word 0xf9415231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd291ba20
+.word 0xd2924fa0
 .word 0xf2a00020
-.word 0xd291ba20
+.word 0xd2924fa0
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_3
@@ -14310,15 +14262,15 @@ bl _p_3
 .word 0xf941da31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd291bd20
+.word 0xd29252a0
 .word 0xf2a00020
-.word 0xd291bd20
+.word 0xd29252a0
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_3
@@ -14335,7 +14287,7 @@ bl _p_3
 .word 0xd2800020
 .word 0xaa1a03e0
 .word 0xd2800021
-bl _p_211
+bl _p_213
 .loc 5 826 0
 .word 0xf94027b1
 .word 0xf9424e31
@@ -14346,18 +14298,18 @@ bl _p_211
 .word 0xaa1903e0
 .word 0xaa1a03e0
 .word 0xf94033a0
-bl _p_212
+bl _p_214
 .word 0x3980b410
 .word 0xb5000050
-bl _p_110
+bl _p_106
 .word 0xf94033a0
-bl _p_212
+bl _p_214
 .word 0xd2800a01
 .word 0xd2800a01
 bl _p_6
 .word 0xf9005fa0
 .word 0xf94033a0
-bl _p_213
+bl _p_215
 .word 0xaa0003e3
 .word 0xf9405fa0
 .word 0xf90057a0
@@ -14388,7 +14340,7 @@ ldr x2, [x16, #16]
 .word 0xf9430231
 .word 0xb4000051
 .word 0xd63f0220
-bl _p_114
+bl _p_116
 .word 0x53001c00
 .word 0xf90053a0
 .word 0xf94027b1
@@ -14411,7 +14363,7 @@ bl _p_114
 .word 0xf9401001
 .word 0xaa0103e0
 .word 0xf940003e
-bl _p_115
+bl _p_117
 .word 0x93407c00
 .word 0xf90053a0
 .word 0xf94027b1
@@ -14426,7 +14378,7 @@ ldr x0, [x16, #1944]
 .word 0xaa1603e0
 .word 0xaa1603e0
 .word 0xf94002de
-bl _p_214
+bl _p_216
 .word 0xf90063a0
 .word 0xf94027b1
 .word 0xf943aa31
@@ -14435,7 +14387,7 @@ bl _p_214
 .word 0xf94063a1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9405c30
+.word 0xf9405830
 .word 0xd63f0200
 .word 0xf9005fa0
 .word 0xf94027b1
@@ -14444,7 +14396,7 @@ bl _p_214
 .word 0xd63f0220
 .word 0xf9405ba0
 .word 0xf9405fa1
-bl _p_215
+bl _p_217
 .word 0xf90057a0
 .word 0xf94027b1
 .word 0xf943f231
@@ -14455,7 +14407,7 @@ bl _p_215
 .word 0xd2800000
 .word 0xd2800000
 .word 0xd2800003
-bl _p_216
+bl _p_218
 .loc 5 831 0
 .word 0xf9402bb1
 .word 0xf9400231
@@ -14482,7 +14434,7 @@ ldr x0, [x16, #1392]
 .word 0xd63f0220
 .word 0xf94037a0
 .word 0xf9401000
-bl _p_217
+bl _p_219
 .word 0x53001c00
 .word 0xf94027b1
 .word 0xf9447e31
@@ -14505,13 +14457,13 @@ ldr x0, [x16, #1952]
 .word 0x39400000
 .word 0x34001a20
 .word 0xf94033a0
-bl _p_218
+bl _p_220
 .word 0xd2800401
 .word 0xd2800401
 bl _p_6
 .word 0xf90073a0
 .word 0xf94033a0
-bl _p_219
+bl _p_221
 .word 0xaa0003e1
 .word 0xf94073a0
 .word 0xf9006fa0
@@ -14552,7 +14504,7 @@ ldr x0, [x16, #1960]
 .word 0xd2800281
 bl _p_6
 .word 0xf90067a0
-bl _p_220
+bl _p_222
 .word 0xf94027b1
 .word 0xf9457e31
 .word 0xb4000051
@@ -14610,13 +14562,13 @@ ldr x2, [x16, #16]
 .word 0xd280003e
 .word 0x3900003e
 .word 0xf94033a0
-bl _p_221
+bl _p_223
 .word 0xaa0003e1
 .word 0xf9405fa0
 .word 0xf9001401
 .word 0xf9005ba0
 .word 0xf94033a0
-bl _p_222
+bl _p_224
 .word 0xf9405ba1
 .word 0xf9002020
 
@@ -14673,7 +14625,7 @@ ldr x15, [x16, #1984]
 .word 0xf9400aa1
 .word 0xaa0103e0
 .word 0xf940003e
-bl _p_223
+bl _p_225
 .word 0x53001c00
 .word 0xf90053a0
 .word 0xf94027b1
@@ -14706,10 +14658,10 @@ bl _p_223
 .word 0xf9005ba0
 .word 0xd2800000
 .word 0xf94033a0
-bl _p_224
+bl _p_226
 .word 0xf9005fa0
 .word 0xf94033a0
-bl _p_225
+bl _p_227
 .word 0xaa0003e5
 .word 0xf94053a1
 .word 0xf94057a2
@@ -14766,13 +14718,13 @@ ldr x2, [x16, #16]
 .word 0xd280003e
 .word 0x3900003e
 .word 0xf94033a0
-bl _p_226
+bl _p_228
 .word 0xaa0003e1
 .word 0xf94057a0
 .word 0xf9001401
 .word 0xf90053a0
 .word 0xf94033a0
-bl _p_227
+bl _p_229
 .word 0xf94053a1
 .word 0xf9002020
 
@@ -14816,7 +14768,7 @@ ldr x0, [x16, #1976]
 .word 0xf9494a31
 .word 0xb4000051
 .word 0xd63f0220
-bl _p_114
+bl _p_116
 .word 0x53001c00
 .word 0xf90053a0
 .word 0xf94027b1
@@ -14839,7 +14791,7 @@ bl _p_114
 .word 0xf9401001
 .word 0xaa0103e0
 .word 0xf940003e
-bl _p_115
+bl _p_117
 .word 0x93407c00
 .word 0xf90053a0
 .word 0xf94027b1
@@ -14850,7 +14802,7 @@ bl _p_115
 .word 0xd2800060
 .word 0xd2800000
 .word 0xd2800062
-bl _p_116
+bl _p_118
 .loc 5 872 0
 .word 0xf9402bb1
 .word 0xf9400231
@@ -14879,7 +14831,7 @@ ldr x0, [x16, #1392]
 .word 0xf9401001
 .word 0xaa0103e0
 .word 0xf940003e
-bl _p_115
+bl _p_117
 .word 0x93407c00
 .word 0xf90053a0
 .word 0xf94027b1
@@ -14887,7 +14839,7 @@ bl _p_115
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94053a0
-bl _p_117
+bl _p_119
 .loc 5 878 0
 .word 0xf9402bb1
 .word 0xf9400231
@@ -14904,15 +14856,15 @@ bl _p_117
 .word 0x3941c3a0
 .word 0xf90057a0
 .word 0xf94033a0
-bl _p_212
+bl _p_214
 .word 0x3980b410
 .word 0xb5000050
-bl _p_110
+bl _p_106
 .word 0xf9405ba0
 .word 0xf940001e
 .word 0xf90053a0
 .word 0xf94033a0
-bl _p_228
+bl _p_230
 .word 0xaa0003e2
 .word 0xf94053a0
 .word 0xf94057a1
@@ -14928,7 +14880,7 @@ bl _p_228
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9403fa0
-bl _p_229
+bl _p_231
 .loc 5 882 0
 .word 0xf9402bb1
 .word 0xf9400231
@@ -14950,10 +14902,10 @@ bl _p_229
 .word 0x910003bf
 .word 0xa8cf7bfd
 .word 0xd65f03c0
-.word 0xd2801f00
+.word 0xd2802020
 .word 0xaa1103e1
 bl _p_10
-.word 0xd2801220
+.word 0xd2801340
 .word 0xaa1103e1
 bl _p_10
 
@@ -14993,7 +14945,7 @@ add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x0, [x16, #1352]
 .word 0xb9400000
 .word 0x34000140
-bl _p_107
+bl _p_110
 .word 0xf90037a0
 .word 0xf94037a1
 .word 0xf94037a0
@@ -15094,7 +15046,7 @@ bl _p_3
 .word 0x910003bf
 .word 0xa8c97bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_10
 
@@ -15133,7 +15085,7 @@ add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x0, [x16, #1352]
 .word 0xb9400000
 .word 0x34000140
-bl _p_107
+bl _p_110
 .word 0xaa0003f3
 .word 0xaa1303e0
 .word 0xaa1303e1
@@ -15228,7 +15180,7 @@ bl _p_3
 .word 0x910003bf
 .word 0xa8c87bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_10
 
@@ -15268,7 +15220,7 @@ add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x0, [x16, #1352]
 .word 0xb9400000
 .word 0x34000140
-bl _p_107
+bl _p_110
 .word 0xf90037a0
 .word 0xf94037a1
 .word 0xf94037a0
@@ -15369,7 +15321,7 @@ bl _p_3
 .word 0x910003bf
 .word 0xa8c97bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_10
 
@@ -15408,7 +15360,7 @@ add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x0, [x16, #1352]
 .word 0xb9400000
 .word 0x34000140
-bl _p_107
+bl _p_110
 .word 0xaa0003f3
 .word 0xaa1303e0
 .word 0xaa1303e1
@@ -15503,7 +15455,7 @@ bl _p_3
 .word 0x910003bf
 .word 0xa8c87bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_10
 
@@ -15544,7 +15496,7 @@ add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x0, [x16, #1352]
 .word 0xb9400000
 .word 0x34000140
-bl _p_107
+bl _p_110
 .word 0xf9003ba0
 .word 0xf9403ba1
 .word 0xf9403ba0
@@ -15650,7 +15602,7 @@ bl _p_3
 .word 0x910003bf
 .word 0xa8c97bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_10
 
@@ -15690,7 +15642,7 @@ add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x0, [x16, #1352]
 .word 0xb9400000
 .word 0x34000140
-bl _p_107
+bl _p_110
 .word 0xf90037a0
 .word 0xf94037a1
 .word 0xf94037a0
@@ -15791,7 +15743,7 @@ bl _p_3
 .word 0x910003bf
 .word 0xa8c97bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_10
 
@@ -15831,7 +15783,7 @@ add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x0, [x16, #1352]
 .word 0xb9400000
 .word 0x34000140
-bl _p_107
+bl _p_110
 .word 0xf90037a0
 .word 0xf94037a1
 .word 0xf94037a0
@@ -15932,7 +15884,7 @@ bl _p_3
 .word 0x910003bf
 .word 0xa8c97bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_10
 
@@ -16023,7 +15975,7 @@ Lme_78:
 	.align 4
 	.no_dead_strip System_Array_InternalArray__ICollection_Clear
 System_Array_InternalArray__ICollection_Clear:
-.loc 2 76 0 prologue_end
+.loc 2 79 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
 .word 0xf9000ba0
@@ -16046,13 +15998,13 @@ ldr x16, [x16, #2064]
 .word 0xf9405231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd2856fc0
-.word 0xd2856fc0
+.word 0xd2882340
+.word 0xd2882340
 bl _p_99
 .word 0xaa0003e1
-.word 0xd2801ee0
+.word 0xd2802000
 .word 0xf2a04000
-.word 0xd2801ee0
+.word 0xd2802000
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_3
@@ -16069,7 +16021,7 @@ Lme_79:
 	.align 4
 	.no_dead_strip System_Array_InternalArray__ICollection_Add_T_INT_T_INT
 System_Array_InternalArray__ICollection_Add_T_INT_T_INT:
-.loc 2 81 0 prologue_end
+.loc 2 84 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
 .word 0xf9001faf
@@ -16094,13 +16046,13 @@ ldr x16, [x16, #2072]
 .word 0xf9405a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd28575c0
-.word 0xd28575c0
+.word 0xd2882940
+.word 0xd2882940
 bl _p_99
 .word 0xaa0003e1
-.word 0xd2801ee0
+.word 0xd2802000
 .word 0xf2a04000
-.word 0xd2801ee0
+.word 0xd2802000
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_3
@@ -16117,7 +16069,7 @@ Lme_7a:
 	.align 4
 	.no_dead_strip System_Array_InternalArray__ICollection_Remove_T_INT_T_INT
 System_Array_InternalArray__ICollection_Remove_T_INT_T_INT:
-.loc 2 86 0 prologue_end
+.loc 2 89 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
 .word 0xf9001faf
@@ -16142,13 +16094,13 @@ ldr x16, [x16, #2080]
 .word 0xf9405a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd28575c0
-.word 0xd28575c0
+.word 0xd2882940
+.word 0xd2882940
 bl _p_99
 .word 0xaa0003e1
-.word 0xd2801ee0
+.word 0xd2802000
 .word 0xf2a04000
-.word 0xd2801ee0
+.word 0xd2802000
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_3
@@ -16165,7 +16117,7 @@ Lme_7b:
 	.align 4
 	.no_dead_strip System_Array_InternalArray__ICollection_Contains_T_INT_T_INT
 System_Array_InternalArray__ICollection_Contains_T_INT_T_INT:
-.loc 2 91 0 prologue_end
+.loc 2 94 0 prologue_end
 .word 0xa9b77bfd
 .word 0x910003fd
 .word 0xa90157b4
@@ -16210,28 +16162,28 @@ ldr x16, [x16, #2088]
 .word 0xd280003e
 .word 0x6b1e001f
 .word 0x540002ad
-.loc 2 92 0
+.loc 2 95 0
 .word 0xf9402bb1
 .word 0xf940ba31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd2857d40
-.word 0xd2857d40
+.word 0xd28830c0
+.word 0xd28830c0
 bl _p_99
-bl _p_230
+bl _p_232
 .word 0xf90043a0
 .word 0xf9402bb1
 .word 0xf940de31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94043a1
-.word 0xd2802080
+.word 0xd28021a0
 .word 0xf2a04000
-.word 0xd2802080
+.word 0xd28021a0
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_3
-.loc 2 94 0
+.loc 2 97 0
 .word 0xf9402bb1
 .word 0xf9410a31
 .word 0xb4000051
@@ -16245,14 +16197,14 @@ bl _p_3
 .word 0xd63f0220
 .word 0xf94043a0
 .word 0xaa0003f9
-.loc 2 95 0
+.loc 2 98 0
 .word 0xf9402bb1
 .word 0xf9413e31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xd2800018
 .word 0x14000065
-.loc 2 97 0
+.loc 2 100 0
 .word 0xf9402bb1
 .word 0xf9415631
 .word 0xb4000051
@@ -16261,28 +16213,28 @@ bl _p_3
 .word 0xaa1803e0
 .word 0x9101c3a0
 .word 0xf94037a0
-bl _p_231
+bl _p_233
 .word 0x93407f00
 .word 0xd37ef400
 .word 0x8b000340
 .word 0x91008000
 .word 0xb9800000
 .word 0xb90073a0
-.loc 2 98 0
+.loc 2 101 0
 .word 0xf9402bb1
 .word 0xf9419231
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xb9804ba0
 .word 0x1400000e
-.loc 2 99 0
+.loc 2 102 0
 .word 0xf9402bb1
 .word 0xf941aa31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xb98073a0
 .word 0x1400003f
-.loc 2 100 0
+.loc 2 103 0
 .word 0xf9402bb1
 .word 0xf941c231
 .word 0xb4000051
@@ -16290,7 +16242,7 @@ bl _p_231
 .word 0xd2800020
 .word 0xd2800020
 .word 0x14000055
-.loc 2 106 0
+.loc 2 109 0
 .word 0xf9402bb1
 .word 0xf941de31
 .word 0xb4000051
@@ -16299,7 +16251,7 @@ bl _p_231
 .word 0xb98073a0
 .word 0xf90043a0
 .word 0xf94037a0
-bl _p_232
+bl _p_234
 .word 0xd2800301
 .word 0xd2800301
 bl _p_6
@@ -16307,10 +16259,10 @@ bl _p_6
 .word 0xf94043a0
 .word 0xb90012c0
 .word 0xf94037a0
-bl _p_233
+bl _p_235
 .word 0xaa0003f5
 .word 0xf94037a0
-bl _p_234
+bl _p_236
 .word 0xd280005e
 .word 0xeb1e001f
 .word 0x540000c0
@@ -16322,7 +16274,7 @@ bl _p_234
 .word 0xb98002e0
 .word 0xf90043a0
 .word 0xf94037a0
-bl _p_232
+bl _p_234
 .word 0xd2800301
 .word 0xd2800301
 bl _p_6
@@ -16339,7 +16291,7 @@ bl _p_6
 .word 0xd63f0220
 .word 0xf94043a0
 .word 0x34000100
-.loc 2 107 0
+.loc 2 110 0
 .word 0xf9402bb1
 .word 0xf9429e31
 .word 0xb4000051
@@ -16347,7 +16299,7 @@ bl _p_6
 .word 0xd2800020
 .word 0xd2800020
 .word 0x1400001e
-.loc 2 95 0
+.loc 2 98 0
 .word 0xf9402fb1
 .word 0xf9400231
 .word 0xb4000051
@@ -16371,7 +16323,7 @@ bl _p_6
 .word 0xaa1903e0
 .word 0x6b19031f
 .word 0x54fff22b
-.loc 2 111 0
+.loc 2 114 0
 .word 0xf9402bb1
 .word 0xf9431631
 .word 0xb4000051
@@ -16395,7 +16347,7 @@ Lme_7c:
 	.align 4
 	.no_dead_strip System_Array_InternalArray__ICollection_CopyTo_T_INT_T_INT___int
 System_Array_InternalArray__ICollection_CopyTo_T_INT_T_INT___int:
-.loc 2 116 0 prologue_end
+.loc 2 119 0 prologue_end
 .word 0xa9b87bfd
 .word 0x910003fd
 .word 0xa9015bb5
@@ -16452,8 +16404,8 @@ ldr x16, [x16, #2096]
 .word 0xf9403ba4
 .word 0xf9402ba0
 .word 0xaa1503e1
-bl _p_235
-.loc 2 117 0
+bl _p_237
+.loc 2 120 0
 .word 0xf9401fb1
 .word 0xf940ee31
 .word 0xb4000051
@@ -16473,7 +16425,7 @@ Lme_7d:
 	.align 4
 	.no_dead_strip System_Collections_Generic_EqualityComparer_1_T_INT_get_Default
 System_Collections_Generic_EqualityComparer_1_T_INT_get_Default:
-.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/mcs/class/referencesource/mscorlib/system/collections/generic/equalitycomparer.cs"
+.file 6 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.10.1.177/src/Xamarin.iOS/mcs/class/referencesource/mscorlib/system/collections/generic/equalitycomparer.cs"
 .loc 6 32 0 prologue_end
 .word 0xa9b97bfd
 .word 0x910003fd
@@ -16500,7 +16452,7 @@ ldr x16, [x16, #2104]
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9401ba0
-bl _p_236
+bl _p_238
 .word 0xf9400000
 .word 0xaa0003fa
 .loc 6 33 0
@@ -16516,10 +16468,10 @@ bl _p_236
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9401ba0
-bl _p_237
+bl _p_239
 .word 0xf90033a0
 .word 0xf9401ba0
-bl _p_238
+bl _p_240
 .word 0xf94033af
 .word 0xd63f0000
 .word 0xf9002fa0
@@ -16538,10 +16490,10 @@ bl _p_238
 .word 0xf9402ba0
 .word 0xf90027a0
 .word 0xf9401ba0
-bl _p_236
+bl _p_238
 .word 0xf90023a0
 .word 0xf94027a1
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xf94023a0
 .word 0xf9000001
 .loc 6 37 0
@@ -16600,7 +16552,7 @@ ldr x16, [x16, #2112]
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94033a0
-bl _p_239
+bl _p_241
 .word 0xf90037a0
 .word 0xf94037a0
 .word 0xb4000180
@@ -16651,13 +16603,13 @@ ldr x0, [x16, #2136]
 bl _p_6
 .word 0xf9006fa0
 .word 0xf9406fa0
-bl _p_240
+bl _p_242
 .word 0xf94027b1
 .word 0xf9413e31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94033a0
-bl _p_241
+bl _p_243
 .word 0xf90073a0
 .word 0xf9406fa0
 .word 0xb4000140
@@ -16705,13 +16657,13 @@ ldr x0, [x16, #2152]
 bl _p_6
 .word 0xaa0003f7
 .word 0xaa1703e0
-bl _p_242
+bl _p_244
 .word 0xf94027b1
 .word 0xf9420631
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94033a0
-bl _p_241
+bl _p_243
 .word 0xf9006ba0
 .word 0xb4000137
 .word 0xf94002e0
@@ -16731,13 +16683,13 @@ bl _p_241
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94033a0
-bl _p_243
+bl _p_245
 .word 0xaa0003e2
 .word 0xaa1a03e0
 .word 0xaa0203e0
 .word 0xaa1a03e1
 .word 0xf9400042
-.word 0xf9407c50
+.word 0xf9407850
 .word 0xd63f0200
 .word 0x53001c00
 .word 0xf9007ba0
@@ -16758,14 +16710,14 @@ add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x0, [x16, #2160]
 .word 0xaa1a03e1
 .word 0xaa1a03e1
-bl _p_244
+bl _p_246
 .word 0xf90063a0
 .word 0xf94027b1
 .word 0xf942d231
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94033a0
-bl _p_241
+bl _p_243
 .word 0xf90067a0
 .word 0xf94063a0
 .word 0xb4000140
@@ -16788,7 +16740,7 @@ bl _p_241
 .word 0xaa1a03e0
 .word 0xaa1a03e0
 .word 0xf9400341
-.word 0xf940fc30
+.word 0xf940f830
 .word 0xd63f0200
 .word 0x53001c00
 .word 0xf9007ba0
@@ -16801,7 +16753,7 @@ bl _p_241
 .word 0xaa1a03e0
 .word 0xaa1a03e0
 .word 0xf9400341
-.word 0xf940a030
+.word 0xf9409c30
 .word 0xd63f0200
 .word 0xf9007fa0
 .word 0xf94027b1
@@ -16830,7 +16782,7 @@ ldr x1, [x16, #2168]
 .word 0xaa1a03e0
 .word 0xaa1a03e0
 .word 0xf9400341
-.word 0xf940a830
+.word 0xf940a430
 .word 0xd63f0200
 .word 0xf9007ba0
 .word 0xf94027b1
@@ -16892,7 +16844,7 @@ bl _p_32
 .word 0xf94087a2
 .word 0xaa0203e0
 .word 0xf9400042
-.word 0xf940b050
+.word 0xf940ac50
 .word 0xd63f0200
 .word 0xf9007fa0
 .word 0xf94027b1
@@ -16903,7 +16855,7 @@ bl _p_32
 .word 0xaa1903e1
 .word 0xaa0203e0
 .word 0xf9400042
-.word 0xf9407c50
+.word 0xf9407850
 .word 0xd63f0200
 .word 0x53001c00
 .word 0xf9007ba0
@@ -16924,14 +16876,14 @@ add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x0, [x16, #2192]
 .word 0xaa1903e1
 .word 0xaa1903e1
-bl _p_244
+bl _p_246
 .word 0xf9005ba0
 .word 0xf94027b1
 .word 0xf9454631
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94033a0
-bl _p_241
+bl _p_243
 .word 0xf9005fa0
 .word 0xf9405ba0
 .word 0xb4000140
@@ -16958,7 +16910,7 @@ bl _p_241
 .word 0xaa1a03e0
 .word 0xaa1a03e0
 .word 0xf9400341
-.word 0xf9410c30
+.word 0xf9410830
 .word 0xd63f0200
 .word 0x53001c00
 .word 0xf9007ba0
@@ -16975,14 +16927,14 @@ bl _p_241
 .word 0xd63f0220
 .word 0xaa1a03e0
 .word 0xaa1a03e0
-bl _p_245
+bl _p_247
 .word 0xf90083a0
 .word 0xf94027b1
 .word 0xf9460a31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94083a0
-bl _p_246
+bl _p_248
 .word 0x93407c00
 .word 0xf9007fa0
 .word 0xf94027b1
@@ -17023,14 +16975,14 @@ add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x0, [x16, #2208]
 .word 0xaa1a03e1
 .word 0xaa1a03e1
-bl _p_244
+bl _p_246
 .word 0xf90043a0
 .word 0xf94027b1
 .word 0xf946ba31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94033a0
-bl _p_241
+bl _p_243
 .word 0xf90047a0
 .word 0xf94043a0
 .word 0xb4000140
@@ -17056,14 +17008,14 @@ add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x0, [x16, #2216]
 .word 0xaa1a03e1
 .word 0xaa1a03e1
-bl _p_244
+bl _p_246
 .word 0xaa0003f5
 .word 0xf94027b1
 .word 0xf9473631
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94033a0
-bl _p_241
+bl _p_243
 .word 0xf9003ba0
 .word 0xb4000135
 .word 0xf94002a0
@@ -17088,14 +17040,14 @@ add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x0, [x16, #2224]
 .word 0xaa1a03e1
 .word 0xaa1a03e1
-bl _p_244
+bl _p_246
 .word 0xaa0003f3
 .word 0xf94027b1
 .word 0xf947ae31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94033a0
-bl _p_241
+bl _p_243
 .word 0xf9003fa0
 .word 0xb4000133
 .word 0xf9400260
@@ -17120,14 +17072,14 @@ add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x0, [x16, #2232]
 .word 0xaa1a03e1
 .word 0xaa1a03e1
-bl _p_244
+bl _p_246
 .word 0xf9004ba0
 .word 0xf94027b1
 .word 0xf9482631
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94033a0
-bl _p_241
+bl _p_243
 .word 0xf9004fa0
 .word 0xf9404ba0
 .word 0xb4000140
@@ -17152,13 +17104,13 @@ bl _p_241
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94033a0
-bl _p_247
+bl _p_249
 .word 0xd2800201
 .word 0xd2800201
 bl _p_6
 .word 0xf9007fa0
 .word 0xf94033a0
-bl _p_248
+bl _p_250
 .word 0xaa0003e1
 .word 0xf9407fa0
 .word 0xf9007ba0
@@ -17179,10 +17131,10 @@ bl _p_248
 .word 0x910003bf
 .word 0xa8d17bfd
 .word 0xd65f03c0
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_10
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_10
 
@@ -17312,7 +17264,7 @@ ldr x16, [x16, #2240]
 .word 0x910003bf
 .word 0xa8c77bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_10
 
@@ -17443,7 +17395,7 @@ ldr x16, [x16, #2248]
 .word 0x910003bf
 .word 0xa8c77bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_10
 
@@ -17494,11 +17446,11 @@ ldr x16, [x16, #2256]
 .word 0xf9001fba
 .word 0xf9400fa0
 .word 0xf9400000
-bl _p_249
+bl _p_251
 .word 0xaa0003e2
 .word 0xf9400441
 .word 0xf9401fa0
-bl _p_181
+bl _p_183
 .word 0xb40004e0
 .word 0xf94013b1
 .word 0xf940c231
@@ -17517,7 +17469,7 @@ bl _p_181
 .word 0xf90027a0
 .word 0xf9400fa0
 .word 0xf9400000
-bl _p_250
+bl _p_252
 .word 0xaa0003e1
 .word 0xf94027a0
 .word 0xf9402ba2
@@ -17545,7 +17497,7 @@ bl _p_250
 .word 0xd63f0220
 .word 0xd2800040
 .word 0xd2800040
-bl _p_251
+bl _p_253
 .loc 6 148 0
 .word 0xf94013b1
 .word 0xf9417631
@@ -17561,7 +17513,7 @@ bl _p_251
 .word 0x910003bf
 .word 0xa8c67bfd
 .word 0xd65f03c0
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_10
 
@@ -17635,20 +17587,20 @@ ldr x16, [x16, #2264]
 .word 0xf90023b9
 .word 0xf94013a0
 .word 0xf9400000
-bl _p_252
+bl _p_254
 .word 0xaa0003e2
 .word 0xf9400441
 .word 0xf94023a0
-bl _p_181
+bl _p_183
 .word 0xb40008a0
 .word 0xf90027ba
 .word 0xf94013a0
 .word 0xf9400000
-bl _p_252
+bl _p_254
 .word 0xaa0003e2
 .word 0xf9400441
 .word 0xf94027a0
-bl _p_181
+bl _p_183
 .word 0xb4000780
 .word 0xf94017b1
 .word 0xf9413e31
@@ -17667,7 +17619,7 @@ bl _p_181
 .word 0xf9003ba0
 .word 0xf94013a0
 .word 0xf9400000
-bl _p_253
+bl _p_255
 .word 0xaa0003e1
 .word 0xf9403ba0
 .word 0xeb01001f
@@ -17687,7 +17639,7 @@ bl _p_253
 .word 0xf9002fa0
 .word 0xf94013a0
 .word 0xf9400000
-bl _p_253
+bl _p_255
 .word 0xaa0003e2
 .word 0xf9402fa0
 .word 0xf94033a1
@@ -17720,7 +17672,7 @@ bl _p_253
 .word 0xd63f0220
 .word 0xd2800040
 .word 0xd2800040
-bl _p_251
+bl _p_253
 .loc 6 156 0
 .word 0xf94017b1
 .word 0xf9425631
@@ -17736,7 +17688,7 @@ bl _p_251
 .word 0x910003bf
 .word 0xa8c87bfd
 .word 0xd65f03c0
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_10
 
@@ -17808,11 +17760,11 @@ ldr x16, [x16, #2280]
 .word 0xf9003fa0
 .word 0xf9400fa0
 .word 0xf9400000
-bl _p_254
+bl _p_256
 .word 0xf90043a0
 .word 0xf9400fa0
 .word 0xf9400000
-bl _p_255
+bl _p_257
 .word 0xaa0003e1
 .word 0xf9403fa0
 .word 0xf94043af
@@ -17828,11 +17780,11 @@ bl _p_255
 .word 0xf90037a0
 .word 0xf9400fa0
 .word 0xf9400000
-bl _p_254
+bl _p_256
 .word 0xf9003ba0
 .word 0xf9400fa0
 .word 0xf9400000
-bl _p_255
+bl _p_257
 .word 0xaa0003e1
 .word 0xf94037a0
 .word 0xf9403baf
@@ -17899,11 +17851,11 @@ ldr x16, [x16, #2288]
 .word 0xf9002ba0
 .word 0xf9400ba0
 .word 0xf9400000
-bl _p_256
+bl _p_258
 .word 0xf9002fa0
 .word 0xf9400ba0
 .word 0xf9400000
-bl _p_257
+bl _p_259
 .word 0xaa0003e1
 .word 0xf9402ba0
 .word 0xf9402faf
@@ -17922,7 +17874,7 @@ bl _p_257
 .word 0xb4000051
 .word 0xd63f0220
 .word 0x9100e3a0
-bl _p_258
+bl _p_260
 .word 0x93407c00
 .word 0xf90023a0
 .word 0xf94013b1
@@ -17971,7 +17923,7 @@ ldr x16, [x16, #2296]
 .word 0xf9001ba0
 .word 0xf9400ba0
 .word 0xf9400000
-bl _p_259
+bl _p_261
 .word 0xaa0003e1
 .word 0xf9401ba0
 .word 0xd63f0020
@@ -18023,7 +17975,7 @@ ldr x16, [x16, #2304]
 .word 0xf9002ba0
 .word 0xf9400ba0
 .word 0xf9400000
-bl _p_260
+bl _p_262
 .word 0xaa0003e1
 .word 0xf9402ba0
 .word 0xd63f0020
@@ -18072,15 +18024,15 @@ ldr x16, [x16, #2312]
 .word 0xd63f0220
 .word 0xf9400ba0
 .word 0xf9400000
-bl _p_261
-bl _p_245
+bl _p_263
+bl _p_247
 .word 0xf9002fa0
 .word 0xf9401bb1
 .word 0xf9408231
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9402fa0
-bl _p_246
+bl _p_248
 .word 0x93407c00
 .word 0xf9002ba0
 .word 0xf9401bb1
@@ -18101,12 +18053,12 @@ bl _p_246
 .word 0xf9002ba0
 .word 0xf9400ba0
 .word 0xf9400000
-bl _p_262
+bl _p_264
 .word 0xaa0003e1
 .word 0xf9402ba2
 .word 0xaa0203e0
 .word 0xf940005e
-bl _p_263
+bl _p_265
 .loc 6 447 0
 .word 0xf9401fb1
 .word 0xf9400231
@@ -18158,7 +18110,7 @@ ldr x16, [x16, #2320]
 .word 0xf94017b9
 .word 0xf94013a0
 .word 0xf9400000
-bl _p_264
+bl _p_266
 .word 0xf90027a0
 .word 0xaa1903f7
 .word 0xeb1f033f
@@ -18229,7 +18181,7 @@ ldr x16, [x16, #2328]
 .word 0xf94023a1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9405c30
+.word 0xf9405830
 .word 0xd63f0200
 .word 0xf9001fa0
 .word 0xf9400fb1
@@ -18292,7 +18244,7 @@ add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x0, [x16, #1352]
 .word 0xb9400000
 .word 0x34000140
-bl _p_107
+bl _p_110
 .word 0xf90037a0
 .word 0xf94037a1
 .word 0xf94037a0
@@ -18396,7 +18348,7 @@ bl _p_3
 .word 0x910003bf
 .word 0xa8c97bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_10
 
@@ -18437,7 +18389,7 @@ add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x0, [x16, #1352]
 .word 0xb9400000
 .word 0x34000140
-bl _p_107
+bl _p_110
 .word 0xf9003ba0
 .word 0xf9403ba1
 .word 0xf9403ba0
@@ -18546,7 +18498,7 @@ bl _p_3
 .word 0x910003bf
 .word 0xa8c97bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_10
 
@@ -18559,7 +18511,7 @@ b System_Runtime_CompilerServices_TaskAwaiter_1_TResult_BOOL__ctor_System_Thread
 	.align 4
 	.no_dead_strip System_Runtime_CompilerServices_TaskAwaiter_1_TResult_BOOL__ctor_System_Threading_Tasks_Task_1_TResult_BOOL
 System_Runtime_CompilerServices_TaskAwaiter_1_TResult_BOOL__ctor_System_Threading_Tasks_Task_1_TResult_BOOL:
-.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/mcs/class/referencesource/mscorlib/system/runtime/compilerservices/TaskAwaiter.cs"
+.file 7 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.10.1.177/src/Xamarin.iOS/mcs/class/referencesource/mscorlib/system/runtime/compilerservices/TaskAwaiter.cs"
 .loc 7 317 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -18707,7 +18659,7 @@ ldr x16, [x16, #2368]
 .word 0xd2800022
 .word 0xd2800022
 .word 0xd2800023
-bl _p_265
+bl _p_267
 .loc 7 337 0
 .word 0xf94013b1
 .word 0xf9408a31
@@ -18762,7 +18714,7 @@ ldr x16, [x16, #2376]
 .word 0xd2800002
 .word 0xd2800022
 .word 0xd2800003
-bl _p_265
+bl _p_267
 .loc 7 348 0
 .word 0xf94013b1
 .word 0xf9408a31
@@ -18812,7 +18764,7 @@ ldr x16, [x16, #2384]
 .word 0xd63f0220
 .word 0xaa1a03e0
 .word 0xf9400340
-bl _p_266
+bl _p_268
 .loc 7 358 0
 .word 0xf9400fb1
 .word 0xf9407631
@@ -18822,15 +18774,15 @@ bl _p_266
 .word 0xf9400340
 .word 0xf9002ba0
 .word 0xf9401ba0
-bl _p_267
+bl _p_269
 .word 0x3980b410
 .word 0xb5000050
-bl _p_110
+bl _p_106
 .word 0xf9402ba0
 .word 0xf940001e
 .word 0xf90027a0
 .word 0xf9401ba0
-bl _p_268
+bl _p_270
 .word 0xaa0003e1
 .word 0xf94027a0
 .word 0xd63f0020
@@ -18886,7 +18838,7 @@ add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x0, [x16, #1352]
 .word 0xb9400000
 .word 0x34000140
-bl _p_107
+bl _p_110
 .word 0xf90037a0
 .word 0xf94037a1
 .word 0xf94037a0
@@ -18987,7 +18939,7 @@ bl _p_3
 .word 0x910003bf
 .word 0xa8c97bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_10
 
@@ -19026,7 +18978,7 @@ add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x0, [x16, #1352]
 .word 0xb9400000
 .word 0x34000140
-bl _p_107
+bl _p_110
 .word 0xaa0003f3
 .word 0xaa1303e0
 .word 0xaa1303e1
@@ -19124,7 +19076,7 @@ bl _p_3
 .word 0x910003bf
 .word 0xa8c87bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_10
 
@@ -19154,7 +19106,7 @@ ldr x16, [x16, #2408]
 .word 0xf9400a11
 .word 0xf90027b1
 .word 0xf9402fa0
-bl _p_269
+bl _p_271
 .word 0xaa0003f9
 .word 0xb9800320
 .word 0x91003c10
@@ -19206,8 +19158,8 @@ bl _p_269
 .word 0xeb1e02ff
 .word 0x54000360
 .word 0xf9402fa0
-bl _p_270
-bl _p_271
+bl _p_272
+bl _p_273
 .word 0xb9802b21
 .word 0xaa1803e2
 .word 0x8b010301
@@ -19218,7 +19170,7 @@ bl _p_271
 .word 0xf9400f20
 .word 0xf9401320
 .word 0xf9402fa0
-bl _p_272
+bl _p_274
 .word 0xaa0003e2
 .word 0xf94057a0
 .word 0xf9405ba1
@@ -19246,15 +19198,15 @@ bl _mono_gsharedvt_value_copy
 .word 0xf941aa31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd298b740
+.word 0xd2995de0
 .word 0xf2a00020
-.word 0xd298b740
+.word 0xd2995de0
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_3
@@ -19278,7 +19230,7 @@ bl _p_3
 .word 0xf9422231
 .word 0xb4000051
 .word 0xd63f0220
-bl _p_273
+bl _p_275
 .loc 3 83 0
 .word 0xf94027b1
 .word 0xf9400231
@@ -19289,7 +19241,7 @@ bl _p_273
 .word 0xb4000051
 .word 0xd63f0220
 .word 0x910183a0
-bl _p_274
+bl _p_276
 .loc 3 84 0
 .word 0xf94023b1
 .word 0xf9425e31
@@ -19302,7 +19254,7 @@ add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x0, [x16, #2416]
 .word 0xf90053a0
 .word 0xf9402fa0
-bl _p_272
+bl _p_274
 .word 0xaa0003e2
 .word 0xf94053a1
 .word 0xd2800000
@@ -19310,7 +19262,7 @@ bl _p_272
 .word 0xaa1a03e0
 .word 0xd2800003
 .word 0xd2800004
-bl _p_275
+bl _p_277
 .loc 3 85 0
 .word 0xf94023b1
 .word 0xf942aa31
@@ -19329,7 +19281,7 @@ bl _p_42
 .word 0xb4000051
 .word 0xd63f0220
 .word 0x910183a0
-bl _p_276
+bl _p_278
 .loc 3 89 0
 .word 0xf94023b1
 .word 0xf942ee31
@@ -19362,7 +19314,7 @@ Lme_a4:
 	.align 4
 	.no_dead_strip System_Linq_Enumerable_ToArray_TSource_INT_System_Collections_Generic_IEnumerable_1_TSource_INT
 System_Linq_Enumerable_ToArray_TSource_INT_System_Collections_Generic_IEnumerable_1_TSource_INT:
-.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/external/corefx/src/System.Linq/src/System/Linq/ToCollection.cs"
+.file 8 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.10.1.177/src/Xamarin.iOS/external/corefx/src/System.Linq/src/System/Linq/ToCollection.cs"
 .loc 8 13 0 prologue_end
 .word 0xa9ba7bfd
 .word 0x910003fd
@@ -19404,7 +19356,7 @@ ldr x0, [x16, #2432]
 .word 0xd2802761
 .word 0xd2802761
 bl _p_69
-bl _p_277
+bl _p_279
 .word 0xf9002ba0
 .word 0xf94017b1
 .word 0xf940aa31
@@ -19419,11 +19371,11 @@ bl _p_3
 .word 0xd63f0220
 .word 0xf90027ba
 .word 0xf94023a0
-bl _p_278
+bl _p_280
 .word 0xaa0003e2
 .word 0xf9400441
 .word 0xf94027a0
-bl _p_181
+bl _p_183
 .word 0xaa0003f7
 .word 0xaa1703e0
 .word 0xaa1703e1
@@ -19431,10 +19383,10 @@ bl _p_181
 .word 0xb5000240
 .word 0xaa1a03e0
 .word 0xf94023a0
-bl _p_279
+bl _p_281
 .word 0xf9002fa0
 .word 0xf94023a0
-bl _p_280
+bl _p_282
 .word 0xaa0003e1
 .word 0xf9402faf
 .word 0xaa1a03e0
@@ -19448,7 +19400,7 @@ bl _p_280
 .word 0x14000011
 .word 0xaa1903e0
 .word 0xf94023a0
-bl _p_281
+bl _p_283
 .word 0xaa0003ef
 .word 0xaa1903e0
 .word 0xf9400321
@@ -19540,15 +19492,15 @@ ldr x16, [x16, #2440]
 .word 0xf940e231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd298b740
+.word 0xd2995de0
 .word 0xf2a00020
-.word 0xd298b740
+.word 0xd2995de0
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_3
@@ -19572,7 +19524,7 @@ bl _p_3
 .word 0xf9415a31
 .word 0xb4000051
 .word 0xd63f0220
-bl _p_273
+bl _p_275
 .loc 3 470 0
 .word 0xf94017b1
 .word 0xf9400231
@@ -19583,7 +19535,7 @@ bl _p_273
 .word 0xb4000051
 .word 0xd63f0220
 .word 0x9101e3a0
-bl _p_274
+bl _p_276
 .loc 3 471 0
 .word 0xf94013b1
 .word 0xf9419631
@@ -19591,7 +19543,7 @@ bl _p_274
 .word 0xd63f0220
 .word 0xaa1a03e0
 .word 0xaa1a03e0
-bl _p_282
+bl _p_284
 .loc 3 472 0
 .word 0xf94013b1
 .word 0xf941b231
@@ -19610,7 +19562,7 @@ bl _p_42
 .word 0xb4000051
 .word 0xd63f0220
 .word 0x9101e3a0
-bl _p_276
+bl _p_278
 .loc 3 476 0
 .word 0xf94013b1
 .word 0xf941f631
@@ -19704,15 +19656,15 @@ ldr x16, [x16, #2448]
 .word 0xf940e231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd298b740
+.word 0xd2995de0
 .word 0xf2a00020
-.word 0xd298b740
+.word 0xd2995de0
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
-.word 0xd2801240
+.word 0xd2801360
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_3
@@ -19736,7 +19688,7 @@ bl _p_3
 .word 0xf9415a31
 .word 0xb4000051
 .word 0xd63f0220
-bl _p_273
+bl _p_275
 .loc 3 470 0
 .word 0xf94017b1
 .word 0xf9400231
@@ -19747,7 +19699,7 @@ bl _p_273
 .word 0xb4000051
 .word 0xd63f0220
 .word 0x9101e3a0
-bl _p_274
+bl _p_276
 .loc 3 471 0
 .word 0xf94013b1
 .word 0xf9419631
@@ -19755,7 +19707,7 @@ bl _p_274
 .word 0xd63f0220
 .word 0xaa1a03e0
 .word 0xaa1a03e0
-bl _p_283
+bl _p_285
 .loc 3 472 0
 .word 0xf94013b1
 .word 0xf941b231
@@ -19774,7 +19726,7 @@ bl _p_42
 .word 0xb4000051
 .word 0xd63f0220
 .word 0x9101e3a0
-bl _p_276
+bl _p_278
 .loc 3 476 0
 .word 0xf94013b1
 .word 0xf941f631
@@ -19805,7 +19757,7 @@ Lme_aa:
 	.align 4
 	.no_dead_strip System_Collections_Generic_List_1_T_INT_Add_T_INT
 System_Collections_Generic_List_1_T_INT_Add_T_INT:
-.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/mcs/class/referencesource/mscorlib/system/collections/generic/list.cs"
+.file 9 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.10.1.177/src/Xamarin.iOS/mcs/class/referencesource/mscorlib/system/collections/generic/list.cs"
 .loc 9 228 0 prologue_end
 .word 0xa9bb7bfd
 .word 0x910003fd
@@ -19852,7 +19804,7 @@ ldr x16, [x16, #2456]
 .word 0xf90023a0
 .word 0xf9400fa0
 .word 0xf9400000
-bl _p_284
+bl _p_286
 .word 0xaa0003e2
 .word 0xf94023a0
 .word 0xf94027a1
@@ -19909,7 +19861,7 @@ bl _p_284
 .word 0x910003bf
 .word 0xa8c57bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_10
 
@@ -19951,13 +19903,13 @@ ldr x16, [x16, #2464]
 .word 0xf9001ba0
 .word 0xf9400ba0
 .word 0xf9400000
-bl _p_285
+bl _p_287
 .word 0x3980b410
 .word 0xb5000050
-bl _p_110
+bl _p_106
 .word 0xf9400ba0
 .word 0xf9400000
-bl _p_286
+bl _p_288
 .word 0xf9401ba1
 .word 0xf9400000
 .word 0xf9000820
@@ -20014,7 +19966,7 @@ ldr x16, [x16, #2472]
 .word 0xf9400a11
 .word 0xf90037b1
 .word 0xf9403fa0
-bl _p_287
+bl _p_289
 .word 0xaa0003f7
 .word 0xb98002e0
 .word 0x91003c10
@@ -20054,7 +20006,7 @@ bl _p_287
 .word 0xaa1803e0
 .word 0x91002300
 .word 0xf90067a0
-bl _p_114
+bl _p_116
 .word 0x53001c00
 .word 0xf90063a0
 .word 0xf94033b1
@@ -20073,7 +20025,7 @@ bl _p_114
 .word 0xaa1403e0
 .word 0xaa1803e0
 .word 0xaa1803e0
-bl _p_288
+bl _p_290
 .word 0xf90063a0
 .word 0xf94033b1
 .word 0xf9414231
@@ -20087,7 +20039,7 @@ bl _p_288
 .word 0x910203a2
 .word 0xaa1303e0
 .word 0xaa1a03e1
-bl _p_289
+bl _p_291
 .word 0xf90063a0
 .word 0xf94033b1
 .word 0xf9417a31
@@ -20113,7 +20065,7 @@ bl _p_289
 .word 0xf941c231
 .word 0xb4000051
 .word 0xd63f0220
-bl _p_114
+bl _p_116
 .word 0x53001c00
 .word 0xf90063a0
 .word 0xf94033b1
@@ -20134,7 +20086,7 @@ bl _p_114
 .word 0xd2800000
 .word 0xaa1803e0
 .word 0xaa1803e0
-bl _p_288
+bl _p_290
 .word 0xf9007fa0
 .word 0xf94033b1
 .word 0xf9422a31
@@ -20143,7 +20095,7 @@ bl _p_288
 .word 0xf9407fa1
 .word 0xaa0103e0
 .word 0xf940003e
-bl _p_115
+bl _p_117
 .word 0x93407c00
 .word 0xf90063a0
 .word 0xf94033b1
@@ -20163,7 +20115,7 @@ add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x0, [x16, #2488]
 .word 0xf9007ba0
 .word 0xf9403fa0
-bl _p_290
+bl _p_292
 .word 0xaa0003e2
 .word 0xf94077a0
 .word 0xf9407ba1
@@ -20171,7 +20123,7 @@ bl _p_290
 .word 0xd2800003
 .word 0xd2800003
 .word 0xd2800004
-bl _p_275
+bl _p_277
 .word 0xf90073a0
 .word 0xf94033b1
 .word 0xf942b631
@@ -20180,7 +20132,7 @@ bl _p_275
 .word 0xf94073a1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9405c30
+.word 0xf9405830
 .word 0xd63f0200
 .word 0xf9006fa0
 .word 0xf94033b1
@@ -20189,7 +20141,7 @@ bl _p_275
 .word 0xd63f0220
 .word 0xf9406ba0
 .word 0xf9406fa1
-bl _p_215
+bl _p_217
 .word 0xf90067a0
 .word 0xf94033b1
 .word 0xf942fe31
@@ -20200,7 +20152,7 @@ bl _p_215
 .word 0xd2800000
 .word 0xd2800000
 .word 0xd2800003
-bl _p_216
+bl _p_218
 .loc 3 174 0
 .word 0xf94037b1
 .word 0xf9400231
@@ -20228,8 +20180,8 @@ bl _p_216
 .word 0xeb1e033f
 .word 0x54000380
 .word 0xf9403fa0
-bl _p_291
-bl _p_271
+bl _p_293
+bl _p_273
 .word 0xb9802ae1
 .word 0xaa1603e2
 .word 0x8b0102c1
@@ -20240,7 +20192,7 @@ bl _p_271
 .word 0xf9400ee0
 .word 0xf94012e0
 .word 0xf9403fa0
-bl _p_290
+bl _p_292
 .word 0xaa0003e2
 .word 0xf94067a0
 .word 0xf9406ba1
@@ -20266,7 +20218,7 @@ bl _mono_gsharedvt_value_copy
 .word 0xf94047a0
 .word 0xf9404ba1
 .word 0xd2800003
-bl _p_292
+bl _p_294
 .loc 3 177 0
 .word 0xf94037b1
 .word 0xf9400231
@@ -20285,7 +20237,7 @@ add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x0, [x16, #2496]
 .word 0xf90067a0
 .word 0xf9403fa0
-bl _p_293
+bl _p_295
 .word 0xaa0003e2
 .word 0xf94063a0
 .word 0xf94067a1
@@ -20295,7 +20247,7 @@ bl _p_293
 .word 0xd2800003
 .word 0xf9000095
 .word 0xd2800003
-bl _p_275
+bl _p_277
 .loc 3 178 0
 .word 0xf94033b1
 .word 0xf9449631
@@ -20313,7 +20265,7 @@ bl _p_275
 .word 0xf94063a0
 .word 0xd2800001
 .word 0xd2800001
-bl _p_294
+bl _p_296
 .loc 3 182 0
 .word 0xf94033b1
 .word 0xf944d631
@@ -20396,7 +20348,7 @@ ldr x16, [x16, #2504]
 .word 0xd63f0220
 .word 0xaa1803e0
 .word 0xaa1803e0
-bl _p_114
+bl _p_116
 .word 0x53001c00
 .word 0xf90073a0
 .word 0xf9402bb1
@@ -20432,7 +20384,7 @@ bl _p_29
 .word 0x9102a3a2
 .word 0xaa1403e0
 .word 0xaa1303e1
-bl _p_289
+bl _p_291
 .word 0xf90073a0
 .word 0xf9402bb1
 .word 0xf9413231
@@ -20514,7 +20466,7 @@ bl _mono_gc_wbarrier_range_copy
 .word 0xf94057a2
 .word 0xaa1603e3
 .word 0xaa1803e0
-bl _p_292
+bl _p_294
 .loc 3 559 0
 .word 0xf9402fb1
 .word 0xf9400231
@@ -20531,7 +20483,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x15, [x16, #896]
 .word 0xaa1703e1
-bl _p_295
+bl _p_297
 .loc 3 560 0
 .word 0xf9402bb1
 .word 0xf9429e31
@@ -20549,7 +20501,7 @@ bl _p_295
 .word 0xf94073a0
 .word 0xd2800001
 .word 0xd2800001
-bl _p_294
+bl _p_296
 .loc 3 564 0
 .word 0xf9402bb1
 .word 0xf942de31
@@ -20631,7 +20583,7 @@ ldr x16, [x16, #2520]
 .word 0xd63f0220
 .word 0xaa1803e0
 .word 0xaa1803e0
-bl _p_114
+bl _p_116
 .word 0x53001c00
 .word 0xf90073a0
 .word 0xf9402bb1
@@ -20667,7 +20619,7 @@ bl _p_29
 .word 0x9102a3a2
 .word 0xaa1403e0
 .word 0xaa1303e1
-bl _p_289
+bl _p_291
 .word 0xf90073a0
 .word 0xf9402bb1
 .word 0xf9413231
@@ -20749,7 +20701,7 @@ bl _mono_gc_wbarrier_range_copy
 .word 0xf94057a2
 .word 0xaa1603e3
 .word 0xaa1803e0
-bl _p_292
+bl _p_294
 .loc 3 559 0
 .word 0xf9402fb1
 .word 0xf9400231
@@ -20766,7 +20718,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x15, [x16, #896]
 .word 0xaa1703e1
-bl _p_295
+bl _p_297
 .loc 3 560 0
 .word 0xf9402bb1
 .word 0xf9429e31
@@ -20784,7 +20736,7 @@ bl _p_295
 .word 0xf94073a0
 .word 0xd2800001
 .word 0xd2800001
-bl _p_294
+bl _p_296
 .loc 3 564 0
 .word 0xf9402bb1
 .word 0xf942de31
@@ -20823,8 +20775,8 @@ Lme_af:
 	.align 4
 	.no_dead_strip System_Threading_Tasks_Task_Run_TResult_BOOL_System_Func_1_TResult_BOOL
 System_Threading_Tasks_Task_Run_TResult_BOOL_System_Func_1_TResult_BOOL:
-.file 10 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/mcs/class/referencesource/mscorlib/system/threading/Tasks/Task.cs"
-.loc 10 5665 0 prologue_end
+.file 10 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.10.1.177/src/Xamarin.iOS/mcs/class/referencesource/mscorlib/system/threading/Tasks/Task.cs"
+.loc 10 5672 0 prologue_end
 .word 0xa9b87bfd
 .word 0x910003fd
 .word 0xf9001faf
@@ -20853,7 +20805,7 @@ ldr x16, [x16, #2536]
 .word 0xd63f0220
 .word 0xd280003e
 .word 0xb9004bbe
-.loc 10 5666 0
+.loc 10 5673 0
 .word 0xf9400fb1
 .word 0xf9407a31
 .word 0xb4000051
@@ -20869,7 +20821,7 @@ ldr x16, [x16, #2536]
 .word 0xf9001ba0
 .word 0xd2800100
 .word 0xd2800000
-bl _p_296
+bl _p_298
 .word 0xf90033a0
 .word 0xf9400fb1
 .word 0xf940be31
@@ -20878,15 +20830,15 @@ bl _p_296
 .word 0x910123a0
 .word 0xf90037a0
 .word 0xf9401fa0
-bl _p_297
+bl _p_299
 .word 0x3980b410
 .word 0xb5000050
-bl _p_110
+bl _p_106
 .word 0xf9401fa0
-bl _p_297
+bl _p_299
 .word 0xf9003ba0
 .word 0xf9401fa0
-bl _p_298
+bl _p_300
 .word 0xaa0003e7
 .word 0xf9402fa1
 .word 0xf94033a5
@@ -20917,7 +20869,7 @@ Lme_b0:
 	.align 4
 	.no_dead_strip System_Array_InternalArray__get_Item_T_INT_int
 System_Array_InternalArray__get_Item_T_INT_int:
-.loc 2 173 0 prologue_end
+.loc 2 176 0 prologue_end
 .word 0xa9ba7bfd
 .word 0x910003fd
 .word 0xa9016bb9
@@ -20955,7 +20907,7 @@ ldr x16, [x16, #2544]
 .word 0xf9402ba0
 .word 0x6b00035f
 .word 0x540001e3
-.loc 2 174 0
+.loc 2 177 0
 .word 0xf94013b1
 .word 0xf9409e31
 .word 0xb4000051
@@ -20964,13 +20916,13 @@ ldr x16, [x16, #2544]
 .word 0xd28187e0
 bl _p_99
 .word 0xaa0003e1
-.word 0xd2801260
+.word 0xd2801380
 .word 0xf2a04000
-.word 0xd2801260
+.word 0xd2801380
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_3
-.loc 2 177 0
+.loc 2 180 0
 .word 0xf94013b1
 .word 0xf940d631
 .word 0xb4000051
@@ -20979,14 +20931,14 @@ bl _p_3
 .word 0xaa1a03e0
 .word 0x910103a0
 .word 0xf9401fa0
-bl _p_299
+bl _p_301
 .word 0x93407f40
 .word 0xd37ef400
 .word 0x8b000320
 .word 0x91008000
 .word 0xb9800000
 .word 0xb90043a0
-.loc 2 178 0
+.loc 2 181 0
 .word 0xf94013b1
 .word 0xf9411231
 .word 0xb4000051
@@ -21043,18 +20995,18 @@ ldr x16, [x16, #2552]
 .word 0xf94023a0
 .word 0xf9001ba0
 .word 0xf9401fa0
-bl _p_300
+bl _p_302
 .word 0x3980b410
 .word 0xb5000050
-bl _p_110
+bl _p_106
 .word 0xf9401fa0
-bl _p_300
+bl _p_302
 .word 0xd2800a01
 .word 0xd2800a01
 bl _p_6
 .word 0xf9002fa0
 .word 0xf9401fa0
-bl _p_301
+bl _p_303
 .word 0xaa0003e5
 .word 0xf9402fa0
 .word 0xf94033a2
@@ -21125,10 +21077,10 @@ ldr x16, [x16, #2560]
 .word 0x910143a0
 .word 0xf9003fa0
 .word 0xf94033a0
-bl _p_302
+bl _p_304
 .word 0xf9004ba0
 .word 0xf94033a0
-bl _p_303
+bl _p_305
 .word 0xaa0003e3
 .word 0xf9403fa0
 .word 0xf94043a1
@@ -21180,8 +21132,8 @@ ldr x3, [x16, #16]
 Lme_b3:
 .text
 	.align 4
-	.no_dead_strip System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_0_TResult_BOOL__ctor
-System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_0_TResult_BOOL__ctor:
+	.no_dead_strip System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_1_TResult_BOOL__ctor
+System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_1_TResult_BOOL__ctor:
 .word 0xa9bd7bfd
 .word 0x910003fd
 .word 0xf9000ba0
@@ -21212,8 +21164,8 @@ ldr x16, [x16, #2568]
 Lme_b4:
 .text
 	.align 4
-	.no_dead_strip System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_1_TResult_BOOL__ctor
-System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_1_TResult_BOOL__ctor:
+	.no_dead_strip System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_0_TResult_BOOL__ctor
+System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_0_TResult_BOOL__ctor:
 .word 0xa9bd7bfd
 .word 0x910003fd
 .word 0xf9000ba0
@@ -21265,7 +21217,7 @@ ldr x16, [x16, #2584]
 .word 0xf9001ba0
 .word 0xf9400ba0
 .word 0xf9400000
-bl _p_304
+bl _p_306
 .word 0xaa0003e1
 .word 0xf9401ba0
 .word 0xd63f0020
@@ -21286,7 +21238,7 @@ Lme_b6:
 	.align 4
 	.no_dead_strip System_Runtime_CompilerServices_JitHelpers_UnsafeEnumCast_T_INT_T_INT
 System_Runtime_CompilerServices_JitHelpers_UnsafeEnumCast_T_INT_T_INT:
-.file 11 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/mcs/class/corlib/ReferenceSources/JitHelpers.cs"
+.file 11 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.10.1.177/src/Xamarin.iOS/mcs/class/corlib/ReferenceSources/JitHelpers.cs"
 .loc 11 14 0 prologue_end
 .word 0xa9bb7bfd
 .word 0x910003fd
@@ -21331,7 +21283,7 @@ Lme_b7:
 	.align 4
 	.no_dead_strip System_Collections_Generic_EnumerableHelpers_ToArray_T_INT_System_Collections_Generic_IEnumerable_1_T_INT
 System_Collections_Generic_EnumerableHelpers_ToArray_T_INT_System_Collections_Generic_IEnumerable_1_T_INT:
-.file 12 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/external/corefx/src/Common/src/System/Collections/Generic/EnumerableHelpers.cs"
+.file 12 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.10.1.177/src/Xamarin.iOS/external/corefx/src/Common/src/System/Collections/Generic/EnumerableHelpers.cs"
 .loc 12 70 0 prologue_end
 .word 0xa9b37bfd
 .word 0x910003fd
@@ -21372,11 +21324,11 @@ ldr x16, [x16, #2600]
 .word 0xd63f0220
 .word 0xf90047ba
 .word 0xf9402ba0
-bl _p_305
+bl _p_307
 .word 0xaa0003e2
 .word 0xf9400441
 .word 0xf94047a0
-bl _p_181
+bl _p_183
 .word 0xaa0003f5
 .word 0xaa1503e0
 .word 0xaa1503e1
@@ -21389,7 +21341,7 @@ bl _p_181
 .word 0xd63f0220
 .word 0xaa1903e0
 .word 0xf9402ba0
-bl _p_306
+bl _p_308
 .word 0xaa0003ef
 .word 0xaa1903e0
 .word 0xf9400321
@@ -21420,10 +21372,10 @@ bl _p_306
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9402ba0
-bl _p_307
+bl _p_309
 .word 0xf9004fa0
 .word 0xf9402ba0
-bl _p_308
+bl _p_310
 .word 0xf9404faf
 .word 0xd63f0000
 .word 0xf9004ba0
@@ -21440,7 +21392,7 @@ bl _p_308
 .word 0xd63f0220
 .word 0xaa1803e0
 .word 0xf9402ba0
-bl _p_309
+bl _p_311
 .word 0xaa1803e1
 bl _p_32
 .word 0xaa0003f7
@@ -21454,7 +21406,7 @@ bl _p_32
 .word 0xf9004ba0
 .word 0xd2800000
 .word 0xf9402ba0
-bl _p_310
+bl _p_312
 .word 0xaa0003ef
 .word 0xf9404ba1
 .word 0xaa1903e0
@@ -21480,10 +21432,10 @@ bl _p_310
 .word 0xf9005fa0
 .word 0xd2800020
 .word 0xf9402ba0
-bl _p_311
+bl _p_313
 .word 0xf90063a0
 .word 0xf9402ba0
-bl _p_312
+bl _p_314
 .word 0xaa0003e2
 .word 0xf9405fa0
 .word 0xf94063af
@@ -21498,10 +21450,10 @@ bl _p_312
 .word 0xf90057a0
 .word 0xaa1a03e0
 .word 0xf9402ba0
-bl _p_311
+bl _p_313
 .word 0xf9005ba0
 .word 0xf9402ba0
-bl _p_313
+bl _p_315
 .word 0xaa0003e2
 .word 0xf94057a0
 .word 0xf9405baf
@@ -21515,10 +21467,10 @@ bl _p_313
 .word 0x910163a0
 .word 0xf9004fa0
 .word 0xf9402ba0
-bl _p_311
+bl _p_313
 .word 0xf90053a0
 .word 0xf9402ba0
-bl _p_314
+bl _p_316
 .word 0xaa0003e1
 .word 0xf9404fa0
 .word 0xf94053af
@@ -21649,7 +21601,7 @@ ldr x16, [x16, #2608]
 .word 0xf9002ba0
 .word 0xf94017a0
 .word 0xf9400000
-bl _p_315
+bl _p_317
 .word 0xaa0003e2
 .word 0xf9402ba0
 .word 0xaa1903e1
@@ -21755,7 +21707,7 @@ b System_Collections_Generic_LargeArrayBuilder_1_T_INT_ToArray
 	.align 4
 	.no_dead_strip System_Collections_Generic_LargeArrayBuilder_1_T_INT_ToArray
 System_Collections_Generic_LargeArrayBuilder_1_T_INT_ToArray:
-.file 13 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/external/corefx/src/Common/src/System/Collections/Generic/LargeArrayBuilder.cs"
+.file 13 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.10.1.177/src/Xamarin.iOS/external/corefx/src/Common/src/System/Collections/Generic/LargeArrayBuilder.cs"
 .loc 13 313 0 prologue_end
 .word 0xa9ba7bfd
 .word 0x910003fd
@@ -21786,11 +21738,11 @@ ldr x16, [x16, #2624]
 .word 0x9100e3a0
 .word 0xf90027a0
 .word 0xf9401ba0
-bl _p_316
+bl _p_318
 .word 0xf9002ba0
 .word 0xf940035e
 .word 0xf9401ba0
-bl _p_317
+bl _p_319
 .word 0xaa0003e2
 .word 0xf94027a1
 .word 0xf9402baf
@@ -21820,7 +21772,7 @@ bl _p_317
 .word 0xb9802f40
 .word 0xf9002fa0
 .word 0xf9401ba0
-bl _p_318
+bl _p_320
 .word 0xf9402fa1
 bl _p_32
 .word 0xf9001fa0
@@ -21837,11 +21789,11 @@ bl _p_32
 .word 0xb9802f40
 .word 0xf90027a0
 .word 0xf9401ba0
-bl _p_316
+bl _p_318
 .word 0xf9002ba0
 .word 0xf940035e
 .word 0xf9401ba0
-bl _p_319
+bl _p_321
 .word 0xaa0003e4
 .word 0xf94023a1
 .word 0xf94027a3
@@ -21906,12 +21858,12 @@ ldr x16, [x16, #2632]
 .word 0xf9401ba0
 .word 0xf90047a0
 .word 0xf9402ba0
-bl _p_320
+bl _p_322
 .word 0xaa0003ef
 .word 0xf94047a1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0x928012f0
+.word 0x928008f0
 .word 0xf2bffff0
 .word 0xf8706830
 .word 0xd63f0200
@@ -21990,11 +21942,11 @@ bl _p_320
 .word 0xd63f0220
 .word 0xaa1903e0
 .word 0xf9402ba0
-bl _p_321
+bl _p_323
 .word 0xf90043a0
 .word 0xf940033e
 .word 0xf9402ba0
-bl _p_322
+bl _p_324
 .word 0xaa0003e1
 .word 0xf94043af
 .word 0xaa1903e0
@@ -22035,12 +21987,12 @@ bl _p_322
 .word 0xf9402fa0
 .word 0xf9004ba0
 .word 0xf9402ba0
-bl _p_323
+bl _p_325
 .word 0xaa0003ef
 .word 0xf9404ba1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0x928005f0
+.word 0x928001f0
 .word 0xf2bffff0
 .word 0xf8706830
 .word 0xd63f0200
@@ -22164,7 +22116,7 @@ ldr x15, [x16, #272]
 .word 0x910003bf
 .word 0xa8ca7bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_10
 
@@ -22207,14 +22159,14 @@ ldr x16, [x16, #2640]
 .word 0xd29fffe0
 .word 0xf2afffe0
 .word 0xf9401fa0
-bl _p_324
+bl _p_326
 .word 0xaa0003e1
 .word 0xf9402ba0
 .word 0xf90027a1
 .word 0xf940001e
 .word 0xf90023a0
 .word 0xf9401fa0
-bl _p_325
+bl _p_327
 .word 0xaa0003e2
 .word 0xf94023a0
 .word 0xf94027af
@@ -22239,7 +22191,7 @@ Lme_bd:
 	.align 4
 	.no_dead_strip System_Array_Empty_T_INT
 System_Array_Empty_T_INT:
-.loc 2 614 0 prologue_end
+.loc 2 648 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
 .word 0xf90017af
@@ -22263,12 +22215,12 @@ ldr x16, [x16, #2648]
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94017a0
-bl _p_326
+bl _p_328
 .word 0x3980b410
 .word 0xb5000050
-bl _p_110
+bl _p_106
 .word 0xf94017a0
-bl _p_327
+bl _p_329
 .word 0xf9400000
 .word 0xf9400bb1
 .word 0xf9408231
@@ -22323,7 +22275,7 @@ ldr x16, [x16, #2656]
 .word 0xd28002a0
 .word 0xd28001e0
 .word 0xd28002a1
-bl _p_328
+bl _p_330
 .loc 9 121 0
 .word 0xf9401bb1
 .word 0xf9400231
@@ -22356,7 +22308,7 @@ bl _p_328
 .word 0xaa1a03e0
 .word 0xf94013a0
 .word 0xf9400000
-bl _p_329
+bl _p_331
 .word 0xaa1a03e1
 bl _p_32
 .word 0xaa0003f9
@@ -22385,7 +22337,7 @@ bl _p_32
 .word 0xd2800001
 .word 0xaa1903e2
 .word 0xd2800003
-bl _p_235
+bl _p_237
 .loc 9 127 0
 .word 0xf9401bb1
 .word 0xf9400231
@@ -22425,13 +22377,13 @@ ldr x1, [x16, #16]
 .word 0xf90023a0
 .word 0xf94013a0
 .word 0xf9400000
-bl _p_330
+bl _p_332
 .word 0x3980b410
 .word 0xb5000050
-bl _p_110
+bl _p_106
 .word 0xf94013a0
 .word 0xf9400000
-bl _p_331
+bl _p_333
 .word 0xf94023a1
 .word 0xf9400000
 .word 0xf9000820
@@ -22518,11 +22470,11 @@ ldr x16, [x16, #2664]
 .word 0xaa1703e0
 .word 0xaa1603e0
 .word 0xf94033a0
-bl _p_332
+bl _p_334
 .word 0xf9004ba0
 .word 0xf94002fe
 .word 0xf94033a0
-bl _p_333
+bl _p_335
 .word 0xaa0003e2
 .word 0xf9404baf
 .word 0xaa1703e0
@@ -22546,7 +22498,7 @@ bl _p_333
 .word 0xaa0003e1
 .word 0xb9801801
 .word 0xaa1a03e0
-bl _p_334
+bl _p_336
 .word 0x93407c00
 .word 0xf9003fa0
 .word 0xf94027b1
@@ -22570,7 +22522,7 @@ bl _p_334
 .word 0xd2800001
 .word 0xaa1803e2
 .word 0xaa1903e3
-bl _p_235
+bl _p_237
 .loc 13 199 0
 .word 0xf94027b1
 .word 0xf9417e31
@@ -22759,7 +22711,7 @@ ldr x16, [x16, #2680]
 .word 0xaa1a03e0
 .word 0xb9800341
 .word 0xaa1703e0
-bl _p_334
+bl _p_336
 .word 0x93407c00
 .word 0xf90033a0
 .word 0xf9401bb1
@@ -22778,7 +22730,7 @@ bl _p_334
 .word 0xaa1a03e1
 .word 0xf9002ba0
 .word 0xf94027a0
-bl _p_335
+bl _p_337
 .word 0xf9402ba1
 bl _p_32
 .word 0xf9001340
@@ -22809,7 +22761,7 @@ ldr x2, [x16, #16]
 .word 0xb9802f44
 .word 0xd2800001
 .word 0xd2800003
-bl _p_235
+bl _p_237
 .loc 13 357 0
 .word 0xf9401bb1
 .word 0xf9419631
@@ -22872,11 +22824,11 @@ ldr x2, [x16, #16]
 .word 0xf9401340
 .word 0xf90033a0
 .word 0xf94027a0
-bl _p_336
+bl _p_338
 .word 0xaa0003ef
 .word 0xf9402fa0
 .word 0xf94033a1
-bl _p_337
+bl _p_339
 .loc 13 382 0
 .word 0xf9401bb1
 .word 0xf9428631
@@ -22889,7 +22841,7 @@ bl _p_337
 .word 0xaa1a03e2
 .word 0xb9802f42
 .word 0x4b020021
-bl _p_334
+bl _p_336
 .word 0x93407c00
 .word 0xf9002ba0
 .word 0xf9401bb1
@@ -22910,7 +22862,7 @@ bl _p_334
 .word 0xaa1a03e0
 .word 0xaa1803e0
 .word 0xf94027a0
-bl _p_335
+bl _p_337
 .word 0xaa1803e1
 bl _p_32
 .word 0xf9001340
@@ -23002,10 +22954,10 @@ ldr x16, [x16, #2688]
 .word 0xaa1903e0
 .word 0xaa1903e0
 .word 0xf94027a0
-bl _p_338
+bl _p_340
 .word 0xf9002fa0
 .word 0xf94027a0
-bl _p_339
+bl _p_341
 .word 0xf9402faf
 .word 0xd63f0000
 .word 0xf9002ba0
@@ -23110,10 +23062,10 @@ ldr x16, [x16, #2696]
 .word 0x91004320
 .word 0xf90027a0
 .word 0xf9401fa0
-bl _p_340
+bl _p_342
 .word 0xaa0003ef
 .word 0xf94027a0
-bl _p_341
+bl _p_343
 .word 0x93407c00
 .word 0xf90023a0
 .word 0xf94013b1
@@ -23133,11 +23085,11 @@ bl _p_341
 .word 0x51000740
 .word 0xf9002ba0
 .word 0xf9401fa0
-bl _p_340
+bl _p_342
 .word 0xaa0003ef
 .word 0xf94027a0
 .word 0xf9402ba1
-bl _p_342
+bl _p_344
 .word 0xf90023a0
 .word 0xf94013b1
 .word 0xf940fe31
@@ -23346,8 +23298,8 @@ bl System_Threading_Tasks_Task_Run_TResult_BOOL_System_Func_1_TResult_BOOL
 bl System_Array_InternalArray__get_Item_T_INT_int
 bl System_Runtime_CompilerServices_AsyncTaskCache_CreateCacheableTask_TResult_BOOL_TResult_BOOL
 bl System_Runtime_CompilerServices_ConfiguredTaskAwaitable_1_TResult_BOOL__ctor_System_Threading_Tasks_Task_1_TResult_BOOL_bool
-bl System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_0_TResult_BOOL__ctor
 bl System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_1_TResult_BOOL__ctor
+bl System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_0_TResult_BOOL__ctor
 bl System_Collections_Generic_ObjectEqualityComparer_1_T_INT__ctor
 bl System_Runtime_CompilerServices_JitHelpers_UnsafeEnumCast_T_INT_T_INT
 bl System_Collections_Generic_EnumerableHelpers_ToArray_T_INT_System_Collections_Generic_IEnumerable_1_T_INT
@@ -23434,23 +23386,23 @@ unwind_info:
 
 	.byte 0,13,12,31,0,68,14,64,157,8,158,7,68,13,29,16,12,31,0,68,14,64,157,8,158,7,68,13,29,68,154,6
 	.byte 26,12,31,0,68,14,96,157,12,158,11,68,13,29,68,150,10,151,9,68,152,8,153,7,68,154,6,13,12,31,0,68
-	.byte 14,48,157,6,158,5,68,13,29,13,12,31,0,68,14,80,157,10,158,9,68,13,29,14,12,31,0,68,14,160,2,157
-	.byte 36,158,35,68,13,29,34,12,31,0,68,14,176,1,157,22,158,21,68,13,29,68,147,20,148,19,68,149,18,150,17,68
+	.byte 14,48,157,6,158,5,68,13,29,13,12,31,0,68,14,80,157,10,158,9,68,13,29,14,12,31,0,68,14,240,1,157
+	.byte 30,158,29,68,13,29,34,12,31,0,68,14,176,1,157,22,158,21,68,13,29,68,147,20,148,19,68,149,18,150,17,68
 	.byte 151,16,152,15,68,153,14,154,13,23,12,31,0,68,14,96,157,12,158,11,68,13,29,68,151,10,152,9,68,153,8,154
-	.byte 7,16,12,31,0,68,14,80,157,10,158,9,68,13,29,68,154,8,18,12,31,0,68,14,64,157,8,158,7,68,13,29
-	.byte 68,153,6,154,5,21,12,31,0,68,14,80,157,10,158,9,68,13,29,68,152,8,153,7,68,154,6,19,12,31,0,68
-	.byte 14,160,1,157,20,158,19,68,13,29,68,152,18,153,17,19,12,31,0,68,14,128,1,157,16,158,15,68,13,29,68,153
-	.byte 14,154,13,14,12,31,0,68,14,128,2,157,32,158,31,68,13,29,17,12,31,0,68,14,128,1,157,16,158,15,68,13
-	.byte 29,68,154,14,18,12,31,0,68,14,80,157,10,158,9,68,13,29,68,153,8,154,7,24,12,31,0,68,14,192,1,157
-	.byte 24,158,23,68,13,29,68,151,22,152,21,68,153,20,154,19,32,12,31,0,68,14,208,1,157,26,158,25,68,13,29,68
-	.byte 148,24,149,23,68,150,22,151,21,68,152,20,153,19,68,154,18,27,12,31,0,68,14,240,1,157,30,158,29,68,13,29
-	.byte 68,150,28,151,27,68,152,26,153,25,68,154,24,16,12,31,0,68,14,80,157,10,158,9,68,13,29,68,153,8,34,12
-	.byte 31,0,68,14,144,2,157,34,158,33,68,13,29,68,147,32,148,31,68,149,30,150,29,68,151,28,152,27,68,153,26,154
-	.byte 25,16,12,31,0,68,14,96,157,12,158,11,68,13,29,68,154,10,27,12,31,0,68,14,144,1,157,18,158,17,68,13
-	.byte 29,68,150,16,151,15,68,152,14,153,13,68,154,12,16,12,31,0,68,14,48,157,6,158,5,68,13,29,68,154,4,27
-	.byte 12,31,0,68,14,192,1,157,24,158,23,68,13,29,68,150,22,151,21,68,152,20,153,19,68,154,18,16,12,31,0,68
-	.byte 14,64,157,8,158,7,68,13,29,68,153,6,16,12,31,0,68,14,112,157,14,158,13,68,13,29,68,154,12,13,12,31
-	.byte 0,68,14,96,157,12,158,11,68,13,29,14,12,31,0,68,14,128,1,157,16,158,15,68,13,29,34,12,31,0,68,14
+	.byte 7,14,12,31,0,68,14,224,1,157,28,158,27,68,13,29,16,12,31,0,68,14,80,157,10,158,9,68,13,29,68,154
+	.byte 8,18,12,31,0,68,14,64,157,8,158,7,68,13,29,68,153,6,154,5,21,12,31,0,68,14,80,157,10,158,9,68
+	.byte 13,29,68,152,8,153,7,68,154,6,19,12,31,0,68,14,160,1,157,20,158,19,68,13,29,68,152,18,153,17,19,12
+	.byte 31,0,68,14,128,1,157,16,158,15,68,13,29,68,153,14,154,13,14,12,31,0,68,14,208,1,157,26,158,25,68,13
+	.byte 29,17,12,31,0,68,14,128,1,157,16,158,15,68,13,29,68,154,14,18,12,31,0,68,14,80,157,10,158,9,68,13
+	.byte 29,68,153,8,154,7,24,12,31,0,68,14,192,1,157,24,158,23,68,13,29,68,151,22,152,21,68,153,20,154,19,32
+	.byte 12,31,0,68,14,208,1,157,26,158,25,68,13,29,68,148,24,149,23,68,150,22,151,21,68,152,20,153,19,68,154,18
+	.byte 27,12,31,0,68,14,240,1,157,30,158,29,68,13,29,68,150,28,151,27,68,152,26,153,25,68,154,24,16,12,31,0
+	.byte 68,14,80,157,10,158,9,68,13,29,68,153,8,34,12,31,0,68,14,144,2,157,34,158,33,68,13,29,68,147,32,148
+	.byte 31,68,149,30,150,29,68,151,28,152,27,68,153,26,154,25,16,12,31,0,68,14,96,157,12,158,11,68,13,29,68,154
+	.byte 10,27,12,31,0,68,14,144,1,157,18,158,17,68,13,29,68,150,16,151,15,68,152,14,153,13,68,154,12,16,12,31
+	.byte 0,68,14,48,157,6,158,5,68,13,29,68,154,4,27,12,31,0,68,14,192,1,157,24,158,23,68,13,29,68,150,22
+	.byte 151,21,68,152,20,153,19,68,154,18,16,12,31,0,68,14,64,157,8,158,7,68,13,29,68,153,6,16,12,31,0,68
+	.byte 14,112,157,14,158,13,68,13,29,68,154,12,13,12,31,0,68,14,96,157,12,158,11,68,13,29,34,12,31,0,68,14
 	.byte 128,1,157,16,158,15,68,13,29,68,147,14,148,13,68,149,12,150,11,68,151,10,152,9,68,153,8,154,7,13,12,31
 	.byte 0,68,14,112,157,14,158,13,68,13,29,21,12,31,0,68,14,96,157,12,158,11,68,13,29,68,152,10,153,9,68,154
 	.byte 8,18,12,31,0,68,14,96,157,12,158,11,68,13,29,68,152,10,153,9,32,12,31,0,68,14,144,1,157,18,158,17
@@ -23463,21 +23415,22 @@ unwind_info:
 	.byte 147,24,68,149,23,68,152,22,153,21,16,12,31,0,68,14,96,157,12,158,11,68,13,29,68,153,10,16,12,31,0,68
 	.byte 14,112,157,14,158,13,68,13,29,68,153,12,18,12,31,0,68,14,96,157,12,158,11,68,13,29,68,153,10,154,9,14
 	.byte 12,31,0,68,14,144,1,157,18,158,17,68,13,29,17,12,31,0,68,14,160,1,157,20,158,19,68,13,29,68,153,18
-	.byte 19,12,31,0,68,14,128,2,157,32,158,31,68,13,29,68,152,30,153,29,27,12,31,0,68,14,240,1,157,30,158,29
-	.byte 68,13,29,68,148,28,149,27,68,150,26,68,153,25,154,24,34,12,31,0,68,14,144,1,157,18,158,17,68,13,29,68
-	.byte 147,16,148,15,68,149,14,150,13,68,151,12,152,11,68,153,10,154,9,22,12,31,0,68,14,128,1,157,16,158,15,68
-	.byte 13,29,68,149,14,150,13,68,152,12,32,12,31,0,68,14,144,2,157,34,158,33,68,13,29,68,147,32,68,149,31,150
-	.byte 30,68,151,29,152,28,68,153,27,154,26,26,12,31,0,68,14,112,157,14,158,13,68,13,29,68,149,12,150,11,68,151
-	.byte 10,152,9,68,153,8,17,12,31,0,68,14,144,1,157,18,158,17,68,13,29,68,152,16,19,12,31,0,68,14,80,157
-	.byte 10,158,9,68,13,29,68,151,8,68,153,7,21,12,31,0,68,14,96,157,12,158,11,68,13,29,68,151,10,68,153,9
-	.byte 154,8,17,12,31,0,68,14,192,1,157,24,158,23,68,13,29,68,154,22,34,12,31,0,68,14,128,2,157,32,158,31
-	.byte 68,13,29,68,147,30,148,29,68,149,28,150,27,68,151,26,152,25,68,153,24,154,23,29,12,31,0,68,14,240,1,157
-	.byte 30,158,29,68,13,29,68,147,28,148,27,68,149,26,150,25,68,151,24,152,23,14,12,31,0,68,14,160,1,157,20,158
-	.byte 19,68,13,29,27,12,31,0,68,14,208,1,157,26,158,25,68,13,29,68,149,24,68,151,23,152,22,68,153,21,154,20
-	.byte 16,12,31,0,68,14,80,157,10,158,9,68,13,29,68,152,8,24,12,31,0,68,14,160,1,157,20,158,19,68,13,29
-	.byte 68,150,18,151,17,68,152,16,153,15,32,12,31,0,68,14,160,1,157,20,158,19,68,13,29,68,148,18,149,17,68,150
-	.byte 16,151,15,68,152,14,153,13,68,154,12,23,12,31,0,68,14,112,157,14,158,13,68,13,29,68,151,12,152,11,68,153
-	.byte 10,154,9,21,12,31,0,68,14,96,157,12,158,11,68,13,29,68,151,10,152,9,68,153,8
+	.byte 19,12,31,0,68,14,128,2,157,32,158,31,68,13,29,68,152,30,153,29,14,12,31,0,68,14,128,1,157,16,158,15
+	.byte 68,13,29,27,12,31,0,68,14,240,1,157,30,158,29,68,13,29,68,148,28,149,27,68,150,26,68,153,25,154,24,34
+	.byte 12,31,0,68,14,144,1,157,18,158,17,68,13,29,68,147,16,148,15,68,149,14,150,13,68,151,12,152,11,68,153,10
+	.byte 154,9,22,12,31,0,68,14,128,1,157,16,158,15,68,13,29,68,149,14,150,13,68,152,12,32,12,31,0,68,14,144
+	.byte 2,157,34,158,33,68,13,29,68,147,32,68,149,31,150,30,68,151,29,152,28,68,153,27,154,26,26,12,31,0,68,14
+	.byte 112,157,14,158,13,68,13,29,68,149,12,150,11,68,151,10,152,9,68,153,8,17,12,31,0,68,14,144,1,157,18,158
+	.byte 17,68,13,29,68,152,16,19,12,31,0,68,14,80,157,10,158,9,68,13,29,68,151,8,68,153,7,21,12,31,0,68
+	.byte 14,96,157,12,158,11,68,13,29,68,151,10,68,153,9,154,8,17,12,31,0,68,14,192,1,157,24,158,23,68,13,29
+	.byte 68,154,22,34,12,31,0,68,14,128,2,157,32,158,31,68,13,29,68,147,30,148,29,68,149,28,150,27,68,151,26,152
+	.byte 25,68,153,24,154,23,29,12,31,0,68,14,240,1,157,30,158,29,68,13,29,68,147,28,148,27,68,149,26,150,25,68
+	.byte 151,24,152,23,14,12,31,0,68,14,160,1,157,20,158,19,68,13,29,27,12,31,0,68,14,208,1,157,26,158,25,68
+	.byte 13,29,68,149,24,68,151,23,152,22,68,153,21,154,20,16,12,31,0,68,14,80,157,10,158,9,68,13,29,68,152,8
+	.byte 24,12,31,0,68,14,160,1,157,20,158,19,68,13,29,68,150,18,151,17,68,152,16,153,15,32,12,31,0,68,14,160
+	.byte 1,157,20,158,19,68,13,29,68,148,18,149,17,68,150,16,151,15,68,152,14,153,13,68,154,12,23,12,31,0,68,14
+	.byte 112,157,14,158,13,68,13,29,68,151,12,152,11,68,153,10,154,9,21,12,31,0,68,14,96,157,12,158,11,68,13,29
+	.byte 68,151,10,152,9,68,153,8
 
 .text
 	.align 4
@@ -23490,7 +23443,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2712]
 br x16
-.word 5265
+.word 5270
 	.no_dead_strip plt_Plugin_Connectivity_CrossConnectivity_NotImplementedInReferenceAssembly
 plt_Plugin_Connectivity_CrossConnectivity_NotImplementedInReferenceAssembly:
 _p_2:
@@ -23498,7 +23451,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2720]
 br x16
-.word 5276
+.word 5281
 	.no_dead_strip plt__jit_icall_mono_arch_throw_exception
 plt__jit_icall_mono_arch_throw_exception:
 _p_3:
@@ -23506,7 +23459,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2728]
 br x16
-.word 5278
+.word 5283
 	.no_dead_strip plt__jit_icall_ves_icall_object_new_specific
 plt__jit_icall_ves_icall_object_new_specific:
 _p_4:
@@ -23514,7 +23467,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2736]
 br x16
-.word 5306
+.word 5311
 	.no_dead_strip plt_Plugin_Connectivity_ConnectivityImplementation__ctor
 plt_Plugin_Connectivity_ConnectivityImplementation__ctor:
 _p_5:
@@ -23522,7 +23475,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2744]
 br x16
-.word 5338
+.word 5343
 	.no_dead_strip plt_wrapper_alloc_object_AllocSmall_intptr_intptr
 plt_wrapper_alloc_object_AllocSmall_intptr_intptr:
 _p_6:
@@ -23530,7 +23483,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2752]
 br x16
-.word 5340
+.word 5345
 	.no_dead_strip plt_System_NotImplementedException__ctor_string
 plt_System_NotImplementedException__ctor_string:
 _p_7:
@@ -23538,7 +23491,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2760]
 br x16
-.word 5348
+.word 5353
 	.no_dead_strip plt_System_Lazy_1_Plugin_Connectivity_Abstractions_IConnectivity_get_IsValueCreated
 plt_System_Lazy_1_Plugin_Connectivity_Abstractions_IConnectivity_get_IsValueCreated:
 _p_8:
@@ -23546,7 +23499,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2768]
 br x16
-.word 5353
+.word 5358
 	.no_dead_strip plt_System_Lazy_1_Plugin_Connectivity_Abstractions_IConnectivity__ctor_System_Func_1_Plugin_Connectivity_Abstractions_IConnectivity_System_Threading_LazyThreadSafetyMode
 plt_System_Lazy_1_Plugin_Connectivity_Abstractions_IConnectivity__ctor_System_Func_1_Plugin_Connectivity_Abstractions_IConnectivity_System_Threading_LazyThreadSafetyMode:
 _p_9:
@@ -23554,7 +23507,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2776]
 br x16
-.word 5364
+.word 5369
 	.no_dead_strip plt__jit_icall_mono_arch_throw_corlib_exception
 plt__jit_icall_mono_arch_throw_corlib_exception:
 _p_10:
@@ -23562,7 +23515,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2784]
 br x16
-.word 5375
+.word 5380
 	.no_dead_strip plt_Plugin_Connectivity_Abstractions_BaseConnectivity__ctor
 plt_Plugin_Connectivity_Abstractions_BaseConnectivity__ctor:
 _p_11:
@@ -23570,7 +23523,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2792]
 br x16
-.word 5410
+.word 5415
 	.no_dead_strip plt_System_Threading_Tasks_Task_Run_System_Action
 plt_System_Threading_Tasks_Task_Run_System_Action:
 _p_12:
@@ -23578,7 +23531,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2800]
 br x16
-.word 5415
+.word 5420
 	.no_dead_strip plt_Plugin_Connectivity_Reachability_add_ReachabilityChanged_System_EventHandler
 plt_Plugin_Connectivity_Reachability_add_ReachabilityChanged_System_EventHandler:
 _p_13:
@@ -23586,7 +23539,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2808]
 br x16
-.word 5420
+.word 5425
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_Create
 plt_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_Create:
 _p_14:
@@ -23594,7 +23547,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2816]
 br x16
-.word 5422
+.word 5427
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_Start_Plugin_Connectivity_ConnectivityImplementation__ReachabilityChangedd__2_Plugin_Connectivity_ConnectivityImplementation__ReachabilityChangedd__2_
 plt_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_Start_Plugin_Connectivity_ConnectivityImplementation__ReachabilityChangedd__2_Plugin_Connectivity_ConnectivityImplementation__ReachabilityChangedd__2_:
 _p_15:
@@ -23602,7 +23555,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2824]
 br x16
-.word 5427
+.word 5432
 	.no_dead_strip plt_Plugin_Connectivity_Reachability_RemoteHostStatus
 plt_Plugin_Connectivity_Reachability_RemoteHostStatus:
 _p_16:
@@ -23610,7 +23563,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2832]
 br x16
-.word 5439
+.word 5444
 	.no_dead_strip plt_Plugin_Connectivity_Reachability_InternetConnectionStatus
 plt_Plugin_Connectivity_Reachability_InternetConnectionStatus:
 _p_17:
@@ -23618,7 +23571,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2840]
 br x16
-.word 5441
+.word 5446
 	.no_dead_strip plt_Plugin_Connectivity_Abstractions_ConnectivityChangedEventArgs__ctor
 plt_Plugin_Connectivity_Abstractions_ConnectivityChangedEventArgs__ctor:
 _p_18:
@@ -23626,7 +23579,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2848]
 br x16
-.word 5443
+.word 5448
 	.no_dead_strip plt_Plugin_Connectivity_Abstractions_ConnectivityChangedEventArgs_set_IsConnected_bool
 plt_Plugin_Connectivity_Abstractions_ConnectivityChangedEventArgs_set_IsConnected_bool:
 _p_19:
@@ -23634,7 +23587,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2856]
 br x16
-.word 5448
+.word 5453
 	.no_dead_strip plt_System_Linq_Enumerable_ToArray_Plugin_Connectivity_Abstractions_ConnectionType_System_Collections_Generic_IEnumerable_1_Plugin_Connectivity_Abstractions_ConnectionType
 plt_System_Linq_Enumerable_ToArray_Plugin_Connectivity_Abstractions_ConnectionType_System_Collections_Generic_IEnumerable_1_Plugin_Connectivity_Abstractions_ConnectionType:
 _p_20:
@@ -23642,7 +23595,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2864]
 br x16
-.word 5453
+.word 5458
 	.no_dead_strip plt_Plugin_Connectivity_Abstractions_ConnectivityTypeChangedEventArgs__ctor
 plt_Plugin_Connectivity_Abstractions_ConnectivityTypeChangedEventArgs__ctor:
 _p_21:
@@ -23650,7 +23603,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2872]
 br x16
-.word 5465
+.word 5470
 	.no_dead_strip plt_Plugin_Connectivity_Abstractions_ConnectivityTypeChangedEventArgs_set_IsConnected_bool
 plt_Plugin_Connectivity_Abstractions_ConnectivityTypeChangedEventArgs_set_IsConnected_bool:
 _p_22:
@@ -23658,7 +23611,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2880]
 br x16
-.word 5470
+.word 5475
 	.no_dead_strip plt_Plugin_Connectivity_Abstractions_ConnectivityTypeChangedEventArgs_set_ConnectionTypes_System_Collections_Generic_IEnumerable_1_Plugin_Connectivity_Abstractions_ConnectionType
 plt_Plugin_Connectivity_Abstractions_ConnectivityTypeChangedEventArgs_set_ConnectionTypes_System_Collections_Generic_IEnumerable_1_Plugin_Connectivity_Abstractions_ConnectionType:
 _p_23:
@@ -23666,7 +23619,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2888]
 br x16
-.word 5475
+.word 5480
 	.no_dead_strip plt_System_Threading_Tasks_Task_get_IsCompleted
 plt_System_Threading_Tasks_Task_get_IsCompleted:
 _p_24:
@@ -23674,7 +23627,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2896]
 br x16
-.word 5480
+.word 5485
 	.no_dead_strip plt_Plugin_Connectivity_ConnectivityImplementation_UpdateConnected_bool
 plt_Plugin_Connectivity_ConnectivityImplementation_UpdateConnected_bool:
 _p_25:
@@ -23682,7 +23635,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2904]
 br x16
-.word 5485
+.word 5490
 	.no_dead_strip plt_System_Threading_Tasks_Task_Wait
 plt_System_Threading_Tasks_Task_Wait:
 _p_26:
@@ -23690,7 +23643,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2912]
 br x16
-.word 5487
+.word 5492
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_Create
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_Create:
 _p_27:
@@ -23698,7 +23651,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2920]
 br x16
-.word 5492
+.word 5497
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_Start_Plugin_Connectivity_ConnectivityImplementation__IsReachabled__8_Plugin_Connectivity_ConnectivityImplementation__IsReachabled__8_
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_Start_Plugin_Connectivity_ConnectivityImplementation__IsReachabled__8_Plugin_Connectivity_ConnectivityImplementation__IsReachabled__8_:
 _p_28:
@@ -23706,7 +23659,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2928]
 br x16
-.word 5503
+.word 5508
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_get_Task
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_get_Task:
 _p_29:
@@ -23714,7 +23667,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2936]
 br x16
-.word 5515
+.word 5520
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_Start_Plugin_Connectivity_ConnectivityImplementation__IsRemoteReachabled__9_Plugin_Connectivity_ConnectivityImplementation__IsRemoteReachabled__9_
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_Start_Plugin_Connectivity_ConnectivityImplementation__IsRemoteReachabled__9_Plugin_Connectivity_ConnectivityImplementation__IsRemoteReachabled__9_:
 _p_30:
@@ -23722,7 +23675,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2944]
 br x16
-.word 5526
+.word 5531
 	.no_dead_strip plt_Plugin_Connectivity_ConnectivityImplementation__get_ConnectionTypesd__11__ctor_int
 plt_Plugin_Connectivity_ConnectivityImplementation__get_ConnectionTypesd__11__ctor_int:
 _p_31:
@@ -23730,7 +23683,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2952]
 br x16
-.word 5538
+.word 5543
 	.no_dead_strip plt_wrapper_alloc_object_AllocVector_intptr_intptr
 plt_wrapper_alloc_object_AllocVector_intptr_intptr:
 _p_32:
@@ -23738,7 +23691,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2960]
 br x16
-.word 5540
+.word 5545
 	.no_dead_strip plt_Plugin_Connectivity_Reachability_remove_ReachabilityChanged_System_EventHandler
 plt_Plugin_Connectivity_Reachability_remove_ReachabilityChanged_System_EventHandler:
 _p_33:
@@ -23746,7 +23699,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2968]
 br x16
-.word 5548
+.word 5553
 	.no_dead_strip plt_Plugin_Connectivity_Reachability_Dispose
 plt_Plugin_Connectivity_Reachability_Dispose:
 _p_34:
@@ -23754,7 +23707,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2976]
 br x16
-.word 5550
+.word 5555
 	.no_dead_strip plt_Plugin_Connectivity_Abstractions_BaseConnectivity_Dispose_bool
 plt_Plugin_Connectivity_Abstractions_BaseConnectivity_Dispose_bool:
 _p_35:
@@ -23762,7 +23715,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2984]
 br x16
-.word 5552
+.word 5557
 	.no_dead_strip plt_string_IsNullOrWhiteSpace_string
 plt_string_IsNullOrWhiteSpace_string:
 _p_36:
@@ -23770,7 +23723,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #2992]
 br x16
-.word 5557
+.word 5562
 	.no_dead_strip plt_string_Concat_object_object_object
 plt_string_Concat_object_object_object:
 _p_37:
@@ -23778,7 +23731,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3000]
 br x16
-.word 5562
+.word 5567
 	.no_dead_strip plt_System_Net_IPAddress_TryParse_string_System_Net_IPAddress_
 plt_System_Net_IPAddress_TryParse_string_System_Net_IPAddress_:
 _p_38:
@@ -23786,7 +23739,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3008]
 br x16
-.word 5567
+.word 5572
 	.no_dead_strip plt_SystemConfiguration_NetworkReachability__ctor_string
 plt_SystemConfiguration_NetworkReachability__ctor_string:
 _p_39:
@@ -23794,7 +23747,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3016]
 br x16
-.word 5572
+.word 5577
 	.no_dead_strip plt_SystemConfiguration_NetworkReachability_TryGetFlags_SystemConfiguration_NetworkReachabilityFlags_
 plt_SystemConfiguration_NetworkReachability_TryGetFlags_SystemConfiguration_NetworkReachabilityFlags_:
 _p_40:
@@ -23802,7 +23755,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3024]
 br x16
-.word 5577
+.word 5582
 	.no_dead_strip plt_Plugin_Connectivity_Reachability_IsReachableWithoutRequiringConnection_SystemConfiguration_NetworkReachabilityFlags
 plt_Plugin_Connectivity_Reachability_IsReachableWithoutRequiringConnection_SystemConfiguration_NetworkReachabilityFlags:
 _p_41:
@@ -23810,7 +23763,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3032]
 br x16
-.word 5582
+.word 5587
 	.no_dead_strip plt__jit_icall_mono_thread_self_abort
 plt__jit_icall_mono_thread_self_abort:
 _p_42:
@@ -23818,7 +23771,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3040]
 br x16
-.word 5584
+.word 5589
 	.no_dead_strip plt_System_Delegate_Combine_System_Delegate_System_Delegate
 plt_System_Delegate_Combine_System_Delegate_System_Delegate:
 _p_43:
@@ -23826,7 +23779,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3048]
 br x16
-.word 5609
+.word 5614
 	.no_dead_strip plt_System_Delegate_Remove_System_Delegate_System_Delegate
 plt_System_Delegate_Remove_System_Delegate_System_Delegate:
 _p_44:
@@ -23834,7 +23787,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3056]
 br x16
-.word 5614
+.word 5619
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_Start_Plugin_Connectivity_Reachability__OnChanged__7_Plugin_Connectivity_Reachability__OnChanged__7_
 plt_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_Start_Plugin_Connectivity_Reachability__OnChanged__7_Plugin_Connectivity_Reachability__OnChanged__7_:
 _p_45:
@@ -23842,7 +23795,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3064]
 br x16
-.word 5619
+.word 5624
 	.no_dead_strip plt_System_Net_IPAddress__ctor_long
 plt_System_Net_IPAddress__ctor_long:
 _p_46:
@@ -23850,7 +23803,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3072]
 br x16
-.word 5631
+.word 5636
 	.no_dead_strip plt_SystemConfiguration_NetworkReachability__ctor_System_Net_IPAddress
 plt_SystemConfiguration_NetworkReachability__ctor_System_Net_IPAddress:
 _p_47:
@@ -23858,7 +23811,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3080]
 br x16
-.word 5636
+.word 5641
 	.no_dead_strip plt_SystemConfiguration_NetworkReachability_SetNotification_SystemConfiguration_NetworkReachability_Notification
 plt_SystemConfiguration_NetworkReachability_SetNotification_SystemConfiguration_NetworkReachability_Notification:
 _p_48:
@@ -23866,7 +23819,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3088]
 br x16
-.word 5641
+.word 5646
 	.no_dead_strip plt_CoreFoundation_CFRunLoop_get_Main
 plt_CoreFoundation_CFRunLoop_get_Main:
 _p_49:
@@ -23874,7 +23827,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3096]
 br x16
-.word 5646
+.word 5651
 	.no_dead_strip plt_CoreFoundation_CFRunLoop_get_ModeDefault
 plt_CoreFoundation_CFRunLoop_get_ModeDefault:
 _p_50:
@@ -23882,7 +23835,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3104]
 br x16
-.word 5651
+.word 5656
 	.no_dead_strip plt_Foundation_NSString_op_Implicit_Foundation_NSString
 plt_Foundation_NSString_op_Implicit_Foundation_NSString:
 _p_51:
@@ -23890,7 +23843,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3112]
 br x16
-.word 5656
+.word 5661
 	.no_dead_strip plt_SystemConfiguration_NetworkReachability_Schedule_CoreFoundation_CFRunLoop_string
 plt_SystemConfiguration_NetworkReachability_Schedule_CoreFoundation_CFRunLoop_string:
 _p_52:
@@ -23898,7 +23851,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3120]
 br x16
-.word 5661
+.word 5666
 	.no_dead_strip plt_System_Collections_Generic_List_1_Plugin_Connectivity_NetworkStatus__ctor
 plt_System_Collections_Generic_List_1_Plugin_Connectivity_NetworkStatus__ctor:
 _p_53:
@@ -23906,7 +23859,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3128]
 br x16
-.word 5666
+.word 5671
 	.no_dead_strip plt_Plugin_Connectivity_Reachability_IsNetworkAvailable_SystemConfiguration_NetworkReachabilityFlags_
 plt_Plugin_Connectivity_Reachability_IsNetworkAvailable_SystemConfiguration_NetworkReachabilityFlags_:
 _p_54:
@@ -23914,7 +23867,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3136]
 br x16
-.word 5677
+.word 5682
 	.no_dead_strip plt_System_Collections_Generic_List_1_Plugin_Connectivity_NetworkStatus_Add_Plugin_Connectivity_NetworkStatus
 plt_System_Collections_Generic_List_1_Plugin_Connectivity_NetworkStatus_Add_Plugin_Connectivity_NetworkStatus:
 _p_55:
@@ -23922,7 +23875,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3144]
 br x16
-.word 5679
+.word 5684
 	.no_dead_strip plt_SystemConfiguration_NetworkReachability_Dispose
 plt_SystemConfiguration_NetworkReachability_Dispose:
 _p_56:
@@ -23930,7 +23883,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3152]
 br x16
-.word 5690
+.word 5695
 	.no_dead_strip plt_Plugin_Connectivity_CrossConnectivity__c__ctor
 plt_Plugin_Connectivity_CrossConnectivity__c__ctor:
 _p_57:
@@ -23938,7 +23891,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3160]
 br x16
-.word 5695
+.word 5700
 	.no_dead_strip plt_Plugin_Connectivity_CrossConnectivity_CreateConnectivity
 plt_Plugin_Connectivity_CrossConnectivity_CreateConnectivity:
 _p_58:
@@ -23946,7 +23899,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3168]
 br x16
-.word 5697
+.word 5702
 	.no_dead_strip plt_System_Threading_Tasks_Task_Delay_int
 plt_System_Threading_Tasks_Task_Delay_int:
 _p_59:
@@ -23954,7 +23907,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3176]
 br x16
-.word 5699
+.word 5704
 	.no_dead_strip plt_System_Threading_Tasks_Task_GetAwaiter
 plt_System_Threading_Tasks_Task_GetAwaiter:
 _p_60:
@@ -23962,7 +23915,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3184]
 br x16
-.word 5704
+.word 5709
 	.no_dead_strip plt_System_Runtime_CompilerServices_TaskAwaiter_get_IsCompleted
 plt_System_Runtime_CompilerServices_TaskAwaiter_get_IsCompleted:
 _p_61:
@@ -23970,7 +23923,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3192]
 br x16
-.word 5709
+.word 5714
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_System_Runtime_CompilerServices_TaskAwaiter_Plugin_Connectivity_ConnectivityImplementation__ReachabilityChangedd__2_System_Runtime_CompilerServices_TaskAwaiter__Plugin_Connectivity_ConnectivityImplementation__ReachabilityChangedd__2_
 plt_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_System_Runtime_CompilerServices_TaskAwaiter_Plugin_Connectivity_ConnectivityImplementation__ReachabilityChangedd__2_System_Runtime_CompilerServices_TaskAwaiter__Plugin_Connectivity_ConnectivityImplementation__ReachabilityChangedd__2_:
 _p_62:
@@ -23978,7 +23931,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3200]
 br x16
-.word 5714
+.word 5719
 	.no_dead_strip plt_System_Runtime_CompilerServices_TaskAwaiter_GetResult
 plt_System_Runtime_CompilerServices_TaskAwaiter_GetResult:
 _p_63:
@@ -23986,7 +23939,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3208]
 br x16
-.word 5726
+.word 5731
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_SetException_System_Exception
 plt_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_SetException_System_Exception:
 _p_64:
@@ -23994,7 +23947,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3216]
 br x16
-.word 5731
+.word 5736
 	.no_dead_strip plt__jit_icall_mono_thread_get_undeniable_exception
 plt__jit_icall_mono_thread_get_undeniable_exception:
 _p_65:
@@ -24002,7 +23955,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3224]
 br x16
-.word 5736
+.word 5741
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_SetResult
 plt_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_SetResult:
 _p_66:
@@ -24010,7 +23963,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3232]
 br x16
-.word 5775
+.word 5780
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_SetStateMachine_System_Runtime_CompilerServices_IAsyncStateMachine
 plt_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_SetStateMachine_System_Runtime_CompilerServices_IAsyncStateMachine:
 _p_67:
@@ -24018,7 +23971,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3240]
 br x16
-.word 5780
+.word 5785
 	.no_dead_strip plt_string_IsNullOrEmpty_string
 plt_string_IsNullOrEmpty_string:
 _p_68:
@@ -24026,7 +23979,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3248]
 br x16
-.word 5785
+.word 5790
 	.no_dead_strip plt__jit_icall_mono_helper_ldstr
 plt__jit_icall_mono_helper_ldstr:
 _p_69:
@@ -24034,7 +23987,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3256]
 br x16
-.word 5790
+.word 5795
 	.no_dead_strip plt_System_Threading_Tasks_Task_1_bool_GetAwaiter
 plt_System_Threading_Tasks_Task_1_bool_GetAwaiter:
 _p_70:
@@ -24042,7 +23995,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3264]
 br x16
-.word 5810
+.word 5815
 	.no_dead_strip plt_System_Runtime_CompilerServices_TaskAwaiter_1_bool_get_IsCompleted
 plt_System_Runtime_CompilerServices_TaskAwaiter_1_bool_get_IsCompleted:
 _p_71:
@@ -24050,7 +24003,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3272]
 br x16
-.word 5821
+.word 5826
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_AwaitUnsafeOnCompleted_System_Runtime_CompilerServices_TaskAwaiter_1_bool_Plugin_Connectivity_ConnectivityImplementation__IsReachabled__8_System_Runtime_CompilerServices_TaskAwaiter_1_bool__Plugin_Connectivity_ConnectivityImplementation__IsReachabled__8_
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_AwaitUnsafeOnCompleted_System_Runtime_CompilerServices_TaskAwaiter_1_bool_Plugin_Connectivity_ConnectivityImplementation__IsReachabled__8_System_Runtime_CompilerServices_TaskAwaiter_1_bool__Plugin_Connectivity_ConnectivityImplementation__IsReachabled__8_:
 _p_72:
@@ -24058,7 +24011,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3280]
 br x16
-.word 5832
+.word 5837
 	.no_dead_strip plt_System_Runtime_CompilerServices_TaskAwaiter_1_bool_GetResult
 plt_System_Runtime_CompilerServices_TaskAwaiter_1_bool_GetResult:
 _p_73:
@@ -24066,7 +24019,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3288]
 br x16
-.word 5844
+.word 5849
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_SetException_System_Exception
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_SetException_System_Exception:
 _p_74:
@@ -24074,7 +24027,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3296]
 br x16
-.word 5855
+.word 5860
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_SetResult_bool
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_SetResult_bool:
 _p_75:
@@ -24082,7 +24035,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3304]
 br x16
-.word 5866
+.word 5871
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_SetStateMachine_System_Runtime_CompilerServices_IAsyncStateMachine
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_SetStateMachine_System_Runtime_CompilerServices_IAsyncStateMachine:
 _p_76:
@@ -24090,7 +24043,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3312]
 br x16
-.word 5877
+.word 5882
 	.no_dead_strip plt_Plugin_Connectivity_ConnectivityImplementation__c__DisplayClass9_1__ctor
 plt_Plugin_Connectivity_ConnectivityImplementation__c__DisplayClass9_1__ctor:
 _p_77:
@@ -24098,7 +24051,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3320]
 br x16
-.word 5888
+.word 5893
 	.no_dead_strip plt_System_Threading_ManualResetEvent__ctor_bool
 plt_System_Threading_ManualResetEvent__ctor_bool:
 _p_78:
@@ -24106,7 +24059,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3328]
 br x16
-.word 5890
+.word 5895
 	.no_dead_strip plt_System_Net_DnsEndPoint__ctor_string_int
 plt_System_Net_DnsEndPoint__ctor_string_int:
 _p_79:
@@ -24114,7 +24067,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3336]
 br x16
-.word 5895
+.word 5900
 	.no_dead_strip plt_System_Net_Sockets_Socket__ctor_System_Net_Sockets_SocketType_System_Net_Sockets_ProtocolType
 plt_System_Net_Sockets_Socket__ctor_System_Net_Sockets_SocketType_System_Net_Sockets_ProtocolType:
 _p_80:
@@ -24122,7 +24075,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3344]
 br x16
-.word 5900
+.word 5905
 	.no_dead_strip plt_System_Net_Sockets_SocketAsyncEventArgs__ctor
 plt_System_Net_Sockets_SocketAsyncEventArgs__ctor:
 _p_81:
@@ -24130,7 +24083,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3352]
 br x16
-.word 5905
+.word 5910
 	.no_dead_strip plt_System_Net_Sockets_SocketAsyncEventArgs_set_RemoteEndPoint_System_Net_EndPoint
 plt_System_Net_Sockets_SocketAsyncEventArgs_set_RemoteEndPoint_System_Net_EndPoint:
 _p_82:
@@ -24138,7 +24091,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3360]
 br x16
-.word 5910
+.word 5915
 	.no_dead_strip plt_System_Net_Sockets_SocketAsyncEventArgs_add_Completed_System_EventHandler_1_System_Net_Sockets_SocketAsyncEventArgs
 plt_System_Net_Sockets_SocketAsyncEventArgs_add_Completed_System_EventHandler_1_System_Net_Sockets_SocketAsyncEventArgs:
 _p_83:
@@ -24146,7 +24099,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3368]
 br x16
-.word 5915
+.word 5920
 	.no_dead_strip plt_System_Threading_EventWaitHandle_Reset
 plt_System_Threading_EventWaitHandle_Reset:
 _p_84:
@@ -24154,7 +24107,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3376]
 br x16
-.word 5920
+.word 5925
 	.no_dead_strip plt_System_Net_Sockets_Socket_ConnectAsync_System_Net_Sockets_SocketAsyncEventArgs
 plt_System_Net_Sockets_Socket_ConnectAsync_System_Net_Sockets_SocketAsyncEventArgs:
 _p_85:
@@ -24162,7 +24115,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3384]
 br x16
-.word 5925
+.word 5930
 	.no_dead_strip plt_System_Net_Sockets_SocketAsyncEventArgs_get_SocketError
 plt_System_Net_Sockets_SocketAsyncEventArgs_get_SocketError:
 _p_86:
@@ -24170,7 +24123,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3392]
 br x16
-.word 5930
+.word 5935
 	.no_dead_strip plt_System_Threading_EventWaitHandle_Set
 plt_System_Threading_EventWaitHandle_Set:
 _p_87:
@@ -24178,7 +24131,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3400]
 br x16
-.word 5935
+.word 5940
 	.no_dead_strip plt_Plugin_Connectivity_ConnectivityImplementation__c__DisplayClass9_0__ctor
 plt_Plugin_Connectivity_ConnectivityImplementation__c__DisplayClass9_0__ctor:
 _p_88:
@@ -24186,7 +24139,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3408]
 br x16
-.word 5940
+.word 5945
 	.no_dead_strip plt_string_Replace_string_string
 plt_string_Replace_string_string:
 _p_89:
@@ -24194,7 +24147,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3416]
 br x16
-.word 5942
+.word 5947
 	.no_dead_strip plt_string_TrimEnd_char__
 plt_string_TrimEnd_char__:
 _p_90:
@@ -24202,7 +24155,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3424]
 br x16
-.word 5947
+.word 5952
 	.no_dead_strip plt_System_Threading_Tasks_Task_Run_bool_System_Func_1_bool
 plt_System_Threading_Tasks_Task_Run_bool_System_Func_1_bool:
 _p_91:
@@ -24210,7 +24163,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3432]
 br x16
-.word 5952
+.word 5957
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_AwaitUnsafeOnCompleted_System_Runtime_CompilerServices_TaskAwaiter_1_bool_Plugin_Connectivity_ConnectivityImplementation__IsRemoteReachabled__9_System_Runtime_CompilerServices_TaskAwaiter_1_bool__Plugin_Connectivity_ConnectivityImplementation__IsRemoteReachabled__9_
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_AwaitUnsafeOnCompleted_System_Runtime_CompilerServices_TaskAwaiter_1_bool_Plugin_Connectivity_ConnectivityImplementation__IsRemoteReachabled__9_System_Runtime_CompilerServices_TaskAwaiter_1_bool__Plugin_Connectivity_ConnectivityImplementation__IsRemoteReachabled__9_:
 _p_92:
@@ -24218,7 +24171,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3440]
 br x16
-.word 5964
+.word 5969
 	.no_dead_strip plt_System_Environment_get_CurrentManagedThreadId
 plt_System_Environment_get_CurrentManagedThreadId:
 _p_93:
@@ -24226,7 +24179,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3448]
 br x16
-.word 5976
+.word 5981
 	.no_dead_strip plt_Plugin_Connectivity_ConnectivityImplementation__get_ConnectionTypesd__11__m__Finally1
 plt_Plugin_Connectivity_ConnectivityImplementation__get_ConnectionTypesd__11__m__Finally1:
 _p_94:
@@ -24234,7 +24187,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3456]
 br x16
-.word 5981
+.word 5986
 	.no_dead_strip plt_Plugin_Connectivity_Reachability_GetActiveConnectionType
 plt_Plugin_Connectivity_Reachability_GetActiveConnectionType:
 _p_95:
@@ -24242,7 +24195,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3464]
 br x16
-.word 5983
+.word 5988
 	.no_dead_strip plt_Plugin_Connectivity_ConnectivityImplementation__get_ConnectionTypesd__11_System_IDisposable_Dispose
 plt_Plugin_Connectivity_ConnectivityImplementation__get_ConnectionTypesd__11_System_IDisposable_Dispose:
 _p_96:
@@ -24250,7 +24203,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3472]
 br x16
-.word 5985
+.word 5990
 	.no_dead_strip plt_Plugin_Connectivity_ConnectivityImplementation__get_ConnectionTypesd__11_System_Collections_Generic_IEnumerable_Plugin_Connectivity_Abstractions_ConnectionType_GetEnumerator
 plt_Plugin_Connectivity_ConnectivityImplementation__get_ConnectionTypesd__11_System_Collections_Generic_IEnumerable_Plugin_Connectivity_Abstractions_ConnectionType_GetEnumerator:
 _p_97:
@@ -24258,7 +24211,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3480]
 br x16
-.word 5987
+.word 5992
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_System_Runtime_CompilerServices_TaskAwaiter_Plugin_Connectivity_Reachability__OnChanged__7_System_Runtime_CompilerServices_TaskAwaiter__Plugin_Connectivity_Reachability__OnChanged__7_
 plt_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_AwaitUnsafeOnCompleted_System_Runtime_CompilerServices_TaskAwaiter_Plugin_Connectivity_Reachability__OnChanged__7_System_Runtime_CompilerServices_TaskAwaiter__Plugin_Connectivity_Reachability__OnChanged__7_:
 _p_98:
@@ -24266,7 +24219,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3488]
 br x16
-.word 5989
+.word 5994
 	.no_dead_strip plt__jit_icall_mono_helper_ldstr_mscorlib
 plt__jit_icall_mono_helper_ldstr_mscorlib:
 _p_99:
@@ -24274,7 +24227,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3496]
 br x16
-.word 6001
+.word 6006
 	.no_dead_strip plt__rgctx_fetch_0
 plt__rgctx_fetch_0:
 _p_100:
@@ -24282,7 +24235,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3504]
 br x16
-.word 6048
+.word 6053
 	.no_dead_strip plt__rgctx_fetch_1
 plt__rgctx_fetch_1:
 _p_101:
@@ -24290,7 +24243,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3512]
 br x16
-.word 6071
+.word 6076
 	.no_dead_strip plt__rgctx_fetch_2
 plt__rgctx_fetch_2:
 _p_102:
@@ -24298,7 +24251,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3520]
 br x16
-.word 6112
+.word 6117
 	.no_dead_strip plt__rgctx_fetch_3
 plt__rgctx_fetch_3:
 _p_103:
@@ -24306,7 +24259,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3528]
 br x16
-.word 6120
+.word 6125
 	.no_dead_strip plt__rgctx_fetch_4
 plt__rgctx_fetch_4:
 _p_104:
@@ -24314,7 +24267,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3536]
 br x16
-.word 6143
+.word 6148
 	.no_dead_strip plt__rgctx_fetch_5
 plt__rgctx_fetch_5:
 _p_105:
@@ -24322,55 +24275,55 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3544]
 br x16
-.word 6177
-	.no_dead_strip plt__rgctx_fetch_6
-plt__rgctx_fetch_6:
+.word 6182
+	.no_dead_strip plt__jit_icall_mono_generic_class_init
+plt__jit_icall_mono_generic_class_init:
 _p_106:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3552]
 br x16
-.word 6185
-	.no_dead_strip plt__jit_icall_mono_thread_interruption_checkpoint
-plt__jit_icall_mono_thread_interruption_checkpoint:
+.word 6190
+	.no_dead_strip plt__rgctx_fetch_6
+plt__rgctx_fetch_6:
 _p_107:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3560]
 br x16
-.word 6208
-	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_SetStateMachine_System_Runtime_CompilerServices_IAsyncStateMachine
-plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_SetStateMachine_System_Runtime_CompilerServices_IAsyncStateMachine:
+.word 6216
+	.no_dead_strip plt__rgctx_fetch_7
+plt__rgctx_fetch_7:
 _p_108:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3568]
 br x16
-.word 6246
-	.no_dead_strip plt__rgctx_fetch_7
-plt__rgctx_fetch_7:
+.word 6232
+	.no_dead_strip plt__rgctx_fetch_8
+plt__rgctx_fetch_8:
 _p_109:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3576]
 br x16
-.word 6278
-	.no_dead_strip plt__jit_icall_mono_generic_class_init
-plt__jit_icall_mono_generic_class_init:
+.word 6240
+	.no_dead_strip plt__jit_icall_mono_thread_interruption_checkpoint
+plt__jit_icall_mono_thread_interruption_checkpoint:
 _p_110:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3584]
 br x16
-.word 6286
-	.no_dead_strip plt__rgctx_fetch_8
-plt__rgctx_fetch_8:
+.word 6263
+	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_SetStateMachine_System_Runtime_CompilerServices_IAsyncStateMachine
+plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_SetStateMachine_System_Runtime_CompilerServices_IAsyncStateMachine:
 _p_111:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3592]
 br x16
-.word 6312
+.word 6301
 	.no_dead_strip plt__rgctx_fetch_9
 plt__rgctx_fetch_9:
 _p_112:
@@ -24378,7 +24331,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3600]
 br x16
-.word 6353
+.word 6333
 	.no_dead_strip plt__rgctx_fetch_10
 plt__rgctx_fetch_10:
 _p_113:
@@ -24386,79 +24339,79 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3608]
 br x16
-.word 6361
-	.no_dead_strip plt_System_Threading_Tasks_AsyncCausalityTracer_get_LoggingOn
-plt_System_Threading_Tasks_AsyncCausalityTracer_get_LoggingOn:
+.word 6341
+	.no_dead_strip plt__rgctx_fetch_11
+plt__rgctx_fetch_11:
 _p_114:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3616]
 br x16
-.word 6384
-	.no_dead_strip plt_System_Threading_Tasks_Task_get_Id
-plt_System_Threading_Tasks_Task_get_Id:
+.word 6382
+	.no_dead_strip plt__rgctx_fetch_12
+plt__rgctx_fetch_12:
 _p_115:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3624]
 br x16
-.word 6389
-	.no_dead_strip plt_System_Threading_Tasks_AsyncCausalityTracer_TraceOperationCompletion_System_Threading_Tasks_CausalityTraceLevel_int_System_Threading_Tasks_AsyncCausalityStatus
-plt_System_Threading_Tasks_AsyncCausalityTracer_TraceOperationCompletion_System_Threading_Tasks_CausalityTraceLevel_int_System_Threading_Tasks_AsyncCausalityStatus:
+.word 6390
+	.no_dead_strip plt_System_Threading_Tasks_AsyncCausalityTracer_get_LoggingOn
+plt_System_Threading_Tasks_AsyncCausalityTracer_get_LoggingOn:
 _p_116:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3632]
 br x16
-.word 6394
-	.no_dead_strip plt_System_Threading_Tasks_Task_RemoveFromActiveTasks_int
-plt_System_Threading_Tasks_Task_RemoveFromActiveTasks_int:
+.word 6413
+	.no_dead_strip plt_System_Threading_Tasks_Task_get_Id
+plt_System_Threading_Tasks_Task_get_Id:
 _p_117:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3640]
 br x16
-.word 6399
-	.no_dead_strip plt__rgctx_fetch_11
-plt__rgctx_fetch_11:
+.word 6418
+	.no_dead_strip plt_System_Threading_Tasks_AsyncCausalityTracer_TraceOperationCompletion_System_Threading_Tasks_CausalityTraceLevel_int_System_Threading_Tasks_AsyncCausalityStatus
+plt_System_Threading_Tasks_AsyncCausalityTracer_TraceOperationCompletion_System_Threading_Tasks_CausalityTraceLevel_int_System_Threading_Tasks_AsyncCausalityStatus:
 _p_118:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3648]
 br x16
-.word 6404
-	.no_dead_strip plt__rgctx_fetch_12
-plt__rgctx_fetch_12:
+.word 6423
+	.no_dead_strip plt_System_Threading_Tasks_Task_RemoveFromActiveTasks_int
+plt_System_Threading_Tasks_Task_RemoveFromActiveTasks_int:
 _p_119:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3656]
 br x16
-.word 6412
-	.no_dead_strip plt_System_Environment_GetResourceString_string
-plt_System_Environment_GetResourceString_string:
+.word 6428
+	.no_dead_strip plt__rgctx_fetch_13
+plt__rgctx_fetch_13:
 _p_120:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3664]
 br x16
-.word 6435
-	.no_dead_strip plt__rgctx_fetch_13
-plt__rgctx_fetch_13:
+.word 6433
+	.no_dead_strip plt__rgctx_fetch_14
+plt__rgctx_fetch_14:
 _p_121:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3672]
 br x16
-.word 6458
-	.no_dead_strip plt__rgctx_fetch_14
-plt__rgctx_fetch_14:
+.word 6441
+	.no_dead_strip plt_System_Environment_GetResourceString_string
+plt_System_Environment_GetResourceString_string:
 _p_122:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3680]
 br x16
-.word 6466
+.word 6464
 	.no_dead_strip plt__rgctx_fetch_15
 plt__rgctx_fetch_15:
 _p_123:
@@ -24466,7 +24419,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3688]
 br x16
-.word 6507
+.word 6487
 	.no_dead_strip plt__rgctx_fetch_16
 plt__rgctx_fetch_16:
 _p_124:
@@ -24474,7 +24427,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3696]
 br x16
-.word 6515
+.word 6495
 	.no_dead_strip plt__rgctx_fetch_17
 plt__rgctx_fetch_17:
 _p_125:
@@ -24482,7 +24435,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3704]
 br x16
-.word 6538
+.word 6536
 	.no_dead_strip plt__rgctx_fetch_18
 plt__rgctx_fetch_18:
 _p_126:
@@ -24490,31 +24443,31 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3712]
 br x16
-.word 6546
-	.no_dead_strip plt_System_OperationCanceledException_get_CancellationToken
-plt_System_OperationCanceledException_get_CancellationToken:
+.word 6544
+	.no_dead_strip plt__rgctx_fetch_19
+plt__rgctx_fetch_19:
 _p_127:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3720]
 br x16
-.word 6569
-	.no_dead_strip plt__rgctx_fetch_19
-plt__rgctx_fetch_19:
+.word 6567
+	.no_dead_strip plt__rgctx_fetch_20
+plt__rgctx_fetch_20:
 _p_128:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3728]
 br x16
-.word 6574
-	.no_dead_strip plt__rgctx_fetch_20
-plt__rgctx_fetch_20:
+.word 6575
+	.no_dead_strip plt_System_OperationCanceledException_get_CancellationToken
+plt_System_OperationCanceledException_get_CancellationToken:
 _p_129:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3736]
 br x16
-.word 6615
+.word 6598
 	.no_dead_strip plt__rgctx_fetch_21
 plt__rgctx_fetch_21:
 _p_130:
@@ -24522,31 +24475,31 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3744]
 br x16
-.word 6623
-	.no_dead_strip plt_System_Threading_Tasks_Task_SetNotificationForWaitCompletion_bool
-plt_System_Threading_Tasks_Task_SetNotificationForWaitCompletion_bool:
+.word 6603
+	.no_dead_strip plt__rgctx_fetch_22
+plt__rgctx_fetch_22:
 _p_131:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3752]
 br x16
-.word 6646
-	.no_dead_strip plt__rgctx_fetch_22
-plt__rgctx_fetch_22:
+.word 6644
+	.no_dead_strip plt__rgctx_fetch_23
+plt__rgctx_fetch_23:
 _p_132:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3760]
 br x16
-.word 6669
-	.no_dead_strip plt__rgctx_fetch_23
-plt__rgctx_fetch_23:
+.word 6652
+	.no_dead_strip plt_System_Threading_Tasks_Task_SetNotificationForWaitCompletion_bool
+plt_System_Threading_Tasks_Task_SetNotificationForWaitCompletion_bool:
 _p_133:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3768]
 br x16
-.word 6677
+.word 6675
 	.no_dead_strip plt__rgctx_fetch_24
 plt__rgctx_fetch_24:
 _p_134:
@@ -24554,7 +24507,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3776]
 br x16
-.word 6718
+.word 6698
 	.no_dead_strip plt__rgctx_fetch_25
 plt__rgctx_fetch_25:
 _p_135:
@@ -24562,7 +24515,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3784]
 br x16
-.word 6726
+.word 6706
 	.no_dead_strip plt__rgctx_fetch_26
 plt__rgctx_fetch_26:
 _p_136:
@@ -24570,55 +24523,55 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3792]
 br x16
-.word 6734
-	.no_dead_strip plt_System_Runtime_CompilerServices_JitHelpers_UnsafeCast_System_Threading_Tasks_Task_1_TResult_BOOL_object
-plt_System_Runtime_CompilerServices_JitHelpers_UnsafeCast_System_Threading_Tasks_Task_1_TResult_BOOL_object:
+.word 6747
+	.no_dead_strip plt__rgctx_fetch_27
+plt__rgctx_fetch_27:
 _p_137:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3800]
 br x16
-.word 6758
-	.no_dead_strip plt_System_Decimal_op_Equality_System_Decimal_System_Decimal
-plt_System_Decimal_op_Equality_System_Decimal_System_Decimal:
+.word 6755
+	.no_dead_strip plt__rgctx_fetch_28
+plt__rgctx_fetch_28:
 _p_138:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3808]
 br x16
-.word 6778
-	.no_dead_strip plt_intptr_op_Equality_intptr_intptr
-plt_intptr_op_Equality_intptr_intptr:
+.word 6763
+	.no_dead_strip plt_System_Runtime_CompilerServices_JitHelpers_UnsafeCast_System_Threading_Tasks_Task_1_TResult_BOOL_object
+plt_System_Runtime_CompilerServices_JitHelpers_UnsafeCast_System_Threading_Tasks_Task_1_TResult_BOOL_object:
 _p_139:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3816]
 br x16
-.word 6783
-	.no_dead_strip plt_uintptr_op_Equality_uintptr_uintptr
-plt_uintptr_op_Equality_uintptr_uintptr:
+.word 6787
+	.no_dead_strip plt_System_Decimal_op_Equality_System_Decimal_System_Decimal
+plt_System_Decimal_op_Equality_System_Decimal_System_Decimal:
 _p_140:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3824]
 br x16
-.word 6788
-	.no_dead_strip plt__rgctx_fetch_27
-plt__rgctx_fetch_27:
+.word 6807
+	.no_dead_strip plt_intptr_op_Equality_intptr_intptr
+plt_intptr_op_Equality_intptr_intptr:
 _p_141:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3832]
 br x16
-.word 6793
-	.no_dead_strip plt__rgctx_fetch_28
-plt__rgctx_fetch_28:
+.word 6812
+	.no_dead_strip plt_uintptr_op_Equality_uintptr_uintptr
+plt_uintptr_op_Equality_uintptr_uintptr:
 _p_142:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3840]
 br x16
-.word 6801
+.word 6817
 	.no_dead_strip plt__rgctx_fetch_29
 plt__rgctx_fetch_29:
 _p_143:
@@ -24626,7 +24579,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3848]
 br x16
-.word 6809
+.word 6822
 	.no_dead_strip plt__rgctx_fetch_30
 plt__rgctx_fetch_30:
 _p_144:
@@ -24634,7 +24587,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3856]
 br x16
-.word 6817
+.word 6830
 	.no_dead_strip plt__rgctx_fetch_31
 plt__rgctx_fetch_31:
 _p_145:
@@ -24642,7 +24595,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3864]
 br x16
-.word 6858
+.word 6838
 	.no_dead_strip plt__rgctx_fetch_32
 plt__rgctx_fetch_32:
 _p_146:
@@ -24650,7 +24603,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3872]
 br x16
-.word 6882
+.word 6846
 	.no_dead_strip plt__rgctx_fetch_33
 plt__rgctx_fetch_33:
 _p_147:
@@ -24658,87 +24611,87 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3880]
 br x16
-.word 6906
-	.no_dead_strip plt_System_Threading_Tasks_Task__ctor
-plt_System_Threading_Tasks_Task__ctor:
+.word 6887
+	.no_dead_strip plt__rgctx_fetch_34
+plt__rgctx_fetch_34:
 _p_148:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3888]
 br x16
-.word 6914
-	.no_dead_strip plt_System_Threading_Tasks_Task__ctor_object_System_Threading_Tasks_TaskCreationOptions_bool
-plt_System_Threading_Tasks_Task__ctor_object_System_Threading_Tasks_TaskCreationOptions_bool:
+.word 6911
+	.no_dead_strip plt__rgctx_fetch_35
+plt__rgctx_fetch_35:
 _p_149:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3896]
 br x16
-.word 6919
-	.no_dead_strip plt_System_Threading_Tasks_Task__ctor_bool_System_Threading_Tasks_TaskCreationOptions_System_Threading_CancellationToken
-plt_System_Threading_Tasks_Task__ctor_bool_System_Threading_Tasks_TaskCreationOptions_System_Threading_CancellationToken:
+.word 6935
+	.no_dead_strip plt_System_Threading_Tasks_Task__ctor
+plt_System_Threading_Tasks_Task__ctor:
 _p_150:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3904]
 br x16
-.word 6924
-	.no_dead_strip plt_System_Threading_Tasks_Task_InternalCurrentIfAttached_System_Threading_Tasks_TaskCreationOptions
-plt_System_Threading_Tasks_Task_InternalCurrentIfAttached_System_Threading_Tasks_TaskCreationOptions:
+.word 6943
+	.no_dead_strip plt_System_Threading_Tasks_Task__ctor_object_System_Threading_Tasks_TaskCreationOptions_bool
+plt_System_Threading_Tasks_Task__ctor_object_System_Threading_Tasks_TaskCreationOptions_bool:
 _p_151:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3912]
 br x16
-.word 6929
-	.no_dead_strip plt__rgctx_fetch_34
-plt__rgctx_fetch_34:
+.word 6948
+	.no_dead_strip plt_System_Threading_Tasks_Task__ctor_bool_System_Threading_Tasks_TaskCreationOptions_System_Threading_CancellationToken
+plt_System_Threading_Tasks_Task__ctor_bool_System_Threading_Tasks_TaskCreationOptions_System_Threading_CancellationToken:
 _p_152:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3920]
 br x16
-.word 6952
-	.no_dead_strip plt_System_Threading_Tasks_Task_PossiblyCaptureContext_System_Threading_StackCrawlMark_
-plt_System_Threading_Tasks_Task_PossiblyCaptureContext_System_Threading_StackCrawlMark_:
+.word 6953
+	.no_dead_strip plt_System_Threading_Tasks_Task_InternalCurrentIfAttached_System_Threading_Tasks_TaskCreationOptions
+plt_System_Threading_Tasks_Task_InternalCurrentIfAttached_System_Threading_Tasks_TaskCreationOptions:
 _p_153:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3928]
 br x16
-.word 6975
-	.no_dead_strip plt__rgctx_fetch_35
-plt__rgctx_fetch_35:
+.word 6958
+	.no_dead_strip plt__rgctx_fetch_36
+plt__rgctx_fetch_36:
 _p_154:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3936]
 br x16
-.word 6998
-	.no_dead_strip plt_System_Threading_Tasks_Task__ctor_System_Delegate_object_System_Threading_Tasks_Task_System_Threading_CancellationToken_System_Threading_Tasks_TaskCreationOptions_System_Threading_Tasks_InternalTaskOptions_System_Threading_Tasks_TaskScheduler
-plt_System_Threading_Tasks_Task__ctor_System_Delegate_object_System_Threading_Tasks_Task_System_Threading_CancellationToken_System_Threading_Tasks_TaskCreationOptions_System_Threading_Tasks_InternalTaskOptions_System_Threading_Tasks_TaskScheduler:
+.word 6981
+	.no_dead_strip plt_System_Threading_Tasks_Task_PossiblyCaptureContext_System_Threading_StackCrawlMark_
+plt_System_Threading_Tasks_Task_PossiblyCaptureContext_System_Threading_StackCrawlMark_:
 _p_155:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3944]
 br x16
-.word 7021
-	.no_dead_strip plt__rgctx_fetch_36
-plt__rgctx_fetch_36:
+.word 7004
+	.no_dead_strip plt__rgctx_fetch_37
+plt__rgctx_fetch_37:
 _p_156:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3952]
 br x16
-.word 7044
-	.no_dead_strip plt__rgctx_fetch_37
-plt__rgctx_fetch_37:
+.word 7027
+	.no_dead_strip plt_System_Threading_Tasks_Task__ctor_System_Delegate_object_System_Threading_Tasks_Task_System_Threading_CancellationToken_System_Threading_Tasks_TaskCreationOptions_System_Threading_Tasks_InternalTaskOptions_System_Threading_Tasks_TaskScheduler
+plt_System_Threading_Tasks_Task__ctor_System_Delegate_object_System_Threading_Tasks_Task_System_Threading_CancellationToken_System_Threading_Tasks_TaskCreationOptions_System_Threading_Tasks_InternalTaskOptions_System_Threading_Tasks_TaskScheduler:
 _p_157:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3960]
 br x16
-.word 7085
+.word 7050
 	.no_dead_strip plt__rgctx_fetch_38
 plt__rgctx_fetch_38:
 _p_158:
@@ -24746,175 +24699,175 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3968]
 br x16
-.word 7093
-	.no_dead_strip plt_System_Threading_Tasks_Task_ScheduleAndStart_bool
-plt_System_Threading_Tasks_Task_ScheduleAndStart_bool:
+.word 7073
+	.no_dead_strip plt__rgctx_fetch_39
+plt__rgctx_fetch_39:
 _p_159:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3976]
 br x16
-.word 7116
-	.no_dead_strip plt__rgctx_fetch_39
-plt__rgctx_fetch_39:
+.word 7114
+	.no_dead_strip plt__rgctx_fetch_40
+plt__rgctx_fetch_40:
 _p_160:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3984]
 br x16
-.word 7139
-	.no_dead_strip plt__rgctx_fetch_40
-plt__rgctx_fetch_40:
+.word 7122
+	.no_dead_strip plt_System_Threading_Tasks_Task_ScheduleAndStart_bool
+plt_System_Threading_Tasks_Task_ScheduleAndStart_bool:
 _p_161:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #3992]
 br x16
-.word 7147
-	.no_dead_strip plt_System_Threading_Tasks_Task_AtomicStateUpdate_int_int
-plt_System_Threading_Tasks_Task_AtomicStateUpdate_int_int:
+.word 7145
+	.no_dead_strip plt__rgctx_fetch_41
+plt__rgctx_fetch_41:
 _p_162:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #4000]
 br x16
-.word 7170
-	.no_dead_strip plt_System_Threading_Tasks_Task_ContingentProperties_SetCompleted
-plt_System_Threading_Tasks_Task_ContingentProperties_SetCompleted:
+.word 7168
+	.no_dead_strip plt__rgctx_fetch_42
+plt__rgctx_fetch_42:
 _p_163:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #4008]
 br x16
-.word 7175
-	.no_dead_strip plt_System_Threading_Tasks_Task_FinishStageThree
-plt_System_Threading_Tasks_Task_FinishStageThree:
+.word 7176
+	.no_dead_strip plt_System_Threading_Tasks_Task_AtomicStateUpdate_int_int
+plt_System_Threading_Tasks_Task_AtomicStateUpdate_int_int:
 _p_164:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #4016]
 br x16
-.word 7180
-	.no_dead_strip plt__rgctx_fetch_41
-plt__rgctx_fetch_41:
+.word 7199
+	.no_dead_strip plt_System_Threading_Tasks_Task_ContingentProperties_SetCompleted
+plt_System_Threading_Tasks_Task_ContingentProperties_SetCompleted:
 _p_165:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #4024]
 br x16
-.word 7203
-	.no_dead_strip plt_System_Threading_Tasks_Task_get_IsWaitNotificationEnabledOrNotRanToCompletion
-plt_System_Threading_Tasks_Task_get_IsWaitNotificationEnabledOrNotRanToCompletion:
+.word 7204
+	.no_dead_strip plt_System_Threading_Tasks_Task_FinishStageThree
+plt_System_Threading_Tasks_Task_FinishStageThree:
 _p_166:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #4032]
 br x16
-.word 7226
-	.no_dead_strip plt__rgctx_fetch_42
-plt__rgctx_fetch_42:
+.word 7209
+	.no_dead_strip plt__rgctx_fetch_43
+plt__rgctx_fetch_43:
 _p_167:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #4040]
 br x16
-.word 7249
-	.no_dead_strip plt_System_Threading_Tasks_Task_InternalWait_int_System_Threading_CancellationToken
-plt_System_Threading_Tasks_Task_InternalWait_int_System_Threading_CancellationToken:
+.word 7232
+	.no_dead_strip plt_System_Threading_Tasks_Task_get_IsWaitNotificationEnabledOrNotRanToCompletion
+plt_System_Threading_Tasks_Task_get_IsWaitNotificationEnabledOrNotRanToCompletion:
 _p_168:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #4048]
 br x16
-.word 7272
-	.no_dead_strip plt_System_Threading_Tasks_Task_NotifyDebuggerOfWaitCompletionIfNecessary
-plt_System_Threading_Tasks_Task_NotifyDebuggerOfWaitCompletionIfNecessary:
+.word 7255
+	.no_dead_strip plt__rgctx_fetch_44
+plt__rgctx_fetch_44:
 _p_169:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #4056]
 br x16
-.word 7277
-	.no_dead_strip plt_System_Threading_Tasks_Task_get_IsRanToCompletion
-plt_System_Threading_Tasks_Task_get_IsRanToCompletion:
+.word 7278
+	.no_dead_strip plt_System_Threading_Tasks_Task_InternalWait_int_System_Threading_CancellationToken
+plt_System_Threading_Tasks_Task_InternalWait_int_System_Threading_CancellationToken:
 _p_170:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #4064]
 br x16
-.word 7282
-	.no_dead_strip plt_System_Threading_Tasks_Task_ThrowIfExceptional_bool
-plt_System_Threading_Tasks_Task_ThrowIfExceptional_bool:
+.word 7301
+	.no_dead_strip plt_System_Threading_Tasks_Task_NotifyDebuggerOfWaitCompletionIfNecessary
+plt_System_Threading_Tasks_Task_NotifyDebuggerOfWaitCompletionIfNecessary:
 _p_171:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #4072]
 br x16
-.word 7287
-	.no_dead_strip plt_System_Threading_Tasks_Task_EnsureContingentPropertiesInitialized_bool
-plt_System_Threading_Tasks_Task_EnsureContingentPropertiesInitialized_bool:
+.word 7306
+	.no_dead_strip plt_System_Threading_Tasks_Task_get_IsRanToCompletion
+plt_System_Threading_Tasks_Task_get_IsRanToCompletion:
 _p_172:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #4080]
 br x16
-.word 7292
-	.no_dead_strip plt_System_Threading_Tasks_Task_AddException_object
-plt_System_Threading_Tasks_Task_AddException_object:
+.word 7311
+	.no_dead_strip plt_System_Threading_Tasks_Task_ThrowIfExceptional_bool
+plt_System_Threading_Tasks_Task_ThrowIfExceptional_bool:
 _p_173:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #4088]
 br x16
-.word 7297
-	.no_dead_strip plt_System_Threading_Tasks_Task_Finish_bool
-plt_System_Threading_Tasks_Task_Finish_bool:
+.word 7316
+	.no_dead_strip plt_System_Threading_Tasks_Task_EnsureContingentPropertiesInitialized_bool
+plt_System_Threading_Tasks_Task_EnsureContingentPropertiesInitialized_bool:
 _p_174:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #0]
 br x16
-.word 7302
-	.no_dead_strip plt__rgctx_fetch_43
-plt__rgctx_fetch_43:
+.word 7321
+	.no_dead_strip plt_System_Threading_Tasks_Task_AddException_object
+plt_System_Threading_Tasks_Task_AddException_object:
 _p_175:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #8]
 br x16
-.word 7325
-	.no_dead_strip plt_System_Threading_Tasks_Task_RecordInternalCancellationRequest_System_Threading_CancellationToken_object
-plt_System_Threading_Tasks_Task_RecordInternalCancellationRequest_System_Threading_CancellationToken_object:
+.word 7326
+	.no_dead_strip plt_System_Threading_Tasks_Task_Finish_bool
+plt_System_Threading_Tasks_Task_Finish_bool:
 _p_176:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #16]
 br x16
-.word 7348
-	.no_dead_strip plt_System_Threading_Tasks_Task_CancellationCleanupLogic
-plt_System_Threading_Tasks_Task_CancellationCleanupLogic:
+.word 7331
+	.no_dead_strip plt__rgctx_fetch_45
+plt__rgctx_fetch_45:
 _p_177:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #24]
 br x16
-.word 7353
-	.no_dead_strip plt__rgctx_fetch_44
-plt__rgctx_fetch_44:
+.word 7354
+	.no_dead_strip plt_System_Threading_Tasks_Task_RecordInternalCancellationRequest_System_Threading_CancellationToken_object
+plt_System_Threading_Tasks_Task_RecordInternalCancellationRequest_System_Threading_CancellationToken_object:
 _p_178:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #32]
 br x16
-.word 7376
-	.no_dead_strip plt__rgctx_fetch_45
-plt__rgctx_fetch_45:
+.word 7377
+	.no_dead_strip plt_System_Threading_Tasks_Task_CancellationCleanupLogic
+plt_System_Threading_Tasks_Task_CancellationCleanupLogic:
 _p_179:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #40]
 br x16
-.word 7384
+.word 7382
 	.no_dead_strip plt__rgctx_fetch_46
 plt__rgctx_fetch_46:
 _p_180:
@@ -24922,31 +24875,31 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #48]
 br x16
-.word 7418
-	.no_dead_strip plt_wrapper_castclass_object___isinst_with_cache_object_intptr_intptr
-plt_wrapper_castclass_object___isinst_with_cache_object_intptr_intptr:
+.word 7405
+	.no_dead_strip plt__rgctx_fetch_47
+plt__rgctx_fetch_47:
 _p_181:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #56]
 br x16
-.word 7426
-	.no_dead_strip plt__rgctx_fetch_47
-plt__rgctx_fetch_47:
+.word 7413
+	.no_dead_strip plt__rgctx_fetch_48
+plt__rgctx_fetch_48:
 _p_182:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #64]
 br x16
-.word 7446
-	.no_dead_strip plt__rgctx_fetch_48
-plt__rgctx_fetch_48:
+.word 7448
+	.no_dead_strip plt_wrapper_castclass_object___isinst_with_cache_object_intptr_intptr
+plt_wrapper_castclass_object___isinst_with_cache_object_intptr_intptr:
 _p_183:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #72]
 br x16
-.word 7481
+.word 7456
 	.no_dead_strip plt__rgctx_fetch_49
 plt__rgctx_fetch_49:
 _p_184:
@@ -24954,7 +24907,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #80]
 br x16
-.word 7489
+.word 7477
 	.no_dead_strip plt__rgctx_fetch_50
 plt__rgctx_fetch_50:
 _p_185:
@@ -24962,7 +24915,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #88]
 br x16
-.word 7539
+.word 7512
 	.no_dead_strip plt__rgctx_fetch_51
 plt__rgctx_fetch_51:
 _p_186:
@@ -24970,7 +24923,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #96]
 br x16
-.word 7547
+.word 7520
 	.no_dead_strip plt__rgctx_fetch_52
 plt__rgctx_fetch_52:
 _p_187:
@@ -24978,7 +24931,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #104]
 br x16
-.word 7597
+.word 7570
 	.no_dead_strip plt__rgctx_fetch_53
 plt__rgctx_fetch_53:
 _p_188:
@@ -24986,7 +24939,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #112]
 br x16
-.word 7605
+.word 7578
 	.no_dead_strip plt__rgctx_fetch_54
 plt__rgctx_fetch_54:
 _p_189:
@@ -25002,7 +24955,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #128]
 br x16
-.word 7645
+.word 7636
 	.no_dead_strip plt__rgctx_fetch_56
 plt__rgctx_fetch_56:
 _p_191:
@@ -25010,7 +24963,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #136]
 br x16
-.word 7653
+.word 7659
 	.no_dead_strip plt__rgctx_fetch_57
 plt__rgctx_fetch_57:
 _p_192:
@@ -25018,71 +24971,71 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #144]
 br x16
-.word 7661
-	.no_dead_strip plt__jit_icall_mono_ldftn
-plt__jit_icall_mono_ldftn:
+.word 7676
+	.no_dead_strip plt__rgctx_fetch_58
+plt__rgctx_fetch_58:
 _p_193:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #152]
 br x16
 .word 7684
-	.no_dead_strip plt__rgctx_fetch_58
-plt__rgctx_fetch_58:
+	.no_dead_strip plt__rgctx_fetch_59
+plt__rgctx_fetch_59:
 _p_194:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #160]
 br x16
-.word 7708
-	.no_dead_strip plt_System_Func_2_System_Threading_Tasks_Task_1_System_Threading_Tasks_Task_System_Threading_Tasks_Task_1_TResult_BOOL__ctor_object_intptr
-plt_System_Func_2_System_Threading_Tasks_Task_1_System_Threading_Tasks_Task_System_Threading_Tasks_Task_1_TResult_BOOL__ctor_object_intptr:
+.word 7692
+	.no_dead_strip plt__jit_icall_mono_ldftn
+plt__jit_icall_mono_ldftn:
 _p_195:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #168]
 br x16
-.word 7716
-	.no_dead_strip plt__rgctx_fetch_59
-plt__rgctx_fetch_59:
+.word 7715
+	.no_dead_strip plt__rgctx_fetch_60
+plt__rgctx_fetch_60:
 _p_196:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #176]
 br x16
-.word 7756
-	.no_dead_strip plt_System_Threading_Tasks_TaskFactory_CheckMultiTaskContinuationOptions_System_Threading_Tasks_TaskContinuationOptions
-plt_System_Threading_Tasks_TaskFactory_CheckMultiTaskContinuationOptions_System_Threading_Tasks_TaskContinuationOptions:
+.word 7740
+	.no_dead_strip plt_System_Func_2_System_Threading_Tasks_Task_1_System_Threading_Tasks_Task_System_Threading_Tasks_Task_1_TResult_BOOL__ctor_object_intptr
+plt_System_Func_2_System_Threading_Tasks_Task_1_System_Threading_Tasks_Task_System_Threading_Tasks_Task_1_TResult_BOOL__ctor_object_intptr:
 _p_197:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #184]
 br x16
-.word 7779
-	.no_dead_strip plt_System_Threading_Tasks_TaskFactory_CheckCreationOptions_System_Threading_Tasks_TaskCreationOptions
-plt_System_Threading_Tasks_TaskFactory_CheckCreationOptions_System_Threading_Tasks_TaskCreationOptions:
+.word 7748
+	.no_dead_strip plt__rgctx_fetch_61
+plt__rgctx_fetch_61:
 _p_198:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #192]
 br x16
-.word 7784
-	.no_dead_strip plt__rgctx_fetch_60
-plt__rgctx_fetch_60:
+.word 7788
+	.no_dead_strip plt_System_Threading_Tasks_TaskFactory_CheckMultiTaskContinuationOptions_System_Threading_Tasks_TaskContinuationOptions
+plt_System_Threading_Tasks_TaskFactory_CheckMultiTaskContinuationOptions_System_Threading_Tasks_TaskContinuationOptions:
 _p_199:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #200]
 br x16
-.word 7816
-	.no_dead_strip plt__rgctx_fetch_61
-plt__rgctx_fetch_61:
+.word 7811
+	.no_dead_strip plt_System_Threading_Tasks_TaskFactory_CheckCreationOptions_System_Threading_Tasks_TaskCreationOptions
+plt_System_Threading_Tasks_TaskFactory_CheckCreationOptions_System_Threading_Tasks_TaskCreationOptions:
 _p_200:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #208]
 br x16
-.word 7824
+.word 7816
 	.no_dead_strip plt__rgctx_fetch_62
 plt__rgctx_fetch_62:
 _p_201:
@@ -25090,7 +25043,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #216]
 br x16
-.word 7865
+.word 7848
 	.no_dead_strip plt__rgctx_fetch_63
 plt__rgctx_fetch_63:
 _p_202:
@@ -25098,7 +25051,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #224]
 br x16
-.word 7873
+.word 7856
 	.no_dead_strip plt__rgctx_fetch_64
 plt__rgctx_fetch_64:
 _p_203:
@@ -25106,31 +25059,31 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #232]
 br x16
-.word 7896
-	.no_dead_strip plt_System_Threading_Tasks_TaskExceptionHolder_MarkAsHandled_bool
-plt_System_Threading_Tasks_TaskExceptionHolder_MarkAsHandled_bool:
+.word 7897
+	.no_dead_strip plt__rgctx_fetch_65
+plt__rgctx_fetch_65:
 _p_204:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #240]
 br x16
-.word 7919
-	.no_dead_strip plt__rgctx_fetch_65
-plt__rgctx_fetch_65:
+.word 7905
+	.no_dead_strip plt__rgctx_fetch_66
+plt__rgctx_fetch_66:
 _p_205:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #248]
 br x16
-.word 7924
-	.no_dead_strip plt__rgctx_fetch_66
-plt__rgctx_fetch_66:
+.word 7928
+	.no_dead_strip plt_System_Threading_Tasks_TaskExceptionHolder_MarkAsHandled_bool
+plt_System_Threading_Tasks_TaskExceptionHolder_MarkAsHandled_bool:
 _p_206:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #256]
 br x16
-.word 7947
+.word 7951
 	.no_dead_strip plt__rgctx_fetch_67
 plt__rgctx_fetch_67:
 _p_207:
@@ -25138,7 +25091,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #264]
 br x16
-.word 7988
+.word 7956
 	.no_dead_strip plt__rgctx_fetch_68
 plt__rgctx_fetch_68:
 _p_208:
@@ -25146,7 +25099,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #272]
 br x16
-.word 7996
+.word 7979
 	.no_dead_strip plt__rgctx_fetch_69
 plt__rgctx_fetch_69:
 _p_209:
@@ -25154,7 +25107,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #280]
 br x16
-.word 8046
+.word 8020
 	.no_dead_strip plt__rgctx_fetch_70
 plt__rgctx_fetch_70:
 _p_210:
@@ -25162,127 +25115,127 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #288]
 br x16
-.word 8054
-	.no_dead_strip plt_System_Threading_Tasks_TaskFactory_CheckFromAsyncOptions_System_Threading_Tasks_TaskCreationOptions_bool
-plt_System_Threading_Tasks_TaskFactory_CheckFromAsyncOptions_System_Threading_Tasks_TaskCreationOptions_bool:
+.word 8028
+	.no_dead_strip plt__rgctx_fetch_71
+plt__rgctx_fetch_71:
 _p_211:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #296]
 br x16
-.word 8077
-	.no_dead_strip plt__rgctx_fetch_71
-plt__rgctx_fetch_71:
+.word 8078
+	.no_dead_strip plt__rgctx_fetch_72
+plt__rgctx_fetch_72:
 _p_212:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #304]
 br x16
-.word 8082
-	.no_dead_strip plt__rgctx_fetch_72
-plt__rgctx_fetch_72:
+.word 8086
+	.no_dead_strip plt_System_Threading_Tasks_TaskFactory_CheckFromAsyncOptions_System_Threading_Tasks_TaskCreationOptions_bool
+plt_System_Threading_Tasks_TaskFactory_CheckFromAsyncOptions_System_Threading_Tasks_TaskCreationOptions_bool:
 _p_213:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #312]
 br x16
-.word 8090
-	.no_dead_strip plt_System_Delegate_get_Method
-plt_System_Delegate_get_Method:
+.word 8109
+	.no_dead_strip plt__rgctx_fetch_73
+plt__rgctx_fetch_73:
 _p_214:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #320]
 br x16
-.word 8113
-	.no_dead_strip plt_string_Concat_string_string
-plt_string_Concat_string_string:
+.word 8114
+	.no_dead_strip plt__rgctx_fetch_74
+plt__rgctx_fetch_74:
 _p_215:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #328]
 br x16
-.word 8118
-	.no_dead_strip plt_System_Threading_Tasks_AsyncCausalityTracer_TraceOperationCreation_System_Threading_Tasks_CausalityTraceLevel_int_string_ulong
-plt_System_Threading_Tasks_AsyncCausalityTracer_TraceOperationCreation_System_Threading_Tasks_CausalityTraceLevel_int_string_ulong:
+.word 8122
+	.no_dead_strip plt_System_Delegate_get_Method
+plt_System_Delegate_get_Method:
 _p_216:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #336]
 br x16
-.word 8123
-	.no_dead_strip plt_System_Threading_Tasks_Task_AddToActiveTasks_System_Threading_Tasks_Task
-plt_System_Threading_Tasks_Task_AddToActiveTasks_System_Threading_Tasks_Task:
+.word 8145
+	.no_dead_strip plt_string_Concat_string_string
+plt_string_Concat_string_string:
 _p_217:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #344]
 br x16
-.word 8128
-	.no_dead_strip plt__rgctx_fetch_73
-plt__rgctx_fetch_73:
+.word 8150
+	.no_dead_strip plt_System_Threading_Tasks_AsyncCausalityTracer_TraceOperationCreation_System_Threading_Tasks_CausalityTraceLevel_int_string_ulong
+plt_System_Threading_Tasks_AsyncCausalityTracer_TraceOperationCreation_System_Threading_Tasks_CausalityTraceLevel_int_string_ulong:
 _p_218:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #352]
 br x16
-.word 8142
-	.no_dead_strip plt__rgctx_fetch_74
-plt__rgctx_fetch_74:
+.word 8155
+	.no_dead_strip plt_System_Threading_Tasks_Task_AddToActiveTasks_System_Threading_Tasks_Task
+plt_System_Threading_Tasks_Task_AddToActiveTasks_System_Threading_Tasks_Task:
 _p_219:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #360]
 br x16
-.word 8150
-	.no_dead_strip plt_System_Threading_AtomicBoolean__ctor
-plt_System_Threading_AtomicBoolean__ctor:
+.word 8160
+	.no_dead_strip plt__rgctx_fetch_75
+plt__rgctx_fetch_75:
 _p_220:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #368]
 br x16
-.word 8173
-	.no_dead_strip plt__rgctx_fetch_75
-plt__rgctx_fetch_75:
+.word 8174
+	.no_dead_strip plt__rgctx_fetch_76
+plt__rgctx_fetch_76:
 _p_221:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #376]
 br x16
-.word 8178
-	.no_dead_strip plt__rgctx_fetch_76
-plt__rgctx_fetch_76:
+.word 8182
+	.no_dead_strip plt_System_Threading_AtomicBoolean__ctor
+plt_System_Threading_AtomicBoolean__ctor:
 _p_222:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #384]
 br x16
-.word 8201
-	.no_dead_strip plt_System_Threading_AtomicBoolean_TryRelaxedSet
-plt_System_Threading_AtomicBoolean_TryRelaxedSet:
+.word 8205
+	.no_dead_strip plt__rgctx_fetch_77
+plt__rgctx_fetch_77:
 _p_223:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #392]
 br x16
-.word 8224
-	.no_dead_strip plt__rgctx_fetch_77
-plt__rgctx_fetch_77:
+.word 8210
+	.no_dead_strip plt__rgctx_fetch_78
+plt__rgctx_fetch_78:
 _p_224:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #400]
 br x16
-.word 8229
-	.no_dead_strip plt__rgctx_fetch_78
-plt__rgctx_fetch_78:
+.word 8233
+	.no_dead_strip plt_System_Threading_AtomicBoolean_TryRelaxedSet
+plt_System_Threading_AtomicBoolean_TryRelaxedSet:
 _p_225:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #408]
 br x16
-.word 8237
+.word 8256
 	.no_dead_strip plt__rgctx_fetch_79
 plt__rgctx_fetch_79:
 _p_226:
@@ -25290,7 +25243,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #416]
 br x16
-.word 8260
+.word 8261
 	.no_dead_strip plt__rgctx_fetch_80
 plt__rgctx_fetch_80:
 _p_227:
@@ -25298,7 +25251,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #424]
 br x16
-.word 8283
+.word 8269
 	.no_dead_strip plt__rgctx_fetch_81
 plt__rgctx_fetch_81:
 _p_228:
@@ -25306,39 +25259,39 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #432]
 br x16
-.word 8306
-	.no_dead_strip plt__jit_icall_mono_arch_rethrow_exception
-plt__jit_icall_mono_arch_rethrow_exception:
+.word 8292
+	.no_dead_strip plt__rgctx_fetch_82
+plt__rgctx_fetch_82:
 _p_229:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #440]
 br x16
-.word 8329
-	.no_dead_strip plt_Locale_GetText_string
-plt_Locale_GetText_string:
+.word 8315
+	.no_dead_strip plt__rgctx_fetch_83
+plt__rgctx_fetch_83:
 _p_230:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #448]
 br x16
-.word 8359
-	.no_dead_strip plt__rgctx_fetch_82
-plt__rgctx_fetch_82:
+.word 8338
+	.no_dead_strip plt__jit_icall_mono_arch_rethrow_exception
+plt__jit_icall_mono_arch_rethrow_exception:
 _p_231:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #456]
 br x16
-.word 8382
-	.no_dead_strip plt__rgctx_fetch_83
-plt__rgctx_fetch_83:
+.word 8361
+	.no_dead_strip plt_Locale_GetText_string
+plt_Locale_GetText_string:
 _p_232:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #464]
 br x16
-.word 8405
+.word 8391
 	.no_dead_strip plt__rgctx_fetch_84
 plt__rgctx_fetch_84:
 _p_233:
@@ -25346,7 +25299,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #472]
 br x16
-.word 8413
+.word 8414
 	.no_dead_strip plt__rgctx_fetch_85
 plt__rgctx_fetch_85:
 _p_234:
@@ -25354,31 +25307,31 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #480]
 br x16
-.word 8427
-	.no_dead_strip plt_System_Array_Copy_System_Array_int_System_Array_int_int
-plt_System_Array_Copy_System_Array_int_System_Array_int_int:
+.word 8437
+	.no_dead_strip plt__rgctx_fetch_86
+plt__rgctx_fetch_86:
 _p_235:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #488]
 br x16
-.word 8441
-	.no_dead_strip plt__rgctx_fetch_86
-plt__rgctx_fetch_86:
+.word 8445
+	.no_dead_strip plt__rgctx_fetch_87
+plt__rgctx_fetch_87:
 _p_236:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #496]
 br x16
-.word 8464
-	.no_dead_strip plt__rgctx_fetch_87
-plt__rgctx_fetch_87:
+.word 8459
+	.no_dead_strip plt_System_Array_Copy_System_Array_int_System_Array_int_int
+plt_System_Array_Copy_System_Array_int_System_Array_int_int:
 _p_237:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #504]
 br x16
-.word 8472
+.word 8473
 	.no_dead_strip plt__rgctx_fetch_88
 plt__rgctx_fetch_88:
 _p_238:
@@ -25386,7 +25339,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #512]
 br x16
-.word 8480
+.word 8496
 	.no_dead_strip plt__rgctx_fetch_89
 plt__rgctx_fetch_89:
 _p_239:
@@ -25394,79 +25347,79 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #520]
 br x16
-.word 8521
-	.no_dead_strip plt_System_Collections_Generic_ByteEqualityComparer__ctor
-plt_System_Collections_Generic_ByteEqualityComparer__ctor:
+.word 8504
+	.no_dead_strip plt__rgctx_fetch_90
+plt__rgctx_fetch_90:
 _p_240:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #528]
 br x16
-.word 8529
-	.no_dead_strip plt__rgctx_fetch_90
-plt__rgctx_fetch_90:
+.word 8512
+	.no_dead_strip plt__rgctx_fetch_91
+plt__rgctx_fetch_91:
 _p_241:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #536]
 br x16
-.word 8534
-	.no_dead_strip plt_System_Collections_Generic_InternalStringComparer__ctor
-plt_System_Collections_Generic_InternalStringComparer__ctor:
+.word 8553
+	.no_dead_strip plt_System_Collections_Generic_ByteEqualityComparer__ctor
+plt_System_Collections_Generic_ByteEqualityComparer__ctor:
 _p_242:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #544]
 br x16
-.word 8542
-	.no_dead_strip plt__rgctx_fetch_91
-plt__rgctx_fetch_91:
+.word 8561
+	.no_dead_strip plt__rgctx_fetch_92
+plt__rgctx_fetch_92:
 _p_243:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #552]
 br x16
-.word 8556
-	.no_dead_strip plt_System_RuntimeType_CreateInstanceForAnotherGenericParameter_System_Type_System_RuntimeType
-plt_System_RuntimeType_CreateInstanceForAnotherGenericParameter_System_Type_System_RuntimeType:
+.word 8566
+	.no_dead_strip plt_System_Collections_Generic_InternalStringComparer__ctor
+plt_System_Collections_Generic_InternalStringComparer__ctor:
 _p_244:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #560]
 br x16
-.word 8564
-	.no_dead_strip plt_System_Enum_GetUnderlyingType_System_Type
-plt_System_Enum_GetUnderlyingType_System_Type:
+.word 8574
+	.no_dead_strip plt__rgctx_fetch_93
+plt__rgctx_fetch_93:
 _p_245:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #568]
 br x16
-.word 8569
-	.no_dead_strip plt_System_Type_GetTypeCode_System_Type
-plt_System_Type_GetTypeCode_System_Type:
+.word 8588
+	.no_dead_strip plt_System_RuntimeType_CreateInstanceForAnotherGenericParameter_System_Type_System_RuntimeType
+plt_System_RuntimeType_CreateInstanceForAnotherGenericParameter_System_Type_System_RuntimeType:
 _p_246:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #576]
 br x16
-.word 8574
-	.no_dead_strip plt__rgctx_fetch_92
-plt__rgctx_fetch_92:
+.word 8596
+	.no_dead_strip plt_System_Enum_GetUnderlyingType_System_Type
+plt_System_Enum_GetUnderlyingType_System_Type:
 _p_247:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #584]
 br x16
-.word 8588
-	.no_dead_strip plt__rgctx_fetch_93
-plt__rgctx_fetch_93:
+.word 8601
+	.no_dead_strip plt_System_Type_GetTypeCode_System_Type
+plt_System_Type_GetTypeCode_System_Type:
 _p_248:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #592]
 br x16
-.word 8596
+.word 8606
 	.no_dead_strip plt__rgctx_fetch_94
 plt__rgctx_fetch_94:
 _p_249:
@@ -25474,7 +25427,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #600]
 br x16
-.word 8637
+.word 8620
 	.no_dead_strip plt__rgctx_fetch_95
 plt__rgctx_fetch_95:
 _p_250:
@@ -25482,31 +25435,31 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #608]
 br x16
-.word 8645
-	.no_dead_strip plt_System_ThrowHelper_ThrowArgumentException_System_ExceptionResource
-plt_System_ThrowHelper_ThrowArgumentException_System_ExceptionResource:
+.word 8628
+	.no_dead_strip plt__rgctx_fetch_96
+plt__rgctx_fetch_96:
 _p_251:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #616]
 br x16
-.word 8653
-	.no_dead_strip plt__rgctx_fetch_96
-plt__rgctx_fetch_96:
+.word 8669
+	.no_dead_strip plt__rgctx_fetch_97
+plt__rgctx_fetch_97:
 _p_252:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #624]
 br x16
-.word 8676
-	.no_dead_strip plt__rgctx_fetch_97
-plt__rgctx_fetch_97:
+.word 8677
+	.no_dead_strip plt_System_ThrowHelper_ThrowArgumentException_System_ExceptionResource
+plt_System_ThrowHelper_ThrowArgumentException_System_ExceptionResource:
 _p_253:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #632]
 br x16
-.word 8684
+.word 8685
 	.no_dead_strip plt__rgctx_fetch_98
 plt__rgctx_fetch_98:
 _p_254:
@@ -25514,7 +25467,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #640]
 br x16
-.word 8710
+.word 8708
 	.no_dead_strip plt__rgctx_fetch_99
 plt__rgctx_fetch_99:
 _p_255:
@@ -25522,7 +25475,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #648]
 br x16
-.word 8734
+.word 8716
 	.no_dead_strip plt__rgctx_fetch_100
 plt__rgctx_fetch_100:
 _p_256:
@@ -25530,7 +25483,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #656]
 br x16
-.word 8776
+.word 8742
 	.no_dead_strip plt__rgctx_fetch_101
 plt__rgctx_fetch_101:
 _p_257:
@@ -25538,31 +25491,31 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #664]
 br x16
-.word 8800
-	.no_dead_strip plt_int_GetHashCode
-plt_int_GetHashCode:
+.word 8766
+	.no_dead_strip plt__rgctx_fetch_102
+plt__rgctx_fetch_102:
 _p_258:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #672]
 br x16
-.word 8824
-	.no_dead_strip plt__rgctx_fetch_102
-plt__rgctx_fetch_102:
+.word 8808
+	.no_dead_strip plt__rgctx_fetch_103
+plt__rgctx_fetch_103:
 _p_259:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #680]
 br x16
-.word 8856
-	.no_dead_strip plt__rgctx_fetch_103
-plt__rgctx_fetch_103:
+.word 8832
+	.no_dead_strip plt_int_GetHashCode
+plt_int_GetHashCode:
 _p_260:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #688]
 br x16
-.word 8897
+.word 8856
 	.no_dead_strip plt__rgctx_fetch_104
 plt__rgctx_fetch_104:
 _p_261:
@@ -25570,7 +25523,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #696]
 br x16
-.word 8938
+.word 8888
 	.no_dead_strip plt__rgctx_fetch_105
 plt__rgctx_fetch_105:
 _p_262:
@@ -25578,55 +25531,55 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #704]
 br x16
-.word 8955
-	.no_dead_strip plt_System_Runtime_Serialization_SerializationInfo_SetType_System_Type
-plt_System_Runtime_Serialization_SerializationInfo_SetType_System_Type:
+.word 8929
+	.no_dead_strip plt__rgctx_fetch_106
+plt__rgctx_fetch_106:
 _p_263:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #712]
 br x16
-.word 8963
-	.no_dead_strip plt__rgctx_fetch_106
-plt__rgctx_fetch_106:
+.word 8970
+	.no_dead_strip plt__rgctx_fetch_107
+plt__rgctx_fetch_107:
 _p_264:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #720]
 br x16
-.word 8986
-	.no_dead_strip plt_System_Runtime_CompilerServices_TaskAwaiter_OnCompletedInternal_System_Threading_Tasks_Task_System_Action_bool_bool
-plt_System_Runtime_CompilerServices_TaskAwaiter_OnCompletedInternal_System_Threading_Tasks_Task_System_Action_bool_bool:
+.word 8987
+	.no_dead_strip plt_System_Runtime_Serialization_SerializationInfo_SetType_System_Type
+plt_System_Runtime_Serialization_SerializationInfo_SetType_System_Type:
 _p_265:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #728]
 br x16
-.word 8994
-	.no_dead_strip plt_System_Runtime_CompilerServices_TaskAwaiter_ValidateEnd_System_Threading_Tasks_Task
-plt_System_Runtime_CompilerServices_TaskAwaiter_ValidateEnd_System_Threading_Tasks_Task:
+.word 8995
+	.no_dead_strip plt__rgctx_fetch_108
+plt__rgctx_fetch_108:
 _p_266:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #736]
 br x16
-.word 8999
-	.no_dead_strip plt__rgctx_fetch_107
-plt__rgctx_fetch_107:
+.word 9018
+	.no_dead_strip plt_System_Runtime_CompilerServices_TaskAwaiter_OnCompletedInternal_System_Threading_Tasks_Task_System_Action_bool_bool
+plt_System_Runtime_CompilerServices_TaskAwaiter_OnCompletedInternal_System_Threading_Tasks_Task_System_Action_bool_bool:
 _p_267:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #744]
 br x16
-.word 9031
-	.no_dead_strip plt__rgctx_fetch_108
-plt__rgctx_fetch_108:
+.word 9026
+	.no_dead_strip plt_System_Runtime_CompilerServices_TaskAwaiter_ValidateEnd_System_Threading_Tasks_Task
+plt_System_Runtime_CompilerServices_TaskAwaiter_ValidateEnd_System_Threading_Tasks_Task:
 _p_268:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #752]
 br x16
-.word 9039
+.word 9031
 	.no_dead_strip plt__rgctx_fetch_109
 plt__rgctx_fetch_109:
 _p_269:
@@ -25634,7 +25587,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #760]
 br x16
-.word 9081
+.word 9063
 	.no_dead_strip plt__rgctx_fetch_110
 plt__rgctx_fetch_110:
 _p_270:
@@ -25642,79 +25595,79 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #768]
 br x16
-.word 9128
-	.no_dead_strip plt_wrapper_alloc_object_Alloc_intptr
-plt_wrapper_alloc_object_Alloc_intptr:
+.word 9071
+	.no_dead_strip plt__rgctx_fetch_111
+plt__rgctx_fetch_111:
 _p_271:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #776]
 br x16
-.word 9136
-	.no_dead_strip plt__rgctx_fetch_111
-plt__rgctx_fetch_111:
+.word 9113
+	.no_dead_strip plt__rgctx_fetch_112
+plt__rgctx_fetch_112:
 _p_272:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #784]
 br x16
-.word 9144
-	.no_dead_strip plt_System_Runtime_CompilerServices_RuntimeHelpers_PrepareConstrainedRegions
-plt_System_Runtime_CompilerServices_RuntimeHelpers_PrepareConstrainedRegions:
+.word 9160
+	.no_dead_strip plt_wrapper_alloc_object_Alloc_intptr
+plt_wrapper_alloc_object_Alloc_intptr:
 _p_273:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #792]
 br x16
-.word 9152
-	.no_dead_strip plt_System_Threading_ExecutionContext_EstablishCopyOnWriteScope_System_Threading_ExecutionContextSwitcher_
-plt_System_Threading_ExecutionContext_EstablishCopyOnWriteScope_System_Threading_ExecutionContextSwitcher_:
+.word 9168
+	.no_dead_strip plt__rgctx_fetch_113
+plt__rgctx_fetch_113:
 _p_274:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #800]
 br x16
-.word 9157
-	.no_dead_strip plt__jit_icall_mono_gsharedvt_constrained_call
-plt__jit_icall_mono_gsharedvt_constrained_call:
+.word 9176
+	.no_dead_strip plt_System_Runtime_CompilerServices_RuntimeHelpers_PrepareConstrainedRegions
+plt_System_Runtime_CompilerServices_RuntimeHelpers_PrepareConstrainedRegions:
 _p_275:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #808]
 br x16
-.word 9162
-	.no_dead_strip plt_System_Threading_ExecutionContextSwitcher_Undo
-plt_System_Threading_ExecutionContextSwitcher_Undo:
+.word 9184
+	.no_dead_strip plt_System_Threading_ExecutionContext_EstablishCopyOnWriteScope_System_Threading_ExecutionContextSwitcher_
+plt_System_Threading_ExecutionContext_EstablishCopyOnWriteScope_System_Threading_ExecutionContextSwitcher_:
 _p_276:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #816]
 br x16
-.word 9196
-	.no_dead_strip plt_System_Linq_Error_ArgumentNull_string
-plt_System_Linq_Error_ArgumentNull_string:
+.word 9189
+	.no_dead_strip plt__jit_icall_mono_gsharedvt_constrained_call
+plt__jit_icall_mono_gsharedvt_constrained_call:
 _p_277:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #824]
 br x16
-.word 9201
-	.no_dead_strip plt__rgctx_fetch_112
-plt__rgctx_fetch_112:
+.word 9194
+	.no_dead_strip plt_System_Threading_ExecutionContextSwitcher_Undo
+plt_System_Threading_ExecutionContextSwitcher_Undo:
 _p_278:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #832]
 br x16
-.word 9232
-	.no_dead_strip plt__rgctx_fetch_113
-plt__rgctx_fetch_113:
+.word 9228
+	.no_dead_strip plt_System_Linq_Error_ArgumentNull_string
+plt_System_Linq_Error_ArgumentNull_string:
 _p_279:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #840]
 br x16
-.word 9240
+.word 9233
 	.no_dead_strip plt__rgctx_fetch_114
 plt__rgctx_fetch_114:
 _p_280:
@@ -25730,39 +25683,39 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #856]
 br x16
-.word 9288
-	.no_dead_strip plt_Plugin_Connectivity_ConnectivityImplementation__IsReachabled__8_MoveNext
-plt_Plugin_Connectivity_ConnectivityImplementation__IsReachabled__8_MoveNext:
+.word 9272
+	.no_dead_strip plt__rgctx_fetch_116
+plt__rgctx_fetch_116:
 _p_282:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #864]
 br x16
-.word 9311
-	.no_dead_strip plt_Plugin_Connectivity_ConnectivityImplementation__IsRemoteReachabled__9_MoveNext
-plt_Plugin_Connectivity_ConnectivityImplementation__IsRemoteReachabled__9_MoveNext:
+.word 9296
+	.no_dead_strip plt__rgctx_fetch_117
+plt__rgctx_fetch_117:
 _p_283:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #872]
 br x16
-.word 9313
-	.no_dead_strip plt__rgctx_fetch_116
-plt__rgctx_fetch_116:
+.word 9320
+	.no_dead_strip plt_Plugin_Connectivity_ConnectivityImplementation__IsReachabled__8_MoveNext
+plt_Plugin_Connectivity_ConnectivityImplementation__IsReachabled__8_MoveNext:
 _p_284:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #880]
 br x16
-.word 9333
-	.no_dead_strip plt__rgctx_fetch_117
-plt__rgctx_fetch_117:
+.word 9343
+	.no_dead_strip plt_Plugin_Connectivity_ConnectivityImplementation__IsRemoteReachabled__9_MoveNext
+plt_Plugin_Connectivity_ConnectivityImplementation__IsRemoteReachabled__9_MoveNext:
 _p_285:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #888]
 br x16
-.word 9374
+.word 9345
 	.no_dead_strip plt__rgctx_fetch_118
 plt__rgctx_fetch_118:
 _p_286:
@@ -25770,7 +25723,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #896]
 br x16
-.word 9382
+.word 9365
 	.no_dead_strip plt__rgctx_fetch_119
 plt__rgctx_fetch_119:
 _p_287:
@@ -25778,95 +25731,95 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #904]
 br x16
-.word 9412
-	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_get_Task
-plt_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_get_Task:
+.word 9406
+	.no_dead_strip plt__rgctx_fetch_120
+plt__rgctx_fetch_120:
 _p_288:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #912]
 br x16
-.word 9462
-	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_GetCompletionAction_System_Threading_Tasks_Task_System_Runtime_CompilerServices_AsyncMethodBuilderCore_MoveNextRunner_
-plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_GetCompletionAction_System_Threading_Tasks_Task_System_Runtime_CompilerServices_AsyncMethodBuilderCore_MoveNextRunner_:
+.word 9414
+	.no_dead_strip plt__rgctx_fetch_121
+plt__rgctx_fetch_121:
 _p_289:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #920]
 br x16
-.word 9467
-	.no_dead_strip plt__rgctx_fetch_120
-plt__rgctx_fetch_120:
+.word 9444
+	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_get_Task
+plt_System_Runtime_CompilerServices_AsyncVoidMethodBuilder_get_Task:
 _p_290:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #928]
 br x16
-.word 9472
-	.no_dead_strip plt__rgctx_fetch_121
-plt__rgctx_fetch_121:
+.word 9494
+	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_GetCompletionAction_System_Threading_Tasks_Task_System_Runtime_CompilerServices_AsyncMethodBuilderCore_MoveNextRunner_
+plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_GetCompletionAction_System_Threading_Tasks_Task_System_Runtime_CompilerServices_AsyncMethodBuilderCore_MoveNextRunner_:
 _p_291:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #936]
 br x16
-.word 9480
-	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_PostBoxInitialization_System_Runtime_CompilerServices_IAsyncStateMachine_System_Runtime_CompilerServices_AsyncMethodBuilderCore_MoveNextRunner_System_Threading_Tasks_Task
-plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_PostBoxInitialization_System_Runtime_CompilerServices_IAsyncStateMachine_System_Runtime_CompilerServices_AsyncMethodBuilderCore_MoveNextRunner_System_Threading_Tasks_Task:
+.word 9499
+	.no_dead_strip plt__rgctx_fetch_122
+plt__rgctx_fetch_122:
 _p_292:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #944]
 br x16
-.word 9488
-	.no_dead_strip plt__rgctx_fetch_122
-plt__rgctx_fetch_122:
+.word 9504
+	.no_dead_strip plt__rgctx_fetch_123
+plt__rgctx_fetch_123:
 _p_293:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #952]
 br x16
-.word 9493
-	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_ThrowAsync_System_Exception_System_Threading_SynchronizationContext
-plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_ThrowAsync_System_Exception_System_Threading_SynchronizationContext:
+.word 9512
+	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_PostBoxInitialization_System_Runtime_CompilerServices_IAsyncStateMachine_System_Runtime_CompilerServices_AsyncMethodBuilderCore_MoveNextRunner_System_Threading_Tasks_Task
+plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_PostBoxInitialization_System_Runtime_CompilerServices_IAsyncStateMachine_System_Runtime_CompilerServices_AsyncMethodBuilderCore_MoveNextRunner_System_Threading_Tasks_Task:
 _p_294:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #960]
 br x16
-.word 9501
-	.no_dead_strip plt_System_Runtime_CompilerServices_TaskAwaiter_1_bool_UnsafeOnCompleted_System_Action
-plt_System_Runtime_CompilerServices_TaskAwaiter_1_bool_UnsafeOnCompleted_System_Action:
+.word 9520
+	.no_dead_strip plt__rgctx_fetch_124
+plt__rgctx_fetch_124:
 _p_295:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #968]
 br x16
-.word 9506
-	.no_dead_strip plt_System_Threading_Tasks_TaskScheduler_get_Default
-plt_System_Threading_Tasks_TaskScheduler_get_Default:
+.word 9525
+	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_ThrowAsync_System_Exception_System_Threading_SynchronizationContext
+plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_ThrowAsync_System_Exception_System_Threading_SynchronizationContext:
 _p_296:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #976]
 br x16
-.word 9528
-	.no_dead_strip plt__rgctx_fetch_123
-plt__rgctx_fetch_123:
+.word 9533
+	.no_dead_strip plt_System_Runtime_CompilerServices_TaskAwaiter_1_bool_UnsafeOnCompleted_System_Action
+plt_System_Runtime_CompilerServices_TaskAwaiter_1_bool_UnsafeOnCompleted_System_Action:
 _p_297:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #984]
 br x16
-.word 9561
-	.no_dead_strip plt__rgctx_fetch_124
-plt__rgctx_fetch_124:
+.word 9538
+	.no_dead_strip plt_System_Threading_Tasks_TaskScheduler_get_Default
+plt_System_Threading_Tasks_TaskScheduler_get_Default:
 _p_298:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #992]
 br x16
-.word 9569
+.word 9560
 	.no_dead_strip plt__rgctx_fetch_125
 plt__rgctx_fetch_125:
 _p_299:
@@ -25874,7 +25827,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1000]
 br x16
-.word 9610
+.word 9593
 	.no_dead_strip plt__rgctx_fetch_126
 plt__rgctx_fetch_126:
 _p_300:
@@ -25882,7 +25835,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1008]
 br x16
-.word 9661
+.word 9601
 	.no_dead_strip plt__rgctx_fetch_127
 plt__rgctx_fetch_127:
 _p_301:
@@ -25890,7 +25843,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1016]
 br x16
-.word 9669
+.word 9642
 	.no_dead_strip plt__rgctx_fetch_128
 plt__rgctx_fetch_128:
 _p_302:
@@ -25898,7 +25851,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1024]
 br x16
-.word 9719
+.word 9693
 	.no_dead_strip plt__rgctx_fetch_129
 plt__rgctx_fetch_129:
 _p_303:
@@ -25906,7 +25859,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1032]
 br x16
-.word 9727
+.word 9701
 	.no_dead_strip plt__rgctx_fetch_130
 plt__rgctx_fetch_130:
 _p_304:
@@ -25914,7 +25867,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1040]
 br x16
-.word 9777
+.word 9751
 	.no_dead_strip plt__rgctx_fetch_131
 plt__rgctx_fetch_131:
 _p_305:
@@ -25922,7 +25875,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1048]
 br x16
-.word 9828
+.word 9759
 	.no_dead_strip plt__rgctx_fetch_132
 plt__rgctx_fetch_132:
 _p_306:
@@ -25930,7 +25883,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1056]
 br x16
-.word 9836
+.word 9809
 	.no_dead_strip plt__rgctx_fetch_133
 plt__rgctx_fetch_133:
 _p_307:
@@ -25938,7 +25891,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1064]
 br x16
-.word 9859
+.word 9860
 	.no_dead_strip plt__rgctx_fetch_134
 plt__rgctx_fetch_134:
 _p_308:
@@ -25946,7 +25899,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1072]
 br x16
-.word 9882
+.word 9868
 	.no_dead_strip plt__rgctx_fetch_135
 plt__rgctx_fetch_135:
 _p_309:
@@ -25954,7 +25907,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1080]
 br x16
-.word 9905
+.word 9891
 	.no_dead_strip plt__rgctx_fetch_136
 plt__rgctx_fetch_136:
 _p_310:
@@ -25962,7 +25915,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1088]
 br x16
-.word 9915
+.word 9914
 	.no_dead_strip plt__rgctx_fetch_137
 plt__rgctx_fetch_137:
 _p_311:
@@ -25970,7 +25923,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1096]
 br x16
-.word 9947
+.word 9937
 	.no_dead_strip plt__rgctx_fetch_138
 plt__rgctx_fetch_138:
 _p_312:
@@ -25978,7 +25931,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1104]
 br x16
-.word 9955
+.word 9947
 	.no_dead_strip plt__rgctx_fetch_139
 plt__rgctx_fetch_139:
 _p_313:
@@ -25986,7 +25939,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1112]
 br x16
-.word 9978
+.word 9979
 	.no_dead_strip plt__rgctx_fetch_140
 plt__rgctx_fetch_140:
 _p_314:
@@ -25994,7 +25947,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1120]
 br x16
-.word 10001
+.word 9987
 	.no_dead_strip plt__rgctx_fetch_141
 plt__rgctx_fetch_141:
 _p_315:
@@ -26002,7 +25955,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1128]
 br x16
-.word 10042
+.word 10010
 	.no_dead_strip plt__rgctx_fetch_142
 plt__rgctx_fetch_142:
 _p_316:
@@ -26010,7 +25963,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1136]
 br x16
-.word 10083
+.word 10033
 	.no_dead_strip plt__rgctx_fetch_143
 plt__rgctx_fetch_143:
 _p_317:
@@ -26018,7 +25971,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1144]
 br x16
-.word 10091
+.word 10074
 	.no_dead_strip plt__rgctx_fetch_144
 plt__rgctx_fetch_144:
 _p_318:
@@ -26026,7 +25979,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1152]
 br x16
-.word 10114
+.word 10115
 	.no_dead_strip plt__rgctx_fetch_145
 plt__rgctx_fetch_145:
 _p_319:
@@ -26034,7 +25987,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1160]
 br x16
-.word 10124
+.word 10123
 	.no_dead_strip plt__rgctx_fetch_146
 plt__rgctx_fetch_146:
 _p_320:
@@ -26042,7 +25995,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1168]
 br x16
-.word 10174
+.word 10146
 	.no_dead_strip plt__rgctx_fetch_147
 plt__rgctx_fetch_147:
 _p_321:
@@ -26050,7 +26003,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1176]
 br x16
-.word 10197
+.word 10156
 	.no_dead_strip plt__rgctx_fetch_148
 plt__rgctx_fetch_148:
 _p_322:
@@ -26058,7 +26011,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1184]
 br x16
-.word 10205
+.word 10206
 	.no_dead_strip plt__rgctx_fetch_149
 plt__rgctx_fetch_149:
 _p_323:
@@ -26066,7 +26019,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1192]
 br x16
-.word 10237
+.word 10229
 	.no_dead_strip plt__rgctx_fetch_150
 plt__rgctx_fetch_150:
 _p_324:
@@ -26074,7 +26027,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1200]
 br x16
-.word 10278
+.word 10237
 	.no_dead_strip plt__rgctx_fetch_151
 plt__rgctx_fetch_151:
 _p_325:
@@ -26082,7 +26035,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1208]
 br x16
-.word 10286
+.word 10269
 	.no_dead_strip plt__rgctx_fetch_152
 plt__rgctx_fetch_152:
 _p_326:
@@ -26090,7 +26043,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1216]
 br x16
-.word 10336
+.word 10310
 	.no_dead_strip plt__rgctx_fetch_153
 plt__rgctx_fetch_153:
 _p_327:
@@ -26098,31 +26051,31 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1224]
 br x16
-.word 10344
-	.no_dead_strip plt_System_ThrowHelper_ThrowArgumentOutOfRangeException_System_ExceptionArgument_System_ExceptionResource
-plt_System_ThrowHelper_ThrowArgumentOutOfRangeException_System_ExceptionArgument_System_ExceptionResource:
+.word 10318
+	.no_dead_strip plt__rgctx_fetch_154
+plt__rgctx_fetch_154:
 _p_328:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1232]
 br x16
-.word 10352
-	.no_dead_strip plt__rgctx_fetch_154
-plt__rgctx_fetch_154:
+.word 10368
+	.no_dead_strip plt__rgctx_fetch_155
+plt__rgctx_fetch_155:
 _p_329:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1240]
 br x16
-.word 10375
-	.no_dead_strip plt__rgctx_fetch_155
-plt__rgctx_fetch_155:
+.word 10376
+	.no_dead_strip plt_System_ThrowHelper_ThrowArgumentOutOfRangeException_System_ExceptionArgument_System_ExceptionResource
+plt_System_ThrowHelper_ThrowArgumentOutOfRangeException_System_ExceptionArgument_System_ExceptionResource:
 _p_330:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1248]
 br x16
-.word 10385
+.word 10384
 	.no_dead_strip plt__rgctx_fetch_156
 plt__rgctx_fetch_156:
 _p_331:
@@ -26130,7 +26083,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1256]
 br x16
-.word 10393
+.word 10407
 	.no_dead_strip plt__rgctx_fetch_157
 plt__rgctx_fetch_157:
 _p_332:
@@ -26138,7 +26091,7 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1264]
 br x16
-.word 10419
+.word 10417
 	.no_dead_strip plt__rgctx_fetch_158
 plt__rgctx_fetch_158:
 _p_333:
@@ -26146,55 +26099,55 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1272]
 br x16
-.word 10427
-	.no_dead_strip plt_System_Math_Min_int_int
-plt_System_Math_Min_int_int:
+.word 10425
+	.no_dead_strip plt__rgctx_fetch_159
+plt__rgctx_fetch_159:
 _p_334:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1280]
 br x16
-.word 10450
-	.no_dead_strip plt__rgctx_fetch_159
-plt__rgctx_fetch_159:
+.word 10451
+	.no_dead_strip plt__rgctx_fetch_160
+plt__rgctx_fetch_160:
 _p_335:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1288]
 br x16
-.word 10473
-	.no_dead_strip plt__rgctx_fetch_160
-plt__rgctx_fetch_160:
+.word 10459
+	.no_dead_strip plt_System_Math_Min_int_int
+plt_System_Math_Min_int_int:
 _p_336:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1296]
 br x16
-.word 10494
-	.no_dead_strip plt_System_Collections_Generic_ArrayBuilder_1_T_INT___Add_T_INT__
-plt_System_Collections_Generic_ArrayBuilder_1_T_INT___Add_T_INT__:
+.word 10482
+	.no_dead_strip plt__rgctx_fetch_161
+plt__rgctx_fetch_161:
 _p_337:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1304]
 br x16
-.word 10502
-	.no_dead_strip plt__rgctx_fetch_161
-plt__rgctx_fetch_161:
+.word 10505
+	.no_dead_strip plt__rgctx_fetch_162
+plt__rgctx_fetch_162:
 _p_338:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1312]
 br x16
-.word 10541
-	.no_dead_strip plt__rgctx_fetch_162
-plt__rgctx_fetch_162:
+.word 10526
+	.no_dead_strip plt_System_Collections_Generic_ArrayBuilder_1_T_INT___Add_T_INT__
+plt_System_Collections_Generic_ArrayBuilder_1_T_INT___Add_T_INT__:
 _p_339:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1320]
 br x16
-.word 10564
+.word 10534
 	.no_dead_strip plt__rgctx_fetch_163
 plt__rgctx_fetch_163:
 _p_340:
@@ -26202,27 +26155,43 @@ adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1328]
 br x16
-.word 10605
-	.no_dead_strip plt_System_Collections_Generic_ArrayBuilder_1_T_INT___get_Count
-plt_System_Collections_Generic_ArrayBuilder_1_T_INT___get_Count:
+.word 10573
+	.no_dead_strip plt__rgctx_fetch_164
+plt__rgctx_fetch_164:
 _p_341:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1336]
 br x16
-.word 10613
-	.no_dead_strip plt_System_Collections_Generic_ArrayBuilder_1_T_INT___get_Item_int
-plt_System_Collections_Generic_ArrayBuilder_1_T_INT___get_Item_int:
+.word 10596
+	.no_dead_strip plt__rgctx_fetch_165
+plt__rgctx_fetch_165:
 _p_342:
 adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
 ldr x16, [x16, #1344]
 br x16
-.word 10634
+.word 10637
+	.no_dead_strip plt_System_Collections_Generic_ArrayBuilder_1_T_INT___get_Count
+plt_System_Collections_Generic_ArrayBuilder_1_T_INT___get_Count:
+_p_343:
+adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
+add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
+ldr x16, [x16, #1352]
+br x16
+.word 10645
+	.no_dead_strip plt_System_Collections_Generic_ArrayBuilder_1_T_INT___get_Item_int
+plt_System_Collections_Generic_ArrayBuilder_1_T_INT___get_Item_int:
+_p_344:
+adrp x16, mono_aot_Plugin_Connectivity_got@PAGE+4096
+add x16, x16, mono_aot_Plugin_Connectivity_got@PAGEOFF
+ldr x16, [x16, #1360]
+br x16
+.word 10666
 plt_end:
 .section __DATA, __bss
 	.align 3
-.lcomm mono_aot_Plugin_Connectivity_got, 5448
+.lcomm mono_aot_Plugin_Connectivity_got, 5464
 got_end:
 .section __TEXT, __const
 	.align 3
@@ -26262,7 +26231,7 @@ assembly_name:
 	.align 3
 _mono_aot_file_info:
 
-	.long 141,0
+	.long 143,0
 	.align 3
 	.quad mono_aot_Plugin_Connectivity_got
 	.align 3
@@ -26279,6 +26248,8 @@ _mono_aot_file_info:
 	.quad jit_code_end
 	.align 3
 	.quad method_addresses
+	.align 3
+	.quad 0
 	.align 3
 	.quad 0
 	.align 3
@@ -26330,13 +26301,13 @@ _mono_aot_file_info:
 	.align 3
 	.quad unbox_trampoline_addresses
 
-	.long 338,5448,343,197,70,391195135,0,42556
-	.long 128,8,8,9,0,25,48904,6336
+	.long 338,5464,345,197,70,391195135,0,42617
+	.long 128,8,8,9,0,25,48968,6344
 	.long 5800,4768,0,5328,5760,4864,0,3624
-	.long 312,0,0,0,0,0,0,0
+	.long 312,6336,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
-	.long 0
-	.byte 24,48,100,2,29,227,73,238,67,241,32,205,112,160,225,219
+	.long 0,0
+	.byte 249,6,51,91,63,164,120,62,72,136,76,213,51,5,26,78
 	.globl _mono_aot_module_Plugin_Connectivity_info
 	.align 3
 _mono_aot_module_Plugin_Connectivity_info:
@@ -27399,7 +27370,7 @@ LTDIE_33:
 LDIFF_SYM166=LTDIE_2 - Ldebug_info_start
 	.long LDIFF_SYM166
 	.byte 2,35,0,6
-	.asciz "dictionary"
+	.asciz "_dictionary"
 
 LDIFF_SYM167=LTDIE_31_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM167
@@ -27427,7 +27398,7 @@ LTDIE_34:
 LDIFF_SYM171=LTDIE_2 - Ldebug_info_start
 	.long LDIFF_SYM171
 	.byte 2,35,0,6
-	.asciz "dictionary"
+	.asciz "_dictionary"
 
 LDIFF_SYM172=LTDIE_31_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM172
@@ -27455,47 +27426,47 @@ LTDIE_31:
 LDIFF_SYM176=LTDIE_2 - Ldebug_info_start
 	.long LDIFF_SYM176
 	.byte 2,35,0,6
-	.asciz "buckets"
+	.asciz "_buckets"
 
 LDIFF_SYM177=LDIE_SZARRAY - Ldebug_info_start
 	.long LDIFF_SYM177
 	.byte 2,35,16,6
-	.asciz "entries"
+	.asciz "_entries"
 
 LDIFF_SYM178=LDIE_SZARRAY - Ldebug_info_start
 	.long LDIFF_SYM178
 	.byte 2,35,24,6
-	.asciz "count"
+	.asciz "_count"
 
 LDIFF_SYM179=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM179
 	.byte 2,35,64,6
-	.asciz "version"
+	.asciz "_freeList"
 
 LDIFF_SYM180=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM180
 	.byte 2,35,68,6
-	.asciz "freeList"
+	.asciz "_freeCount"
 
 LDIFF_SYM181=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM181
 	.byte 2,35,72,6
-	.asciz "freeCount"
+	.asciz "_version"
 
 LDIFF_SYM182=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM182
 	.byte 2,35,76,6
-	.asciz "comparer"
+	.asciz "_comparer"
 
 LDIFF_SYM183=LTDIE_32_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM183
 	.byte 2,35,32,6
-	.asciz "keys"
+	.asciz "_keys"
 
 LDIFF_SYM184=LTDIE_33_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM184
 	.byte 2,35,40,6
-	.asciz "values"
+	.asciz "_values"
 
 LDIFF_SYM185=LTDIE_34_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM185
@@ -27994,7 +27965,7 @@ LTDIE_55:
 LDIFF_SYM273=LTDIE_2 - Ldebug_info_start
 	.long LDIFF_SYM273
 	.byte 2,35,0,6
-	.asciz "dictionary"
+	.asciz "_dictionary"
 
 LDIFF_SYM274=LTDIE_53_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM274
@@ -28022,7 +27993,7 @@ LTDIE_56:
 LDIFF_SYM278=LTDIE_2 - Ldebug_info_start
 	.long LDIFF_SYM278
 	.byte 2,35,0,6
-	.asciz "dictionary"
+	.asciz "_dictionary"
 
 LDIFF_SYM279=LTDIE_53_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM279
@@ -28050,47 +28021,47 @@ LTDIE_53:
 LDIFF_SYM283=LTDIE_2 - Ldebug_info_start
 	.long LDIFF_SYM283
 	.byte 2,35,0,6
-	.asciz "buckets"
+	.asciz "_buckets"
 
 LDIFF_SYM284=LDIE_SZARRAY - Ldebug_info_start
 	.long LDIFF_SYM284
 	.byte 2,35,16,6
-	.asciz "entries"
+	.asciz "_entries"
 
 LDIFF_SYM285=LDIE_SZARRAY - Ldebug_info_start
 	.long LDIFF_SYM285
 	.byte 2,35,24,6
-	.asciz "count"
+	.asciz "_count"
 
 LDIFF_SYM286=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM286
 	.byte 2,35,64,6
-	.asciz "version"
+	.asciz "_freeList"
 
 LDIFF_SYM287=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM287
 	.byte 2,35,68,6
-	.asciz "freeList"
+	.asciz "_freeCount"
 
 LDIFF_SYM288=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM288
 	.byte 2,35,72,6
-	.asciz "freeCount"
+	.asciz "_version"
 
 LDIFF_SYM289=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM289
 	.byte 2,35,76,6
-	.asciz "comparer"
+	.asciz "_comparer"
 
 LDIFF_SYM290=LTDIE_54_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM290
 	.byte 2,35,32,6
-	.asciz "keys"
+	.asciz "_keys"
 
 LDIFF_SYM291=LTDIE_55_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM291
 	.byte 2,35,40,6
-	.asciz "values"
+	.asciz "_values"
 
 LDIFF_SYM292=LTDIE_56_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM292
@@ -28996,12 +28967,12 @@ LDIFF_SYM452=LTDIE_68_REFERENCE - Ldebug_info_start
 
 LDIFF_SYM453=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM453
-	.byte 3,141,216,1,11
+	.byte 3,141,160,1,11
 	.asciz "V_1"
 
 LDIFF_SYM454=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM454
-	.byte 3,141,184,1,0
+	.byte 3,141,128,1,0
 
 .section __DWARF, __debug_frame,regular,debug
 
@@ -29016,7 +28987,7 @@ Lfde8_start:
 LDIFF_SYM456=Lme_8 - Plugin_Connectivity_ConnectivityImplementation_ReachabilityChanged_object_System_EventArgs
 	.long LDIFF_SYM456
 	.long 0
-	.byte 12,31,0,68,14,160,2,157,36,158,35,68,13,29
+	.byte 12,31,0,68,14,240,1,157,30,158,29,68,13,29
 	.align 3
 Lfde8_end:
 
@@ -29144,12 +29115,12 @@ LDIFF_SYM470=LDIE_I4 - Ldebug_info_start
 
 LDIFF_SYM471=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM471
-	.byte 3,141,200,1,11
+	.byte 3,141,136,1,11
 	.asciz "V_1"
 
 LDIFF_SYM472=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM472
-	.byte 3,141,176,1,0
+	.byte 3,141,240,0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
@@ -29164,7 +29135,7 @@ Lfde11_start:
 LDIFF_SYM474=Lme_b - Plugin_Connectivity_ConnectivityImplementation_IsReachable_string_int
 	.long LDIFF_SYM474
 	.long 0
-	.byte 12,31,0,68,14,160,2,157,36,158,35,68,13,29
+	.byte 12,31,0,68,14,224,1,157,28,158,27,68,13,29
 	.align 3
 Lfde11_end:
 
@@ -29203,12 +29174,12 @@ LDIFF_SYM478=LDIE_I4 - Ldebug_info_start
 
 LDIFF_SYM479=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM479
-	.byte 3,141,208,1,11
+	.byte 3,141,144,1,11
 	.asciz "V_1"
 
 LDIFF_SYM480=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM480
-	.byte 3,141,184,1,0
+	.byte 3,141,248,0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
@@ -29223,7 +29194,7 @@ Lfde12_start:
 LDIFF_SYM482=Lme_c - Plugin_Connectivity_ConnectivityImplementation_IsRemoteReachable_string_int_int
 	.long LDIFF_SYM482
 	.long 0
-	.byte 12,31,0,68,14,160,2,157,36,158,35,68,13,29
+	.byte 12,31,0,68,14,224,1,157,28,158,27,68,13,29
 	.align 3
 Lfde12_end:
 
@@ -30105,12 +30076,12 @@ LDIFF_SYM586=LTDIE_72 - Ldebug_info_start
 
 LDIFF_SYM587=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM587
-	.byte 3,141,192,1,11
+	.byte 3,141,144,1,11
 	.asciz "V_1"
 
 LDIFF_SYM588=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM588
-	.byte 3,141,160,1,0
+	.byte 3,141,240,0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
@@ -30125,7 +30096,7 @@ Lfde22_start:
 LDIFF_SYM590=Lme_16 - Plugin_Connectivity_Reachability_OnChange_SystemConfiguration_NetworkReachabilityFlags
 	.long LDIFF_SYM590
 	.long 0
-	.byte 12,31,0,68,14,128,2,157,32,158,31,68,13,29
+	.byte 12,31,0,68,14,208,1,157,26,158,25,68,13,29
 	.align 3
 Lfde22_end:
 
@@ -31291,7 +31262,7 @@ LTDIE_97:
 LDIFF_SYM732=LTDIE_2 - Ldebug_info_start
 	.long LDIFF_SYM732
 	.byte 2,35,0,6
-	.asciz "dictionary"
+	.asciz "_dictionary"
 
 LDIFF_SYM733=LTDIE_95_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM733
@@ -31319,7 +31290,7 @@ LTDIE_98:
 LDIFF_SYM737=LTDIE_2 - Ldebug_info_start
 	.long LDIFF_SYM737
 	.byte 2,35,0,6
-	.asciz "dictionary"
+	.asciz "_dictionary"
 
 LDIFF_SYM738=LTDIE_95_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM738
@@ -31347,47 +31318,47 @@ LTDIE_95:
 LDIFF_SYM742=LTDIE_2 - Ldebug_info_start
 	.long LDIFF_SYM742
 	.byte 2,35,0,6
-	.asciz "buckets"
+	.asciz "_buckets"
 
 LDIFF_SYM743=LDIE_SZARRAY - Ldebug_info_start
 	.long LDIFF_SYM743
 	.byte 2,35,16,6
-	.asciz "entries"
+	.asciz "_entries"
 
 LDIFF_SYM744=LDIE_SZARRAY - Ldebug_info_start
 	.long LDIFF_SYM744
 	.byte 2,35,24,6
-	.asciz "count"
+	.asciz "_count"
 
 LDIFF_SYM745=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM745
 	.byte 2,35,64,6
-	.asciz "version"
+	.asciz "_freeList"
 
 LDIFF_SYM746=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM746
 	.byte 2,35,68,6
-	.asciz "freeList"
+	.asciz "_freeCount"
 
 LDIFF_SYM747=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM747
 	.byte 2,35,72,6
-	.asciz "freeCount"
+	.asciz "_version"
 
 LDIFF_SYM748=LDIE_I4 - Ldebug_info_start
 	.long LDIFF_SYM748
 	.byte 2,35,76,6
-	.asciz "comparer"
+	.asciz "_comparer"
 
 LDIFF_SYM749=LTDIE_96_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM749
 	.byte 2,35,32,6
-	.asciz "keys"
+	.asciz "_keys"
 
 LDIFF_SYM750=LTDIE_97_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM750
 	.byte 2,35,40,6
-	.asciz "values"
+	.asciz "_values"
 
 LDIFF_SYM751=LTDIE_98_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM751
@@ -33167,7 +33138,7 @@ LDIFF_SYM985=LTDIE_115 - Ldebug_info_start
 	.asciz "System.Array/InternalEnumerator`1<T_INT>:.ctor"
 	.asciz "System_Array_InternalEnumerator_1_T_INT__ctor_System_Array"
 
-	.byte 1,215,1
+	.byte 1,218,1
 	.quad System_Array_InternalEnumerator_1_T_INT__ctor_System_Array
 	.quad Lme_38
 
@@ -33206,7 +33177,7 @@ Lfde54_end:
 	.asciz "System.Array/InternalEnumerator`1<T_INT>:Dispose"
 	.asciz "System_Array_InternalEnumerator_1_T_INT_Dispose"
 
-	.byte 1,221,1
+	.byte 1,224,1
 	.quad System_Array_InternalEnumerator_1_T_INT_Dispose
 	.quad Lme_39
 
@@ -33240,7 +33211,7 @@ Lfde55_end:
 	.asciz "System.Array/InternalEnumerator`1<T_INT>:MoveNext"
 	.asciz "System_Array_InternalEnumerator_1_T_INT_MoveNext"
 
-	.byte 1,226,1
+	.byte 1,228,1
 	.quad System_Array_InternalEnumerator_1_T_INT_MoveNext
 	.quad Lme_3a
 
@@ -33279,7 +33250,7 @@ Lfde56_end:
 	.asciz "System.Array/InternalEnumerator`1<T_INT>:get_Current"
 	.asciz "System_Array_InternalEnumerator_1_T_INT_get_Current"
 
-	.byte 1,234,1
+	.byte 1,236,1
 	.quad System_Array_InternalEnumerator_1_T_INT_get_Current
 	.quad Lme_3b
 
@@ -33313,7 +33284,7 @@ Lfde57_end:
 	.asciz "System.Array/InternalEnumerator`1<T_INT>:System.Collections.IEnumerator.Reset"
 	.asciz "System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_Reset"
 
-	.byte 1,245,1
+	.byte 1,247,1
 	.quad System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_Reset
 	.quad Lme_3c
 
@@ -33347,7 +33318,7 @@ Lfde58_end:
 	.asciz "System.Array/InternalEnumerator`1<T_INT>:System.Collections.IEnumerator.get_Current"
 	.asciz "System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_get_Current"
 
-	.byte 1,250,1
+	.byte 1,252,1
 	.quad System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_get_Current
 	.quad Lme_3d
 
@@ -33390,7 +33361,7 @@ Lfde59_end:
 
 LDIFF_SYM1006=LTDIE_116_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM1006
-	.byte 2,141,16,0
+	.byte 1,106,0
 
 .section __DWARF, __debug_frame,regular,debug
 
@@ -33405,7 +33376,7 @@ Lfde60_start:
 LDIFF_SYM1008=Lme_3e - System_Array_InternalArray__IEnumerable_GetEnumerator_T_INT
 	.long LDIFF_SYM1008
 	.long 0
-	.byte 12,31,0,68,14,128,1,157,16,158,15,68,13,29
+	.byte 12,31,0,68,14,112,157,14,158,13,68,13,29,68,154,12
 	.align 3
 Lfde60_end:
 
@@ -35912,7 +35883,7 @@ Lfde100_end:
 LTDIE_137:
 
 	.byte 5
-	.asciz "_<>c__DisplayClass35_1"
+	.asciz "_<>c__DisplayClass35_0"
 
 	.byte 40,16
 LDIFF_SYM1323=LTDIE_2 - Ldebug_info_start
@@ -35933,7 +35904,7 @@ LDIFF_SYM1325=LTDIE_134_REFERENCE - Ldebug_info_start
 LDIFF_SYM1326=LTDIE_135_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM1326
 	.byte 2,35,32,0,7
-	.asciz "_<>c__DisplayClass35_1"
+	.asciz "_<>c__DisplayClass35_0"
 
 LDIFF_SYM1327=LTDIE_137 - Ldebug_info_start
 	.long LDIFF_SYM1327
@@ -35978,7 +35949,7 @@ LDIFF_SYM1334=LTDIE_139 - Ldebug_info_start
 LTDIE_138:
 
 	.byte 5
-	.asciz "_<>c__DisplayClass35_0"
+	.asciz "_<>c__DisplayClass35_1"
 
 	.byte 32,16
 LDIFF_SYM1335=LTDIE_2 - Ldebug_info_start
@@ -35994,7 +35965,7 @@ LDIFF_SYM1336=LTDIE_139_REFERENCE - Ldebug_info_start
 LDIFF_SYM1337=LTDIE_137_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM1337
 	.byte 2,35,24,0,7
-	.asciz "_<>c__DisplayClass35_0"
+	.asciz "_<>c__DisplayClass35_1"
 
 LDIFF_SYM1338=LTDIE_138 - Ldebug_info_start
 	.long LDIFF_SYM1338
@@ -36777,7 +36748,7 @@ Lfde110_end:
 	.asciz "System.Array:InternalArray__ICollection_Clear"
 	.asciz "System_Array_InternalArray__ICollection_Clear"
 
-	.byte 1,76
+	.byte 1,79
 	.quad System_Array_InternalArray__ICollection_Clear
 	.quad Lme_79
 
@@ -36811,7 +36782,7 @@ Lfde111_end:
 	.asciz "System.Array:InternalArray__ICollection_Add<T_INT>"
 	.asciz "System_Array_InternalArray__ICollection_Add_T_INT_T_INT"
 
-	.byte 1,81
+	.byte 1,84
 	.quad System_Array_InternalArray__ICollection_Add_T_INT_T_INT
 	.quad Lme_7a
 
@@ -36850,7 +36821,7 @@ Lfde112_end:
 	.asciz "System.Array:InternalArray__ICollection_Remove<T_INT>"
 	.asciz "System_Array_InternalArray__ICollection_Remove_T_INT_T_INT"
 
-	.byte 1,86
+	.byte 1,89
 	.quad System_Array_InternalArray__ICollection_Remove_T_INT_T_INT
 	.quad Lme_7b
 
@@ -36889,7 +36860,7 @@ Lfde113_end:
 	.asciz "System.Array:InternalArray__ICollection_Contains<T_INT>"
 	.asciz "System_Array_InternalArray__ICollection_Contains_T_INT_T_INT"
 
-	.byte 1,91
+	.byte 1,94
 	.quad System_Array_InternalArray__ICollection_Contains_T_INT_T_INT
 	.quad Lme_7c
 
@@ -36943,7 +36914,7 @@ Lfde114_end:
 	.asciz "System.Array:InternalArray__ICollection_CopyTo<T_INT>"
 	.asciz "System_Array_InternalArray__ICollection_CopyTo_T_INT_T_INT___int"
 
-	.byte 1,116
+	.byte 1,119
 	.quad System_Array_InternalArray__ICollection_CopyTo_T_INT_T_INT___int
 	.quad Lme_7d
 
@@ -39002,7 +38973,7 @@ LDIFF_SYM1735=LTDIE_163 - Ldebug_info_start
 	.asciz "System.Threading.Tasks.Task:Run<TResult_BOOL>"
 	.asciz "System_Threading_Tasks_Task_Run_TResult_BOOL_System_Func_1_TResult_BOOL"
 
-	.byte 9,161,44
+	.byte 9,168,44
 	.quad System_Threading_Tasks_Task_Run_TResult_BOOL_System_Func_1_TResult_BOOL
 	.quad Lme_b0
 
@@ -39046,7 +39017,7 @@ Lfde148_end:
 	.asciz "System.Array:InternalArray__get_Item<T_INT>"
 	.asciz "System_Array_InternalArray__get_Item_T_INT_int"
 
-	.byte 1,173,1
+	.byte 1,176,1
 	.quad System_Array_InternalArray__get_Item_T_INT_int
 	.quad Lme_b1
 
@@ -39277,7 +39248,7 @@ LDIFF_SYM1773=LTDIE_169 - Ldebug_info_start
 LTDIE_167:
 
 	.byte 5
-	.asciz "_<>c__DisplayClass35_1"
+	.asciz "_<>c__DisplayClass35_0"
 
 	.byte 40,16
 LDIFF_SYM1774=LTDIE_2 - Ldebug_info_start
@@ -39298,7 +39269,7 @@ LDIFF_SYM1776=LTDIE_134_REFERENCE - Ldebug_info_start
 LDIFF_SYM1777=LTDIE_169_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM1777
 	.byte 2,35,32,0,7
-	.asciz "_<>c__DisplayClass35_1"
+	.asciz "_<>c__DisplayClass35_0"
 
 LDIFF_SYM1778=LTDIE_167 - Ldebug_info_start
 	.long LDIFF_SYM1778
@@ -39315,7 +39286,7 @@ LDIFF_SYM1780=LTDIE_167 - Ldebug_info_start
 LTDIE_166:
 
 	.byte 5
-	.asciz "_<>c__DisplayClass35_0"
+	.asciz "_<>c__DisplayClass35_1"
 
 	.byte 32,16
 LDIFF_SYM1781=LTDIE_2 - Ldebug_info_start
@@ -39331,7 +39302,7 @@ LDIFF_SYM1782=LTDIE_139_REFERENCE - Ldebug_info_start
 LDIFF_SYM1783=LTDIE_167_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM1783
 	.byte 2,35,24,0,7
-	.asciz "_<>c__DisplayClass35_0"
+	.asciz "_<>c__DisplayClass35_1"
 
 LDIFF_SYM1784=LTDIE_166 - Ldebug_info_start
 	.long LDIFF_SYM1784
@@ -39346,11 +39317,11 @@ LTDIE_166_REFERENCE:
 LDIFF_SYM1786=LTDIE_166 - Ldebug_info_start
 	.long LDIFF_SYM1786
 	.byte 2
-	.asciz "System.Threading.Tasks.TaskFactory`1/<>c__DisplayClass35_0<TResult_BOOL>:.ctor"
-	.asciz "System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_0_TResult_BOOL__ctor"
+	.asciz "System.Threading.Tasks.TaskFactory`1/<>c__DisplayClass35_1<TResult_BOOL>:.ctor"
+	.asciz "System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_1_TResult_BOOL__ctor"
 
 	.byte 0,0
-	.quad System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_0_TResult_BOOL__ctor
+	.quad System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_1_TResult_BOOL__ctor
 	.quad Lme_b4
 
 	.byte 2,118,16,3
@@ -39368,9 +39339,9 @@ Lfde152_start:
 
 	.long 0
 	.align 3
-	.quad System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_0_TResult_BOOL__ctor
+	.quad System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_1_TResult_BOOL__ctor
 
-LDIFF_SYM1789=Lme_b4 - System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_0_TResult_BOOL__ctor
+LDIFF_SYM1789=Lme_b4 - System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_1_TResult_BOOL__ctor
 	.long LDIFF_SYM1789
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
@@ -39432,7 +39403,7 @@ LDIFF_SYM1798=LTDIE_172 - Ldebug_info_start
 LTDIE_170:
 
 	.byte 5
-	.asciz "_<>c__DisplayClass35_1"
+	.asciz "_<>c__DisplayClass35_0"
 
 	.byte 40,16
 LDIFF_SYM1799=LTDIE_2 - Ldebug_info_start
@@ -39453,7 +39424,7 @@ LDIFF_SYM1801=LTDIE_134_REFERENCE - Ldebug_info_start
 LDIFF_SYM1802=LTDIE_172_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM1802
 	.byte 2,35,32,0,7
-	.asciz "_<>c__DisplayClass35_1"
+	.asciz "_<>c__DisplayClass35_0"
 
 LDIFF_SYM1803=LTDIE_170 - Ldebug_info_start
 	.long LDIFF_SYM1803
@@ -39468,11 +39439,11 @@ LTDIE_170_REFERENCE:
 LDIFF_SYM1805=LTDIE_170 - Ldebug_info_start
 	.long LDIFF_SYM1805
 	.byte 2
-	.asciz "System.Threading.Tasks.TaskFactory`1/<>c__DisplayClass35_1<TResult_BOOL>:.ctor"
-	.asciz "System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_1_TResult_BOOL__ctor"
+	.asciz "System.Threading.Tasks.TaskFactory`1/<>c__DisplayClass35_0<TResult_BOOL>:.ctor"
+	.asciz "System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_0_TResult_BOOL__ctor"
 
 	.byte 0,0
-	.quad System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_1_TResult_BOOL__ctor
+	.quad System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_0_TResult_BOOL__ctor
 	.quad Lme_b5
 
 	.byte 2,118,16,3
@@ -39490,9 +39461,9 @@ Lfde153_start:
 
 	.long 0
 	.align 3
-	.quad System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_1_TResult_BOOL__ctor
+	.quad System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_0_TResult_BOOL__ctor
 
-LDIFF_SYM1808=Lme_b5 - System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_1_TResult_BOOL__ctor
+LDIFF_SYM1808=Lme_b5 - System_Threading_Tasks_TaskFactory_1__c__DisplayClass35_0_TResult_BOOL__ctor
 	.long LDIFF_SYM1808
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
@@ -40082,7 +40053,7 @@ Lfde161_end:
 	.asciz "System.Array:Empty<T_INT>"
 	.asciz "System_Array_Empty_T_INT"
 
-	.byte 1,230,4
+	.byte 1,136,5
 	.quad System_Array_Empty_T_INT
 	.quad Lme_be
 
