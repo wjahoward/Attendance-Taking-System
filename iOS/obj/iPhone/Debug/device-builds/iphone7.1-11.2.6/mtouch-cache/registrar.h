@@ -9,117 +9,62 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <CoreBluetooth/CoreBluetooth.h>
-#import <CloudKit/CloudKit.h>
-#import <QuartzCore/QuartzCore.h>
-#import <CoreLocation/CoreLocation.h>
 #import <SafariServices/SafariServices.h>
-#import <Intents/Intents.h>
+#import <CoreLocation/CoreLocation.h>
+#import <QuartzCore/QuartzCore.h>
 #import <CoreGraphics/CoreGraphics.h>
 
+@class UIApplicationDelegate;
+@class CBCentralManagerDelegate;
+@class CBPeripheralManagerDelegate;
+@class UITableViewSource;
+@class UIKit_UIControlEventProxy;
+@class UIActivityItemSource;
 @class __MonoMac_NSActionDispatcher;
 @class __MonoMac_NSAsyncActionDispatcher;
-@class UIKit_UIControlEventProxy;
-@class ItemDetailViewController;
-@class AboutViewController;
-@class ItemsViewController;
-@class BeaconTest_iOS_ItemsDataSource;
-@class ItemNewViewController;
-@class TabBarController;
 @class AppDelegate;
 @class MainViewController;
-@class BeaconTest_iOS_BeaconViewController_BTPeripheralDelegate;
-@class BeaconViewController;
-@class BeaconRangingController;
+@class StudentAttendanceController;
+@class BeaconTest_iOS_AttendanceCell;
 @class BeaconTest_iOS_EmptyClass;
-@class __NSObject_Disposer;
+@class BeaconRangingController;
+@class BeaconTest_iOS_BeaconTransmitController_BTPeripheralDelegate;
+@class BeaconTransmitController;
+@class BeaconTest_iOS_LecturerAttendanceController_TableSource;
+@class LecturerAttendanceController;
+@class BeaconTest_iOS_LecturerGenerateController_TableSource;
+@class LecturerGenerateController;
 @class CoreLocation_CLLocationManager__CLLocationManagerDelegate;
 @class UIKit_UIScrollView__UIScrollViewDelegate;
-@class UIKit_UITextView__UITextViewDelegate;
+@class __NSObject_Disposer;
 @class Plugin_Share_ShareActivityItemSource;
 
-@interface ItemDetailViewController : UIViewController {
+@interface UIApplicationDelegate : NSObject<UIApplicationDelegate> {
 }
-	@property (nonatomic, assign) UILabel * ItemDescriptionLabel;
-	@property (nonatomic, assign) UILabel * ItemNameLabel;
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UILabel *) ItemDescriptionLabel;
-	-(void) setItemDescriptionLabel:(UILabel *)p0;
-	-(UILabel *) ItemNameLabel;
-	-(void) setItemNameLabel:(UILabel *)p0;
-	-(void) viewDidLoad;
-	-(BOOL) conformsToProtocol:(void *)p0;
+	-(id) init;
 @end
 
-@interface AboutViewController : UIViewController {
+@interface CBCentralManagerDelegate : NSObject<CBCentralManagerDelegate> {
 }
-	@property (nonatomic, assign) UIImageView * AboutImageView;
-	@property (nonatomic, assign) UITextView * AboutTextView;
-	@property (nonatomic, assign) UILabel * AppNameLabel;
-	@property (nonatomic, assign) UILabel * VersionLabel;
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UIImageView *) AboutImageView;
-	-(void) setAboutImageView:(UIImageView *)p0;
-	-(UITextView *) AboutTextView;
-	-(void) setAboutTextView:(UITextView *)p0;
-	-(UILabel *) AppNameLabel;
-	-(void) setAppNameLabel:(UILabel *)p0;
-	-(UILabel *) VersionLabel;
-	-(void) setVersionLabel:(UILabel *)p0;
-	-(void) viewDidLoad;
-	-(void) ReadMoreButton_TouchUpInside:(UIButton *)p0;
-	-(BOOL) conformsToProtocol:(void *)p0;
+	-(id) init;
 @end
 
-@interface ItemsViewController : UITableViewController {
+@interface CBPeripheralManagerDelegate : NSObject<CBPeripheralManagerDelegate> {
 }
-	@property (nonatomic, assign) UIButton * btnAddItem;
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UIButton *) btnAddItem;
-	-(void) setBtnAddItem:(UIButton *)p0;
-	-(void) viewDidLoad;
-	-(void) viewDidAppear:(BOOL)p0;
-	-(void) prepareForSegue:(UIStoryboardSegue *)p0 sender:(NSObject *)p1;
-	-(BOOL) conformsToProtocol:(void *)p0;
+	-(id) init;
 @end
 
-@interface ItemNewViewController : UIViewController {
+@interface UITableViewSource : NSObject<UIScrollViewDelegate, UIScrollViewDelegate> {
 }
-	@property (nonatomic, assign) UIButton * btnSaveItem;
-	@property (nonatomic, assign) UITextField * txtDesc;
-	@property (nonatomic, assign) UITextField * txtTitle;
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UIButton *) btnSaveItem;
-	-(void) setBtnSaveItem:(UIButton *)p0;
-	-(UITextField *) txtDesc;
-	-(void) setTxtDesc:(UITextField *)p0;
-	-(UITextField *) txtTitle;
-	-(void) setTxtTitle:(UITextField *)p0;
-	-(void) viewDidLoad;
-	-(BOOL) conformsToProtocol:(void *)p0;
+	-(id) init;
 @end
 
-@interface TabBarController : UITabBarController {
+@interface UIActivityItemSource : NSObject<UIActivityItemSource> {
 }
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(BOOL) conformsToProtocol:(void *)p0;
+	-(id) init;
 @end
 
-@interface AppDelegate : NSObject<UIApplicationDelegate> {
+@interface AppDelegate : NSObject<UIApplicationDelegate, UIApplicationDelegate> {
 }
 	-(void) release;
 	-(id) retain;
@@ -139,45 +84,41 @@
 
 @interface MainViewController : UIViewController {
 }
+	@property (nonatomic, assign) UIButton * LoginButton;
+	@property (nonatomic, assign) UITextField * PasswordField;
+	@property (nonatomic, assign) UITextField * UsernameTextField;
 	-(void) release;
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) LoginButton;
+	-(void) setLoginButton:(UIButton *)p0;
+	-(UITextField *) PasswordField;
+	-(void) setPasswordField:(UITextField *)p0;
+	-(UITextField *) UsernameTextField;
+	-(void) setUsernameTextField:(UITextField *)p0;
 	-(void) viewDidLoad;
 	-(void) didReceiveMemoryWarning;
-	-(void) MonitorButton_TouchUpInside:(UIButton *)p0;
-	-(void) TransmitButton_TouchUpInside:(UIButton *)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
-	-(id) init;
 @end
 
-@interface BeaconViewController : UIViewController {
+@interface StudentAttendanceController : UITableViewController {
 }
 	-(void) release;
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(void) didReceiveMemoryWarning;
-	-(void) viewDidLoad;
-	-(void) viewDidAppear:(BOOL)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
-	-(id) init;
 @end
 
-@interface BeaconRangingController : UIViewController {
+@interface BeaconTest_iOS_AttendanceCell : UITableViewCell {
 }
-	@property (nonatomic, assign) UILabel * NearestBeacon;
 	-(void) release;
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UILabel *) NearestBeacon;
-	-(void) setNearestBeacon:(UILabel *)p0;
-	-(void) viewDidLoad;
-	-(void) viewDidAppear:(BOOL)p0;
-	-(void) didReceiveMemoryWarning;
+	-(void) layoutSubviews;
 	-(BOOL) conformsToProtocol:(void *)p0;
-	-(id) init;
 @end
 
 @interface BeaconTest_iOS_EmptyClass : NSObject<CBCentralManagerDelegate> {
@@ -190,6 +131,109 @@
 	-(void) centralManager:(CBCentralManager *)p0 didDiscoverPeripheral:(CBPeripheral *)p1 advertisementData:(NSDictionary *)p2 RSSI:(NSNumber *)p3;
 	-(BOOL) conformsToProtocol:(void *)p0;
 	-(id) init;
+@end
+
+@interface BeaconRangingController : UIViewController {
+}
+	@property (nonatomic, assign) UILabel * FoundBeacon;
+	@property (nonatomic, assign) UILabel * ModuleNameLabel;
+	@property (nonatomic, assign) UIButton * StudentSubmitButton;
+	@property (nonatomic, assign) UILabel * TimePeriodLabel;
+	@property (nonatomic, assign) UILabel * VenueLabel;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UILabel *) FoundBeacon;
+	-(void) setFoundBeacon:(UILabel *)p0;
+	-(UILabel *) ModuleNameLabel;
+	-(void) setModuleNameLabel:(UILabel *)p0;
+	-(UIButton *) StudentSubmitButton;
+	-(void) setStudentSubmitButton:(UIButton *)p0;
+	-(UILabel *) TimePeriodLabel;
+	-(void) setTimePeriodLabel:(UILabel *)p0;
+	-(UILabel *) VenueLabel;
+	-(void) setVenueLabel:(UILabel *)p0;
+	-(void) viewDidLoad;
+	-(void) viewDidAppear:(BOOL)p0;
+	-(void) didReceiveMemoryWarning;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface BeaconTransmitController : UIViewController {
+}
+	@property (nonatomic, assign) UILabel * ModuleNameLabel;
+	@property (nonatomic, assign) UILabel * StudentCountLabel;
+	@property (nonatomic, assign) UILabel * TimePeriodLabel;
+	@property (nonatomic, assign) UILabel * VenueLabel;
+	@property (nonatomic, assign) UIButton * ViewAttendanceButton;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UILabel *) ModuleNameLabel;
+	-(void) setModuleNameLabel:(UILabel *)p0;
+	-(UILabel *) StudentCountLabel;
+	-(void) setStudentCountLabel:(UILabel *)p0;
+	-(UILabel *) TimePeriodLabel;
+	-(void) setTimePeriodLabel:(UILabel *)p0;
+	-(UILabel *) VenueLabel;
+	-(void) setVenueLabel:(UILabel *)p0;
+	-(UIButton *) ViewAttendanceButton;
+	-(void) setViewAttendanceButton:(UIButton *)p0;
+	-(void) didReceiveMemoryWarning;
+	-(void) viewDidLoad;
+	-(void) viewDidAppear:(BOOL)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface BeaconTest_iOS_LecturerAttendanceController_TableSource : NSObject<UIScrollViewDelegate, UIScrollViewDelegate, UIScrollViewDelegate> {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
+	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface LecturerAttendanceController : UITableViewController {
+}
+	@property (nonatomic, assign) UITableView * AttendanceTableView;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UITableView *) AttendanceTableView;
+	-(void) setAttendanceTableView:(UITableView *)p0;
+	-(void) viewDidLoad;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface BeaconTest_iOS_LecturerGenerateController_TableSource : NSObject<UIScrollViewDelegate, UIScrollViewDelegate, UIScrollViewDelegate> {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
+	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
+	-(void) tableView:(UITableView *)p0 didSelectRowAtIndexPath:(NSIndexPath *)p1;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface LecturerGenerateController : UITableViewController {
+}
+	@property (nonatomic, assign) UITableView * TimetableTableView;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UITableView *) TimetableTableView;
+	-(void) setTimetableTableView:(UITableView *)p0;
+	-(void) viewDidLoad;
+	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
 

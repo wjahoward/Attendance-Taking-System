@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.8.0 (tarball Thu Mar 29 18:51:02 EDT 2018)"
+	.asciz "Mono AOT Compiler 5.10.1 (tarball Wed Apr 25 14:36:22 EDT 2018)"
 	.asciz "Plugin.Connectivity.Abstractions.dll"
 	.asciz ""
 
@@ -310,7 +310,7 @@ ldr x1, [x16, #232]
 .word 0x54000061
 .word 0xc811fc15
 .word 0x35ffff91
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xaa1003e1
 .word 0xf90033a1
 .word 0xd349fc00
@@ -344,10 +344,10 @@ ldr x1, [x16, #16]
 .word 0x910003bf
 .word 0xa8c77bfd
 .word 0xd65f03c0
-.word 0xd2801f00
+.word 0xd2802020
 .word 0xaa1103e1
 bl _p_2
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_2
 
@@ -422,7 +422,7 @@ ldr x1, [x16, #232]
 .word 0x54000061
 .word 0xc811fc15
 .word 0x35ffff91
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xaa1003e1
 .word 0xf90033a1
 .word 0xd349fc00
@@ -456,10 +456,10 @@ ldr x1, [x16, #16]
 .word 0x910003bf
 .word 0xa8c77bfd
 .word 0xd65f03c0
-.word 0xd2801f00
+.word 0xd2802020
 .word 0xaa1103e1
 bl _p_2
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_2
 
@@ -534,7 +534,7 @@ ldr x1, [x16, #264]
 .word 0x54000061
 .word 0xc811fc15
 .word 0x35ffff91
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xaa1003e1
 .word 0xf90033a1
 .word 0xd349fc00
@@ -568,10 +568,10 @@ ldr x1, [x16, #16]
 .word 0x910003bf
 .word 0xa8c77bfd
 .word 0xd65f03c0
-.word 0xd2801f00
+.word 0xd2802020
 .word 0xaa1103e1
 bl _p_2
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_2
 
@@ -646,7 +646,7 @@ ldr x1, [x16, #264]
 .word 0x54000061
 .word 0xc811fc15
 .word 0x35ffff91
-.word 0xd50330bf
+.word 0xd5033bbf
 .word 0xaa1003e1
 .word 0xf90033a1
 .word 0xd349fc00
@@ -680,10 +680,10 @@ ldr x1, [x16, #16]
 .word 0x910003bf
 .word 0xa8c77bfd
 .word 0xd65f03c0
-.word 0xd2801f00
+.word 0xd2802020
 .word 0xaa1103e1
 bl _p_2
-.word 0xd2801d40
+.word 0xd2801e60
 .word 0xaa1103e1
 bl _p_2
 
@@ -1248,8 +1248,8 @@ LDIFF_SYM3=ut_end - ut_42
 	.align 4
 	.no_dead_strip System_Array_InternalEnumerator_1_T_INT__ctor_System_Array
 System_Array_InternalEnumerator_1_T_INT__ctor_System_Array:
-.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.9.1.24/src/Xamarin.iOS/mcs/class/corlib/System/Array.cs"
-.loc 3 215 0 prologue_end
+.file 3 "/Library/Frameworks/Xamarin.iOS.framework/Versions/11.10.1.177/src/Xamarin.iOS/mcs/class/corlib/System/Array.cs"
+.loc 3 218 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
 .word 0xf9000bb9
@@ -1290,7 +1290,7 @@ ldr x2, [x16, #16]
 .word 0x8b020021
 .word 0xd280003e
 .word 0x3900003e
-.loc 3 216 0
+.loc 3 219 0
 .word 0xf94013b1
 .word 0xf940a631
 .word 0xb4000051
@@ -1301,7 +1301,7 @@ ldr x2, [x16, #16]
 .word 0x9280003e
 .word 0xf2bffffe
 .word 0xb9000b3e
-.loc 3 217 0
+.loc 3 220 0
 .word 0xf94013b1
 .word 0xf940ce31
 .word 0xb4000051
@@ -1324,7 +1324,7 @@ b System_Array_InternalEnumerator_1_T_INT_Dispose
 	.align 4
 	.no_dead_strip System_Array_InternalEnumerator_1_T_INT_Dispose
 System_Array_InternalEnumerator_1_T_INT_Dispose:
-.loc 3 221 0 prologue_end
+.loc 3 224 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
 .word 0xf9001baf
@@ -1348,19 +1348,8 @@ ldr x16, [x16, #384]
 .word 0xf9405631
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf9400ba0
-.word 0x92800021
-.word 0xf2bfffe1
-.word 0x9280003e
-.word 0xf2bffffe
-.word 0xb900081e
-.loc 3 222 0
 .word 0xf9400fb1
-.word 0xf9407e31
-.word 0xb4000051
-.word 0xd63f0220
-.word 0xf9400fb1
-.word 0xf9408e31
+.word 0xf9406631
 .word 0xb4000051
 .word 0xd63f0220
 .word 0x910003bf
@@ -1376,7 +1365,7 @@ b System_Array_InternalEnumerator_1_T_INT_MoveNext
 	.align 4
 	.no_dead_strip System_Array_InternalEnumerator_1_T_INT_MoveNext
 System_Array_InternalEnumerator_1_T_INT_MoveNext:
-.loc 3 226 0 prologue_end
+.loc 3 228 0 prologue_end
 .word 0xa9bb7bfd
 .word 0x910003fd
 .word 0xa9016bb9
@@ -1410,7 +1399,7 @@ ldr x16, [x16, #392]
 .word 0xf2bffffe
 .word 0x6b1e001f
 .word 0x54000201
-.loc 3 227 0
+.loc 3 229 0
 .word 0xf94013b1
 .word 0xf9408e31
 .word 0xb4000051
@@ -1426,7 +1415,7 @@ ldr x16, [x16, #392]
 .word 0xd63f0220
 .word 0xf94023a0
 .word 0xb9000b40
-.loc 3 229 0
+.loc 3 231 0
 .word 0xf94017b1
 .word 0xf9400231
 .word 0xb4000051
@@ -1481,7 +1470,7 @@ b System_Array_InternalEnumerator_1_T_INT_get_Current
 	.align 4
 	.no_dead_strip System_Array_InternalEnumerator_1_T_INT_get_Current
 System_Array_InternalEnumerator_1_T_INT_get_Current:
-.loc 3 234 0 prologue_end
+.loc 3 236 0 prologue_end
 .word 0xa9b97bfd
 .word 0x910003fd
 .word 0xf9000bba
@@ -1514,22 +1503,22 @@ ldr x16, [x16, #400]
 .word 0xf2bffffe
 .word 0x6b1e001f
 .word 0x540001e1
-.loc 3 235 0
+.loc 3 237 0
 .word 0xf9400fb1
 .word 0xf9408a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd2865100
-.word 0xd2865100
+.word 0xd288f240
+.word 0xd288f240
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_9
-.loc 3 236 0
+.loc 3 238 0
 .word 0xf9400fb1
 .word 0xf940c231
 .word 0xb4000051
@@ -1542,22 +1531,22 @@ bl _p_9
 .word 0xf2bffffe
 .word 0x6b1e001f
 .word 0x540001e1
-.loc 3 237 0
+.loc 3 239 0
 .word 0xf9400fb1
 .word 0xf940f231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xd2865bc0
-.word 0xd2865bc0
+.word 0xd288fd00
+.word 0xd288fd00
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
-.word 0xd2801d60
+.word 0xd2801e80
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_9
-.loc 3 239 0
+.loc 3 241 0
 .word 0xf9400fb1
 .word 0xf9412a31
 .word 0xb4000051
@@ -1619,7 +1608,7 @@ b System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_Reset
 	.align 4
 	.no_dead_strip System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_Reset
 System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_Reset:
-.loc 3 245 0 prologue_end
+.loc 3 247 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
 .word 0xf9001baf
@@ -1649,7 +1638,7 @@ ldr x16, [x16, #408]
 .word 0x9280003e
 .word 0xf2bffffe
 .word 0xb900081e
-.loc 3 246 0
+.loc 3 248 0
 .word 0xf9400fb1
 .word 0xf9407e31
 .word 0xb4000051
@@ -1671,7 +1660,7 @@ b System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_get_Cur
 	.align 4
 	.no_dead_strip System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_get_Current
 System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_get_Current:
-.loc 3 250 0 prologue_end
+.loc 3 252 0 prologue_end
 .word 0xa9ba7bfd
 .word 0x910003fd
 .word 0xf9001baf
@@ -1737,10 +1726,11 @@ Lme_2f:
 	.no_dead_strip System_Array_InternalArray__IEnumerable_GetEnumerator_T_INT
 System_Array_InternalArray__IEnumerable_GetEnumerator_T_INT:
 .loc 3 71 0 prologue_end
-.word 0xa9b87bfd
+.word 0xa9b97bfd
 .word 0x910003fd
+.word 0xf9000bba
 .word 0xf9002baf
-.word 0xf9000ba0
+.word 0xaa0003fa
 
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
@@ -1749,7 +1739,7 @@ ldr x16, [x16, #424]
 .word 0xf9400a11
 .word 0xf90013b1
 .word 0xf9400fb1
-.word 0xf9403631
+.word 0xf9403a31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf94013b1
@@ -1757,11 +1747,38 @@ ldr x16, [x16, #424]
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9400fb1
-.word 0xf9405631
+.word 0xf9405a31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf9400ba0
-.word 0xf90037a0
+.word 0xaa1a03e0
+.word 0xb9801b40
+.word 0xf90033a0
+.word 0xf9400fb1
+.word 0xf9407631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94033a0
+.word 0x350001c0
+.loc 3 72 0
+.word 0xf9400fb1
+.word 0xf9408e31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9402ba0
+bl _p_16
+.word 0x3980b410
+.word 0xb5000050
+bl _p_17
+.word 0xf9402ba0
+bl _p_18
+.word 0xf9400000
+.word 0x14000037
+.loc 3 74 0
+.word 0xf9400fb1
+.word 0xf940c231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xaa1a03e0
 .word 0x910103a0
 .word 0xd2800000
 .word 0xf90023a0
@@ -1769,14 +1786,14 @@ ldr x16, [x16, #424]
 .word 0x910103a0
 .word 0xf90033a0
 .word 0xf9402ba0
-bl _p_16
-.word 0xf9003ba0
+bl _p_19
+.word 0xf90037a0
 .word 0xf9402ba0
-bl _p_17
+bl _p_20
 .word 0xaa0003e2
 .word 0xf94033a0
-.word 0xf94037a1
-.word 0xf9403baf
+.word 0xf94037af
+.word 0xaa1a03e1
 .word 0xd63f0040
 .word 0x910103a0
 .word 0x9100c3a0
@@ -1785,11 +1802,11 @@ bl _p_17
 .word 0xf94027a0
 .word 0xf9001fa0
 .word 0xf9400fb1
-.word 0xf940c631
+.word 0xf9412e31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xf9402ba0
-bl _p_16
+bl _p_19
 .word 0xd2800401
 .word 0xd2800401
 bl _p_15
@@ -1813,11 +1830,12 @@ ldr x4, [x16, #16]
 .word 0xf9401fa2
 .word 0xf9000022
 .word 0xf9400fb1
-.word 0xf9413231
+.word 0xf9419a31
 .word 0xb4000051
 .word 0xd63f0220
+.word 0xf9400bba
 .word 0x910003bf
-.word 0xa8c87bfd
+.word 0xa8c77bfd
 .word 0xd65f03c0
 
 Lme_30:
@@ -1856,7 +1874,7 @@ add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x0, [x16, #440]
 .word 0xb9400000
 .word 0x34000140
-bl _p_18
+bl _p_21
 .word 0xf90037a0
 .word 0xf94037a1
 .word 0xf94037a0
@@ -1957,7 +1975,7 @@ bl _p_9
 .word 0x910003bf
 .word 0xa8c97bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_2
 
@@ -2040,7 +2058,7 @@ ldr x16, [x16, #448]
 .word 0xf9401ba0
 .word 0xaa1603e1
 .word 0xaa1603e1
-bl _p_19
+bl _p_22
 .word 0xf9402fb1
 .word 0xf9413631
 .word 0xb4000051
@@ -2103,7 +2121,7 @@ ldr x16, [x16, #456]
 .word 0xf9401ba0
 .word 0xaa1603e1
 .word 0xaa1603e1
-bl _p_20
+bl _p_23
 .word 0xf94023b1
 .word 0xf940ca31
 .word 0xb4000051
@@ -2150,7 +2168,7 @@ add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x0, [x16, #440]
 .word 0xb9400000
 .word 0x34000140
-bl _p_18
+bl _p_21
 .word 0xf90037a0
 .word 0xf94037a1
 .word 0xf94037a0
@@ -2251,7 +2269,7 @@ bl _p_9
 .word 0x910003bf
 .word 0xa8c97bfd
 .word 0xd65f03c0
-.word 0xd2801ca0
+.word 0xd2801dc0
 .word 0xaa1103e1
 bl _p_2
 
@@ -2334,7 +2352,7 @@ ldr x16, [x16, #472]
 .word 0xf9401ba0
 .word 0xaa1603e1
 .word 0xaa1603e1
-bl _p_19
+bl _p_22
 .word 0xf9402fb1
 .word 0xf9413631
 .word 0xb4000051
@@ -2350,7 +2368,7 @@ Lme_35:
 	.align 4
 	.no_dead_strip System_Array_InternalArray__get_Item_T_INT_int
 System_Array_InternalArray__get_Item_T_INT_int:
-.loc 3 173 0 prologue_end
+.loc 3 176 0 prologue_end
 .word 0xa9ba7bfd
 .word 0x910003fd
 .word 0xa9016bb9
@@ -2388,7 +2406,7 @@ ldr x16, [x16, #480]
 .word 0xf9402ba0
 .word 0x6b00035f
 .word 0x540001e3
-.loc 3 174 0
+.loc 3 177 0
 .word 0xf94013b1
 .word 0xf9409e31
 .word 0xb4000051
@@ -2397,13 +2415,13 @@ ldr x16, [x16, #480]
 .word 0xd28187e0
 bl _p_8
 .word 0xaa0003e1
-.word 0xd2801260
+.word 0xd2801380
 .word 0xf2a04000
-.word 0xd2801260
+.word 0xd2801380
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_9
-.loc 3 177 0
+.loc 3 180 0
 .word 0xf94013b1
 .word 0xf940d631
 .word 0xb4000051
@@ -2412,14 +2430,14 @@ bl _p_9
 .word 0xaa1a03e0
 .word 0x910103a0
 .word 0xf9401fa0
-bl _p_21
+bl _p_24
 .word 0x93407f40
 .word 0xd37ef400
 .word 0x8b000320
 .word 0x91008000
 .word 0xb9800000
 .word 0xb90043a0
-.loc 3 178 0
+.loc 3 181 0
 .word 0xf94013b1
 .word 0xf9411231
 .word 0xb4000051
@@ -2529,11 +2547,10 @@ unwind_info:
 	.byte 13,29,68,154,4,13,12,31,0,68,14,80,157,10,158,9,68,13,29,16,12,31,0,68,14,64,157,8,158,7,68,13
 	.byte 29,68,153,6,13,12,31,0,68,14,48,157,6,158,5,68,13,29,13,12,31,0,68,14,64,157,8,158,7,68,13,29
 	.byte 18,12,31,0,68,14,80,157,10,158,9,68,13,29,68,153,8,154,7,16,12,31,0,68,14,112,157,14,158,13,68,13
-	.byte 29,68,154,12,13,12,31,0,68,14,96,157,12,158,11,68,13,29,14,12,31,0,68,14,128,1,157,16,158,15,68,13
-	.byte 29,34,12,31,0,68,14,144,1,157,18,158,17,68,13,29,68,147,16,148,15,68,149,14,150,13,68,151,12,152,11,68
-	.byte 153,10,154,9,23,12,31,0,68,14,112,157,14,158,13,68,13,29,68,150,12,151,11,68,152,10,153,9,23,12,31,0
-	.byte 68,14,96,157,12,158,11,68,13,29,68,150,10,151,9,68,152,8,153,7,18,12,31,0,68,14,96,157,12,158,11,68
-	.byte 13,29,68,153,10,154,9
+	.byte 29,68,154,12,13,12,31,0,68,14,96,157,12,158,11,68,13,29,34,12,31,0,68,14,144,1,157,18,158,17,68,13
+	.byte 29,68,147,16,148,15,68,149,14,150,13,68,151,12,152,11,68,153,10,154,9,23,12,31,0,68,14,112,157,14,158,13
+	.byte 68,13,29,68,150,12,151,11,68,152,10,153,9,23,12,31,0,68,14,96,157,12,158,11,68,13,29,68,150,10,151,9
+	.byte 68,152,8,153,7,18,12,31,0,68,14,96,157,12,158,11,68,13,29,68,153,10,154,9
 
 .text
 	.align 4
@@ -2667,50 +2684,74 @@ add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #616]
 br x16
 .word 1001
-	.no_dead_strip plt__rgctx_fetch_6
-plt__rgctx_fetch_6:
+	.no_dead_strip plt__jit_icall_mono_generic_class_init
+plt__jit_icall_mono_generic_class_init:
 _p_17:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #624]
 br x16
 .word 1009
-	.no_dead_strip plt__jit_icall_mono_thread_interruption_checkpoint
-plt__jit_icall_mono_thread_interruption_checkpoint:
+	.no_dead_strip plt__rgctx_fetch_6
+plt__rgctx_fetch_6:
 _p_18:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #632]
 br x16
-.word 1032
-	.no_dead_strip plt__jit_icall_mono_delegate_begin_invoke
-plt__jit_icall_mono_delegate_begin_invoke:
+.word 1035
+	.no_dead_strip plt__rgctx_fetch_7
+plt__rgctx_fetch_7:
 _p_19:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #640]
 br x16
-.word 1070
-	.no_dead_strip plt__jit_icall_mono_delegate_end_invoke
-plt__jit_icall_mono_delegate_end_invoke:
+.word 1050
+	.no_dead_strip plt__rgctx_fetch_8
+plt__rgctx_fetch_8:
 _p_20:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #648]
 br x16
-.word 1099
-	.no_dead_strip plt__rgctx_fetch_7
-plt__rgctx_fetch_7:
+.word 1058
+	.no_dead_strip plt__jit_icall_mono_thread_interruption_checkpoint
+plt__jit_icall_mono_thread_interruption_checkpoint:
 _p_21:
 adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
 ldr x16, [x16, #656]
 br x16
-.word 1143
+.word 1081
+	.no_dead_strip plt__jit_icall_mono_delegate_begin_invoke
+plt__jit_icall_mono_delegate_begin_invoke:
+_p_22:
+adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
+ldr x16, [x16, #664]
+br x16
+.word 1119
+	.no_dead_strip plt__jit_icall_mono_delegate_end_invoke
+plt__jit_icall_mono_delegate_end_invoke:
+_p_23:
+adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
+ldr x16, [x16, #672]
+br x16
+.word 1148
+	.no_dead_strip plt__rgctx_fetch_9
+plt__rgctx_fetch_9:
+_p_24:
+adrp x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Connectivity_Abstractions_got@PAGEOFF
+ldr x16, [x16, #680]
+br x16
+.word 1192
 plt_end:
 .section __DATA, __bss
 	.align 3
-.lcomm mono_aot_Plugin_Connectivity_Abstractions_got, 664
+.lcomm mono_aot_Plugin_Connectivity_Abstractions_got, 688
 got_end:
 .section __TEXT, __const
 	.align 3
@@ -2750,7 +2791,7 @@ assembly_name:
 	.align 3
 _mono_aot_file_info:
 
-	.long 141,0
+	.long 143,0
 	.align 3
 	.quad mono_aot_Plugin_Connectivity_Abstractions_got
 	.align 3
@@ -2767,6 +2808,8 @@ _mono_aot_file_info:
 	.quad jit_code_end
 	.align 3
 	.quad method_addresses
+	.align 3
+	.quad 0
 	.align 3
 	.quad 0
 	.align 3
@@ -2818,13 +2861,13 @@ _mono_aot_file_info:
 	.align 3
 	.quad unbox_trampoline_addresses
 
-	.long 61,664,22,55,70,391195135,0,4307
-	.long 128,8,8,9,0,25,5352,1032
+	.long 61,688,25,55,70,391195135,0,4386
+	.long 128,8,8,9,0,25,5432,1040
 	.long 840,512,0,704,808,600,0,392
-	.long 96,0,0,0,0,0,0,0
+	.long 96,1032,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
-	.long 0
-	.byte 218,165,205,46,150,179,15,3,147,208,171,118,127,249,152,73
+	.long 0,0
+	.byte 119,161,213,26,146,121,16,43,90,229,200,124,148,47,137,200
 	.globl _mono_aot_module_Plugin_Connectivity_Abstractions_info
 	.align 3
 _mono_aot_module_Plugin_Connectivity_Abstractions_info:
@@ -4139,7 +4182,7 @@ LDIFF_SYM183=LTDIE_17 - Ldebug_info_start
 	.asciz "System.Array/InternalEnumerator`1<T_INT>:.ctor"
 	.asciz "System_Array_InternalEnumerator_1_T_INT__ctor_System_Array"
 
-	.byte 3,215,1
+	.byte 3,218,1
 	.quad System_Array_InternalEnumerator_1_T_INT__ctor_System_Array
 	.quad Lme_2a
 
@@ -4178,7 +4221,7 @@ Lfde18_end:
 	.asciz "System.Array/InternalEnumerator`1<T_INT>:Dispose"
 	.asciz "System_Array_InternalEnumerator_1_T_INT_Dispose"
 
-	.byte 3,221,1
+	.byte 3,224,1
 	.quad System_Array_InternalEnumerator_1_T_INT_Dispose
 	.quad Lme_2b
 
@@ -4212,7 +4255,7 @@ Lfde19_end:
 	.asciz "System.Array/InternalEnumerator`1<T_INT>:MoveNext"
 	.asciz "System_Array_InternalEnumerator_1_T_INT_MoveNext"
 
-	.byte 3,226,1
+	.byte 3,228,1
 	.quad System_Array_InternalEnumerator_1_T_INT_MoveNext
 	.quad Lme_2c
 
@@ -4251,7 +4294,7 @@ Lfde20_end:
 	.asciz "System.Array/InternalEnumerator`1<T_INT>:get_Current"
 	.asciz "System_Array_InternalEnumerator_1_T_INT_get_Current"
 
-	.byte 3,234,1
+	.byte 3,236,1
 	.quad System_Array_InternalEnumerator_1_T_INT_get_Current
 	.quad Lme_2d
 
@@ -4285,7 +4328,7 @@ Lfde21_end:
 	.asciz "System.Array/InternalEnumerator`1<T_INT>:System.Collections.IEnumerator.Reset"
 	.asciz "System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_Reset"
 
-	.byte 3,245,1
+	.byte 3,247,1
 	.quad System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_Reset
 	.quad Lme_2e
 
@@ -4319,7 +4362,7 @@ Lfde22_end:
 	.asciz "System.Array/InternalEnumerator`1<T_INT>:System.Collections.IEnumerator.get_Current"
 	.asciz "System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_get_Current"
 
-	.byte 3,250,1
+	.byte 3,252,1
 	.quad System_Array_InternalEnumerator_1_T_INT_System_Collections_IEnumerator_get_Current
 	.quad Lme_2f
 
@@ -4362,7 +4405,7 @@ Lfde23_end:
 
 LDIFF_SYM204=LTDIE_18_REFERENCE - Ldebug_info_start
 	.long LDIFF_SYM204
-	.byte 2,141,16,0
+	.byte 1,106,0
 
 .section __DWARF, __debug_frame,regular,debug
 
@@ -4377,7 +4420,7 @@ Lfde24_start:
 LDIFF_SYM206=Lme_30 - System_Array_InternalArray__IEnumerable_GetEnumerator_T_INT
 	.long LDIFF_SYM206
 	.long 0
-	.byte 12,31,0,68,14,128,1,157,16,158,15,68,13,29
+	.byte 12,31,0,68,14,112,157,14,158,13,68,13,29,68,154,12
 	.align 3
 Lfde24_end:
 
@@ -4764,7 +4807,7 @@ Lfde29_end:
 	.asciz "System.Array:InternalArray__get_Item<T_INT>"
 	.asciz "System_Array_InternalArray__get_Item_T_INT_int"
 
-	.byte 3,173,1
+	.byte 3,176,1
 	.quad System_Array_InternalArray__get_Item_T_INT_int
 	.quad Lme_36
 

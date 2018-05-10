@@ -1,3 +1,4 @@
+RemoveDynamicRegistrar:true
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/device-builds/iphone7.1-11.2.6/BeaconTest.iOS.app:/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/BeaconTest.iOS.exe
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/device-builds/iphone7.1-11.2.6/BeaconTest.iOS.app:/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/mscorlib.dll
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/device-builds/iphone7.1-11.2.6/BeaconTest.iOS.app:/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/System.dll

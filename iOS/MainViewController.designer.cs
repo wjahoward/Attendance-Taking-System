@@ -16,21 +16,31 @@ namespace BeaconTest.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton LogInButton { get; set; }
+        UIKit.UIButton LoginButton { get; set; }
 
-        [Action ("MonitorButton_TouchUpInside:")]
+        [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void MonitorButton_TouchUpInside (UIKit.UIButton sender);
+        UIKit.UITextField PasswordField { get; set; }
 
-        [Action ("TransmitButton_TouchUpInside:")]
+        [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void TransmitButton_TouchUpInside (UIKit.UIButton sender);
+        UIKit.UITextField UsernameTextField { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (LogInButton != null) {
-                LogInButton.Dispose ();
-                LogInButton = null;
+            if (LoginButton != null) {
+                LoginButton.Dispose ();
+                LoginButton = null;
+            }
+
+            if (PasswordField != null) {
+                PasswordField.Dispose ();
+                PasswordField = null;
+            }
+
+            if (UsernameTextField != null) {
+                UsernameTextField.Dispose ();
+                UsernameTextField = null;
             }
         }
     }
