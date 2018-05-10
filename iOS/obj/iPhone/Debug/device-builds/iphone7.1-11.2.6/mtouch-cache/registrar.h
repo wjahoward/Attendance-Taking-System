@@ -15,9 +15,8 @@
 #import <CoreGraphics/CoreGraphics.h>
 
 @class UIApplicationDelegate;
-@class CBCentralManagerDelegate;
-@class CBPeripheralManagerDelegate;
 @class UITableViewSource;
+@class CBPeripheralManagerDelegate;
 @class UIKit_UIControlEventProxy;
 @class UIActivityItemSource;
 @class __MonoMac_NSActionDispatcher;
@@ -25,15 +24,14 @@
 @class AppDelegate;
 @class MainViewController;
 @class StudentAttendanceController;
-@class BeaconTest_iOS_AttendanceCell;
-@class BeaconTest_iOS_EmptyClass;
+@class BeaconTest_iOS_LecturerModuleCell;
 @class BeaconRangingController;
+@class BeaconTest_iOS_LecturerGenerateController_TableSource;
+@class LecturerGenerateController;
 @class BeaconTest_iOS_BeaconTransmitController_BTPeripheralDelegate;
 @class BeaconTransmitController;
 @class BeaconTest_iOS_LecturerAttendanceController_TableSource;
 @class LecturerAttendanceController;
-@class BeaconTest_iOS_LecturerGenerateController_TableSource;
-@class LecturerGenerateController;
 @class CoreLocation_CLLocationManager__CLLocationManagerDelegate;
 @class UIKit_UIScrollView__UIScrollViewDelegate;
 @class __NSObject_Disposer;
@@ -44,17 +42,12 @@
 	-(id) init;
 @end
 
-@interface CBCentralManagerDelegate : NSObject<CBCentralManagerDelegate> {
+@interface UITableViewSource : NSObject<UIScrollViewDelegate, UIScrollViewDelegate> {
 }
 	-(id) init;
 @end
 
 @interface CBPeripheralManagerDelegate : NSObject<CBPeripheralManagerDelegate> {
-}
-	-(id) init;
-@end
-
-@interface UITableViewSource : NSObject<UIScrollViewDelegate, UIScrollViewDelegate> {
 }
 	-(id) init;
 @end
@@ -111,7 +104,7 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
-@interface BeaconTest_iOS_AttendanceCell : UITableViewCell {
+@interface BeaconTest_iOS_LecturerModuleCell : UITableViewCell {
 }
 	-(void) release;
 	-(id) retain;
@@ -121,20 +114,10 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
-@interface BeaconTest_iOS_EmptyClass : NSObject<CBCentralManagerDelegate> {
-}
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(void) centralManagerDidUpdateState:(CBCentralManager *)p0;
-	-(void) centralManager:(CBCentralManager *)p0 didDiscoverPeripheral:(CBPeripheral *)p1 advertisementData:(NSDictionary *)p2 RSSI:(NSNumber *)p3;
-	-(BOOL) conformsToProtocol:(void *)p0;
-	-(id) init;
-@end
-
 @interface BeaconRangingController : UIViewController {
 }
+	@property (nonatomic, assign) UITextField * AttendanceCodeTextField;
+	@property (nonatomic, assign) UIButton * EnterAttendanceCodeButton;
 	@property (nonatomic, assign) UILabel * FoundBeacon;
 	@property (nonatomic, assign) UILabel * ModuleNameLabel;
 	@property (nonatomic, assign) UIButton * StudentSubmitButton;
@@ -144,6 +127,10 @@
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UITextField *) AttendanceCodeTextField;
+	-(void) setAttendanceCodeTextField:(UITextField *)p0;
+	-(UIButton *) EnterAttendanceCodeButton;
+	-(void) setEnterAttendanceCodeButton:(UIButton *)p0;
 	-(UILabel *) FoundBeacon;
 	-(void) setFoundBeacon:(UILabel *)p0;
 	-(UILabel *) ModuleNameLabel;
@@ -160,8 +147,34 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
+@interface BeaconTest_iOS_LecturerGenerateController_TableSource : NSObject<UIScrollViewDelegate, UIScrollViewDelegate, UIScrollViewDelegate> {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
+	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
+	-(void) tableView:(UITableView *)p0 didSelectRowAtIndexPath:(NSIndexPath *)p1;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface LecturerGenerateController : UITableViewController {
+}
+	@property (nonatomic, assign) UITableView * TimetableTableView;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UITableView *) TimetableTableView;
+	-(void) setTimetableTableView:(UITableView *)p0;
+	-(void) viewDidLoad;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
 @interface BeaconTransmitController : UIViewController {
 }
+	@property (nonatomic, assign) UILabel * AttendanceCodeLabel;
 	@property (nonatomic, assign) UILabel * ModuleNameLabel;
 	@property (nonatomic, assign) UILabel * StudentCountLabel;
 	@property (nonatomic, assign) UILabel * TimePeriodLabel;
@@ -171,6 +184,8 @@
 	-(id) retain;
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UILabel *) AttendanceCodeLabel;
+	-(void) setAttendanceCodeLabel:(UILabel *)p0;
 	-(UILabel *) ModuleNameLabel;
 	-(void) setModuleNameLabel:(UILabel *)p0;
 	-(UILabel *) StudentCountLabel;
@@ -207,31 +222,6 @@
 	-(void) xamarinSetGCHandle: (int) gchandle;
 	-(UITableView *) AttendanceTableView;
 	-(void) setAttendanceTableView:(UITableView *)p0;
-	-(void) viewDidLoad;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
-@interface BeaconTest_iOS_LecturerGenerateController_TableSource : NSObject<UIScrollViewDelegate, UIScrollViewDelegate, UIScrollViewDelegate> {
-}
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(NSInteger) tableView:(UITableView *)p0 numberOfRowsInSection:(NSInteger)p1;
-	-(UITableViewCell *) tableView:(UITableView *)p0 cellForRowAtIndexPath:(NSIndexPath *)p1;
-	-(void) tableView:(UITableView *)p0 didSelectRowAtIndexPath:(NSIndexPath *)p1;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
-@interface LecturerGenerateController : UITableViewController {
-}
-	@property (nonatomic, assign) UITableView * TimetableTableView;
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UITableView *) TimetableTableView;
-	-(void) setTimetableTableView:(UITableView *)p0;
 	-(void) viewDidLoad;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end

@@ -1,12 +1,8 @@
 ﻿<Properties StartupConfiguration="{C87C25DB-29DA-4F9B-B39D-93F40244D7ED}|Default">
   <MonoDevelop.Ide.ItemProperties.BeaconTest.Droid PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Main.storyboard">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/MainViewController.cs">
     <Files>
-      <File FileName="BeaconTest/DataAccess.cs" Line="39" Column="18" />
-      <File FileName="../TestAzureAPI/TestAzureApi/APIs/StudentController.cs" Line="13" Column="1" />
-      <File FileName="iOS/MainViewController.cs" Line="26" Column="19" />
-      <File FileName="iOS/Main.cs" Line="12" Column="1" />
-      <File FileName="iOS/Main.storyboard" />
+      <File FileName="iOS/MainViewController.cs" Line="42" Column="84" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -15,5 +11,5 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.BeaconTest.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2E543EBB-078A-4516-AA35-AF74B70BCE66" />
+  <MonoDevelop.Ide.ItemProperties.BeaconTest.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.15A46B50-481A-4C02-9B4E-AE9BE484A8F7" />
 </Properties>

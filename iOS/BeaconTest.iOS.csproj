@@ -152,32 +152,29 @@
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Main.cs" />
-    <Compile Include="EmptyClass.cs" />
-    <Compile Include="BeaconRangingController.cs" />
-    <Compile Include="BeaconRangingController.designer.cs">
-      <DependentUpon>BeaconRangingController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BeaconTransmitController.cs" />
-    <Compile Include="BeaconTransmitController.designer.cs">
-      <DependentUpon>BeaconTransmitController.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainViewController.cs" />
     <Compile Include="MainViewController.designer.cs">
       <DependentUpon>MainViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="LecturerAttendanceController.cs" />
-    <Compile Include="LecturerAttendanceController.designer.cs">
-      <DependentUpon>LecturerAttendanceController.cs</DependentUpon>
+    <Compile Include="Student\BeaconRangingController.cs" />
+    <Compile Include="Student\BeaconRangingController.designer.cs">
+      <DependentUpon>BeaconRangingController.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentAttendanceController.cs" />
-    <Compile Include="StudentAttendanceController.designer.cs">
+    <Compile Include="Student\StudentAttendanceController.cs" />
+    <Compile Include="Student\StudentAttendanceController.designer.cs">
       <DependentUpon>StudentAttendanceController.cs</DependentUpon>
     </Compile>
-    <Compile Include="LecturerAttendanceTableViewItem.cs" />
-    <Compile Include="AttendanceCell.cs" />
-    <Compile Include="LecturerGenerateController.cs" />
-    <Compile Include="LecturerGenerateController.designer.cs">
-      <DependentUpon>LecturerGenerateController.cs</DependentUpon>
+    <Compile Include="Lecturer\Generate\LecturerGenerateController.cs" />
+    <Compile Include="Lecturer\Generate\LecturerGenerateController.designer.cs" />
+    <Compile Include="Lecturer\Generate\LecturerModuleCell.cs" />
+    <Compile Include="Lecturer\Generate\LecturerModuleTableViewItem.cs" />
+    <Compile Include="Lecturer\Generate\BeaconTransmitController.cs" />
+    <Compile Include="Lecturer\Generate\BeaconTransmitController.designer.cs">
+      <DependentUpon>BeaconTransmitController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lecturer\Attendance\LecturerAttendanceController.cs" />
+    <Compile Include="Lecturer\Attendance\LecturerAttendanceController.designer.cs">
+      <DependentUpon>LecturerAttendanceController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +184,12 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Lecturer\" />
+    <Folder Include="Student\" />
+    <Folder Include="Lecturer\Generate\" />
+    <Folder Include="Lecturer\Attendance\" />
   </ItemGroup>
   <Import Project="..\BeaconTest\BeaconTest.projitems" Label="Shared" Condition="Exists('..\BeaconTest\BeaconTest.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

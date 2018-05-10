@@ -1680,7 +1680,7 @@ bl _p_23
 .word 0xf94047a1
 .word 0xaa0103e0
 .word 0xf9400021
-.word 0xf9413c30
+.word 0xf9414030
 .word 0xd63f0200
 .word 0xf90043a0
 .word 0xf9402fb1
@@ -20641,7 +20641,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2320]
 br x16
-.word 5290
+.word 5289
 	.no_dead_strip plt_Plugin_Share_CrossShare_NotImplementedInReferenceAssembly
 plt_Plugin_Share_CrossShare_NotImplementedInReferenceAssembly:
 _p_2:
@@ -20649,7 +20649,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2328]
 br x16
-.word 5301
+.word 5300
 	.no_dead_strip plt__jit_icall_mono_arch_throw_exception
 plt__jit_icall_mono_arch_throw_exception:
 _p_3:
@@ -20657,7 +20657,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2336]
 br x16
-.word 5303
+.word 5302
 	.no_dead_strip plt_wrapper_alloc_object_AllocSmall_intptr_intptr
 plt_wrapper_alloc_object_AllocSmall_intptr_intptr:
 _p_4:
@@ -20665,7 +20665,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2344]
 br x16
-.word 5331
+.word 5330
 	.no_dead_strip plt_Plugin_Share_ShareImplementation__ctor
 plt_Plugin_Share_ShareImplementation__ctor:
 _p_5:
@@ -20673,7 +20673,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2352]
 br x16
-.word 5339
+.word 5338
 	.no_dead_strip plt_System_NotImplementedException__ctor_string
 plt_System_NotImplementedException__ctor_string:
 _p_6:
@@ -20681,7 +20681,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2360]
 br x16
-.word 5341
+.word 5340
 	.no_dead_strip plt_System_Lazy_1_Plugin_Share_Abstractions_IShare__ctor_System_Func_1_Plugin_Share_Abstractions_IShare_System_Threading_LazyThreadSafetyMode
 plt_System_Lazy_1_Plugin_Share_Abstractions_IShare__ctor_System_Func_1_Plugin_Share_Abstractions_IShare_System_Threading_LazyThreadSafetyMode:
 _p_7:
@@ -20689,7 +20689,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2368]
 br x16
-.word 5346
+.word 5345
 	.no_dead_strip plt__jit_icall_mono_arch_throw_corlib_exception
 plt__jit_icall_mono_arch_throw_corlib_exception:
 _p_8:
@@ -20697,7 +20697,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2376]
 br x16
-.word 5357
+.word 5356
 	.no_dead_strip plt_UIKit_UIActivityItemSource__ctor
 plt_UIKit_UIActivityItemSource__ctor:
 _p_9:
@@ -20705,7 +20705,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2384]
 br x16
-.word 5392
+.word 5391
 	.no_dead_strip plt__jit_icall_mono_helper_ldstr
 plt__jit_icall_mono_helper_ldstr:
 _p_10:
@@ -20713,7 +20713,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2392]
 br x16
-.word 5397
+.word 5396
 	.no_dead_strip plt_Plugin_Share_Abstractions_ShareColor_get_R
 plt_Plugin_Share_Abstractions_ShareColor_get_R:
 _p_11:
@@ -20721,7 +20721,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2400]
 br x16
-.word 5417
+.word 5416
 	.no_dead_strip plt_Plugin_Share_Abstractions_ShareColor_get_G
 plt_Plugin_Share_Abstractions_ShareColor_get_G:
 _p_12:
@@ -20729,7 +20729,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2408]
 br x16
-.word 5422
+.word 5421
 	.no_dead_strip plt_Plugin_Share_Abstractions_ShareColor_get_B
 plt_Plugin_Share_Abstractions_ShareColor_get_B:
 _p_13:
@@ -20737,7 +20737,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2416]
 br x16
-.word 5427
+.word 5426
 	.no_dead_strip plt_Plugin_Share_Abstractions_ShareColor_get_A
 plt_Plugin_Share_Abstractions_ShareColor_get_A:
 _p_14:
@@ -20745,7 +20745,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2424]
 br x16
-.word 5432
+.word 5431
 	.no_dead_strip plt__jit_icall_ves_icall_object_new_specific
 plt__jit_icall_ves_icall_object_new_specific:
 _p_15:
@@ -20753,7 +20753,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2432]
 br x16
-.word 5437
+.word 5436
 	.no_dead_strip plt_UIKit_UIColor__ctor_System_nfloat_System_nfloat_System_nfloat_System_nfloat
 plt_UIKit_UIColor__ctor_System_nfloat_System_nfloat_System_nfloat_System_nfloat:
 _p_16:
@@ -20761,7 +20761,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2440]
 br x16
-.word 5469
+.word 5468
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_Create
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_Create:
 _p_17:
@@ -20769,7 +20769,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2448]
 br x16
-.word 5474
+.word 5473
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_Start_Plugin_Share_ShareImplementation__OpenBrowserd__4_Plugin_Share_ShareImplementation__OpenBrowserd__4_
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_Start_Plugin_Share_ShareImplementation__OpenBrowserd__4_Plugin_Share_ShareImplementation__OpenBrowserd__4_:
 _p_18:
@@ -20777,7 +20777,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2456]
 br x16
-.word 5485
+.word 5484
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_get_Task
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_get_Task:
 _p_19:
@@ -20785,7 +20785,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2464]
 br x16
-.word 5497
+.word 5496
 	.no_dead_strip plt_Plugin_Share_ShareImplementation_Share_Plugin_Share_Abstractions_ShareMessage_Plugin_Share_Abstractions_ShareOptions_Foundation_NSString__
 plt_Plugin_Share_ShareImplementation_Share_Plugin_Share_Abstractions_ShareMessage_Plugin_Share_Abstractions_ShareOptions_Foundation_NSString__:
 _p_20:
@@ -20793,7 +20793,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2472]
 br x16
-.word 5508
+.word 5507
 	.no_dead_strip plt_string_memset_byte__int_int
 plt_string_memset_byte__int_int:
 _p_21:
@@ -20801,7 +20801,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2480]
 br x16
-.word 5510
+.word 5509
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_Start_Plugin_Share_ShareImplementation__Shared__6_Plugin_Share_ShareImplementation__Shared__6_
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_Start_Plugin_Share_ShareImplementation__Shared__6_Plugin_Share_ShareImplementation__Shared__6_:
 _p_22:
@@ -20809,7 +20809,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2488]
 br x16
-.word 5515
+.word 5514
 	.no_dead_strip plt_UIKit_UIApplication_get_SharedApplication
 plt_UIKit_UIApplication_get_SharedApplication:
 _p_23:
@@ -20817,7 +20817,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2496]
 br x16
-.word 5527
+.word 5526
 	.no_dead_strip plt_Plugin_Share_ShareImplementation_GetVisibleViewController_UIKit_UIViewController
 plt_Plugin_Share_ShareImplementation_GetVisibleViewController_UIKit_UIViewController:
 _p_24:
@@ -20825,7 +20825,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2504]
 br x16
-.word 5532
+.word 5531
 	.no_dead_strip plt_UIKit_UIActivityType_get_AssignToContact
 plt_UIKit_UIActivityType_get_AssignToContact:
 _p_25:
@@ -20833,7 +20833,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2512]
 br x16
-.word 5534
+.word 5533
 	.no_dead_strip plt_UIKit_UIActivityType_get_CopyToPasteboard
 plt_UIKit_UIActivityType_get_CopyToPasteboard:
 _p_26:
@@ -20841,7 +20841,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2520]
 br x16
-.word 5539
+.word 5538
 	.no_dead_strip plt_UIKit_UIActivityType_get_Mail
 plt_UIKit_UIActivityType_get_Mail:
 _p_27:
@@ -20849,7 +20849,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2528]
 br x16
-.word 5544
+.word 5543
 	.no_dead_strip plt_UIKit_UIActivityType_get_Message
 plt_UIKit_UIActivityType_get_Message:
 _p_28:
@@ -20857,7 +20857,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2536]
 br x16
-.word 5549
+.word 5548
 	.no_dead_strip plt_UIKit_UIActivityType_get_PostToFacebook
 plt_UIKit_UIActivityType_get_PostToFacebook:
 _p_29:
@@ -20865,7 +20865,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2544]
 br x16
-.word 5554
+.word 5553
 	.no_dead_strip plt_UIKit_UIActivityType_get_PostToTwitter
 plt_UIKit_UIActivityType_get_PostToTwitter:
 _p_30:
@@ -20873,7 +20873,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2552]
 br x16
-.word 5559
+.word 5558
 	.no_dead_strip plt_UIKit_UIActivityType_get_PostToWeibo
 plt_UIKit_UIActivityType_get_PostToWeibo:
 _p_31:
@@ -20881,7 +20881,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2560]
 br x16
-.word 5564
+.word 5563
 	.no_dead_strip plt_UIKit_UIActivityType_get_Print
 plt_UIKit_UIActivityType_get_Print:
 _p_32:
@@ -20889,7 +20889,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2568]
 br x16
-.word 5569
+.word 5568
 	.no_dead_strip plt_UIKit_UIActivityType_get_SaveToCameraRoll
 plt_UIKit_UIActivityType_get_SaveToCameraRoll:
 _p_33:
@@ -20897,7 +20897,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2576]
 br x16
-.word 5574
+.word 5573
 	.no_dead_strip plt_UIKit_UIDevice_get_CurrentDevice
 plt_UIKit_UIDevice_get_CurrentDevice:
 _p_34:
@@ -20905,7 +20905,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2584]
 br x16
-.word 5579
+.word 5578
 	.no_dead_strip plt_UIKit_UIDevice_CheckSystemVersion_int_int
 plt_UIKit_UIDevice_CheckSystemVersion_int_int:
 _p_35:
@@ -20913,7 +20913,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2592]
 br x16
-.word 5584
+.word 5583
 	.no_dead_strip plt_UIKit_UIActivityType_get_AddToReadingList
 plt_UIKit_UIActivityType_get_AddToReadingList:
 _p_36:
@@ -20921,7 +20921,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2600]
 br x16
-.word 5589
+.word 5588
 	.no_dead_strip plt_UIKit_UIActivityType_get_AirDrop
 plt_UIKit_UIActivityType_get_AirDrop:
 _p_37:
@@ -20929,7 +20929,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2608]
 br x16
-.word 5594
+.word 5593
 	.no_dead_strip plt_UIKit_UIActivityType_get_PostToFlickr
 plt_UIKit_UIActivityType_get_PostToFlickr:
 _p_38:
@@ -20937,7 +20937,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2616]
 br x16
-.word 5599
+.word 5598
 	.no_dead_strip plt_UIKit_UIActivityType_get_PostToTencentWeibo
 plt_UIKit_UIActivityType_get_PostToTencentWeibo:
 _p_39:
@@ -20945,7 +20945,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2624]
 br x16
-.word 5604
+.word 5603
 	.no_dead_strip plt_UIKit_UIActivityType_get_PostToVimeo
 plt_UIKit_UIActivityType_get_PostToVimeo:
 _p_40:
@@ -20953,7 +20953,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2632]
 br x16
-.word 5609
+.word 5608
 	.no_dead_strip plt_UIKit_UIActivityType_get_OpenInIBooks
 plt_UIKit_UIActivityType_get_OpenInIBooks:
 _p_41:
@@ -20961,7 +20961,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2640]
 br x16
-.word 5614
+.word 5613
 	.no_dead_strip plt_UIKit_UIPasteboard_get_General
 plt_UIKit_UIPasteboard_get_General:
 _p_42:
@@ -20969,7 +20969,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2648]
 br x16
-.word 5619
+.word 5618
 	.no_dead_strip plt_System_Threading_Tasks_Task_FromResult_bool_bool
 plt_System_Threading_Tasks_Task_FromResult_bool_bool:
 _p_43:
@@ -20977,7 +20977,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2656]
 br x16
-.word 5624
+.word 5623
 	.no_dead_strip plt_string_Concat_string_string
 plt_string_Concat_string_string:
 _p_44:
@@ -20985,7 +20985,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2664]
 br x16
-.word 5636
+.word 5635
 	.no_dead_strip plt_System_Console_WriteLine_string
 plt_System_Console_WriteLine_string:
 _p_45:
@@ -20993,7 +20993,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2672]
 br x16
-.word 5641
+.word 5640
 	.no_dead_strip plt__jit_icall_mono_thread_get_undeniable_exception
 plt__jit_icall_mono_thread_get_undeniable_exception:
 _p_46:
@@ -21001,7 +21001,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2680]
 br x16
-.word 5646
+.word 5645
 	.no_dead_strip plt_System_Collections_Generic_List_1_Foundation_NSString__ctor
 plt_System_Collections_Generic_List_1_Foundation_NSString__ctor:
 _p_47:
@@ -21009,7 +21009,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2688]
 br x16
-.word 5685
+.word 5684
 	.no_dead_strip plt_System_Collections_Generic_List_1_Foundation_NSString_Add_Foundation_NSString
 plt_System_Collections_Generic_List_1_Foundation_NSString_Add_Foundation_NSString:
 _p_48:
@@ -21017,7 +21017,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2696]
 br x16
-.word 5696
+.word 5695
 	.no_dead_strip plt_Plugin_Share_ShareImplementation_GetUIActivityType_Plugin_Share_Abstractions_ShareUIActivityType
 plt_Plugin_Share_ShareImplementation_GetUIActivityType_Plugin_Share_Abstractions_ShareUIActivityType:
 _p_49:
@@ -21025,7 +21025,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2704]
 br x16
-.word 5707
+.word 5706
 	.no_dead_strip plt_Plugin_Share_CrossShare__c__ctor
 plt_Plugin_Share_CrossShare__c__ctor:
 _p_50:
@@ -21033,7 +21033,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2712]
 br x16
-.word 5709
+.word 5708
 	.no_dead_strip plt_Plugin_Share_CrossShare_CreateShare
 plt_Plugin_Share_CrossShare_CreateShare:
 _p_51:
@@ -21041,7 +21041,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2720]
 br x16
-.word 5711
+.word 5710
 	.no_dead_strip plt_Plugin_Share_Abstractions_BrowserOptions__ctor
 plt_Plugin_Share_Abstractions_BrowserOptions__ctor:
 _p_52:
@@ -21049,7 +21049,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2728]
 br x16
-.word 5713
+.word 5712
 	.no_dead_strip plt_Plugin_Share_Abstractions_BrowserOptions_get_UseSafariWebViewController
 plt_Plugin_Share_Abstractions_BrowserOptions_get_UseSafariWebViewController:
 _p_53:
@@ -21057,7 +21057,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2736]
 br x16
-.word 5718
+.word 5717
 	.no_dead_strip plt_Foundation_NSUrl__ctor_string
 plt_Foundation_NSUrl__ctor_string:
 _p_54:
@@ -21065,7 +21065,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2744]
 br x16
-.word 5723
+.word 5722
 	.no_dead_strip plt_Plugin_Share_Abstractions_BrowserOptions_get_UseSafariReaderMode
 plt_Plugin_Share_Abstractions_BrowserOptions_get_UseSafariReaderMode:
 _p_55:
@@ -21073,7 +21073,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2752]
 br x16
-.word 5728
+.word 5727
 	.no_dead_strip plt_SafariServices_SFSafariViewController__ctor_Foundation_NSUrl_bool
 plt_SafariServices_SFSafariViewController__ctor_Foundation_NSUrl_bool:
 _p_56:
@@ -21081,7 +21081,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2760]
 br x16
-.word 5733
+.word 5732
 	.no_dead_strip plt_Plugin_Share_Abstractions_BrowserOptions_get_SafariBarTintColor
 plt_Plugin_Share_Abstractions_BrowserOptions_get_SafariBarTintColor:
 _p_57:
@@ -21089,7 +21089,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2768]
 br x16
-.word 5738
+.word 5737
 	.no_dead_strip plt_Plugin_Share_ShareColorExtensions_ToUIColor_Plugin_Share_Abstractions_ShareColor
 plt_Plugin_Share_ShareColorExtensions_ToUIColor_Plugin_Share_Abstractions_ShareColor:
 _p_58:
@@ -21097,7 +21097,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2776]
 br x16
-.word 5743
+.word 5742
 	.no_dead_strip plt_Plugin_Share_Abstractions_BrowserOptions_get_SafariControlTintColor
 plt_Plugin_Share_Abstractions_BrowserOptions_get_SafariControlTintColor:
 _p_59:
@@ -21105,7 +21105,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2784]
 br x16
-.word 5745
+.word 5744
 	.no_dead_strip plt_System_Threading_Tasks_Task_GetAwaiter
 plt_System_Threading_Tasks_Task_GetAwaiter:
 _p_60:
@@ -21113,7 +21113,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2792]
 br x16
-.word 5750
+.word 5749
 	.no_dead_strip plt_System_Runtime_CompilerServices_TaskAwaiter_get_IsCompleted
 plt_System_Runtime_CompilerServices_TaskAwaiter_get_IsCompleted:
 _p_61:
@@ -21121,7 +21121,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2800]
 br x16
-.word 5755
+.word 5754
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_AwaitUnsafeOnCompleted_System_Runtime_CompilerServices_TaskAwaiter_Plugin_Share_ShareImplementation__OpenBrowserd__4_System_Runtime_CompilerServices_TaskAwaiter__Plugin_Share_ShareImplementation__OpenBrowserd__4_
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_AwaitUnsafeOnCompleted_System_Runtime_CompilerServices_TaskAwaiter_Plugin_Share_ShareImplementation__OpenBrowserd__4_System_Runtime_CompilerServices_TaskAwaiter__Plugin_Share_ShareImplementation__OpenBrowserd__4_:
 _p_62:
@@ -21129,7 +21129,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2808]
 br x16
-.word 5760
+.word 5759
 	.no_dead_strip plt_System_Runtime_CompilerServices_TaskAwaiter_GetResult
 plt_System_Runtime_CompilerServices_TaskAwaiter_GetResult:
 _p_63:
@@ -21137,7 +21137,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2816]
 br x16
-.word 5772
+.word 5771
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_SetException_System_Exception
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_SetException_System_Exception:
 _p_64:
@@ -21145,7 +21145,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2824]
 br x16
-.word 5777
+.word 5776
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_SetResult_bool
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_SetResult_bool:
 _p_65:
@@ -21153,7 +21153,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2832]
 br x16
-.word 5788
+.word 5787
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_SetStateMachine_System_Runtime_CompilerServices_IAsyncStateMachine
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_SetStateMachine_System_Runtime_CompilerServices_IAsyncStateMachine:
 _p_66:
@@ -21161,7 +21161,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2840]
 br x16
-.word 5799
+.word 5798
 	.no_dead_strip plt_Plugin_Share_ShareImplementation__c__ctor
 plt_Plugin_Share_ShareImplementation__c__ctor:
 _p_67:
@@ -21169,7 +21169,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2848]
 br x16
-.word 5810
+.word 5809
 	.no_dead_strip plt_Foundation_NSString_op_Inequality_Foundation_NSString_Foundation_NSString
 plt_Foundation_NSString_op_Inequality_Foundation_NSString_Foundation_NSString:
 _p_68:
@@ -21177,7 +21177,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2856]
 br x16
-.word 5812
+.word 5811
 	.no_dead_strip plt_System_Collections_Generic_List_1_Foundation_NSObject__ctor
 plt_System_Collections_Generic_List_1_Foundation_NSObject__ctor:
 _p_69:
@@ -21185,7 +21185,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2864]
 br x16
-.word 5817
+.word 5816
 	.no_dead_strip plt_Plugin_Share_Abstractions_ShareMessage_get_Text
 plt_Plugin_Share_Abstractions_ShareMessage_get_Text:
 _p_70:
@@ -21193,7 +21193,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2872]
 br x16
-.word 5828
+.word 5827
 	.no_dead_strip plt_Foundation_NSString__ctor_string
 plt_Foundation_NSString__ctor_string:
 _p_71:
@@ -21201,7 +21201,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2880]
 br x16
-.word 5833
+.word 5832
 	.no_dead_strip plt_Plugin_Share_Abstractions_ShareMessage_get_Title
 plt_Plugin_Share_Abstractions_ShareMessage_get_Title:
 _p_72:
@@ -21209,7 +21209,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2888]
 br x16
-.word 5838
+.word 5837
 	.no_dead_strip plt_Plugin_Share_ShareActivityItemSource__ctor_Foundation_NSObject_string
 plt_Plugin_Share_ShareActivityItemSource__ctor_Foundation_NSObject_string:
 _p_73:
@@ -21217,7 +21217,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2896]
 br x16
-.word 5843
+.word 5842
 	.no_dead_strip plt_System_Collections_Generic_List_1_Foundation_NSObject_Add_Foundation_NSObject
 plt_System_Collections_Generic_List_1_Foundation_NSObject_Add_Foundation_NSObject:
 _p_74:
@@ -21225,7 +21225,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2904]
 br x16
-.word 5845
+.word 5844
 	.no_dead_strip plt_Plugin_Share_Abstractions_ShareMessage_get_Url
 plt_Plugin_Share_Abstractions_ShareMessage_get_Url:
 _p_75:
@@ -21233,7 +21233,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2912]
 br x16
-.word 5856
+.word 5855
 	.no_dead_strip plt_Foundation_NSUrl_FromString_string
 plt_Foundation_NSUrl_FromString_string:
 _p_76:
@@ -21241,7 +21241,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2920]
 br x16
-.word 5861
+.word 5860
 	.no_dead_strip plt_System_Collections_Generic_List_1_Foundation_NSObject_ToArray
 plt_System_Collections_Generic_List_1_Foundation_NSObject_ToArray:
 _p_77:
@@ -21249,7 +21249,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2928]
 br x16
-.word 5866
+.word 5865
 	.no_dead_strip plt_UIKit_UIActivityViewController__ctor_Foundation_NSObject___UIKit_UIActivity__
 plt_UIKit_UIActivityViewController__ctor_Foundation_NSObject___UIKit_UIActivity__:
 _p_78:
@@ -21257,7 +21257,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2936]
 br x16
-.word 5877
+.word 5876
 	.no_dead_strip plt_Plugin_Share_Abstractions_ShareOptions_get_ExcludedUIActivityTypes
 plt_Plugin_Share_Abstractions_ShareOptions_get_ExcludedUIActivityTypes:
 _p_79:
@@ -21265,7 +21265,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2944]
 br x16
-.word 5882
+.word 5881
 	.no_dead_strip plt_System_Linq_Enumerable_Select_Plugin_Share_Abstractions_ShareUIActivityType_Foundation_NSString_System_Collections_Generic_IEnumerable_1_Plugin_Share_Abstractions_ShareUIActivityType_System_Func_2_Plugin_Share_Abstractions_ShareUIActivityType_Foundation_NSString
 plt_System_Linq_Enumerable_Select_Plugin_Share_Abstractions_ShareUIActivityType_Foundation_NSString_System_Collections_Generic_IEnumerable_1_Plugin_Share_Abstractions_ShareUIActivityType_System_Func_2_Plugin_Share_Abstractions_ShareUIActivityType_Foundation_NSString:
 _p_80:
@@ -21273,7 +21273,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2952]
 br x16
-.word 5887
+.word 5886
 	.no_dead_strip plt_System_Linq_Enumerable_Where_Foundation_NSString_System_Collections_Generic_IEnumerable_1_Foundation_NSString_System_Func_2_Foundation_NSString_bool
 plt_System_Linq_Enumerable_Where_Foundation_NSString_System_Collections_Generic_IEnumerable_1_Foundation_NSString_System_Func_2_Foundation_NSString_bool:
 _p_81:
@@ -21281,7 +21281,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2960]
 br x16
-.word 5899
+.word 5898
 	.no_dead_strip plt_System_Linq_Enumerable_ToArray_Foundation_NSString_System_Collections_Generic_IEnumerable_1_Foundation_NSString
 plt_System_Linq_Enumerable_ToArray_Foundation_NSString_System_Collections_Generic_IEnumerable_1_Foundation_NSString:
 _p_82:
@@ -21289,7 +21289,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2968]
 br x16
-.word 5911
+.word 5910
 	.no_dead_strip plt_Plugin_Share_ShareImplementation_get_ExcludedUIActivityTypes
 plt_Plugin_Share_ShareImplementation_get_ExcludedUIActivityTypes:
 _p_83:
@@ -21297,7 +21297,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2976]
 br x16
-.word 5923
+.word 5922
 	.no_dead_strip plt_System_Collections_Generic_List_1_Foundation_NSString_ToArray
 plt_System_Collections_Generic_List_1_Foundation_NSString_ToArray:
 _p_84:
@@ -21305,7 +21305,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2984]
 br x16
-.word 5925
+.word 5924
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_AwaitUnsafeOnCompleted_System_Runtime_CompilerServices_TaskAwaiter_Plugin_Share_ShareImplementation__Shared__6_System_Runtime_CompilerServices_TaskAwaiter__Plugin_Share_ShareImplementation__Shared__6_
 plt_System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_bool_AwaitUnsafeOnCompleted_System_Runtime_CompilerServices_TaskAwaiter_Plugin_Share_ShareImplementation__Shared__6_System_Runtime_CompilerServices_TaskAwaiter__Plugin_Share_ShareImplementation__Shared__6_:
 _p_85:
@@ -21313,7 +21313,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #2992]
 br x16
-.word 5936
+.word 5935
 	.no_dead_strip plt__jit_icall_mono_thread_interruption_checkpoint
 plt__jit_icall_mono_thread_interruption_checkpoint:
 _p_86:
@@ -21321,7 +21321,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3000]
 br x16
-.word 5948
+.word 5947
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_SetStateMachine_System_Runtime_CompilerServices_IAsyncStateMachine
 plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_SetStateMachine_System_Runtime_CompilerServices_IAsyncStateMachine:
 _p_87:
@@ -21329,7 +21329,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3008]
 br x16
-.word 5986
+.word 5985
 	.no_dead_strip plt__rgctx_fetch_0
 plt__rgctx_fetch_0:
 _p_88:
@@ -21337,7 +21337,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3016]
 br x16
-.word 6018
+.word 6017
 	.no_dead_strip plt__jit_icall_mono_generic_class_init
 plt__jit_icall_mono_generic_class_init:
 _p_89:
@@ -21345,7 +21345,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3024]
 br x16
-.word 6026
+.word 6025
 	.no_dead_strip plt__rgctx_fetch_1
 plt__rgctx_fetch_1:
 _p_90:
@@ -21353,7 +21353,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3032]
 br x16
-.word 6052
+.word 6051
 	.no_dead_strip plt__rgctx_fetch_2
 plt__rgctx_fetch_2:
 _p_91:
@@ -21361,7 +21361,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3040]
 br x16
-.word 6093
+.word 6092
 	.no_dead_strip plt__rgctx_fetch_3
 plt__rgctx_fetch_3:
 _p_92:
@@ -21369,7 +21369,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3048]
 br x16
-.word 6101
+.word 6100
 	.no_dead_strip plt_System_Threading_Tasks_AsyncCausalityTracer_get_LoggingOn
 plt_System_Threading_Tasks_AsyncCausalityTracer_get_LoggingOn:
 _p_93:
@@ -21377,7 +21377,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3056]
 br x16
-.word 6124
+.word 6123
 	.no_dead_strip plt_System_Threading_Tasks_Task_get_Id
 plt_System_Threading_Tasks_Task_get_Id:
 _p_94:
@@ -21385,7 +21385,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3064]
 br x16
-.word 6129
+.word 6128
 	.no_dead_strip plt_System_Threading_Tasks_AsyncCausalityTracer_TraceOperationCompletion_System_Threading_Tasks_CausalityTraceLevel_int_System_Threading_Tasks_AsyncCausalityStatus
 plt_System_Threading_Tasks_AsyncCausalityTracer_TraceOperationCompletion_System_Threading_Tasks_CausalityTraceLevel_int_System_Threading_Tasks_AsyncCausalityStatus:
 _p_95:
@@ -21393,7 +21393,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3072]
 br x16
-.word 6134
+.word 6133
 	.no_dead_strip plt_System_Threading_Tasks_Task_RemoveFromActiveTasks_int
 plt_System_Threading_Tasks_Task_RemoveFromActiveTasks_int:
 _p_96:
@@ -21401,7 +21401,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3080]
 br x16
-.word 6139
+.word 6138
 	.no_dead_strip plt__rgctx_fetch_4
 plt__rgctx_fetch_4:
 _p_97:
@@ -21409,7 +21409,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3088]
 br x16
-.word 6144
+.word 6143
 	.no_dead_strip plt__rgctx_fetch_5
 plt__rgctx_fetch_5:
 _p_98:
@@ -21417,7 +21417,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3096]
 br x16
-.word 6152
+.word 6151
 	.no_dead_strip plt__jit_icall_mono_helper_ldstr_mscorlib
 plt__jit_icall_mono_helper_ldstr_mscorlib:
 _p_99:
@@ -21425,7 +21425,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3104]
 br x16
-.word 6175
+.word 6174
 	.no_dead_strip plt_System_Environment_GetResourceString_string
 plt_System_Environment_GetResourceString_string:
 _p_100:
@@ -21433,7 +21433,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3112]
 br x16
-.word 6204
+.word 6203
 	.no_dead_strip plt__rgctx_fetch_6
 plt__rgctx_fetch_6:
 _p_101:
@@ -21441,7 +21441,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3120]
 br x16
-.word 6227
+.word 6226
 	.no_dead_strip plt__rgctx_fetch_7
 plt__rgctx_fetch_7:
 _p_102:
@@ -21449,7 +21449,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3128]
 br x16
-.word 6235
+.word 6234
 	.no_dead_strip plt__rgctx_fetch_8
 plt__rgctx_fetch_8:
 _p_103:
@@ -21457,7 +21457,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3136]
 br x16
-.word 6276
+.word 6275
 	.no_dead_strip plt__rgctx_fetch_9
 plt__rgctx_fetch_9:
 _p_104:
@@ -21465,7 +21465,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3144]
 br x16
-.word 6284
+.word 6283
 	.no_dead_strip plt__rgctx_fetch_10
 plt__rgctx_fetch_10:
 _p_105:
@@ -21473,7 +21473,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3152]
 br x16
-.word 6307
+.word 6306
 	.no_dead_strip plt__rgctx_fetch_11
 plt__rgctx_fetch_11:
 _p_106:
@@ -21481,7 +21481,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3160]
 br x16
-.word 6315
+.word 6314
 	.no_dead_strip plt_System_OperationCanceledException_get_CancellationToken
 plt_System_OperationCanceledException_get_CancellationToken:
 _p_107:
@@ -21489,7 +21489,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3168]
 br x16
-.word 6338
+.word 6337
 	.no_dead_strip plt__rgctx_fetch_12
 plt__rgctx_fetch_12:
 _p_108:
@@ -21497,7 +21497,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3176]
 br x16
-.word 6343
+.word 6342
 	.no_dead_strip plt__rgctx_fetch_13
 plt__rgctx_fetch_13:
 _p_109:
@@ -21505,7 +21505,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3184]
 br x16
-.word 6384
+.word 6383
 	.no_dead_strip plt__rgctx_fetch_14
 plt__rgctx_fetch_14:
 _p_110:
@@ -21513,7 +21513,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3192]
 br x16
-.word 6392
+.word 6391
 	.no_dead_strip plt_System_Threading_Tasks_Task_SetNotificationForWaitCompletion_bool
 plt_System_Threading_Tasks_Task_SetNotificationForWaitCompletion_bool:
 _p_111:
@@ -21521,7 +21521,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3200]
 br x16
-.word 6415
+.word 6414
 	.no_dead_strip plt__rgctx_fetch_15
 plt__rgctx_fetch_15:
 _p_112:
@@ -21529,7 +21529,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3208]
 br x16
-.word 6438
+.word 6437
 	.no_dead_strip plt__rgctx_fetch_16
 plt__rgctx_fetch_16:
 _p_113:
@@ -21537,7 +21537,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3216]
 br x16
-.word 6446
+.word 6445
 	.no_dead_strip plt__rgctx_fetch_17
 plt__rgctx_fetch_17:
 _p_114:
@@ -21545,7 +21545,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3224]
 br x16
-.word 6487
+.word 6486
 	.no_dead_strip plt__rgctx_fetch_18
 plt__rgctx_fetch_18:
 _p_115:
@@ -21553,7 +21553,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3232]
 br x16
-.word 6495
+.word 6494
 	.no_dead_strip plt__rgctx_fetch_19
 plt__rgctx_fetch_19:
 _p_116:
@@ -21561,7 +21561,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3240]
 br x16
-.word 6503
+.word 6502
 	.no_dead_strip plt_System_Runtime_CompilerServices_JitHelpers_UnsafeCast_System_Threading_Tasks_Task_1_TResult_BOOL_object
 plt_System_Runtime_CompilerServices_JitHelpers_UnsafeCast_System_Threading_Tasks_Task_1_TResult_BOOL_object:
 _p_117:
@@ -21569,7 +21569,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3248]
 br x16
-.word 6527
+.word 6526
 	.no_dead_strip plt_System_Decimal_op_Equality_System_Decimal_System_Decimal
 plt_System_Decimal_op_Equality_System_Decimal_System_Decimal:
 _p_118:
@@ -21577,7 +21577,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3256]
 br x16
-.word 6547
+.word 6546
 	.no_dead_strip plt_intptr_op_Equality_intptr_intptr
 plt_intptr_op_Equality_intptr_intptr:
 _p_119:
@@ -21585,7 +21585,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3264]
 br x16
-.word 6552
+.word 6551
 	.no_dead_strip plt_uintptr_op_Equality_uintptr_uintptr
 plt_uintptr_op_Equality_uintptr_uintptr:
 _p_120:
@@ -21593,7 +21593,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3272]
 br x16
-.word 6557
+.word 6556
 	.no_dead_strip plt__rgctx_fetch_20
 plt__rgctx_fetch_20:
 _p_121:
@@ -21601,7 +21601,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3280]
 br x16
-.word 6562
+.word 6561
 	.no_dead_strip plt__rgctx_fetch_21
 plt__rgctx_fetch_21:
 _p_122:
@@ -21609,7 +21609,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3288]
 br x16
-.word 6570
+.word 6569
 	.no_dead_strip plt__rgctx_fetch_22
 plt__rgctx_fetch_22:
 _p_123:
@@ -21617,7 +21617,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3296]
 br x16
-.word 6578
+.word 6577
 	.no_dead_strip plt__rgctx_fetch_23
 plt__rgctx_fetch_23:
 _p_124:
@@ -21625,7 +21625,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3304]
 br x16
-.word 6586
+.word 6585
 	.no_dead_strip plt__rgctx_fetch_24
 plt__rgctx_fetch_24:
 _p_125:
@@ -21633,7 +21633,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3312]
 br x16
-.word 6627
+.word 6626
 	.no_dead_strip plt__rgctx_fetch_25
 plt__rgctx_fetch_25:
 _p_126:
@@ -21641,7 +21641,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3320]
 br x16
-.word 6651
+.word 6650
 	.no_dead_strip plt__rgctx_fetch_26
 plt__rgctx_fetch_26:
 _p_127:
@@ -21649,7 +21649,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3328]
 br x16
-.word 6675
+.word 6674
 	.no_dead_strip plt_System_Threading_Tasks_Task__ctor
 plt_System_Threading_Tasks_Task__ctor:
 _p_128:
@@ -21657,7 +21657,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3336]
 br x16
-.word 6683
+.word 6682
 	.no_dead_strip plt_System_Threading_Tasks_Task__ctor_object_System_Threading_Tasks_TaskCreationOptions_bool
 plt_System_Threading_Tasks_Task__ctor_object_System_Threading_Tasks_TaskCreationOptions_bool:
 _p_129:
@@ -21665,7 +21665,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3344]
 br x16
-.word 6688
+.word 6687
 	.no_dead_strip plt_System_Threading_Tasks_Task__ctor_bool_System_Threading_Tasks_TaskCreationOptions_System_Threading_CancellationToken
 plt_System_Threading_Tasks_Task__ctor_bool_System_Threading_Tasks_TaskCreationOptions_System_Threading_CancellationToken:
 _p_130:
@@ -21673,7 +21673,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3352]
 br x16
-.word 6693
+.word 6692
 	.no_dead_strip plt_System_Threading_Tasks_Task_InternalCurrentIfAttached_System_Threading_Tasks_TaskCreationOptions
 plt_System_Threading_Tasks_Task_InternalCurrentIfAttached_System_Threading_Tasks_TaskCreationOptions:
 _p_131:
@@ -21681,7 +21681,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3360]
 br x16
-.word 6698
+.word 6697
 	.no_dead_strip plt__rgctx_fetch_27
 plt__rgctx_fetch_27:
 _p_132:
@@ -21689,7 +21689,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3368]
 br x16
-.word 6721
+.word 6720
 	.no_dead_strip plt_System_Threading_Tasks_Task_PossiblyCaptureContext_System_Threading_StackCrawlMark_
 plt_System_Threading_Tasks_Task_PossiblyCaptureContext_System_Threading_StackCrawlMark_:
 _p_133:
@@ -21697,7 +21697,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3376]
 br x16
-.word 6744
+.word 6743
 	.no_dead_strip plt__rgctx_fetch_28
 plt__rgctx_fetch_28:
 _p_134:
@@ -21705,7 +21705,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3384]
 br x16
-.word 6767
+.word 6766
 	.no_dead_strip plt_System_Threading_Tasks_Task__ctor_System_Delegate_object_System_Threading_Tasks_Task_System_Threading_CancellationToken_System_Threading_Tasks_TaskCreationOptions_System_Threading_Tasks_InternalTaskOptions_System_Threading_Tasks_TaskScheduler
 plt_System_Threading_Tasks_Task__ctor_System_Delegate_object_System_Threading_Tasks_Task_System_Threading_CancellationToken_System_Threading_Tasks_TaskCreationOptions_System_Threading_Tasks_InternalTaskOptions_System_Threading_Tasks_TaskScheduler:
 _p_135:
@@ -21713,7 +21713,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3392]
 br x16
-.word 6790
+.word 6789
 	.no_dead_strip plt__rgctx_fetch_29
 plt__rgctx_fetch_29:
 _p_136:
@@ -21721,7 +21721,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3400]
 br x16
-.word 6813
+.word 6812
 	.no_dead_strip plt__rgctx_fetch_30
 plt__rgctx_fetch_30:
 _p_137:
@@ -21729,7 +21729,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3408]
 br x16
-.word 6854
+.word 6853
 	.no_dead_strip plt__rgctx_fetch_31
 plt__rgctx_fetch_31:
 _p_138:
@@ -21737,7 +21737,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3416]
 br x16
-.word 6862
+.word 6861
 	.no_dead_strip plt_System_Threading_Tasks_Task_ScheduleAndStart_bool
 plt_System_Threading_Tasks_Task_ScheduleAndStart_bool:
 _p_139:
@@ -21745,7 +21745,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3424]
 br x16
-.word 6885
+.word 6884
 	.no_dead_strip plt__rgctx_fetch_32
 plt__rgctx_fetch_32:
 _p_140:
@@ -21753,7 +21753,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3432]
 br x16
-.word 6908
+.word 6907
 	.no_dead_strip plt__rgctx_fetch_33
 plt__rgctx_fetch_33:
 _p_141:
@@ -21761,7 +21761,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3440]
 br x16
-.word 6916
+.word 6915
 	.no_dead_strip plt_System_Threading_Tasks_Task_get_IsCompleted
 plt_System_Threading_Tasks_Task_get_IsCompleted:
 _p_142:
@@ -21769,7 +21769,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3448]
 br x16
-.word 6939
+.word 6938
 	.no_dead_strip plt_System_Threading_Tasks_Task_AtomicStateUpdate_int_int
 plt_System_Threading_Tasks_Task_AtomicStateUpdate_int_int:
 _p_143:
@@ -21777,7 +21777,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3456]
 br x16
-.word 6944
+.word 6943
 	.no_dead_strip plt_System_Threading_Tasks_Task_ContingentProperties_SetCompleted
 plt_System_Threading_Tasks_Task_ContingentProperties_SetCompleted:
 _p_144:
@@ -21785,7 +21785,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3464]
 br x16
-.word 6949
+.word 6948
 	.no_dead_strip plt_System_Threading_Tasks_Task_FinishStageThree
 plt_System_Threading_Tasks_Task_FinishStageThree:
 _p_145:
@@ -21793,7 +21793,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3472]
 br x16
-.word 6954
+.word 6953
 	.no_dead_strip plt__rgctx_fetch_34
 plt__rgctx_fetch_34:
 _p_146:
@@ -21801,7 +21801,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3480]
 br x16
-.word 6977
+.word 6976
 	.no_dead_strip plt_System_Threading_Tasks_Task_get_IsWaitNotificationEnabledOrNotRanToCompletion
 plt_System_Threading_Tasks_Task_get_IsWaitNotificationEnabledOrNotRanToCompletion:
 _p_147:
@@ -21809,7 +21809,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3488]
 br x16
-.word 7000
+.word 6999
 	.no_dead_strip plt__rgctx_fetch_35
 plt__rgctx_fetch_35:
 _p_148:
@@ -21817,7 +21817,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3496]
 br x16
-.word 7023
+.word 7022
 	.no_dead_strip plt_System_Threading_Tasks_Task_InternalWait_int_System_Threading_CancellationToken
 plt_System_Threading_Tasks_Task_InternalWait_int_System_Threading_CancellationToken:
 _p_149:
@@ -21825,7 +21825,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3504]
 br x16
-.word 7046
+.word 7045
 	.no_dead_strip plt_System_Threading_Tasks_Task_NotifyDebuggerOfWaitCompletionIfNecessary
 plt_System_Threading_Tasks_Task_NotifyDebuggerOfWaitCompletionIfNecessary:
 _p_150:
@@ -21833,7 +21833,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3512]
 br x16
-.word 7051
+.word 7050
 	.no_dead_strip plt_System_Threading_Tasks_Task_get_IsRanToCompletion
 plt_System_Threading_Tasks_Task_get_IsRanToCompletion:
 _p_151:
@@ -21841,7 +21841,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3520]
 br x16
-.word 7056
+.word 7055
 	.no_dead_strip plt_System_Threading_Tasks_Task_ThrowIfExceptional_bool
 plt_System_Threading_Tasks_Task_ThrowIfExceptional_bool:
 _p_152:
@@ -21849,7 +21849,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3528]
 br x16
-.word 7061
+.word 7060
 	.no_dead_strip plt_System_Threading_Tasks_Task_EnsureContingentPropertiesInitialized_bool
 plt_System_Threading_Tasks_Task_EnsureContingentPropertiesInitialized_bool:
 _p_153:
@@ -21857,7 +21857,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3536]
 br x16
-.word 7066
+.word 7065
 	.no_dead_strip plt_System_Threading_Tasks_Task_AddException_object
 plt_System_Threading_Tasks_Task_AddException_object:
 _p_154:
@@ -21865,7 +21865,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3544]
 br x16
-.word 7071
+.word 7070
 	.no_dead_strip plt_System_Threading_Tasks_Task_Finish_bool
 plt_System_Threading_Tasks_Task_Finish_bool:
 _p_155:
@@ -21873,7 +21873,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3552]
 br x16
-.word 7076
+.word 7075
 	.no_dead_strip plt__rgctx_fetch_36
 plt__rgctx_fetch_36:
 _p_156:
@@ -21881,7 +21881,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3560]
 br x16
-.word 7099
+.word 7098
 	.no_dead_strip plt_System_Threading_Tasks_Task_RecordInternalCancellationRequest_System_Threading_CancellationToken_object
 plt_System_Threading_Tasks_Task_RecordInternalCancellationRequest_System_Threading_CancellationToken_object:
 _p_157:
@@ -21889,7 +21889,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3568]
 br x16
-.word 7122
+.word 7121
 	.no_dead_strip plt_System_Threading_Tasks_Task_CancellationCleanupLogic
 plt_System_Threading_Tasks_Task_CancellationCleanupLogic:
 _p_158:
@@ -21897,7 +21897,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3576]
 br x16
-.word 7127
+.word 7126
 	.no_dead_strip plt__rgctx_fetch_37
 plt__rgctx_fetch_37:
 _p_159:
@@ -21905,7 +21905,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3584]
 br x16
-.word 7150
+.word 7149
 	.no_dead_strip plt__rgctx_fetch_38
 plt__rgctx_fetch_38:
 _p_160:
@@ -21913,7 +21913,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3592]
 br x16
-.word 7158
+.word 7157
 	.no_dead_strip plt__rgctx_fetch_39
 plt__rgctx_fetch_39:
 _p_161:
@@ -21921,7 +21921,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3600]
 br x16
-.word 7193
+.word 7192
 	.no_dead_strip plt_wrapper_castclass_object___isinst_with_cache_object_intptr_intptr
 plt_wrapper_castclass_object___isinst_with_cache_object_intptr_intptr:
 _p_162:
@@ -21929,7 +21929,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3608]
 br x16
-.word 7201
+.word 7200
 	.no_dead_strip plt__rgctx_fetch_40
 plt__rgctx_fetch_40:
 _p_163:
@@ -21937,7 +21937,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3616]
 br x16
-.word 7222
+.word 7221
 	.no_dead_strip plt__rgctx_fetch_41
 plt__rgctx_fetch_41:
 _p_164:
@@ -21945,7 +21945,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3624]
 br x16
-.word 7257
+.word 7256
 	.no_dead_strip plt__rgctx_fetch_42
 plt__rgctx_fetch_42:
 _p_165:
@@ -21953,7 +21953,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3632]
 br x16
-.word 7265
+.word 7264
 	.no_dead_strip plt__rgctx_fetch_43
 plt__rgctx_fetch_43:
 _p_166:
@@ -21961,7 +21961,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3640]
 br x16
-.word 7315
+.word 7314
 	.no_dead_strip plt__rgctx_fetch_44
 plt__rgctx_fetch_44:
 _p_167:
@@ -21969,7 +21969,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3648]
 br x16
-.word 7323
+.word 7322
 	.no_dead_strip plt__rgctx_fetch_45
 plt__rgctx_fetch_45:
 _p_168:
@@ -21977,7 +21977,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3656]
 br x16
-.word 7373
+.word 7372
 	.no_dead_strip plt__rgctx_fetch_46
 plt__rgctx_fetch_46:
 _p_169:
@@ -21985,7 +21985,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3664]
 br x16
-.word 7381
+.word 7380
 	.no_dead_strip plt__rgctx_fetch_47
 plt__rgctx_fetch_47:
 _p_170:
@@ -21993,7 +21993,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3672]
 br x16
-.word 7404
+.word 7403
 	.no_dead_strip plt__rgctx_fetch_48
 plt__rgctx_fetch_48:
 _p_171:
@@ -22001,7 +22001,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3680]
 br x16
-.word 7421
+.word 7420
 	.no_dead_strip plt__rgctx_fetch_49
 plt__rgctx_fetch_49:
 _p_172:
@@ -22009,7 +22009,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3688]
 br x16
-.word 7429
+.word 7428
 	.no_dead_strip plt__rgctx_fetch_50
 plt__rgctx_fetch_50:
 _p_173:
@@ -22017,7 +22017,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3696]
 br x16
-.word 7437
+.word 7436
 	.no_dead_strip plt__jit_icall_mono_ldftn
 plt__jit_icall_mono_ldftn:
 _p_174:
@@ -22025,7 +22025,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3704]
 br x16
-.word 7460
+.word 7459
 	.no_dead_strip plt__rgctx_fetch_51
 plt__rgctx_fetch_51:
 _p_175:
@@ -22033,7 +22033,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3712]
 br x16
-.word 7485
+.word 7484
 	.no_dead_strip plt_System_Func_2_System_Threading_Tasks_Task_1_System_Threading_Tasks_Task_System_Threading_Tasks_Task_1_TResult_BOOL__ctor_object_intptr
 plt_System_Func_2_System_Threading_Tasks_Task_1_System_Threading_Tasks_Task_System_Threading_Tasks_Task_1_TResult_BOOL__ctor_object_intptr:
 _p_176:
@@ -22041,7 +22041,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3720]
 br x16
-.word 7493
+.word 7492
 	.no_dead_strip plt__rgctx_fetch_52
 plt__rgctx_fetch_52:
 _p_177:
@@ -22049,7 +22049,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3728]
 br x16
-.word 7533
+.word 7532
 	.no_dead_strip plt_System_Threading_Tasks_TaskFactory_CheckMultiTaskContinuationOptions_System_Threading_Tasks_TaskContinuationOptions
 plt_System_Threading_Tasks_TaskFactory_CheckMultiTaskContinuationOptions_System_Threading_Tasks_TaskContinuationOptions:
 _p_178:
@@ -22057,7 +22057,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3736]
 br x16
-.word 7556
+.word 7555
 	.no_dead_strip plt_System_Threading_Tasks_TaskFactory_CheckCreationOptions_System_Threading_Tasks_TaskCreationOptions
 plt_System_Threading_Tasks_TaskFactory_CheckCreationOptions_System_Threading_Tasks_TaskCreationOptions:
 _p_179:
@@ -22065,7 +22065,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3744]
 br x16
-.word 7561
+.word 7560
 	.no_dead_strip plt__rgctx_fetch_53
 plt__rgctx_fetch_53:
 _p_180:
@@ -22073,7 +22073,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3752]
 br x16
-.word 7593
+.word 7592
 	.no_dead_strip plt__rgctx_fetch_54
 plt__rgctx_fetch_54:
 _p_181:
@@ -22081,7 +22081,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3760]
 br x16
-.word 7601
+.word 7600
 	.no_dead_strip plt__jit_icall_mono_thread_self_abort
 plt__jit_icall_mono_thread_self_abort:
 _p_182:
@@ -22089,7 +22089,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3768]
 br x16
-.word 7624
+.word 7623
 	.no_dead_strip plt__rgctx_fetch_55
 plt__rgctx_fetch_55:
 _p_183:
@@ -22097,7 +22097,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3776]
 br x16
-.word 7667
+.word 7666
 	.no_dead_strip plt__rgctx_fetch_56
 plt__rgctx_fetch_56:
 _p_184:
@@ -22105,7 +22105,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3784]
 br x16
-.word 7675
+.word 7674
 	.no_dead_strip plt__rgctx_fetch_57
 plt__rgctx_fetch_57:
 _p_185:
@@ -22113,7 +22113,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3792]
 br x16
-.word 7698
+.word 7697
 	.no_dead_strip plt_System_Threading_Tasks_TaskExceptionHolder_MarkAsHandled_bool
 plt_System_Threading_Tasks_TaskExceptionHolder_MarkAsHandled_bool:
 _p_186:
@@ -22121,7 +22121,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3800]
 br x16
-.word 7721
+.word 7720
 	.no_dead_strip plt__rgctx_fetch_58
 plt__rgctx_fetch_58:
 _p_187:
@@ -22129,7 +22129,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3808]
 br x16
-.word 7726
+.word 7725
 	.no_dead_strip plt__rgctx_fetch_59
 plt__rgctx_fetch_59:
 _p_188:
@@ -22137,7 +22137,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3816]
 br x16
-.word 7749
+.word 7748
 	.no_dead_strip plt__rgctx_fetch_60
 plt__rgctx_fetch_60:
 _p_189:
@@ -22145,7 +22145,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3824]
 br x16
-.word 7790
+.word 7789
 	.no_dead_strip plt__rgctx_fetch_61
 plt__rgctx_fetch_61:
 _p_190:
@@ -22153,7 +22153,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3832]
 br x16
-.word 7798
+.word 7797
 	.no_dead_strip plt__rgctx_fetch_62
 plt__rgctx_fetch_62:
 _p_191:
@@ -22161,7 +22161,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3840]
 br x16
-.word 7848
+.word 7847
 	.no_dead_strip plt__rgctx_fetch_63
 plt__rgctx_fetch_63:
 _p_192:
@@ -22169,7 +22169,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3848]
 br x16
-.word 7856
+.word 7855
 	.no_dead_strip plt_System_Threading_Tasks_TaskFactory_CheckFromAsyncOptions_System_Threading_Tasks_TaskCreationOptions_bool
 plt_System_Threading_Tasks_TaskFactory_CheckFromAsyncOptions_System_Threading_Tasks_TaskCreationOptions_bool:
 _p_193:
@@ -22177,7 +22177,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3856]
 br x16
-.word 7879
+.word 7878
 	.no_dead_strip plt__rgctx_fetch_64
 plt__rgctx_fetch_64:
 _p_194:
@@ -22185,7 +22185,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3864]
 br x16
-.word 7884
+.word 7883
 	.no_dead_strip plt__rgctx_fetch_65
 plt__rgctx_fetch_65:
 _p_195:
@@ -22193,7 +22193,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3872]
 br x16
-.word 7892
+.word 7891
 	.no_dead_strip plt_System_Delegate_get_Method
 plt_System_Delegate_get_Method:
 _p_196:
@@ -22201,7 +22201,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3880]
 br x16
-.word 7915
+.word 7914
 	.no_dead_strip plt_System_Threading_Tasks_AsyncCausalityTracer_TraceOperationCreation_System_Threading_Tasks_CausalityTraceLevel_int_string_ulong
 plt_System_Threading_Tasks_AsyncCausalityTracer_TraceOperationCreation_System_Threading_Tasks_CausalityTraceLevel_int_string_ulong:
 _p_197:
@@ -22209,7 +22209,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3888]
 br x16
-.word 7920
+.word 7919
 	.no_dead_strip plt_System_Threading_Tasks_Task_AddToActiveTasks_System_Threading_Tasks_Task
 plt_System_Threading_Tasks_Task_AddToActiveTasks_System_Threading_Tasks_Task:
 _p_198:
@@ -22217,7 +22217,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3896]
 br x16
-.word 7925
+.word 7924
 	.no_dead_strip plt__rgctx_fetch_66
 plt__rgctx_fetch_66:
 _p_199:
@@ -22225,7 +22225,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3904]
 br x16
-.word 7939
+.word 7938
 	.no_dead_strip plt__rgctx_fetch_67
 plt__rgctx_fetch_67:
 _p_200:
@@ -22233,7 +22233,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3912]
 br x16
-.word 7947
+.word 7946
 	.no_dead_strip plt_System_Threading_AtomicBoolean__ctor
 plt_System_Threading_AtomicBoolean__ctor:
 _p_201:
@@ -22241,7 +22241,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3920]
 br x16
-.word 7970
+.word 7969
 	.no_dead_strip plt__rgctx_fetch_68
 plt__rgctx_fetch_68:
 _p_202:
@@ -22249,7 +22249,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3928]
 br x16
-.word 7975
+.word 7974
 	.no_dead_strip plt__rgctx_fetch_69
 plt__rgctx_fetch_69:
 _p_203:
@@ -22257,7 +22257,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3936]
 br x16
-.word 7998
+.word 7997
 	.no_dead_strip plt_System_Threading_AtomicBoolean_TryRelaxedSet
 plt_System_Threading_AtomicBoolean_TryRelaxedSet:
 _p_204:
@@ -22265,7 +22265,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3944]
 br x16
-.word 8021
+.word 8020
 	.no_dead_strip plt__rgctx_fetch_70
 plt__rgctx_fetch_70:
 _p_205:
@@ -22273,7 +22273,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3952]
 br x16
-.word 8026
+.word 8025
 	.no_dead_strip plt__rgctx_fetch_71
 plt__rgctx_fetch_71:
 _p_206:
@@ -22281,7 +22281,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3960]
 br x16
-.word 8034
+.word 8033
 	.no_dead_strip plt__rgctx_fetch_72
 plt__rgctx_fetch_72:
 _p_207:
@@ -22289,7 +22289,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3968]
 br x16
-.word 8057
+.word 8056
 	.no_dead_strip plt__rgctx_fetch_73
 plt__rgctx_fetch_73:
 _p_208:
@@ -22297,7 +22297,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3976]
 br x16
-.word 8080
+.word 8079
 	.no_dead_strip plt__rgctx_fetch_74
 plt__rgctx_fetch_74:
 _p_209:
@@ -22305,7 +22305,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3984]
 br x16
-.word 8103
+.word 8102
 	.no_dead_strip plt__jit_icall_mono_arch_rethrow_exception
 plt__jit_icall_mono_arch_rethrow_exception:
 _p_210:
@@ -22313,7 +22313,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #3992]
 br x16
-.word 8126
+.word 8125
 	.no_dead_strip plt__rgctx_fetch_75
 plt__rgctx_fetch_75:
 _p_211:
@@ -22321,7 +22321,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #4000]
 br x16
-.word 8182
+.word 8181
 	.no_dead_strip plt__rgctx_fetch_76
 plt__rgctx_fetch_76:
 _p_212:
@@ -22329,7 +22329,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #4008]
 br x16
-.word 8190
+.word 8189
 	.no_dead_strip plt__rgctx_fetch_77
 plt__rgctx_fetch_77:
 _p_213:
@@ -22337,7 +22337,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #4016]
 br x16
-.word 8206
+.word 8205
 	.no_dead_strip plt_System_Array_InternalEnumerator_1_T_REF__ctor_System_Array
 plt_System_Array_InternalEnumerator_1_T_REF__ctor_System_Array:
 _p_214:
@@ -22345,7 +22345,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #4024]
 br x16
-.word 8214
+.word 8213
 	.no_dead_strip plt_Locale_GetText_string
 plt_Locale_GetText_string:
 _p_215:
@@ -22353,7 +22353,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #4032]
 br x16
-.word 8233
+.word 8232
 	.no_dead_strip plt__rgctx_fetch_78
 plt__rgctx_fetch_78:
 _p_216:
@@ -22361,7 +22361,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #4040]
 br x16
-.word 8256
+.word 8255
 	.no_dead_strip plt_System_Array_Copy_System_Array_int_System_Array_int_int
 plt_System_Array_Copy_System_Array_int_System_Array_int_int:
 _p_217:
@@ -22369,7 +22369,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #4048]
 br x16
-.word 8279
+.word 8278
 	.no_dead_strip plt_System_Runtime_CompilerServices_RuntimeHelpers_PrepareConstrainedRegions
 plt_System_Runtime_CompilerServices_RuntimeHelpers_PrepareConstrainedRegions:
 _p_218:
@@ -22377,7 +22377,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #4056]
 br x16
-.word 8284
+.word 8283
 	.no_dead_strip plt_System_Threading_ExecutionContext_EstablishCopyOnWriteScope_System_Threading_ExecutionContextSwitcher_
 plt_System_Threading_ExecutionContext_EstablishCopyOnWriteScope_System_Threading_ExecutionContextSwitcher_:
 _p_219:
@@ -22385,7 +22385,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #4064]
 br x16
-.word 8289
+.word 8288
 	.no_dead_strip plt_Plugin_Share_ShareImplementation__OpenBrowserd__4_MoveNext
 plt_Plugin_Share_ShareImplementation__OpenBrowserd__4_MoveNext:
 _p_220:
@@ -22393,7 +22393,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #4072]
 br x16
-.word 8294
+.word 8293
 	.no_dead_strip plt_System_Threading_ExecutionContextSwitcher_Undo
 plt_System_Threading_ExecutionContextSwitcher_Undo:
 _p_221:
@@ -22401,7 +22401,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #4080]
 br x16
-.word 8296
+.word 8295
 	.no_dead_strip plt_Plugin_Share_ShareImplementation__Shared__6_MoveNext
 plt_Plugin_Share_ShareImplementation__Shared__6_MoveNext:
 _p_222:
@@ -22409,7 +22409,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #4088]
 br x16
-.word 8301
+.word 8300
 	.no_dead_strip plt__rgctx_fetch_79
 plt__rgctx_fetch_79:
 _p_223:
@@ -22417,7 +22417,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #0]
 br x16
-.word 8331
+.word 8330
 	.no_dead_strip plt__rgctx_fetch_80
 plt__rgctx_fetch_80:
 _p_224:
@@ -22425,7 +22425,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #8]
 br x16
-.word 8339
+.word 8338
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_GetCompletionAction_System_Threading_Tasks_Task_System_Runtime_CompilerServices_AsyncMethodBuilderCore_MoveNextRunner_
 plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_GetCompletionAction_System_Threading_Tasks_Task_System_Runtime_CompilerServices_AsyncMethodBuilderCore_MoveNextRunner_:
 _p_225:
@@ -22433,7 +22433,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #16]
 br x16
-.word 8362
+.word 8361
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_PostBoxInitialization_System_Runtime_CompilerServices_IAsyncStateMachine_System_Runtime_CompilerServices_AsyncMethodBuilderCore_MoveNextRunner_System_Threading_Tasks_Task
 plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_PostBoxInitialization_System_Runtime_CompilerServices_IAsyncStateMachine_System_Runtime_CompilerServices_AsyncMethodBuilderCore_MoveNextRunner_System_Threading_Tasks_Task:
 _p_226:
@@ -22441,7 +22441,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #24]
 br x16
-.word 8367
+.word 8366
 	.no_dead_strip plt_System_Runtime_CompilerServices_TaskAwaiter_UnsafeOnCompleted_System_Action
 plt_System_Runtime_CompilerServices_TaskAwaiter_UnsafeOnCompleted_System_Action:
 _p_227:
@@ -22449,7 +22449,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #32]
 br x16
-.word 8372
+.word 8371
 	.no_dead_strip plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_ThrowAsync_System_Exception_System_Threading_SynchronizationContext
 plt_System_Runtime_CompilerServices_AsyncMethodBuilderCore_ThrowAsync_System_Exception_System_Threading_SynchronizationContext:
 _p_228:
@@ -22457,7 +22457,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #40]
 br x16
-.word 8377
+.word 8376
 	.no_dead_strip plt_System_Linq_Error_ArgumentNull_string
 plt_System_Linq_Error_ArgumentNull_string:
 _p_229:
@@ -22465,7 +22465,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #48]
 br x16
-.word 8382
+.word 8381
 	.no_dead_strip plt__rgctx_fetch_81
 plt__rgctx_fetch_81:
 _p_230:
@@ -22473,7 +22473,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #56]
 br x16
-.word 8416
+.word 8415
 	.no_dead_strip plt__rgctx_fetch_82
 plt__rgctx_fetch_82:
 _p_231:
@@ -22481,7 +22481,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #64]
 br x16
-.word 8424
+.word 8423
 	.no_dead_strip plt__rgctx_fetch_83
 plt__rgctx_fetch_83:
 _p_232:
@@ -22489,7 +22489,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #72]
 br x16
-.word 8450
+.word 8449
 	.no_dead_strip plt__rgctx_fetch_84
 plt__rgctx_fetch_84:
 _p_233:
@@ -22497,7 +22497,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #80]
 br x16
-.word 8485
+.word 8484
 	.no_dead_strip plt__rgctx_fetch_85
 plt__rgctx_fetch_85:
 _p_234:
@@ -22505,7 +22505,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #88]
 br x16
-.word 8493
+.word 8492
 	.no_dead_strip plt__rgctx_fetch_86
 plt__rgctx_fetch_86:
 _p_235:
@@ -22513,7 +22513,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #96]
 br x16
-.word 8514
+.word 8513
 	.no_dead_strip plt__rgctx_fetch_87
 plt__rgctx_fetch_87:
 _p_236:
@@ -22521,7 +22521,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #104]
 br x16
-.word 8522
+.word 8521
 	.no_dead_strip plt__rgctx_fetch_88
 plt__rgctx_fetch_88:
 _p_237:
@@ -22529,7 +22529,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #112]
 br x16
-.word 8556
+.word 8555
 	.no_dead_strip plt__rgctx_fetch_89
 plt__rgctx_fetch_89:
 _p_238:
@@ -22537,7 +22537,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #120]
 br x16
-.word 8564
+.word 8563
 	.no_dead_strip plt__rgctx_fetch_90
 plt__rgctx_fetch_90:
 _p_239:
@@ -22545,7 +22545,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #128]
 br x16
-.word 8581
+.word 8580
 	.no_dead_strip plt__rgctx_fetch_91
 plt__rgctx_fetch_91:
 _p_240:
@@ -22553,7 +22553,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #136]
 br x16
-.word 8600
+.word 8599
 	.no_dead_strip plt__rgctx_fetch_92
 plt__rgctx_fetch_92:
 _p_241:
@@ -22561,7 +22561,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #144]
 br x16
-.word 8608
+.word 8607
 	.no_dead_strip plt__rgctx_fetch_93
 plt__rgctx_fetch_93:
 _p_242:
@@ -22569,7 +22569,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #152]
 br x16
-.word 8645
+.word 8644
 	.no_dead_strip plt__rgctx_fetch_94
 plt__rgctx_fetch_94:
 _p_243:
@@ -22577,7 +22577,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #160]
 br x16
-.word 8653
+.word 8652
 	.no_dead_strip plt__rgctx_fetch_95
 plt__rgctx_fetch_95:
 _p_244:
@@ -22585,7 +22585,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #168]
 br x16
-.word 8687
+.word 8686
 	.no_dead_strip plt__rgctx_fetch_96
 plt__rgctx_fetch_96:
 _p_245:
@@ -22593,7 +22593,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #176]
 br x16
-.word 8703
+.word 8702
 	.no_dead_strip plt__rgctx_fetch_97
 plt__rgctx_fetch_97:
 _p_246:
@@ -22601,7 +22601,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #184]
 br x16
-.word 8722
+.word 8721
 	.no_dead_strip plt__rgctx_fetch_98
 plt__rgctx_fetch_98:
 _p_247:
@@ -22609,7 +22609,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #192]
 br x16
-.word 8730
+.word 8729
 	.no_dead_strip plt__rgctx_fetch_99
 plt__rgctx_fetch_99:
 _p_248:
@@ -22617,7 +22617,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #200]
 br x16
-.word 8767
+.word 8766
 	.no_dead_strip plt__rgctx_fetch_100
 plt__rgctx_fetch_100:
 _p_249:
@@ -22625,7 +22625,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #208]
 br x16
-.word 8775
+.word 8774
 	.no_dead_strip plt__rgctx_fetch_101
 plt__rgctx_fetch_101:
 _p_250:
@@ -22633,7 +22633,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #216]
 br x16
-.word 8819
+.word 8818
 	.no_dead_strip plt__rgctx_fetch_102
 plt__rgctx_fetch_102:
 _p_251:
@@ -22641,7 +22641,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #224]
 br x16
-.word 8842
+.word 8841
 	.no_dead_strip plt__rgctx_fetch_103
 plt__rgctx_fetch_103:
 _p_252:
@@ -22649,7 +22649,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #232]
 br x16
-.word 8883
+.word 8882
 	.no_dead_strip plt__rgctx_fetch_104
 plt__rgctx_fetch_104:
 _p_253:
@@ -22657,7 +22657,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #240]
 br x16
-.word 8891
+.word 8890
 	.no_dead_strip plt__rgctx_fetch_105
 plt__rgctx_fetch_105:
 _p_254:
@@ -22665,7 +22665,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #248]
 br x16
-.word 8914
+.word 8913
 	.no_dead_strip plt__rgctx_fetch_106
 plt__rgctx_fetch_106:
 _p_255:
@@ -22673,7 +22673,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #256]
 br x16
-.word 8948
+.word 8947
 	.no_dead_strip plt__rgctx_fetch_107
 plt__rgctx_fetch_107:
 _p_256:
@@ -22681,7 +22681,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #264]
 br x16
-.word 8956
+.word 8955
 	.no_dead_strip plt__rgctx_fetch_108
 plt__rgctx_fetch_108:
 _p_257:
@@ -22689,7 +22689,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #272]
 br x16
-.word 8972
+.word 8971
 	.no_dead_strip plt__rgctx_fetch_109
 plt__rgctx_fetch_109:
 _p_258:
@@ -22697,7 +22697,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #280]
 br x16
-.word 8980
+.word 8979
 	.no_dead_strip plt_System_Environment_get_CurrentManagedThreadId
 plt_System_Environment_get_CurrentManagedThreadId:
 _p_259:
@@ -22705,7 +22705,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #288]
 br x16
-.word 9003
+.word 9002
 	.no_dead_strip plt__rgctx_fetch_110
 plt__rgctx_fetch_110:
 _p_260:
@@ -22713,7 +22713,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #296]
 br x16
-.word 9034
+.word 9033
 	.no_dead_strip plt__rgctx_fetch_111
 plt__rgctx_fetch_111:
 _p_261:
@@ -22721,7 +22721,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #304]
 br x16
-.word 9042
+.word 9041
 	.no_dead_strip plt__rgctx_fetch_112
 plt__rgctx_fetch_112:
 _p_262:
@@ -22729,7 +22729,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #312]
 br x16
-.word 9083
+.word 9082
 	.no_dead_strip plt__rgctx_fetch_113
 plt__rgctx_fetch_113:
 _p_263:
@@ -22737,7 +22737,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #320]
 br x16
-.word 9106
+.word 9105
 	.no_dead_strip plt__rgctx_fetch_114
 plt__rgctx_fetch_114:
 _p_264:
@@ -22745,7 +22745,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #328]
 br x16
-.word 9132
+.word 9131
 	.no_dead_strip plt_System_Linq_Error_NotSupported
 plt_System_Linq_Error_NotSupported:
 _p_265:
@@ -22753,7 +22753,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #336]
 br x16
-.word 9155
+.word 9154
 	.no_dead_strip plt__rgctx_fetch_115
 plt__rgctx_fetch_115:
 _p_266:
@@ -22761,7 +22761,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #344]
 br x16
-.word 9178
+.word 9177
 	.no_dead_strip plt__rgctx_fetch_116
 plt__rgctx_fetch_116:
 _p_267:
@@ -22769,7 +22769,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #352]
 br x16
-.word 9201
+.word 9200
 	.no_dead_strip plt__rgctx_fetch_117
 plt__rgctx_fetch_117:
 _p_268:
@@ -22777,7 +22777,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #360]
 br x16
-.word 9209
+.word 9208
 	.no_dead_strip plt__rgctx_fetch_118
 plt__rgctx_fetch_118:
 _p_269:
@@ -22785,7 +22785,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #368]
 br x16
-.word 9223
+.word 9222
 	.no_dead_strip plt__rgctx_fetch_119
 plt__rgctx_fetch_119:
 _p_270:
@@ -22793,7 +22793,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #376]
 br x16
-.word 9255
+.word 9254
 	.no_dead_strip plt__rgctx_fetch_120
 plt__rgctx_fetch_120:
 _p_271:
@@ -22801,7 +22801,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #384]
 br x16
-.word 9296
+.word 9295
 	.no_dead_strip plt__rgctx_fetch_121
 plt__rgctx_fetch_121:
 _p_272:
@@ -22809,7 +22809,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #392]
 br x16
-.word 9304
+.word 9303
 	.no_dead_strip plt__rgctx_fetch_122
 plt__rgctx_fetch_122:
 _p_273:
@@ -22817,7 +22817,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #400]
 br x16
-.word 9345
+.word 9344
 	.no_dead_strip plt__rgctx_fetch_123
 plt__rgctx_fetch_123:
 _p_274:
@@ -22825,7 +22825,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #408]
 br x16
-.word 9368
+.word 9367
 	.no_dead_strip plt__rgctx_fetch_124
 plt__rgctx_fetch_124:
 _p_275:
@@ -22833,7 +22833,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #416]
 br x16
-.word 9376
+.word 9375
 	.no_dead_strip plt__rgctx_fetch_125
 plt__rgctx_fetch_125:
 _p_276:
@@ -22841,7 +22841,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #424]
 br x16
-.word 9390
+.word 9389
 	.no_dead_strip plt__rgctx_fetch_126
 plt__rgctx_fetch_126:
 _p_277:
@@ -22849,7 +22849,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #432]
 br x16
-.word 9422
+.word 9421
 	.no_dead_strip plt__rgctx_fetch_127
 plt__rgctx_fetch_127:
 _p_278:
@@ -22857,7 +22857,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #440]
 br x16
-.word 9430
+.word 9429
 	.no_dead_strip plt__rgctx_fetch_128
 plt__rgctx_fetch_128:
 _p_279:
@@ -22865,7 +22865,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #448]
 br x16
-.word 9438
+.word 9437
 	.no_dead_strip plt__rgctx_fetch_129
 plt__rgctx_fetch_129:
 _p_280:
@@ -22873,7 +22873,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #456]
 br x16
-.word 9479
+.word 9478
 	.no_dead_strip plt_System_Collections_Generic_ByteEqualityComparer__ctor
 plt_System_Collections_Generic_ByteEqualityComparer__ctor:
 _p_281:
@@ -22881,7 +22881,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #464]
 br x16
-.word 9487
+.word 9486
 	.no_dead_strip plt__rgctx_fetch_130
 plt__rgctx_fetch_130:
 _p_282:
@@ -22889,7 +22889,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #472]
 br x16
-.word 9492
+.word 9491
 	.no_dead_strip plt_System_Collections_Generic_InternalStringComparer__ctor
 plt_System_Collections_Generic_InternalStringComparer__ctor:
 _p_283:
@@ -22897,7 +22897,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #480]
 br x16
-.word 9500
+.word 9499
 	.no_dead_strip plt__rgctx_fetch_131
 plt__rgctx_fetch_131:
 _p_284:
@@ -22905,7 +22905,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #488]
 br x16
-.word 9514
+.word 9513
 	.no_dead_strip plt_System_RuntimeType_CreateInstanceForAnotherGenericParameter_System_Type_System_RuntimeType
 plt_System_RuntimeType_CreateInstanceForAnotherGenericParameter_System_Type_System_RuntimeType:
 _p_285:
@@ -22913,7 +22913,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #496]
 br x16
-.word 9522
+.word 9521
 	.no_dead_strip plt_wrapper_alloc_object_AllocVector_intptr_intptr
 plt_wrapper_alloc_object_AllocVector_intptr_intptr:
 _p_286:
@@ -22921,7 +22921,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #504]
 br x16
-.word 9527
+.word 9526
 	.no_dead_strip plt_System_Enum_GetUnderlyingType_System_Type
 plt_System_Enum_GetUnderlyingType_System_Type:
 _p_287:
@@ -22929,7 +22929,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #512]
 br x16
-.word 9535
+.word 9534
 	.no_dead_strip plt_System_Type_GetTypeCode_System_Type
 plt_System_Type_GetTypeCode_System_Type:
 _p_288:
@@ -22937,7 +22937,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #520]
 br x16
-.word 9540
+.word 9539
 	.no_dead_strip plt__rgctx_fetch_132
 plt__rgctx_fetch_132:
 _p_289:
@@ -22945,7 +22945,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #528]
 br x16
-.word 9554
+.word 9553
 	.no_dead_strip plt__rgctx_fetch_133
 plt__rgctx_fetch_133:
 _p_290:
@@ -22953,7 +22953,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #536]
 br x16
-.word 9562
+.word 9561
 	.no_dead_strip plt__rgctx_fetch_134
 plt__rgctx_fetch_134:
 _p_291:
@@ -22961,7 +22961,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #544]
 br x16
-.word 9603
+.word 9602
 	.no_dead_strip plt__rgctx_fetch_135
 plt__rgctx_fetch_135:
 _p_292:
@@ -22969,7 +22969,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #552]
 br x16
-.word 9611
+.word 9610
 	.no_dead_strip plt_System_ThrowHelper_ThrowArgumentException_System_ExceptionResource
 plt_System_ThrowHelper_ThrowArgumentException_System_ExceptionResource:
 _p_293:
@@ -22977,7 +22977,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #560]
 br x16
-.word 9619
+.word 9618
 	.no_dead_strip plt__rgctx_fetch_136
 plt__rgctx_fetch_136:
 _p_294:
@@ -22985,7 +22985,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #568]
 br x16
-.word 9642
+.word 9641
 	.no_dead_strip plt__rgctx_fetch_137
 plt__rgctx_fetch_137:
 _p_295:
@@ -22993,7 +22993,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #576]
 br x16
-.word 9650
+.word 9649
 	.no_dead_strip plt__rgctx_fetch_138
 plt__rgctx_fetch_138:
 _p_296:
@@ -23001,7 +23001,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #584]
 br x16
-.word 9676
+.word 9675
 	.no_dead_strip plt__rgctx_fetch_139
 plt__rgctx_fetch_139:
 _p_297:
@@ -23009,7 +23009,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #592]
 br x16
-.word 9700
+.word 9699
 	.no_dead_strip plt__rgctx_fetch_140
 plt__rgctx_fetch_140:
 _p_298:
@@ -23017,7 +23017,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #600]
 br x16
-.word 9742
+.word 9741
 	.no_dead_strip plt__rgctx_fetch_141
 plt__rgctx_fetch_141:
 _p_299:
@@ -23025,7 +23025,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #608]
 br x16
-.word 9766
+.word 9765
 	.no_dead_strip plt_int_GetHashCode
 plt_int_GetHashCode:
 _p_300:
@@ -23033,7 +23033,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #616]
 br x16
-.word 9790
+.word 9789
 	.no_dead_strip plt__rgctx_fetch_142
 plt__rgctx_fetch_142:
 _p_301:
@@ -23041,7 +23041,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #624]
 br x16
-.word 9822
+.word 9821
 	.no_dead_strip plt__rgctx_fetch_143
 plt__rgctx_fetch_143:
 _p_302:
@@ -23049,7 +23049,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #632]
 br x16
-.word 9863
+.word 9862
 	.no_dead_strip plt__rgctx_fetch_144
 plt__rgctx_fetch_144:
 _p_303:
@@ -23057,7 +23057,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #640]
 br x16
-.word 9904
+.word 9903
 	.no_dead_strip plt__rgctx_fetch_145
 plt__rgctx_fetch_145:
 _p_304:
@@ -23065,7 +23065,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #648]
 br x16
-.word 9921
+.word 9920
 	.no_dead_strip plt_System_Runtime_Serialization_SerializationInfo_SetType_System_Type
 plt_System_Runtime_Serialization_SerializationInfo_SetType_System_Type:
 _p_305:
@@ -23073,7 +23073,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #656]
 br x16
-.word 9929
+.word 9928
 	.no_dead_strip plt__rgctx_fetch_146
 plt__rgctx_fetch_146:
 _p_306:
@@ -23081,7 +23081,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #664]
 br x16
-.word 9952
+.word 9951
 	.no_dead_strip plt__rgctx_fetch_147
 plt__rgctx_fetch_147:
 _p_307:
@@ -23089,7 +23089,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #672]
 br x16
-.word 9988
+.word 9987
 	.no_dead_strip plt__rgctx_fetch_148
 plt__rgctx_fetch_148:
 _p_308:
@@ -23097,7 +23097,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #680]
 br x16
-.word 9996
+.word 9995
 	.no_dead_strip plt__rgctx_fetch_149
 plt__rgctx_fetch_149:
 _p_309:
@@ -23105,7 +23105,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #688]
 br x16
-.word 10046
+.word 10045
 	.no_dead_strip plt__rgctx_fetch_150
 plt__rgctx_fetch_150:
 _p_310:
@@ -23113,7 +23113,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #696]
 br x16
-.word 10054
+.word 10053
 	.no_dead_strip plt_System_Linq_Enumerable_Iterator_1_TResult_REF__ctor
 plt_System_Linq_Enumerable_Iterator_1_TResult_REF__ctor:
 _p_311:
@@ -23121,7 +23121,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #704]
 br x16
-.word 10085
+.word 10084
 	.no_dead_strip plt_System_Linq_Enumerable_Iterator_1_TResult_REF__ctor_0
 plt_System_Linq_Enumerable_Iterator_1_TResult_REF__ctor_0:
 _p_312:
@@ -23129,7 +23129,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #712]
 br x16
-.word 10112
+.word 10111
 	.no_dead_strip plt_System_Linq_Enumerable_Iterator_1_TResult_REF__ctor_1
 plt_System_Linq_Enumerable_Iterator_1_TResult_REF__ctor_1:
 _p_313:
@@ -23137,7 +23137,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #720]
 br x16
-.word 10139
+.word 10138
 	.no_dead_strip plt_System_Linq_Enumerable_Iterator_1_TResult_REF__ctor_2
 plt_System_Linq_Enumerable_Iterator_1_TResult_REF__ctor_2:
 _p_314:
@@ -23145,7 +23145,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #728]
 br x16
-.word 10166
+.word 10165
 	.no_dead_strip plt_System_Linq_Enumerable_Iterator_1_TResult_REF__ctor_3
 plt_System_Linq_Enumerable_Iterator_1_TResult_REF__ctor_3:
 _p_315:
@@ -23153,7 +23153,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #736]
 br x16
-.word 10193
+.word 10192
 	.no_dead_strip plt__rgctx_fetch_151
 plt__rgctx_fetch_151:
 _p_316:
@@ -23161,7 +23161,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #744]
 br x16
-.word 10238
+.word 10237
 	.no_dead_strip plt__rgctx_fetch_152
 plt__rgctx_fetch_152:
 _p_317:
@@ -23169,7 +23169,7 @@ adrp x16, mono_aot_Plugin_Share_got@PAGE+4096
 add x16, x16, mono_aot_Plugin_Share_got@PAGEOFF
 ldr x16, [x16, #752]
 br x16
-.word 10288
+.word 10287
 plt_end:
 .section __DATA, __bss
 	.align 3
@@ -23283,13 +23283,13 @@ _mono_aot_file_info:
 	.align 3
 	.quad unbox_trampoline_addresses
 
-	.long 289,4856,318,196,70,391195135,0,39283
-	.long 128,8,8,9,0,25,45720,6424
+	.long 289,4856,318,196,70,391195135,0,39282
+	.long 128,8,8,9,0,25,45712,6424
 	.long 5984,5032,0,5520,5952,5120,0,3728
 	.long 320,6416,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 66,137,187,206,43,92,29,75,50,179,232,115,173,117,111,196
+	.byte 161,45,208,163,109,183,50,222,203,131,198,107,127,167,232,172
 	.globl _mono_aot_module_Plugin_Share_info
 	.align 3
 _mono_aot_module_Plugin_Share_info:

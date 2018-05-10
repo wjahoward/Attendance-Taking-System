@@ -28,12 +28,24 @@ namespace BeaconTest.iOS
 
 				if(valid)
 				{
-					var viewController = this.Storyboard.InstantiateViewController("LecturerNavigationController");
+					if (username.StartsWith("s", StringComparison.Ordinal))
+					{
+						var viewController = this.Storyboard.InstantiateViewController("LecturerNavigationController");
 
-                    if (viewController != null)
-                    {
-                        this.PresentViewController(viewController, true, null);
-                    }
+						if (viewController != null)
+						{
+							this.PresentViewController(viewController, true, null);
+						}
+					}
+					else
+					{
+						var viewController = this.Storyboard.InstantiateViewController("StudentSubmitController");
+
+                        if (viewController != null)
+                        {
+                            this.PresentViewController(viewController, true, null);
+                        }
+					}
 				}
 
                 /*if (username.Trim().Equals("student") && password.Trim().Equals("password"))
