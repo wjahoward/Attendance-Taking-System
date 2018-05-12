@@ -23,9 +23,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)DataAccess.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Resources.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Lecturer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\LecturerATS.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Student.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\StudentATS.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ATS.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\LecturerBeacon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\StudentSubmission.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Resources\" />

@@ -22,9 +22,9 @@
 @class __MonoMac_NSActionDispatcher;
 @class __MonoMac_NSAsyncActionDispatcher;
 @class AppDelegate;
-@class MainViewController;
 @class StudentAttendanceController;
 @class BeaconTest_iOS_LecturerModuleCell;
+@class MainViewController;
 @class BeaconRangingController;
 @class BeaconTest_iOS_LecturerGenerateController_TableSource;
 @class LecturerGenerateController;
@@ -75,26 +75,6 @@
 	-(id) init;
 @end
 
-@interface MainViewController : UIViewController {
-}
-	@property (nonatomic, assign) UIButton * LoginButton;
-	@property (nonatomic, assign) UITextField * PasswordField;
-	@property (nonatomic, assign) UITextField * UsernameTextField;
-	-(void) release;
-	-(id) retain;
-	-(int) xamarinGetGCHandle;
-	-(void) xamarinSetGCHandle: (int) gchandle;
-	-(UIButton *) LoginButton;
-	-(void) setLoginButton:(UIButton *)p0;
-	-(UITextField *) PasswordField;
-	-(void) setPasswordField:(UITextField *)p0;
-	-(UITextField *) UsernameTextField;
-	-(void) setUsernameTextField:(UITextField *)p0;
-	-(void) viewDidLoad;
-	-(void) didReceiveMemoryWarning;
-	-(BOOL) conformsToProtocol:(void *)p0;
-@end
-
 @interface StudentAttendanceController : UITableViewController {
 }
 	-(void) release;
@@ -111,6 +91,27 @@
 	-(int) xamarinGetGCHandle;
 	-(void) xamarinSetGCHandle: (int) gchandle;
 	-(void) layoutSubviews;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface MainViewController : UIViewController {
+}
+	@property (nonatomic, assign) UIButton * LoginButton;
+	@property (nonatomic, assign) UITextField * PasswordField;
+	@property (nonatomic, assign) UITextField * UsernameTextField;
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(UIButton *) LoginButton;
+	-(void) setLoginButton:(UIButton *)p0;
+	-(UITextField *) PasswordField;
+	-(void) setPasswordField:(UITextField *)p0;
+	-(UITextField *) UsernameTextField;
+	-(void) setUsernameTextField:(UITextField *)p0;
+	-(void) viewDidLoad;
+	-(void) viewDidAppear:(BOOL)p0;
+	-(void) didReceiveMemoryWarning;
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
