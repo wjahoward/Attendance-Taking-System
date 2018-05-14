@@ -111,7 +111,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EnterCode.cs" />
+    <Compile Include="Student\EnterCode.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="Activities\AddItemActivity.cs" />
     <Compile Include="Activities\BaseActivity.cs" />
@@ -125,11 +125,11 @@
     <Compile Include="Helpers\RecyclerClickEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
-    <Compile Include="BeaconTransmitter.cs" />
-    <Compile Include="Timetable.cs" />
+    <Compile Include="Lecturer\BeaconTransmitter.cs" />
+    <Compile Include="Lecturer\Timetable.cs" />
     <Compile Include="MainActivity.cs" />
-    <Compile Include="MonitorNotifier.cs" />
-    <Compile Include="RangeNotifier.cs" />
+    <Compile Include="Student\MonitorNotifier.cs" />
+    <Compile Include="Student\RangeNotifier.cs" />
     <Compile Include="Student.cs" />
   </ItemGroup>
   <ItemGroup>

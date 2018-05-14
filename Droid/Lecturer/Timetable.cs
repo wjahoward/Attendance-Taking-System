@@ -14,7 +14,7 @@ using Android.Widget;
 namespace BeaconTest.Droid
 {
     [Activity(Label = "Lecturer")]
-    public class Timetable : Activity
+    public class Timetable : Activity, IDialogInterfaceOnDismissListener
     {
         private BeaconManager beaconManager;
         public AdvertiseCallback advertiseCallback;
@@ -24,6 +24,8 @@ namespace BeaconTest.Droid
             SetContentView(Resource.Layout.Timetable);
 
             base.OnCreate(savedInstanceState);
+
+            VerifyBle();
 
             // Create your application here
 
@@ -45,6 +47,25 @@ namespace BeaconTest.Droid
                 });
                 ad.Show();
             };
+        }
+
+        private void VerifyBle()
+        {
+            if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability())
+            {
+                var builder = new AlertDialog.Builder(this);
+                builder.SetTitle("Bluetooth not enabled");
+                builder.SetMessage("Please enable bluetooth on your phone and restart the app");
+                EventHandler<DialogClickEventArgs> handler = null;
+                builder.SetPositiveButton(Android.Resource.String.Ok, handler);
+                builder.SetOnDismissListener(this);
+                builder.Show();
+            }
+        }
+
+        public void OnDismiss(IDialogInterface dialog)
+        {
+            Finish();
         }
     }
 }

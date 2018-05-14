@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AltBeaconOrg.BoundBeacon;
 using Android.App;
 using Android.Content;
+using Android.Net.Wifi;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -18,6 +19,12 @@ namespace BeaconTest.Droid
     {
         readonly RangeNotifier rangeNotifier;
         readonly MonitorNotifier monitorNotifier;
+        readonly List<Beacon> data;
+
+        const ushort beaconMajor = 2755;
+        const ushort beaconMinor = 5;
+        const string beaconId = "123";
+        const string uuid = "C9407F30-F5F8-466E-AFF9-25556B57FE6D";
 
         AltBeaconOrg.BoundBeacon.Region tagRegion, emptyRegion;
 
@@ -29,6 +36,7 @@ namespace BeaconTest.Droid
         {
             rangeNotifier = new RangeNotifier();
             monitorNotifier = new MonitorNotifier();
+            data = new List<Beacon>();
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -98,20 +106,49 @@ namespace BeaconTest.Droid
             return true;
         }
 
+        //potential prob here
         async void RangingBeaconsInRegion(object sender, RangeEventArgs e)
         {
-            if(e.Beacons.Count == 1)
+            //var allBeacons = new List<Beacon>();
+            
+            //code inside Task.Run will be called asynchronously
+            //use await if need to wait for specific work before updating ui elements
+            await Task.Run(() =>
             {
-                await UpdateUI();
-            }
-            else if (e.Beacons.Count == 0)
-            {
-                await NotWithinRange();
-            }
+                RunOnUiThread(() =>
+                {
+                    if (e.Beacons.Count > 0)
+                    {
+                        SetContentView(Resource.Layout.EnterCode);
+                        /*continue beacon operations in the background, so that the view will continue 
+                         displaying to the user*/
+                        beaconManager.SetBackgroundMode(true);
+
+                        Button submitBtn = FindViewById<Button>(Resource.Id.submitBtn);
+
+                        submitBtn.Click += delegate
+                        {
+                            AlertDialog.Builder ad = new AlertDialog.Builder(this);
+                            ad.SetTitle("Success");
+                            ad.SetMessage("You have successfully submitted your attendance!");
+                            ad.SetPositiveButton("OK", delegate
+                            {
+                                ad.Dispose();
+                            });
+                            ad.Show();
+                        };
+                    }
+                    else
+                    {
+                        SetContentView(Resource.Layout.NotWithinRange);
+                        //stop all beacon operation in the background
+                        beaconManager.SetBackgroundMode(false);
+                    }
+                });
+            });
         }
 
-        //may need to debug this
-        async Task UpdateUI()
+        /*async Task UpdateUI()
         {
             await Task.Run(() =>
             {
@@ -126,7 +163,7 @@ namespace BeaconTest.Droid
                         AlertDialog.Builder ad = new AlertDialog.Builder(this);
                         ad.SetTitle("Success");
                         ad.SetMessage("You have successfully submitted your attendance!");
-                        ad.SetNeutralButton("OK", delegate
+                        ad.SetPositiveButton("OK", delegate
                         {
                             ad.Dispose();
                         });
@@ -156,17 +193,42 @@ namespace BeaconTest.Droid
                 });
             });
             //pb.Enabled = false;
-        }
+        }/*
+
+        /*async Task UpdateData(List<Beacon> beacons)
+        {
+            await Task.Run(() =>
+            {
+                foreach (var beacon in beacons)
+                {
+                    if(data.Exists(b => b.Id1.ToString() == beacon.Id1.ToString()))
+                    {
+                        RunOnUiThread(() =>
+                        {
+                            SetContentView(Resource.Layout.EnterCode);
+                        });
+                    }
+                    else
+                    {
+                        RunOnUiThread(() =>
+                        {
+                            SetContentView(Resource.Layout.NotWithinRange);
+                        });
+                    }
+                }
+            });
+        }*/
 
         public void OnDismiss(IDialogInterface dialog)
         {
             Finish();
         }
 
+        //executed after oncreate
         public void OnBeaconServiceConnect()
         {
             tagRegion = new AltBeaconOrg.BoundBeacon.Region("myUniqueBeaconId",
-                Identifier.Parse("2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6"), null, null);
+                Identifier.Parse(uuid), null, null);
             emptyRegion = new AltBeaconOrg.BoundBeacon.Region("myEmptyBeaconId", null, null, null);
 
             //need to use set background between scan period for monitoring
@@ -179,6 +241,8 @@ namespace BeaconTest.Droid
             beaconManager.SetRangeNotifier(rangeNotifier);
             beaconManager.StartRangingBeaconsInRegion(tagRegion);
             beaconManager.StartRangingBeaconsInRegion(emptyRegion);
+
+            Console.WriteLine("Debug:" + Identifier.Parse(uuid));
         }
     }
 }

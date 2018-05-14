@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Xml;
 using BeaconTest.Models;
 using Newtonsoft.Json;
-using UIKit;
 using System.Text;
 
 namespace BeaconTest

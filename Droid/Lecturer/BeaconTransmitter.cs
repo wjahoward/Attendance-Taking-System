@@ -20,6 +20,11 @@ namespace BeaconTest.Droid
     {
         bool isSupported;
 
+        const ushort beaconMajor = 2755;
+        const ushort beaconMinor = 5;
+        const string beaconId = "123";
+        const string uuid = "C9407F30-F5F8-466E-AFF9-25556B57FE6D";
+
         //IList is non-generic collection object that can be individually access by index
         IList<Long> dataFields = new List<Long>();
 
@@ -39,10 +44,10 @@ namespace BeaconTest.Droid
             }
 
             Beacon b = new Beacon.Builder()
-                .SetId1("2f234454-cf6d-4a0f-adf2-f4911ba9ffa6")
-                .SetId2("1")
-                .SetId3("2")
-                .SetManufacturer(0x004C)
+                .SetId1(uuid)
+                .SetId2(beaconMajor.ToString())
+                .SetId3(beaconMinor.ToString())
+                .SetManufacturer(0x4C)
                 .SetTxPower(-59)
                 .Build();
 

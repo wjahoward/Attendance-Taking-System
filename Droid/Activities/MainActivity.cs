@@ -7,6 +7,8 @@ using Android.Widget;
 using Android.Support.V4.App;
 using Android.Support.V4.View;
 using Android.Support.Design.Widget;
+using System;
+using Android.Net.Wifi;
 
 namespace BeaconTest.Droid
 {
@@ -17,6 +19,10 @@ namespace BeaconTest.Droid
     public class MainActivity : BaseActivity
     {
         protected override int LayoutResource => Resource.Layout.Login;
+        private const string unknownssid = "<unknown ssid>";
+
+        string username;
+        string pwd;
 
         //ViewPager pager;
         //TabsAdapter adapter;
@@ -26,31 +32,58 @@ namespace BeaconTest.Droid
             base.OnCreate(savedInstanceState);
 
             Button submitBtn = FindViewById<Button>(Resource.Id.MyButton);
-            EditText username = FindViewById<EditText>(Resource.Id.usernameInput);
-            EditText pwd = FindViewById<EditText>(Resource.Id.passwordInput);
+            EditText Username = FindViewById<EditText>(Resource.Id.usernameInput);
+            EditText Pwd = FindViewById<EditText>(Resource.Id.passwordInput);
 
-            submitBtn.Click += delegate
+            if (this.IsWifiConnected())
             {
-                if (username.Text == "s123" && pwd.Text == "123")
+                //submitBtn.Enabled = true;
+
+                submitBtn.Click += delegate
                 {
-                    StartActivity(typeof(Timetable));
-                }
-                else if (username.Text == "p456" && pwd.Text == "456")
-                {
-                    StartActivity(typeof(EnterCode));
-                }
-                else
-                {
-                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-                    alertDialog.SetTitle("Invalid login");
-                    alertDialog.SetMessage("Your login credentials are incorrect, please try again");
-                    alertDialog.SetNeutralButton("OK", delegate
+                    username = Username.Text;
+                    pwd = Pwd.Text;
+                    bool valid = DataAccess.LoginAsync(username, pwd).Result;
+
+                    if (valid)
                     {
-                        alertDialog.Dispose();
-                    });
-                    alertDialog.Show();
-                }
-            };
+                        //username = s12345, password = Te@cher123
+                        if (username.StartsWith("s", StringComparison.Ordinal))
+                        {
+                            StartActivity(typeof(Timetable));
+                        }
+                        //username = p1234567, password = R@ndom123
+                        else if (username.StartsWith("p", StringComparison.Ordinal))
+                        {
+                            StartActivity(typeof(EnterCode));
+                        }
+                    }
+                    else
+                    {
+                        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+                        alertDialog.SetTitle("Invalid login credentials");
+                        alertDialog.SetMessage("The username or password you have entered is invalid");
+                        alertDialog.SetNeutralButton("OK", delegate
+                        {
+                            alertDialog.Dispose();
+                        });
+                        alertDialog.Show();
+                    }
+                };
+            }
+            else
+            {
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+                alertDialog.SetTitle("Device not connected to wifi");
+                alertDialog.SetMessage("Please enable wifi connection on your phone");
+                alertDialog.SetPositiveButton("OK", delegate
+                {
+                    alertDialog.Dispose();
+                });
+                alertDialog.Show();
+
+                //submitBtn.Enabled = false;
+            }
 
             //    adapter = new TabsAdapter(this, SupportFragmentManager);
             //    pager = FindViewById<ViewPager>(Resource.Id.viewpager);
@@ -81,6 +114,19 @@ namespace BeaconTest.Droid
             //    MenuInflater.Inflate(Resource.Menu.top_menus, menu);
             //    return base.OnCreateOptionsMenu(menu);
             //}
+        }
+
+        //checks whether wifi is switched on and connected to a wifi network
+        private bool IsWifiConnected()
+        {
+            var wifiManager = Application.Context.GetSystemService(Context.WifiService) as WifiManager;
+
+            if (wifiManager != null)
+            {
+                return wifiManager.IsWifiEnabled &&
+                    (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID != unknownssid);          
+            }
+            return false;
         }
 
         /*class TabsAdapter : FragmentStatePagerAdapter
