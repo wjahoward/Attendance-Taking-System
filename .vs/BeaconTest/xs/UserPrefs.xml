@@ -1,6 +1,13 @@
 ﻿<Properties StartupConfiguration="{C87C25DB-29DA-4F9B-B39D-93F40244D7ED}|Default">
   <MonoDevelop.Ide.ItemProperties.BeaconTest.Droid PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/MainViewController.cs">
+    <Files>
+      <File FileName="BeaconTest/Models/LecturerBeacon.cs" Line="19" Column="17" />
+      <File FileName="iOS/Lecturer/Generate/BeaconTransmitController.cs" Line="72" Column="1" />
+      <File FileName="BeaconTest/DataAccess.cs" Line="67" Column="82" />
+      <File FileName="iOS/MainViewController.cs" Line="79" Column="26" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

@@ -5,6 +5,8 @@ using Foundation;
 using CoreLocation;
 using CoreBluetooth;
 using CoreFoundation;
+using TestAzureApi.Models;
+using System.Diagnostics;
 
 namespace BeaconTest.iOS
 {
@@ -12,6 +14,16 @@ namespace BeaconTest.iOS
     {
         BTPeripheralDelegate peripheralDelegate;
         CBPeripheralManager peripheralManager;
+
+		NSUuid beaconUUID;
+        CLBeaconRegion beaconRegion;
+        const ushort beaconMajor = 2755;
+        const ushort beaconMinor = 5;
+        const string beaconId = "123";
+        const string uuid = "C9407F30-F5F8-466E-AFF9-25556B57FE6D";
+		const string ATS = "110110";
+
+		LecturerBeacon lecturerBeacon;
 
         public BeaconTransmitController(IntPtr handle) : base(handle)
         {
@@ -27,13 +39,6 @@ namespace BeaconTest.iOS
             // Release any cached data, images, etc that aren't in use.
         }
 
-        NSUuid beaconUUID;
-        CLBeaconRegion beaconRegion;
-        const ushort beaconMajor = 2755;
-        const ushort beaconMinor = 5;
-        const string beaconId = "123";
-        const string uuid = "C9407F30-F5F8-466E-AFF9-25556B57FE6D";
-
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -45,12 +50,9 @@ namespace BeaconTest.iOS
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
-
-
-            beaconUUID = new NSUuid(uuid);
+            
+            beaconUUID = new NSUuid();
             beaconRegion = new CLBeaconRegion(beaconUUID, beaconMajor, beaconMinor, beaconId);
-
-
 
             //power - the received signal strength indicator (RSSI) value (measured in decibels) of the beacon from one meter away
             var power = new NSNumber(-59);
@@ -58,6 +60,19 @@ namespace BeaconTest.iOS
             var peripheralData = beaconRegion.GetPeripheralData(power);
             peripheralDelegate = new BTPeripheralDelegate();
             peripheralManager.StartAdvertising(peripheralData);
+
+			lecturerBeacon = new LecturerBeacon();
+			lecturerBeacon.BeaconKey = beaconUUID.ToString();
+			lecturerBeacon.ATS_Lecturer = ATS;
+			lecturerBeacon.Major = beaconMajor;
+			lecturerBeacon.Minor = beaconMinor;
+			lecturerBeacon.StaffID = "s12345";
+			lecturerBeacon.TimeGenerated = TimeZone.CurrentTimeZone.ToLocalTime(DateTime.Now);
+			Debug.WriteLine(lecturerBeacon.TimeGenerated);
+			bool submitted;
+
+			submitted = DataAccess.LecturerGenerateATS(lecturerBeacon).Result;
+			Debug.WriteLine(submitted);
         }
 
         class BTPeripheralDelegate : CBPeripheralManagerDelegate
