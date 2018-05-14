@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Xml;
-using TestAzureApi.Models;
+using BeaconTest.Models;
 using Newtonsoft.Json;
 using UIKit;
 using System.Text;
@@ -20,7 +20,7 @@ namespace BeaconTest
 		//public static string AuthenticationUrl = "fyptest1819.azurewebsites.net/api/Authentication?username=&password=";
 		private static string AuthenticationUrl = "https://fyptest1819.azurewebsites.net/api/Authentication";
 		private static string LecturerPostUrl = "https://fyptest1819.azurewebsites.net/api/Lecturer";
-		private static string StudentPostUrl = "https://fyptest1819.azurewebsites.net/api/Student";
+		private static string StudentUrl = "https://fyptest1819.azurewebsites.net/api/Student";
 
 		public static string NoInternetConnection = "No Internet Connection";
         
@@ -83,33 +83,44 @@ namespace BeaconTest
 			return false;
 		}
 
-		public static async Task<bool> StudentSubmitATS()
+		public static async Task<bool> StudentSubmitATS(StudentSubmission studentSubmission)
 		{
-			client.BaseAddress = new Uri(StudentPostUrl);
+			var uri = new Uri(StudentUrl);
 
-            /*// Add an Accept header for JSON format.
-            client.DefaultRequestHeaders.Accept.Add(
-            new MediaTypeWithQualityHeaderValue("application/json"));*/
+			var json = JsonConvert.SerializeObject(studentSubmission);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            // List data response.
-			HttpResponseMessage response = client.GetAsync(StudentPostUrl).Result;  // Blocking call!
+            client.DefaultRequestHeaders
+                 .Accept
+                 .Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json");
+            content.Headers.ContentLength = null;
+            Debug.WriteLine(content.ToString());
+
+            HttpResponseMessage response = client.PostAsync(uri, content).Result;
+
             if (response.IsSuccessStatusCode)
             {
                 var responseString = await response.Content.ReadAsStringAsync();
-                Debug.WriteLine(responseString);
+                Debug.WriteLine("Student Submission successfully submitted.");
                 return true;
             }
             else
             {
-                Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
-                return false;
-            }  
+                Debug.WriteLine(content.ReadAsStringAsync());
+                Debug.WriteLine(response.RequestMessage);
+                Debug.WriteLine(response.StatusCode);
+                var responseString = await response.Content.ReadAsStringAsync();
+                Debug.WriteLine(responseString);
+            }
+            return false;
 		}
 
-		public static async Task<bool> StudentGetATS()
+		public static async Task<LecturerBeacon> StudentGetBeacon()
         {
-            string urlParameters = "";
-            var url = AuthenticationUrl + urlParameters;
+			string urlParameters = "?admissionID=" + "p1234567";
+			var url = StudentUrl + urlParameters;
             client.BaseAddress = new Uri(url);
 
             /*// Add an Accept header for JSON format.
@@ -122,12 +133,13 @@ namespace BeaconTest
             {
                 var responseString = await response.Content.ReadAsStringAsync();
                 Debug.WriteLine(responseString);
-                return true;
+				LecturerBeacon lecturerBeacon = new LecturerBeacon();
+				return lecturerBeacon;
             }
             else
             {
                 Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
-                return false;
+                return null;
             }
         }
 	}

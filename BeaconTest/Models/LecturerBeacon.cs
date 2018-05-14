@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using Newtonsoft.Json;
 
-namespace TestAzureApi.Models
+namespace BeaconTest.Models
 {
     public class LecturerBeacon
     {      

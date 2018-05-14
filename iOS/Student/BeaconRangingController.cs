@@ -7,11 +7,14 @@ using UIKit;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using BeaconTest.Models;
 
 namespace BeaconTest.iOS
 {
     public partial class BeaconRangingController : UIViewController
     {
+		LecturerBeacon lecturerBeacon;
+		StudentSubmission studentSubmission;
 
         CLLocationManager locationManager;
         //static readonly string uuid = "E4C8A4FC-F68B-470D-959F-29382AF72CE7";
@@ -40,6 +43,8 @@ namespace BeaconTest.iOS
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
             StudentSubmitButton.Layer.CornerRadius = BeaconTest.Resources.buttonCornerRadius;
+
+			//lecturerBeacon = DataAccess.StudentGetBeacon().Result;
 
             locationManager = new CLLocationManager();
             locationManager.AuthorizationChanged += LocationManager_AuthorizationChanged;
@@ -91,6 +96,8 @@ namespace BeaconTest.iOS
             {
                 Debug.WriteLine("Found Beacon");
                 Debug.WriteLine(e.Beacons[0].ProximityUuid);
+				//bool submitted;            
+				//submitted = DataAccess.StudentSubmitATS(studentSubmission).Result;
                 FoundBeacon.Text = "Found Beacon";
             }
         }
@@ -102,6 +109,7 @@ namespace BeaconTest.iOS
                 beaconUUID = new NSUuid(uuid);
 
                 beaconRegion = new CLBeaconRegion(beaconUUID, beaconMajor, beaconMinor, beaconId);
+				//beaconRegion = new CLBeaconRegion(new NSUuid(lecturerBeacon.BeaconKey), (ushort) lecturerBeacon.Major, (ushort) lecturerBeacon.Minor, beaconId);
                 locationManager.StartMonitoring(beaconRegion);
                 locationManager.StartRangingBeacons(beaconRegion);
                 //DetectBeaconOn(10000).Wait();
@@ -110,10 +118,7 @@ namespace BeaconTest.iOS
 
         public override void ViewDidAppear(bool animated)
 		{
-            base.ViewDidAppear(animated);
-
-
-            //DetectBeacon();
+            base.ViewDidAppear(animated);         
 		}
 
 		public override void DidReceiveMemoryWarning()

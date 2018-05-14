@@ -5,7 +5,7 @@ using Foundation;
 using CoreLocation;
 using CoreBluetooth;
 using CoreFoundation;
-using TestAzureApi.Models;
+using BeaconTest.Models;
 using System.Diagnostics;
 
 namespace BeaconTest.iOS
