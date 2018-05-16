@@ -1,6 +1,4 @@
 ﻿using System;
-using CoreLocation;
-using Foundation;
 
 namespace BeaconTest
 {

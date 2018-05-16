@@ -44,9 +44,9 @@ namespace BeaconTest.Droid
             }
 
             Beacon b = new Beacon.Builder()
-                .SetId1(uuid)
-                .SetId2(beaconMajor.ToString())
-                .SetId3(beaconMinor.ToString())
+                .SetId1(Resources.testBeaconUUID)
+                .SetId2(Resources.testBeaconMajor.ToString())
+                .SetId3(Resources.testBeaconMinor.ToString())
                 .SetManufacturer(0x4C)
                 .SetTxPower(-59)
                 .Build();
