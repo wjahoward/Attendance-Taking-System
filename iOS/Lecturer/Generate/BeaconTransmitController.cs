@@ -15,13 +15,7 @@ namespace BeaconTest.iOS
         BTPeripheralDelegate peripheralDelegate;
         CBPeripheralManager peripheralManager;
 
-		NSUuid beaconUUID;
         CLBeaconRegion beaconRegion;
-        const ushort beaconMajor = 2755;
-        const ushort beaconMinor = 5;
-        const string beaconId = "123";
-        const string uuid = "C9407F30-F5F8-466E-AFF9-25556B57FE6D";
-		const string ATS = "110110";
 
 		LecturerBeacon lecturerBeacon;
 
@@ -51,8 +45,7 @@ namespace BeaconTest.iOS
         {
             base.ViewDidAppear(animated);
             
-            beaconUUID = new NSUuid();
-            beaconRegion = new CLBeaconRegion(beaconUUID, beaconMajor, beaconMinor, beaconId);
+			beaconRegion = new CLBeaconRegion(new NSUuid(Resources.testBeaconUUID), (ushort) Resources.testBeaconMajor, (ushort) Resources.testBeaconMinor, Resources.beaconId);
 
             //power - the received signal strength indicator (RSSI) value (measured in decibels) of the beacon from one meter away
             var power = new NSNumber(-59);
@@ -62,11 +55,11 @@ namespace BeaconTest.iOS
             peripheralManager.StartAdvertising(peripheralData);
 
 			lecturerBeacon = new LecturerBeacon();
-			lecturerBeacon.BeaconKey = beaconUUID.ToString();
-			lecturerBeacon.ATS_Lecturer = ATS;
-			lecturerBeacon.Major = beaconMajor;
-			lecturerBeacon.Minor = beaconMinor;
-			lecturerBeacon.StaffID = "s12345";
+			lecturerBeacon.BeaconKey = Resources.testBeaconUUID;
+			lecturerBeacon.ATS_Lecturer = Resources.testATS;
+			lecturerBeacon.Major = Resources.testBeaconMajor;
+			lecturerBeacon.Minor = Resources.testBeaconMinor;
+			lecturerBeacon.StaffID = Resources.testStaffID;
 			lecturerBeacon.TimeGenerated = TimeZone.CurrentTimeZone.ToLocalTime(DateTime.Now);
 			Debug.WriteLine(lecturerBeacon.TimeGenerated);
 			bool submitted;

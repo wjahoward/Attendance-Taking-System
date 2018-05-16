@@ -8,12 +8,12 @@ extern void *mono_aot_module_System_Xml_info;
 extern void *mono_aot_module_System_Net_Http_info;
 extern void *mono_aot_module_Xamarin_iOS_info;
 extern void *mono_aot_module_System_Core_info;
-extern void *mono_aot_module_Plugin_Connectivity_info;
-extern void *mono_aot_module_Plugin_Connectivity_Abstractions_info;
 extern void *mono_aot_module_Newtonsoft_Json_info;
 extern void *mono_aot_module_System_Xml_Linq_info;
 extern void *mono_aot_module_System_Runtime_Serialization_info;
 extern void *mono_aot_module_Microsoft_CSharp_info;
+extern void *mono_aot_module_Plugin_Connectivity_info;
+extern void *mono_aot_module_Plugin_Connectivity_Abstractions_info;
 extern void *mono_aot_module_Plugin_Share_info;
 extern void *mono_aot_module_Plugin_Share_Abstractions_info;
 
@@ -27,12 +27,12 @@ void xamarin_register_modules_impl ()
 	mono_aot_register_module (mono_aot_module_System_Net_Http_info);
 	mono_aot_register_module (mono_aot_module_Xamarin_iOS_info);
 	mono_aot_register_module (mono_aot_module_System_Core_info);
-	mono_aot_register_module (mono_aot_module_Plugin_Connectivity_info);
-	mono_aot_register_module (mono_aot_module_Plugin_Connectivity_Abstractions_info);
 	mono_aot_register_module (mono_aot_module_Newtonsoft_Json_info);
 	mono_aot_register_module (mono_aot_module_System_Xml_Linq_info);
 	mono_aot_register_module (mono_aot_module_System_Runtime_Serialization_info);
 	mono_aot_register_module (mono_aot_module_Microsoft_CSharp_info);
+	mono_aot_register_module (mono_aot_module_Plugin_Connectivity_info);
+	mono_aot_register_module (mono_aot_module_Plugin_Connectivity_Abstractions_info);
 	mono_aot_register_module (mono_aot_module_Plugin_Share_info);
 	mono_aot_register_module (mono_aot_module_Plugin_Share_Abstractions_info);
 

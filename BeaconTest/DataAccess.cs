@@ -19,7 +19,7 @@ namespace BeaconTest
 		//public static string AuthenticationUrl = "fyptest1819.azurewebsites.net/api/Authentication?username=&password=";
 		private static string AuthenticationUrl = "https://fyptest1819.azurewebsites.net/api/Authentication";
 		private static string LecturerPostUrl = "https://fyptest1819.azurewebsites.net/api/Lecturer";
-		private static string StudentUrl = "https://fyptest1819.azurewebsites.net/api/Student";
+		private static string StudentUrl = "https://testingfyp.azurewebsites.net/api/Student";
 
 		public static string NoInternetConnection = "No Internet Connection";
         
@@ -28,10 +28,6 @@ namespace BeaconTest
 			string urlParameters = "?username=" + username + "&password=" + password;
 			var url = AuthenticationUrl + urlParameters;
 			client.BaseAddress = new Uri(url);
-
-            /*// Add an Accept header for JSON format.
-            client.DefaultRequestHeaders.Accept.Add(
-            new MediaTypeWithQualityHeaderValue("application/json"));*/
 
             // List data response.
             HttpResponseMessage response = client.GetAsync(url).Result;  // Blocking call!
@@ -118,7 +114,7 @@ namespace BeaconTest
 
 		public static async Task<LecturerBeacon> StudentGetBeacon()
         {
-			string urlParameters = "?admissionID=" + "p1234567";
+			string urlParameters = "/p1234567";
 			var url = StudentUrl + urlParameters;
             client.BaseAddress = new Uri(url);
 
@@ -132,7 +128,7 @@ namespace BeaconTest
             {
                 var responseString = await response.Content.ReadAsStringAsync();
                 Debug.WriteLine(responseString);
-				LecturerBeacon lecturerBeacon = new LecturerBeacon();
+				LecturerBeacon lecturerBeacon = JsonConvert.DeserializeObject<LecturerBeacon>(responseString);
 				return lecturerBeacon;
             }
             else

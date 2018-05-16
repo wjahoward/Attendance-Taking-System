@@ -16,5 +16,13 @@ namespace BeaconTest.Models
         public string BeaconKey { get; set; }
         public string ATS_Student { get; set; }
         public DateTime TimeSubmitted { get; set; }
-    }
+      
+		public StudentSubmission(string admissionID, string beaconKey, string ats_Student, DateTime timeSubmitted)
+		{
+			AdmissionID = admissionID;
+			BeaconKey = beaconKey;
+			ATS_Student = ats_Student;
+			TimeSubmitted = timeSubmitted;
+		}
+	}
 }

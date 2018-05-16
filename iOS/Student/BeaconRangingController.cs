@@ -16,15 +16,17 @@ namespace BeaconTest.iOS
 		LecturerBeacon lecturerBeacon;
 		StudentSubmission studentSubmission;
 
+		string admissionId, beaconKey, ats_Student;
+
         CLLocationManager locationManager;
         //static readonly string uuid = "E4C8A4FC-F68B-470D-959F-29382AF72CE7";
         //static readonly string regionId = "Monkey";
         CLBeaconRegion beaconRegion;
         NSUuid beaconUUID;
-        const ushort beaconMajor = 2755;
-        const ushort beaconMinor = 5;
+        const ushort beaconMajor = 1;
+        const ushort beaconMinor = 2;
         const string beaconId = "123";
-        const string uuid = "C9407F30-F5F8-466E-AFF9-25556B57FE6D";
+		const string uuid = "2F234454-CF6D-4A0F-ADF2-F4911BA9FFA5";
 
         public BeaconRangingController(IntPtr handle) : base(handle)
         {
@@ -43,8 +45,13 @@ namespace BeaconTest.iOS
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
             StudentSubmitButton.Layer.CornerRadius = BeaconTest.Resources.buttonCornerRadius;
+			StudentSubmitButton.Hidden = false;
 
-			//lecturerBeacon = DataAccess.StudentGetBeacon().Result;
+			lecturerBeacon = DataAccess.StudentGetBeacon().Result;
+
+			admissionId = "p1234567";
+			beaconKey = "";
+			ats_Student = "345678";
 
             locationManager = new CLLocationManager();
             locationManager.AuthorizationChanged += LocationManager_AuthorizationChanged;
@@ -55,14 +62,7 @@ namespace BeaconTest.iOS
 
             StudentSubmitButton.TouchUpInside += (object sender, EventArgs e) => 
             {
-                //Create Alert
-                var okAlertController = UIAlertController.Create("Submitted!", "You have submitted your ATS at 00:00:00", UIAlertControllerStyle.Alert);
-
-                //Add Action
-                okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
-
-                // Present Alert
-                PresentViewController(okAlertController, true, null);
+				SubmitATS();
             };
 
 			EnterAttendanceCodeButton.TouchUpInside += (object sender, EventArgs e) => 
@@ -99,6 +99,8 @@ namespace BeaconTest.iOS
 				//bool submitted;            
 				//submitted = DataAccess.StudentSubmitATS(studentSubmission).Result;
                 FoundBeacon.Text = "Found Beacon";
+				StudentSubmitButton.Hidden = false;
+				locationManager.StopRangingBeacons(beaconRegion);
             }
         }
 
@@ -109,12 +111,29 @@ namespace BeaconTest.iOS
                 beaconUUID = new NSUuid(uuid);
 
                 beaconRegion = new CLBeaconRegion(beaconUUID, beaconMajor, beaconMinor, beaconId);
-				//beaconRegion = new CLBeaconRegion(new NSUuid(lecturerBeacon.BeaconKey), (ushort) lecturerBeacon.Major, (ushort) lecturerBeacon.Minor, beaconId);
+				beaconRegion = new CLBeaconRegion(new NSUuid(lecturerBeacon.BeaconKey), (ushort) lecturerBeacon.Major, (ushort) lecturerBeacon.Minor, beaconId);
                 locationManager.StartMonitoring(beaconRegion);
                 locationManager.StartRangingBeacons(beaconRegion);
                 //DetectBeaconOn(10000).Wait();
             }
         }
+
+		private void SubmitATS()
+		{
+			studentSubmission = new StudentSubmission(admissionId, uuid.ToLower(), ats_Student, DateTime.UtcNow);;
+
+			bool submitted = DataAccess.StudentSubmitATS(studentSubmission).Result;
+
+			if (submitted)
+			{
+				PresentViewController(CustomAlert.CreateUIAlertController("ATS Submitted", "You have submitted your attendance at " + DateTime.UtcNow, "OK"), true, null);
+			}
+			else
+			{
+				PresentViewController(CustomAlert.CreateUIAlertController("Error submitting ATS", "There was an error in submitting your attendance", "OK"), true, null);
+			}
+
+		}
 
         public override void ViewDidAppear(bool animated)
 		{
