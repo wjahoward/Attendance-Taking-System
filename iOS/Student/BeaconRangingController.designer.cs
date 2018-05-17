@@ -32,6 +32,10 @@ namespace BeaconTest.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView StudentAttendanceIcon { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton StudentSubmitButton { get; set; }
 
         [Outlet]
@@ -62,6 +66,11 @@ namespace BeaconTest.iOS
             if (ModuleNameLabel != null) {
                 ModuleNameLabel.Dispose ();
                 ModuleNameLabel = null;
+            }
+
+            if (StudentAttendanceIcon != null) {
+                StudentAttendanceIcon.Dispose ();
+                StudentAttendanceIcon = null;
             }
 
             if (StudentSubmitButton != null) {

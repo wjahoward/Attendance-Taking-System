@@ -3800,7 +3800,7 @@ bl _p_54
 .word 0xf940a7a2
 .word 0xaa0203e0
 .word 0xf9400042
-.word 0xf940d850
+.word 0xf940d450
 .word 0xd63f0200
 .word 0x53001c00
 .word 0xf9402fb1
@@ -23289,7 +23289,7 @@ _mono_aot_file_info:
 	.long 320,6416,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 39,139,114,199,74,162,255,252,132,167,51,157,20,179,24,227
+	.byte 9,222,229,156,195,218,124,124,91,57,20,186,93,1,166,238
 	.globl _mono_aot_module_Plugin_Share_info
 	.align 3
 _mono_aot_module_Plugin_Share_info:

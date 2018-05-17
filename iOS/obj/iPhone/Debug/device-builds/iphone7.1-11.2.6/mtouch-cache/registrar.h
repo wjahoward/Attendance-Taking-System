@@ -24,6 +24,7 @@
 @class AppDelegate;
 @class StudentAttendanceController;
 @class BeaconTest_iOS_LecturerModuleCell;
+@class BeaconOutOfRangeController;
 @class MainViewController;
 @class BeaconRangingController;
 @class BeaconTest_iOS_LecturerGenerateController_TableSource;
@@ -94,6 +95,15 @@
 	-(BOOL) conformsToProtocol:(void *)p0;
 @end
 
+@interface BeaconOutOfRangeController : UIViewController {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
 @interface MainViewController : UIViewController {
 }
 	@property (nonatomic, assign) UIButton * LoginButton;
@@ -121,6 +131,7 @@
 	@property (nonatomic, assign) UIButton * EnterAttendanceCodeButton;
 	@property (nonatomic, assign) UILabel * FoundBeacon;
 	@property (nonatomic, assign) UILabel * ModuleNameLabel;
+	@property (nonatomic, assign) UIImageView * StudentAttendanceIcon;
 	@property (nonatomic, assign) UIButton * StudentSubmitButton;
 	@property (nonatomic, assign) UILabel * TimePeriodLabel;
 	@property (nonatomic, assign) UILabel * VenueLabel;
@@ -136,6 +147,8 @@
 	-(void) setFoundBeacon:(UILabel *)p0;
 	-(UILabel *) ModuleNameLabel;
 	-(void) setModuleNameLabel:(UILabel *)p0;
+	-(UIImageView *) StudentAttendanceIcon;
+	-(void) setStudentAttendanceIcon:(UIImageView *)p0;
 	-(UIButton *) StudentSubmitButton;
 	-(void) setStudentSubmitButton:(UIButton *)p0;
 	-(UILabel *) TimePeriodLabel;
@@ -171,6 +184,17 @@
 	-(void) setTimetableTableView:(UITableView *)p0;
 	-(void) viewDidLoad;
 	-(BOOL) conformsToProtocol:(void *)p0;
+@end
+
+@interface BeaconTest_iOS_BeaconTransmitController_BTPeripheralDelegate : NSObject<CBPeripheralManagerDelegate> {
+}
+	-(void) release;
+	-(id) retain;
+	-(int) xamarinGetGCHandle;
+	-(void) xamarinSetGCHandle: (int) gchandle;
+	-(void) peripheralManagerDidUpdateState:(CBPeripheralManager *)p0;
+	-(BOOL) conformsToProtocol:(void *)p0;
+	-(id) init;
 @end
 
 @interface BeaconTransmitController : UIViewController {

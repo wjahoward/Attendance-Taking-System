@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Paths>
   <Jars>
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <Jar>C:\Users\JasmineLim\Documents\GitHub\FYP\Droid\obj\Debug\lp\0\jl\bin\classes.jar</Jar>
     <Jar>C:\Users\JasmineLim\Documents\GitHub\FYP\Droid\obj\Debug\lp\10\jl\bin\classes.jar</Jar>
     <Jar>C:\Users\JasmineLim\Documents\GitHub\FYP\Droid\obj\Debug\lp\11\jl\bin\classes.jar</Jar>
@@ -50,4 +52,42 @@
     <ResolvedResourceDirectoryStamp>C:\Users\JasmineLim\Documents\GitHub\FYP\Droid\obj\Debug\lp\20.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>C:\Users\JasmineLim\Documents\GitHub\FYP\Droid\obj\Debug\lp\21.stamp</ResolvedResourceDirectoryStamp>
   </ResolvedResourceDirectoryStamps>
+=======
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/10/jl/bin/classes.jar</Jar>
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/11/jl/bin/classes.jar</Jar>
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/12/jl/bin/classes.jar</Jar>
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/13/jl/bin/classes.jar</Jar>
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/14/jl/bin/classes.jar</Jar>
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/15/jl/bin/classes.jar</Jar>
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/16/jl/bin/classes.jar</Jar>
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/17/jl/bin/classes.jar</Jar>
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/18/jl/bin/classes.jar</Jar>
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/19/jl/bin/classes.jar</Jar>
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/20/jl/bin/classes.jar</Jar>
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/21/jl/bin/classes.jar</Jar>
+  </Jars>
+  <ResolvedResourceDirectories />
+  <ResolvedAssetDirectories />
+  <ResolvedEnvironmentFiles />
+  <ResolvedResourceDirectoryStamps />
+>>>>>>> Stashed changes
+=======
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/10/jl/bin/classes.jar</Jar>
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/11/jl/bin/classes.jar</Jar>
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/12/jl/bin/classes.jar</Jar>
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/13/jl/bin/classes.jar</Jar>
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/14/jl/bin/classes.jar</Jar>
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/15/jl/bin/classes.jar</Jar>
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/16/jl/bin/classes.jar</Jar>
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/17/jl/bin/classes.jar</Jar>
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/18/jl/bin/classes.jar</Jar>
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/19/jl/bin/classes.jar</Jar>
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/20/jl/bin/classes.jar</Jar>
+    <Jar>/Users/admin/Desktop/FYP/Droid/obj/Debug/lp/21/jl/bin/classes.jar</Jar>
+  </Jars>
+  <ResolvedResourceDirectories />
+  <ResolvedAssetDirectories />
+  <ResolvedEnvironmentFiles />
+  <ResolvedResourceDirectoryStamps />
+>>>>>>> Stashed changes
 </Paths>

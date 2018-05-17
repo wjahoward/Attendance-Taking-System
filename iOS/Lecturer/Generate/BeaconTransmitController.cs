@@ -44,6 +44,10 @@ namespace BeaconTest.iOS
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
+			if(peripheralDelegate.bluetoothAvailable == false)
+			{
+				ShowBluetoothAlert();
+			}
             
 			beaconRegion = new CLBeaconRegion(new NSUuid(Resources.testBeaconUUID), (ushort) Resources.testBeaconMajor, (ushort) Resources.testBeaconMinor, Resources.beaconId);
 
@@ -68,16 +72,29 @@ namespace BeaconTest.iOS
 			Debug.WriteLine(submitted);
         }
 
-        class BTPeripheralDelegate : CBPeripheralManagerDelegate
+        public class BTPeripheralDelegate : CBPeripheralManagerDelegate
         {
+			public bool bluetoothAvailable = true;
+
             public override void StateUpdated(CBPeripheralManager peripheral)
             {
                 if (peripheral.State == CBPeripheralManagerState.PoweredOn)
                 {
-                    Console.WriteLine("powered on");
+                    Console.WriteLine("Powered on");
                 }
+				else
+				{
+					Debug.WriteLine("Bluetooth not available");
+					bluetoothAvailable = false;
+				}
             }
         }
+
+		public void ShowBluetoothAlert()
+		{
+			// Present Alert
+            PresentViewController(CustomAlert.CreateUIAlertController("Bluetooth not available", "Please switch on bluetooth and try again", "Go to settings", "App-prefs:root=WIFI"), true, null);
+		}
     }
 }
 

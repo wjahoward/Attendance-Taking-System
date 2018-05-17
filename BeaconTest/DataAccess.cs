@@ -16,9 +16,9 @@ namespace BeaconTest
     public static class DataAccess
 	{
 		static HttpClient client = new HttpClient();
-		//public static string AuthenticationUrl = "fyptest1819.azurewebsites.net/api/Authentication?username=&password=";
-		private static string AuthenticationUrl = "https://fyptest1819.azurewebsites.net/api/Authentication";
-		private static string LecturerPostUrl = "https://fyptest1819.azurewebsites.net/api/Lecturer";
+
+		private static string AuthenticationUrl = "https://testingfyp.azurewebsites.net/api/Authentication";
+		private static string LecturerPostUrl = "https://testingfyp.azurewebsites.net/api/Lecturer";
 		private static string StudentUrl = "https://testingfyp.azurewebsites.net/api/Student";
 
 		public static string NoInternetConnection = "No Internet Connection";
@@ -117,10 +117,6 @@ namespace BeaconTest
 			string urlParameters = "/p1234567";
 			var url = StudentUrl + urlParameters;
             client.BaseAddress = new Uri(url);
-
-            /*// Add an Accept header for JSON format.
-            client.DefaultRequestHeaders.Accept.Add(
-            new MediaTypeWithQualityHeaderValue("application/json"));*/
 
             // List data response.
             HttpResponseMessage response = client.GetAsync(url).Result;  // Blocking call!

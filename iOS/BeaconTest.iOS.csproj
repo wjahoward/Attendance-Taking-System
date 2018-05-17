@@ -178,6 +178,10 @@
       <DependentUpon>LecturerAttendanceController.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomAlert.cs" />
+    <Compile Include="BeaconOutOfRangeController.cs" />
+    <Compile Include="BeaconOutOfRangeController.designer.cs">
+      <DependentUpon>BeaconOutOfRangeController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

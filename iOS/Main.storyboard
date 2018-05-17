@@ -167,7 +167,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Module Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="14152" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="124" y="336" width="166" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17" weight="semibold"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -185,7 +185,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="23581" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Location Icon.png">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="23581" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Bluetooth Transmission Icon.png">
                                 <rect key="frame" x="127" y="129" width="160" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -212,6 +212,7 @@
                         <outlet property="VenueLabel" destination="14194" id="name-outlet-14194"/>
                         <outlet property="EnterAttendanceCodeButton" destination="30099" id="name-outlet-30099"/>
                         <outlet property="AttendanceCodeTextField" destination="30100" id="name-outlet-30100"/>
+                        <outlet property="StudentAttendanceIcon" destination="23581" id="name-outlet-23581"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2876" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -266,7 +267,7 @@
         </scene>
         <scene sceneID="14219">
             <objects>
-                <viewController id="14220" sceneMemberID="viewController" customClass="StudentAttendanceController">
+                <viewController id="14220" sceneMemberID="viewController" customClass="BeaconOutOfRangeController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="14217"/>
                         <viewControllerLayoutGuide type="bottom" id="14218"/>
@@ -316,5 +317,6 @@
     </scenes>
     <resources>
         <image name="Location Icon.png" width="534" height="535"/>
+        <image name="Bluetooth Transmission Icon.png" width="534" height="534"/>
     </resources>
 </document>

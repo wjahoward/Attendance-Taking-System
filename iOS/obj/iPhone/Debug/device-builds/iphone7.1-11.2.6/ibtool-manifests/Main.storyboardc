@@ -16,7 +16,7 @@
 					<string>14220</string>
 				</array>
 				<key>message</key>
-				<string>“Student Attendance Controller“ is unreachable because it has no entry points, and no identifier for runtime access via -[UIStoryboard instantiateViewControllerWithIdentifier:].</string>
+				<string>“Beacon Out Of Range Controller“ is unreachable because it has no entry points, and no identifier for runtime access via -[UIStoryboard instantiateViewControllerWithIdentifier:].</string>
 				<key>type</key>
 				<string>IBIssueTypeUnsupportedConfiguration</string>
 				<key>type-value</key>

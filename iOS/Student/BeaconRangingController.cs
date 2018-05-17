@@ -19,14 +19,8 @@ namespace BeaconTest.iOS
 		string admissionId, beaconKey, ats_Student;
 
         CLLocationManager locationManager;
-        //static readonly string uuid = "E4C8A4FC-F68B-470D-959F-29382AF72CE7";
-        //static readonly string regionId = "Monkey";
         CLBeaconRegion beaconRegion;
         NSUuid beaconUUID;
-        const ushort beaconMajor = 1;
-        const ushort beaconMinor = 2;
-        const string beaconId = "123";
-		const string uuid = "2F234454-CF6D-4A0F-ADF2-F4911BA9FFA5";
 
         public BeaconRangingController(IntPtr handle) : base(handle)
         {
@@ -45,7 +39,7 @@ namespace BeaconTest.iOS
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
             StudentSubmitButton.Layer.CornerRadius = BeaconTest.Resources.buttonCornerRadius;
-			StudentSubmitButton.Hidden = false;
+			StudentSubmitButton.Hidden = true;
 
 			lecturerBeacon = DataAccess.StudentGetBeacon().Result;
 
@@ -74,19 +68,15 @@ namespace BeaconTest.iOS
 
 		private void LocationManager_RegionLeft(object sender, CLRegionEventArgs e)
         {
-            var notification = new UILocalNotification();
-            notification.AlertBody = "Goodbye iBeacon";
-            UIApplication.SharedApplication.PresentLocalNotificationNow(notification);
+			Debug.WriteLine("No beacon found");
+			FoundBeacon.Text = "Searching for beacon...";
         }
 
         private void LocationManager_RegionEntered(object sender, CLRegionEventArgs e)
         {
-            /*var notification = new UILocalNotification();
-            notification.AlertBody = "Hello iBeacon";
-            UIApplication.SharedApplication.PresentLocalNotificationNow(notification);*/
             Debug.WriteLine("Found Beacon");
-            Debug.WriteLine(e.Region.Identifier);
             FoundBeacon.Text = "Found Beacon";
+			StudentSubmitButton.Hidden = false;
         }
 
         private async void LocationManager_DidRangeBeacons(object sender, CLRegionBeaconsRangedEventArgs e)
@@ -96,11 +86,10 @@ namespace BeaconTest.iOS
             {
                 Debug.WriteLine("Found Beacon");
                 Debug.WriteLine(e.Beacons[0].ProximityUuid);
-				//bool submitted;            
-				//submitted = DataAccess.StudentSubmitATS(studentSubmission).Result;
+
                 FoundBeacon.Text = "Found Beacon";
 				StudentSubmitButton.Hidden = false;
-				locationManager.StopRangingBeacons(beaconRegion);
+				StudentAttendanceIcon.Image = UIImage.FromBundle("Location Icon.png");
             }
         }
 
@@ -108,19 +97,21 @@ namespace BeaconTest.iOS
         {
             Debug.WriteLine("Status: {0}", e.Status);
             if(e.Status == CLAuthorizationStatus.AuthorizedAlways){
-                beaconUUID = new NSUuid(uuid);
+				beaconUUID = new NSUuid(lecturerBeacon.BeaconKey);
 
-                beaconRegion = new CLBeaconRegion(beaconUUID, beaconMajor, beaconMinor, beaconId);
-				beaconRegion = new CLBeaconRegion(new NSUuid(lecturerBeacon.BeaconKey), (ushort) lecturerBeacon.Major, (ushort) lecturerBeacon.Minor, beaconId);
+				beaconRegion = new CLBeaconRegion(new NSUuid(lecturerBeacon.BeaconKey), (ushort) lecturerBeacon.Major, (ushort) lecturerBeacon.Minor, Resources.beaconId);
                 locationManager.StartMonitoring(beaconRegion);
                 locationManager.StartRangingBeacons(beaconRegion);
-                //DetectBeaconOn(10000).Wait();
             }
+			else
+			{
+				Debug.WriteLine("Status: {0}", e.Status);
+			}
         }
 
 		private void SubmitATS()
 		{
-			studentSubmission = new StudentSubmission(admissionId, uuid.ToLower(), ats_Student, DateTime.UtcNow);;
+			studentSubmission = new StudentSubmission(admissionId, lecturerBeacon.BeaconKey.ToLower(), ats_Student, DateTime.UtcNow);;
 
 			bool submitted = DataAccess.StudentSubmitATS(studentSubmission).Result;
 

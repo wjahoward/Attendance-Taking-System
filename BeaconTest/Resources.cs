@@ -10,8 +10,9 @@ namespace BeaconTest
         public static int[] secondaryColourRGB = new int[] { 244, 77, 113 };
         public static int buttonCornerRadius = 10;
 
-        //original uuid: 2F234454-CF6D-4A0F-ADF2-F4911BA9FFA5
         public static string testBeaconUUID = "2F234454-CF6D-4A0F-ADF2-F4911BA9FFA5";
+		//public static string testBeaconUUIDWithModuleCodeLocation = "2F234454-CF6D-4A0F-ADF2-ST2137T22433";
+
         public static int testBeaconMajor= 1;
         public static int testBeaconMinor = 2;
         public static string beaconId = "123";
