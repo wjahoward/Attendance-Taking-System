@@ -20,10 +20,10 @@ namespace BeaconTest.Droid
     {
         bool isSupported;
 
-        const ushort beaconMajor = 2755;
+        /*const ushort beaconMajor = 2755;
         const ushort beaconMinor = 5;
         const string beaconId = "123";
-        const string uuid = "C9407F30-F5F8-466E-AFF9-25556B57FE6D";
+        const string uuid = "C9407F30-F5F8-466E-AFF9-25556B57FE6D";*/
 
         //IList is non-generic collection object that can be individually access by index
         IList<Long> dataFields = new List<Long>();

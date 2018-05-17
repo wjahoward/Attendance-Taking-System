@@ -11,6 +11,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using BeaconTest.Models;
 
 namespace BeaconTest.Droid
 {
@@ -21,16 +22,20 @@ namespace BeaconTest.Droid
         readonly MonitorNotifier monitorNotifier;
         readonly List<Beacon> data;
 
-        const ushort beaconMajor = 2755;
+        /*const ushort beaconMajor = 2755;
         const ushort beaconMinor = 5;
         const string beaconId = "123";
-        const string uuid = "C9407F30-F5F8-466E-AFF9-25556B57FE6D";
+        const string uuid = "C9407F30-F5F8-466E-AFF9-25556B57FE6D";*/
+        const string uuid = "2F234454-CF6D-4A0F-ADF2-F4911BA9FFA5";
+
+        String admissionId, ats_Code;
 
         AltBeaconOrg.BoundBeacon.Region tagRegion, emptyRegion;
 
         BeaconManager beaconManager;
-        //TextView tv;
-        //ProgressBar pb;
+
+        LecturerBeacon lb;
+        StudentSubmission studentSubmit;
 
         public EnterCode()
         {
@@ -49,9 +54,14 @@ namespace BeaconTest.Droid
 
             //SetContentView(Resource.Layout.EnterCode);
 
+            admissionId = "p1234567";
+            ats_Code = "345678";
+
             VerifyBle();
 
             beaconManager = BeaconManager.GetInstanceForApplication(this);
+
+            lb = DataAccess.StudentGetBeacon().Result;
 
             //set the type of beacon we are dealing with
             var iBeaconParser = new BeaconParser();
@@ -67,6 +77,10 @@ namespace BeaconTest.Droid
             rangeNotifier.DidRangeBeaconsInRegionComplete += RangingBeaconsInRegion;
 
             beaconManager.Bind(this);
+
+            Console.WriteLine("Debug getting beacon uuid from database:" + lb.BeaconKey.ToString());
+            Console.WriteLine("Major key" + lb.Major.ToString());
+            Console.WriteLine("Minor key" + lb.Minor.ToString());
         }
 
         private void VerifyBle()
@@ -128,14 +142,15 @@ namespace BeaconTest.Droid
 
                         submitBtn.Click += delegate
                         {
-                            AlertDialog.Builder ad = new AlertDialog.Builder(this);
-                            ad.SetTitle("Success");
-                            ad.SetMessage("You have successfully submitted your attendance!");
-                            ad.SetPositiveButton("OK", delegate
-                            {
-                                ad.Dispose();
-                            });
-                            ad.Show();
+                            //AlertDialog.Builder ad = new AlertDialog.Builder(this);
+                            //ad.SetTitle("Success");
+                            //ad.SetMessage("You have successfully submitted your attendance!");
+                            //ad.SetPositiveButton("OK", delegate
+                            //{
+                            //    ad.Dispose();
+                            //});
+                            //ad.Show();
+                            SubmitATS();
                         };
                     }
                     else
@@ -146,6 +161,38 @@ namespace BeaconTest.Droid
                     }
                 });
             });
+        }
+
+        private void SubmitATS()
+        {
+            studentSubmit = new StudentSubmission(admissionId, lb.BeaconKey, ats_Code, DateTime.UtcNow);
+
+            bool isSubmitted = DataAccess.StudentSubmitATS(studentSubmit).Result;
+
+            Console.WriteLine("Result" + DataAccess.StudentSubmitATS(studentSubmit).Result);
+
+            if (isSubmitted)
+            {
+                AlertDialog.Builder ad = new AlertDialog.Builder(this);
+                ad.SetTitle("Success");
+                ad.SetMessage("You have successfully submitted your attendance at " + DateTime.UtcNow);
+                ad.SetPositiveButton("OK", delegate
+                {
+                    ad.Dispose();
+                });
+                ad.Show();
+            }
+            else
+            {
+                AlertDialog.Builder ad = new AlertDialog.Builder(this);
+                ad.SetTitle("Error");
+                ad.SetMessage("There was an error in submitting your attendance");
+                ad.SetPositiveButton("OK", delegate
+                {
+                    ad.Dispose();
+                });
+                ad.Show();
+            }
         }
 
         /*async Task UpdateUI()
@@ -228,7 +275,7 @@ namespace BeaconTest.Droid
         public void OnBeaconServiceConnect()
         {
             tagRegion = new AltBeaconOrg.BoundBeacon.Region("myUniqueBeaconId",
-                Identifier.Parse(uuid), null, null);
+                Identifier.Parse(lb.BeaconKey), null, null);
             emptyRegion = new AltBeaconOrg.BoundBeacon.Region("myEmptyBeaconId", null, null, null);
 
             //need to use set background between scan period for monitoring
@@ -242,7 +289,7 @@ namespace BeaconTest.Droid
             beaconManager.StartRangingBeaconsInRegion(tagRegion);
             beaconManager.StartRangingBeaconsInRegion(emptyRegion);
 
-            Console.WriteLine("Debug:" + Identifier.Parse(uuid));
+            //Console.WriteLine("Debug:" + Identifier.Parse(uuid));
         }
     }
 }
