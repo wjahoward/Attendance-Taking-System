@@ -20,6 +20,7 @@ namespace BeaconTest
 		private static string AuthenticationUrl = "https://testingfyp.azurewebsites.net/api/Authentication";
 		private static string LecturerPostUrl = "https://testingfyp.azurewebsites.net/api/Lecturer";
 		private static string StudentUrl = "https://testingfyp.azurewebsites.net/api/Student";
+        private static string StudentTimetableURL = "http://mobileappnew.sp.edu.sg/spTimeTable/source/sptt.php?";
 
 		public static string NoInternetConnection = "No Internet Connection";
         
@@ -126,6 +127,28 @@ namespace BeaconTest
                 Debug.WriteLine(responseString);
 				LecturerBeacon lecturerBeacon = JsonConvert.DeserializeObject<LecturerBeacon>(responseString);
 				return lecturerBeacon;
+            }
+            else
+            {
+                Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
+                return null;
+            }
+        }
+
+        public static async Task<StudentTimetable> GetStudentTimetable(string studentID)
+        {
+            string urlParameters = "id=" + studentID + "&DDMMYY=" + DateTime.UtcNow.ToShortDateString();
+            var url = StudentTimetableURL + urlParameters;
+            client.BaseAddress = new Uri(url);
+
+            // List data response.
+            HttpResponseMessage response = client.GetAsync(url).Result;  // Blocking call!
+            if (response.IsSuccessStatusCode)
+            {
+                var responseString = await response.Content.ReadAsStringAsync();
+                Debug.WriteLine(responseString);
+                StudentTimetable timetable = JsonConvert.DeserializeObject<StudentTimetable>(responseString);
+                return timetable;
             }
             else
             {
