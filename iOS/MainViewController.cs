@@ -95,13 +95,7 @@ namespace BeaconTest.iOS
 
 			if (internetStatus.Equals(NetworkStatus.NotReachable))
 			{
-				//Create Alert
-				var okAlertController = UIAlertController.Create(DataAccess.NoInternetConnection, "Internet connection is required for this app to function properly", UIAlertControllerStyle.Alert);
-
-				okAlertController.AddAction(UIAlertAction.Create("Go to settings", UIAlertActionStyle.Default, action => UIApplication.SharedApplication.OpenUrl(url)));
-
-				// Present Alert
-				PresentViewController(okAlertController, true, null);
+				PresentViewController(CustomAlert.CreateUIAlertController(DataAccess.NoInternetConnection, "Internet connection is required for this app to function properly", "Go to settings", "App-prefs:root=WIFI"), true, null);
 
 				return false;
 			}

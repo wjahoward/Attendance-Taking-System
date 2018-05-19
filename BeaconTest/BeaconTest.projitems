@@ -12,7 +12,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Command.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\ServiceLocator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Item.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\StudentModule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ModuleWrapper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\StudentTimetable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\CloudDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IDataStore.cs" />
@@ -29,6 +29,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ATS.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\LecturerBeacon.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\StudentSubmission.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\StudentModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Resources\" />

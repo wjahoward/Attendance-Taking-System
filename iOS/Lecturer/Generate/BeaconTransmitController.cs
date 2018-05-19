@@ -43,20 +43,20 @@ namespace BeaconTest.iOS
 
         public override void ViewDidAppear(bool animated)
         {
-            base.ViewDidAppear(animated);
-			if(peripheralDelegate.bluetoothAvailable == false)
-			{
-				ShowBluetoothAlert();
-			}
+            base.ViewDidAppear(animated);         
             
-			beaconRegion = new CLBeaconRegion(new NSUuid(Resources.testBeaconUUID), (ushort) Resources.testBeaconMajor, (ushort) Resources.testBeaconMinor, Resources.beaconId);
+			beaconRegion = new CLBeaconRegion(new NSUuid(DataAccess.GetBeaconKey()), (ushort) DataAccess.GetATS(), (ushort) Resources.testBeaconMinor, Resources.beaconId);
 
             //power - the received signal strength indicator (RSSI) value (measured in decibels) of the beacon from one meter away
             var power = new NSNumber(-59);
 
             var peripheralData = beaconRegion.GetPeripheralData(power);
-            peripheralDelegate = new BTPeripheralDelegate();
+            peripheralDelegate = new BTPeripheralDelegate();               
             peripheralManager.StartAdvertising(peripheralData);
+			if (peripheralDelegate.bluetoothAvailable == false)
+            {
+                ShowBluetoothAlert();
+            }
 
 			lecturerBeacon = new LecturerBeacon();
 			lecturerBeacon.BeaconKey = Resources.testBeaconUUID;

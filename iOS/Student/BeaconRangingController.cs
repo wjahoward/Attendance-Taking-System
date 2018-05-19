@@ -8,15 +8,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using BeaconTest.Models;
+using System.Text;
 
 namespace BeaconTest.iOS
 {
     public partial class BeaconRangingController : UIViewController
     {
-		LecturerBeacon lecturerBeacon;
 		StudentSubmission studentSubmission;
-
-		string admissionId, beaconKey, ats_Student;
 
         CLLocationManager locationManager;
         CLBeaconRegion beaconRegion;
@@ -41,22 +39,14 @@ namespace BeaconTest.iOS
             StudentSubmitButton.Layer.CornerRadius = BeaconTest.Resources.buttonCornerRadius;
 			StudentSubmitButton.Hidden = true;
 
-			lecturerBeacon = DataAccess.StudentGetBeacon().Result;
+			//string beaconKey = DataAccess.GetBeaconKey();
+			beaconUUID = new NSUuid(DataAccess.GetBeaconKey());
 
-			admissionId = "p1234567";
-			beaconKey = "";
-			ats_Student = "345678";
-
-            locationManager = new CLLocationManager();
-            locationManager.AuthorizationChanged += LocationManager_AuthorizationChanged;
-            locationManager.RegionEntered += LocationManager_RegionEntered;
-            locationManager.RegionLeft += LocationManager_RegionLeft;
-            locationManager.DidRangeBeacons += LocationManager_DidRangeBeacons;
-            locationManager.RequestAlwaysAuthorization();
+			InitLocationManager();
 
             StudentSubmitButton.TouchUpInside += (object sender, EventArgs e) => 
             {
-				SubmitATS();
+				//SubmitATS();
             };
 
 			EnterAttendanceCodeButton.TouchUpInside += (object sender, EventArgs e) => 
@@ -65,6 +55,16 @@ namespace BeaconTest.iOS
 				AttendanceCodeTextField.Selected = true;;
 			};
         }
+
+        private void InitLocationManager()
+		{
+			locationManager = new CLLocationManager();
+            locationManager.AuthorizationChanged += LocationManager_AuthorizationChanged;
+            locationManager.RegionEntered += LocationManager_RegionEntered;
+            locationManager.RegionLeft += LocationManager_RegionLeft;
+            locationManager.DidRangeBeacons += LocationManager_DidRangeBeacons;
+            locationManager.RequestAlwaysAuthorization();
+		}
 
 		private void LocationManager_RegionLeft(object sender, CLRegionEventArgs e)
         {
@@ -86,6 +86,7 @@ namespace BeaconTest.iOS
             {
                 Debug.WriteLine("Found Beacon");
                 Debug.WriteLine(e.Beacons[0].ProximityUuid);
+				Debug.WriteLine(e.Beacons[0].Major);
 
                 FoundBeacon.Text = "Found Beacon";
 				StudentSubmitButton.Hidden = false;
@@ -96,10 +97,8 @@ namespace BeaconTest.iOS
         private void LocationManager_AuthorizationChanged(object sender, CLAuthorizationChangedEventArgs e)
         {
             Debug.WriteLine("Status: {0}", e.Status);
-            if(e.Status == CLAuthorizationStatus.AuthorizedAlways){
-				beaconUUID = new NSUuid(lecturerBeacon.BeaconKey);
-
-				beaconRegion = new CLBeaconRegion(new NSUuid(lecturerBeacon.BeaconKey), (ushort) lecturerBeacon.Major, (ushort) lecturerBeacon.Minor, Resources.beaconId);
+            if(e.Status == CLAuthorizationStatus.AuthorizedAlways){            
+				beaconRegion = new CLBeaconRegion(beaconUUID, (ushort) Resources.testBeaconMajor, (ushort) Resources.testBeaconMinor, Resources.beaconId);
                 locationManager.StartMonitoring(beaconRegion);
                 locationManager.StartRangingBeacons(beaconRegion);
             }
@@ -111,7 +110,7 @@ namespace BeaconTest.iOS
 
 		private void SubmitATS()
 		{
-			studentSubmission = new StudentSubmission(admissionId, lecturerBeacon.BeaconKey.ToLower(), ats_Student, DateTime.UtcNow);;
+			//studentSubmission = new StudentSubmission(admissionId, lecturerBeacon.BeaconKey.ToLower(), ats_Student, DateTime.UtcNow);;
 
 			bool submitted = DataAccess.StudentSubmitATS(studentSubmission).Result;
 

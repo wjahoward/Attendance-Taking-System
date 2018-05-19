@@ -20,5 +20,8 @@ namespace BeaconTest
 		public static string testStaffID = "s12345";
 
 		public static string testStudentID = "p1234567";
+
+		public static string testSPStudentID = "1626331";
+		public static string testSPDate = "160518";
     }
 }
