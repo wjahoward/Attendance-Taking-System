@@ -164,7 +164,7 @@ namespace BeaconTest
 			}
 		}
 
-		public static string GetBeaconKey()
+		public static string StudentGetBeaconKey()
 		{
 			studentTimetable = GetStudentTimetable(Resources.testSPStudentID).Result;
 			currentModule = studentTimetable.GetCurrentModule();
@@ -186,8 +186,31 @@ namespace BeaconTest
 
 			return beaconKey;
 		}
-        
-		public static int GetATS()
+
+        public static string LecturerGetBeaconKey()
+        {
+            studentTimetable = GetStudentTimetable(Resources.testSPStudentID).Result;
+            currentModule = studentTimetable.GetCurrentModule();
+
+            if (currentModule != null)
+            {
+                beaconKey = Resources.testBeaconUUID;
+                var beaconKeyStringBuilder = new StringBuilder(beaconKey);
+
+                string moduleCodeNumber = "A" + currentModule.code.Remove(0, 2);
+                string locationNumber = "B" + currentModule.location.Remove(0, 1);
+
+                beaconKeyStringBuilder.Remove(beaconKey.Length - locationNumber.Length, locationNumber.Length);
+                beaconKeyStringBuilder.Insert(beaconKeyStringBuilder.Length, locationNumber);
+                beaconKeyStringBuilder.Remove(beaconKeyStringBuilder.Length - locationNumber.Length - moduleCodeNumber.Length, moduleCodeNumber.Length);
+                beaconKeyStringBuilder.Insert(beaconKeyStringBuilder.Length - locationNumber.Length, moduleCodeNumber);
+                beaconKey = beaconKeyStringBuilder.ToString();
+            }
+
+            return beaconKey;
+        }
+
+        public static int GetATS()
 		{
 			return int.Parse(Resources.testATS);
 		}

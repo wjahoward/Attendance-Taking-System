@@ -26,7 +26,7 @@ namespace BeaconTest.Droid
         const ushort beaconMinor = 5;
         const string beaconId = "123";
         const string uuid = "C9407F30-F5F8-466E-AFF9-25556B57FE6D";*/
-        const string uuid = "2F234454-CF6D-4A0F-ADF2-F4911BA9FFA5";
+        string uuid = "2F234454-CF6D-4A0F-ADF2-F4911BA9FFA5";
 
         String admissionId, ats_Code;
 
@@ -48,20 +48,15 @@ namespace BeaconTest.Droid
         {
             base.OnCreate(savedInstanceState);
 
-            //tv = FindViewById<TextView>(Resource.Id.attCode);
-
-            //pb.Enabled = false;
-
-            //SetContentView(Resource.Layout.EnterCode);
-
             admissionId = "p1234567";
             ats_Code = "345678";
+            uuid = DataAccess.StudentGetBeaconKey();
 
             VerifyBle();
 
             beaconManager = BeaconManager.GetInstanceForApplication(this);
 
-            lb = DataAccess.StudentGetBeacon().Result;
+            //lb = DataAccess.StudentGetBeacon().Result;
 
             //set the type of beacon we are dealing with
             var iBeaconParser = new BeaconParser();
@@ -78,9 +73,9 @@ namespace BeaconTest.Droid
 
             beaconManager.Bind(this);
 
-            Console.WriteLine("Debug getting beacon uuid from database:" + lb.BeaconKey.ToString());
-            Console.WriteLine("Major key" + lb.Major.ToString());
-            Console.WriteLine("Minor key" + lb.Minor.ToString());
+            //Console.WriteLine("Debug getting beacon uuid from database:" + lb.BeaconKey.ToString());
+            //Console.WriteLine("Major key" + lb.Major.ToString());
+            //Console.WriteLine("Minor key" + lb.Minor.ToString());
         }
 
         private void VerifyBle()

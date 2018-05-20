@@ -40,7 +40,7 @@ namespace BeaconTest.iOS
 			StudentSubmitButton.Hidden = true;
 
 			//string beaconKey = DataAccess.GetBeaconKey();
-			beaconUUID = new NSUuid(DataAccess.GetBeaconKey());
+			beaconUUID = new NSUuid(DataAccess.StudentGetBeaconKey());
 
 			InitLocationManager();
 

@@ -45,7 +45,7 @@ namespace BeaconTest.iOS
         {
             base.ViewDidAppear(animated);         
             
-			beaconRegion = new CLBeaconRegion(new NSUuid(DataAccess.GetBeaconKey()), (ushort) DataAccess.GetATS(), (ushort) Resources.testBeaconMinor, Resources.beaconId);
+			beaconRegion = new CLBeaconRegion(new NSUuid(DataAccess.StudentGetBeaconKey()), (ushort) DataAccess.GetATS(), (ushort) Resources.testBeaconMinor, Resources.beaconId);
 
             //power - the received signal strength indicator (RSSI) value (measured in decibels) of the beacon from one meter away
             var power = new NSNumber(-59);
