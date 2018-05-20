@@ -19,6 +19,7 @@ namespace BeaconTest.iOS
         CLLocationManager locationManager;
         CLBeaconRegion beaconRegion;
         NSUuid beaconUUID;
+		string atsCode;
 
         public BeaconRangingController(IntPtr handle) : base(handle)
         {
@@ -86,7 +87,8 @@ namespace BeaconTest.iOS
             {
                 Debug.WriteLine("Found Beacon");
                 Debug.WriteLine(e.Beacons[0].ProximityUuid);
-				Debug.WriteLine(e.Beacons[0].Major);
+				atsCode = e.Beacons[0].Major.ToString() + e.Beacons[0].Minor.ToString();
+				Debug.WriteLine(atsCode);
 
                 FoundBeacon.Text = "Found Beacon";
 				StudentSubmitButton.Hidden = false;
@@ -98,7 +100,7 @@ namespace BeaconTest.iOS
         {
             Debug.WriteLine("Status: {0}", e.Status);
             if(e.Status == CLAuthorizationStatus.AuthorizedAlways){            
-				beaconRegion = new CLBeaconRegion(beaconUUID, (ushort) Resources.testBeaconMajor, (ushort) Resources.testBeaconMinor, Resources.beaconId);
+				beaconRegion = new CLBeaconRegion(beaconUUID, Resources.beaconId);
                 locationManager.StartMonitoring(beaconRegion);
                 locationManager.StartRangingBeacons(beaconRegion);
             }

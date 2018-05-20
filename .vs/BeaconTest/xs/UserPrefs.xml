@@ -1,10 +1,9 @@
 ﻿<Properties StartupConfiguration="{C87C25DB-29DA-4F9B-B39D-93F40244D7ED}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Lecturer/Generate/BeaconTransmitController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Student/BeaconRangingController.cs">
     <Files>
-      <File FileName="BeaconTest/DataAccess.cs" Line="167" Column="24" />
-      <File FileName="iOS/Student/BeaconRangingController.cs" Line="42" Column="51" />
-      <File FileName="BeaconTest/Models/StudentSubmission.cs" Line="7" Column="2" />
-      <File FileName="iOS/Lecturer/Generate/BeaconTransmitController.cs" Line="52" Column="63" />
+      <File FileName="BeaconTest/DataAccess.cs" Line="213" Column="27" />
+      <File FileName="iOS/Student/BeaconRangingController.cs" Line="92" Column="5" />
+      <File FileName="iOS/Lecturer/Generate/BeaconTransmitController.cs" Line="52" Column="153" />
       <File FileName="iOS/MainViewController.cs" Line="98" Column="199" />
       <File FileName="BeaconTest/Models/StudentTimetable.cs" Line="29" Column="20" />
       <File FileName="iOS/Main.cs" Line="12" Column="1" />
@@ -13,11 +12,9 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/admin/Desktop/FYP/iOS/Student/BeaconRangingController.cs" relfile="iOS/Student/BeaconRangingController.cs" line="42" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.BeaconTest.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2E543EBB-078A-4516-AA35-AF74B70BCE66" />
+  <MonoDevelop.Ide.ItemProperties.BeaconTest.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.15A46B50-481A-4C02-9B4E-AE9BE484A8F7" />
 </Properties>
