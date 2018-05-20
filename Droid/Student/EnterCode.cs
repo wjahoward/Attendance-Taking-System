@@ -132,6 +132,17 @@ namespace BeaconTest.Droid
                         /*continue beacon operations in the background, so that the view will continue 
                          displaying to the user*/
                         beaconManager.SetBackgroundMode(true);
+                        string id = e.Beacons.First().Id1.ToString();
+                        foreach(Beacon beacon in e.Beacons)
+                        {
+                            if (beacon.Id1.ToString().Equals(DataAccess.LecturerGetBeaconKey().ToLower()))
+                            {
+                                string atsCode = beacon.Id2.ToString() + beacon.Id3.ToString();
+                                Console.WriteLine(atsCode);
+                            }
+                        }
+                        
+
 
                         Button submitBtn = FindViewById<Button>(Resource.Id.submitBtn);
 
@@ -270,7 +281,7 @@ namespace BeaconTest.Droid
         public void OnBeaconServiceConnect()
         {
             tagRegion = new AltBeaconOrg.BoundBeacon.Region("myUniqueBeaconId",
-                Identifier.Parse(lb.BeaconKey), null, null);
+                Identifier.Parse(DataAccess.LecturerGetBeaconKey()), null, null);
             emptyRegion = new AltBeaconOrg.BoundBeacon.Region("myEmptyBeaconId", null, null, null);
 
             //need to use set background between scan period for monitoring

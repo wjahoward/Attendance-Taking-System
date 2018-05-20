@@ -43,10 +43,14 @@ namespace BeaconTest.Droid
                 isSupported = bt.IsMultipleAdvertisementSupported;
             }
 
+            string atsCode = Resources.testATS.ToString();
+            string atsCode1stHalf = atsCode.Substring(0, 3);
+            string atsCode2ndHalf = atsCode.Substring(3, 3);
+
             Beacon b = new Beacon.Builder()
-                .SetId1(Resources.testBeaconUUID)
-                .SetId2(Resources.testBeaconMajor.ToString())
-                .SetId3(Resources.testBeaconMinor.ToString())
+                .SetId1(DataAccess.LecturerGetBeaconKey())
+                .SetId2(atsCode1stHalf)
+                .SetId3(atsCode2ndHalf)
                 .SetManufacturer(0x4C)
                 .SetTxPower(-59)
                 .Build();
