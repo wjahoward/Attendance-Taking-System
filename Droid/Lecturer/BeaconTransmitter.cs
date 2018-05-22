@@ -43,7 +43,7 @@ namespace BeaconTest.Droid
                 isSupported = bt.IsMultipleAdvertisementSupported;
             }
 
-            string atsCode = Resources.testATS.ToString();
+            string atsCode = SharedData.testATS.ToString();
             string atsCode1stHalf = atsCode.Substring(0, 3);
             string atsCode2ndHalf = atsCode.Substring(3, 3);
 

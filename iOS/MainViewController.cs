@@ -60,7 +60,7 @@ namespace BeaconTest.iOS
         {
 			base.ViewDidLoad();      
 
-			LoginButton.Layer.CornerRadius = BeaconTest.Resources.buttonCornerRadius;
+			LoginButton.Layer.CornerRadius = BeaconTest.SharedData.buttonCornerRadius;
 
 			LoginButton.TouchUpInside += (object sender, EventArgs e) => {
 

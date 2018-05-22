@@ -115,6 +115,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Lecturer\BeaconTransmitActivity.cs" />
     <Compile Include="Student\EnterCode.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="Activities\AddItemActivity.cs" />
@@ -147,6 +148,9 @@
     <AndroidResource Include="Resources\layout\Login.axml" />
     <AndroidResource Include="Resources\layout\NotWithinRange.axml" />
     <AndroidResource Include="Resources\layout\Splash.axml" />
+    <AndroidResource Include="Resources\layout\BeaconTransmitActivity.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\background_splash.xml" />

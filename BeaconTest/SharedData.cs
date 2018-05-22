@@ -2,7 +2,7 @@
 
 namespace BeaconTest
 {
-    public static class Resources
+    public static class SharedData
     {
         public static string primaryColourHex = "#2BDDC3";
         public static int[] primaryColourRGB = new int[] { 43, 221, 195 };

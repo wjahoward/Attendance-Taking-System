@@ -36,6 +36,13 @@ namespace BeaconTest.Droid
 
         LecturerBeacon lb;
         StudentSubmission studentSubmit;
+        StudentTimetable studentTimetable;
+        StudentModule studentModule;
+        ImageView studentAttendanceImageView;
+        EditText attendanceCodeEditText;
+
+        TextView moduleNameTextView, timeTextView, locationTextView;
+        Button submitBtn;
 
         public EnterCode()
         {
@@ -46,11 +53,27 @@ namespace BeaconTest.Droid
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            SetContentView(Resource.Layout.EnterCode);
             base.OnCreate(savedInstanceState);
 
             admissionId = "p1234567";
             ats_Code = "345678";
             uuid = DataAccess.StudentGetBeaconKey();
+
+            moduleNameTextView = FindViewById<TextView>(Resource.Id.moduleNameTextView);
+            timeTextView = FindViewById<TextView>(Resource.Id.timeTextView);
+            locationTextView = FindViewById<TextView>(Resource.Id.locationTextView);
+            studentAttendanceImageView = FindViewById<ImageView>(Resource.Id.studentAttendanceImageView);
+            attendanceCodeEditText = FindViewById<EditText>(Resource.Id.attendanceCodeEditText);
+
+            submitBtn = FindViewById<Button>(Resource.Id.submitBtn);
+
+            studentTimetable = DataAccess.GetStudentTimetable(SharedData.testSPStudentID).Result;
+            studentModule = studentTimetable.GetCurrentModule();
+
+            moduleNameTextView.Text = studentModule.abbr + " (" + studentModule.code + ")";
+            timeTextView.Text = studentModule.time;
+            locationTextView.Text = studentModule.location;
 
             VerifyBle();
 
@@ -128,7 +151,6 @@ namespace BeaconTest.Droid
                 {
                     if (e.Beacons.Count > 0)
                     {
-                        SetContentView(Resource.Layout.EnterCode);
                         /*continue beacon operations in the background, so that the view will continue 
                          displaying to the user*/
                         beaconManager.SetBackgroundMode(true);
@@ -139,13 +161,13 @@ namespace BeaconTest.Droid
                             {
                                 string atsCode = beacon.Id2.ToString() + beacon.Id3.ToString();
                                 Console.WriteLine(atsCode);
+                                submitBtn.Visibility = ViewStates.Visible;
+                                studentAttendanceImageView.SetImageDrawable(GetDrawable(Resource.Drawable.Asset2));
+                                attendanceCodeEditText.Text = atsCode;
+                                attendanceCodeEditText.Enabled = false;
                             }
                         }
                         
-
-
-                        Button submitBtn = FindViewById<Button>(Resource.Id.submitBtn);
-
                         submitBtn.Click += delegate
                         {
                             //AlertDialog.Builder ad = new AlertDialog.Builder(this);
@@ -156,12 +178,12 @@ namespace BeaconTest.Droid
                             //    ad.Dispose();
                             //});
                             //ad.Show();
-                            SubmitATS();
+                            //SubmitATS();
                         };
                     }
                     else
                     {
-                        SetContentView(Resource.Layout.NotWithinRange);
+                        //SetContentView(Resource.Layout.NotWithinRange);
                         //stop all beacon operation in the background
                         beaconManager.SetBackgroundMode(false);
                     }

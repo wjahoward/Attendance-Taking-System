@@ -19,7 +19,7 @@ namespace BeaconTest.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            this.NavigationController.NavigationBar.BarTintColor = UIColor.FromRGB(BeaconTest.Resources.primaryColourRGB[0], BeaconTest.Resources.primaryColourRGB[1], BeaconTest.Resources.primaryColourRGB[2]);
+            this.NavigationController.NavigationBar.BarTintColor = UIColor.FromRGB(BeaconTest.SharedData.primaryColourRGB[0], BeaconTest.SharedData.primaryColourRGB[1], BeaconTest.SharedData.primaryColourRGB[2]);
             this.NavigationController.NavigationBar.TintColor = UIColor.White;
             this.NavigationController.NavigationBar.TitleTextAttributes = new UIStringAttributes()
             {

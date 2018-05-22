@@ -37,7 +37,7 @@ namespace BeaconTest.iOS
         {
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
-            StudentSubmitButton.Layer.CornerRadius = BeaconTest.Resources.buttonCornerRadius;
+            StudentSubmitButton.Layer.CornerRadius = BeaconTest.SharedData.buttonCornerRadius;
 			StudentSubmitButton.Hidden = true;
 
 			//string beaconKey = DataAccess.GetBeaconKey();
@@ -100,7 +100,7 @@ namespace BeaconTest.iOS
         {
             Debug.WriteLine("Status: {0}", e.Status);
             if(e.Status == CLAuthorizationStatus.AuthorizedAlways){            
-				beaconRegion = new CLBeaconRegion(beaconUUID, Resources.beaconId);
+				beaconRegion = new CLBeaconRegion(beaconUUID, SharedData.beaconId);
                 locationManager.StartMonitoring(beaconRegion);
                 locationManager.StartRangingBeacons(beaconRegion);
             }

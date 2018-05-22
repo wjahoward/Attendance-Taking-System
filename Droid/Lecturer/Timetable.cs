@@ -10,6 +10,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using BeaconTest.Droid.Resources.layout;
 
 namespace BeaconTest.Droid
 {
@@ -33,19 +34,21 @@ namespace BeaconTest.Droid
 
             genBtn1.Click += delegate
             {
+                StartActivity(typeof(BeaconTransmitActivity));
+
                 beaconManager = BeaconManager.GetInstanceForApplication(this);
 
                 BeaconTransmitter bTransmitter = new BeaconTransmitter();
                 bTransmitter.Transmit();
 
-                AlertDialog.Builder ad = new AlertDialog.Builder(this);
+                /*AlertDialog.Builder ad = new AlertDialog.Builder(this);
                 ad.SetTitle("Started transmission");
                 ad.SetMessage("Your device is now transmitting as an iBeacon for this lesson");
                 ad.SetNeutralButton("OK", delegate
                 {
                     ad.Dispose();
                 });
-                ad.Show();
+                ad.Show();*/
             };
         }
 

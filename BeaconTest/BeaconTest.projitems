@@ -23,7 +23,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ItemsViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataAccess.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Resources.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SharedData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Lecturer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Student.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ATS.cs" />

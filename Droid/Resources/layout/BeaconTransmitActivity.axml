@@ -2,12 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:theme="@style/Base.Widget.AppCompat.ActionBar">
     <ImageView
         android:layout_width="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_height="50dp"
-        android:src="@drawable/signal"
+        android:src="@drawable/Asset2"
         android:id="@+id/studentAttendanceImageView"
         android:layout_marginTop="20dp" />
     <TextView
@@ -34,21 +35,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/locationTextView"
         android:layout_gravity="center" />
-    <EditText
-        android:hint="ATS Code"
-        android:textSize="12dp"
-        android:id="@+id/attendanceCodeEditText"
-        android:backgroundTint="@color/abc_hint_foreground_material_dark"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/attendanceCodeTextView"
+        android:text="Attendance Code"
+        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
         android:layout_gravity="center" />
-    <Button
-        android:text="Submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/submitBtn"
-        android:layout_gravity="center"
-        android:layout_marginTop="80dp"
-        android:visibility="gone" />
 </LinearLayout>

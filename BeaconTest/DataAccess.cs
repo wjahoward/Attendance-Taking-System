@@ -166,12 +166,12 @@ namespace BeaconTest
 
 		public static string StudentGetBeaconKey()
 		{
-			studentTimetable = GetStudentTimetable(Resources.testSPStudentID).Result;
+			studentTimetable = GetStudentTimetable(SharedData.testSPStudentID).Result;
 			currentModule = studentTimetable.GetCurrentModule();
 
 			if (currentModule != null)
 			{
-				beaconKey = Resources.testBeaconUUID;
+				beaconKey = SharedData.testBeaconUUID;
 				var beaconKeyStringBuilder = new StringBuilder(beaconKey);
 
 				string moduleCodeNumber = "A" + currentModule.code.Remove(0, 2);
@@ -189,12 +189,12 @@ namespace BeaconTest
 
         public static string LecturerGetBeaconKey()
         {
-            studentTimetable = GetStudentTimetable(Resources.testSPStudentID).Result;
+            studentTimetable = GetStudentTimetable(SharedData.testSPStudentID).Result;
             currentModule = studentTimetable.GetCurrentModule();
 
             if (currentModule != null)
             {
-                beaconKey = Resources.testBeaconUUID;
+                beaconKey = SharedData.testBeaconUUID;
                 var beaconKeyStringBuilder = new StringBuilder(beaconKey);
 
                 string moduleCodeNumber = "A" + currentModule.code.Remove(0, 2);
@@ -212,7 +212,7 @@ namespace BeaconTest
 
         public static int GetATS()
 		{
-			return int.Parse(Resources.testATS);
+			return int.Parse(SharedData.testATS);
 		}
 	}
 }

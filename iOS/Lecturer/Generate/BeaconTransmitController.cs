@@ -36,7 +36,7 @@ namespace BeaconTest.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            ViewAttendanceButton.Layer.CornerRadius = BeaconTest.Resources.buttonCornerRadius;
+            ViewAttendanceButton.Layer.CornerRadius = BeaconTest.SharedData.buttonCornerRadius;
             var locationManager = new CLLocationManager();
             locationManager.RequestWhenInUseAuthorization();
         }
@@ -45,11 +45,11 @@ namespace BeaconTest.iOS
         {
             base.ViewDidAppear(animated);
 
-			string atsCode = Resources.testATS;
+			string atsCode = SharedData.testATS;
 			string atsCode1stHalf = atsCode.Substring(0, 3);
 			string atsCode2ndHalf = atsCode.Substring(3, 3);
 
-			beaconRegion = new CLBeaconRegion(new NSUuid(DataAccess.StudentGetBeaconKey()), (ushort) int.Parse(atsCode1stHalf), (ushort) int.Parse(atsCode2ndHalf), Resources.beaconId);
+			beaconRegion = new CLBeaconRegion(new NSUuid(DataAccess.StudentGetBeaconKey()), (ushort) int.Parse(atsCode1stHalf), (ushort) int.Parse(atsCode2ndHalf), SharedData.beaconId);
 
             //power - the received signal strength indicator (RSSI) value (measured in decibels) of the beacon from one meter away
             var power = new NSNumber(-59);
@@ -63,11 +63,11 @@ namespace BeaconTest.iOS
             }
 
 			lecturerBeacon = new LecturerBeacon();
-			lecturerBeacon.BeaconKey = Resources.testBeaconUUID;
-			lecturerBeacon.ATS_Lecturer = Resources.testATS;
-			lecturerBeacon.Major = Resources.testBeaconMajor;
-			lecturerBeacon.Minor = Resources.testBeaconMinor;
-			lecturerBeacon.StaffID = Resources.testStaffID;
+			lecturerBeacon.BeaconKey = SharedData.testBeaconUUID;
+			lecturerBeacon.ATS_Lecturer = SharedData.testATS;
+			lecturerBeacon.Major = SharedData.testBeaconMajor;
+			lecturerBeacon.Minor = SharedData.testBeaconMinor;
+			lecturerBeacon.StaffID = SharedData.testStaffID;
 			lecturerBeacon.TimeGenerated = TimeZone.CurrentTimeZone.ToLocalTime(DateTime.Now);
 			Debug.WriteLine(lecturerBeacon.TimeGenerated);
 			bool submitted;
