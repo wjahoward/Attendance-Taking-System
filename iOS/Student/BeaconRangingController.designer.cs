@@ -28,6 +28,10 @@ namespace BeaconTest.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel LocationLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel ModuleNameLabel { get; set; }
 
         [Outlet]
@@ -41,10 +45,6 @@ namespace BeaconTest.iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel TimePeriodLabel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel VenueLabel { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
@@ -61,6 +61,11 @@ namespace BeaconTest.iOS
             if (FoundBeacon != null) {
                 FoundBeacon.Dispose ();
                 FoundBeacon = null;
+            }
+
+            if (LocationLabel != null) {
+                LocationLabel.Dispose ();
+                LocationLabel = null;
             }
 
             if (ModuleNameLabel != null) {
@@ -81,11 +86,6 @@ namespace BeaconTest.iOS
             if (TimePeriodLabel != null) {
                 TimePeriodLabel.Dispose ();
                 TimePeriodLabel = null;
-            }
-
-            if (VenueLabel != null) {
-                VenueLabel.Dispose ();
-                VenueLabel = null;
             }
         }
     }

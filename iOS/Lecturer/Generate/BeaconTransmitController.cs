@@ -7,6 +7,8 @@ using CoreBluetooth;
 using CoreFoundation;
 using BeaconTest.Models;
 using System.Diagnostics;
+using System.Threading;
+using Acr.UserDialogs;
 
 namespace BeaconTest.iOS
 {
@@ -14,6 +16,8 @@ namespace BeaconTest.iOS
     {
         BTPeripheralDelegate peripheralDelegate;
         CBPeripheralManager peripheralManager;
+		StudentTimetable studentTimetable;
+		StudentModule studentModule;
 
         CLBeaconRegion beaconRegion;
 
@@ -39,42 +43,38 @@ namespace BeaconTest.iOS
             ViewAttendanceButton.Layer.CornerRadius = BeaconTest.SharedData.buttonCornerRadius;
             var locationManager = new CLLocationManager();
             locationManager.RequestWhenInUseAuthorization();
+
+			UserDialogs.Instance.ShowLoading("Retrieving module info...");
+			ThreadPool.QueueUserWorkItem(o => GetModule());         
         }
 
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
 
-			string atsCode = SharedData.testATS;
-			string atsCode1stHalf = atsCode.Substring(0, 3);
-			string atsCode2ndHalf = atsCode.Substring(3, 3);
+			var bluetoothManager = new CBCentralManager();
+            if (bluetoothManager.State == CBCentralManagerState.PoweredOff)
+            {
+                // Does not go directly to bluetooth on every OS version though, but opens the Settings on most
+                UIApplication.SharedApplication.OpenUrl(new NSUrl("App-Prefs:root=Bluetooth"));
+            }         
+		}
 
-			beaconRegion = new CLBeaconRegion(new NSUuid(DataAccess.StudentGetBeaconKey()), (ushort) int.Parse(atsCode1stHalf), (ushort) int.Parse(atsCode2ndHalf), SharedData.beaconId);
+        private void InitBeacon()
+		{
+			string atsCode = SharedData.testATS;
+            string atsCode1stHalf = atsCode.Substring(0, 3);
+            string atsCode2ndHalf = atsCode.Substring(3, 3);
+
+			beaconRegion = new CLBeaconRegion(new NSUuid(DataAccess.StudentGetBeaconKey()), (ushort)int.Parse(atsCode1stHalf), (ushort)int.Parse(atsCode2ndHalf), SharedData.beaconId);
 
             //power - the received signal strength indicator (RSSI) value (measured in decibels) of the beacon from one meter away
             var power = new NSNumber(-59);
 
             var peripheralData = beaconRegion.GetPeripheralData(power);
-            peripheralDelegate = new BTPeripheralDelegate();               
+            peripheralDelegate = new BTPeripheralDelegate();
             peripheralManager.StartAdvertising(peripheralData);
-			if (peripheralDelegate.bluetoothAvailable == false)
-            {
-                ShowBluetoothAlert();
-            }
-
-			lecturerBeacon = new LecturerBeacon();
-			lecturerBeacon.BeaconKey = SharedData.testBeaconUUID;
-			lecturerBeacon.ATS_Lecturer = SharedData.testATS;
-			lecturerBeacon.Major = SharedData.testBeaconMajor;
-			lecturerBeacon.Minor = SharedData.testBeaconMinor;
-			lecturerBeacon.StaffID = SharedData.testStaffID;
-			lecturerBeacon.TimeGenerated = TimeZone.CurrentTimeZone.ToLocalTime(DateTime.Now);
-			Debug.WriteLine(lecturerBeacon.TimeGenerated);
-			bool submitted;
-
-			submitted = DataAccess.LecturerGenerateATS(lecturerBeacon).Result;
-			Debug.WriteLine(submitted);
-        }
+		}
 
         public class BTPeripheralDelegate : CBPeripheralManagerDelegate
         {
@@ -89,10 +89,38 @@ namespace BeaconTest.iOS
 				else
 				{
 					Debug.WriteLine("Bluetooth not available");
-					bluetoothAvailable = false;
 				}
             }
         }
+
+        private void GetModule()
+		{
+			studentTimetable = DataAccess.GetStudentTimetable(SharedData.testSPStudentID).Result;
+            studentModule = studentTimetable.GetCurrentModule();
+            if (studentModule != null)
+            {
+                InvokeOnMainThread(() =>
+                {
+                    ModuleNameLabel.Text = studentTimetable.GetCurrentModule().abbr + " (" + studentTimetable.GetCurrentModule().code + ")";
+                    TimePeriodLabel.Text = studentTimetable.GetCurrentModule().time;
+                    LocationLabel.Text = studentTimetable.GetCurrentModule().location;
+					AttendanceCodeLabel.Text = SharedData.testATS;
+					UserDialogs.Instance.HideLoading();
+					InitBeacon();
+                });
+            }
+            else
+            {
+                InvokeOnMainThread(() =>
+                {
+                    ModuleNameLabel.Text = "No lessons today";
+                    TimePeriodLabel.Hidden = true;
+                    LocationLabel.Hidden = true;
+					AttendanceCodeLabel.Hidden = true;
+					UserDialogs.Instance.HideLoading();
+                });
+            }
+		}
 
 		public void ShowBluetoothAlert()
 		{

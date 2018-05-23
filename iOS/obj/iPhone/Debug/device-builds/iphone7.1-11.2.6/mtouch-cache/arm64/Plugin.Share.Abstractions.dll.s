@@ -716,7 +716,7 @@ ldr x16, [x16, #304]
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_11:
+Lme_12:
 .text
 	.align 4
 	.no_dead_strip Plugin_Share_Abstractions_ShareColor_set_A_int
@@ -756,7 +756,7 @@ ldr x16, [x16, #312]
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_12:
+Lme_13:
 .text
 	.align 4
 	.no_dead_strip Plugin_Share_Abstractions_ShareColor_get_R
@@ -794,7 +794,7 @@ ldr x16, [x16, #320]
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_13:
+Lme_14:
 .text
 	.align 4
 	.no_dead_strip Plugin_Share_Abstractions_ShareColor_set_R_int
@@ -834,7 +834,7 @@ ldr x16, [x16, #328]
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_14:
+Lme_15:
 .text
 	.align 4
 	.no_dead_strip Plugin_Share_Abstractions_ShareColor_get_G
@@ -872,7 +872,7 @@ ldr x16, [x16, #336]
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_15:
+Lme_16:
 .text
 	.align 4
 	.no_dead_strip Plugin_Share_Abstractions_ShareColor_set_G_int
@@ -912,7 +912,7 @@ ldr x16, [x16, #344]
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_16:
+Lme_17:
 .text
 	.align 4
 	.no_dead_strip Plugin_Share_Abstractions_ShareColor_get_B
@@ -950,7 +950,7 @@ ldr x16, [x16, #352]
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_17:
+Lme_18:
 .text
 	.align 4
 	.no_dead_strip Plugin_Share_Abstractions_ShareColor_set_B_int
@@ -990,7 +990,7 @@ ldr x16, [x16, #360]
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_18:
+Lme_19:
 .text
 	.align 4
 	.no_dead_strip Plugin_Share_Abstractions_ShareColor__ctor
@@ -1032,7 +1032,7 @@ ldr x16, [x16, #368]
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_19:
+Lme_1a:
 .text
 	.align 4
 	.no_dead_strip Plugin_Share_Abstractions_ShareColor__ctor_int_int_int
@@ -1083,7 +1083,7 @@ bl _p_1
 .word 0xa8c57bfd
 .word 0xd65f03c0
 
-Lme_1a:
+Lme_1b:
 .text
 	.align 4
 	.no_dead_strip Plugin_Share_Abstractions_ShareColor__ctor_int_int_int_int
@@ -1167,7 +1167,7 @@ bl _p_5
 .word 0xa8c57bfd
 .word 0xd65f03c0
 
-Lme_1b:
+Lme_1c:
 .text
 	.align 4
 	.no_dead_strip Plugin_Share_Abstractions_ShareMessage_get_Title
@@ -1206,7 +1206,7 @@ ldr x16, [x16, #392]
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_1c:
+Lme_1d:
 .text
 	.align 4
 	.no_dead_strip Plugin_Share_Abstractions_ShareMessage_set_Title_string
@@ -1258,7 +1258,7 @@ ldr x2, [x16, #16]
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_1d:
+Lme_1e:
 .text
 	.align 4
 	.no_dead_strip Plugin_Share_Abstractions_ShareMessage_get_Text
@@ -1296,7 +1296,7 @@ ldr x16, [x16, #408]
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_1e:
+Lme_1f:
 .text
 	.align 4
 	.no_dead_strip Plugin_Share_Abstractions_ShareMessage_set_Text_string
@@ -1348,7 +1348,7 @@ ldr x2, [x16, #16]
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_1f:
+Lme_20:
 .text
 	.align 4
 	.no_dead_strip Plugin_Share_Abstractions_ShareMessage_get_Url
@@ -1386,7 +1386,7 @@ ldr x16, [x16, #424]
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_20:
+Lme_21:
 .text
 	.align 4
 	.no_dead_strip Plugin_Share_Abstractions_ShareMessage_set_Url_string
@@ -1438,7 +1438,7 @@ ldr x2, [x16, #16]
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_21:
+Lme_22:
 .text
 	.align 4
 	.no_dead_strip Plugin_Share_Abstractions_ShareMessage__ctor
@@ -1470,7 +1470,7 @@ ldr x16, [x16, #440]
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_22:
+Lme_23:
 .text
 	.align 4
 	.no_dead_strip Plugin_Share_Abstractions_ShareOptions_get_ChooserTitle
@@ -1509,7 +1509,7 @@ ldr x16, [x16, #448]
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_23:
+Lme_24:
 .text
 	.align 4
 	.no_dead_strip Plugin_Share_Abstractions_ShareOptions_set_ChooserTitle_string
@@ -1561,11 +1561,11 @@ ldr x2, [x16, #16]
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_24:
+Lme_25:
 .text
 	.align 4
-	.no_dead_strip Plugin_Share_Abstractions_ShareOptions_get_ExcludedUIActivityTypes
-Plugin_Share_Abstractions_ShareOptions_get_ExcludedUIActivityTypes:
+	.no_dead_strip Plugin_Share_Abstractions_ShareOptions_get_ExcludedAppControlTypes
+Plugin_Share_Abstractions_ShareOptions_get_ExcludedAppControlTypes:
 .loc 4 24 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -1574,6 +1574,84 @@ Plugin_Share_Abstractions_ShareOptions_get_ExcludedUIActivityTypes:
 adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
 ldr x16, [x16, #464]
+.word 0xf9000fb0
+.word 0xf9400a11
+.word 0xf90013b1
+.word 0xf9400fb1
+.word 0xf9403231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94013b1
+.word 0xf9400231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9400fb1
+.word 0xf9405231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9400ba0
+.word 0xb9802800
+.word 0xf9400fb1
+.word 0xf9406a31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0x910003bf
+.word 0xa8c37bfd
+.word 0xd65f03c0
+
+Lme_26:
+.text
+	.align 4
+	.no_dead_strip Plugin_Share_Abstractions_ShareOptions_set_ExcludedAppControlTypes_Plugin_Share_Abstractions_ShareAppControlType
+Plugin_Share_Abstractions_ShareOptions_set_ExcludedAppControlTypes_Plugin_Share_Abstractions_ShareAppControlType:
+.loc 4 24 0 prologue_end
+.word 0xa9bc7bfd
+.word 0x910003fd
+.word 0xf9000ba0
+.word 0xf9000fa1
+
+adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
+ldr x16, [x16, #472]
+.word 0xf90013b0
+.word 0xf9400a11
+.word 0xf90017b1
+.word 0xf94013b1
+.word 0xf9403631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94017b1
+.word 0xf9400231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94013b1
+.word 0xf9405631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9400ba0
+.word 0xb9801ba1
+.word 0xb9002801
+.word 0xf94013b1
+.word 0xf9407231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0x910003bf
+.word 0xa8c47bfd
+.word 0xd65f03c0
+
+Lme_27:
+.text
+	.align 4
+	.no_dead_strip Plugin_Share_Abstractions_ShareOptions_get_ExcludedUIActivityTypes
+Plugin_Share_Abstractions_ShareOptions_get_ExcludedUIActivityTypes:
+.loc 4 30 0 prologue_end
+.word 0xa9bd7bfd
+.word 0x910003fd
+.word 0xf9000ba0
+
+adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
+ldr x16, [x16, #480]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -1599,12 +1677,12 @@ ldr x16, [x16, #464]
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_25:
+Lme_28:
 .text
 	.align 4
 	.no_dead_strip Plugin_Share_Abstractions_ShareOptions_set_ExcludedUIActivityTypes_Plugin_Share_Abstractions_ShareUIActivityType__
 Plugin_Share_Abstractions_ShareOptions_set_ExcludedUIActivityTypes_Plugin_Share_Abstractions_ShareUIActivityType__:
-.loc 4 24 0 prologue_end
+.loc 4 30 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
 .word 0xf9000ba0
@@ -1612,7 +1690,7 @@ Plugin_Share_Abstractions_ShareOptions_set_ExcludedUIActivityTypes_Plugin_Share_
 
 adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
-ldr x16, [x16, #472]
+ldr x16, [x16, #488]
 .word 0xf90013b0
 .word 0xf9400a11
 .word 0xf90017b1
@@ -1651,7 +1729,97 @@ ldr x2, [x16, #16]
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_26:
+Lme_29:
+.text
+	.align 4
+	.no_dead_strip Plugin_Share_Abstractions_ShareOptions_get_PopoverAnchorRectangle
+Plugin_Share_Abstractions_ShareOptions_get_PopoverAnchorRectangle:
+.loc 4 36 0 prologue_end
+.word 0xa9bd7bfd
+.word 0x910003fd
+.word 0xf9000ba0
+
+adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
+ldr x16, [x16, #496]
+.word 0xf9000fb0
+.word 0xf9400a11
+.word 0xf90013b1
+.word 0xf9400fb1
+.word 0xf9403231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94013b1
+.word 0xf9400231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9400fb1
+.word 0xf9405231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9400ba0
+.word 0xf9401000
+.word 0xf9400fb1
+.word 0xf9406a31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0x910003bf
+.word 0xa8c37bfd
+.word 0xd65f03c0
+
+Lme_2a:
+.text
+	.align 4
+	.no_dead_strip Plugin_Share_Abstractions_ShareOptions_set_PopoverAnchorRectangle_Plugin_Share_Abstractions_ShareRectangle
+Plugin_Share_Abstractions_ShareOptions_set_PopoverAnchorRectangle_Plugin_Share_Abstractions_ShareRectangle:
+.loc 4 36 0 prologue_end
+.word 0xa9bc7bfd
+.word 0x910003fd
+.word 0xf9000ba0
+.word 0xf9000fa1
+
+adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
+ldr x16, [x16, #504]
+.word 0xf90013b0
+.word 0xf9400a11
+.word 0xf90017b1
+.word 0xf94013b1
+.word 0xf9403631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94017b1
+.word 0xf9400231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94013b1
+.word 0xf9405631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9400ba1
+.word 0xf9400fa0
+.word 0xf9001020
+.word 0x91008021
+.word 0xd349fc21
+.word 0xd29ffffe
+.word 0xf2a00ffe
+.word 0x8a1e0021
+
+adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
+ldr x2, [x16, #16]
+.word 0x8b020021
+.word 0xd280003e
+.word 0x3900003e
+.word 0xf94013b1
+.word 0xf9409e31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0x910003bf
+.word 0xa8c47bfd
+.word 0xd65f03c0
+
+Lme_2b:
 .text
 	.align 4
 	.no_dead_strip Plugin_Share_Abstractions_ShareOptions__ctor
@@ -1662,7 +1830,7 @@ Plugin_Share_Abstractions_ShareOptions__ctor:
 
 adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
-ldr x16, [x16, #480]
+ldr x16, [x16, #512]
 .word 0xf9000fb0
 .word 0xf9400a11
 .word 0xf90013b1
@@ -1683,7 +1851,404 @@ ldr x16, [x16, #480]
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_27:
+Lme_2c:
+.text
+	.align 4
+	.no_dead_strip Plugin_Share_Abstractions_ShareRectangle_get_X
+Plugin_Share_Abstractions_ShareRectangle_get_X:
+.file 5 "C:\\projects\\shareplugin\\Share\\Share.Plugin.Abstractions\\ShareRectangle.cs"
+.loc 5 9 0 prologue_end
+.word 0xa9bd7bfd
+.word 0x910003fd
+.word 0xf9000ba0
+
+adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
+ldr x16, [x16, #520]
+.word 0xf9000fb0
+.word 0xf9400a11
+.word 0xf90013b1
+.word 0xf9400fb1
+.word 0xf9403231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94013b1
+.word 0xf9400231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9400fb1
+.word 0xf9405231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9400ba0
+.word 0xfd400800
+.word 0xf9400fb1
+.word 0xf9406a31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0x910003bf
+.word 0xa8c37bfd
+.word 0xd65f03c0
+
+Lme_2d:
+.text
+	.align 4
+	.no_dead_strip Plugin_Share_Abstractions_ShareRectangle_set_X_double
+Plugin_Share_Abstractions_ShareRectangle_set_X_double:
+.loc 5 9 0 prologue_end
+.word 0xa9bc7bfd
+.word 0x910003fd
+.word 0xf9000ba0
+.word 0xfd000fa0
+
+adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
+ldr x16, [x16, #528]
+.word 0xf90013b0
+.word 0xf9400a11
+.word 0xf90017b1
+.word 0xf94013b1
+.word 0xf9403631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94017b1
+.word 0xf9400231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94013b1
+.word 0xf9405631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9400ba0
+.word 0xfd400fa0
+.word 0xfd000800
+.word 0xf94013b1
+.word 0xf9407231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0x910003bf
+.word 0xa8c47bfd
+.word 0xd65f03c0
+
+Lme_2e:
+.text
+	.align 4
+	.no_dead_strip Plugin_Share_Abstractions_ShareRectangle_get_Y
+Plugin_Share_Abstractions_ShareRectangle_get_Y:
+.loc 5 10 0 prologue_end
+.word 0xa9bd7bfd
+.word 0x910003fd
+.word 0xf9000ba0
+
+adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
+ldr x16, [x16, #536]
+.word 0xf9000fb0
+.word 0xf9400a11
+.word 0xf90013b1
+.word 0xf9400fb1
+.word 0xf9403231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94013b1
+.word 0xf9400231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9400fb1
+.word 0xf9405231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9400ba0
+.word 0xfd400c00
+.word 0xf9400fb1
+.word 0xf9406a31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0x910003bf
+.word 0xa8c37bfd
+.word 0xd65f03c0
+
+Lme_2f:
+.text
+	.align 4
+	.no_dead_strip Plugin_Share_Abstractions_ShareRectangle_set_Y_double
+Plugin_Share_Abstractions_ShareRectangle_set_Y_double:
+.loc 5 10 0 prologue_end
+.word 0xa9bc7bfd
+.word 0x910003fd
+.word 0xf9000ba0
+.word 0xfd000fa0
+
+adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
+ldr x16, [x16, #544]
+.word 0xf90013b0
+.word 0xf9400a11
+.word 0xf90017b1
+.word 0xf94013b1
+.word 0xf9403631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94017b1
+.word 0xf9400231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94013b1
+.word 0xf9405631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9400ba0
+.word 0xfd400fa0
+.word 0xfd000c00
+.word 0xf94013b1
+.word 0xf9407231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0x910003bf
+.word 0xa8c47bfd
+.word 0xd65f03c0
+
+Lme_30:
+.text
+	.align 4
+	.no_dead_strip Plugin_Share_Abstractions_ShareRectangle_get_Width
+Plugin_Share_Abstractions_ShareRectangle_get_Width:
+.loc 5 11 0 prologue_end
+.word 0xa9bd7bfd
+.word 0x910003fd
+.word 0xf9000ba0
+
+adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
+ldr x16, [x16, #552]
+.word 0xf9000fb0
+.word 0xf9400a11
+.word 0xf90013b1
+.word 0xf9400fb1
+.word 0xf9403231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94013b1
+.word 0xf9400231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9400fb1
+.word 0xf9405231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9400ba0
+.word 0xfd401000
+.word 0xf9400fb1
+.word 0xf9406a31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0x910003bf
+.word 0xa8c37bfd
+.word 0xd65f03c0
+
+Lme_31:
+.text
+	.align 4
+	.no_dead_strip Plugin_Share_Abstractions_ShareRectangle_set_Width_double
+Plugin_Share_Abstractions_ShareRectangle_set_Width_double:
+.loc 5 11 0 prologue_end
+.word 0xa9bc7bfd
+.word 0x910003fd
+.word 0xf9000ba0
+.word 0xfd000fa0
+
+adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
+ldr x16, [x16, #560]
+.word 0xf90013b0
+.word 0xf9400a11
+.word 0xf90017b1
+.word 0xf94013b1
+.word 0xf9403631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94017b1
+.word 0xf9400231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94013b1
+.word 0xf9405631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9400ba0
+.word 0xfd400fa0
+.word 0xfd001000
+.word 0xf94013b1
+.word 0xf9407231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0x910003bf
+.word 0xa8c47bfd
+.word 0xd65f03c0
+
+Lme_32:
+.text
+	.align 4
+	.no_dead_strip Plugin_Share_Abstractions_ShareRectangle_get_Height
+Plugin_Share_Abstractions_ShareRectangle_get_Height:
+.loc 5 12 0 prologue_end
+.word 0xa9bd7bfd
+.word 0x910003fd
+.word 0xf9000ba0
+
+adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
+ldr x16, [x16, #568]
+.word 0xf9000fb0
+.word 0xf9400a11
+.word 0xf90013b1
+.word 0xf9400fb1
+.word 0xf9403231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94013b1
+.word 0xf9400231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9400fb1
+.word 0xf9405231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9400ba0
+.word 0xfd401400
+.word 0xf9400fb1
+.word 0xf9406a31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0x910003bf
+.word 0xa8c37bfd
+.word 0xd65f03c0
+
+Lme_33:
+.text
+	.align 4
+	.no_dead_strip Plugin_Share_Abstractions_ShareRectangle_set_Height_double
+Plugin_Share_Abstractions_ShareRectangle_set_Height_double:
+.loc 5 12 0 prologue_end
+.word 0xa9bc7bfd
+.word 0x910003fd
+.word 0xf9000ba0
+.word 0xfd000fa0
+
+adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
+ldr x16, [x16, #576]
+.word 0xf90013b0
+.word 0xf9400a11
+.word 0xf90017b1
+.word 0xf94013b1
+.word 0xf9403631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94017b1
+.word 0xf9400231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94013b1
+.word 0xf9405631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9400ba0
+.word 0xfd400fa0
+.word 0xfd001400
+.word 0xf94013b1
+.word 0xf9407231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0x910003bf
+.word 0xa8c47bfd
+.word 0xd65f03c0
+
+Lme_34:
+.text
+	.align 4
+	.no_dead_strip Plugin_Share_Abstractions_ShareRectangle__ctor_double_double_double_double
+Plugin_Share_Abstractions_ShareRectangle__ctor_double_double_double_double:
+.loc 5 14 0 prologue_end
+.word 0xa9bb7bfd
+.word 0x910003fd
+.word 0xf9000bba
+.word 0xaa0003fa
+.word 0xfd000fa0
+.word 0xfd0013a1
+.word 0xfd0017a2
+.word 0xfd001ba3
+
+adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
+ldr x16, [x16, #584]
+.word 0xf9001fb0
+.word 0xf9400a11
+.word 0xf90023b1
+.word 0xf9401fb1
+.word 0xf9404631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94023b1
+.word 0xf9400231
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9401fb1
+.word 0xf9406631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xaa1a03e0
+.loc 5 16 0
+.word 0xf9401fb1
+.word 0xf9407a31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xaa1a03e0
+.word 0xfd400fa0
+.word 0xaa1a03e0
+bl _p_6
+.loc 5 17 0
+.word 0xf9401fb1
+.word 0xf9409a31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xaa1a03e0
+.word 0xfd4013a0
+.word 0xaa1a03e0
+bl _p_7
+.loc 5 18 0
+.word 0xf9401fb1
+.word 0xf940ba31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xaa1a03e0
+.word 0xfd4017a0
+.word 0xaa1a03e0
+bl _p_8
+.loc 5 19 0
+.word 0xf9401fb1
+.word 0xf940da31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xaa1a03e0
+.word 0xfd401ba0
+.word 0xaa1a03e0
+bl _p_9
+.loc 5 20 0
+.word 0xf9401fb1
+.word 0xf940fa31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9401fb1
+.word 0xf9410a31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9400bba
+.word 0x910003bf
+.word 0xa8c57bfd
+.word 0xd65f03c0
+
+Lme_35:
 .text
 	.align 3
 jit_code_end:
@@ -1710,6 +2275,7 @@ bl method_addresses
 bl method_addresses
 bl method_addresses
 bl method_addresses
+bl method_addresses
 bl Plugin_Share_Abstractions_ShareColor_get_A
 bl Plugin_Share_Abstractions_ShareColor_set_A_int
 bl Plugin_Share_Abstractions_ShareColor_get_R
@@ -1730,9 +2296,22 @@ bl Plugin_Share_Abstractions_ShareMessage_set_Url_string
 bl Plugin_Share_Abstractions_ShareMessage__ctor
 bl Plugin_Share_Abstractions_ShareOptions_get_ChooserTitle
 bl Plugin_Share_Abstractions_ShareOptions_set_ChooserTitle_string
+bl Plugin_Share_Abstractions_ShareOptions_get_ExcludedAppControlTypes
+bl Plugin_Share_Abstractions_ShareOptions_set_ExcludedAppControlTypes_Plugin_Share_Abstractions_ShareAppControlType
 bl Plugin_Share_Abstractions_ShareOptions_get_ExcludedUIActivityTypes
 bl Plugin_Share_Abstractions_ShareOptions_set_ExcludedUIActivityTypes_Plugin_Share_Abstractions_ShareUIActivityType__
+bl Plugin_Share_Abstractions_ShareOptions_get_PopoverAnchorRectangle
+bl Plugin_Share_Abstractions_ShareOptions_set_PopoverAnchorRectangle_Plugin_Share_Abstractions_ShareRectangle
 bl Plugin_Share_Abstractions_ShareOptions__ctor
+bl Plugin_Share_Abstractions_ShareRectangle_get_X
+bl Plugin_Share_Abstractions_ShareRectangle_set_X_double
+bl Plugin_Share_Abstractions_ShareRectangle_get_Y
+bl Plugin_Share_Abstractions_ShareRectangle_set_Y_double
+bl Plugin_Share_Abstractions_ShareRectangle_get_Width
+bl Plugin_Share_Abstractions_ShareRectangle_set_Width_double
+bl Plugin_Share_Abstractions_ShareRectangle_get_Height
+bl Plugin_Share_Abstractions_ShareRectangle_set_Height_double
+bl Plugin_Share_Abstractions_ShareRectangle__ctor_double_double_double_double
 bl method_addresses
 method_addresses_end:
 
@@ -1753,7 +2332,7 @@ unwind_info:
 
 	.byte 13,12,31,0,68,14,48,157,6,158,5,68,13,29,13,12,31,0,68,14,64,157,8,158,7,68,13,29,16,12,31,0
 	.byte 68,14,48,157,6,158,5,68,13,29,68,154,4,13,12,31,0,68,14,80,157,10,158,9,68,13,29,16,12,31,0,68
-	.byte 14,80,157,10,158,9,68,13,29,68,150,8
+	.byte 14,80,157,10,158,9,68,13,29,68,150,8,16,12,31,0,68,14,80,157,10,158,9,68,13,29,68,154,8
 
 .text
 	.align 4
@@ -1764,45 +2343,77 @@ plt_Plugin_Share_Abstractions_ShareColor__ctor_int_int_int_int:
 _p_1:
 adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
-ldr x16, [x16, #496]
+ldr x16, [x16, #600]
 br x16
-.word 428
+.word 480
 	.no_dead_strip plt_Plugin_Share_Abstractions_ShareColor_set_A_int
 plt_Plugin_Share_Abstractions_ShareColor_set_A_int:
 _p_2:
 adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
-ldr x16, [x16, #504]
+ldr x16, [x16, #608]
 br x16
-.word 430
+.word 482
 	.no_dead_strip plt_Plugin_Share_Abstractions_ShareColor_set_R_int
 plt_Plugin_Share_Abstractions_ShareColor_set_R_int:
 _p_3:
 adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
-ldr x16, [x16, #512]
+ldr x16, [x16, #616]
 br x16
-.word 432
+.word 484
 	.no_dead_strip plt_Plugin_Share_Abstractions_ShareColor_set_G_int
 plt_Plugin_Share_Abstractions_ShareColor_set_G_int:
 _p_4:
 adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
-ldr x16, [x16, #520]
+ldr x16, [x16, #624]
 br x16
-.word 434
+.word 486
 	.no_dead_strip plt_Plugin_Share_Abstractions_ShareColor_set_B_int
 plt_Plugin_Share_Abstractions_ShareColor_set_B_int:
 _p_5:
 adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
 add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
-ldr x16, [x16, #528]
+ldr x16, [x16, #632]
 br x16
-.word 436
+.word 488
+	.no_dead_strip plt_Plugin_Share_Abstractions_ShareRectangle_set_X_double
+plt_Plugin_Share_Abstractions_ShareRectangle_set_X_double:
+_p_6:
+adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
+ldr x16, [x16, #640]
+br x16
+.word 490
+	.no_dead_strip plt_Plugin_Share_Abstractions_ShareRectangle_set_Y_double
+plt_Plugin_Share_Abstractions_ShareRectangle_set_Y_double:
+_p_7:
+adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
+ldr x16, [x16, #648]
+br x16
+.word 492
+	.no_dead_strip plt_Plugin_Share_Abstractions_ShareRectangle_set_Width_double
+plt_Plugin_Share_Abstractions_ShareRectangle_set_Width_double:
+_p_8:
+adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
+ldr x16, [x16, #656]
+br x16
+.word 494
+	.no_dead_strip plt_Plugin_Share_Abstractions_ShareRectangle_set_Height_double
+plt_Plugin_Share_Abstractions_ShareRectangle_set_Height_double:
+_p_9:
+adrp x16, mono_aot_Plugin_Share_Abstractions_got@PAGE+0
+add x16, x16, mono_aot_Plugin_Share_Abstractions_got@PAGEOFF
+ldr x16, [x16, #664]
+br x16
+.word 496
 plt_end:
 .section __DATA, __bss
 	.align 3
-.lcomm mono_aot_Plugin_Share_Abstractions_got, 536
+.lcomm mono_aot_Plugin_Share_Abstractions_got, 672
 got_end:
 .section __TEXT, __const
 	.align 3
@@ -1825,7 +2436,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "901EFADC-DCD8-4E43-8EB8-6B562D83E12D"
+	.asciz "563E50A0-5A6D-4B21-BBC9-1F3A4854A9B8"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -1904,13 +2515,13 @@ _mono_aot_file_info:
 	.align 3
 	.quad unbox_trampoline_addresses
 
-	.long 61,536,6,41,70,391195135,0,2262
-	.long 128,8,8,9,0,25,2960,688
-	.long 496,224,0,384,464,280,0,216
-	.long 72,680,0,0,0,0,0,0
+	.long 74,672,10,55,70,391195135,0,3035
+	.long 128,8,8,9,0,25,3824,776
+	.long 584,248,0,448,552,328,0,240
+	.long 96,768,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 240,128,175,112,5,158,196,251,101,102,146,206,132,41,207,30
+	.byte 169,28,68,113,27,201,8,30,172,172,192,163,121,253,95,62
 	.globl _mono_aot_module_Plugin_Share_Abstractions_info
 	.align 3
 _mono_aot_module_Plugin_Share_Abstractions_info:
@@ -2590,7 +3201,7 @@ Lfde12_end:
 
 	.byte 2,17
 	.quad Plugin_Share_Abstractions_ShareColor_get_A
-	.quad Lme_11
+	.quad Lme_12
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -2609,7 +3220,7 @@ Lfde13_start:
 	.align 3
 	.quad Plugin_Share_Abstractions_ShareColor_get_A
 
-LDIFF_SYM85=Lme_11 - Plugin_Share_Abstractions_ShareColor_get_A
+LDIFF_SYM85=Lme_12 - Plugin_Share_Abstractions_ShareColor_get_A
 	.long LDIFF_SYM85
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
@@ -2624,7 +3235,7 @@ Lfde13_end:
 
 	.byte 2,17
 	.quad Plugin_Share_Abstractions_ShareColor_set_A_int
-	.quad Lme_12
+	.quad Lme_13
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -2648,7 +3259,7 @@ Lfde14_start:
 	.align 3
 	.quad Plugin_Share_Abstractions_ShareColor_set_A_int
 
-LDIFF_SYM89=Lme_12 - Plugin_Share_Abstractions_ShareColor_set_A_int
+LDIFF_SYM89=Lme_13 - Plugin_Share_Abstractions_ShareColor_set_A_int
 	.long LDIFF_SYM89
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
@@ -2663,7 +3274,7 @@ Lfde14_end:
 
 	.byte 2,21
 	.quad Plugin_Share_Abstractions_ShareColor_get_R
-	.quad Lme_13
+	.quad Lme_14
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -2682,7 +3293,7 @@ Lfde15_start:
 	.align 3
 	.quad Plugin_Share_Abstractions_ShareColor_get_R
 
-LDIFF_SYM92=Lme_13 - Plugin_Share_Abstractions_ShareColor_get_R
+LDIFF_SYM92=Lme_14 - Plugin_Share_Abstractions_ShareColor_get_R
 	.long LDIFF_SYM92
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
@@ -2697,7 +3308,7 @@ Lfde15_end:
 
 	.byte 2,21
 	.quad Plugin_Share_Abstractions_ShareColor_set_R_int
-	.quad Lme_14
+	.quad Lme_15
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -2721,7 +3332,7 @@ Lfde16_start:
 	.align 3
 	.quad Plugin_Share_Abstractions_ShareColor_set_R_int
 
-LDIFF_SYM96=Lme_14 - Plugin_Share_Abstractions_ShareColor_set_R_int
+LDIFF_SYM96=Lme_15 - Plugin_Share_Abstractions_ShareColor_set_R_int
 	.long LDIFF_SYM96
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
@@ -2736,7 +3347,7 @@ Lfde16_end:
 
 	.byte 2,25
 	.quad Plugin_Share_Abstractions_ShareColor_get_G
-	.quad Lme_15
+	.quad Lme_16
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -2755,7 +3366,7 @@ Lfde17_start:
 	.align 3
 	.quad Plugin_Share_Abstractions_ShareColor_get_G
 
-LDIFF_SYM99=Lme_15 - Plugin_Share_Abstractions_ShareColor_get_G
+LDIFF_SYM99=Lme_16 - Plugin_Share_Abstractions_ShareColor_get_G
 	.long LDIFF_SYM99
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
@@ -2770,7 +3381,7 @@ Lfde17_end:
 
 	.byte 2,25
 	.quad Plugin_Share_Abstractions_ShareColor_set_G_int
-	.quad Lme_16
+	.quad Lme_17
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -2794,7 +3405,7 @@ Lfde18_start:
 	.align 3
 	.quad Plugin_Share_Abstractions_ShareColor_set_G_int
 
-LDIFF_SYM103=Lme_16 - Plugin_Share_Abstractions_ShareColor_set_G_int
+LDIFF_SYM103=Lme_17 - Plugin_Share_Abstractions_ShareColor_set_G_int
 	.long LDIFF_SYM103
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
@@ -2809,7 +3420,7 @@ Lfde18_end:
 
 	.byte 2,29
 	.quad Plugin_Share_Abstractions_ShareColor_get_B
-	.quad Lme_17
+	.quad Lme_18
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -2828,7 +3439,7 @@ Lfde19_start:
 	.align 3
 	.quad Plugin_Share_Abstractions_ShareColor_get_B
 
-LDIFF_SYM106=Lme_17 - Plugin_Share_Abstractions_ShareColor_get_B
+LDIFF_SYM106=Lme_18 - Plugin_Share_Abstractions_ShareColor_get_B
 	.long LDIFF_SYM106
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
@@ -2843,7 +3454,7 @@ Lfde19_end:
 
 	.byte 2,29
 	.quad Plugin_Share_Abstractions_ShareColor_set_B_int
-	.quad Lme_18
+	.quad Lme_19
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -2867,7 +3478,7 @@ Lfde20_start:
 	.align 3
 	.quad Plugin_Share_Abstractions_ShareColor_set_B_int
 
-LDIFF_SYM110=Lme_18 - Plugin_Share_Abstractions_ShareColor_set_B_int
+LDIFF_SYM110=Lme_19 - Plugin_Share_Abstractions_ShareColor_set_B_int
 	.long LDIFF_SYM110
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
@@ -2882,7 +3493,7 @@ Lfde20_end:
 
 	.byte 2,34
 	.quad Plugin_Share_Abstractions_ShareColor__ctor
-	.quad Lme_19
+	.quad Lme_1a
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -2901,7 +3512,7 @@ Lfde21_start:
 	.align 3
 	.quad Plugin_Share_Abstractions_ShareColor__ctor
 
-LDIFF_SYM113=Lme_19 - Plugin_Share_Abstractions_ShareColor__ctor
+LDIFF_SYM113=Lme_1a - Plugin_Share_Abstractions_ShareColor__ctor
 	.long LDIFF_SYM113
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
@@ -2916,7 +3527,7 @@ Lfde21_end:
 
 	.byte 2,44
 	.quad Plugin_Share_Abstractions_ShareColor__ctor_int_int_int
-	.quad Lme_1a
+	.quad Lme_1b
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -2950,7 +3561,7 @@ Lfde22_start:
 	.align 3
 	.quad Plugin_Share_Abstractions_ShareColor__ctor_int_int_int
 
-LDIFF_SYM119=Lme_1a - Plugin_Share_Abstractions_ShareColor__ctor_int_int_int
+LDIFF_SYM119=Lme_1b - Plugin_Share_Abstractions_ShareColor__ctor_int_int_int
 	.long LDIFF_SYM119
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
@@ -2965,7 +3576,7 @@ Lfde22_end:
 
 	.byte 2,55
 	.quad Plugin_Share_Abstractions_ShareColor__ctor_int_int_int_int
-	.quad Lme_1b
+	.quad Lme_1c
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -3004,7 +3615,7 @@ Lfde23_start:
 	.align 3
 	.quad Plugin_Share_Abstractions_ShareColor__ctor_int_int_int_int
 
-LDIFF_SYM126=Lme_1b - Plugin_Share_Abstractions_ShareColor__ctor_int_int_int_int
+LDIFF_SYM126=Lme_1c - Plugin_Share_Abstractions_ShareColor__ctor_int_int_int_int
 	.long LDIFF_SYM126
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29,68,150,8
@@ -3056,7 +3667,7 @@ LDIFF_SYM133=LTDIE_6 - Ldebug_info_start
 
 	.byte 3,17
 	.quad Plugin_Share_Abstractions_ShareMessage_get_Title
-	.quad Lme_1c
+	.quad Lme_1d
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -3075,7 +3686,7 @@ Lfde24_start:
 	.align 3
 	.quad Plugin_Share_Abstractions_ShareMessage_get_Title
 
-LDIFF_SYM136=Lme_1c - Plugin_Share_Abstractions_ShareMessage_get_Title
+LDIFF_SYM136=Lme_1d - Plugin_Share_Abstractions_ShareMessage_get_Title
 	.long LDIFF_SYM136
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
@@ -3090,7 +3701,7 @@ Lfde24_end:
 
 	.byte 3,17
 	.quad Plugin_Share_Abstractions_ShareMessage_set_Title_string
-	.quad Lme_1d
+	.quad Lme_1e
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -3114,7 +3725,7 @@ Lfde25_start:
 	.align 3
 	.quad Plugin_Share_Abstractions_ShareMessage_set_Title_string
 
-LDIFF_SYM140=Lme_1d - Plugin_Share_Abstractions_ShareMessage_set_Title_string
+LDIFF_SYM140=Lme_1e - Plugin_Share_Abstractions_ShareMessage_set_Title_string
 	.long LDIFF_SYM140
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
@@ -3129,7 +3740,7 @@ Lfde25_end:
 
 	.byte 3,22
 	.quad Plugin_Share_Abstractions_ShareMessage_get_Text
-	.quad Lme_1e
+	.quad Lme_1f
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -3148,7 +3759,7 @@ Lfde26_start:
 	.align 3
 	.quad Plugin_Share_Abstractions_ShareMessage_get_Text
 
-LDIFF_SYM143=Lme_1e - Plugin_Share_Abstractions_ShareMessage_get_Text
+LDIFF_SYM143=Lme_1f - Plugin_Share_Abstractions_ShareMessage_get_Text
 	.long LDIFF_SYM143
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
@@ -3163,7 +3774,7 @@ Lfde26_end:
 
 	.byte 3,22
 	.quad Plugin_Share_Abstractions_ShareMessage_set_Text_string
-	.quad Lme_1f
+	.quad Lme_20
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -3187,7 +3798,7 @@ Lfde27_start:
 	.align 3
 	.quad Plugin_Share_Abstractions_ShareMessage_set_Text_string
 
-LDIFF_SYM147=Lme_1f - Plugin_Share_Abstractions_ShareMessage_set_Text_string
+LDIFF_SYM147=Lme_20 - Plugin_Share_Abstractions_ShareMessage_set_Text_string
 	.long LDIFF_SYM147
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
@@ -3202,7 +3813,7 @@ Lfde27_end:
 
 	.byte 3,27
 	.quad Plugin_Share_Abstractions_ShareMessage_get_Url
-	.quad Lme_20
+	.quad Lme_21
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -3221,7 +3832,7 @@ Lfde28_start:
 	.align 3
 	.quad Plugin_Share_Abstractions_ShareMessage_get_Url
 
-LDIFF_SYM150=Lme_20 - Plugin_Share_Abstractions_ShareMessage_get_Url
+LDIFF_SYM150=Lme_21 - Plugin_Share_Abstractions_ShareMessage_get_Url
 	.long LDIFF_SYM150
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
@@ -3236,7 +3847,7 @@ Lfde28_end:
 
 	.byte 3,27
 	.quad Plugin_Share_Abstractions_ShareMessage_set_Url_string
-	.quad Lme_21
+	.quad Lme_22
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -3260,7 +3871,7 @@ Lfde29_start:
 	.align 3
 	.quad Plugin_Share_Abstractions_ShareMessage_set_Url_string
 
-LDIFF_SYM154=Lme_21 - Plugin_Share_Abstractions_ShareMessage_set_Url_string
+LDIFF_SYM154=Lme_22 - Plugin_Share_Abstractions_ShareMessage_set_Url_string
 	.long LDIFF_SYM154
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
@@ -3275,7 +3886,7 @@ Lfde29_end:
 
 	.byte 0,0
 	.quad Plugin_Share_Abstractions_ShareMessage__ctor
-	.quad Lme_22
+	.quad Lme_23
 
 	.byte 2,118,16,3
 	.asciz "this"
@@ -3294,7 +3905,7 @@ Lfde30_start:
 	.align 3
 	.quad Plugin_Share_Abstractions_ShareMessage__ctor
 
-LDIFF_SYM157=Lme_22 - Plugin_Share_Abstractions_ShareMessage__ctor
+LDIFF_SYM157=Lme_23 - Plugin_Share_Abstractions_ShareMessage__ctor
 	.long LDIFF_SYM157
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
@@ -3302,66 +3913,188 @@ LDIFF_SYM157=Lme_22 - Plugin_Share_Abstractions_ShareMessage__ctor
 Lfde30_end:
 
 .section __DWARF, __debug_info,regular,debug
+LTDIE_8:
+
+	.byte 8
+	.asciz "Plugin_Share_Abstractions_ShareAppControlType"
+
+	.byte 4
+LDIFF_SYM158=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM158
+	.byte 9
+	.asciz "Link"
+
+	.byte 0,9
+	.asciz "TextInEmail"
+
+	.byte 1,9
+	.asciz "TextInSMS"
+
+	.byte 2,9
+	.asciz "TextInMMS"
+
+	.byte 3,9
+	.asciz "FileInEmail"
+
+	.byte 4,9
+	.asciz "FileInMessage"
+
+	.byte 5,0,7
+	.asciz "Plugin_Share_Abstractions_ShareAppControlType"
+
+LDIFF_SYM159=LTDIE_8 - Ldebug_info_start
+	.long LDIFF_SYM159
+LTDIE_8_POINTER:
+
+	.byte 13
+LDIFF_SYM160=LTDIE_8 - Ldebug_info_start
+	.long LDIFF_SYM160
+LTDIE_8_REFERENCE:
+
+	.byte 14
+LDIFF_SYM161=LTDIE_8 - Ldebug_info_start
+	.long LDIFF_SYM161
+LTDIE_10:
+
+	.byte 5
+	.asciz "System_Double"
+
+	.byte 24,16
+LDIFF_SYM162=LTDIE_3 - Ldebug_info_start
+	.long LDIFF_SYM162
+	.byte 2,35,0,6
+	.asciz "m_value"
+
+LDIFF_SYM163=LDIE_R8 - Ldebug_info_start
+	.long LDIFF_SYM163
+	.byte 2,35,16,0,7
+	.asciz "System_Double"
+
+LDIFF_SYM164=LTDIE_10 - Ldebug_info_start
+	.long LDIFF_SYM164
+LTDIE_10_POINTER:
+
+	.byte 13
+LDIFF_SYM165=LTDIE_10 - Ldebug_info_start
+	.long LDIFF_SYM165
+LTDIE_10_REFERENCE:
+
+	.byte 14
+LDIFF_SYM166=LTDIE_10 - Ldebug_info_start
+	.long LDIFF_SYM166
+LTDIE_9:
+
+	.byte 5
+	.asciz "Plugin_Share_Abstractions_ShareRectangle"
+
+	.byte 48,16
+LDIFF_SYM167=LTDIE_1 - Ldebug_info_start
+	.long LDIFF_SYM167
+	.byte 2,35,0,6
+	.asciz "<X>k__BackingField"
+
+LDIFF_SYM168=LDIE_R8 - Ldebug_info_start
+	.long LDIFF_SYM168
+	.byte 2,35,16,6
+	.asciz "<Y>k__BackingField"
+
+LDIFF_SYM169=LDIE_R8 - Ldebug_info_start
+	.long LDIFF_SYM169
+	.byte 2,35,24,6
+	.asciz "<Width>k__BackingField"
+
+LDIFF_SYM170=LDIE_R8 - Ldebug_info_start
+	.long LDIFF_SYM170
+	.byte 2,35,32,6
+	.asciz "<Height>k__BackingField"
+
+LDIFF_SYM171=LDIE_R8 - Ldebug_info_start
+	.long LDIFF_SYM171
+	.byte 2,35,40,0,7
+	.asciz "Plugin_Share_Abstractions_ShareRectangle"
+
+LDIFF_SYM172=LTDIE_9 - Ldebug_info_start
+	.long LDIFF_SYM172
+LTDIE_9_POINTER:
+
+	.byte 13
+LDIFF_SYM173=LTDIE_9 - Ldebug_info_start
+	.long LDIFF_SYM173
+LTDIE_9_REFERENCE:
+
+	.byte 14
+LDIFF_SYM174=LTDIE_9 - Ldebug_info_start
+	.long LDIFF_SYM174
 LTDIE_7:
 
 	.byte 5
 	.asciz "Plugin_Share_Abstractions_ShareOptions"
 
-	.byte 32,16
-LDIFF_SYM158=LTDIE_1 - Ldebug_info_start
-	.long LDIFF_SYM158
+	.byte 48,16
+LDIFF_SYM175=LTDIE_1 - Ldebug_info_start
+	.long LDIFF_SYM175
 	.byte 2,35,0,6
 	.asciz "<ChooserTitle>k__BackingField"
 
-LDIFF_SYM159=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM159
+LDIFF_SYM176=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM176
 	.byte 2,35,16,6
+	.asciz "<ExcludedAppControlTypes>k__BackingField"
+
+LDIFF_SYM177=LTDIE_8 - Ldebug_info_start
+	.long LDIFF_SYM177
+	.byte 2,35,40,6
 	.asciz "<ExcludedUIActivityTypes>k__BackingField"
 
-LDIFF_SYM160=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM160
-	.byte 2,35,24,0,7
+LDIFF_SYM178=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM178
+	.byte 2,35,24,6
+	.asciz "<PopoverAnchorRectangle>k__BackingField"
+
+LDIFF_SYM179=LTDIE_9_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM179
+	.byte 2,35,32,0,7
 	.asciz "Plugin_Share_Abstractions_ShareOptions"
 
-LDIFF_SYM161=LTDIE_7 - Ldebug_info_start
-	.long LDIFF_SYM161
+LDIFF_SYM180=LTDIE_7 - Ldebug_info_start
+	.long LDIFF_SYM180
 LTDIE_7_POINTER:
 
 	.byte 13
-LDIFF_SYM162=LTDIE_7 - Ldebug_info_start
-	.long LDIFF_SYM162
+LDIFF_SYM181=LTDIE_7 - Ldebug_info_start
+	.long LDIFF_SYM181
 LTDIE_7_REFERENCE:
 
 	.byte 14
-LDIFF_SYM163=LTDIE_7 - Ldebug_info_start
-	.long LDIFF_SYM163
+LDIFF_SYM182=LTDIE_7 - Ldebug_info_start
+	.long LDIFF_SYM182
 	.byte 2
 	.asciz "Plugin.Share.Abstractions.ShareOptions:get_ChooserTitle"
 	.asciz "Plugin_Share_Abstractions_ShareOptions_get_ChooserTitle"
 
 	.byte 4,18
 	.quad Plugin_Share_Abstractions_ShareOptions_get_ChooserTitle
-	.quad Lme_23
+	.quad Lme_24
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM164=LTDIE_7_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM164
+LDIFF_SYM183=LTDIE_7_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM183
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM165=Lfde31_end - Lfde31_start
-	.long LDIFF_SYM165
+LDIFF_SYM184=Lfde31_end - Lfde31_start
+	.long LDIFF_SYM184
 Lfde31_start:
 
 	.long 0
 	.align 3
 	.quad Plugin_Share_Abstractions_ShareOptions_get_ChooserTitle
 
-LDIFF_SYM166=Lme_23 - Plugin_Share_Abstractions_ShareOptions_get_ChooserTitle
-	.long LDIFF_SYM166
+LDIFF_SYM185=Lme_24 - Plugin_Share_Abstractions_ShareOptions_get_ChooserTitle
+	.long LDIFF_SYM185
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
 	.align 3
@@ -3375,32 +4108,32 @@ Lfde31_end:
 
 	.byte 4,18
 	.quad Plugin_Share_Abstractions_ShareOptions_set_ChooserTitle_string
-	.quad Lme_24
+	.quad Lme_25
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM167=LTDIE_7_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM167
+LDIFF_SYM186=LTDIE_7_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM186
 	.byte 2,141,16,3
 	.asciz "value"
 
-LDIFF_SYM168=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM168
+LDIFF_SYM187=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM187
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM169=Lfde32_end - Lfde32_start
-	.long LDIFF_SYM169
+LDIFF_SYM188=Lfde32_end - Lfde32_start
+	.long LDIFF_SYM188
 Lfde32_start:
 
 	.long 0
 	.align 3
 	.quad Plugin_Share_Abstractions_ShareOptions_set_ChooserTitle_string
 
-LDIFF_SYM170=Lme_24 - Plugin_Share_Abstractions_ShareOptions_set_ChooserTitle_string
-	.long LDIFF_SYM170
+LDIFF_SYM189=Lme_25 - Plugin_Share_Abstractions_ShareOptions_set_ChooserTitle_string
+	.long LDIFF_SYM189
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
@@ -3409,32 +4142,32 @@ Lfde32_end:
 .section __DWARF, __debug_info,regular,debug
 
 	.byte 2
-	.asciz "Plugin.Share.Abstractions.ShareOptions:get_ExcludedUIActivityTypes"
-	.asciz "Plugin_Share_Abstractions_ShareOptions_get_ExcludedUIActivityTypes"
+	.asciz "Plugin.Share.Abstractions.ShareOptions:get_ExcludedAppControlTypes"
+	.asciz "Plugin_Share_Abstractions_ShareOptions_get_ExcludedAppControlTypes"
 
 	.byte 4,24
-	.quad Plugin_Share_Abstractions_ShareOptions_get_ExcludedUIActivityTypes
-	.quad Lme_25
+	.quad Plugin_Share_Abstractions_ShareOptions_get_ExcludedAppControlTypes
+	.quad Lme_26
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM171=LTDIE_7_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM171
+LDIFF_SYM190=LTDIE_7_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM190
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM172=Lfde33_end - Lfde33_start
-	.long LDIFF_SYM172
+LDIFF_SYM191=Lfde33_end - Lfde33_start
+	.long LDIFF_SYM191
 Lfde33_start:
 
 	.long 0
 	.align 3
-	.quad Plugin_Share_Abstractions_ShareOptions_get_ExcludedUIActivityTypes
+	.quad Plugin_Share_Abstractions_ShareOptions_get_ExcludedAppControlTypes
 
-LDIFF_SYM173=Lme_25 - Plugin_Share_Abstractions_ShareOptions_get_ExcludedUIActivityTypes
-	.long LDIFF_SYM173
+LDIFF_SYM192=Lme_26 - Plugin_Share_Abstractions_ShareOptions_get_ExcludedAppControlTypes
+	.long LDIFF_SYM192
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
 	.align 3
@@ -3443,41 +4176,187 @@ Lfde33_end:
 .section __DWARF, __debug_info,regular,debug
 
 	.byte 2
-	.asciz "Plugin.Share.Abstractions.ShareOptions:set_ExcludedUIActivityTypes"
-	.asciz "Plugin_Share_Abstractions_ShareOptions_set_ExcludedUIActivityTypes_Plugin_Share_Abstractions_ShareUIActivityType__"
+	.asciz "Plugin.Share.Abstractions.ShareOptions:set_ExcludedAppControlTypes"
+	.asciz "Plugin_Share_Abstractions_ShareOptions_set_ExcludedAppControlTypes_Plugin_Share_Abstractions_ShareAppControlType"
 
 	.byte 4,24
-	.quad Plugin_Share_Abstractions_ShareOptions_set_ExcludedUIActivityTypes_Plugin_Share_Abstractions_ShareUIActivityType__
-	.quad Lme_26
+	.quad Plugin_Share_Abstractions_ShareOptions_set_ExcludedAppControlTypes_Plugin_Share_Abstractions_ShareAppControlType
+	.quad Lme_27
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM174=LTDIE_7_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM174
+LDIFF_SYM193=LTDIE_7_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM193
 	.byte 2,141,16,3
 	.asciz "value"
 
-LDIFF_SYM175=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM175
+LDIFF_SYM194=LTDIE_8 - Ldebug_info_start
+	.long LDIFF_SYM194
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM176=Lfde34_end - Lfde34_start
-	.long LDIFF_SYM176
+LDIFF_SYM195=Lfde34_end - Lfde34_start
+	.long LDIFF_SYM195
 Lfde34_start:
+
+	.long 0
+	.align 3
+	.quad Plugin_Share_Abstractions_ShareOptions_set_ExcludedAppControlTypes_Plugin_Share_Abstractions_ShareAppControlType
+
+LDIFF_SYM196=Lme_27 - Plugin_Share_Abstractions_ShareOptions_set_ExcludedAppControlTypes_Plugin_Share_Abstractions_ShareAppControlType
+	.long LDIFF_SYM196
+	.long 0
+	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
+	.align 3
+Lfde34_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "Plugin.Share.Abstractions.ShareOptions:get_ExcludedUIActivityTypes"
+	.asciz "Plugin_Share_Abstractions_ShareOptions_get_ExcludedUIActivityTypes"
+
+	.byte 4,30
+	.quad Plugin_Share_Abstractions_ShareOptions_get_ExcludedUIActivityTypes
+	.quad Lme_28
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM197=LTDIE_7_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM197
+	.byte 2,141,16,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM198=Lfde35_end - Lfde35_start
+	.long LDIFF_SYM198
+Lfde35_start:
+
+	.long 0
+	.align 3
+	.quad Plugin_Share_Abstractions_ShareOptions_get_ExcludedUIActivityTypes
+
+LDIFF_SYM199=Lme_28 - Plugin_Share_Abstractions_ShareOptions_get_ExcludedUIActivityTypes
+	.long LDIFF_SYM199
+	.long 0
+	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
+	.align 3
+Lfde35_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "Plugin.Share.Abstractions.ShareOptions:set_ExcludedUIActivityTypes"
+	.asciz "Plugin_Share_Abstractions_ShareOptions_set_ExcludedUIActivityTypes_Plugin_Share_Abstractions_ShareUIActivityType__"
+
+	.byte 4,30
+	.quad Plugin_Share_Abstractions_ShareOptions_set_ExcludedUIActivityTypes_Plugin_Share_Abstractions_ShareUIActivityType__
+	.quad Lme_29
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM200=LTDIE_7_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM200
+	.byte 2,141,16,3
+	.asciz "value"
+
+LDIFF_SYM201=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM201
+	.byte 2,141,24,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM202=Lfde36_end - Lfde36_start
+	.long LDIFF_SYM202
+Lfde36_start:
 
 	.long 0
 	.align 3
 	.quad Plugin_Share_Abstractions_ShareOptions_set_ExcludedUIActivityTypes_Plugin_Share_Abstractions_ShareUIActivityType__
 
-LDIFF_SYM177=Lme_26 - Plugin_Share_Abstractions_ShareOptions_set_ExcludedUIActivityTypes_Plugin_Share_Abstractions_ShareUIActivityType__
-	.long LDIFF_SYM177
+LDIFF_SYM203=Lme_29 - Plugin_Share_Abstractions_ShareOptions_set_ExcludedUIActivityTypes_Plugin_Share_Abstractions_ShareUIActivityType__
+	.long LDIFF_SYM203
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
 	.align 3
-Lfde34_end:
+Lfde36_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "Plugin.Share.Abstractions.ShareOptions:get_PopoverAnchorRectangle"
+	.asciz "Plugin_Share_Abstractions_ShareOptions_get_PopoverAnchorRectangle"
+
+	.byte 4,36
+	.quad Plugin_Share_Abstractions_ShareOptions_get_PopoverAnchorRectangle
+	.quad Lme_2a
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM204=LTDIE_7_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM204
+	.byte 2,141,16,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM205=Lfde37_end - Lfde37_start
+	.long LDIFF_SYM205
+Lfde37_start:
+
+	.long 0
+	.align 3
+	.quad Plugin_Share_Abstractions_ShareOptions_get_PopoverAnchorRectangle
+
+LDIFF_SYM206=Lme_2a - Plugin_Share_Abstractions_ShareOptions_get_PopoverAnchorRectangle
+	.long LDIFF_SYM206
+	.long 0
+	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
+	.align 3
+Lfde37_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "Plugin.Share.Abstractions.ShareOptions:set_PopoverAnchorRectangle"
+	.asciz "Plugin_Share_Abstractions_ShareOptions_set_PopoverAnchorRectangle_Plugin_Share_Abstractions_ShareRectangle"
+
+	.byte 4,36
+	.quad Plugin_Share_Abstractions_ShareOptions_set_PopoverAnchorRectangle_Plugin_Share_Abstractions_ShareRectangle
+	.quad Lme_2b
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM207=LTDIE_7_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM207
+	.byte 2,141,16,3
+	.asciz "value"
+
+LDIFF_SYM208=LTDIE_9_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM208
+	.byte 2,141,24,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM209=Lfde38_end - Lfde38_start
+	.long LDIFF_SYM209
+Lfde38_start:
+
+	.long 0
+	.align 3
+	.quad Plugin_Share_Abstractions_ShareOptions_set_PopoverAnchorRectangle_Plugin_Share_Abstractions_ShareRectangle
+
+LDIFF_SYM210=Lme_2b - Plugin_Share_Abstractions_ShareOptions_set_PopoverAnchorRectangle_Plugin_Share_Abstractions_ShareRectangle
+	.long LDIFF_SYM210
+	.long 0
+	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
+	.align 3
+Lfde38_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -3487,31 +4366,377 @@ Lfde34_end:
 
 	.byte 0,0
 	.quad Plugin_Share_Abstractions_ShareOptions__ctor
-	.quad Lme_27
+	.quad Lme_2c
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM178=LTDIE_7_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM178
+LDIFF_SYM211=LTDIE_7_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM211
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM179=Lfde35_end - Lfde35_start
-	.long LDIFF_SYM179
-Lfde35_start:
+LDIFF_SYM212=Lfde39_end - Lfde39_start
+	.long LDIFF_SYM212
+Lfde39_start:
 
 	.long 0
 	.align 3
 	.quad Plugin_Share_Abstractions_ShareOptions__ctor
 
-LDIFF_SYM180=Lme_27 - Plugin_Share_Abstractions_ShareOptions__ctor
-	.long LDIFF_SYM180
+LDIFF_SYM213=Lme_2c - Plugin_Share_Abstractions_ShareOptions__ctor
+	.long LDIFF_SYM213
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
 	.align 3
-Lfde35_end:
+Lfde39_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "Plugin.Share.Abstractions.ShareRectangle:get_X"
+	.asciz "Plugin_Share_Abstractions_ShareRectangle_get_X"
+
+	.byte 5,9
+	.quad Plugin_Share_Abstractions_ShareRectangle_get_X
+	.quad Lme_2d
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM214=LTDIE_9_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM214
+	.byte 2,141,16,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM215=Lfde40_end - Lfde40_start
+	.long LDIFF_SYM215
+Lfde40_start:
+
+	.long 0
+	.align 3
+	.quad Plugin_Share_Abstractions_ShareRectangle_get_X
+
+LDIFF_SYM216=Lme_2d - Plugin_Share_Abstractions_ShareRectangle_get_X
+	.long LDIFF_SYM216
+	.long 0
+	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
+	.align 3
+Lfde40_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "Plugin.Share.Abstractions.ShareRectangle:set_X"
+	.asciz "Plugin_Share_Abstractions_ShareRectangle_set_X_double"
+
+	.byte 5,9
+	.quad Plugin_Share_Abstractions_ShareRectangle_set_X_double
+	.quad Lme_2e
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM217=LTDIE_9_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM217
+	.byte 2,141,16,3
+	.asciz "value"
+
+LDIFF_SYM218=LDIE_R8 - Ldebug_info_start
+	.long LDIFF_SYM218
+	.byte 2,141,24,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM219=Lfde41_end - Lfde41_start
+	.long LDIFF_SYM219
+Lfde41_start:
+
+	.long 0
+	.align 3
+	.quad Plugin_Share_Abstractions_ShareRectangle_set_X_double
+
+LDIFF_SYM220=Lme_2e - Plugin_Share_Abstractions_ShareRectangle_set_X_double
+	.long LDIFF_SYM220
+	.long 0
+	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
+	.align 3
+Lfde41_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "Plugin.Share.Abstractions.ShareRectangle:get_Y"
+	.asciz "Plugin_Share_Abstractions_ShareRectangle_get_Y"
+
+	.byte 5,10
+	.quad Plugin_Share_Abstractions_ShareRectangle_get_Y
+	.quad Lme_2f
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM221=LTDIE_9_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM221
+	.byte 2,141,16,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM222=Lfde42_end - Lfde42_start
+	.long LDIFF_SYM222
+Lfde42_start:
+
+	.long 0
+	.align 3
+	.quad Plugin_Share_Abstractions_ShareRectangle_get_Y
+
+LDIFF_SYM223=Lme_2f - Plugin_Share_Abstractions_ShareRectangle_get_Y
+	.long LDIFF_SYM223
+	.long 0
+	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
+	.align 3
+Lfde42_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "Plugin.Share.Abstractions.ShareRectangle:set_Y"
+	.asciz "Plugin_Share_Abstractions_ShareRectangle_set_Y_double"
+
+	.byte 5,10
+	.quad Plugin_Share_Abstractions_ShareRectangle_set_Y_double
+	.quad Lme_30
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM224=LTDIE_9_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM224
+	.byte 2,141,16,3
+	.asciz "value"
+
+LDIFF_SYM225=LDIE_R8 - Ldebug_info_start
+	.long LDIFF_SYM225
+	.byte 2,141,24,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM226=Lfde43_end - Lfde43_start
+	.long LDIFF_SYM226
+Lfde43_start:
+
+	.long 0
+	.align 3
+	.quad Plugin_Share_Abstractions_ShareRectangle_set_Y_double
+
+LDIFF_SYM227=Lme_30 - Plugin_Share_Abstractions_ShareRectangle_set_Y_double
+	.long LDIFF_SYM227
+	.long 0
+	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
+	.align 3
+Lfde43_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "Plugin.Share.Abstractions.ShareRectangle:get_Width"
+	.asciz "Plugin_Share_Abstractions_ShareRectangle_get_Width"
+
+	.byte 5,11
+	.quad Plugin_Share_Abstractions_ShareRectangle_get_Width
+	.quad Lme_31
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM228=LTDIE_9_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM228
+	.byte 2,141,16,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM229=Lfde44_end - Lfde44_start
+	.long LDIFF_SYM229
+Lfde44_start:
+
+	.long 0
+	.align 3
+	.quad Plugin_Share_Abstractions_ShareRectangle_get_Width
+
+LDIFF_SYM230=Lme_31 - Plugin_Share_Abstractions_ShareRectangle_get_Width
+	.long LDIFF_SYM230
+	.long 0
+	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
+	.align 3
+Lfde44_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "Plugin.Share.Abstractions.ShareRectangle:set_Width"
+	.asciz "Plugin_Share_Abstractions_ShareRectangle_set_Width_double"
+
+	.byte 5,11
+	.quad Plugin_Share_Abstractions_ShareRectangle_set_Width_double
+	.quad Lme_32
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM231=LTDIE_9_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM231
+	.byte 2,141,16,3
+	.asciz "value"
+
+LDIFF_SYM232=LDIE_R8 - Ldebug_info_start
+	.long LDIFF_SYM232
+	.byte 2,141,24,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM233=Lfde45_end - Lfde45_start
+	.long LDIFF_SYM233
+Lfde45_start:
+
+	.long 0
+	.align 3
+	.quad Plugin_Share_Abstractions_ShareRectangle_set_Width_double
+
+LDIFF_SYM234=Lme_32 - Plugin_Share_Abstractions_ShareRectangle_set_Width_double
+	.long LDIFF_SYM234
+	.long 0
+	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
+	.align 3
+Lfde45_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "Plugin.Share.Abstractions.ShareRectangle:get_Height"
+	.asciz "Plugin_Share_Abstractions_ShareRectangle_get_Height"
+
+	.byte 5,12
+	.quad Plugin_Share_Abstractions_ShareRectangle_get_Height
+	.quad Lme_33
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM235=LTDIE_9_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM235
+	.byte 2,141,16,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM236=Lfde46_end - Lfde46_start
+	.long LDIFF_SYM236
+Lfde46_start:
+
+	.long 0
+	.align 3
+	.quad Plugin_Share_Abstractions_ShareRectangle_get_Height
+
+LDIFF_SYM237=Lme_33 - Plugin_Share_Abstractions_ShareRectangle_get_Height
+	.long LDIFF_SYM237
+	.long 0
+	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
+	.align 3
+Lfde46_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "Plugin.Share.Abstractions.ShareRectangle:set_Height"
+	.asciz "Plugin_Share_Abstractions_ShareRectangle_set_Height_double"
+
+	.byte 5,12
+	.quad Plugin_Share_Abstractions_ShareRectangle_set_Height_double
+	.quad Lme_34
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM238=LTDIE_9_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM238
+	.byte 2,141,16,3
+	.asciz "value"
+
+LDIFF_SYM239=LDIE_R8 - Ldebug_info_start
+	.long LDIFF_SYM239
+	.byte 2,141,24,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM240=Lfde47_end - Lfde47_start
+	.long LDIFF_SYM240
+Lfde47_start:
+
+	.long 0
+	.align 3
+	.quad Plugin_Share_Abstractions_ShareRectangle_set_Height_double
+
+LDIFF_SYM241=Lme_34 - Plugin_Share_Abstractions_ShareRectangle_set_Height_double
+	.long LDIFF_SYM241
+	.long 0
+	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
+	.align 3
+Lfde47_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "Plugin.Share.Abstractions.ShareRectangle:.ctor"
+	.asciz "Plugin_Share_Abstractions_ShareRectangle__ctor_double_double_double_double"
+
+	.byte 5,14
+	.quad Plugin_Share_Abstractions_ShareRectangle__ctor_double_double_double_double
+	.quad Lme_35
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM242=LTDIE_9_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM242
+	.byte 1,106,3
+	.asciz "x"
+
+LDIFF_SYM243=LDIE_R8 - Ldebug_info_start
+	.long LDIFF_SYM243
+	.byte 2,141,24,3
+	.asciz "y"
+
+LDIFF_SYM244=LDIE_R8 - Ldebug_info_start
+	.long LDIFF_SYM244
+	.byte 2,141,32,3
+	.asciz "width"
+
+LDIFF_SYM245=LDIE_R8 - Ldebug_info_start
+	.long LDIFF_SYM245
+	.byte 2,141,40,3
+	.asciz "height"
+
+LDIFF_SYM246=LDIE_R8 - Ldebug_info_start
+	.long LDIFF_SYM246
+	.byte 2,141,48,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM247=Lfde48_end - Lfde48_start
+	.long LDIFF_SYM247
+Lfde48_start:
+
+	.long 0
+	.align 3
+	.quad Plugin_Share_Abstractions_ShareRectangle__ctor_double_double_double_double
+
+LDIFF_SYM248=Lme_35 - Plugin_Share_Abstractions_ShareRectangle__ctor_double_double_double_double
+	.long LDIFF_SYM248
+	.long 0
+	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29,68,154,8
+	.align 3
+Lfde48_end:
 
 .section __DWARF, __debug_info,regular,debug
 

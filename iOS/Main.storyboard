@@ -85,7 +85,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9849" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Venue">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9849" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Location">
                                 <rect key="frame" x="127" y="331" width="160" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -126,7 +126,7 @@
                     <connections>
                         <outlet property="ModuleNameLabel" destination="9169" id="name-outlet-9169"/>
                         <outlet property="TimePeriodLabel" destination="9848" id="name-outlet-9848"/>
-                        <outlet property="VenueLabel" destination="9849" id="name-outlet-9849"/>
+                        <outlet property="LocationLabel" destination="9849" id="name-outlet-9849"/>
                         <outlet property="ViewAttendanceButton" destination="9865" id="name-outlet-9865"/>
                         <outlet property="StudentCountLabel" destination="9897" id="name-outlet-9897"/>
                         <outlet property="AttendanceCodeLabel" destination="30097" id="name-outlet-30097"/>
@@ -178,7 +178,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="14194" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="14194" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="124" y="410" width="166" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -209,7 +209,7 @@
                         <outlet property="StudentSubmitButton" destination="7026" id="name-outlet-7026"/>
                         <outlet property="ModuleNameLabel" destination="14152" id="name-outlet-14152"/>
                         <outlet property="TimePeriodLabel" destination="14173" id="name-outlet-14173"/>
-                        <outlet property="VenueLabel" destination="14194" id="name-outlet-14194"/>
+                        <outlet property="LocationLabel" destination="14194" id="name-outlet-14194"/>
                         <outlet property="EnterAttendanceCodeButton" destination="30099" id="name-outlet-30099"/>
                         <outlet property="AttendanceCodeTextField" destination="30100" id="name-outlet-30100"/>
                         <outlet property="StudentAttendanceIcon" destination="23581" id="name-outlet-23581"/>

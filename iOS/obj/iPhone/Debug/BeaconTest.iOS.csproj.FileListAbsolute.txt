@@ -1,5 +1,7 @@
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/BeaconTest.iOS.exe
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/BeaconTest.iOS.pdb
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Acr.UserDialogs.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/BTProgressHUD.dll
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Newtonsoft.Json.dll
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.BLE.Abstractions.dll
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.BLE.dll
@@ -7,6 +9,10 @@
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.Connectivity.dll
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.Share.Abstractions.dll
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.Share.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.BLE.Abstractions.pdb
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.BLE.Abstractions.xml
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.BLE.pdb
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.BLE.xml
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Newtonsoft.Json.xml
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.Share.Abstractions.pdb
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.Share.Abstractions.xml
@@ -15,10 +21,6 @@
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.Connectivity.Abstractions.xml
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.Connectivity.pdb
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.Connectivity.xml
-/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.BLE.Abstractions.pdb
-/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.BLE.Abstractions.xml
-/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.BLE.pdb
-/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.BLE.xml
 /Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/ibtool/_BundleResourceWithLogicalName.items
 /Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/actool/_PartialAppManifest.items
 /Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/actool/_BundleResourceWithLogicalName.items

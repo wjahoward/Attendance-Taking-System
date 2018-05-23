@@ -74,7 +74,7 @@
         </member>
         <member name="T:Plugin.Connectivity.NetworkStatus">
             <summary>
-            Status of newtowkr enum
+            Status of network enum
             </summary>
         </member>
         <member name="F:Plugin.Connectivity.NetworkStatus.NotReachable">
@@ -104,7 +104,7 @@
         </member>
         <member name="M:Plugin.Connectivity.Reachability.IsReachableWithoutRequiringConnection(SystemConfiguration.NetworkReachabilityFlags)">
             <summary>
-            Checks if reachable without requireing a connection
+            Checks if reachable without requiring a connection
             </summary>
             <param name="flags"></param>
             <returns></returns>

@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using BeaconTest.Models;
 using System.Text;
+using System.Threading;
+using Acr.UserDialogs;
 
 namespace BeaconTest.iOS
 {
     public partial class BeaconRangingController : UIViewController
     {
-		StudentSubmission studentSubmission;
+		StudentTimetable studentTimetable;
+		StudentModule studentModule;
 
         CLLocationManager locationManager;
         CLBeaconRegion beaconRegion;
@@ -26,13 +29,6 @@ namespace BeaconTest.iOS
             
         }
 
-        public async Task DetectBeaconOn(int scanDuration)
-        {
-            locationManager.StartRangingBeacons(beaconRegion);
-            locationManager.DidRangeBeacons += LocationManager_DidRangeBeacons;
-            await Task.Delay(scanDuration);
-        }
-
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -40,10 +36,8 @@ namespace BeaconTest.iOS
             StudentSubmitButton.Layer.CornerRadius = BeaconTest.SharedData.buttonCornerRadius;
 			StudentSubmitButton.Hidden = true;
 
-			//string beaconKey = DataAccess.GetBeaconKey();
-			beaconUUID = new NSUuid(DataAccess.StudentGetBeaconKey());
-
-			InitLocationManager();
+			UserDialogs.Instance.ShowLoading("Retrieving module info...");
+			ThreadPool.QueueUserWorkItem(o => GetModule());         
 
             StudentSubmitButton.TouchUpInside += (object sender, EventArgs e) => 
             {
@@ -55,6 +49,35 @@ namespace BeaconTest.iOS
 				AttendanceCodeTextField.Hidden = false;
 				AttendanceCodeTextField.Selected = true;;
 			};
+        }
+
+		private void GetModule()
+        {
+            studentTimetable = DataAccess.GetStudentTimetable(SharedData.testSPStudentID).Result;
+            studentModule = studentTimetable.GetCurrentModule();
+			if(studentModule != null)
+			{
+				InvokeOnMainThread(() =>
+                {
+                    ModuleNameLabel.Text = studentTimetable.GetCurrentModule().abbr + " (" + studentTimetable.GetCurrentModule().code + ")";
+                    TimePeriodLabel.Text = studentTimetable.GetCurrentModule().time;
+                    LocationLabel.Text = studentTimetable.GetCurrentModule().location;
+					UserDialogs.Instance.HideLoading();        
+					beaconUUID = new NSUuid(DataAccess.StudentGetBeaconKey());
+                    InitLocationManager();
+                });            
+			}
+			else
+			{
+				InvokeOnMainThread(() =>
+                {
+					ModuleNameLabel.Text = "No lessons today";
+					TimePeriodLabel.Hidden = true;
+					LocationLabel.Hidden = true;
+					UserDialogs.Instance.HideLoading();
+                });
+			}
+            
         }
 
         private void InitLocationManager()
@@ -93,6 +116,10 @@ namespace BeaconTest.iOS
                 FoundBeacon.Text = "Found Beacon";
 				StudentSubmitButton.Hidden = false;
 				StudentAttendanceIcon.Image = UIImage.FromBundle("Location Icon.png");
+				EnterAttendanceCodeButton.Hidden = true;
+				AttendanceCodeTextField.Hidden = false;
+				AttendanceCodeTextField.Text = atsCode;
+				AttendanceCodeTextField.UserInteractionEnabled = false;            
             }
         }
 
@@ -111,20 +138,8 @@ namespace BeaconTest.iOS
         }
 
 		private void SubmitATS()
-		{
-			//studentSubmission = new StudentSubmission(admissionId, lecturerBeacon.BeaconKey.ToLower(), ats_Student, DateTime.UtcNow);;
-
-			bool submitted = DataAccess.StudentSubmitATS(studentSubmission).Result;
-
-			if (submitted)
-			{
-				PresentViewController(CustomAlert.CreateUIAlertController("ATS Submitted", "You have submitted your attendance at " + DateTime.UtcNow, "OK"), true, null);
-			}
-			else
-			{
-				PresentViewController(CustomAlert.CreateUIAlertController("Error submitting ATS", "There was an error in submitting your attendance", "OK"), true, null);
-			}
-
+		{      
+			
 		}
 
         public override void ViewDidAppear(bool animated)

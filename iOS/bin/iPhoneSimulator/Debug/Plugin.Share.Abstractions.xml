@@ -58,6 +58,13 @@
             <param name="options">Platform specific options</param>
             <returns>True if the operation was successful, false otherwise</returns>
         </member>
+        <member name="M:Plugin.Share.Abstractions.IShare.CanOpenUrl(System.String)">
+            <summary>
+            Checks if the url can be opened
+            </summary>
+            <param name="url">Url to check</param>
+            <returns>True if it can</returns>
+        </member>
         <member name="M:Plugin.Share.Abstractions.IShare.Share(Plugin.Share.Abstractions.ShareMessage,Plugin.Share.Abstractions.ShareOptions)">
             <summary>
             Share a message with compatible services
@@ -157,10 +164,21 @@
             If null (default) the system default title is used.
             </summary>
         </member>
+        <member name="P:Plugin.Share.Abstractions.ShareOptions.ExcludedAppControlTypes">
+            <summary>
+            Tizen: Excluded App Types
+            </summary>
+        </member>
         <member name="P:Plugin.Share.Abstractions.ShareOptions.ExcludedUIActivityTypes">
             <summary>
             iOS: Gets or sets the UIActivityTypes that should not be displayed.
             If null (default) the value of <see cref="!:Plugin.Share.ShareImplementation.ExcludedUIActivityTypes"/> is used.
+            </summary>
+        </member>
+        <member name="P:Plugin.Share.Abstractions.ShareOptions.PopoverAnchorRectangle">
+            <summary>
+            iOS only: Gets or sets the popover anchor rectangle.
+            If null (default) the option is not used.
             </summary>
         </member>
         <member name="F:Plugin.Share.Abstractions.ShareUIActivityType.AssignToContact">

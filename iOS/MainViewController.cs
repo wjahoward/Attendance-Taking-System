@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Threading;
+using Acr.UserDialogs;
 using Foundation;
 using Plugin.Connectivity;
 using UIKit;
@@ -16,44 +18,46 @@ namespace BeaconTest.iOS
         }
 
         public void Login()
-		{
-			username = UsernameTextField.Text;
-            password = PasswordField.Text;
+		{         
+			bool valid = DataAccess.LoginAsync(username, password).Result;
 
-            bool valid = DataAccess.LoginAsync(username, password).Result;
-
-            if (valid)
-            {
-                if (username.StartsWith("s", StringComparison.Ordinal))
+			InvokeOnMainThread(() =>
+			{
+				if (valid)
                 {
-                    var viewController = this.Storyboard.InstantiateViewController("LecturerNavigationController");
-
-                    if (viewController != null)
+					UserDialogs.Instance.HideLoading();
+                    if (username.StartsWith("s", StringComparison.Ordinal))
                     {
-                        this.PresentViewController(viewController, true, null);
+                        var viewController = this.Storyboard.InstantiateViewController("LecturerNavigationController");
+
+                        if (viewController != null)
+                        {
+                            this.PresentViewController(viewController, true, null);
+                        }
+                    }
+                    else
+                    {
+                        var viewController = this.Storyboard.InstantiateViewController("StudentSubmitController");
+
+                        if (viewController != null)
+                        {
+                            this.PresentViewController(viewController, true, null);
+                        }
                     }
                 }
                 else
                 {
-                    var viewController = this.Storyboard.InstantiateViewController("StudentSubmitController");
+					UserDialogs.Instance.HideLoading();
+                    //Create Alert
+                    var okAlertController = UIAlertController.Create("Invalid Login Credentials", "The username or password you have entered is invalid", UIAlertControllerStyle.Alert);
 
-                    if (viewController != null)
-                    {
-                        this.PresentViewController(viewController, true, null);
-                    }
+                    //Add Action
+                    okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+
+                    // Present Alert
+                    PresentViewController(okAlertController, true, null);
                 }
-            }
-            else
-            {
-                //Create Alert
-                var okAlertController = UIAlertController.Create("Invalid Login Credentials", "The username or password you have entered is invalid", UIAlertControllerStyle.Alert);
-
-                //Add Action
-                okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
-
-                // Present Alert
-                PresentViewController(okAlertController, true, null);
-            }
+			});
 		}
 
         public override void ViewDidLoad()
@@ -66,7 +70,11 @@ namespace BeaconTest.iOS
 
 				if(CheckInternetStatus())
 				{
-					Login();
+					username = UsernameTextField.Text;
+                    password = PasswordField.Text;
+
+					UserDialogs.Instance.ShowLoading("Logging in...");
+                    ThreadPool.QueueUserWorkItem(o => Login()); 
 				}
 
             };
