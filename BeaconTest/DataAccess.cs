@@ -143,7 +143,7 @@ namespace BeaconTest
 
 		public static async Task<StudentTimetable> GetStudentTimetable(string studentID)
 		{
-			string urlParameters = "id=" + studentID + "&DDMMYY=" + "160518";//.UtcNow.ToString("ddMMyy");
+			string urlParameters = "id=" + studentID + "&DDMMYY=" + "240518";//.UtcNow.ToString("ddMMyy");
 			var url = StudentTimetableURL + urlParameters;
 			client.BaseAddress = new Uri(url);
 
@@ -169,9 +169,9 @@ namespace BeaconTest
 			studentTimetable = GetStudentTimetable(SharedData.testSPStudentID).Result;
 			currentModule = studentTimetable.GetCurrentModule();
 
-			if (currentModule != null)
-			{
-				beaconKey = SharedData.testBeaconUUID;
+            if (currentModule != null && !currentModule.abbr.Equals(""))
+            {
+                beaconKey = SharedData.testBeaconUUID;
 				var beaconKeyStringBuilder = new StringBuilder(beaconKey);
 
 				string moduleCodeNumber = "A" + currentModule.code.Remove(0, 2);
@@ -182,17 +182,20 @@ namespace BeaconTest
 				beaconKeyStringBuilder.Remove(beaconKeyStringBuilder.Length - locationNumber.Length - moduleCodeNumber.Length, moduleCodeNumber.Length);
 				beaconKeyStringBuilder.Insert(beaconKeyStringBuilder.Length - locationNumber.Length, moduleCodeNumber);
 				beaconKey = beaconKeyStringBuilder.ToString();
-			}
-
-			return beaconKey;
-		}
+                return beaconKey;
+            }
+            else
+            {
+                return null;
+            }
+        }
 
         public static string LecturerGetBeaconKey()
         {
             studentTimetable = GetStudentTimetable(SharedData.testSPStudentID).Result;
             currentModule = studentTimetable.GetCurrentModule();
 
-            if (currentModule != null)
+            if (currentModule != null && !currentModule.abbr.Equals(""))
             {
                 beaconKey = SharedData.testBeaconUUID;
                 var beaconKeyStringBuilder = new StringBuilder(beaconKey);
@@ -205,9 +208,12 @@ namespace BeaconTest
                 beaconKeyStringBuilder.Remove(beaconKeyStringBuilder.Length - locationNumber.Length - moduleCodeNumber.Length, moduleCodeNumber.Length);
                 beaconKeyStringBuilder.Insert(beaconKeyStringBuilder.Length - locationNumber.Length, moduleCodeNumber);
                 beaconKey = beaconKeyStringBuilder.ToString();
+                return beaconKey;
             }
-
-            return beaconKey;
+            else
+            {
+                return null;
+            }
         }
 
         public static int GetATS()

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using Acr.UserDialogs;
 using AltBeaconOrg.BoundBeacon;
 using Android.App;
 using Android.Content;
@@ -30,18 +32,19 @@ namespace BeaconTest.Droid
 
         String admissionId, ats_Code;
 
-        AltBeaconOrg.BoundBeacon.Region tagRegion, emptyRegion;
+        Region tagRegion, emptyRegion;
 
         BeaconManager beaconManager;
 
         LecturerBeacon lb;
+
         StudentSubmission studentSubmit;
         StudentTimetable studentTimetable;
         StudentModule studentModule;
         ImageView studentAttendanceImageView;
         EditText attendanceCodeEditText;
 
-        TextView moduleNameTextView, timeTextView, locationTextView;
+        TextView moduleNameTextView, timeTextView, locationTextView, enterAttendanceCodeTextView;
         Button submitBtn;
 
         public EnterCode()
@@ -65,40 +68,54 @@ namespace BeaconTest.Droid
             locationTextView = FindViewById<TextView>(Resource.Id.locationTextView);
             studentAttendanceImageView = FindViewById<ImageView>(Resource.Id.studentAttendanceImageView);
             attendanceCodeEditText = FindViewById<EditText>(Resource.Id.attendanceCodeEditText);
+            enterAttendanceCodeTextView = FindViewById<TextView>(Resource.Id.enterAttendanceCodeTextView);
+
+            enterAttendanceCodeTextView.Click += delegate
+            {
+                attendanceCodeEditText.Visibility = ViewStates.Visible;
+            };
 
             submitBtn = FindViewById<Button>(Resource.Id.submitBtn);
 
+            UserDialogs.Init(this);
+
+            UserDialogs.Instance.ShowLoading("Retrieving module info...");
+
+            ThreadPool.QueueUserWorkItem(o => GetModule());
+
+            VerifyBle();
+        }
+
+        private void GetModule()
+        {
             studentTimetable = DataAccess.GetStudentTimetable(SharedData.testSPStudentID).Result;
             studentModule = studentTimetable.GetCurrentModule();
 
-            moduleNameTextView.Text = studentModule.abbr + " (" + studentModule.code + ")";
-            timeTextView.Text = studentModule.time;
-            locationTextView.Text = studentModule.location;
+            if (studentModule != null)
+            {
+                RunOnUiThread(() => {
+                    moduleNameTextView.Text = studentModule.abbr + " (" + studentModule.code + ")";
+                    timeTextView.Text = studentModule.time;
+                    locationTextView.Text = studentModule.location;
+                    UserDialogs.Instance.HideLoading();
+                });
 
-            VerifyBle();
-
-            beaconManager = BeaconManager.GetInstanceForApplication(this);
-
-            //lb = DataAccess.StudentGetBeacon().Result;
-
-            //set the type of beacon we are dealing with
-            var iBeaconParser = new BeaconParser();
-
-            //change the beacon layout to suit the transmitter when needed
-            iBeaconParser.SetBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24");
-            beaconManager.BeaconParsers.Add(iBeaconParser);
-
-            monitorNotifier.EnterRegionComplete += EnteredRegion;
-            monitorNotifier.ExitRegionComplete += ExitedRegion;
-            monitorNotifier.DetermineStateForRegionComplete += DeterminedStateForRegionComplete;
-
-            rangeNotifier.DidRangeBeaconsInRegionComplete += RangingBeaconsInRegion;
-
-            beaconManager.Bind(this);
-
-            //Console.WriteLine("Debug getting beacon uuid from database:" + lb.BeaconKey.ToString());
-            //Console.WriteLine("Major key" + lb.Major.ToString());
-            //Console.WriteLine("Minor key" + lb.Minor.ToString());
+                SetupBeaconRanger();
+                beaconManager = BeaconManager.GetInstanceForApplication(this);
+                BeaconTransmitter bTransmitter = new BeaconTransmitter();
+                bTransmitter.Transmit();
+            }
+            else
+            {
+                RunOnUiThread(() => {
+                    moduleNameTextView.Text = "No lessons today";
+                    timeTextView.Visibility = ViewStates.Gone;
+                    locationTextView.Visibility = ViewStates.Gone;
+                    studentAttendanceImageView.Visibility = ViewStates.Gone;
+                    attendanceCodeEditText.Visibility = ViewStates.Gone;
+                    UserDialogs.Instance.HideLoading();
+                });
+            }
         }
 
         private void VerifyBle()
@@ -223,80 +240,33 @@ namespace BeaconTest.Droid
             }
         }
 
-        /*async Task UpdateUI()
-        {
-            await Task.Run(() =>
-            {
-                RunOnUiThread(() =>
-                {
-                    SetContentView(Resource.Layout.EnterCode);
-
-                    Button submitBtn = FindViewById<Button>(Resource.Id.submitBtn); 
-
-                    submitBtn.Click += delegate
-                    {
-                        AlertDialog.Builder ad = new AlertDialog.Builder(this);
-                        ad.SetTitle("Success");
-                        ad.SetMessage("You have successfully submitted your attendance!");
-                        ad.SetPositiveButton("OK", delegate
-                        {
-                            ad.Dispose();
-                        });
-                        ad.Show();
-                    };
-                });
-            });
-        }
-
-        async Task NotWithinRange()
-        {
-            //ProgressBar progressBar = FindViewById<ProgressBar>(Resource.Id.progressBarRange);
-            //ProgressDialog progress = new ProgressDialog(this);
-            //progress.Indeterminate = true;
-            //progress.SetProgressStyle(ProgressDialogStyle.Spinner);
-            //progress.SetMessage("Loading... Please wait...");
-            //progress.SetCancelable(false);
-
-            await Task.Run(() =>
-            {
-                //pb = FindViewById<ProgressBar>(Resource.Id.progressBarRange);
-
-                RunOnUiThread(() =>
-                {
-                    //pb.Enabled = true;
-                    SetContentView(Resource.Layout.NotWithinRange);
-                });
-            });
-            //pb.Enabled = false;
-        }/*
-
-        /*async Task UpdateData(List<Beacon> beacons)
-        {
-            await Task.Run(() =>
-            {
-                foreach (var beacon in beacons)
-                {
-                    if(data.Exists(b => b.Id1.ToString() == beacon.Id1.ToString()))
-                    {
-                        RunOnUiThread(() =>
-                        {
-                            SetContentView(Resource.Layout.EnterCode);
-                        });
-                    }
-                    else
-                    {
-                        RunOnUiThread(() =>
-                        {
-                            SetContentView(Resource.Layout.NotWithinRange);
-                        });
-                    }
-                }
-            });
-        }*/
-
         public void OnDismiss(IDialogInterface dialog)
         {
             Finish();
+        }
+
+        private void SetupBeaconRanger()
+        {
+            beaconManager = BeaconManager.GetInstanceForApplication(this);
+
+            //set the type of beacon we are dealing with
+            var iBeaconParser = new BeaconParser();
+
+            //change the beacon layout to suit the transmitter when needed
+            iBeaconParser.SetBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24");
+            beaconManager.BeaconParsers.Add(iBeaconParser);
+
+            monitorNotifier.EnterRegionComplete += EnteredRegion;
+            monitorNotifier.ExitRegionComplete += ExitedRegion;
+            monitorNotifier.DetermineStateForRegionComplete += DeterminedStateForRegionComplete;
+
+            rangeNotifier.DidRangeBeaconsInRegionComplete += RangingBeaconsInRegion;
+
+            beaconManager.Bind(this);
+
+            //Console.WriteLine("Debug getting beacon uuid from database:" + lb.BeaconKey.ToString());
+            //Console.WriteLine("Major key" + lb.Major.ToString());
+            //Console.WriteLine("Minor key" + lb.Minor.ToString());
         }
 
         //executed after oncreate

@@ -9,6 +9,9 @@ using Android.Support.V4.View;
 using Android.Support.Design.Widget;
 using System;
 using Android.Net.Wifi;
+using Acr.UserDialogs;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace BeaconTest.Droid
 {
@@ -24,6 +27,11 @@ namespace BeaconTest.Droid
         string username;
         string pwd;
 
+        bool valid;
+
+        Button lecturerButton;
+        Button studentButton;
+
         //ViewPager pager;
         //TabsAdapter adapter;
 
@@ -35,40 +43,21 @@ namespace BeaconTest.Droid
             EditText Username = FindViewById<EditText>(Resource.Id.usernameInput);
             EditText Pwd = FindViewById<EditText>(Resource.Id.passwordInput);
 
+            UserDialogs.Init(this);
+
             if (this.IsWifiConnected())
             {
                 //submitBtn.Enabled = true;
 
                 submitBtn.Click += delegate
                 {
+                    UserDialogs.Instance.ShowLoading("Logging in");
+
                     username = Username.Text;
                     pwd = Pwd.Text;
-                    bool valid = DataAccess.LoginAsync(username, pwd).Result;
-
-                    if (valid)
-                    {
-                        //username = s12345, password = Te@cher123
-                        if (username.StartsWith("s", StringComparison.Ordinal))
-                        {
-                            StartActivity(typeof(Timetable));
-                        }
-                        //username = p1234567, password = R@ndom123
-                        else if (username.StartsWith("p", StringComparison.Ordinal))
-                        {
-                            StartActivity(typeof(EnterCode));
-                        }
-                    }
-                    else
-                    {
-                        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-                        alertDialog.SetTitle("Invalid login credentials");
-                        alertDialog.SetMessage("The username or password you have entered is invalid");
-                        alertDialog.SetNeutralButton("OK", delegate
-                        {
-                            alertDialog.Dispose();
-                        });
-                        alertDialog.Show();
-                    }
+                    
+                    ThreadPool.QueueUserWorkItem(o => Login());
+                    
                 };
             }
             else
@@ -84,36 +73,6 @@ namespace BeaconTest.Droid
 
                 //submitBtn.Enabled = false;
             }
-
-            //    adapter = new TabsAdapter(this, SupportFragmentManager);
-            //    pager = FindViewById<ViewPager>(Resource.Id.viewpager);
-            //    var tabs = FindViewById<TabLayout>(Resource.Id.tabs);
-            //    pager.Adapter = adapter;
-            //    tabs.SetupWithViewPager(pager);
-            //    pager.OffscreenPageLimit = 3;
-
-            //    pager.PageSelected += (sender, args) =>
-            //    {
-            //        var fragment = adapter.InstantiateItem(pager, args.Position) as IFragmentVisible;
-
-            //        fragment?.BecameVisible();
-            //    };
-
-            //    Toolbar.MenuItemClick += (sender, e) =>
-            //    {
-            //        var intent = new Intent(this, typeof(AddItemActivity)); ;
-            //        StartActivity(intent);
-            //    };
-
-            //    SupportActionBar.SetDisplayHomeAsUpEnabled(false);
-            //    SupportActionBar.SetHomeButtonEnabled(false);
-            //}
-
-            //public override bool OnCreateOptionsMenu(IMenu menu)
-            //{
-            //    MenuInflater.Inflate(Resource.Menu.top_menus, menu);
-            //    return base.OnCreateOptionsMenu(menu);
-            //}
         }
 
         //checks whether wifi is switched on and connected to a wifi network
@@ -124,9 +83,46 @@ namespace BeaconTest.Droid
             if (wifiManager != null)
             {
                 return wifiManager.IsWifiEnabled &&
-                    (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID != unknownssid);          
+                    (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID != unknownssid);
             }
             return false;
+        }
+
+        private void Login()
+        {
+            valid = DataAccess.LoginAsync(username, pwd).Result;
+            if (valid)
+            {
+                RunOnUiThread(() => UserDialogs.Instance.HideLoading());
+                RunOnUiThread(() =>
+                {
+                    //username = s12345, password = Te@cher123
+                    if (username.StartsWith("s", StringComparison.Ordinal))
+                    {
+                        StartActivity(typeof(Timetable));
+                    }
+                    //username = p1234567, password = R@ndom123
+                    else if (username.StartsWith("p", StringComparison.Ordinal))
+                    {
+                        StartActivity(typeof(EnterCode));
+                    }
+                });
+            }
+            else
+            {
+                RunOnUiThread(() => UserDialogs.Instance.HideLoading());
+                RunOnUiThread(() =>
+                {
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+                    alertDialog.SetTitle("Invalid login credentials");
+                    alertDialog.SetMessage("The username or password you have entered is invalid");
+                    alertDialog.SetNeutralButton("OK", delegate
+                    {
+                        alertDialog.Dispose();
+                    });
+                    alertDialog.Show();
+                });
+            }
         }
 
         /*class TabsAdapter : FragmentStatePagerAdapter

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using AltBeaconOrg.BoundBeacon;
 using Android.App;
 using Android.Bluetooth.LE;
@@ -10,7 +11,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using BeaconTest.Droid.Resources.layout;
+using BeaconTest.Droid.Lecturer;
 
 namespace BeaconTest.Droid
 {
@@ -26,7 +27,7 @@ namespace BeaconTest.Droid
 
             base.OnCreate(savedInstanceState);
 
-            VerifyBle();
+            ThreadPool.QueueUserWorkItem(o => VerifyBle());
 
             // Create your application here
 
@@ -34,25 +35,14 @@ namespace BeaconTest.Droid
 
             genBtn1.Click += delegate
             {
-                StartActivity(typeof(BeaconTransmitActivity));
-
-                beaconManager = BeaconManager.GetInstanceForApplication(this);
-
-                BeaconTransmitter bTransmitter = new BeaconTransmitter();
-                bTransmitter.Transmit();
-
-                /*AlertDialog.Builder ad = new AlertDialog.Builder(this);
-                ad.SetTitle("Started transmission");
-                ad.SetMessage("Your device is now transmitting as an iBeacon for this lesson");
-                ad.SetNeutralButton("OK", delegate
+                if(VerifyBle())
                 {
-                    ad.Dispose();
-                });
-                ad.Show();*/
+                    StartActivity(typeof(BeaconTransmitActivity));
+                }
             };
         }
 
-        private void VerifyBle()
+        private bool VerifyBle()
         {
             if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability())
             {
@@ -62,13 +52,15 @@ namespace BeaconTest.Droid
                 EventHandler<DialogClickEventArgs> handler = null;
                 builder.SetPositiveButton(Android.Resource.String.Ok, handler);
                 builder.SetOnDismissListener(this);
-                builder.Show();
+                RunOnUiThread(() => builder.Show());
+                return false;
             }
+            return true;
         }
 
         public void OnDismiss(IDialogInterface dialog)
         {
-            Finish();
+            dialog.Dismiss();
         }
     }
 }

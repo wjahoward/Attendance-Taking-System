@@ -42,7 +42,16 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:visibility="gone" />
+    <TextView
+         android:text="Enter ATS Code manually"
+         android:textAppearance="?android:attr/textAppearanceSmall"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/enterAttendanceCodeTextView"
+         android:layout_marginTop="30dp"
+         android:layout_gravity="center" />
     <Button
         android:text="Submit"
         android:layout_width="wrap_content"

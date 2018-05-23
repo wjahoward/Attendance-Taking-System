@@ -19,6 +19,7 @@
     <Jar>D:\FYP\Droid\obj\Debug\lp\9\jl\support-annotations.jar</Jar>
   </Jars>
   <ResolvedResourceDirectories>
+    <ResolvedResourceDirectory>D:\FYP\Droid\obj\Debug\lp\23\jl\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>D:\FYP\Droid\obj\Debug\lp\0\jl\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>D:\FYP\Droid\obj\Debug\lp\3\jl\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>D:\FYP\Droid\obj\Debug\lp\4\jl\res</ResolvedResourceDirectory>
@@ -31,6 +32,7 @@
     <ResolvedResourceDirectory>D:\FYP\Droid\obj\Debug\lp\21\jl\res</ResolvedResourceDirectory>
   </ResolvedResourceDirectories>
   <ResolvedAssetDirectories>
+    <ResolvedAssetDirectory>obj\Debug\lp\23\jl\assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj\Debug\lp\0\jl\assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj\Debug\lp\3\jl\assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj\Debug\lp\4\jl\assets</ResolvedAssetDirectory>
@@ -39,6 +41,7 @@
   </ResolvedAssetDirectories>
   <ResolvedEnvironmentFiles />
   <ResolvedResourceDirectoryStamps>
+    <ResolvedResourceDirectoryStamp>D:\FYP\Droid\obj\Debug\lp\23.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>D:\FYP\Droid\obj\Debug\lp\0.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>D:\FYP\Droid\obj\Debug\lp\3.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>D:\FYP\Droid\obj\Debug\lp\4.stamp</ResolvedResourceDirectoryStamp>

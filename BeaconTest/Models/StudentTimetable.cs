@@ -11,22 +11,25 @@ namespace BeaconTest.Models
 
 		public StudentModule GetCurrentModule()
 		{
-			foreach (StudentModule module in modules)
-			{
-				string startTimeInput = module.time.Substring(0, 5);
-				string endTimeInput = module.time.Substring(6, 5);
+            if(modules.Count > 0 && !modules[0].abbr.Equals(""))
+            {
+                foreach (StudentModule module in modules)
+                {
+                    string startTimeInput = module.time.Substring(0, 5);
+                    string endTimeInput = module.time.Substring(6, 5);
 
-				DateTime startTime = DateTime.Parse(startTimeInput);
-				DateTime endTime = DateTime.Parse(endTimeInput);
-				DateTime currentTime = DateTime.UtcNow;
+                    DateTime startTime = DateTime.Parse(startTimeInput);
+                    DateTime endTime = DateTime.Parse(endTimeInput);
+                    DateTime currentTime = DateTime.UtcNow;
 
-				if(startTime.Subtract(currentTime).TotalMinutes <= 15 || endTime.Subtract(currentTime).TotalSeconds >= 60)
-				{
-					return module;
-				}
-			}
-
-			return modules[0];
-		}
+                    if (startTime.Subtract(currentTime).TotalMinutes <= 15 || endTime.Subtract(currentTime).TotalSeconds >= 60)
+                    {
+                        return modules[0];
+                    }
+                    return modules[0];
+                }
+            }
+            return null;
+        }
     }
 }

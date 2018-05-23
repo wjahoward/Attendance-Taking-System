@@ -21,3 +21,7 @@ Xamarin.Android.Support.v7.AppCompat
 Xamarin.Android.Support.v7.CardView
 Xamarin.Android.Support.v7.RecyclerView
 Xamarin.Android.Support.Vector.Drawable
+AndHUD
+Acr.UserDialogs
+System.Collections
+System.Threading.Tasks

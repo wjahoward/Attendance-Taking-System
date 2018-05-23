@@ -356,7 +356,8 @@ D:\FYP\Droid\obj\Debug\android\assets\System.ServiceModel.Internals.pdb
 D:\FYP\Droid\obj\Debug\android\assets\System.Xml.Linq.pdb
 D:\FYP\Droid\obj\Debug\android\assets\System.Xml.pdb
 D:\FYP\Droid\obj\Debug\res\layout\beacontransmitactivity.xml
-D:\FYP\Droid\bin\Debug\BeaconTest.Droid.dll
-D:\FYP\Droid\obj\Debug\linksrc\BeaconTest.Droid.dll.mdb
-D:\FYP\Droid\obj\Debug\linksrc\Plugin.Connectivity.dll.mdb
-D:\FYP\Droid\obj\Debug\linksrc\Plugin.Share.dll.mdb
+D:\FYP\Droid\bin\Debug\Acr.UserDialogs.dll
+D:\FYP\Droid\bin\Debug\AndHUD.dll
+D:\FYP\Droid\bin\Debug\System.IdentityModel.pdb
+D:\FYP\Droid\obj\Debug\linksrc\System.IdentityModel.pdb
+D:\FYP\Droid\obj\Debug\android\assets\System.IdentityModel.pdb
