@@ -57,18 +57,19 @@ D:/FYP/iOS/obj/iPhoneSimulator/Debug/BeaconTest.iOS.pdb
 /Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/BeaconTest.iOS.csprojResolveAssemblyReference.cache
 /Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/Acr.UserDialogs.dll
 /Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/BTProgressHUD.dll
-/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/ibtool/_BundleResourceWithLogicalName.items
-/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/actool/_PartialAppManifest.items
-/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/actool/_BundleResourceWithLogicalName.items
-/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/coremlc/_PartialAppManifest.items
-/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/coremlc/_BundleResourceWithLogicalName.items
-/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/Cross Icon.png
-/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/Time Icon.png
-/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/Tick Icon.png
-/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/Bluetooth Devices Icon.png
-/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/User Profile Icon.png
-/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/Retry Icon.png
-/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/Bluetooth Device Icon.png
-/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/Bluetooth Transmission Icon.png
-/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/Location Icon.png
-/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.3/ibtool/_BundleResourceWithLogicalName.items
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.3/actool/_PartialAppManifest.items
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.3/actool/_BundleResourceWithLogicalName.items
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.3/coremlc/_PartialAppManifest.items
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.3/coremlc/_BundleResourceWithLogicalName.items
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.3/optimized/Cross Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.3/optimized/Time Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.3/optimized/Tick Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.3/optimized/Bluetooth Devices Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.3/optimized/User Profile Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.3/optimized/Retry Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.3/optimized/Bluetooth Device Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.3/optimized/Bluetooth Transmission Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.3/optimized/Location Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.3/optimized/
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/TestFairy.iOS.dll

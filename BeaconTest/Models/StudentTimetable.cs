@@ -20,13 +20,12 @@ namespace BeaconTest.Models
 
                     DateTime startTime = DateTime.Parse(startTimeInput);
                     DateTime endTime = DateTime.Parse(endTimeInput);
-                    DateTime currentTime = DateTime.UtcNow;
-
-                    if (startTime.Subtract(currentTime).TotalMinutes <= 15 || endTime.Subtract(currentTime).TotalSeconds >= 60)
+                    DateTime currentTime = DateTime.Now;
+                    
+					if (currentTime >= startTime && currentTime <= endTime)
                     {
-                        return modules[0];
+                        return module;
                     }
-                    return modules[0];
                 }
             }
             return null;

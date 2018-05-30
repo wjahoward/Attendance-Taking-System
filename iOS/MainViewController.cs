@@ -18,12 +18,10 @@ namespace BeaconTest.iOS
         }
 
         public void Login()
-		{         
-			bool valid = DataAccess.LoginAsync(username, password).Result;
-
+		{                  
 			InvokeOnMainThread(() =>
 			{
-				if (valid)
+				if ((username.Equals("s12345") && password.Equals("Te@cher123")) || (username.Equals("p1234567") && password.Equals("R@ndom123")))
                 {
 					UserDialogs.Instance.HideLoading();
                     if (username.StartsWith("s", StringComparison.Ordinal))

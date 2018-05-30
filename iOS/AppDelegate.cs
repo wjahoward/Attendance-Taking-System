@@ -1,5 +1,7 @@
 ﻿using Foundation;
 using UIKit;
+using TestFairyLib;
+using System;
 
 namespace BeaconTest.iOS
 {
@@ -16,22 +18,20 @@ namespace BeaconTest.iOS
             set;
         }
 
-        public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
+		public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
+		{
+			TestFairy.Begin("eddd4a3e0aff28de3cdd6b6f0da66da70720ad4d");
+			Log("Hello {0}", "World");
+			return true;
+		}
+
+        public static void Log(string format, params object[] arg)
         {
-            /*App.Initialize();
-
-            Window = new UIWindow(UIScreen.MainScreen.Bounds);
-
-            //Turn phone into beacon
-            var controller = new MainViewController();
-            //Detect Beacons
-            //var controller = new BeaconViewController();
-            UINavigationController navigationController = new UINavigationController(controller);
-            Window.RootViewController = navigationController;
-
-            // make the window visible
-            Window.MakeKeyAndVisible();*/
-            return true;
+            using (var nsFormat = new NSString(string.Format(format, arg)))
+            {
+                CFunctions.TFLog(nsFormat.Handle, ""); 
+				Console.WriteLine(string.Format(format, arg));
+            }
         }
 
         public override void OnResignActivation(UIApplication application)
