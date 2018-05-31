@@ -127,7 +127,6 @@ class MonoPackageManager_Resources {
 		"Xamarin.Android.Support.Fragment.dll",
 		"Xamarin.Android.Support.Media.Compat.dll",
 		"Xamarin.Android.Support.Transition.dll",
-		"Xamarin.Android.Support.v4.dll",
 		"Xamarin.Android.Support.v7.AppCompat.dll",
 		"Xamarin.Android.Support.v7.CardView.dll",
 		"Xamarin.Android.Support.v7.RecyclerView.dll",

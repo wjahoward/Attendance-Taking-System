@@ -34,7 +34,9 @@ namespace BeaconTest.Droid
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            SetContentView(Resource.Layout.Login);
+            base.OnCreate(savedInstanceState);
+
+            //SetContentView(Resource.Layout.Login);
 
             Button submitBtn = FindViewById<Button>(Resource.Id.loginButton);
             Username = FindViewById<EditText>(Resource.Id.usernameInput);
@@ -63,7 +65,6 @@ namespace BeaconTest.Droid
 
                 //submitBtn.Enabled = false;
             }
-            base.OnCreate(savedInstanceState);
         }
 
         //checks whether wifi is switched on and connected to a wifi network

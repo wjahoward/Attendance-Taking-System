@@ -41,3 +41,11 @@
 /Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.3/optimized/Location Icon.png
 /Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.2-11.3/optimized/
 /Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/TestFairy.iOS.dll
+C:\Users\JasmineLim\Documents\GitHub\FYP\iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
+C:\Users\JasmineLim\Documents\GitHub\FYP\iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
+C:\Users\JasmineLim\Documents\GitHub\FYP\iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
+C:\Users\JasmineLim\Documents\GitHub\FYP\iOS\obj\iPhoneSimulator\Debug\coremlc\_PartialAppManifest.items
+C:\Users\JasmineLim\Documents\GitHub\FYP\iOS\obj\iPhoneSimulator\Debug\coremlc\_BundleResourceWithLogicalName.items
+C:\Users\JasmineLim\Documents\GitHub\FYP\iOS\obj\iPhoneSimulator\Debug\optimized\
+C:\Users\JasmineLim\Documents\GitHub\FYP\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csprojResolveAssemblyReference.cache
+C:\Users\JasmineLim\Documents\GitHub\FYP\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csproj.CoreCompileInputs.cache
