@@ -26,39 +26,29 @@ namespace BeaconTest.Droid
 
         string username;
         string pwd;
-
-        bool valid;
-
-        Button lecturerButton;
-        Button studentButton;
+        EditText Username;
+        EditText Pwd;
 
         //ViewPager pager;
         //TabsAdapter adapter;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.Login);
 
-            Button submitBtn = FindViewById<Button>(Resource.Id.MyButton);
-            EditText Username = FindViewById<EditText>(Resource.Id.usernameInput);
-            EditText Pwd = FindViewById<EditText>(Resource.Id.passwordInput);
+            Button submitBtn = FindViewById<Button>(Resource.Id.loginButton);
+            Username = FindViewById<EditText>(Resource.Id.usernameInput);
+            Pwd = FindViewById<EditText>(Resource.Id.passwordInput);
 
-            UserDialogs.Init(this);
+            submitBtn.Click += LoginButtonOnClick;
+
+            //UserDialogs.Init(this);
 
             if (this.IsWifiConnected())
             {
                 //submitBtn.Enabled = true;
 
-                submitBtn.Click += delegate
-                {
-                    UserDialogs.Instance.ShowLoading("Logging in");
-
-                    username = Username.Text;
-                    pwd = Pwd.Text;
-                    
-                    ThreadPool.QueueUserWorkItem(o => Login());
-                    
-                };
+                submitBtn.Click += LoginButtonOnClick;
             }
             else
             {
@@ -73,6 +63,7 @@ namespace BeaconTest.Droid
 
                 //submitBtn.Enabled = false;
             }
+            base.OnCreate(savedInstanceState);
         }
 
         //checks whether wifi is switched on and connected to a wifi network
@@ -87,26 +78,31 @@ namespace BeaconTest.Droid
             }
             return false;
         }
+        
+        private void LoginButtonOnClick(object sender, EventArgs args)
+        {
+            //UserDialogs.Instance.ShowLoading("Logging in");
+
+            username = Username.Text;
+            pwd = Pwd.Text;
+
+            ThreadPool.QueueUserWorkItem(o => Login());
+        }
 
         private void Login()
         {
-            valid = DataAccess.LoginAsync(username, pwd).Result;
-            if (valid)
-            {
-                RunOnUiThread(() => UserDialogs.Instance.HideLoading());
-                RunOnUiThread(() =>
+            if ((username.Equals("s12345") && pwd.Equals("Te@cher123")) || (username.Equals("p1234567") && pwd.Equals("R@ndom123"))) {
+                //UserDialogs.Instance.HideLoading();
+                //username = s12345, password = Te@cher123
+                if (username.StartsWith("s", StringComparison.Ordinal))
                 {
-                    //username = s12345, password = Te@cher123
-                    if (username.StartsWith("s", StringComparison.Ordinal))
-                    {
-                        StartActivity(typeof(Timetable));
-                    }
-                    //username = p1234567, password = R@ndom123
-                    else if (username.StartsWith("p", StringComparison.Ordinal))
-                    {
-                        StartActivity(typeof(EnterCode));
-                    }
-                });
+                    RunOnUiThread(() => StartActivity(typeof(Timetable)));
+                }
+                //username = p1234567, password = R@ndom123
+                else if (username.StartsWith("p", StringComparison.Ordinal))
+                {
+                    RunOnUiThread(() => StartActivity(typeof(EnterCode)));
+                }
             }
             else
             {

@@ -30,15 +30,10 @@ namespace BeaconTest.Droid
         const string uuid = "C9407F30-F5F8-466E-AFF9-25556B57FE6D";*/
         string uuid = "2F234454-CF6D-4A0F-ADF2-F4911BA9FFA5";
 
-        String admissionId, ats_Code;
-
         Region tagRegion, emptyRegion;
 
         BeaconManager beaconManager;
 
-        LecturerBeacon lb;
-
-        StudentSubmission studentSubmit;
         StudentTimetable studentTimetable;
         StudentModule studentModule;
         ImageView studentAttendanceImageView;
@@ -58,9 +53,6 @@ namespace BeaconTest.Droid
         {
             SetContentView(Resource.Layout.EnterCode);
             base.OnCreate(savedInstanceState);
-
-            admissionId = "p1234567";
-            ats_Code = "345678";
             uuid = DataAccess.StudentGetBeaconKey();
 
             moduleNameTextView = FindViewById<TextView>(Resource.Id.moduleNameTextView);
@@ -180,6 +172,7 @@ namespace BeaconTest.Droid
                                 Console.WriteLine(atsCode);
                                 submitBtn.Visibility = ViewStates.Visible;
                                 studentAttendanceImageView.SetImageDrawable(GetDrawable(Resource.Drawable.Asset2));
+                                attendanceCodeEditText.Visibility = ViewStates.Visible;
                                 attendanceCodeEditText.Text = atsCode;
                                 attendanceCodeEditText.Enabled = false;
                             }
@@ -210,34 +203,8 @@ namespace BeaconTest.Droid
 
         private void SubmitATS()
         {
-            studentSubmit = new StudentSubmission(admissionId, lb.BeaconKey, ats_Code, DateTime.UtcNow);
-
-            bool isSubmitted = DataAccess.StudentSubmitATS(studentSubmit).Result;
-
-            Console.WriteLine("Result" + DataAccess.StudentSubmitATS(studentSubmit).Result);
-
-            if (isSubmitted)
-            {
-                AlertDialog.Builder ad = new AlertDialog.Builder(this);
-                ad.SetTitle("Success");
-                ad.SetMessage("You have successfully submitted your attendance at " + DateTime.UtcNow);
-                ad.SetPositiveButton("OK", delegate
-                {
-                    ad.Dispose();
-                });
-                ad.Show();
-            }
-            else
-            {
-                AlertDialog.Builder ad = new AlertDialog.Builder(this);
-                ad.SetTitle("Error");
-                ad.SetMessage("There was an error in submitting your attendance");
-                ad.SetPositiveButton("OK", delegate
-                {
-                    ad.Dispose();
-                });
-                ad.Show();
-            }
+            //studentSubmit = new StudentSubmission(admissionId, lb.BeaconKey, ats_Code, DateTime.UtcNow);
+           
         }
 
         public void OnDismiss(IDialogInterface dialog)

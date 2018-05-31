@@ -1,25 +1,26 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!--
- Copyright (C) 2014 The Android Open Source Project
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.testfairy.sdk" >
 
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
+    <uses-sdk android:minSdkVersion="14" />
 
-          http://www.apache.org/licenses/LICENSE-2.0
+    <!-- INTERNET is required for accessing TestFairy's servers -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
--->
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" package="android.support.coreutils">
+    <!-- ACCESS_NETWORK_STATE is needed to know if we are on 3G, WIFI or disconnected -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <uses-sdk android:minSdkVersion="9" tools:overrideLibrary="android.support.coreutils" />
+    <!-- WRITE_EXTERNAL_STORAGE is needed for auto-update -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application>
-        <meta-data android:name="android.support.VERSION" android:value="25.4.0" />
+        <activity
+            android:name="com.testfairy.activities.ProvideFeedbackActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@android:style/Theme.Holo.Light" />
+        <activity
+            android:name="com.testfairy.activities.AutoUpdateActivity"
+            android:configChanges="orientation|screenSize" />
     </application>
 
 </manifest>

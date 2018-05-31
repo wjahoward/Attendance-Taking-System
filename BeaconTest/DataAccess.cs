@@ -51,7 +51,7 @@ namespace BeaconTest
 			}
 		}
 
-		public static async Task<bool> LecturerGenerateATS(LecturerBeacon lecturerBeacon)
+		/*public static async Task<bool> LecturerGenerateATS(LecturerBeacon lecturerBeacon)
 		{
 			var uri = new Uri(LecturerPostUrl);
 
@@ -83,7 +83,7 @@ namespace BeaconTest
 				Debug.WriteLine(responseString);
 			}
 			return false;
-		}
+		}*/
 
 		public static async Task<bool> StudentSubmitATS(StudentSubmission studentSubmission)
 		{
@@ -119,7 +119,7 @@ namespace BeaconTest
 			return false;
 		}
 
-		public static async Task<LecturerBeacon> StudentGetBeacon()
+		/*public static async Task<LecturerBeacon> StudentGetBeacon()
 		{
 			string urlParameters = "/p1234567";
 			var url = StudentUrl + urlParameters;
@@ -139,7 +139,7 @@ namespace BeaconTest
 				Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
 				return null;
 			}
-		}
+		}*/
 
 		public static async Task<StudentTimetable> GetStudentTimetable(string studentID)
 		{

@@ -18,7 +18,6 @@ namespace BeaconTest.Droid
     [Activity(Label = "Lecturer")]
     public class Timetable : Activity, IDialogInterfaceOnDismissListener
     {
-        private BeaconManager beaconManager;
         public AdvertiseCallback advertiseCallback;
 
         protected override void OnCreate(Bundle savedInstanceState)

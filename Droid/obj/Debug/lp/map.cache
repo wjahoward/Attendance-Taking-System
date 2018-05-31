@@ -1,3 +1,5 @@
+Acr.UserDialogs
+AndHUD
 AndroidAltBeaconLibrary
 Newtonsoft.Json
 Plugin.Connectivity.Abstractions
@@ -5,7 +7,10 @@ Plugin.Connectivity
 Plugin.CurrentActivity
 Plugin.Share.Abstractions
 Plugin.Share
+System.Collections
 System.Runtime
+System.Threading.Tasks
+TestFairy.Android
 Xamarin.Android.Support.Animated.Vector.Drawable
 Xamarin.Android.Support.Annotations
 Xamarin.Android.Support.Compat
@@ -21,7 +26,3 @@ Xamarin.Android.Support.v7.AppCompat
 Xamarin.Android.Support.v7.CardView
 Xamarin.Android.Support.v7.RecyclerView
 Xamarin.Android.Support.Vector.Drawable
-AndHUD
-Acr.UserDialogs
-System.Collections
-System.Threading.Tasks

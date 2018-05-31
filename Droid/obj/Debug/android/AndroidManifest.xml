@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.BeaconTest" android:installLocation="auto">
-  <!--suppress UsesMinSdkAttributes-->
-  <uses-sdk android:minSdkVersion="15" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.xamarin.BeaconTest" android:installLocation="auto">
+  <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="21" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
   <application android:theme="@style/MasterDetailTheme" android:allowBackup="true" android:label="@string/app_name" android:name="md59b63201be766be467e51e22bd0302580.MainApplication" android:debuggable="true">
     <activity android:label="EnterCode" android:launchMode="singleInstance" android:name="md59b63201be766be467e51e22bd0302580.EnterCode" />
-    <activity android:label="AddItemActivity" android:name="md59b63201be766be467e51e22bd0302580.AddItemActivity" />
-    <activity android:label="Details" android:parentActivityName="md59b63201be766be467e51e22bd0302580.MainActivity" android:name="md59b63201be766be467e51e22bd0302580.BrowseItemDetailActivity">
-      <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".MainActivity" />
-    </activity>
     <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="@string/app_name" android:launchMode="singleInstance" android:screenOrientation="portrait" android:name="md59b63201be766be467e51e22bd0302580.MainActivity" />
     <activity android:label="@string/app_name" android:theme="@style/SplashTheme" android:name="md59b63201be766be467e51e22bd0302580.SplashActivity">
       <intent-filter>
@@ -20,16 +15,19 @@
     </activity>
     <activity android:label="Lecturer" android:name="md59b63201be766be467e51e22bd0302580.Timetable" />
     <activity android:label="BeaconTransmitActivity" android:name="md5f71b2602528bdd94f15cd6c5942b2e02.BeaconTransmitActivity" />
-    <receiver android:enabled="true" android:label="Connectivity Plugin Broadcast Receiver" android:name="md5a7903531ac28e2eb4c8576cdf2655bda.ConnectivityChangeBroadcastReceiver" />
+    <receiver android:enabled="true" android:label="Connectivity Plugin Broadcast Receiver" android:name="md592d74be4bac08a7af63848ae15d2f86e.ConnectivityChangeBroadcastReceiver" />
     <service android:name="md59f70a99687498e7ba187118950981d26.KeepAliveService" />
-    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.companyname.BeaconTest.mono.MonoRuntimeProvider.__mono_init__" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.xamarin.BeaconTest.mono.MonoRuntimeProvider.__mono_init__" />
     <!--suppress ExportedReceiver-->
     <receiver android:name="mono.android.Seppuku">
       <intent-filter>
         <action android:name="mono.android.intent.action.SEPPUKU" />
-        <category android:name="mono.android.intent.category.SEPPUKU.com.companyname.BeaconTest" />
+        <category android:name="mono.android.intent.category.SEPPUKU.com.xamarin.BeaconTest" />
       </intent-filter>
     </receiver>
+    <activity android:name="com.testfairy.activities.ProvideFeedbackActivity" android:configChanges="orientation|screenSize" android:theme="@android:style/Theme.Holo.Light" />
+    <activity android:name="com.testfairy.activities.AutoUpdateActivity" android:configChanges="orientation|screenSize" />
+    <meta-data android:name="android.support.VERSION" android:value="25.4.0" />
     <receiver android:name="org.altbeacon.beacon.startup.StartupBroadcastReceiver">
       <intent-filter>
         <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -39,8 +37,8 @@
     </receiver>
     <service android:name="org.altbeacon.beacon.service.BeaconService" android:enabled="true" android:exported="false" android:isolatedProcess="false" android:label="beacon" />
     <service android:name="org.altbeacon.beacon.BeaconIntentProcessor" android:enabled="true" android:exported="false" />
-    <meta-data android:name="android.support.VERSION" android:value="25.4.0" />
   </application>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.BLUETOOTH" />
   <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />

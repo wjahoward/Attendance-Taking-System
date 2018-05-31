@@ -31,12 +31,12 @@
         </member>
         <member name="F:Plugin.Connectivity.ConnectivityChangeBroadcastReceiver.ConnectionChanged">
             <summary>
-            Action to call when connetivity changes
+            Action to call when connectivity changes
             </summary>
         </member>
         <member name="F:Plugin.Connectivity.ConnectivityChangeBroadcastReceiver.ConnectionTypeChanged">
             <summary>
-            Action to call when connetivity type changes
+            Action to call when connectivity type changes
             </summary>
         </member>
         <member name="M:Plugin.Connectivity.ConnectivityChangeBroadcastReceiver.#ctor">

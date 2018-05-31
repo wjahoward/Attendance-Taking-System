@@ -60,6 +60,13 @@
             <param name="label">Label to display (not required, Android only)</param>
             <returns>True if the operation was successful, false otherwise</returns>
         </member>
+        <member name="M:Plugin.Share.ShareImplementation.CanOpenUrl(System.String)">
+            <summary>
+            Checks if the url can be opened
+            </summary>
+            <param name="url">Url to check</param>
+            <returns>True if it can</returns>
+        </member>
         <member name="P:Plugin.Share.ShareImplementation.SupportsClipboard">
             <summary>
             Gets if cliboard is supported

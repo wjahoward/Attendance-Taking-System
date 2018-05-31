@@ -4,6 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Base.Widget.AppCompat.ActionBar">
+    <Toolbar
+      android:title="Beacon Transmit"
+      android:layout_height="@dimen/abc_action_bar_default_height_material"
+      android:layout_width="match_parent"/>
     <ImageView
         android:layout_width="wrap_content"
         android:layout_gravity="center_horizontal"
