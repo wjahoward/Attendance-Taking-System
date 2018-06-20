@@ -11,7 +11,7 @@ namespace BeaconTest.Models
 
 		public StudentModule GetCurrentModule()
 		{
-            if(modules.Count > 0 && !modules[0].abbr.Equals(""))
+            /*if(modules.Count > 0 && !modules[0].abbr.Equals(""))
             {
                 foreach (StudentModule module in modules)
                 {
@@ -27,8 +27,13 @@ namespace BeaconTest.Models
                         return module;
                     }
                 }
-            }
-            return null;
+            }*/
+            return modules[0];
         }
+
+		public StudentModule GetCurrentModule(int moduleRowNumber)
+		{
+			return modules[moduleRowNumber];
+		}
     }
 }

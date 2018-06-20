@@ -19,6 +19,7 @@ extern void *mono_aot_module_Plugin_Connectivity_info;
 extern void *mono_aot_module_Plugin_Connectivity_Abstractions_info;
 extern void *mono_aot_module_Acr_UserDialogs_info;
 extern void *mono_aot_module_BTProgressHUD_info;
+extern void *mono_aot_module_TestFairy_iOS_info;
 extern void *mono_aot_module_Plugin_Share_info;
 extern void *mono_aot_module_Plugin_Share_Abstractions_info;
 
@@ -43,6 +44,7 @@ void xamarin_register_modules_impl ()
 	mono_aot_register_module (mono_aot_module_Plugin_Connectivity_Abstractions_info);
 	mono_aot_register_module (mono_aot_module_Acr_UserDialogs_info);
 	mono_aot_register_module (mono_aot_module_BTProgressHUD_info);
+	mono_aot_register_module (mono_aot_module_TestFairy_iOS_info);
 	mono_aot_register_module (mono_aot_module_Plugin_Share_info);
 	mono_aot_register_module (mono_aot_module_Plugin_Share_Abstractions_info);
 
@@ -54,6 +56,8 @@ void xamarin_register_assemblies_impl ()
 	xamarin_open_and_register ("Acr.UserDialogs.dll", &exception_gchandle);
 	xamarin_process_managed_exception_gchandle (exception_gchandle);
 	xamarin_open_and_register ("BTProgressHUD.dll", &exception_gchandle);
+	xamarin_process_managed_exception_gchandle (exception_gchandle);
+	xamarin_open_and_register ("TestFairy.iOS.dll", &exception_gchandle);
 	xamarin_process_managed_exception_gchandle (exception_gchandle);
 	xamarin_open_and_register ("Plugin.Share.dll", &exception_gchandle);
 	xamarin_process_managed_exception_gchandle (exception_gchandle);

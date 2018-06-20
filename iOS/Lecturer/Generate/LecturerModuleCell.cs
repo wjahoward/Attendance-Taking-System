@@ -7,8 +7,8 @@ namespace BeaconTest.iOS
 {
     public class LecturerModuleCell : UITableViewCell
     {
-		UILabel moduleNameLabel, moduleCodeLabel, venueLabel, timeLabel, generateLabel;
-        UIImageView imageView;
+		public UILabel moduleNameLabel, moduleCodeLabel, venueLabel, timeLabel, generateLabel;
+        public UIImageView imageView;
         public LecturerModuleCell(NSString cellId) : base(UITableViewCellStyle.Default, cellId)
         {
             SelectionStyle = UITableViewCellSelectionStyle.Default;

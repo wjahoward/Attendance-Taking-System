@@ -9,6 +9,7 @@
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.Connectivity.dll
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.Share.Abstractions.dll
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.Share.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/TestFairy.iOS.dll
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.BLE.Abstractions.pdb
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.BLE.Abstractions.xml
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.BLE.pdb
@@ -39,4 +40,3 @@
 /Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone9.3-10.3.1/optimized/Bluetooth Transmission Icon.png
 /Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone9.3-10.3.1/optimized/Location Icon.png
 /Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone9.3-10.3.1/optimized/
-/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/BeaconTest.iOS.csprojResolveAssemblyReference.cache

@@ -21,8 +21,6 @@ namespace BeaconTest.iOS
 
         CLBeaconRegion beaconRegion;
 
-		LecturerBeacon lecturerBeacon;
-
         public BeaconTransmitController(IntPtr handle) : base(handle)
         {
             peripheralDelegate = new BTPeripheralDelegate();
@@ -68,12 +66,25 @@ namespace BeaconTest.iOS
 
 			beaconRegion = new CLBeaconRegion(new NSUuid(DataAccess.StudentGetBeaconKey()), (ushort)int.Parse(atsCode1stHalf), (ushort)int.Parse(atsCode2ndHalf), SharedData.beaconId);
 
-            //power - the received signal strength indicator (RSSI) value (measured in decibels) of the beacon from one meter away
-            var power = new NSNumber(-59);
+			//power - the received signal strength indicator (RSSI) value (measured in decibels) of the beacon from one meter away
+			var power = BeaconPower();
 
             var peripheralData = beaconRegion.GetPeripheralData(power);
             peripheralDelegate = new BTPeripheralDelegate();
             peripheralManager.StartAdvertising(peripheralData);
+		}
+
+		private NSNumber BeaconPower()
+		{
+			switch(studentModule.type){
+				case "LAB":
+					return new NSNumber(-84);
+				case "TUT":
+					return new NSNumber(-84);
+				case "LEC":
+					return new NSNumber(-81);
+			}
+			return null;
 		}
 
         public class BTPeripheralDelegate : CBPeripheralManagerDelegate
@@ -96,14 +107,15 @@ namespace BeaconTest.iOS
         private void GetModule()
 		{
 			studentTimetable = DataAccess.GetStudentTimetable(SharedData.testSPStudentID).Result;
-            studentModule = studentTimetable.GetCurrentModule();
+            //studentModule = studentTimetable.GetCurrentModule();
+			studentModule = studentTimetable.GetCurrentModule(CommonClass.moduleRowNumber);
             if (studentModule != null)
             {
                 InvokeOnMainThread(() =>
                 {
-                    ModuleNameLabel.Text = studentTimetable.GetCurrentModule().abbr + " (" + studentTimetable.GetCurrentModule().code + ")";
-                    TimePeriodLabel.Text = studentTimetable.GetCurrentModule().time;
-                    LocationLabel.Text = studentTimetable.GetCurrentModule().location;
+					ModuleNameLabel.Text = studentModule.abbr + " (" + studentTimetable.GetCurrentModule().code + ")";
+					TimePeriodLabel.Text = studentModule.time;
+					LocationLabel.Text = studentModule.location;
 					AttendanceCodeLabel.Text = SharedData.testATS;
 					UserDialogs.Instance.HideLoading();
 					InitBeacon();

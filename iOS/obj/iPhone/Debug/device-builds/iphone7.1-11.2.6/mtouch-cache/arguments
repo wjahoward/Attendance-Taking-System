@@ -30,6 +30,7 @@
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Net.Http.dll \
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Xml.dll \
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Xml.Linq.dll \
+	-r=/Users/admin/Desktop/FYP/packages/TestFairy.Xamarin.2.7.0/lib/Xamarin.iOS/TestFairy.iOS.dll \
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Xamarin.iOS.dll \
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/Microsoft.Win32.Primitives.dll \
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/Microsoft.Win32.Registry.AccessControl.dll \
@@ -179,5 +180,6 @@
 	-r=/Users/admin/Desktop/FYP/packages/Xam.Plugin.Connectivity.3.1.1/lib/Xamarin.iOS10/Plugin.Connectivity.dll \
 	-r=/Users/admin/Desktop/FYP/packages/Plugin.Share.7.1.1/lib/Xamarin.iOS10/Plugin.Share.Abstractions.dll \
 	-r=/Users/admin/Desktop/FYP/packages/Plugin.Share.7.1.1/lib/Xamarin.iOS10/Plugin.Share.dll \
+	-r=/Users/admin/Desktop/FYP/packages/TestFairy.Xamarin.2.7.0/lib/Xamarin.iOS/TestFairy.iOS.dll \
 	'--target-framework=Xamarin.iOS,v1.0' \
 	--root-assembly=/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/BeaconTest.iOS.exe \

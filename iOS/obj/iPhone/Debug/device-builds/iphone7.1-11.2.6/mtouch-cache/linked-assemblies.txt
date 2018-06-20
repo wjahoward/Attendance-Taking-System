@@ -18,5 +18,6 @@ RemoveDynamicRegistrar:true
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/device-builds/iphone7.1-11.2.6/BeaconTest.iOS.app:/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/Plugin.Connectivity.Abstractions.dll
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/device-builds/iphone7.1-11.2.6/BeaconTest.iOS.app:/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/Acr.UserDialogs.dll
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/device-builds/iphone7.1-11.2.6/BeaconTest.iOS.app:/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/BTProgressHUD.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/device-builds/iphone7.1-11.2.6/BeaconTest.iOS.app:/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/TestFairy.iOS.dll
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/device-builds/iphone7.1-11.2.6/BeaconTest.iOS.app:/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/Plugin.Share.dll
 /Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/device-builds/iphone7.1-11.2.6/BeaconTest.iOS.app:/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/Plugin.Share.Abstractions.dll

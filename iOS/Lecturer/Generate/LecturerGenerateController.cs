@@ -1,8 +1,11 @@
+using Acr.UserDialogs;
+using BeaconTest.Models;
 using CoreGraphics;
 using Foundation;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading;
 using UIKit;
 
 namespace BeaconTest.iOS
@@ -10,6 +13,8 @@ namespace BeaconTest.iOS
     public partial class LecturerGenerateController : UITableViewController
     {
         UITableView tableView;
+		List<LecturerModuleTableViewItem> attendanceTableViewItems = new List<LecturerModuleTableViewItem>();
+		StudentTimetable studentTimetable;
 
         public LecturerGenerateController(IntPtr handle) : base(handle)
         {
@@ -26,20 +31,48 @@ namespace BeaconTest.iOS
                 ForegroundColor = UIColor.White
             };
 
-            tableView = TimetableTableView; // defaults to Plain style
+			tableView = TimetableTableView; // defaults to Plain style
             tableView.RowHeight = 120;
             var frame = CGRect.Empty;
             frame.Height = 0;
             frame.Width = 0;
             tableView.TableFooterView = new UIView(frame);
-            List<LecturerModuleTableViewItem> attendanceTableViewItems = new List<LecturerModuleTableViewItem>();
-			attendanceTableViewItems.Add(new LecturerModuleTableViewItem("Module 1") { ModuleCode = "ModuleCode 1", Venue = "Venue 1", Time = "Time 1"});
-			attendanceTableViewItems.Add(new LecturerModuleTableViewItem("Module 2") { ModuleCode = "ModuleCode 2", Venue = "Venue 2", Time = "Time 2"});
-            var tableSource = new TableSource(attendanceTableViewItems, this.NavigationController);
-            tableView.Source = tableSource;
 
-            //Add(tableView);
+			UserDialogs.Instance.ShowLoading("Retrieving module info...");
+            ThreadPool.QueueUserWorkItem(o => GetTimetable());               
         }
+
+		private void GetTimetable()
+        {
+            studentTimetable = DataAccess.GetStudentTimetable(SharedData.testSPStudentID).Result;
+			if(studentTimetable != null)
+			{
+				InvokeOnMainThread(() =>
+				{
+					UserDialogs.Instance.HideLoading();
+					SetTableData();
+				});
+			}
+        }
+
+		private void SetTableData()
+		{
+			foreach(StudentModule module in studentTimetable.modules)
+			{
+				if(!module.abbr.Equals(""))
+				{
+					attendanceTableViewItems.Add(new LecturerModuleTableViewItem(module.abbr) { ModuleCode = module.code, Venue = module.location, Time = module.time });
+				}
+				else
+				{
+					attendanceTableViewItems.Add(new LecturerModuleTableViewItem("No lesson") { ModuleCode = "", Venue = "", Time = "" });
+					tableView.AllowsSelection = false;
+				}
+			}
+			var tableSource = new TableSource(attendanceTableViewItems, this.NavigationController);
+            tableView.Source = tableSource;
+			tableView.ReloadData();
+		}
 
         public class TableSource : UITableViewSource
         {
@@ -62,8 +95,15 @@ namespace BeaconTest.iOS
             public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
             {
                 var cell = tableView.DequeueReusableCell(cellIdentifier) as LecturerModuleCell;
-                if (cell == null)
-                    cell = new LecturerModuleCell(cellIdentifier);
+				if (cell == null)
+				{
+					cell = new LecturerModuleCell(cellIdentifier);
+					if (attendanceTableViewItems[0].ModuleName.Equals("No lesson"))
+                    {
+						cell.generateLabel.Hidden = true;
+                    }
+				}
+				
                 Debug.WriteLine(attendanceTableViewItems[0].ModuleName);
                 /*cell.UpdateCell(attendanceTableViewItems[indexPath.Row].Heading
                                 , attendanceTableViewItems[indexPath.Row].SubHeading
@@ -83,6 +123,7 @@ namespace BeaconTest.iOS
                 //base.RowSelected(tableView, indexPath);
                 var beaconTransmitController = UIStoryboard.FromName("Main", null).InstantiateViewController("BeaconTransmitController");
                 navigationController.PushViewController(beaconTransmitController, true);
+				CommonClass.moduleRowNumber = indexPath.Row;
 			}
 		}
     }

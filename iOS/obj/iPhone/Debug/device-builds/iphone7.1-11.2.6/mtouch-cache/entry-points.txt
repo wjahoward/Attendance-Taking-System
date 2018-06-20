@@ -22,4 +22,8 @@ Function=xamarin_get_block_descriptor
 	/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/Xamarin.iOS.dll
 Function=UIApplicationMain
 	/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/Xamarin.iOS.dll
+Function=TFLog
+	/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/TestFairy.iOS.dll
+ObjectiveCClass=OBJC_CLASS_$_TestFairy
+	/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone7.1-11.2.6/mtouch-cache/Link/TestFairy.iOS.dll
 Function=mono_pmip
