@@ -28,6 +28,10 @@ namespace BeaconTest.Droid
         string pwd;
         EditText Username;
         EditText Pwd;
+<<<<<<< HEAD
+=======
+        ListView Lesson;
+>>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
 
         //ViewPager pager;
         //TabsAdapter adapter;
@@ -38,10 +42,16 @@ namespace BeaconTest.Droid
 
             //SetContentView(Resource.Layout.Login);
 
+<<<<<<< HEAD
             Button submitBtn = FindViewById<Button>(Resource.Id.loginButton);
             Username = FindViewById<EditText>(Resource.Id.usernameInput);
             Pwd = FindViewById<EditText>(Resource.Id.passwordInput);
 
+=======
+            Button submitBtn = FindViewById<Button>(Resource.Id.LoginButton);
+            Username = FindViewById<EditText>(Resource.Id.usernameInput);
+            Pwd = FindViewById<EditText>(Resource.Id.passwordInput);
+>>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
             submitBtn.Click += LoginButtonOnClick;
 
             //UserDialogs.Init(this);

@@ -1,0 +1,42 @@
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/BeaconTest.iOS.exe
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/BeaconTest.iOS.pdb
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Acr.UserDialogs.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/BTProgressHUD.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Newtonsoft.Json.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.BLE.Abstractions.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.BLE.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.Connectivity.Abstractions.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.Connectivity.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.Share.Abstractions.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.Share.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/TestFairy.iOS.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.BLE.Abstractions.pdb
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.BLE.Abstractions.xml
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.BLE.pdb
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.BLE.xml
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Newtonsoft.Json.xml
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.Share.Abstractions.pdb
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.Share.Abstractions.xml
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.Share.xml
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.Connectivity.Abstractions.pdb
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.Connectivity.Abstractions.xml
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.Connectivity.pdb
+/Users/admin/Desktop/FYP/iOS/bin/iPhone/Debug/Plugin.Connectivity.xml
+/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/BeaconTest.iOS.csproj.CoreCompileInputs.cache
+/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/BeaconTest.iOS.exe
+/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/BeaconTest.iOS.pdb
+/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone9.3-10.3.1/ibtool/_BundleResourceWithLogicalName.items
+/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone9.3-10.3.1/actool/_PartialAppManifest.items
+/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone9.3-10.3.1/actool/_BundleResourceWithLogicalName.items
+/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone9.3-10.3.1/coremlc/_PartialAppManifest.items
+/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone9.3-10.3.1/coremlc/_BundleResourceWithLogicalName.items
+/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone9.3-10.3.1/optimized/Cross Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone9.3-10.3.1/optimized/Time Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone9.3-10.3.1/optimized/Tick Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone9.3-10.3.1/optimized/Bluetooth Devices Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone9.3-10.3.1/optimized/User Profile Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone9.3-10.3.1/optimized/Retry Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone9.3-10.3.1/optimized/Bluetooth Device Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone9.3-10.3.1/optimized/Bluetooth Transmission Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone9.3-10.3.1/optimized/Location Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhone/Debug/device-builds/iphone9.3-10.3.1/optimized/

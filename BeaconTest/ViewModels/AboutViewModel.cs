@@ -1,4 +1,8 @@
 ﻿using System.Windows.Input;
+<<<<<<< HEAD
+=======
+using Plugin.Connectivity;
+>>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
 
 namespace BeaconTest
 {
