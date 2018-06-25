@@ -10,8 +10,9 @@
     <!-- ACCESS_NETWORK_STATE is needed to know if we are on 3G, WIFI or disconnected -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <!-- WRITE_EXTERNAL_STORAGE is needed for auto-update -->
+    <!-- WRITE_EXTERNAL_STORAGE & REQUEST_INSTALL_PACKAGES is needed for auto-update -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 
     <application>
         <activity

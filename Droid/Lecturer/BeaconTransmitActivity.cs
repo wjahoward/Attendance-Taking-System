@@ -47,7 +47,7 @@ namespace BeaconTest.Droid.Lecturer
         private void GetModule()
         {
             StudentTimetable studentTimetable = DataAccess.GetStudentTimetable(SharedData.testSPStudentID).Result;
-            studentModule = studentTimetable.GetCurrentModule();
+            studentModule = studentTimetable.GetCurrentModule(CommonClass.moduleRowNumber);
             if(studentModule != null)
             {
                 RunOnUiThread(() => moduleNameTextView.Text = studentModule.abbr + " (" + studentModule.code + ")");
@@ -55,6 +55,8 @@ namespace BeaconTest.Droid.Lecturer
                 RunOnUiThread(() => locationTextView.Text = studentModule.location);
                 RunOnUiThread(() => attendanceCodeTextView.Text = SharedData.testATS);
                 RunOnUiThread(() => UserDialogs.Instance.HideLoading());
+
+                CommonClass.power = BeaconPower();
 
                 beaconManager = BeaconManager.GetInstanceForApplication(this);
                 BeaconTransmitter bTransmitter = new BeaconTransmitter();
@@ -69,6 +71,20 @@ namespace BeaconTest.Droid.Lecturer
                 RunOnUiThread(() => studentAttendanceImageView.Visibility = ViewStates.Gone);
                 RunOnUiThread(() => UserDialogs.Instance.HideLoading());
             }
+        }
+
+        private int BeaconPower()
+        {
+            switch (studentModule.type)
+            {
+                case "LAB":
+                    return -84;
+                case "TUT":
+                    return -84;
+                case "LEC":
+                    return -81;
+            }
+            return 0;
         }
     }
 }

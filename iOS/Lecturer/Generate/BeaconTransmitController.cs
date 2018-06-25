@@ -129,6 +129,7 @@ namespace BeaconTest.iOS
                     TimePeriodLabel.Hidden = true;
                     LocationLabel.Hidden = true;
 					AttendanceCodeLabel.Hidden = true;
+                    
 					UserDialogs.Instance.HideLoading();
                 });
             }
