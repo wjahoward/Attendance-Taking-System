@@ -42,7 +42,7 @@ namespace BeaconTest.Droid
             Button submitBtn = FindViewById<Button>(Resource.Id.LoginButton);
             Username = FindViewById<EditText>(Resource.Id.usernameInput);
             Pwd = FindViewById<EditText>(Resource.Id.passwordInput);
-            submitBtn.Click += LoginButtonOnClick;
+            //submitBtn.Click += LoginButtonOnClick;
 
             //UserDialogs.Init(this);
 
@@ -107,13 +107,18 @@ namespace BeaconTest.Droid
             }
             else
             {
+                RunOnUiThread(() => UserDialogs.Init(this));
                 RunOnUiThread(() => UserDialogs.Instance.HideLoading());
                 RunOnUiThread(() =>
                 {
                     AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
                     alertDialog.SetTitle("Invalid login credentials");
                     alertDialog.SetMessage("The username or password you have entered is invalid");
-                    alertDialog.SetNeutralButton("OK", delegate
+                    //alertDialog.SetNeutralButton("OK", delegate
+                    //{
+                    //    alertDialog.Dispose();
+                    //});
+                    alertDialog.SetPositiveButton("OK", (object sender, DialogClickEventArgs e) =>
                     {
                         alertDialog.Dispose();
                     });

@@ -79,8 +79,8 @@ F:\Year 3 Sem 1\FYP\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourc
 F:\Year 3 Sem 1\FYP\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\coremlc\_PartialAppManifest.items
 F:\Year 3 Sem 1\FYP\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\coremlc\_BundleResourceWithLogicalName.items
 F:\Year 3 Sem 1\FYP\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\optimized\
+F:\Year 3 Sem 1\FYP\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csprojAssemblyReference.cache
 F:\Year 3 Sem 1\FYP\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csproj.CoreCompileInputs.cache
 F:\Year 3 Sem 1\FYP\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csproj.CopyComplete
 F:\Year 3 Sem 1\FYP\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.exe
 F:\Year 3 Sem 1\FYP\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.pdb
-F:\Year 3 Sem 1\FYP\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csprojAssemblyReference.cache

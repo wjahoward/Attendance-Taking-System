@@ -8,16 +8,18 @@ using Acr.UserDialogs;
 using AltBeaconOrg.BoundBeacon;
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.Net.Wifi;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using BeaconTest.Droid.Student;
 using BeaconTest.Models;
 
 namespace BeaconTest.Droid
 {
-    [Activity(Label = "EnterCode", LaunchMode = Android.Content.PM.LaunchMode.SingleInstance)]
+    [Activity(Label = "EnterCode", LaunchMode = LaunchMode.SingleInstance, ScreenOrientation = ScreenOrientation.Portrait)]
     public class EnterCode : Activity, IDialogInterfaceOnDismissListener, IBeaconConsumer
     {
         readonly RangeNotifier rangeNotifier;
@@ -76,6 +78,7 @@ namespace BeaconTest.Droid
             ThreadPool.QueueUserWorkItem(o => GetModule());
 
             VerifyBle();
+
         }
 
         private void GetModule()
@@ -85,7 +88,8 @@ namespace BeaconTest.Droid
 
             if (studentModule != null)
             {
-                RunOnUiThread(() => {
+                RunOnUiThread(() =>
+                {
                     moduleNameTextView.Text = studentModule.abbr + " (" + studentModule.code + ")";
                     timeTextView.Text = studentModule.time;
                     locationTextView.Text = studentModule.location;
@@ -99,7 +103,8 @@ namespace BeaconTest.Droid
             }
             else
             {
-                RunOnUiThread(() => {
+                RunOnUiThread(() =>
+                {
                     moduleNameTextView.Text = "No lessons today";
                     timeTextView.Visibility = ViewStates.Gone;
                     locationTextView.Visibility = ViewStates.Gone;
@@ -114,13 +119,14 @@ namespace BeaconTest.Droid
         {
             if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability())
             {
-                var builder = new AlertDialog.Builder(this);
-                builder.SetTitle("Bluetooth not enabled");
-                builder.SetMessage("Please enable bluetooth on your phone and restart the app");
-                EventHandler<DialogClickEventArgs> handler = null;
-                builder.SetPositiveButton(Android.Resource.String.Ok, handler);
-                builder.SetOnDismissListener(this);
-                builder.Show();
+                //var builder = new AlertDialog.Builder(this);
+                //builder.SetTitle("Bluetooth not enabled");
+                //builder.SetMessage("Please enable bluetooth on your phone and restart the app");
+                //EventHandler<DialogClickEventArgs> handler = null;
+                //builder.SetPositiveButton(Android.Resource.String.Ok, handler);
+                //builder.SetOnDismissListener(this);
+                //builder.Show();
+                StartActivity(typeof(StudentBluetoothOff));
             }
         }
 
@@ -151,7 +157,7 @@ namespace BeaconTest.Droid
         async void RangingBeaconsInRegion(object sender, RangeEventArgs e)
         {
             //var allBeacons = new List<Beacon>();
-            
+
             //code inside Task.Run will be called asynchronously
             //use await if need to wait for specific work before updating ui elements
             await Task.Run(() =>
@@ -164,7 +170,7 @@ namespace BeaconTest.Droid
                          displaying to the user*/
                         beaconManager.SetBackgroundMode(true);
                         string id = e.Beacons.First().Id1.ToString();
-                        foreach(Beacon beacon in e.Beacons)
+                        foreach (Beacon beacon in e.Beacons)
                         {
                             if (beacon.Id1.ToString().Equals(DataAccess.LecturerGetBeaconKey().ToLower()))
                             {
@@ -177,18 +183,19 @@ namespace BeaconTest.Droid
                                 attendanceCodeEditText.Enabled = false;
                             }
                         }
-                        
+
                         submitBtn.Click += delegate
                         {
-                            //AlertDialog.Builder ad = new AlertDialog.Builder(this);
-                            //ad.SetTitle("Success");
-                            //ad.SetMessage("You have successfully submitted your attendance!");
-                            //ad.SetPositiveButton("OK", delegate
-                            //{
-                            //    ad.Dispose();
-                            //});
-                            //ad.Show();
+                            /*AlertDialog.Builder ad = new AlertDialog.Builder(this);
+                            ad.SetTitle("Success");
+                            ad.SetMessage("You have successfully submitted your attendance!");
+                            ad.SetPositiveButton("OK", delegate
+                            {
+                                ad.Dispose();
+                            });
+                            ad.Show();*/
                             //SubmitATS();
+                            StartActivity(typeof(StudentSuccessfulSubmission));
                         };
                     }
                     else
@@ -204,7 +211,7 @@ namespace BeaconTest.Droid
         private void SubmitATS()
         {
             //studentSubmit = new StudentSubmission(admissionId, lb.BeaconKey, ats_Code, DateTime.UtcNow);
-           
+
         }
 
         public void OnDismiss(IDialogInterface dialog)

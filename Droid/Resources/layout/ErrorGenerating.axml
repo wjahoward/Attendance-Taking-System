@@ -2,4 +2,44 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+    <ImageView
+        android:src="@drawable/clock"
+        android:layout_width="55dp"
+        android:layout_height="150dp"
+        android:id="@+id/imageView1"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal" />
+    <TextView
+        android:text="You can only generate the attendance"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:gravity="center"
+        android:textColor="#ACACAC" />
+    <TextView
+        android:text="15 minutes before the lesson, please"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:gravity="center"
+        android:textColor="#ACACAC" />
+    <TextView
+        android:text="try again later."
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:gravity="center"
+        android:textColor="#ACACAC" />
+    <Button
+        android:text="Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button1"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp" />
+</LinearLayout>

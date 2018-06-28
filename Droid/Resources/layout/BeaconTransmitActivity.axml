@@ -5,9 +5,9 @@
     android:layout_height="match_parent"
     android:theme="@style/Base.Widget.AppCompat.ActionBar">
     <Toolbar
-      android:title="Beacon Transmit"
-      android:layout_height="@dimen/abc_action_bar_default_height_material"
-      android:layout_width="match_parent"/>
+        android:title="Beacon Transmit"
+        android:layout_height="@dimen/abc_action_bar_default_height_material"
+        android:layout_width="match_parent" />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -16,7 +16,7 @@
         android:id="@+id/studentAttendanceImageView"
         android:layout_marginTop="20dp" />
     <TextView
-        android:text="Lesson 1"
+        android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
         android:layout_marginBottom="15dp"
         android:layout_gravity="center" />
     <TextView
-        android:text="Time"
+        android:text=""
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
         android:layout_gravity="center"
         android:layout_marginBottom="5dp" />
     <TextView
-        android:text="Location"
+        android:text=""
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,7 +41,6 @@
         android:layout_gravity="center" />
     <TextView
         android:id="@+id/attendanceCodeTextView"
-        android:text="Attendance Code"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
