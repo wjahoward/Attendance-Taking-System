@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Paths>
   <Jars>
-    <Jar>obj\Debug\lp\14\jl\support-annotations.jar</Jar>
     <Jar>F:\Year 3 Sem 1\FYP\FYPCLONE\Droid\obj\Debug\lp\12\jl\bin\classes.jar</Jar>
     <Jar>F:\Year 3 Sem 1\FYP\FYPCLONE\Droid\obj\Debug\lp\13\jl\bin\classes.jar</Jar>
     <Jar>F:\Year 3 Sem 1\FYP\FYPCLONE\Droid\obj\Debug\lp\14\jl\support-annotations.jar</Jar>
@@ -23,6 +22,7 @@
   <ResolvedResourceDirectories>
     <ResolvedResourceDirectory>F:\Year 3 Sem 1\FYP\FYPCLONE\Droid\obj\Debug\lp\1\jl\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>F:\Year 3 Sem 1\FYP\FYPCLONE\Droid\obj\Debug\lp\2\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>F:\Year 3 Sem 1\FYP\FYPCLONE\Droid\obj\Debug\lp\6\jl\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>F:\Year 3 Sem 1\FYP\FYPCLONE\Droid\obj\Debug\lp\12\jl\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>F:\Year 3 Sem 1\FYP\FYPCLONE\Droid\obj\Debug\lp\19\jl\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>F:\Year 3 Sem 1\FYP\FYPCLONE\Droid\obj\Debug\lp\22\jl\res</ResolvedResourceDirectory>
@@ -34,6 +34,7 @@
   <ResolvedAssetDirectories>
     <ResolvedAssetDirectory>obj\Debug\lp\1\jl\assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj\Debug\lp\2\jl\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>obj\Debug\lp\6\jl\assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj\Debug\lp\12\jl\assets</ResolvedAssetDirectory>
     <ResolvedAssetDirectory>obj\Debug\lp\23\jl\assets</ResolvedAssetDirectory>
   </ResolvedAssetDirectories>
@@ -41,6 +42,7 @@
   <ResolvedResourceDirectoryStamps>
     <ResolvedResourceDirectoryStamp>F:\Year 3 Sem 1\FYP\FYPCLONE\Droid\obj\Debug\lp\1.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>F:\Year 3 Sem 1\FYP\FYPCLONE\Droid\obj\Debug\lp\2.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>F:\Year 3 Sem 1\FYP\FYPCLONE\Droid\obj\Debug\lp\6.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>F:\Year 3 Sem 1\FYP\FYPCLONE\Droid\obj\Debug\lp\12.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>F:\Year 3 Sem 1\FYP\FYPCLONE\Droid\obj\Debug\lp\19.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>F:\Year 3 Sem 1\FYP\FYPCLONE\Droid\obj\Debug\lp\22.stamp</ResolvedResourceDirectoryStamp>
