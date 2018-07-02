@@ -52,11 +52,7 @@ namespace BeaconTest.Droid
                 .SetId2(atsCode1stHalf)
                 .SetId3(atsCode2ndHalf)
                 .SetManufacturer(0x4C)
-<<<<<<< HEAD
-                .SetTxPower(-59)
-=======
-                .SetTxPower(CommonClass.power)
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
+                .SetTxPower(-84)
                 .Build();
 
             BeaconParser bp = new BeaconParser()

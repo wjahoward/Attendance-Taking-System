@@ -47,11 +47,7 @@ namespace BeaconTest.Droid.Lecturer
         private void GetModule()
         {
             StudentTimetable studentTimetable = DataAccess.GetStudentTimetable(SharedData.testSPStudentID).Result;
-<<<<<<< HEAD
-            studentModule = studentTimetable.GetCurrentModule();
-=======
             studentModule = studentTimetable.GetCurrentModule(CommonClass.moduleRowNumber);
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
             if(studentModule != null)
             {
                 RunOnUiThread(() => moduleNameTextView.Text = studentModule.abbr + " (" + studentModule.code + ")");
@@ -60,11 +56,8 @@ namespace BeaconTest.Droid.Lecturer
                 RunOnUiThread(() => attendanceCodeTextView.Text = SharedData.testATS);
                 RunOnUiThread(() => UserDialogs.Instance.HideLoading());
 
-<<<<<<< HEAD
-=======
                 CommonClass.power = BeaconPower();
 
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
                 beaconManager = BeaconManager.GetInstanceForApplication(this);
                 BeaconTransmitter bTransmitter = new BeaconTransmitter();
                 bTransmitter.Transmit();
@@ -79,8 +72,6 @@ namespace BeaconTest.Droid.Lecturer
                 RunOnUiThread(() => UserDialogs.Instance.HideLoading());
             }
         }
-<<<<<<< HEAD
-=======
 
         private int BeaconPower()
         {
@@ -95,6 +86,5 @@ namespace BeaconTest.Droid.Lecturer
             }
             return 0;
         }
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
     }
 }

@@ -14,7 +14,12 @@
       </intent-filter>
     </activity>
     <activity android:label="Lecturer" android:name="md512d1b0e721fb99ad9bee7b094a426185.Timetable" />
+    <activity android:label="NotWithinRange" android:name="md57f5a188cf648b7357cac41e76b05a35e.NotWithinRange" />
+    <activity android:label="BTReady" android:name="md57f5a188cf648b7357cac41e76b05a35e.StudentBluetoothOff" />
     <activity android:label="BeaconTransmitActivity" android:name="md5f320934baf35080d75dd533e05ec88bf.BeaconTransmitActivity" />
+    <activity android:label="ErrorGenerating" android:name="md5f320934baf35080d75dd533e05ec88bf.ErrorGenerating" />
+    <activity android:label="BluetoothOff" android:name="md5f320934baf35080d75dd533e05ec88bf.LecturerBluetoothOff" />
+    <activity android:label="BTReady" android:name="md5f320934baf35080d75dd533e05ec88bf.LectureBluetoothOn" />
     <receiver android:enabled="true" android:label="Connectivity Plugin Broadcast Receiver" android:name="md59628c2715c1bb8febcc7ae8402df0582.ConnectivityChangeBroadcastReceiver" />
     <service android:name="md5dcb6eccdc824e0677ffae8ccdde42930.KeepAliveService" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="com.xamarin.BeaconTest.mono.MonoRuntimeProvider.__mono_init__" />

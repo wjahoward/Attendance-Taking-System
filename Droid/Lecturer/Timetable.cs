@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -12,10 +13,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using BeaconTest.Droid.Lecturer;
-<<<<<<< HEAD
-=======
 using BeaconTest.Models;
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
 
 namespace BeaconTest.Droid
 {
@@ -23,13 +21,10 @@ namespace BeaconTest.Droid
     public class Timetable : Activity, IDialogInterfaceOnDismissListener
     {
         public AdvertiseCallback advertiseCallback;
-<<<<<<< HEAD
-=======
         ListView timeTableListView;
         StudentTimetable studentTimetable;
 
         int indexOfLesson = 0;
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -41,17 +36,6 @@ namespace BeaconTest.Droid
 
             // Create your application here
 
-<<<<<<< HEAD
-            Button genBtn1 = FindViewById<Button>(Resource.Id.genBtn1);
-
-            genBtn1.Click += delegate
-            {
-                if(VerifyBle())
-                {
-                    StartActivity(typeof(BeaconTransmitActivity));
-                }
-            };
-=======
             timeTableListView = FindViewById<ListView>(Resource.Id.timeTableListView);
 
             List<LecturerModuleTableViewItem> dataSource = new List<LecturerModuleTableViewItem>();
@@ -78,31 +62,42 @@ namespace BeaconTest.Droid
                 timeTableListView.DividerHeight = 0;
                 CommonClass.noLessons = true;
 
-                timeTableListView.SetSelector(Android.Resource.Color.Transparent);
+                timeTableListView.SetSelector(Android.Resource.Color.Transparent); // No highlight ripple effect if user clicks on listview
             }
             else
             {
                 timeTableListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) =>
                 {
-                    if (VerifyBle())
+                    CommonClass.moduleRowNumber = dataSource[e.Position].Id;
+
+                    string currentTimeString = DateTime.Now.ToShortTimeString();
+                    TimeSpan currentTime = TimeSpan.Parse(currentTimeString);
+                    //Console.WriteLine("Current time: {0}", currentTime);
+
+                    string moduleStartTimeString = dataSource[e.Position].Time.Substring(0,5);
+                    TimeSpan moduleStartTime = TimeSpan.Parse(moduleStartTimeString);
+                    //Console.WriteLine("Module start time: {0}", moduleStartTime);
+
+                    TimeSpan maxTime = moduleStartTime + TimeSpan.Parse("00:15:00");
+
+                    if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability() == false) // If Bluetooth is enabled
                     {
-                        CommonClass.moduleRowNumber = dataSource[e.Position].Id;
-                        StartActivity(typeof(BeaconTransmitActivity));
+                        if(currentTime >= moduleStartTime && currentTime <= maxTime)
+                        {
+                            StartActivity(typeof(BeaconTransmitActivity));
+                        }
+                        else
+                        {
+                            StartActivity(typeof(ErrorGenerating));
+                        }
+                    }
+                    else
+                    {
+                        StartActivity(typeof(LecturerBluetoothOff));
                     }
                 };
 
             }
-
-            //Button genBtn1 = FindViewById<Button>(Resource.Id.genBtn1);
-
-            //genBtn1.Click += delegate
-            //{
-            //    if(VerifyBle())
-            //    {
-            //        StartActivity(typeof(BeaconTransmitActivity));
-            //    }
-            //};
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
         }
 
         private bool VerifyBle()

@@ -29,13 +29,10 @@
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
-<<<<<<< HEAD
-=======
     <AotAssemblies>false</AotAssemblies>
     <EnableLLVM>false</EnableLLVM>
     <BundleAssemblies>false</BundleAssemblies>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,8 +55,6 @@
       <HintPath>..\packages\AndroidAltBeaconLibrary.2.7.0\lib\AndroidAltBeaconLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Java.Interop" />
-<<<<<<< HEAD
-=======
     <Reference Include="Plugin.Connectivity, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xam.Plugin.Connectivity.3.1.1\lib\MonoAndroid10\Plugin.Connectivity.dll</HintPath>
     </Reference>
@@ -75,7 +70,6 @@
     <Reference Include="Plugin.Share.Abstractions, Version=7.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Plugin.Share.7.1.1\lib\MonoAndroid10\Plugin.Share.Abstractions.dll</HintPath>
     </Reference>
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
     <Reference Include="System" />
     <Reference Include="System.Collections" />
     <Reference Include="System.IdentityModel" />
@@ -86,30 +80,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
-<<<<<<< HEAD
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.CurrentActivity">
-      <HintPath>..\packages\Plugin.CurrentActivity.1.0.1\lib\MonoAndroid10\Plugin.CurrentActivity.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="Xamarin.Android.Support.CustomTabs">
-      <HintPath>..\packages\Xamarin.Android.Support.CustomTabs.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.CustomTabs.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Share.Abstractions">
-      <HintPath>..\packages\Plugin.Share.7.0.1\lib\MonoAndroid10\Plugin.Share.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Share">
-      <HintPath>..\packages\Plugin.Share.7.0.1\lib\MonoAndroid10\Plugin.Share.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Connectivity.Abstractions">
-      <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.2\lib\MonoAndroid10\Plugin.Connectivity.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.Connectivity">
-      <HintPath>..\packages\Xam.Plugin.Connectivity.3.0.2\lib\MonoAndroid10\Plugin.Connectivity.dll</HintPath>
-    </Reference>
-=======
     <Reference Include="System.Xml.Linq" />
     <Reference Include="TestFairy.Android, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\TestFairy.Xamarin.2.9.0\lib\MonoAndroid\TestFairy.Android.dll</HintPath>
@@ -117,7 +87,6 @@
     <Reference Include="Xamarin.Android.Support.CustomTabs">
       <HintPath>..\packages\Xamarin.Android.Support.CustomTabs.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.CustomTabs.dll</HintPath>
     </Reference>
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
     <Reference Include="Xamarin.Android.Support.v4">
       <HintPath>..\packages\Xamarin.Android.Support.v4.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.v4.dll</HintPath>
     </Reference>
@@ -177,29 +146,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="Lecturer\BeaconTransmitActivity.cs" />
-    <Compile Include="Student\EnterCode.cs" />
-    <Compile Include="MainApplication.cs" />
-    <Compile Include="Activities\AddItemActivity.cs" />
-    <Compile Include="Activities\BaseActivity.cs" />
-    <Compile Include="Activities\BrowseItemDetailActivity.cs" />
-    <Compile Include="Activities\MainActivity.cs" />
-    <Compile Include="Activities\SplashActivity.cs" />
-    <Compile Include="Fragments\AboutFragment.cs" />
-    <Compile Include="Fragments\BrowseFragment.cs" />
-    <Compile Include="Fragments\IFragmentVisible.cs" />
-=======
     <Compile Include="CommonClass.cs" />
     <Compile Include="CustomAdapter.cs" />
     <Compile Include="Lecturer\BeaconTransmitActivity.cs" />
+    <Compile Include="Lecturer\ErrorGenerating.cs" />
+    <Compile Include="Lecturer\LecturerBluetoothOff.cs" />
+    <Compile Include="Lecturer\LectureBluetoothOn.cs" />
     <Compile Include="Lecturer\LecturerModuleTableViewItem.cs" />
     <Compile Include="Student\EnterCode.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="Activities\BaseActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\SplashActivity.cs" />
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
     <Compile Include="Helpers\BaseRecycleViewAdapter.cs" />
     <Compile Include="Helpers\RecyclerClickEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -207,8 +165,10 @@
     <Compile Include="Lecturer\BeaconTransmitter.cs" />
     <Compile Include="Lecturer\Timetable.cs" />
     <Compile Include="Student\MonitorNotifier.cs" />
+    <Compile Include="Student\NotWithinRange.cs" />
     <Compile Include="Student\RangeNotifier.cs" />
     <Compile Include="Student.cs" />
+    <Compile Include="Student\StudentBluetoothOff.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AboutAssets.txt" />
@@ -216,13 +176,9 @@
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="GettingStarted.Xamarin" />
-<<<<<<< HEAD
-    <AndroidResource Include="Resources\layout\Timetable.axml" />
-=======
     <AndroidResource Include="Resources\layout\Timetable.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
     <AndroidResource Include="Resources\layout\EnterCode.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -232,14 +188,6 @@
     <AndroidResource Include="Resources\layout\BeaconTransmitActivity.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-<<<<<<< HEAD
-    <AndroidResource Include="Resources\layout\BluetoothOff.axml" />
-    <AndroidResource Include="Resources\drawable\BluetoothOff.png" />
-    <AndroidResource Include="Resources\layout\BluetoothOn.axml" />
-    <AndroidResource Include="Resources\drawable\BluetoothOn.png" />
-    <AndroidResource Include="Resources\layout\ErrorGenerating.axml" />
-    <AndroidResource Include="Resources\drawable\clock.png" />
-=======
     <AndroidResource Include="Resources\layout\Absent.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -264,7 +212,6 @@
     <AndroidResource Include="Resources\layout\list_view_data_template.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\background_splash.xml" />
@@ -276,18 +223,6 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_save.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_save.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_save.png" />
-<<<<<<< HEAD
-    <AndroidResource Include="Resources\layout\activity_add_item.axml" />
-    <AndroidResource Include="Resources\layout\activity_item_details.axml" />
-    <AndroidResource Include="Resources\layout\activity_main.axml" />
-    <AndroidResource Include="Resources\layout\activity_myitem_details.axml" />
-    <AndroidResource Include="Resources\layout\fragment_about.axml" />
-    <AndroidResource Include="Resources\layout\fragment_browse.axml" />
-    <AndroidResource Include="Resources\layout\fragment_myitems.axml" />
-    <AndroidResource Include="Resources\layout\item_browse.axml" />
-    <AndroidResource Include="Resources\layout\item_my_item.axml" />
-=======
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
     <AndroidResource Include="Resources\layout\tabs.axml" />
     <AndroidResource Include="Resources\layout\toolbar.axml" />
     <AndroidResource Include="Resources\menu\top_menus.xml" />
@@ -316,8 +251,6 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\signal.png" />
   </ItemGroup>
-<<<<<<< HEAD
-=======
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Asset26.png" />
   </ItemGroup>
@@ -338,7 +271,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\clock.png" />
+  </ItemGroup>
   <Import Project="..\BeaconTest\BeaconTest.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.CustomTabs.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.CustomTabs.targets" Condition="Exists('..\packages\Xamarin.Android.Support.CustomTabs.25.4.0.2\build\MonoAndroid70\Xamarin.Android.Support.CustomTabs.targets')" />

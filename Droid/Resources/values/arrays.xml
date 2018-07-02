@@ -1,16 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-<<<<<<< HEAD
-    <string-array name="sections">
-        <item>@string/tab1</item>
-        <item>@string/tab2</item>
-    </string-array>
-</resources>
-=======
   <string name="app_name">FYPDrafts</string>
   <string-array name="lesson_array">
     <item>Lesson 1</item>
     <item>Lesson 2</item>
   </string-array>
 </resources>
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde

@@ -2,50 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-<<<<<<< HEAD
-    android:layout_height="fill_parent">
-    <TextView
-        android:text="Welcome"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView1"
-        android:layout_gravity="center"
-        android:layout_marginTop="35dp"
-        android:layout_marginBottom="25dp" />
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_height="60dp"
-        android:layout_marginBottom="30dp"
-        android:src="@drawable/profile"
-        android:id="@+id/imageView1" />
-    <TextView
-        android:text="Username"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/username" />
-    <EditText
-        android:inputType="textPersonName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/usernameInput" />
-    <TextView
-        android:text="Password"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView3"
-        android:layout_marginTop="20dp" />
-    <EditText
-        android:inputType="textPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/passwordInput" />
-    <Button
-        android:id="@+id/loginButton"
-=======
     android:layout_height="fill_parent"
     android:background="#2BDDC3">
 <!--
@@ -73,16 +29,11 @@
         android:layout_marginTop="20dp" />
     <Button
         android:id="@+id/LoginButton"
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
         android:layout_marginTop="60dp"
-<<<<<<< HEAD
-        android:layout_gravity="center"/>
-=======
         android:layout_gravity="center"
         android:background="#FFFFFF"
         android:textColor="#2BDDC3" />
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
 </LinearLayout>

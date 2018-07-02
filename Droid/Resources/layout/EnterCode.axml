@@ -2,40 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-<<<<<<< HEAD
-    android:layout_height="match_parent">
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_height="50dp"
-        android:src="@drawable/signal"
-        android:id="@+id/studentAttendanceImageView"
-        android:layout_marginTop="20dp" />
-    <TextView
-        android:text="Lesson 1"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/moduleNameTextView"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="15dp"
-        android:layout_gravity="center" />
-    <TextView
-        android:text="Time"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/timeTextView"
-        android:layout_gravity="center"
-        android:layout_marginBottom="5dp" />
-    <TextView
-        android:text="Location"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/locationTextView"
-        android:layout_gravity="center" />
-=======
     android:layout_height="match_parent"
     android:background="#FFFFFF">
     <ImageView
@@ -50,7 +16,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/attCode"
+        android:id="@+id/moduleNameTextView"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="15dp"
         android:layout_gravity="center"
@@ -60,7 +26,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView4"
+        android:id="@+id/timeTextView"
         android:layout_gravity="center"
         android:layout_marginBottom="5dp"
         android:textColor="#000000" />
@@ -69,10 +35,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView3"
+        android:id="@+id/locationTextView"
         android:layout_gravity="center"
         android:textColor="#000000" />
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
     <EditText
         android:hint="ATS Code"
         android:textSize="12dp"
@@ -84,15 +49,6 @@
         android:layout_gravity="center"
         android:visibility="gone" />
     <TextView
-<<<<<<< HEAD
-         android:text="Enter ATS Code manually"
-         android:textAppearance="?android:attr/textAppearanceSmall"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:id="@+id/enterAttendanceCodeTextView"
-         android:layout_marginTop="30dp"
-         android:layout_gravity="center" />
-=======
         android:text="Enter ATS manually"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="wrap_content"
@@ -101,17 +57,11 @@
         android:layout_gravity="center"
         android:layout_marginTop="70dp"
         android:textColor="#007AFF" />
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
     <Button
         android:text="Submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/submitBtn"
         android:layout_gravity="center"
-<<<<<<< HEAD
-        android:layout_marginTop="80dp"
-        android:visibility="gone" />
-=======
         android:layout_marginTop="20dp" />
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
 </LinearLayout>

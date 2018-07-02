@@ -13,6 +13,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using BeaconTest.Droid.Student;
 using BeaconTest.Models;
 
 namespace BeaconTest.Droid
@@ -94,7 +95,7 @@ namespace BeaconTest.Droid
 
                 SetupBeaconRanger();
                 beaconManager = BeaconManager.GetInstanceForApplication(this);
-                BeaconTransmitter bTransmitter = new BeaconTransmitter();
+                BeaconTransmitter bTransmitter = new BeaconTransmitter(); // check the power later
                 bTransmitter.Transmit();
             }
             else
@@ -114,13 +115,14 @@ namespace BeaconTest.Droid
         {
             if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability())
             {
-                var builder = new AlertDialog.Builder(this);
-                builder.SetTitle("Bluetooth not enabled");
-                builder.SetMessage("Please enable bluetooth on your phone and restart the app");
-                EventHandler<DialogClickEventArgs> handler = null;
-                builder.SetPositiveButton(Android.Resource.String.Ok, handler);
-                builder.SetOnDismissListener(this);
-                builder.Show();
+                //var builder = new AlertDialog.Builder(this);
+                //builder.SetTitle("Bluetooth not enabled");
+                //builder.SetMessage("Please enable bluetooth on your phone and restart the app");
+                //EventHandler<DialogClickEventArgs> handler = null;
+                //builder.SetPositiveButton(Android.Resource.String.Ok, handler);
+                //builder.SetOnDismissListener(this);
+                //builder.Show();
+                StartActivity(typeof(StudentBluetoothOff));
             }
         }
 
@@ -147,7 +149,7 @@ namespace BeaconTest.Droid
             return true;
         }
 
-        //potential prob here
+        //ranging prob for s9, sometimes shows not in range even though transmitter is transmitting
         async void RangingBeaconsInRegion(object sender, RangeEventArgs e)
         {
             //var allBeacons = new List<Beacon>();
@@ -162,7 +164,7 @@ namespace BeaconTest.Droid
                     {
                         /*continue beacon operations in the background, so that the view will continue 
                          displaying to the user*/
-                        beaconManager.SetBackgroundMode(true);
+                        //beaconManager.SetBackgroundMode(false);
                         string id = e.Beacons.First().Id1.ToString();
                         foreach(Beacon beacon in e.Beacons)
                         {
@@ -193,12 +195,25 @@ namespace BeaconTest.Droid
                     }
                     else
                     {
-                        //SetContentView(Resource.Layout.NotWithinRange);
+                        //for not within range
+                        SetContentView(Resource.Layout.NotWithinRange);
+                        Button retryButton = FindViewById<Button>(Resource.Id.retryButton);
+                        retryButton.Click += RetryButtonOnClick;
+
                         //stop all beacon operation in the background
-                        beaconManager.SetBackgroundMode(false);
+                        //beaconManager.SetBackgroundMode(false);
+                        
+                        //StartActivity(typeof(NotWithinRange));
                     }
                 });
             });
+        }
+
+        private void RetryButtonOnClick(object sender, EventArgs e)
+        {
+            //reload entercode activity
+            Finish();
+            StartActivity(typeof(EnterCode));
         }
 
         private void SubmitATS()
@@ -253,6 +268,8 @@ namespace BeaconTest.Droid
             beaconManager.SetRangeNotifier(rangeNotifier);
             beaconManager.StartRangingBeaconsInRegion(tagRegion);
             beaconManager.StartRangingBeaconsInRegion(emptyRegion);
+
+            beaconManager.SetBackgroundMode(true);
 
             //Console.WriteLine("Debug:" + Identifier.Parse(uuid));
         }

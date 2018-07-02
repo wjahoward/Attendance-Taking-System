@@ -84,3 +84,37 @@ F:\Year 3 Sem 1\FYP\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csproj
 F:\Year 3 Sem 1\FYP\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.exe
 F:\Year 3 Sem 1\FYP\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.pdb
 F:\Year 3 Sem 1\FYP\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csprojAssemblyReference.cache
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\BeaconTest.iOS.exe
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\BeaconTest.iOS.pdb
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\Acr.UserDialogs.dll
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\BTProgressHUD.dll
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\Newtonsoft.Json.dll
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.Abstractions.dll
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.dll
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.Abstractions.dll
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.dll
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.Abstractions.dll
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.dll
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\TestFairy.iOS.dll
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.Abstractions.pdb
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.Abstractions.xml
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.pdb
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.xml
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\Newtonsoft.Json.xml
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.Abstractions.pdb
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.Abstractions.xml
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.xml
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.Abstractions.pdb
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.Abstractions.xml
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.pdb
+C:\FYP\FYPCLONE\FYPCLONE\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.xml
+C:\FYP\FYPCLONE\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
+C:\FYP\FYPCLONE\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
+C:\FYP\FYPCLONE\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
+C:\FYP\FYPCLONE\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\coremlc\_PartialAppManifest.items
+C:\FYP\FYPCLONE\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\coremlc\_BundleResourceWithLogicalName.items
+C:\FYP\FYPCLONE\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\optimized\
+C:\FYP\FYPCLONE\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csproj.CoreCompileInputs.cache
+C:\FYP\FYPCLONE\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csproj.CopyComplete
+C:\FYP\FYPCLONE\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.exe
+C:\FYP\FYPCLONE\FYPCLONE\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.pdb

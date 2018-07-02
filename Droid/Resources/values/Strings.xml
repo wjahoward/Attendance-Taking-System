@@ -19,10 +19,4 @@
     <string name="hint_description">Description</string>
     <string name="app_description">This app is written in C# and native APIs using the Xamarin Platform. It shares code with its iOS, Android, &amp; Windows versions.</string>
     <string name="sign_in_text">Sign in with your account to save and sync items</string>
-<<<<<<< HEAD
-	<string name="dsaasdasd">dsaasdasd</string>
-	<string name="bluetoothIsNotTurnedOn">Bluetooth is not turned on.</string>
-	<string name="bluetoothIsNotTurnedOn2">Bluetooth is not turned on.</string>
-=======
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
 </resources>
