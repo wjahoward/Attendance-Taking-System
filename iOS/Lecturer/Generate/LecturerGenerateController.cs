@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 using UIKit;
+using CoreBluetooth;
+using CoreFoundation;
 
 namespace BeaconTest.iOS
 {
@@ -121,9 +123,31 @@ namespace BeaconTest.iOS
 			public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 			{
                 //base.RowSelected(tableView, indexPath);
-                var beaconTransmitController = UIStoryboard.FromName("Main", null).InstantiateViewController("BeaconTransmitController");
-                navigationController.PushViewController(beaconTransmitController, true);
-				CommonClass.moduleRowNumber = indexPath.Row;
+                string currentTimeString = DateTime.Now.ToString("mm/dd/yyyy HH:mm:ss");
+                string currentTimeSubstring = currentTimeString.Substring(11, 8);
+                TimeSpan currentTime = TimeSpan.Parse(currentTimeSubstring);
+                Console.WriteLine("Current time: {0}", currentTimeSubstring);
+
+                string moduleStartTimeString = attendanceTableViewItems[indexPath.Row].Time.Substring(0, 5);
+                TimeSpan moduleStartTime = TimeSpan.Parse(moduleStartTimeString);
+
+                TimeSpan maxTime = moduleStartTime + TimeSpan.Parse("00:15:00");
+
+                if (currentTime >= moduleStartTime && currentTime <= maxTime) {
+                    if (CommonClass.checkBluetooth == true) { // rmb change this to true when run on actual iphone
+                        var beaconTransmitController = UIStoryboard.FromName("Main", null).InstantiateViewController("BeaconTransmitController");
+                        navigationController.PushViewController(beaconTransmitController, true);
+                        CommonClass.moduleRowNumber = indexPath.Row;
+                    }
+                    else {
+                        var lecturerBluetoothSwitchOffController = UIStoryboard.FromName("Main", null).InstantiateViewController("LecturerBluetoothSwitchOffController");
+                        navigationController.PushViewController(lecturerBluetoothSwitchOffController, true);
+                    }
+                }
+                else {
+                    var errorGeneratingAttendanceController = UIStoryboard.FromName("Main", null).InstantiateViewController("ErrorGeneratingAttendanceController");
+                    navigationController.PushViewController(errorGeneratingAttendanceController, true);
+                }
 			}
 		}
     }

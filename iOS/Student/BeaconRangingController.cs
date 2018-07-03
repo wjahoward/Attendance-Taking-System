@@ -32,30 +32,77 @@ namespace BeaconTest.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            // Perform any additional setup after loading the view, typically from a nib.
-            StudentSubmitButton.Layer.CornerRadius = BeaconTest.SharedData.buttonCornerRadius;
-			StudentSubmitButton.Hidden = true;
 
-			UserDialogs.Instance.ShowLoading("Retrieving module info...");
-			ThreadPool.QueueUserWorkItem(o => GetModule());         
-
-            StudentSubmitButton.TouchUpInside += (object sender, EventArgs e) => 
+            if (CommonClass.checkBluetooth == true)
             {
-				//SubmitATS();
+                StudentSubmitButton.Layer.CornerRadius = BeaconTest.SharedData.buttonCornerRadius;
+                StudentSubmitButton.Hidden = true;
+
+                UserDialogs.Instance.ShowLoading("Retrieving module info...");
+                ThreadPool.QueueUserWorkItem(o => GetModule());
+
+                StudentSubmitButton.TouchUpInside += (object sender, EventArgs e) =>
+                {
+                    //SubmitATS();
+                };
+
+                EnterAttendanceCodeButton.TouchUpInside += (object sender, EventArgs e) =>
+                {
+                    AttendanceCodeTextField.Hidden = false;
+                    AttendanceCodeTextField.Selected = true; ;
+                };
+            }
+            else {
+                //UINavigationController navigationController = new UINavigationController();
+                var newController = (UIViewController)Storyboard.InstantiateViewController("StudentBluetoothSwitchOffController");
+
+                //this.NavigationController.PopViewController(true);
+                this.NavigationController.PushViewController(newController, true);
+
+            }
+            /*StudentSubmitButton.Layer.CornerRadius = BeaconTest.SharedData.buttonCornerRadius;
+            StudentSubmitButton.Hidden = true;
+
+            UserDialogs.Instance.ShowLoading("Retrieving module info...");
+            ThreadPool.QueueUserWorkItem(o => GetModule());
+
+                StudentSubmitButton.TouchUpInside += (object sender, EventArgs e) =>
+                {
+                    //SubmitATS();
+                };
+
+                EnterAttendanceCodeButton.TouchUpInside += (object sender, EventArgs e) =>
+                {
+                    AttendanceCodeTextField.Hidden = false;
+                    AttendanceCodeTextField.Selected = true; ;
+                };*/
+
+           
+                // Perform any additional setup after loading the view, typically from a nib.
+                /*StudentSubmitButton.Layer.CornerRadius = BeaconTest.SharedData.buttonCornerRadius;
+                StudentSubmitButton.Hidden = true;
+
+                UserDialogs.Instance.ShowLoading("Retrieving module info...");
+                ThreadPool.QueueUserWorkItem(o => GetModule());
+
+                StudentSubmitButton.TouchUpInside += (object sender, EventArgs e) =>
+                {
+                //SubmitATS();
             };
 
-			EnterAttendanceCodeButton.TouchUpInside += (object sender, EventArgs e) => 
-			{
-				AttendanceCodeTextField.Hidden = false;
-				AttendanceCodeTextField.Selected = true;;
-			};
+                EnterAttendanceCodeButton.TouchUpInside += (object sender, EventArgs e) =>
+                {
+                    AttendanceCodeTextField.Hidden = false;
+                    AttendanceCodeTextField.Selected = true; ;
+                };
+            }*/
+            
         }
-
 		private void GetModule()
         {
             studentTimetable = DataAccess.GetStudentTimetable(SharedData.testSPStudentID).Result;
             studentModule = studentTimetable.GetCurrentModule();
-			if(studentModule != null)
+			if(studentModule.abbr != "")
 			{
 				InvokeOnMainThread(() =>
                 {
@@ -94,6 +141,7 @@ namespace BeaconTest.iOS
         {
 			Debug.WriteLine("No beacon found");
 			FoundBeacon.Text = "Searching for beacon...";
+
         }
 
         private void LocationManager_RegionEntered(object sender, CLRegionEventArgs e)
@@ -109,6 +157,7 @@ namespace BeaconTest.iOS
             if (e.Beacons.Length > 0)
             {
                 Debug.WriteLine("Found Beacon");
+
                 Debug.WriteLine(e.Beacons[0].ProximityUuid);
 				atsCode = e.Beacons[0].Major.ToString() + e.Beacons[0].Minor.ToString();
 				Debug.WriteLine(atsCode);
@@ -120,6 +169,9 @@ namespace BeaconTest.iOS
 				AttendanceCodeTextField.Hidden = false;
 				AttendanceCodeTextField.Text = atsCode;
 				AttendanceCodeTextField.UserInteractionEnabled = false;            
+            }
+            else {
+                FoundBeacon.Text = "Searching for beacon...";
             }
         }
 

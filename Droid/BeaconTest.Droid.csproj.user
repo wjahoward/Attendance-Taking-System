@@ -5,4 +5,7 @@
     <DefaultDevice>Android_Accelerated_x86_Oreo</DefaultDevice>
     <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <Run>am start -n "com.xamarin.BeaconTest/BeaconTest.Droid.SplashActivity"</Run>
+  </PropertyGroup>
 </Project>

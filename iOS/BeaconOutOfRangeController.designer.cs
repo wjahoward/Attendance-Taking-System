@@ -14,8 +14,16 @@ namespace BeaconTest.iOS
     [Register ("BeaconOutOfRangeController")]
     partial class BeaconOutOfRangeController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton StudentRangeRetryButton { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (StudentRangeRetryButton != null) {
+                StudentRangeRetryButton.Dispose ();
+                StudentRangeRetryButton = null;
+            }
         }
     }
 }

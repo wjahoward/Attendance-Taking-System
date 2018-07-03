@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Threading;
 using Acr.UserDialogs;
+using CoreBluetooth;
 using Foundation;
 using Plugin.Connectivity;
 using UIKit;
@@ -18,11 +19,15 @@ namespace BeaconTest.iOS
         }
 
         public void Login()
-		{                  
+		{
+            username = "p1234567"; // rmb delete this later
+            password = "R@ndom123"; // rmb delete this later
 			InvokeOnMainThread(() =>
 			{
 				if ((username.Equals("s12345") && password.Equals("Te@cher123")) || (username.Equals("p1234567") && password.Equals("R@ndom123")))
                 {
+                    var bluetoothManager = new CBCentralManager(new CbCentralDelegate(), CoreFoundation.DispatchQueue.DefaultGlobalQueue,
+                                                        new CBCentralInitOptions { ShowPowerAlert = true });
 					UserDialogs.Instance.HideLoading();
                     if (username.StartsWith("s", StringComparison.Ordinal))
                     {
@@ -110,6 +115,21 @@ namespace BeaconTest.iOS
 				return true;
 			}
 		}
+
+        public class CbCentralDelegate : CBCentralManagerDelegate
+        {
+            public override void UpdatedState(CBCentralManager central)
+            {
+                if (central.State == CBCentralManagerState.PoweredOn)
+                {
+                    CommonClass.checkBluetooth = true;
+                }
+                else
+                {
+                    CommonClass.checkBluetooth = false;
+                }
+            }
+        }
     }
 }
 
