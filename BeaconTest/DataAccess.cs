@@ -143,11 +143,7 @@ namespace BeaconTest
 
 		public static async Task<StudentTimetable> GetStudentTimetable(string studentID)
 		{
-<<<<<<< HEAD
-			string urlParameters = "id=" + studentID + "&DDMMYY=" + "170818";//DateTime.UtcNow.ToString("ddMMyy");
-=======
 			string urlParameters = "id=" + studentID + "&DDMMYY=" + "250618";//DateTime.UtcNow.ToString("ddMMyy");
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
 			var url = StudentTimetableURL + urlParameters;
 			client.BaseAddress = new Uri(url);
 

@@ -21,6 +21,10 @@ namespace BeaconTest.iOS
 
         CLBeaconRegion beaconRegion;
 
+        public BeaconTransmitController() {
+            
+        } /* new code from line 24 to line 26*/
+
         public BeaconTransmitController(IntPtr handle) : base(handle)
         {
             peripheralDelegate = new BTPeripheralDelegate();
@@ -38,15 +42,16 @@ namespace BeaconTest.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
             ViewAttendanceButton.Layer.CornerRadius = BeaconTest.SharedData.buttonCornerRadius;
             var locationManager = new CLLocationManager();
             locationManager.RequestWhenInUseAuthorization();
 
 			UserDialogs.Instance.ShowLoading("Retrieving module info...");
-			ThreadPool.QueueUserWorkItem(o => GetModule());         
+			ThreadPool.QueueUserWorkItem(o => GetModule());
         }
 
-        public override void ViewDidAppear(bool animated)
+		public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
 
@@ -129,10 +134,6 @@ namespace BeaconTest.iOS
                     TimePeriodLabel.Hidden = true;
                     LocationLabel.Hidden = true;
 					AttendanceCodeLabel.Hidden = true;
-<<<<<<< HEAD
-=======
-                    
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
 					UserDialogs.Instance.HideLoading();
                 });
             }

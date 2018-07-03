@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px">
-<<<<<<< HEAD
     <TextView
         android:text="Monday, 16 April 2018"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -61,17 +60,4 @@
             android:id="@+id/genBtn2"
             android:layout_marginRight="10dp" />
     </LinearLayout>
-=======
-<!--<ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/TimeTableListView"
-        android:entries="@array/lesson_array" />-->
-    <ListView
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/timeTableListView" />
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
 </LinearLayout>

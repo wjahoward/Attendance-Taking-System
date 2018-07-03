@@ -18,11 +18,24 @@ namespace BeaconTest.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITableView AttendanceTableView { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISegmentedControl SegmentedControl { get; set; }
+
+        [Action ("SegmentedControl_ValChanged:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void SegmentedControl_ValChanged (UIKit.UISegmentedControl sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (AttendanceTableView != null) {
                 AttendanceTableView.Dispose ();
                 AttendanceTableView = null;
+            }
+
+            if (SegmentedControl != null) {
+                SegmentedControl.Dispose ();
+                SegmentedControl = null;
             }
         }
     }

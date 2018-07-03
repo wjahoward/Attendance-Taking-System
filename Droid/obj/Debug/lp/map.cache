@@ -10,7 +10,6 @@ Plugin.Share
 System.Collections
 System.Runtime
 System.Threading.Tasks
-TestFairy.Android
 Xamarin.Android.Support.Animated.Vector.Drawable
 Xamarin.Android.Support.Annotations
 Xamarin.Android.Support.Compat

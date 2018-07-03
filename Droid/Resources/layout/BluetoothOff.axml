@@ -3,7 +3,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
     android:minWidth="25px"
     android:minHeight="25px"
     android:defaultMinSizeSet="true">
@@ -15,16 +14,6 @@
         android:cropToPadding="true"
         android:layout_marginTop="46.0dp"
         android:layout_marginBottom="0dp" />
-=======
-    android:background="#FFFFFF">
-    <ImageView
-        android:layout_width="55dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_height="wrap_content"
-        android:src="@drawable/Asset23"
-        android:id="@+id/imageView1"
-        android:layout_marginTop="38dp" />
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
     <TextView
         android:text="Bluetooth is not turned on."
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -32,31 +21,21 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView1"
         android:gravity="center"
-<<<<<<< HEAD
         android:paddingTop="@dimen/image_size"
         android:layout_marginTop="-50dp" />
-=======
-        android:textColor="#ACACAC" />
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
     <TextView
         android:text="Please check that bluetooth is"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
-<<<<<<< HEAD
         android:gravity="center" />
-=======
-        android:gravity="center"
-        android:textColor="#ACACAC" />
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
     <TextView
         android:text="turned on and try again."
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView3"
-<<<<<<< HEAD
         android:gravity="center" />
     <Button
         android:layout_width="match_parent"
@@ -64,15 +43,4 @@
         android:id="@+id/button1"
         android:layout_marginTop="50dp"
         android:text="Retry" />
-=======
-        android:gravity="center"
-        android:textColor="#ACACAC" />
-    <Button
-        android:text="Retry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button1"
-        android:layout_gravity="center"
-        android:layout_marginTop="70dp" />
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
 </LinearLayout>

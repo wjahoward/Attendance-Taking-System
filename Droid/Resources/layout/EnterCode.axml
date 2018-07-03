@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-<<<<<<< HEAD
     android:layout_height="match_parent">
     <ImageView
         android:layout_width="wrap_content"
@@ -35,44 +34,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/locationTextView"
         android:layout_gravity="center" />
-=======
-    android:layout_height="match_parent"
-    android:background="#FFFFFF">
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_height="wrap_content"
-        android:src="@drawable/Asset2"
-        android:id="@+id/studentAttendanceImageView"
-        android:layout_marginTop="20dp" />
-    <TextView
-        android:text="Module Name"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/attCode"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="15dp"
-        android:layout_gravity="center"
-        android:textColor="#000000" />
-    <TextView
-        android:text="Time Period"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView4"
-        android:layout_gravity="center"
-        android:layout_marginBottom="5dp"
-        android:textColor="#000000" />
-    <TextView
-        android:text="Venue"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView3"
-        android:layout_gravity="center"
-        android:textColor="#000000" />
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
     <EditText
         android:hint="ATS Code"
         android:textSize="12dp"
@@ -84,7 +45,6 @@
         android:layout_gravity="center"
         android:visibility="gone" />
     <TextView
-<<<<<<< HEAD
          android:text="Enter ATS Code manually"
          android:textAppearance="?android:attr/textAppearanceSmall"
          android:layout_width="wrap_content"
@@ -92,26 +52,12 @@
          android:id="@+id/enterAttendanceCodeTextView"
          android:layout_marginTop="30dp"
          android:layout_gravity="center" />
-=======
-        android:text="Enter ATS manually"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/enterAttendanceCodeTextView"
-        android:layout_gravity="center"
-        android:layout_marginTop="70dp"
-        android:textColor="#007AFF" />
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
     <Button
         android:text="Submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/submitBtn"
         android:layout_gravity="center"
-<<<<<<< HEAD
         android:layout_marginTop="80dp"
         android:visibility="gone" />
-=======
-        android:layout_marginTop="20dp" />
->>>>>>> 5047ecc2f7cb3099a570fc0bba55bf099c6c3dde
 </LinearLayout>
