@@ -80,20 +80,20 @@ namespace BeaconTest.Droid
 
                     TimeSpan maxTime = moduleStartTime + TimeSpan.Parse("00:15:00");
 
-                    if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability() == false) // If Bluetooth is enabled
+                    if(currentTime >= moduleStartTime && currentTime <= maxTime)
                     {
-                        if(currentTime >= moduleStartTime && currentTime <= maxTime)
+                        if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability() == false) // If Bluetooth is enabled
                         {
                             StartActivity(typeof(BeaconTransmitActivity));
                         }
                         else
                         {
-                            StartActivity(typeof(ErrorGenerating));
+                            StartActivity(typeof(LecturerBluetoothOff));
                         }
                     }
                     else
                     {
-                        StartActivity(typeof(LecturerBluetoothOff));
+                        StartActivity(typeof(ErrorGenerating));
                     }
                 };
 
