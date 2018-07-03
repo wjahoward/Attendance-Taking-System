@@ -55,6 +55,9 @@
       <HintPath>..\packages\AndroidAltBeaconLibrary.2.7.0\lib\AndroidAltBeaconLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Java.Interop" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Plugin.Connectivity, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xam.Plugin.Connectivity.3.1.1\lib\MonoAndroid10\Plugin.Connectivity.dll</HintPath>
     </Reference>
@@ -128,9 +131,6 @@
     </Reference>
     <Reference Include="Xamarin.Android.Support.Design">
       <HintPath>..\packages\Xamarin.Android.Support.Design.25.4.0.2\lib\MonoAndroid70\Xamarin.Android.Support.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>bin\Debug\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Plugin.Connectivity.Abstractions">
       <HintPath>bin\Debug\Plugin.Connectivity.Abstractions.dll</HintPath>
