@@ -7,6 +7,7 @@ using Acr.UserDialogs;
 using AltBeaconOrg.BoundBeacon;
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -15,8 +16,8 @@ using BeaconTest.Models;
 
 namespace BeaconTest.Droid.Lecturer
 {
-    [Activity(Label = "BeaconTransmitActivity")]
-    public class BeaconTransmitActivity : Activity
+    [Activity(Label = "BeaconTransmitActivity", ScreenOrientation = ScreenOrientation.Portrait)]
+    public class BeaconTransmitActivity : Activity, IDialogInterfaceOnDismissListener
     {
         StudentModule studentModule;
 
@@ -41,7 +42,6 @@ namespace BeaconTest.Droid.Lecturer
             UserDialogs.Instance.ShowLoading("Retrieving module info...");
 
             ThreadPool.QueueUserWorkItem(o => GetModule());
-            
         }
 
         private void GetModule()
@@ -85,6 +85,40 @@ namespace BeaconTest.Droid.Lecturer
                     return -81;
             }
             return 0;
+        }
+
+        private bool VerifyBle()
+        {
+            if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability())
+            {
+                var builder = new AlertDialog.Builder(this);
+                builder.SetTitle("Bluetooth not enabled");
+                builder.SetMessage("Please enable bluetooth on your phone and restart the app");
+                EventHandler<DialogClickEventArgs> handler = null;
+                builder.SetPositiveButton(Android.Resource.String.Ok, handler);
+
+                builder.SetOnDismissListener(this);
+                RunOnUiThread(() => builder.Show());
+                //return false;
+            }
+            return true;
+        }
+
+        private void handler(object sender, DialogClickEventArgs e)
+        {
+            var myButton = sender as Button;
+            if (myButton != null)
+            {
+                if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability())
+                {
+                    VerifyBle();
+                }
+            }
+        }
+
+        public void OnDismiss(IDialogInterface dialog)
+        {
+            dialog.Dismiss();
         }
     }
 }

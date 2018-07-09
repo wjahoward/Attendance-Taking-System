@@ -8,6 +8,7 @@ using Acr.UserDialogs;
 using AltBeaconOrg.BoundBeacon;
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.Net.Wifi;
 using Android.OS;
 using Android.Runtime;
@@ -18,7 +19,7 @@ using BeaconTest.Models;
 
 namespace BeaconTest.Droid
 {
-    [Activity(Label = "EnterCode", LaunchMode = Android.Content.PM.LaunchMode.SingleInstance)]
+    [Activity(Label = "EnterCode", LaunchMode = LaunchMode.SingleInstance, ScreenOrientation = ScreenOrientation.Portrait)]
     public class EnterCode : Activity, IDialogInterfaceOnDismissListener, IBeaconConsumer
     {
         readonly RangeNotifier rangeNotifier;
@@ -153,7 +154,7 @@ namespace BeaconTest.Droid
         async void RangingBeaconsInRegion(object sender, RangeEventArgs e)
         {
             //var allBeacons = new List<Beacon>();
-            
+
             //code inside Task.Run will be called asynchronously
             //use await if need to wait for specific work before updating ui elements
             await Task.Run(() =>
@@ -166,7 +167,7 @@ namespace BeaconTest.Droid
                          displaying to the user*/
                         //beaconManager.SetBackgroundMode(false);
                         string id = e.Beacons.First().Id1.ToString();
-                        foreach(Beacon beacon in e.Beacons)
+                        foreach (Beacon beacon in e.Beacons)
                         {
                             if (beacon.Id1.ToString().Equals(DataAccess.LecturerGetBeaconKey().ToLower()))
                             {
@@ -179,7 +180,7 @@ namespace BeaconTest.Droid
                                 attendanceCodeEditText.Enabled = false;
                             }
                         }
-                        
+
                         submitBtn.Click += delegate
                         {
                             //AlertDialog.Builder ad = new AlertDialog.Builder(this);
@@ -202,7 +203,7 @@ namespace BeaconTest.Droid
 
                         //stop all beacon operation in the background
                         //beaconManager.SetBackgroundMode(false);
-                        
+
                         //StartActivity(typeof(NotWithinRange));
                     }
                 });
@@ -219,7 +220,7 @@ namespace BeaconTest.Droid
         private void SubmitATS()
         {
             //studentSubmit = new StudentSubmission(admissionId, lb.BeaconKey, ats_Code, DateTime.UtcNow);
-           
+
         }
 
         public void OnDismiss(IDialogInterface dialog)

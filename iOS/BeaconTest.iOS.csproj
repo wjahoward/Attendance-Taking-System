@@ -160,8 +160,12 @@
     <ImageAsset Include="Assets.xcassets\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Image.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\Picture.imageset\Icons-21.png" />
+    <ImageAsset Include="Assets.xcassets\Image.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Picture.imageset\Icons-21.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />

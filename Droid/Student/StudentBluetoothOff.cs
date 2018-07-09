@@ -5,6 +5,7 @@ using System.Text;
 using AltBeaconOrg.BoundBeacon;
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -12,7 +13,7 @@ using Android.Widget;
 
 namespace BeaconTest.Droid.Student
 {
-    [Activity(Label = "BTReady")]
+    [Activity(Label = "BTReady", ScreenOrientation = ScreenOrientation.Portrait)]
     public class StudentBluetoothOff : Activity
     {
         Button retryBluetooth;

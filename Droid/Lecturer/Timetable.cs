@@ -4,10 +4,12 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using Acr.UserDialogs;
 using AltBeaconOrg.BoundBeacon;
 using Android.App;
 using Android.Bluetooth.LE;
 using Android.Content;
+using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -17,12 +19,13 @@ using BeaconTest.Models;
 
 namespace BeaconTest.Droid
 {
-    [Activity(Label = "Lecturer")]
+    [Activity(Label = "Lecturer", ScreenOrientation = ScreenOrientation.Portrait)]
     public class Timetable : Activity, IDialogInterfaceOnDismissListener
     {
         public AdvertiseCallback advertiseCallback;
         ListView timeTableListView;
         StudentTimetable studentTimetable;
+        List<LecturerModuleTableViewItem> dataSource = new List<LecturerModuleTableViewItem>();
 
         int indexOfLesson = 0;
 
@@ -32,14 +35,32 @@ namespace BeaconTest.Droid
 
             base.OnCreate(savedInstanceState);
 
-            ThreadPool.QueueUserWorkItem(o => VerifyBle());
-
             // Create your application here
 
-            timeTableListView = FindViewById<ListView>(Resource.Id.timeTableListView);
+            UserDialogs.Init(this);
 
-            List<LecturerModuleTableViewItem> dataSource = new List<LecturerModuleTableViewItem>();
+            UserDialogs.Instance.ShowLoading("Retrieving timetable info...");
 
+            ThreadPool.QueueUserWorkItem(o => GetTimetable());
+
+            //ThreadPool.QueueUserWorkItem(o => VerifyBle());
+        }
+
+        private void GetTimetable()
+        {
+            studentTimetable = DataAccess.GetStudentTimetable(SharedData.testSPStudentID).Result;
+            if (studentTimetable != null)
+            {
+                RunOnUiThread(() =>
+                {
+                    UserDialogs.Instance.HideLoading();
+                    SetTableData();
+                });
+            }
+        }
+
+        private void SetTableData()
+        {
             studentTimetable = DataAccess.GetStudentTimetable(SharedData.testSPStudentID).Result;
             foreach (StudentModule module in studentTimetable.modules)
             {
@@ -52,7 +73,12 @@ namespace BeaconTest.Droid
                     dataSource.Add(new LecturerModuleTableViewItem("No lesson") { ModuleCode = "", Venue = "", Time = "" });
                 }
             }
+            DisplayTimetableListView();
+        }
 
+        private void DisplayTimetableListView()
+        {
+            timeTableListView = FindViewById<ListView>(Resource.Id.timeTableListView);
             var adapter = new CustomAdapter(this, dataSource);
             timeTableListView.Adapter = adapter;
 
@@ -66,21 +92,23 @@ namespace BeaconTest.Droid
             }
             else
             {
+                VerifyBle();
                 timeTableListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) =>
                 {
                     CommonClass.moduleRowNumber = dataSource[e.Position].Id;
 
-                    string currentTimeString = DateTime.Now.ToShortTimeString();
+                    //string currentTimeString = DateTime.Now.ToShortTimeString();
+                    string currentTimeString = "08:00";
                     TimeSpan currentTime = TimeSpan.Parse(currentTimeString);
                     //Console.WriteLine("Current time: {0}", currentTime);
 
-                    string moduleStartTimeString = dataSource[e.Position].Time.Substring(0,5);
+                    string moduleStartTimeString = dataSource[e.Position].Time.Substring(0, 5);
                     TimeSpan moduleStartTime = TimeSpan.Parse(moduleStartTimeString);
                     //Console.WriteLine("Module start time: {0}", moduleStartTime);
 
                     TimeSpan maxTime = moduleStartTime + TimeSpan.Parse("00:15:00");
 
-                    if(currentTime >= moduleStartTime && currentTime <= maxTime)
+                    if (currentTime >= moduleStartTime && currentTime <= maxTime)
                     {
                         if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability() == false) // If Bluetooth is enabled
                         {
@@ -96,7 +124,6 @@ namespace BeaconTest.Droid
                         StartActivity(typeof(ErrorGenerating));
                     }
                 };
-
             }
         }
 

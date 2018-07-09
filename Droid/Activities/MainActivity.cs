@@ -42,7 +42,6 @@ namespace BeaconTest.Droid
             Button submitBtn = FindViewById<Button>(Resource.Id.LoginButton);
             Username = FindViewById<EditText>(Resource.Id.usernameInput);
             Pwd = FindViewById<EditText>(Resource.Id.passwordInput);
-            submitBtn.Click += LoginButtonOnClick;
 
             //UserDialogs.Init(this);
 
