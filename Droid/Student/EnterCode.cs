@@ -19,7 +19,7 @@ using BeaconTest.Models;
 
 namespace BeaconTest.Droid
 {
-    [Activity(Label = "EnterCode", LaunchMode = LaunchMode.SingleInstance, ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "EnterCode", ScreenOrientation = ScreenOrientation.Portrait)]
     public class EnterCode : Activity, IDialogInterfaceOnDismissListener, IBeaconConsumer
     {
         readonly RangeNotifier rangeNotifier;
@@ -196,15 +196,28 @@ namespace BeaconTest.Droid
                     }
                     else
                     {
-                        //for not within range
-                        SetContentView(Resource.Layout.NotWithinRange);
-                        Button retryButton = FindViewById<Button>(Resource.Id.retryButton);
-                        retryButton.Click += RetryButtonOnClick;
+                        //SetupBeaconRanger();
+                        ////beaconManager = BeaconManager.GetInstanceForApplication(this);
+
+                        ////for not within range
+                        //SetContentView(Resource.Layout.NotWithinRange);
+                        //Button retryButton = FindViewById<Button>(Resource.Id.retryButton);
+                        //retryButton.Visibility = ViewStates.Invisible;
+
+                        //if(e.Beacons.Count > 0)
+                        //{
+                        //    retryButton.Visibility = ViewStates.Visible;
+                        //    retryButton.Click += RetryButtonOnClick;
+                        //}
 
                         //stop all beacon operation in the background
                         //beaconManager.SetBackgroundMode(false);
 
-                        //StartActivity(typeof(NotWithinRange));
+                        //beaconManager.StopMonitoringBeaconsInRegion(tagRegion);
+                        //beaconManager.StopMonitoringBeaconsInRegion(emptyRegion);
+                        //beaconManager.StopRangingBeaconsInRegion(tagRegion);
+                        //beaconManager.StopRangingBeaconsInRegion(emptyRegion);
+                        StartActivity(typeof(NotWithinRange));
                     }
                 });
             });
