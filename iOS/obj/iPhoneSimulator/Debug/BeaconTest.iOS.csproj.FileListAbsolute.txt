@@ -220,3 +220,38 @@ D:\My stuff\School_Years\Y3S1\FYP_Working\iOS\obj\iPhoneSimulator\Debug\BeaconTe
 D:\My stuff\School_Years\Y3S1\FYP_Working\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csproj.CopyComplete
 D:\My stuff\School_Years\Y3S1\FYP_Working\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.exe
 D:\My stuff\School_Years\Y3S1\FYP_Working\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.pdb
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\BeaconTest.iOS.exe
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\BeaconTest.iOS.pdb
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\Acr.UserDialogs.dll
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\BTProgressHUD.dll
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\Newtonsoft.Json.dll
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.Abstractions.dll
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.dll
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.Abstractions.dll
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.dll
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.Abstractions.dll
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.dll
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\TestFairy.iOS.dll
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.Abstractions.pdb
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.Abstractions.xml
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.pdb
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.xml
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\Newtonsoft.Json.xml
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.Abstractions.pdb
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.Abstractions.xml
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.xml
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.Abstractions.pdb
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.Abstractions.xml
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.pdb
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.xml
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\obj\iPhoneSimulator\Debug\coremlc\_PartialAppManifest.items
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\obj\iPhoneSimulator\Debug\coremlc\_BundleResourceWithLogicalName.items
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\obj\iPhoneSimulator\Debug\optimized\
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csproj.CoreCompileInputs.cache
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csproj.CopyComplete
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.exe
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.pdb
+F:\Year 3 Sem 1\FYP\FinalisedUpdatedVersion as of 12 July 2018\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csprojAssemblyReference.cache

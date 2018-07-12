@@ -147,6 +147,7 @@
     <Compile Include="CustomAdapter.cs" />
     <Compile Include="Lecturer\BeaconTransmitActivity.cs" />
     <Compile Include="Lecturer\ErrorGenerating.cs" />
+    <Compile Include="Lecturer\LecturerAttendanceWebView.cs" />
     <Compile Include="Lecturer\LecturerBluetoothOff.cs" />
     <Compile Include="Lecturer\LectureBluetoothOn.cs" />
     <Compile Include="Lecturer\LecturerModuleTableViewItem.cs" />
@@ -271,6 +272,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\LecturerAttendance.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="..\BeaconTest\BeaconTest.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

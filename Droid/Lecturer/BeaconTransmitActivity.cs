@@ -23,6 +23,7 @@ namespace BeaconTest.Droid.Lecturer
 
         TextView moduleNameTextView, timeTextView, locationTextView, attendanceCodeTextView;
         ImageView studentAttendanceImageView;
+        Button lecturerViewAttendanceButton;
 
         BeaconManager beaconManager;
 
@@ -36,12 +37,20 @@ namespace BeaconTest.Droid.Lecturer
             locationTextView = FindViewById<TextView>(Resource.Id.locationTextView);
             attendanceCodeTextView = FindViewById<TextView>(Resource.Id.attendanceCodeTextView);
             studentAttendanceImageView = FindViewById<ImageView>(Resource.Id.studentAttendanceImageView);
+            lecturerViewAttendanceButton = FindViewById<Button>(Resource.Id.viewAttendanceButton);
+
+            lecturerViewAttendanceButton.Click += buttonClick;
 
             UserDialogs.Init(this);
 
             UserDialogs.Instance.ShowLoading("Retrieving module info...");
 
             ThreadPool.QueueUserWorkItem(o => GetModule());
+        }
+
+        private void buttonClick(object sender, EventArgs e)
+        {
+            StartActivity(typeof(LecturerAttendanceWebView));
         }
 
         private void GetModule()
