@@ -73,7 +73,10 @@ namespace BeaconTest.Droid.Student
                     {
                         foreach(Beacon b in e.Beacons)
                         {
-                            retryButton.Visibility = ViewStates.Visible;
+                            if (b.Id1.ToString().Equals(DataAccess.LecturerGetBeaconKey().ToLower()))
+                            {
+                                retryButton.Visibility = ViewStates.Visible;
+                            }
                         }
                     }
                 });
