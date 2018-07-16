@@ -4,10 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Base.Widget.AppCompat.ActionBar">
-    <Toolbar
-        android:title="Beacon Transmit"
-        android:layout_height="@dimen/abc_action_bar_default_height_material"
-        android:layout_width="match_parent" />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -52,11 +48,12 @@
         android:hint="ATS Code"
         android:textSize="12dp"
         android:id="@+id/attendanceCodeEditText"
-        android:backgroundTint="@color/abc_hint_foreground_material_dark"
+        android:background="@drawable/edittextstyleforatscode"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_marginTop="20dp"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:padding="5dp" />
     <TextView
         android:text="Override ATS manually"
         android:textAppearance="?android:attr/textAppearanceMedium"

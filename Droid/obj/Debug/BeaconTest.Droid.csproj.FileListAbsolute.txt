@@ -1294,10 +1294,6 @@ D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\obj\Debug\android\assets\System
 D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\obj\Debug\android\assets\System.Web.Services.pdb
 D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\obj\Debug\android\assets\System.Xml.Linq.pdb
 D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\obj\Debug\android\assets\System.Xml.pdb
-D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\bin\Debug\Plugin.Connectivity.Abstractions.dll
-D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\bin\Debug\Plugin.Connectivity.dll
-D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\bin\Debug\Plugin.Share.Abstractions.dll
-D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\bin\Debug\Plugin.Share.dll
 C:\Users\Howard\source\repos\FYP4\Droid\bin\Debug\BeaconTest.Droid.dll
 C:\Users\Howard\source\repos\FYP4\Droid\bin\Debug\BeaconTest.Droid.pdb
 C:\Users\Howard\source\repos\FYP4\Droid\bin\Debug\com.xamarin.BeaconTest.apk
@@ -1464,7 +1460,10 @@ C:\Users\Howard\source\repos\FYP4\Droid\bin\Debug\Plugin.Connectivity.Abstractio
 C:\Users\Howard\source\repos\FYP4\Droid\bin\Debug\Plugin.Connectivity.dll
 C:\Users\Howard\source\repos\FYP4\Droid\bin\Debug\Plugin.Share.Abstractions.dll
 C:\Users\Howard\source\repos\FYP4\Droid\bin\Debug\Plugin.Share.dll
-C:\Users\Howard\source\repos\FYP4\Droid\bin\Debug\BeaconTest.Droid.dll
-C:\Users\Howard\source\repos\FYP4\Droid\obj\Debug\linksrc\BeaconTest.Droid.dll.mdb
-C:\Users\Howard\source\repos\FYP4\Droid\obj\Debug\linksrc\Plugin.Connectivity.dll.mdb
-C:\Users\Howard\source\repos\FYP4\Droid\obj\Debug\linksrc\Plugin.Share.dll.mdb
+D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\obj\Debug\res\drawable\edittextstyle.xml
+D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\obj\Debug\res\drawable\btnstyle.xml
+D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\obj\Debug\res\drawable\edittextstyleforatscode.xml
+D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\bin\Debug\Plugin.Connectivity.Abstractions.dll
+D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\bin\Debug\Plugin.Connectivity.dll
+D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\bin\Debug\Plugin.Share.Abstractions.dll
+D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\bin\Debug\Plugin.Share.dll
