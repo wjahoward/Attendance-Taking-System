@@ -19,11 +19,13 @@ namespace BeaconTest.Droid.Lecturer
     [Activity(Label = "BeaconTransmitActivity", ScreenOrientation = ScreenOrientation.Portrait)]
     public class BeaconTransmitActivity : Activity, IDialogInterfaceOnDismissListener
     {
-        StudentModule studentModule;
+        //StudentModule studentModule;
+        LecturerModule lecturerModule;
 
-        TextView moduleNameTextView, timeTextView, locationTextView, attendanceCodeTextView;
+        TextView moduleNameTextView, timeTextView, locationTextView, attendanceCodeTextView, overrideAttendanceCodeTextView;
         ImageView studentAttendanceImageView;
         Button lecturerViewAttendanceButton;
+        EditText attendanceCodeEditText;
 
         BeaconManager beaconManager;
 
@@ -39,6 +41,11 @@ namespace BeaconTest.Droid.Lecturer
             studentAttendanceImageView = FindViewById<ImageView>(Resource.Id.studentAttendanceImageView);
             lecturerViewAttendanceButton = FindViewById<Button>(Resource.Id.viewAttendanceButton);
 
+            overrideAttendanceCodeTextView = FindViewById<TextView>(Resource.Id.overrideAttendanceCodeTextView);
+            attendanceCodeEditText = FindViewById<EditText>(Resource.Id.attendanceCodeEditText);
+
+            overrideAttendanceCodeTextView.Click += overrideATSClick;
+
             lecturerViewAttendanceButton.Click += buttonClick;
 
             UserDialogs.Init(this);
@@ -48,6 +55,42 @@ namespace BeaconTest.Droid.Lecturer
             ThreadPool.QueueUserWorkItem(o => GetModule());
         }
 
+        private async void overrideATSClick(object sender, EventArgs e)
+        {
+            if (attendanceCodeEditText.Text == "")
+            {
+                var builder = new AlertDialog.Builder(this);
+                builder.SetMessage("Please do not leave the ATS Code blank!");
+                EventHandler<DialogClickEventArgs> handler = null;
+                builder.SetPositiveButton(Android.Resource.String.Ok, handler);
+
+                builder.SetOnDismissListener(this);
+                RunOnUiThread(() => builder.Show());
+            }
+            else if (attendanceCodeEditText.Text.Length != 6)
+            {
+                var builder = new AlertDialog.Builder(this);
+                builder.SetMessage("ATS Code invalid!");
+                EventHandler<DialogClickEventArgs> handler = null;
+                builder.SetPositiveButton(Android.Resource.String.Ok, handler);
+
+                builder.SetOnDismissListener(this);
+                RunOnUiThread(() => builder.Show());
+            }
+            else
+            {
+                lecturerModule.atscode = Convert.ToString(attendanceCodeEditText.Text);
+                await DataAccess.LecturerOverrideATS(lecturerModule);
+                var builder = new AlertDialog.Builder(this);
+                builder.SetMessage("You have successfully override the ATS Code!");
+                EventHandler<DialogClickEventArgs> handler = null;
+                builder.SetPositiveButton(Android.Resource.String.Ok, handler);
+
+                builder.SetOnDismissListener(this);
+                RunOnUiThread(() => builder.Show());
+            }
+        }
+
         private void buttonClick(object sender, EventArgs e)
         {
             StartActivity(typeof(LecturerAttendanceWebView));
@@ -55,14 +98,14 @@ namespace BeaconTest.Droid.Lecturer
 
         private void GetModule()
         {
-            StudentTimetable studentTimetable = DataAccess.GetStudentTimetable(SharedData.testSPStudentID).Result;
-            studentModule = studentTimetable.GetCurrentModule(CommonClass.moduleRowNumber);
-            if(studentModule != null)
+            LecturerTimetable lecturerTimetable = DataAccess.GetLecturerTimetable().Result;
+            lecturerModule = lecturerTimetable.GetCurrentModule(CommonClass.moduleRowNumber);
+            if(lecturerModule != null)
             {
-                RunOnUiThread(() => moduleNameTextView.Text = studentModule.abbr + " (" + studentModule.code + ")");
-                RunOnUiThread(() => timeTextView.Text = studentModule.time);
-                RunOnUiThread(() => locationTextView.Text = studentModule.location);
-                RunOnUiThread(() => attendanceCodeTextView.Text = SharedData.testATS);
+                RunOnUiThread(() => moduleNameTextView.Text = lecturerModule.abbr + " (" + lecturerModule.code + ")");
+                RunOnUiThread(() => timeTextView.Text = lecturerModule.time);
+                RunOnUiThread(() => locationTextView.Text = lecturerModule.location);
+                RunOnUiThread(() => attendanceCodeTextView.Text = lecturerModule.atscode);
                 RunOnUiThread(() => UserDialogs.Instance.HideLoading());
 
                 CommonClass.power = BeaconPower();
@@ -84,7 +127,7 @@ namespace BeaconTest.Droid.Lecturer
 
         private int BeaconPower()
         {
-            switch (studentModule.type)
+            switch (lecturerModule.type)
             {
                 case "LAB":
                     return -84;

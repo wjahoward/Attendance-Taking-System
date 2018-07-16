@@ -12,7 +12,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Command.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\ServiceLocator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Item.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\ModuleWrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\LecturerModule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\LecturerModuleWrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\LecturerTimetable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\StudentModuleWrapper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\StudentTimetable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\CloudDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IDataStore.cs" />

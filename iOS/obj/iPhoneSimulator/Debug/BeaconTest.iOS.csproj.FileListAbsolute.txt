@@ -290,3 +290,38 @@ D:\My stuff\School_Years\Y3S1\FYP_Working2\iOS\obj\iPhoneSimulator\Debug\BeaconT
 D:\My stuff\School_Years\Y3S1\FYP_Working2\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csproj.CopyComplete
 D:\My stuff\School_Years\Y3S1\FYP_Working2\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.exe
 D:\My stuff\School_Years\Y3S1\FYP_Working2\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.pdb
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\BeaconTest.iOS.exe
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\BeaconTest.iOS.pdb
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\Acr.UserDialogs.dll
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\BTProgressHUD.dll
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\Newtonsoft.Json.dll
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.Abstractions.dll
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.dll
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.Abstractions.dll
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.dll
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.Abstractions.dll
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.dll
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\TestFairy.iOS.dll
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.Abstractions.pdb
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.Abstractions.xml
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.pdb
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.xml
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\Newtonsoft.Json.xml
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.Abstractions.pdb
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.Abstractions.xml
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.xml
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.Abstractions.pdb
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.Abstractions.xml
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.pdb
+C:\Users\Howard\source\repos\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.xml
+C:\Users\Howard\source\repos\FYP4\iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
+C:\Users\Howard\source\repos\FYP4\iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
+C:\Users\Howard\source\repos\FYP4\iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
+C:\Users\Howard\source\repos\FYP4\iOS\obj\iPhoneSimulator\Debug\coremlc\_PartialAppManifest.items
+C:\Users\Howard\source\repos\FYP4\iOS\obj\iPhoneSimulator\Debug\coremlc\_BundleResourceWithLogicalName.items
+C:\Users\Howard\source\repos\FYP4\iOS\obj\iPhoneSimulator\Debug\optimized\
+C:\Users\Howard\source\repos\FYP4\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csproj.CoreCompileInputs.cache
+C:\Users\Howard\source\repos\FYP4\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csproj.CopyComplete
+C:\Users\Howard\source\repos\FYP4\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.exe
+C:\Users\Howard\source\repos\FYP4\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.pdb
+C:\Users\Howard\source\repos\FYP4\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csprojAssemblyReference.cache

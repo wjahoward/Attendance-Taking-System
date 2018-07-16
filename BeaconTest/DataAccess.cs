@@ -22,8 +22,10 @@ namespace BeaconTest
 		private static string LecturerPostUrl = "https://testingfyp.azurewebsites.net/api/Lecturer";
 		private static string StudentUrl = "https://testingfyp.azurewebsites.net/api/Student";
 		private static string StudentTimetableURL = "http://mobileappnew.sp.edu.sg/spTimeTable/source/sptt.php?";
+        private static string LecturerTimetableURL = "https://dummylecturertimetabledata.azurewebsites.net/api/Lecturer";
+        public static string OverrideATSLecturerTimetableURL = "https://dummylecturertimetabledata.azurewebsites.net/api/Lecturer";
 
-		public static string NoInternetConnection = "No Internet Connection";
+        public static string NoInternetConnection = "No Internet Connection";
 
 		public static StudentTimetable studentTimetable;
 		public static StudentModule currentModule;
@@ -119,7 +121,41 @@ namespace BeaconTest
 			return false;
 		}
 
-		/*public static async Task<LecturerBeacon> StudentGetBeacon()
+        public static async Task<bool> LecturerOverrideATS(LecturerModule lecturerModule)
+        {
+            var uri = new Uri(OverrideATSLecturerTimetableURL);
+
+            var json = JsonConvert.SerializeObject(lecturerModule);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            client.DefaultRequestHeaders
+                 .Accept
+                 .Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json");
+            content.Headers.ContentLength = null;
+            Debug.WriteLine(content.ToString());
+
+            HttpResponseMessage response = client.PostAsync(uri, content).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                var responseString = await response.Content.ReadAsStringAsync();
+                Debug.WriteLine("Student Submission successfully submitted.");
+                return true;
+            }
+            else
+            {
+                Debug.WriteLine(content.ReadAsStringAsync());
+                Debug.WriteLine(response.RequestMessage);
+                Debug.WriteLine(response.StatusCode);
+                var responseString = await response.Content.ReadAsStringAsync();
+                Debug.WriteLine(responseString);
+            }
+            return false;
+        }
+
+        /*public static async Task<LecturerBeacon> StudentGetBeacon()
 		{
 			string urlParameters = "/p1234567";
 			var url = StudentUrl + urlParameters;
@@ -141,7 +177,7 @@ namespace BeaconTest
 			}
 		}*/
 
-		public static async Task<StudentTimetable> GetStudentTimetable(string studentID)
+        public static async Task<StudentTimetable> GetStudentTimetable(string studentID)
 		{
 			string urlParameters = "id=" + studentID + "&DDMMYY=" + "250618";//DateTime.UtcNow.ToString("ddMMyy");
 			var url = StudentTimetableURL + urlParameters;
@@ -164,7 +200,29 @@ namespace BeaconTest
 			}
 		}
 
-		public static string StudentGetBeaconKey()
+        public static async Task<LecturerTimetable> GetLecturerTimetable()
+        {
+            var url = LecturerTimetableURL;
+            client.BaseAddress = new Uri(url);
+
+            // List data response.
+            HttpResponseMessage response = client.GetAsync(url).Result;  // Blocking call!
+            if (response.IsSuccessStatusCode)
+            {
+                var responseString = await response.Content.ReadAsStringAsync();
+                Debug.WriteLine(responseString);
+                LecturerTimetable timetable = JsonConvert.DeserializeObject<LecturerTimetable>(responseString);
+                timetable.modules = timetable.timetable.Select(z => z.module).ToList();
+                return timetable;
+            }
+            else
+            {
+                Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
+                return null;
+            }
+        }
+
+        public static string StudentGetBeaconKey()
 		{
 			studentTimetable = GetStudentTimetable(SharedData.testSPStudentID).Result;
 			currentModule = studentTimetable.GetCurrentModule();

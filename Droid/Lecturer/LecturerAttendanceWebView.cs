@@ -46,7 +46,7 @@ namespace BeaconTest.Droid
             webView = FindViewById<WebView>(Resource.Id.attendance);
 
             webView.Settings.JavaScriptEnabled = true;
-            webView.LoadUrl("http://www.google.com");
+            webView.LoadUrl("https://ats.sf.sp.edu.sg/psc/cs90atstd/EMPLOYEE/HRMS/s/WEBLIB_A_ATS.ISCRIPT2.FieldFormula.IScript_GetLecturerClasses");
             webView.SetWebViewClient(new HelloWebViewClient(this));
         }
 

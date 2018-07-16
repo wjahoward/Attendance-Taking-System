@@ -30,5 +30,7 @@ namespace BeaconTest.Droid.Lecturer
         public string Time { get; set; }
 
         public string Venue { get; set; }
+
+        public string ATSCode { get; set; }
     }
 }

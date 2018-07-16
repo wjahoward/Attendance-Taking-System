@@ -24,7 +24,7 @@ namespace BeaconTest.Droid
     {
         public AdvertiseCallback advertiseCallback;
         ListView timeTableListView;
-        StudentTimetable studentTimetable;
+        LecturerTimetable lecturerTimetable;
         List<LecturerModuleTableViewItem> dataSource = new List<LecturerModuleTableViewItem>();
 
         int indexOfLesson = 0;
@@ -48,8 +48,8 @@ namespace BeaconTest.Droid
 
         private void GetTimetable()
         {
-            studentTimetable = DataAccess.GetStudentTimetable(SharedData.testSPStudentID).Result;
-            if (studentTimetable != null)
+            lecturerTimetable = DataAccess.GetLecturerTimetable().Result;
+            if (lecturerTimetable != null)
             {
                 RunOnUiThread(() =>
                 {
@@ -61,12 +61,12 @@ namespace BeaconTest.Droid
 
         private void SetTableData()
         {
-            studentTimetable = DataAccess.GetStudentTimetable(SharedData.testSPStudentID).Result;
-            foreach (StudentModule module in studentTimetable.modules)
+            lecturerTimetable = DataAccess.GetLecturerTimetable().Result;
+            foreach (LecturerModule module in lecturerTimetable.modules)
             {
                 if (!module.abbr.Equals(""))
                 {
-                    dataSource.Add(new LecturerModuleTableViewItem(module.abbr) { ModuleCode = module.code, Venue = module.location, Time = module.time, Id = indexOfLesson++ });
+                    dataSource.Add(new LecturerModuleTableViewItem(module.abbr) { ModuleCode = module.code, Venue = module.location, Time = module.time, Id = indexOfLesson++, ATSCode = module.atscode });
                 }
                 else
                 {
@@ -98,7 +98,7 @@ namespace BeaconTest.Droid
                     CommonClass.moduleRowNumber = dataSource[e.Position].Id;
 
                     //string currentTimeString = DateTime.Now.ToShortTimeString();
-                    string currentTimeString = "08:00";
+                    string currentTimeString = "09:00"; // change to actual real time before testing!!
                     TimeSpan currentTime = TimeSpan.Parse(currentTimeString);
                     //Console.WriteLine("Current time: {0}", currentTime);
 
