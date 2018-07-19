@@ -17,7 +17,6 @@ namespace BeaconTest.iOS
 {
     public partial class BeaconRangingController : UIViewController
     {      
-
 		StudentTimetable studentTimetable;
 		StudentModule studentModule;
 
@@ -41,9 +40,7 @@ namespace BeaconTest.iOS
 				AttendanceCodeTextField.ResignFirstResponder();
                 return true;
             };
-
-			AttendanceCodeTextField.AddObserver("text", NSKeyValueObservingOptions.New, AttendanceCodeTextField_ValueChanged);
-
+         
 			AddDoneButtonToNumericKeyboard(AttendanceCodeTextField);
 
 			this.NavigationController.NavigationBar.BarTintColor = UIColor.FromRGB(BeaconTest.SharedData.primaryColourRGB[0], BeaconTest.SharedData.primaryColourRGB[1], BeaconTest.SharedData.primaryColourRGB[2]);
@@ -52,6 +49,8 @@ namespace BeaconTest.iOS
             {
                 ForegroundColor = UIColor.White
             };
+
+			CommonClass.checkBluetooth = true;
 
             if (CommonClass.checkBluetooth == true)
             {
@@ -119,14 +118,17 @@ namespace BeaconTest.iOS
             
         }
 
-		private void AttendanceCodeTextField_ValueChanged(Foundation.NSObservedChange a)
+		partial void AttendanceCodeTextFieldTextChanged(UITextField sender)
         {
-			if(AttendanceCodeTextField.Text.Length == 6)
-			{
-				StudentSubmitButton.Hidden = false;
+			if (AttendanceCodeTextField.Text.Length == 6)
+            {
+                StudentSubmitButton.Hidden = false;
+			}
+			else{
+				StudentSubmitButton.Hidden = true;
 			}
         }
-
+      
 		private void GetModule()
         {
             studentTimetable = DataAccess.GetStudentTimetable(SharedData.testSPStudentID).Result;

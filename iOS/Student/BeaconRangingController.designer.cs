@@ -46,6 +46,10 @@ namespace BeaconTest.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel TimePeriodLabel { get; set; }
 
+        [Action ("AttendanceCodeTextFieldTextChanged:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void AttendanceCodeTextFieldTextChanged (UIKit.UITextField sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (AttendanceCodeTextField != null) {
