@@ -11,11 +11,13 @@ using BeaconTest.Models;
 using System.Text;
 using System.Threading;
 using Acr.UserDialogs;
+using System.Drawing;
 
 namespace BeaconTest.iOS
 {
     public partial class BeaconRangingController : UIViewController
-    {
+    {      
+
 		StudentTimetable studentTimetable;
 		StudentModule studentModule;
 
@@ -32,6 +34,24 @@ namespace BeaconTest.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+			this.NavigationItem.Title = "Beacon Ranging";
+
+			AttendanceCodeTextField.ShouldReturn = delegate
+            {
+				AttendanceCodeTextField.ResignFirstResponder();
+                return true;
+            };
+
+			AttendanceCodeTextField.AddObserver("text", NSKeyValueObservingOptions.New, AttendanceCodeTextField_ValueChanged);
+
+			AddDoneButtonToNumericKeyboard(AttendanceCodeTextField);
+
+			this.NavigationController.NavigationBar.BarTintColor = UIColor.FromRGB(BeaconTest.SharedData.primaryColourRGB[0], BeaconTest.SharedData.primaryColourRGB[1], BeaconTest.SharedData.primaryColourRGB[2]);
+            this.NavigationController.NavigationBar.TintColor = UIColor.White;
+            this.NavigationController.NavigationBar.TitleTextAttributes = new UIStringAttributes()
+            {
+                ForegroundColor = UIColor.White
+            };
 
             if (CommonClass.checkBluetooth == true)
             {
@@ -57,7 +77,7 @@ namespace BeaconTest.iOS
                 var newController = (UIViewController)Storyboard.InstantiateViewController("StudentBluetoothSwitchOffController");
 
                 //this.NavigationController.PopViewController(true);
-                this.NavigationController.PushViewController(newController, true);
+				this.PresentViewController(newController, true, null);
 
             }
             /*StudentSubmitButton.Layer.CornerRadius = BeaconTest.SharedData.buttonCornerRadius;
@@ -98,6 +118,15 @@ namespace BeaconTest.iOS
             }*/
             
         }
+
+		private void AttendanceCodeTextField_ValueChanged(Foundation.NSObservedChange a)
+        {
+			if(AttendanceCodeTextField.Text.Length == 6)
+			{
+				StudentSubmitButton.Hidden = false;
+			}
+        }
+
 		private void GetModule()
         {
             studentTimetable = DataAccess.GetStudentTimetable(SharedData.testSPStudentID).Result;
@@ -196,7 +225,8 @@ namespace BeaconTest.iOS
 
         public override void ViewDidAppear(bool animated)
 		{
-            base.ViewDidAppear(animated);         
+            base.ViewDidAppear(animated);
+
 		}
 
 		public override void DidReceiveMemoryWarning()
@@ -205,7 +235,22 @@ namespace BeaconTest.iOS
             // Release any cached data, images, etc that aren't in use.
         }
 
+		protected void AddDoneButtonToNumericKeyboard(UITextField textField)
+        {
 
+            UIToolbar toolbar = new UIToolbar(new RectangleF(0.0f, 0.0f, 50.0f, 44.0f));
+            var doneButton = new UIBarButtonItem(UIBarButtonSystemItem.Done, delegate
+            {
+                textField.ResignFirstResponder();
+            });
+
+            toolbar.Items = new UIBarButtonItem[] {
+            new UIBarButtonItem (UIBarButtonSystemItem.FlexibleSpace),
+            doneButton
+        };
+
+            textField.InputAccessoryView = toolbar;
+        }
     }
 }
 

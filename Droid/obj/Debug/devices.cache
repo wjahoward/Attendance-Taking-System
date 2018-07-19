@@ -2,18 +2,6 @@
 <Devices>
   <Device id="emulator-5554">
     <ResultingAbi>x86</ResultingAbi>
-    <SdkVersion>24</SdkVersion>
-  </Device>
-  <Device id="710KPZK0445885">
-    <ResultingAbi>armeabi-v7a</ResultingAbi>
-    <SdkVersion>27</SdkVersion>
-  </Device>
-  <Device id="QFJ9X18417G03067">
-    <ResultingAbi>armeabi-v7a</ResultingAbi>
-    <SdkVersion>26</SdkVersion>
-  </Device>
-  <Device id="94609737">
-    <ResultingAbi>armeabi-v7a</ResultingAbi>
-    <SdkVersion>23</SdkVersion>
+    <SdkVersion>25</SdkVersion>
   </Device>
 </Devices>

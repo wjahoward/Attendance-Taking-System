@@ -17,9 +17,12 @@ namespace BeaconTest.iOS
 
             RetryButton.TouchUpInside += (object sender, EventArgs e) => {
 
+				var bluetoothManager = new CBCentralManager(new CbCentralDelegate(), CoreFoundation.DispatchQueue.DefaultGlobalQueue,
+                                                       new CBCentralInitOptions { ShowPowerAlert = true });
+
                 if (CommonClass.checkBluetooth == true)
                 {
-                    var viewController = this.Storyboard.InstantiateViewController("BeaconRangingController");
+                    var viewController = this.Storyboard.InstantiateViewController("StudentNavigationController");
 
                     if (viewController != null)
                     {
@@ -35,10 +38,25 @@ namespace BeaconTest.iOS
             base.ViewDidAppear(animated);
         }
 
-        public override void DidReceiveMemoryWarning()
+		public override void DidReceiveMemoryWarning()
+		{
+			base.DidReceiveMemoryWarning();
+			// Release any cached data, images, etc that aren't in use.
+		}
+
+		public class CbCentralDelegate : CBCentralManagerDelegate
         {
-            base.DidReceiveMemoryWarning();
-            // Release any cached data, images, etc that aren't in use.
+            public override void UpdatedState(CBCentralManager central)
+            {
+                if (central.State == CBCentralManagerState.PoweredOn)
+                {
+                    CommonClass.checkBluetooth = true;
+                }
+                else
+                {
+                    CommonClass.checkBluetooth = false;
+                }
+            }
         }
     }
 }

@@ -20,8 +20,8 @@ namespace BeaconTest.iOS
 
         public void Login()
 		{
-            username = "p1234567"; // rmb delete this later
-            password = "R@ndom123"; // rmb delete this later
+            //username = "p1234567"; // rmb delete this later
+            //password = "R@ndom123"; // rmb delete this later
 			InvokeOnMainThread(() =>
 			{
 				if ((username.Equals("s12345") && password.Equals("Te@cher123")) || (username.Equals("p1234567") && password.Equals("R@ndom123")))
@@ -40,7 +40,7 @@ namespace BeaconTest.iOS
                     }
                     else
                     {
-                        var viewController = this.Storyboard.InstantiateViewController("StudentSubmitController");
+                        var viewController = this.Storyboard.InstantiateViewController("StudentNavigationController");
 
                         if (viewController != null)
                         {
@@ -67,17 +67,31 @@ namespace BeaconTest.iOS
         {
 			base.ViewDidLoad();      
 
-			LoginButton.Layer.CornerRadius = BeaconTest.SharedData.buttonCornerRadius;
+			UsernameTextField.ShouldReturn = delegate
+            {
+                UsernameTextField.ResignFirstResponder();
+                return true;
+            };
+
+            PasswordField.ShouldReturn = delegate
+            {
+                PasswordField.ResignFirstResponder();
+                return true;
+
+            };
+
+			//LoginButton.Layer.CornerRadius = BeaconTest.SharedData.buttonCornerRadius;
 
 			LoginButton.TouchUpInside += (object sender, EventArgs e) => {
 
 				if(CheckInternetStatus())
 				{
 					username = UsernameTextField.Text;
-                    password = PasswordField.Text;
+                    password = PasswordField.Text;               
 
 					UserDialogs.Instance.ShowLoading("Logging in...");
                     ThreadPool.QueueUserWorkItem(o => Login()); 
+
 				}
 
             };

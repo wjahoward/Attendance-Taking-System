@@ -133,7 +133,11 @@ namespace BeaconTest.iOS
 
                 TimeSpan maxTime = moduleStartTime + TimeSpan.Parse("00:15:00");
 
-                if (currentTime >= moduleStartTime && currentTime <= maxTime) {
+				var beaconTransmitController = UIStoryboard.FromName("Main", null).InstantiateViewController("BeaconTransmitController");
+                navigationController.PushViewController(beaconTransmitController, true);
+                CommonClass.moduleRowNumber = indexPath.Row;
+
+                /*if (currentTime >= moduleStartTime && currentTime <= maxTime) {
                     if (CommonClass.checkBluetooth == true) { // rmb change this to true when run on actual iphone
                         var beaconTransmitController = UIStoryboard.FromName("Main", null).InstantiateViewController("BeaconTransmitController");
                         navigationController.PushViewController(beaconTransmitController, true);
@@ -147,7 +151,7 @@ namespace BeaconTest.iOS
                 else {
                     var errorGeneratingAttendanceController = UIStoryboard.FromName("Main", null).InstantiateViewController("ErrorGeneratingAttendanceController");
                     navigationController.PushViewController(errorGeneratingAttendanceController, true);
-                }
+                }*/
 			}
 		}
     }

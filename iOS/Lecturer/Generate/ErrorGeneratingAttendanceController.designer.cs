@@ -18,11 +18,20 @@ namespace BeaconTest.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton BackButton { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel textLabel { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (BackButton != null) {
                 BackButton.Dispose ();
                 BackButton = null;
+            }
+
+            if (textLabel != null) {
+                textLabel.Dispose ();
+                textLabel = null;
             }
         }
     }

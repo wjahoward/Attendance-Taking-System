@@ -14,6 +14,9 @@ namespace BeaconTest.iOS
         {
             base.ViewDidLoad();
 
+			textLabel.LineBreakMode = UILineBreakMode.WordWrap;
+			textLabel.Lines = 0;
+
             BackButton.TouchUpInside += (object sender, EventArgs e) => {
 
                     this.NavigationController.PopViewController(true);
