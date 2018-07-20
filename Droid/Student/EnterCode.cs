@@ -96,8 +96,8 @@ namespace BeaconTest.Droid
 
                 SetupBeaconRanger();
                 beaconManager = BeaconManager.GetInstanceForApplication(this);
-                BeaconTransmitter bTransmitter = new BeaconTransmitter(); // check the power later
-                bTransmitter.Transmit();
+                //BeaconTransmitter bTransmitter = new BeaconTransmitter(); // check the power later
+                //bTransmitter.Transmit();
             }
             else
             {
