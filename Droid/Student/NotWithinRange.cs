@@ -26,7 +26,7 @@ namespace BeaconTest.Droid.Student
 
         Region tagRegion, emptyRegion;
 
-        BeaconManager beaconManager;
+        private BeaconManager beaconManager = null;
 
         Button retryButton;
 
@@ -44,7 +44,6 @@ namespace BeaconTest.Droid.Student
             uuid = DataAccess.StudentGetBeaconKey();
             retryButton = FindViewById<Button>(Resource.Id.retryButton);
             retryButton.Visibility = ViewStates.Invisible;
-            retryButton.Click += RetryButtonOnClick;
 
             ThreadPool.QueueUserWorkItem(o => SetupBeaconRanger());
             VerifyBle();
@@ -67,19 +66,20 @@ namespace BeaconTest.Droid.Student
         {
             await Task.Run(() =>
             {
-                RunOnUiThread(() =>
+                if (e.Beacons.Count > 0)
                 {
-                    if(e.Beacons.Count > 0)
+                    foreach (Beacon b in e.Beacons)
                     {
-                        foreach(Beacon b in e.Beacons)
+                        if (b.Id1.ToString().Equals(DataAccess.LecturerGetBeaconKey().ToLower()))
                         {
-                            if (b.Id1.ToString().Equals(DataAccess.LecturerGetBeaconKey().ToLower()))
+                            RunOnUiThread(() =>
                             {
                                 retryButton.Visibility = ViewStates.Visible;
-                            }
+                                retryButton.Click += RetryButtonOnClick;
+                            });
                         }
                     }
-                });
+                }
             });
         }
 
@@ -106,12 +106,15 @@ namespace BeaconTest.Droid.Student
             Finish();
         }
 
-        private void RetryButtonOnClick(object sender, EventArgs e)
+        async void RetryButtonOnClick(object sender, EventArgs e)
         {
-            RunOnUiThread(() =>
+            await Task.Run(() =>
             {
-                StartActivity(typeof(EnterCode));
-            });
+                RunOnUiThread(() =>
+                {
+                    StartActivity(typeof(EnterCode));
+                });
+            }); 
         }
 
         private void SetupBeaconRanger()
@@ -154,7 +157,7 @@ namespace BeaconTest.Droid.Student
             beaconManager.StartRangingBeaconsInRegion(tagRegion);
             beaconManager.StartRangingBeaconsInRegion(emptyRegion);
 
-            beaconManager.SetBackgroundMode(true);
+            //beaconManager.SetBackgroundMode(true);
         }
     }
 }

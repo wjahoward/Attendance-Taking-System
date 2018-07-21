@@ -34,7 +34,7 @@ namespace BeaconTest.Droid
 
         Region tagRegion, emptyRegion;
 
-        BeaconManager beaconManager;
+        private BeaconManager beaconManager = null;
 
         StudentTimetable studentTimetable;
         StudentModule studentModule;
@@ -70,6 +70,7 @@ namespace BeaconTest.Droid
             };
 
             submitBtn = FindViewById<Button>(Resource.Id.submitBtn);
+            submitBtn.Click += SubmitBtnOnClick;
 
             UserDialogs.Init(this);
 
@@ -95,7 +96,7 @@ namespace BeaconTest.Droid
                 });
 
                 SetupBeaconRanger();
-                beaconManager = BeaconManager.GetInstanceForApplication(this);
+                //beaconManager = BeaconManager.GetInstanceForApplication(this);
                 //BeaconTransmitter bTransmitter = new BeaconTransmitter(); // check the power later
                 //bTransmitter.Transmit();
             }
@@ -150,7 +151,6 @@ namespace BeaconTest.Droid
             return true;
         }
 
-        //ranging prob for s9, sometimes shows not in range even though transmitter is transmitting
         async void RangingBeaconsInRegion(object sender, RangeEventArgs e)
         {
             //var allBeacons = new List<Beacon>();
@@ -159,75 +159,67 @@ namespace BeaconTest.Droid
             //use await if need to wait for specific work before updating ui elements
             await Task.Run(() =>
             {
-                RunOnUiThread(() =>
+                if (e.Beacons.Count > 0)
                 {
-                    if (e.Beacons.Count > 0)
+                    /*continue beacon operations in the background, so that the view will continue 
+                     displaying to the user*/
+                    beaconManager.SetBackgroundMode(true);
+                    string id = e.Beacons.First().Id1.ToString();
+                    foreach (Beacon beacon in e.Beacons)
                     {
-                        /*continue beacon operations in the background, so that the view will continue 
-                         displaying to the user*/
-                        //beaconManager.SetBackgroundMode(false);
-                        string id = e.Beacons.First().Id1.ToString();
-                        foreach (Beacon beacon in e.Beacons)
+                        if (beacon.Id1.ToString().Equals(DataAccess.LecturerGetBeaconKey().ToLower()))
                         {
-                            if (beacon.Id1.ToString().Equals(DataAccess.LecturerGetBeaconKey().ToLower()))
+                            string atsCode = beacon.Id2.ToString() + beacon.Id3.ToString();
+                            Console.WriteLine(atsCode);
+
+                            RunOnUiThread(() =>
                             {
-                                string atsCode = beacon.Id2.ToString() + beacon.Id3.ToString();
-                                Console.WriteLine(atsCode);
                                 submitBtn.Visibility = ViewStates.Visible;
                                 studentAttendanceImageView.SetImageDrawable(GetDrawable(Resource.Drawable.Asset2));
                                 attendanceCodeEditText.Visibility = ViewStates.Visible;
                                 attendanceCodeEditText.Text = atsCode;
                                 attendanceCodeEditText.Enabled = false;
-                            }
+                            });
                         }
+                    } 
+                }
+                else
+                {
+                    //stop all beacon operation in the background
+                    //beaconManager.SetBackgroundMode(false);
 
-                        submitBtn.Click += delegate
-                        {
-                            //AlertDialog.Builder ad = new AlertDialog.Builder(this);
-                            //ad.SetTitle("Success");
-                            //ad.SetMessage("You have successfully submitted your attendance!");
-                            //ad.SetPositiveButton("OK", delegate
-                            //{
-                            //    ad.Dispose();
-                            //});
-                            //ad.Show();
-                            //SubmitATS();
-                        };
-                    }
-                    else
-                    {
-                        //SetupBeaconRanger();
-                        ////beaconManager = BeaconManager.GetInstanceForApplication(this);
+                    GoToNotWithinRange();
+                }
+            });
+        }
 
-                        ////for not within range
-                        //SetContentView(Resource.Layout.NotWithinRange);
-                        //Button retryButton = FindViewById<Button>(Resource.Id.retryButton);
-                        //retryButton.Visibility = ViewStates.Invisible;
-
-                        //if(e.Beacons.Count > 0)
-                        //{
-                        //    retryButton.Visibility = ViewStates.Visible;
-                        //    retryButton.Click += RetryButtonOnClick;
-                        //}
-
-                        //stop all beacon operation in the background
-                        //beaconManager.SetBackgroundMode(false);
-
-                        //beaconManager.StopMonitoringBeaconsInRegion(tagRegion);
-                        //beaconManager.StopMonitoringBeaconsInRegion(emptyRegion);
-                        //beaconManager.StopRangingBeaconsInRegion(tagRegion);
-                        //beaconManager.StopRangingBeaconsInRegion(emptyRegion);
-                        StartActivity(typeof(NotWithinRange));
-                    }
+        async void GoToNotWithinRange()
+        {
+            await Task.Run(() =>
+            {
+                RunOnUiThread(() =>
+                {
+                    StartActivity(typeof(NotWithinRange));
                 });
             });
         }
 
-        private void RetryButtonOnClick(object sender, EventArgs e)
+        async void SubmitBtnOnClick(object sender, EventArgs e)
         {
-            //reload entercode activity
-            Finish();
-            StartActivity(typeof(EnterCode));
+            await Task.Run(() =>
+            {
+                RunOnUiThread(() =>
+                {
+                    AlertDialog.Builder ad = new AlertDialog.Builder(this);
+                    ad.SetTitle("Success");
+                    ad.SetMessage("You have successfully submitted your attendance!");
+                    ad.SetPositiveButton("OK", delegate
+                    {
+                        ad.Dispose();
+                    });
+                    ad.Show();
+                });
+            });
         }
 
         private void SubmitATS()
@@ -283,7 +275,7 @@ namespace BeaconTest.Droid
             beaconManager.StartRangingBeaconsInRegion(tagRegion);
             beaconManager.StartRangingBeaconsInRegion(emptyRegion);
 
-            beaconManager.SetBackgroundMode(true);
+            //beaconManager.SetBackgroundMode(true);
 
             //Console.WriteLine("Debug:" + Identifier.Parse(uuid));
         }
