@@ -12,6 +12,7 @@ using Android.Content.PM;
 using Android.Net.Wifi;
 using Android.OS;
 using Android.Runtime;
+using Android.Text;
 using Android.Views;
 using Android.Widget;
 using BeaconTest.Droid.Student;
@@ -41,7 +42,7 @@ namespace BeaconTest.Droid
         ImageView studentAttendanceImageView;
         EditText attendanceCodeEditText;
 
-        TextView moduleNameTextView, timeTextView, locationTextView, enterAttendanceCodeTextView;
+        TextView moduleNameTextView, timeTextView, locationTextView, enterAttendanceCodeTextView, findingBeaconTextView;
         Button submitBtn;
 
         public EnterCode()
@@ -63,11 +64,9 @@ namespace BeaconTest.Droid
             studentAttendanceImageView = FindViewById<ImageView>(Resource.Id.studentAttendanceImageView);
             attendanceCodeEditText = FindViewById<EditText>(Resource.Id.attendanceCodeEditText);
             enterAttendanceCodeTextView = FindViewById<TextView>(Resource.Id.enterAttendanceCodeTextView);
+            findingBeaconTextView = FindViewById<TextView>(Resource.Id.findingBeaconTextView);
 
-            enterAttendanceCodeTextView.Click += delegate
-            {
-                attendanceCodeEditText.Visibility = ViewStates.Visible;
-            };
+            enterAttendanceCodeTextView.Click += EnterAttendanceCodeTextViewOnClick;
 
             submitBtn = FindViewById<Button>(Resource.Id.submitBtn);
             submitBtn.Click += SubmitBtnOnClick;
@@ -78,8 +77,11 @@ namespace BeaconTest.Droid
 
             ThreadPool.QueueUserWorkItem(o => GetModule());
 
+            findingBeaconTextView.Text = "Searching for phone...";
+
             VerifyBle();
         }
+
 
         private void GetModule()
         {
@@ -169,7 +171,7 @@ namespace BeaconTest.Droid
                     {
                         if (beacon.Id1.ToString().Equals(DataAccess.LecturerGetBeaconKey().ToLower()))
                         {
-                            string atsCode = beacon.Id2.ToString() + beacon.Id3.ToString();
+                            string atsCode = beacon.Id2.ToString().Substring(0,1) + "XXXX" + beacon.Id3.ToString().Substring(0,1);
                             Console.WriteLine(atsCode);
 
                             RunOnUiThread(() =>
@@ -179,6 +181,7 @@ namespace BeaconTest.Droid
                                 attendanceCodeEditText.Visibility = ViewStates.Visible;
                                 attendanceCodeEditText.Text = atsCode;
                                 attendanceCodeEditText.Enabled = false;
+                                findingBeaconTextView.Text = "Detected phone";
                             });
                         }
                     } 
@@ -218,6 +221,46 @@ namespace BeaconTest.Droid
                         ad.Dispose();
                     });
                     ad.Show();
+                });
+            });
+        }
+
+        async void EnterAttendanceCodeTextViewOnClick(object sender, EventArgs e)
+        {
+            await Task.Run(() =>
+            {
+                beaconManager.StopMonitoringBeaconsInRegion(tagRegion);
+                beaconManager.StopMonitoringBeaconsInRegion(emptyRegion);
+                beaconManager.StopRangingBeaconsInRegion(tagRegion);
+                beaconManager.StopRangingBeaconsInRegion(emptyRegion);
+
+                RunOnUiThread(() =>
+                {
+                    attendanceCodeEditText.Visibility = ViewStates.Visible;
+                    //attendanceCodeEditText.RequestFocus();
+                    findingBeaconTextView.Visibility = ViewStates.Invisible;
+                    submitBtn.Visibility = ViewStates.Invisible;
+                    //clear the text
+                    attendanceCodeEditText.Text = "";
+                    attendanceCodeEditText.TextChanged += AttendanceCodeEditTextChanged;
+                });
+            });
+        }
+
+        async void AttendanceCodeEditTextChanged(object sender, TextChangedEventArgs e)
+        {
+            await Task.Run(() =>
+            {
+                RunOnUiThread(() =>
+                {
+                    if (attendanceCodeEditText.Text.Length == 6)
+                    {
+                        submitBtn.Visibility = ViewStates.Visible;
+                    }
+                    else
+                    {
+                        submitBtn.Visibility = ViewStates.Invisible;
+                    }
                 });
             });
         }

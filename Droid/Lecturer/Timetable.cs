@@ -98,7 +98,7 @@ namespace BeaconTest.Droid
                     CommonClass.moduleRowNumber = dataSource[e.Position].Id;
 
                     //string currentTimeString = DateTime.Now.ToShortTimeString();
-                    string currentTimeString = "09:00"; // change to actual real time before testing!!
+                    string currentTimeString = "08:00"; // change to actual real time before testing!!
                     TimeSpan currentTime = TimeSpan.Parse(currentTimeString);
                     //Console.WriteLine("Current time: {0}", currentTime);
 

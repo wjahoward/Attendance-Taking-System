@@ -24,6 +24,8 @@ namespace BeaconTest.Droid.Student
 
         string uuid = "2F234454-CF6D-4A0F-ADF2-F4911BA9FFA5";
 
+        int count = 0;
+
         Region tagRegion, emptyRegion;
 
         private BeaconManager beaconManager = null;
@@ -44,6 +46,7 @@ namespace BeaconTest.Droid.Student
             uuid = DataAccess.StudentGetBeaconKey();
             retryButton = FindViewById<Button>(Resource.Id.retryButton);
             retryButton.Visibility = ViewStates.Invisible;
+            retryButton.Click += RetryButtonOnClick;
 
             ThreadPool.QueueUserWorkItem(o => SetupBeaconRanger());
             VerifyBle();
@@ -75,7 +78,6 @@ namespace BeaconTest.Droid.Student
                             RunOnUiThread(() =>
                             {
                                 retryButton.Visibility = ViewStates.Visible;
-                                retryButton.Click += RetryButtonOnClick;
                             });
                         }
                     }
@@ -110,10 +112,12 @@ namespace BeaconTest.Droid.Student
         {
             await Task.Run(() =>
             {
+                //count++;
                 RunOnUiThread(() =>
                 {
                     StartActivity(typeof(EnterCode));
                 });
+                //Console.WriteLine("Retry button was clicked: " + count);
             }); 
         }
 
