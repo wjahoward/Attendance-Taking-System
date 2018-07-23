@@ -24,8 +24,9 @@
         android:text="Retry"
         android:layout_width="70dp"
         android:layout_height="30dp"
-        android:id="@+id/button1"
+        android:id="@+id/retryBluetoothButton"
         android:layout_gravity="center"
         android:layout_marginTop="70dp"
-        android:background="#ff0000" />
+        android:background="#ff0000"
+        android:textColor="#ffffff" />
 </LinearLayout>

@@ -1671,7 +1671,6 @@ F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bi
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\Xamarin.Android.Support.Vector.Drawable.dll
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\Newtonsoft.Json.xml
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\Plugin.CurrentActivity.xml
-F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\BeaconTest.Droid.csprojAssemblyReference.cache
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\BeaconTest.Droid.csproj.CoreCompileInputs.cache
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\BeaconTest.Droid.csproj.CopyComplete
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\BeaconTest.Droid.dll
@@ -1742,6 +1741,9 @@ F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bi
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\Plugin.Share.Abstractions.xml
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\packages\Xam.Plugin.Connectivity.3.1.1\lib\MonoAndroid10\Plugin.Connectivity.dll
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\packages\Plugin.Share.7.1.1\lib\MonoAndroid10\Plugin.Share.dll
+F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\Plugin.Connectivity.dll.mdb
+F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\Plugin.Share.dll.mdb
+F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\BeaconTest.Droid.csprojAssemblyReference.cache
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\Mono.Android.pdb
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\mscorlib.pdb
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\System.Core.pdb
@@ -1780,11 +1782,13 @@ F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\ob
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\linksrc\System.Web.Services.pdb
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\linksrc\Mono.Security.pdb
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\linksrc\System.ServiceModel.Internals.pdb
-F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\Plugin.Connectivity.dll.mdb
-F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\Plugin.Share.dll.mdb
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\linksrc\BeaconTest.Droid.dll.mdb
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\linksrc\Plugin.Connectivity.dll.mdb
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\linksrc\Plugin.Share.dll.mdb
+F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\Plugin.Connectivity.Abstractions.dll
+F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\Plugin.Connectivity.dll
+F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\Plugin.Share.Abstractions.dll
+F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\Plugin.Share.dll
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\BeaconTest.Droid.dll.mdb
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\android\assets\BeaconTest.Droid.dll.mdb
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\android\assets\Plugin.Connectivity.dll.mdb
@@ -1809,10 +1813,6 @@ F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\ob
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\android\assets\System.Web.Services.pdb
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\android\assets\System.Xml.Linq.pdb
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\android\assets\System.Xml.pdb
-F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\Plugin.Connectivity.Abstractions.dll
-F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\Plugin.Connectivity.dll
-F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\Plugin.Share.Abstractions.dll
-F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\Plugin.Share.dll
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\BeaconTest.Droid.dll
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\linksrc\BeaconTest.Droid.dll.mdb
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\linksrc\Plugin.Connectivity.dll.mdb

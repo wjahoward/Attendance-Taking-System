@@ -73,7 +73,7 @@ namespace BeaconTest.Droid.Lecturer
             ThreadPool.QueueUserWorkItem(o => GetModule());
         }
 
-        private async void overrideATSClick(object sender, EventArgs e)
+        private void overrideATSClick(object sender, EventArgs e)
         {
             attendanceCodeEditText.Visibility = ViewStates.Visible;
             attendanceCodeEditText.RequestFocus();

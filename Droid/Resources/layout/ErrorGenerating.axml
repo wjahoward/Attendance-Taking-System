@@ -29,5 +29,6 @@
         android:id="@+id/backButton"
         android:layout_gravity="center"
         android:layout_marginTop="70dp"
-        android:background="#ff0000" />
+        android:background="#ff0000"
+        android:textColor="#ffffff" />
 </LinearLayout>
