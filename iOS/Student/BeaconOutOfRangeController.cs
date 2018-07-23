@@ -6,5 +6,11 @@ namespace BeaconTest.iOS
 {
     public partial class BeaconOutOfRangeController : UIViewController
     {
+		public BeaconOutOfRangeController(IntPtr handle) : base(handle)
+        {
+
+        }
+
+
     }
 }

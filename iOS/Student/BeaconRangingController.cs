@@ -131,7 +131,7 @@ namespace BeaconTest.iOS
       
 		private void GetModule()
         {
-            studentTimetable = DataAccess.GetStudentTimetable(SharedData.testSPStudentID).Result;
+            studentTimetable = DataAccess.GetStudentTimetable().Result;
             studentModule = studentTimetable.GetCurrentModule();
 			if(studentModule.abbr != "")
 			{
@@ -162,10 +162,20 @@ namespace BeaconTest.iOS
 		{
 			locationManager = new CLLocationManager();
             locationManager.AuthorizationChanged += LocationManager_AuthorizationChanged;
+			locationManager.RangingBeaconsDidFailForRegion += rangingBeaconsDidFailForRegion;
             locationManager.RegionEntered += LocationManager_RegionEntered;
             locationManager.RegionLeft += LocationManager_RegionLeft;
             locationManager.DidRangeBeacons += LocationManager_DidRangeBeacons;
             locationManager.RequestAlwaysAuthorization();
+		}
+
+		private void rangingBeaconsDidFailForRegion(object sender, CLRegionBeaconsFailedEventArgs e)
+		{
+			InvokeOnMainThread(() =>
+			{
+				
+			} );
+			
 		}
 
 		private void LocationManager_RegionLeft(object sender, CLRegionEventArgs e)
@@ -183,27 +193,43 @@ namespace BeaconTest.iOS
         }
 
         private async void LocationManager_DidRangeBeacons(object sender, CLRegionBeaconsRangedEventArgs e)
-        {
-            await Task.Delay(0);
-            if (e.Beacons.Length > 0)
-            {
-                Debug.WriteLine("Found Beacon");
+		{
+			await Task.Run(() =>
+			{
+				if (e.Beacons.Length > 0)
+				{
+					InvokeOnMainThread(() =>
+					{
+						Debug.WriteLine("Found Beacon");
 
-                Debug.WriteLine(e.Beacons[0].ProximityUuid);
-				atsCode = e.Beacons[0].Major.ToString() + e.Beacons[0].Minor.ToString();
-				Debug.WriteLine(atsCode);
+						Debug.WriteLine(e.Beacons[0].ProximityUuid);
+						atsCode = e.Beacons[0].Major.ToString() + e.Beacons[0].Minor.ToString();
+						Debug.WriteLine(atsCode);
 
-                FoundBeacon.Text = "Found Beacon";
-				StudentSubmitButton.Hidden = false;
-				StudentAttendanceIcon.Image = UIImage.FromBundle("Location Icon.png");
-				EnterAttendanceCodeButton.Hidden = true;
-				AttendanceCodeTextField.Hidden = false;
-				AttendanceCodeTextField.Text = atsCode;
-				AttendanceCodeTextField.UserInteractionEnabled = false;            
-            }
-            else {
-                FoundBeacon.Text = "Searching for beacon...";
-            }
+						FoundBeacon.Text = "Found Beacon";
+						StudentSubmitButton.Hidden = false;
+						StudentAttendanceIcon.Image = UIImage.FromBundle("Location Icon.png");
+						EnterAttendanceCodeButton.Hidden = true;
+						AttendanceCodeTextField.Hidden = false;
+						AttendanceCodeTextField.Text = atsCode;
+						AttendanceCodeTextField.UserInteractionEnabled = false;
+					});
+
+				}
+				else
+				{
+					InvokeOnMainThread(() =>
+					{
+						var viewController = this.Storyboard.InstantiateViewController("BeaconOutOfRangeController");
+
+						if (viewController != null)
+						{
+							this.NavigationController.PresentViewController(viewController, true, null);
+						}
+					});           
+				}
+			});
+            
         }
 
         private void LocationManager_AuthorizationChanged(object sender, CLAuthorizationChangedEventArgs e)
@@ -212,7 +238,18 @@ namespace BeaconTest.iOS
             if(e.Status == CLAuthorizationStatus.AuthorizedAlways){            
 				beaconRegion = new CLBeaconRegion(beaconUUID, SharedData.beaconId);
                 locationManager.StartMonitoring(beaconRegion);
-                locationManager.StartRangingBeacons(beaconRegion);
+                locationManager.StartRangingBeacons(beaconRegion);            
+				/*Task.Run(async () =>
+                {
+                    locationManager.StartRangingBeacons(beaconRegion); 
+                    // do something with time...
+                });
+				var viewController = this.Storyboard.InstantiateViewController("BeaconOutOfRangeController");
+
+                if (viewController != null)
+                {
+                    this.PresentViewController(viewController, true, null);
+                }*/
             }
 			else
 			{

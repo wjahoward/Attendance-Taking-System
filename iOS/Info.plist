@@ -7,7 +7,7 @@
 	<key>CFBundleName</key>
 	<string>BeaconTest</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.xamarin.BeaconTestiOS</string>
+	<string>com.xamarin.sp.BeaconTestiOS</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>

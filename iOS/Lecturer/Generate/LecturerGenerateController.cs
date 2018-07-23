@@ -16,7 +16,7 @@ namespace BeaconTest.iOS
     {
         UITableView tableView;
 		List<LecturerModuleTableViewItem> attendanceTableViewItems = new List<LecturerModuleTableViewItem>();
-		StudentTimetable studentTimetable;
+		LecturerTimetable lecturerTimetable;
 
         public LecturerGenerateController(IntPtr handle) : base(handle)
         {
@@ -46,8 +46,8 @@ namespace BeaconTest.iOS
 
 		private void GetTimetable()
         {
-            studentTimetable = DataAccess.GetStudentTimetable(SharedData.testSPStudentID).Result;
-			if(studentTimetable != null)
+			lecturerTimetable = DataAccess.GetLecturerTimetable().Result;
+			if(lecturerTimetable != null)
 			{
 				InvokeOnMainThread(() =>
 				{
@@ -59,7 +59,7 @@ namespace BeaconTest.iOS
 
 		private void SetTableData()
 		{
-			foreach(StudentModule module in studentTimetable.modules)
+			foreach(LecturerModule module in lecturerTimetable.modules)
 			{
 				if(!module.abbr.Equals(""))
 				{

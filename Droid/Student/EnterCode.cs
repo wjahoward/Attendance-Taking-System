@@ -85,7 +85,7 @@ namespace BeaconTest.Droid
 
         private void GetModule()
         {
-            studentTimetable = DataAccess.GetStudentTimetable(SharedData.testSPStudentID).Result;
+            studentTimetable = DataAccess.GetStudentTimetable().Result;
             studentModule = studentTimetable.GetCurrentModule();
 
             if (studentModule != null)

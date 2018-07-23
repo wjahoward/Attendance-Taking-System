@@ -64,7 +64,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: phobussng@gmail.com (3TX998924T)</CodesignKey>
+    <CodesignKey>iPhone Developer: Howard Wang (2G48N72G27)</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -76,7 +76,7 @@
     <MtouchArch>ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>iOS Team Provisioning Profile: com.xamarin.BeaconTestiOS</CodesignProvision>
+    <CodesignProvision>iOS Team Provisioning Profile: *</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Acr.UserDialogs, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -196,10 +196,6 @@
       <DependentUpon>LecturerAttendanceController.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomAlert.cs" />
-    <Compile Include="BeaconOutOfRangeController.cs" />
-    <Compile Include="BeaconOutOfRangeController.designer.cs">
-      <DependentUpon>BeaconOutOfRangeController.cs</DependentUpon>
-    </Compile>
     <Compile Include="CommonClass.cs" />
     <Compile Include="Student\StudentBluetoothSwitchOffController.cs" />
     <Compile Include="Student\StudentBluetoothSwitchOffController.designer.cs">
@@ -212,6 +208,10 @@
     <Compile Include="Lecturer\Generate\LecturerBluetoothSwitchOffController.cs" />
     <Compile Include="Lecturer\Generate\LecturerBluetoothSwitchOffController.designer.cs">
       <DependentUpon>LecturerBluetoothSwitchOffController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\BeaconOutOfRangeController.cs" />
+    <Compile Include="Student\BeaconOutOfRangeController.designer.cs">
+      <DependentUpon>BeaconOutOfRangeController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

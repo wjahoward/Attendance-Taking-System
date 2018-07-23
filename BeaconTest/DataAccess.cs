@@ -177,9 +177,9 @@ namespace BeaconTest
 			}
 		}*/
 
-        public static async Task<StudentTimetable> GetStudentTimetable(string studentID)
+        public static async Task<StudentTimetable> GetStudentTimetable()
 		{
-			string urlParameters = "id=" + studentID + "&DDMMYY=" + "250618";//DateTime.UtcNow.ToString("ddMMyy");
+			string urlParameters = "id=1626133" + "&DDMMYY=" + "250618";//DateTime.UtcNow.ToString("ddMMyy");
 			var url = StudentTimetableURL + urlParameters;
 			client.BaseAddress = new Uri(url);
 
@@ -224,7 +224,7 @@ namespace BeaconTest
 
         public static string StudentGetBeaconKey()
 		{
-			studentTimetable = GetStudentTimetable(SharedData.testSPStudentID).Result;
+			studentTimetable = GetStudentTimetable().Result;
 			currentModule = studentTimetable.GetCurrentModule();
 
             if (currentModule != null && !currentModule.abbr.Equals(""))
@@ -250,7 +250,7 @@ namespace BeaconTest
 
         public static string LecturerGetBeaconKey()
         {
-            studentTimetable = GetStudentTimetable(SharedData.testSPStudentID).Result;
+            studentTimetable = GetStudentTimetable().Result;
             currentModule = studentTimetable.GetCurrentModule();
 
             if (currentModule != null && !currentModule.abbr.Equals(""))
