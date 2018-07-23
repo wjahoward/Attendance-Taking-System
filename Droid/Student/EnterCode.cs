@@ -165,13 +165,14 @@ namespace BeaconTest.Droid
                 {
                     /*continue beacon operations in the background, so that the view will continue 
                      displaying to the user*/
-                    beaconManager.SetBackgroundMode(true);
+                    //beaconManager.SetBackgroundMode(true);
                     string id = e.Beacons.First().Id1.ToString();
                     foreach (Beacon beacon in e.Beacons)
                     {
                         if (beacon.Id1.ToString().Equals(DataAccess.LecturerGetBeaconKey().ToLower()))
                         {
-                            string atsCode = beacon.Id2.ToString().Substring(0,1) + "XXXX" + beacon.Id3.ToString().Substring(0,1);
+                            //string atsCode = beacon.Id2.ToString() + beacon.Id3.ToString();
+                            string atsCode = beacon.Id2.ToString().Substring(0,1) + "****" + beacon.Id3.ToString().Substring(2);
                             Console.WriteLine(atsCode);
 
                             RunOnUiThread(() =>
@@ -318,7 +319,7 @@ namespace BeaconTest.Droid
             beaconManager.StartRangingBeaconsInRegion(tagRegion);
             beaconManager.StartRangingBeaconsInRegion(emptyRegion);
 
-            //beaconManager.SetBackgroundMode(true);
+            beaconManager.SetBackgroundMode(true);
 
             //Console.WriteLine("Debug:" + Identifier.Parse(uuid));
         }
