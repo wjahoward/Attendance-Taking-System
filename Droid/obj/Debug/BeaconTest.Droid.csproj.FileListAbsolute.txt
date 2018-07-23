@@ -1491,7 +1491,7 @@ D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\bin\Debug\Plugin.Connectivity.A
 D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\bin\Debug\Plugin.Connectivity.dll
 D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\bin\Debug\Plugin.Share.Abstractions.dll
 D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\bin\Debug\Plugin.Share.dll
-D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\bin\Debug\BeaconTest.Droid.dll
-D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\obj\Debug\linksrc\BeaconTest.Droid.dll.mdb
-D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\obj\Debug\linksrc\Plugin.Connectivity.dll.mdb
-D:\My stuff\School_Years\Y3S1\FYP_Working2\Droid\obj\Debug\linksrc\Plugin.Share.dll.mdb
+F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 11.23am updated version\Droid\obj\Debug\BeaconTest.Droid.csprojAssemblyReference.cache
+F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 11.23am updated version\Droid\obj\Debug\BeaconTest.Droid.csproj.CoreCompileInputs.cache
+F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 11.23am updated version\Droid\obj\Debug\BeaconTest.Droid.dll
+F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 11.23am updated version\Droid\obj\Debug\BeaconTest.Droid.pdb

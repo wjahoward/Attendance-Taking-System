@@ -143,6 +143,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BluetoothConstantCheck.cs" />
     <Compile Include="CommonClass.cs" />
     <Compile Include="CustomAdapter.cs" />
     <Compile Include="Lecturer\BeaconTransmitActivity.cs" />

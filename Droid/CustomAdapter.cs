@@ -52,10 +52,9 @@ namespace BeaconTest.Droid
             moduleVenue.Text = attendanceTableViewItems[position].Venue;
             moduleTime.Text = attendanceTableViewItems[position].Time;
 
-            if (CommonClass.noLessons == true)
+            if (attendanceTableViewItems[position].ModuleName == "No lesson")
             {
                 generateATS.Visibility = ViewStates.Gone;
-               
             }
 
             return view;
