@@ -17,7 +17,5 @@ namespace BeaconTest.Droid
     {
         public static int moduleRowNumber;
         public static int power;
-        public static bool noLessons;
-        public static SwipeRefreshLayout test;
     }
 }

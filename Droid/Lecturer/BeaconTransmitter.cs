@@ -28,7 +28,7 @@ namespace BeaconTest.Droid
         //IList is non-generic collection object that can be individually access by index
         IList<Long> dataFields = new List<Long>();
 
-        public void Transmit()
+        public void Transmit(int power)
         {
             //get the bluetooth service of the application and let Bluetooth manager manage the service
             BluetoothManager bm = (BluetoothManager)Application.Context.
@@ -52,7 +52,7 @@ namespace BeaconTest.Droid
                 .SetId2(atsCode1stHalf)
                 .SetId3(atsCode2ndHalf)
                 .SetManufacturer(0x4C)
-                .SetTxPower(-84)
+                .SetTxPower(power)
                 .Build();
 
             BeaconParser bp = new BeaconParser()

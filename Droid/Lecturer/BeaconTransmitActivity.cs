@@ -126,7 +126,7 @@ namespace BeaconTest.Droid.Lecturer
 
                     beaconManager = BeaconManager.GetInstanceForApplication(this);
                     BeaconTransmitter bTransmitter = new BeaconTransmitter();
-                    bTransmitter.Transmit();
+                    bTransmitter.Transmit(BeaconPower());
                 }
                 else
                 {
