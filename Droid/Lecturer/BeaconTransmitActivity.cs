@@ -10,9 +10,12 @@ using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.Net;
+using Android.Net.Wifi;
 using Android.OS;
 using Android.Runtime;
+using Android.Text;
 using Android.Views;
+using Android.Views.InputMethods;
 using Android.Widget;
 using BeaconTest.Models;
 
@@ -26,12 +29,14 @@ namespace BeaconTest.Droid.Lecturer
 
         TextView moduleNameTextView, timeTextView, locationTextView, attendanceCodeTextView, overrideAttendanceCodeTextView;
         ImageView studentAttendanceImageView;
-        Button lecturerViewAttendanceButton;
+        Button lecturerViewAttendanceButton, overrideATSButton;
         EditText attendanceCodeEditText;
 
         BeaconManager beaconManager;
 
         AlertDialog.Builder builder;
+
+        InputMethodManager manager;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -45,12 +50,19 @@ namespace BeaconTest.Droid.Lecturer
             studentAttendanceImageView = FindViewById<ImageView>(Resource.Id.studentAttendanceImageView);
             lecturerViewAttendanceButton = FindViewById<Button>(Resource.Id.viewAttendanceButton);
 
+            overrideATSButton = FindViewById<Button>(Resource.Id.overrideATSButton);
             overrideAttendanceCodeTextView = FindViewById<TextView>(Resource.Id.overrideAttendanceCodeTextView);
             attendanceCodeEditText = FindViewById<EditText>(Resource.Id.attendanceCodeEditText);
 
             overrideAttendanceCodeTextView.Click += overrideATSClick;
 
             lecturerViewAttendanceButton.Click += buttonClick;
+
+            attendanceCodeEditText.TextChanged += AttendanceCodeEditTextChanged;
+
+            overrideATSButton.Click += overrideATSButtonOnClick;
+
+            manager = (InputMethodManager)GetSystemService(Context.InputMethodService);
 
             BluetoothConstantCheck bluetoothCheck = new BluetoothConstantCheck(this);
 
@@ -63,39 +75,47 @@ namespace BeaconTest.Droid.Lecturer
 
         private async void overrideATSClick(object sender, EventArgs e)
         {
-            var builder = new AlertDialog.Builder(this);
-            string message = "";
+            attendanceCodeEditText.Visibility = ViewStates.Visible;
+            attendanceCodeEditText.RequestFocus();
+            manager.ShowSoftInput(attendanceCodeEditText, ShowFlags.Implicit);
+        }
 
-            if (attendanceCodeEditText.Text == "")
+        private void AttendanceCodeEditTextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (attendanceCodeEditText.Text.Length == 6)
             {
-                message = "Please do not leave the ATS Code blank!";
-            }
-            else if (attendanceCodeEditText.Text.Length != 6)
-            {
-                message = "ATS Code entered is invalid!";
+                overrideATSButton.Visibility = ViewStates.Visible;
             }
             else
             {
-                try
-                {
-                    lecturerModule.atscode = Convert.ToString(attendanceCodeEditText.Text);
-                    await DataAccess.LecturerOverrideATS(lecturerModule);
-                    attendanceCodeTextView.Text = attendanceCodeEditText.Text;
-                    attendanceCodeEditText.SetText("", TextView.BufferType.Normal);
-                    message = "You have successfully override the ATS Code!";
-                }
+                overrideATSButton.Visibility = ViewStates.Invisible;
+            }
+        }
 
-                catch (Exception ex)
-                {
-                    message = "Please turn on Wifi to override ATS Code!";
-                }
+        async void overrideATSButtonOnClick(object sender, EventArgs e)
+        {
+            var builderOverride = new AlertDialog.Builder(this);
+            string message = "";
+            try
+            {
+                lecturerModule.atscode = Convert.ToString(attendanceCodeEditText.Text);
+                await DataAccess.LecturerOverrideATS(lecturerModule);
+                attendanceCodeTextView.Text = attendanceCodeEditText.Text;
+                attendanceCodeEditText.SetText("", TextView.BufferType.Normal);
+                manager.HideSoftInputFromWindow(attendanceCodeEditText.WindowToken, 0);
+                message = "You have successfully override the ATS Code!";
             }
 
-            builder.SetMessage(message);
+            catch (Exception ex)
+            {
+                message = "Please turn on Wifi to override ATS Code!";
+            }
+
+            builderOverride.SetMessage(message);
             EventHandler<DialogClickEventArgs> handler = null;
-            builder.SetPositiveButton(Android.Resource.String.Ok, handler);
-            builder.SetOnDismissListener(this);
-            RunOnUiThread(() => builder.Show());
+            builderOverride.SetPositiveButton(Android.Resource.String.Ok, handler);
+            builderOverride.SetOnDismissListener(this);
+            RunOnUiThread(() => builderOverride.Show());
         }
 
         public override void OnBackPressed()
@@ -124,9 +144,12 @@ namespace BeaconTest.Droid.Lecturer
                     RunOnUiThread(() => attendanceCodeTextView.Text = lecturerModule.atscode);
                     RunOnUiThread(() => UserDialogs.Instance.HideLoading());
 
+                    CommonClass.power = BeaconPower();
+                    CommonClass.atscode = lecturerModule.atscode;
+
                     beaconManager = BeaconManager.GetInstanceForApplication(this);
                     BeaconTransmitter bTransmitter = new BeaconTransmitter();
-                    bTransmitter.Transmit(BeaconPower());
+                    bTransmitter.Transmit(BeaconPower(), lecturerModule.atscode);
                 }
                 else
                 {
@@ -196,22 +219,15 @@ namespace BeaconTest.Droid.Lecturer
         // maybe can edit such a way it connects to SP Wifi
         private bool NetworkRechableOrNot()
         {
-            ConnectivityManager connectivityManager = (ConnectivityManager)this.GetSystemService(Context.ConnectivityService);
-            var activeConnection = connectivityManager.ActiveNetworkInfo;
-            if ((activeConnection != null) && activeConnection.IsConnected)
+            var wifiManager = Application.Context.GetSystemService(Context.WifiService) as WifiManager;
+
+            if (wifiManager != null)
             {
-                // we are connected to a network.
-                if (activeConnection.Type.ToString().ToUpper().Equals("WIFI"))
-                {
-                    return true;
-                }
-                else
-                    return true;
+                // can edit such that it must be connected to SPStaff wifi
+                //return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID == "\"SPStudent\"");
+                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID != "<unknown ssid>");
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
         private int BeaconPower()

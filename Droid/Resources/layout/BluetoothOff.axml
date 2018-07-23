@@ -12,34 +12,20 @@
         android:id="@+id/imageView1"
         android:layout_marginTop="38dp" />
     <TextView
-        android:text="Bluetooth is not turned on."
+        android:text="Bluetooth is not turned on. Please check that Bluetooth is turned on and try again."
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView1"
         android:gravity="center"
-        android:textColor="#ACACAC" />
-    <TextView
-        android:text="Please check that bluetooth is"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:gravity="center"
-        android:textColor="#ACACAC" />
-    <TextView
-        android:text="turned on and try again."
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView3"
-        android:gravity="center"
-        android:textColor="#ACACAC" />
+        android:textColor="#ACACAC"
+        android:lines="3" />
     <Button
         android:text="Retry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
         android:id="@+id/button1"
         android:layout_gravity="center"
-        android:layout_marginTop="70dp" />
+        android:layout_marginTop="70dp"
+        android:background="#ff0000" />
 </LinearLayout>

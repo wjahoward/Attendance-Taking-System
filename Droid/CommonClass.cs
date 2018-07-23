@@ -17,5 +17,6 @@ namespace BeaconTest.Droid
     {
         public static int moduleRowNumber;
         public static int power;
+        public static string atscode;
     }
 }

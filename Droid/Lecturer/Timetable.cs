@@ -21,7 +21,7 @@ using BeaconTest.Models;
 
 namespace BeaconTest.Droid
 {
-    [Activity(Label = "Lecturer", ScreenOrientation = ScreenOrientation.Portrait, NoHistory = true)]
+    [Activity(Label = "Lecturer", ScreenOrientation = ScreenOrientation.Portrait)]
     public class Timetable : Activity, IDialogInterfaceOnDismissListener
     {
         public AdvertiseCallback advertiseCallback;
@@ -52,9 +52,7 @@ namespace BeaconTest.Droid
 
         public override void OnBackPressed()
         {
-            var i = new Intent(this, typeof(MainActivity)).SetFlags(ActivityFlags.ReorderToFront);
-            StartActivity(i);
-            UserDialogs.Instance.HideLoading();
+            return;
         }
 
         private void GetTimetable()

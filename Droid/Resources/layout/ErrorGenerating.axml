@@ -12,34 +12,22 @@
         android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal" />
     <TextView
-        android:text="You can only generate the attendance"
+        android:text="You can only generate the attendance 15 minutes before the lesson, please try again later."
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView1"
-        android:gravity="center"
-        android:textColor="#ACACAC" />
-    <TextView
-        android:text="15 minutes before the lesson, please"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        android:gravity="center"
-        android:textColor="#ACACAC" />
-    <TextView
-        android:text="try again later."
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView3"
-        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
         android:textColor="#ACACAC" />
     <Button
         android:text="Back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button1"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:id="@+id/backButton"
         android:layout_gravity="center"
-        android:layout_marginTop="70dp" />
+        android:layout_marginTop="70dp"
+        android:background="#ff0000" />
 </LinearLayout>

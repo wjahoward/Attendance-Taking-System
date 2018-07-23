@@ -23,7 +23,7 @@ namespace BeaconTest.Droid.Lecturer
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.BluetoothOff);
 
-            retryBluetooth = FindViewById<Button>(Resource.Id.button1);
+            retryBluetooth = FindViewById<Button>(Resource.Id.retryButton);
 
             retryBluetooth.Click += delegate
             {

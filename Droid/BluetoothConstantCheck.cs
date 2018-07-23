@@ -58,6 +58,13 @@ namespace BeaconTest.Droid
             }
             else
             {
+                if (CommonClass.atscode != null)
+                {
+                    //Bluetooth beaconManager = BeaconManager.GetInstanceForApplication(this);
+                    BeaconTransmitter bTransmitter = new BeaconTransmitter();
+                    bTransmitter.Transmit(CommonClass.power, CommonClass.atscode);
+                }
+
                 isDialogShowing = false;
                 this.CheckBluetoothAvailable();
             }

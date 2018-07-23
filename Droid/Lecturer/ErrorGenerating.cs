@@ -23,7 +23,7 @@ namespace BeaconTest.Droid.Lecturer
             // Create your application here
             SetContentView(Resource.Layout.ErrorGenerating);
 
-            Button backBtn = FindViewById<Button>(Resource.Id.button1);
+            Button backBtn = FindViewById<Button>(Resource.Id.backButton);
 
             backBtn.Click += delegate
             {

@@ -43,50 +43,79 @@ namespace BeaconTest.Droid
             Username = FindViewById<EditText>(Resource.Id.usernameInput);
             Pwd = FindViewById<EditText>(Resource.Id.passwordInput);
 
+            if (this.IsSPWifiConnected() == false)
+            {
+                ShowAlertDialog();
+            }
+
+            submitBtn.Click += LoginButtonOnClick;
+
             //UserDialogs.Init(this);
 
-            if (this.IsWifiConnected())
-            {
-                //submitBtn.Enabled = true;
+            //if (this.IsWifiConnected() == false)
+            //{
+            //    //submitBtn.Enabled = true;
 
-                submitBtn.Click += LoginButtonOnClick;
-            }
-            else
-            {
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-                alertDialog.SetTitle("Device not connected to wifi");
-                alertDialog.SetMessage("Please enable wifi connection on your phone");
-                alertDialog.SetPositiveButton("OK", delegate
-                {
-                    alertDialog.Dispose();
-                });
-                alertDialog.Show();
+            //    submitBtn.Click += LoginButtonOnClick;
+            //}
+            //else
+            //{
+            //    AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+            //    alertDialog.SetTitle("Device not connected to wifi");
+            //    alertDialog.SetMessage("Please enable wifi connection on your phone");
+            //    alertDialog.SetPositiveButton("OK", delegate
+            //    {
+            //        alertDialog.Dispose();
+            //    });
+            //    alertDialog.Show();
 
-                //submitBtn.Enabled = false;
-            }
+            //    //submitBtn.Enabled = false;
+            //}
         }
 
         //checks whether wifi is switched on and connected to a wifi network
-        private bool IsWifiConnected()
+        private bool IsSPWifiConnected()
         {
             var wifiManager = Application.Context.GetSystemService(Context.WifiService) as WifiManager;
 
             if (wifiManager != null)
             {
-                return wifiManager.IsWifiEnabled &&
-                    (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID != unknownssid);
+                //return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && (wifiManager.ConnectionInfo.SSID == "\"SPStudent\"" || wifiManager.ConnectionInfo.SSID == "\"SPStaff\"")); - check if connect to SP Network   
+                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID != unknownssid);
             }
             return false;
         }
-        
+
+        private void ShowAlertDialog()
+        {
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+            alertDialog.SetTitle("Device not connected to SP Wifi");
+            alertDialog.SetMessage("Please connect to SP Wifi on your phone");
+            alertDialog.SetPositiveButton("OK", delegate
+            {
+                alertDialog.Dispose();
+            });
+            alertDialog.Show();
+        }
+
         private void LoginButtonOnClick(object sender, EventArgs args)
         {
             //UserDialogs.Instance.ShowLoading("Logging in");
 
-            username = Username.Text;
-            pwd = Pwd.Text;
+            if (this.IsSPWifiConnected())
+            {
+                //submitBtn.Enabled = true;
+                username = Username.Text.TrimEnd();
+                pwd = Pwd.Text;
 
-            ThreadPool.QueueUserWorkItem(o => Login());
+                UserDialogs.Init(this);
+                UserDialogs.Instance.ShowLoading("Logging in...");
+                ThreadPool.QueueUserWorkItem(o => Login());
+            }
+            else
+            {
+                ShowAlertDialog();
+            }
         }
 
         private void Login()
@@ -106,8 +135,7 @@ namespace BeaconTest.Droid
             }
             else
             {
-                RunOnUiThread(() => UserDialogs.Init(this));
-                RunOnUiThread(() => UserDialogs.Instance.HideLoading());
+                //RunOnUiThread(() => UserDialogs.Instance.HideLoading());
                 RunOnUiThread(() =>
                 {
                     AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
@@ -122,8 +150,14 @@ namespace BeaconTest.Droid
                         alertDialog.Dispose();
                     });
                     alertDialog.Show();
+                    UserDialogs.Instance.HideLoading();
                 });
             }
+        }
+
+        public override void OnBackPressed()
+        {
+            Process.KillProcess(Process.MyPid());
         }
 
         /*class TabsAdapter : FragmentStatePagerAdapter

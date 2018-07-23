@@ -16,7 +16,7 @@ using BeaconTest.Droid.Lecturer;
 
 namespace BeaconTest.Droid
 {
-    [Activity(Label = "WebSiteView", ScreenOrientation = ScreenOrientation.Portrait, NoHistory = true)]
+    [Activity(Label = "WebSiteView", ScreenOrientation = ScreenOrientation.Portrait)]
     public class LecturerAttendanceWebView : Activity
     {
         WebView webView;
