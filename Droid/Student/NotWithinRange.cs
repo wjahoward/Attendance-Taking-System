@@ -15,11 +15,9 @@ using Android.Widget;
 
 namespace BeaconTest.Droid.Student
 {
-    [Activity(Label = "NotWithinRange", ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "NotWithinRange", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait, NoHistory = true)]
     public class NotWithinRange : Activity
     {
-        int count = 0;
-
         Button retryButton;
 
         public NotWithinRange()
@@ -48,13 +46,34 @@ namespace BeaconTest.Droid.Student
         {
             await Task.Run(() =>
             {
-                //count++;
-                RunOnUiThread(() =>
+                CommonClass.count++;
+
+                if (CommonClass.count <= 3)
                 {
-                    StartActivity(typeof(EnterCode));
-                });
+                    RunOnUiThread(() =>
+                    {
+                        StartActivity(typeof(EnterCode));
+                    });
+                    Finish();
+                }
+                else
+                {
+                    RunOnUiThread(() =>
+                    {
+                        AlertDialog.Builder ad = new AlertDialog.Builder(this);
+                        ad.SetTitle("Unable to detect phone");
+                        ad.SetMessage("Unable to detect lecturer's phone, would you like to enter ATS manually?");
+                        ad.SetPositiveButton("OK", delegate
+                        {
+                            ad.Dispose();
+                            StartActivity(typeof(EnterCode));
+                            Finish();
+                        });
+                        ad.Show();
+                    });
+                }
                 //Console.WriteLine("Retry button was clicked: " + count);
-            }); 
+            });
         }
     }
 }

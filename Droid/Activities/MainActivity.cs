@@ -126,11 +126,15 @@ namespace BeaconTest.Droid
                 if (username.StartsWith("s", StringComparison.Ordinal))
                 {
                     RunOnUiThread(() => StartActivity(typeof(Timetable)));
+                    Finish();
                 }
                 //username = p1234567, password = R@ndom123
                 else if (username.StartsWith("p", StringComparison.Ordinal))
                 {
                     RunOnUiThread(() => StartActivity(typeof(EnterCode)));
+                    //for resetting count when student logs out
+                    CommonClass.count = 0;
+                    Finish();
                 }
             }
             else

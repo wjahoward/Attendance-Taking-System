@@ -14,28 +14,26 @@ using Android.OS;
 using Android.Runtime;
 using Android.Text;
 using Android.Views;
+using Android.Views.InputMethods;
 using Android.Widget;
 using BeaconTest.Droid.Student;
 using BeaconTest.Models;
 
 namespace BeaconTest.Droid
 {
-    [Activity(Label = "EnterCode", ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "EnterCode", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait, NoHistory = true)]
     public class EnterCode : Activity, IDialogInterfaceOnDismissListener, IBeaconConsumer
     {
         readonly RangeNotifier rangeNotifier;
         readonly MonitorNotifier monitorNotifier;
         readonly List<Beacon> data;
 
-        /*const ushort beaconMajor = 2755;
-        const ushort beaconMinor = 5;
-        const string beaconId = "123";
-        const string uuid = "C9407F30-F5F8-466E-AFF9-25556B57FE6D";*/
         string uuid = "2F234454-CF6D-4A0F-ADF2-F4911BA9FFA5";
 
         Region tagRegion, emptyRegion;
 
         private BeaconManager beaconManager = null;
+        InputMethodManager mgr;
 
         StudentTimetable studentTimetable;
         StudentModule studentModule;
@@ -66,10 +64,11 @@ namespace BeaconTest.Droid
             enterAttendanceCodeTextView = FindViewById<TextView>(Resource.Id.enterAttendanceCodeTextView);
             findingBeaconTextView = FindViewById<TextView>(Resource.Id.findingBeaconTextView);
 
-            enterAttendanceCodeTextView.Click += EnterAttendanceCodeTextViewOnClick;
-
             submitBtn = FindViewById<Button>(Resource.Id.submitBtn);
+            submitBtn.Visibility = ViewStates.Invisible;
             submitBtn.Click += SubmitBtnOnClick;
+
+            mgr = (InputMethodManager)GetSystemService(Context.InputMethodService);
 
             UserDialogs.Init(this);
 
@@ -77,11 +76,13 @@ namespace BeaconTest.Droid
 
             ThreadPool.QueueUserWorkItem(o => GetModule());
 
-            findingBeaconTextView.Text = "Searching for phone...";
-
             VerifyBle();
         }
 
+        protected override void OnResume()
+        {
+            base.OnResume();
+        }
 
         private void GetModule()
         {
@@ -97,10 +98,16 @@ namespace BeaconTest.Droid
                     UserDialogs.Instance.HideLoading();
                 });
 
-                SetupBeaconRanger();
-                //beaconManager = BeaconManager.GetInstanceForApplication(this);
-                //BeaconTransmitter bTransmitter = new BeaconTransmitter(); // check the power later
-                //bTransmitter.Transmit();
+                if(CommonClass.count <= 3)
+                {
+                    SetupBeaconRanger();
+                    RunOnUiThread(() => findingBeaconTextView.Text = "Ranging for phone...");
+                }
+                else
+                {
+                    CantRangeForBeacon();
+                }
+                
             }
             else
             {
@@ -115,17 +122,25 @@ namespace BeaconTest.Droid
             }
         }
 
+        async void CantRangeForBeacon()
+        {
+            await Task.Run(() =>
+            {
+                RunOnUiThread(() =>
+                {
+                    enterAttendanceCodeTextView.Click += EnterAttendanceCodeTextViewOnClick;
+                    findingBeaconTextView.Visibility = ViewStates.Invisible;
+                    attendanceCodeEditText.Visibility = ViewStates.Visible;
+                    submitBtn.Visibility = ViewStates.Invisible;
+                    attendanceCodeEditText.TextChanged += AttendanceCodeEditTextChanged;
+                });
+            });
+        }
+
         private void VerifyBle()
         {
             if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability())
             {
-                //var builder = new AlertDialog.Builder(this);
-                //builder.SetTitle("Bluetooth not enabled");
-                //builder.SetMessage("Please enable bluetooth on your phone and restart the app");
-                //EventHandler<DialogClickEventArgs> handler = null;
-                //builder.SetPositiveButton(Android.Resource.String.Ok, handler);
-                //builder.SetOnDismissListener(this);
-                //builder.Show();
                 StartActivity(typeof(StudentBluetoothOff));
             }
         }
@@ -155,44 +170,45 @@ namespace BeaconTest.Droid
 
         async void RangingBeaconsInRegion(object sender, RangeEventArgs e)
         {
-            //var allBeacons = new List<Beacon>();
-
             //code inside Task.Run will be called asynchronously
             //use await if need to wait for specific work before updating ui elements
             await Task.Run(() =>
             {
-                if (e.Beacons.Count > 0)
+                if(CommonClass.count <= 3)
                 {
-                    /*continue beacon operations in the background, so that the view will continue 
-                     displaying to the user*/
-                    //beaconManager.SetBackgroundMode(true);
-                    string id = e.Beacons.First().Id1.ToString();
-                    foreach (Beacon beacon in e.Beacons)
+                    if (e.Beacons.Count > 0)
                     {
-                        if (beacon.Id1.ToString().Equals(DataAccess.LecturerGetBeaconKey().ToLower()))
+                        /*continue beacon operations in the background, so that the view will continue 
+                         displaying to the user*/
+                        beaconManager.SetBackgroundMode(true);
+                        string id = e.Beacons.First().Id1.ToString();
+                        foreach (Beacon beacon in e.Beacons)
                         {
-                            //string atsCode = beacon.Id2.ToString() + beacon.Id3.ToString();
-                            string atsCode = beacon.Id2.ToString().Substring(0,1) + "****" + beacon.Id3.ToString().Substring(2);
-                            Console.WriteLine(atsCode);
-
-                            RunOnUiThread(() =>
+                            if (beacon.Id1.ToString().Equals(DataAccess.LecturerGetBeaconKey().ToLower()))
                             {
-                                submitBtn.Visibility = ViewStates.Visible;
-                                studentAttendanceImageView.SetImageDrawable(GetDrawable(Resource.Drawable.Asset2));
-                                attendanceCodeEditText.Visibility = ViewStates.Visible;
-                                attendanceCodeEditText.Text = atsCode;
-                                attendanceCodeEditText.Enabled = false;
-                                findingBeaconTextView.Text = "Detected phone";
-                            });
-                        }
-                    } 
-                }
-                else
-                {
-                    //stop all beacon operation in the background
-                    //beaconManager.SetBackgroundMode(false);
+                                //string atsCode = beacon.Id2.ToString() + beacon.Id3.ToString();
+                                string atsCode = beacon.Id2.ToString().Substring(0, 1) + "****" + beacon.Id3.ToString().Substring(2);
+                                Console.WriteLine(atsCode);
 
-                    GoToNotWithinRange();
+                                RunOnUiThread(() =>
+                                {
+                                    submitBtn.Visibility = ViewStates.Visible;
+                                    studentAttendanceImageView.SetImageDrawable(GetDrawable(Resource.Drawable.Asset2));
+                                    attendanceCodeEditText.Visibility = ViewStates.Visible;
+                                    attendanceCodeEditText.Text = atsCode;
+                                    attendanceCodeEditText.Enabled = false;
+                                    findingBeaconTextView.Text = "Detected phone";
+                                });
+                            }
+                        }
+                    }
+                    else
+                    {
+                        //stop all beacon operation in the background
+                        //beaconManager.SetBackgroundMode(false);
+
+                        GoToNotWithinRange();
+                    }
                 }
             });
         }
@@ -205,6 +221,7 @@ namespace BeaconTest.Droid
                 {
                     StartActivity(typeof(NotWithinRange));
                 });
+                Finish();
             });
         }
 
@@ -217,9 +234,18 @@ namespace BeaconTest.Droid
                     AlertDialog.Builder ad = new AlertDialog.Builder(this);
                     ad.SetTitle("Success");
                     ad.SetMessage("You have successfully submitted your attendance!");
-                    ad.SetPositiveButton("OK", delegate
+                    ad.SetPositiveButton("LOGOUT", delegate
                     {
                         ad.Dispose();
+                        if (beaconManager != null)
+                        {
+                            beaconManager.StopRangingBeaconsInRegion(tagRegion);
+                            beaconManager.StopRangingBeaconsInRegion(emptyRegion);
+                            beaconManager.StopMonitoringBeaconsInRegion(tagRegion);
+                            beaconManager.StopMonitoringBeaconsInRegion(emptyRegion);
+                        }
+                        Finish();
+                        StartActivity(typeof(MainActivity));
                     });
                     ad.Show();
                 });
@@ -230,19 +256,11 @@ namespace BeaconTest.Droid
         {
             await Task.Run(() =>
             {
-                beaconManager.StopMonitoringBeaconsInRegion(tagRegion);
-                beaconManager.StopMonitoringBeaconsInRegion(emptyRegion);
-                beaconManager.StopRangingBeaconsInRegion(tagRegion);
-                beaconManager.StopRangingBeaconsInRegion(emptyRegion);
-
                 RunOnUiThread(() =>
                 {
-                    attendanceCodeEditText.Visibility = ViewStates.Visible;
-                    //attendanceCodeEditText.RequestFocus();
-                    findingBeaconTextView.Visibility = ViewStates.Invisible;
-                    submitBtn.Visibility = ViewStates.Invisible;
-                    //clear the text
-                    attendanceCodeEditText.Text = "";
+                    attendanceCodeEditText.RequestFocus();
+                    //show keyboard after edittext is focused
+                    mgr.ShowSoftInput(attendanceCodeEditText, ShowFlags.Implicit);
                     attendanceCodeEditText.TextChanged += AttendanceCodeEditTextChanged;
                 });
             });
@@ -319,7 +337,7 @@ namespace BeaconTest.Droid
             beaconManager.StartRangingBeaconsInRegion(tagRegion);
             beaconManager.StartRangingBeaconsInRegion(emptyRegion);
 
-            beaconManager.SetBackgroundMode(true);
+            //beaconManager.SetBackgroundMode(true);
 
             //Console.WriteLine("Debug:" + Identifier.Parse(uuid));
         }

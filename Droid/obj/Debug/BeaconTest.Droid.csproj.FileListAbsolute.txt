@@ -1640,10 +1640,6 @@ D:\My stuff\School_Years\Y3S1\FYP2\Droid\obj\Debug\android\assets\System.Transac
 D:\My stuff\School_Years\Y3S1\FYP2\Droid\obj\Debug\android\assets\System.Web.Services.pdb
 D:\My stuff\School_Years\Y3S1\FYP2\Droid\obj\Debug\android\assets\System.Xml.Linq.pdb
 D:\My stuff\School_Years\Y3S1\FYP2\Droid\obj\Debug\android\assets\System.Xml.pdb
-D:\My stuff\School_Years\Y3S1\FYP2\Droid\bin\Debug\Plugin.Connectivity.Abstractions.dll
-D:\My stuff\School_Years\Y3S1\FYP2\Droid\bin\Debug\Plugin.Connectivity.dll
-D:\My stuff\School_Years\Y3S1\FYP2\Droid\bin\Debug\Plugin.Share.Abstractions.dll
-D:\My stuff\School_Years\Y3S1\FYP2\Droid\bin\Debug\Plugin.Share.dll
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\BeaconTest.Droid.dll
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\BeaconTest.Droid.pdb
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\com.xamarin.BeaconTest.apk
@@ -1813,7 +1809,13 @@ F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\ob
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\android\assets\System.Web.Services.pdb
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\android\assets\System.Xml.Linq.pdb
 F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\android\assets\System.Xml.pdb
-F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\bin\Debug\BeaconTest.Droid.dll
-F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\linksrc\BeaconTest.Droid.dll.mdb
-F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\linksrc\Plugin.Connectivity.dll.mdb
-F:\Year 3 Sem 1\FYP\List of FYPs\23 July 2018 - 10.30pm updated version\Droid\obj\Debug\linksrc\Plugin.Share.dll.mdb
+D:\My stuff\School_Years\Y3S1\FYP2\Droid\obj\Debug\res\drawable\btnstyle2.xml
+D:\My stuff\School_Years\Y3S1\FYP2\Droid\obj\Debug\res\drawable\timeicon.png
+D:\My stuff\School_Years\Y3S1\FYP2\Droid\obj\Debug\res\drawable\book.png
+D:\My stuff\School_Years\Y3S1\FYP2\Droid\obj\Debug\res\drawable\lecturehall.jpg
+D:\My stuff\School_Years\Y3S1\FYP2\Droid\bin\Debug\Plugin.Connectivity.Abstractions.dll
+D:\My stuff\School_Years\Y3S1\FYP2\Droid\bin\Debug\Plugin.Connectivity.dll
+D:\My stuff\School_Years\Y3S1\FYP2\Droid\bin\Debug\Plugin.Share.Abstractions.dll
+D:\My stuff\School_Years\Y3S1\FYP2\Droid\bin\Debug\Plugin.Share.dll
+D:\My stuff\School_Years\Y3S1\FYP2\Droid\bin\Debug\BeaconTest.Droid.dll
+D:\My stuff\School_Years\Y3S1\FYP2\Droid\obj\Debug\linksrc\BeaconTest.Droid.dll.mdb
