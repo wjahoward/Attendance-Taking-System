@@ -23,5 +23,8 @@ namespace BeaconTest
 
 		public static string testSPStudentID = "1626331";
 		public static string testSPDate = "160518";
+
+		public static int maxRetry = 3;
+		public static int currentRetry = 0;
     }
 }

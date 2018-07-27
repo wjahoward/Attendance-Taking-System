@@ -28,10 +28,6 @@ namespace BeaconTest.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel StudentCountLabel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel TimePeriodLabel { get; set; }
 
         [Outlet]
@@ -53,11 +49,6 @@ namespace BeaconTest.iOS
             if (ModuleNameLabel != null) {
                 ModuleNameLabel.Dispose ();
                 ModuleNameLabel = null;
-            }
-
-            if (StudentCountLabel != null) {
-                StudentCountLabel.Dispose ();
-                StudentCountLabel = null;
             }
 
             if (TimePeriodLabel != null) {

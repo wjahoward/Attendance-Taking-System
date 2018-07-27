@@ -20,8 +20,8 @@ namespace BeaconTest.iOS
 
         public void Login()
 		{
-            //username = "p1234567"; // rmb delete this later
-            //password = "R@ndom123"; // rmb delete this later
+            username = "p1234567"; // rmb delete this later
+            password = "R@ndom123"; // rmb delete this later
 			InvokeOnMainThread(() =>
 			{
 				if ((username.Equals("s12345") && password.Equals("Te@cher123")) || (username.Equals("p1234567") && password.Equals("R@ndom123")))

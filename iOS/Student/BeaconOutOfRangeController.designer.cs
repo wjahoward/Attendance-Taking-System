@@ -18,6 +18,10 @@ namespace BeaconTest.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton StudentRangeRetryButton { get; set; }
 
+        [Action ("OutOfRangeRetry:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void OutOfRangeRetry (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (StudentRangeRetryButton != null) {

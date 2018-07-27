@@ -7,111 +7,63 @@ using UIKit;
 
 namespace BeaconTest.iOS
 {
-    public partial class LecturerAttendanceController : UITableViewController
+    public partial class LecturerAttendanceController : UIViewController
     {
-        UITableView tableView;
-        List<LecturerModuleTableViewItem> attendanceTableViewItems = new List<LecturerModuleTableViewItem>();
+		void ScrollView_Scrolled(object sender, EventArgs e)
+		{
+			AttendanceWebView.LoadRequest(new NSUrlRequest(new NSUrl("www.google.com")));
+		}      
+
+		string loadURL = "https://ats.sf.sp.edu.sg/psc/cs90atstd/EMPLOYEE/HRMS/s/WEBLIB_A_ATS.ISCRIPT2.FieldFormula.IScript_GetLecturerClasses?&cmd=login";
+		//string loadURL = "https://www.google.com";
 
         public LecturerAttendanceController (IntPtr handle) : base (handle)
         {
             
         }
+        
+		public override void ViewDidLoad()
+		{
+			AttendanceWebView.LoadRequest(new NSUrlRequest(new NSUrl(loadURL)));
+			//AttendanceWebView.ScrollView.Scrolled += ScrollView_Scrolled;
+			AttendanceWebView.LoadFinished += delegate {
+				AttendanceWebView.ScrollView.Delegate = new UIScrollViewDelegate(AttendanceWebView);
+            };         
+		}
 
-        public override void ViewDidLoad()
+		public class UIScrollViewDelegate : NSObject, IUIScrollViewDelegate, IUIWebViewDelegate
         {
-            base.ViewDidLoad();
-            tableView = AttendanceTableView; // defaults to Plain style
-            var frame = CGRect.Empty;
-            frame.Height = 0;
-            frame.Width = 0;
-            tableView.TableFooterView = new UIView(frame);
-            attendanceTableViewItems.Add(new LecturerModuleTableViewItem("Student 1 Name") { ModuleCode = "Student 1 Adm No.", Venue = "Vegetables.jpg" });
-            attendanceTableViewItems.Add(new LecturerModuleTableViewItem("Student 2 Name") { ModuleCode = "Student 2 Adm No.", Venue = "Fruits.jpg" });
-            tableView.Source = new TableSource(attendanceTableViewItems);
+			UIWebView attendanceWebView;
 
-            setupRightNavigationButton();
+			public UIScrollViewDelegate(UIWebView webView){
+				this.attendanceWebView = webView;
+			}
 
-            //Add(tableView);
-        }
+            [Export("scrollViewDidEndDragging:willDecelerate:")]
+			public void DraggingEnded(UIScrollView scrollView, bool willDecelerate)
+			{
+				Console.WriteLine("scroll ended");
+				attendanceWebView.LoadRequest(new NSUrlRequest(new NSUrl("www.google.com")));
+			}
 
-        private void setupRightNavigationButton() {
-            var refreshButton = new UIBarButtonItem(UIBarButtonSystemItem.Refresh);
-            NavigationItem.RightBarButtonItem = refreshButton;
+            [Export("scrollViewDidEndDecelerating:")]
+			public void DecelerationEnded(UIScrollView scrollView)
+			{
+				Console.WriteLine("scroll ended");
+				attendanceWebView.LoadRequest(new NSUrlRequest(new NSUrl("https://www.google.com")));
+			}
 
-            refreshButton.Clicked += (s, e) =>
+            [Export("scrollViewDidScroll:")]
+            public void Scrolled(UIScrollView scrollView)
             {
-                // Testing to see if can change
-                attendanceTableViewItems.Add(new LecturerModuleTableViewItem("Student 3 Name") { ModuleCode = "Student 3 Adm No.", Venue = "Fruits.jpg" });
-                tableView.ReloadData();
-            };
-        }
-
-        public class TableSource : UITableViewSource
-        {
-
-            List<LecturerModuleTableViewItem> attendanceTableViewItems = new List<LecturerModuleTableViewItem>();
-            //string CellIdentifier = "TableCell";
-            NSString cellIdentifier = new NSString("TableCell");
-            UISegmentedControl mySegmentedControl = new UISegmentedControl("SegmentedControl");
-
-            public TableSource(List<LecturerModuleTableViewItem> items)
-            {
-                attendanceTableViewItems = items;
+                var translation = scrollView.PanGestureRecognizer.TranslationInView(scrollView.Superview);
+				if (translation.Y > 0)
+				{
+					Console.WriteLine($"Scrolling {(translation.Y > 0 ? "Down" : "Up")}");
+				}
+				//attendanceWebView.LoadRequest(new NSUrlRequest(new NSUrl("www.google.com")));
             }
 
-            public override nint RowsInSection(UITableView tableview, nint section)
-            {
-                return attendanceTableViewItems.Count;
-            }
-
-            public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
-            {
-                var cell = tableView.DequeueReusableCell(cellIdentifier) as LecturerModuleCell;
-                if (cell == null)
-                    cell = new LecturerModuleCell(cellIdentifier);
-                Debug.WriteLine(attendanceTableViewItems[0].ModuleName);
-                /*cell.UpdateCell(attendanceTableViewItems[indexPath.Row].Heading
-                                , attendanceTableViewItems[indexPath.Row].SubHeading
-                                , UIImage.FromFile("Images/" + attendanceTableViewItems[indexPath.Row].ImageName));*/
-                if (CommonClass.segmentNumber == 0)
-                {
-                    // For those students whom are present
-                    if (indexPath.Row <= attendanceTableViewItems.Count - 1)
-                    {
-                        cell.UpdateCell(attendanceTableViewItems[indexPath.Row].ModuleName
-                                        , attendanceTableViewItems[indexPath.Row].ModuleCode
-                                        , attendanceTableViewItems[indexPath.Row].Venue
-                                        , attendanceTableViewItems[indexPath.Row].Time);
-                    }
-                }
-                else {
-                    // For those students whom are absent
-                    // Example below to show it changes
-                    if (indexPath.Row <= attendanceTableViewItems.Count - 1)
-                    {
-                        cell.UpdateCell(attendanceTableViewItems[0].ModuleName
-                                        , attendanceTableViewItems[0].ModuleCode
-                                        , attendanceTableViewItems[0].Venue
-                                        , attendanceTableViewItems[0].Time);
-                    }
-                }
-                return cell;
-            }
-        }
-
-
-        partial void SegmentedControl_ValChanged(UISegmentedControl sender)
-        {
-            //var index = SegmentedControl.SelectedSegment;
-            var index = SegmentedControl.SelectedSegment;
-
-            if (index == 0) {
-                CommonClass.segmentNumber = 0;
-            }
-            else if (index == 1) {
-                CommonClass.segmentNumber = 1;
-            }
-            tableView.ReloadData();
         }
     }
 }

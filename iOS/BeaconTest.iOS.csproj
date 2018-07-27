@@ -179,10 +179,6 @@
     <Compile Include="Student\BeaconRangingController.designer.cs">
       <DependentUpon>BeaconRangingController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Student\StudentAttendanceController.cs" />
-    <Compile Include="Student\StudentAttendanceController.designer.cs">
-      <DependentUpon>StudentAttendanceController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Lecturer\Generate\LecturerGenerateController.cs" />
     <Compile Include="Lecturer\Generate\LecturerGenerateController.designer.cs" />
     <Compile Include="Lecturer\Generate\LecturerModuleCell.cs" />

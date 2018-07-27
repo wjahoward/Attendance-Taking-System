@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading;
 using Acr.UserDialogs;
 using System.Drawing;
+using Plugin.Connectivity;
 
 namespace BeaconTest.iOS
 {
@@ -58,7 +59,14 @@ namespace BeaconTest.iOS
                 StudentSubmitButton.Hidden = true;
 
                 UserDialogs.Instance.ShowLoading("Retrieving module info...");
-                ThreadPool.QueueUserWorkItem(o => GetModule());
+				ThreadPool.QueueUserWorkItem(o => GetModule());
+				//CheckNetworkRechability();
+
+				/*Task.Factory.StartNew(() =>
+				{
+					GetModule();
+				});*/
+				//Thread thread = new Thread(HandleThreadStart);
 
                 StudentSubmitButton.TouchUpInside += (object sender, EventArgs e) =>
                 {
@@ -129,33 +137,45 @@ namespace BeaconTest.iOS
 			}
         }
       
-		private void GetModule()
+		private async void GetModule()
         {
-            studentTimetable = DataAccess.GetStudentTimetable().Result;
-            studentModule = studentTimetable.GetCurrentModule();
-			if(studentModule.abbr != "")
-			{
-				InvokeOnMainThread(() =>
+			try{
+				studentTimetable = await DataAccess.GetStudentTimetable();
+                //studentModule = studentTimetable.GetCurrentModule();
+
+				/*if (studentModule.abbr != "")
                 {
-                    ModuleNameLabel.Text = studentTimetable.GetCurrentModule().abbr + " (" + studentTimetable.GetCurrentModule().code + ")";
-                    TimePeriodLabel.Text = studentTimetable.GetCurrentModule().time;
-                    LocationLabel.Text = studentTimetable.GetCurrentModule().location;
-					UserDialogs.Instance.HideLoading();        
-					beaconUUID = new NSUuid(DataAccess.StudentGetBeaconKey());
-                    InitLocationManager();
-                });            
-			}
-			else
-			{
-				InvokeOnMainThread(() =>
+                    InvokeOnMainThread(() =>
+                    {
+                        ModuleNameLabel.Text = studentTimetable.GetCurrentModule().abbr + " (" + studentTimetable.GetCurrentModule().code + ")";
+                        TimePeriodLabel.Text = studentTimetable.GetCurrentModule().time;
+                        LocationLabel.Text = studentTimetable.GetCurrentModule().location;
+                        UserDialogs.Instance.HideLoading();
+                        beaconUUID = new NSUuid(DataAccess.StudentGetBeaconKey());
+                        InitLocationManager();
+                    });
+					//return studentModule;
+                }
+                else
                 {
-					ModuleNameLabel.Text = "No lessons today";
-					TimePeriodLabel.Hidden = true;
-					LocationLabel.Hidden = true;
-					UserDialogs.Instance.HideLoading();
+                    InvokeOnMainThread(() =>
+                    {
+                        ModuleNameLabel.Text = "No lessons today";
+                        TimePeriodLabel.Hidden = true;
+                        LocationLabel.Hidden = true;
+                        UserDialogs.Instance.HideLoading();
+                    });
+					//return null;
+                }*/
+			} catch (Exception ex){
+                InvokeOnMainThread(() =>
+                {
+					Console.WriteLine("test");
+                    UserDialogs.Instance.HideLoading();
+					PresentViewController(CustomAlert.CreateUIAlertController("Wifi not on", ex.Message, "Retry"), true, null);
                 });
+				//return null;
 			}
-            
         }
 
         private void InitLocationManager()
@@ -168,6 +188,61 @@ namespace BeaconTest.iOS
             locationManager.DidRangeBeacons += LocationManager_DidRangeBeacons;
             locationManager.RequestAlwaysAuthorization();
 		}
+
+		private void CheckNetworkRechability()
+        {
+            Thread checkNetworkActiveThread = new Thread(new ThreadStart(CheckNetworkAvailable));
+            checkNetworkActiveThread.Start();
+        }
+
+		private async void CheckNetworkAvailable()
+		{
+			bool isNetwork = await Task.Run(() => this.CheckInternetStatus());
+			bool isDialogShowing = false;
+
+			if (!isNetwork)
+            {
+				InvokeOnMainThread(() => {
+                    try
+                    {
+
+                        if (!isDialogShowing)
+                        {
+                            isDialogShowing = true;
+							UserDialogs.Instance.HideLoading();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("NetworkReachability -> CheckNetworkRechability:" + ex.Message);
+                    }
+                });
+            }
+            else
+            {
+				GetModule();
+            }
+		}
+
+		public bool CheckInternetStatus()
+        {
+            NetworkStatus internetStatus = Reachability.InternetConnectionStatus();
+
+            Debug.WriteLine(internetStatus);
+
+            var url = new NSUrl("App-prefs:root=WIFI");
+
+            if (internetStatus.Equals(NetworkStatus.NotReachable))
+            {
+                PresentViewController(CustomAlert.CreateUIAlertController(DataAccess.NoInternetConnection, "Internet connection is required for this app to function properly", "Go to settings", "App-prefs:root=WIFI"), true, null);
+
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
 
 		private void rangingBeaconsDidFailForRegion(object sender, CLRegionBeaconsFailedEventArgs e)
 		{
@@ -211,22 +286,32 @@ namespace BeaconTest.iOS
 						StudentAttendanceIcon.Image = UIImage.FromBundle("Location Icon.png");
 						EnterAttendanceCodeButton.Hidden = true;
 						AttendanceCodeTextField.Hidden = false;
-						AttendanceCodeTextField.Text = atsCode;
+						AttendanceCodeTextField.Text = atsCode.Substring(0, 1) + "****" + atsCode.Substring(5, 1);
 						AttendanceCodeTextField.UserInteractionEnabled = false;
 					});
 
 				}
 				else
 				{
+
 					InvokeOnMainThread(() =>
 					{
-						var viewController = this.Storyboard.InstantiateViewController("BeaconOutOfRangeController");
-
-						if (viewController != null)
+						if (SharedData.currentRetry < SharedData.maxRetry)
 						{
-							this.NavigationController.PresentViewController(viewController, true, null);
+							var viewController = this.Storyboard.InstantiateViewController("BeaconOutOfRangeController");
+
+							if (viewController != null)
+							{
+								this.NavigationController.PresentViewController(viewController, true, null);
+							}
 						}
-					});           
+						else
+						{
+						}
+
+						SharedData.currentRetry++;
+					});
+                    
 				}
 			});
             

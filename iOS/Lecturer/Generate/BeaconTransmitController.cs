@@ -16,8 +16,8 @@ namespace BeaconTest.iOS
     {
         BTPeripheralDelegate peripheralDelegate;
         CBPeripheralManager peripheralManager;
-		StudentTimetable studentTimetable;
-		StudentModule studentModule;
+		LecturerTimetable lecturerTimetable;
+		LecturerModule lecturerModule;
 
         CLBeaconRegion beaconRegion;
 
@@ -65,7 +65,7 @@ namespace BeaconTest.iOS
 
         private void InitBeacon()
 		{
-			string atsCode = SharedData.testATS;
+			string atsCode = lecturerModule.atscode;
             string atsCode1stHalf = atsCode.Substring(0, 3);
             string atsCode2ndHalf = atsCode.Substring(3, 3);
 
@@ -81,7 +81,7 @@ namespace BeaconTest.iOS
 
 		private NSNumber BeaconPower()
 		{
-			switch(studentModule.type){
+			switch(lecturerModule.type){
 				case "LAB":
 					return new NSNumber(-84);
 				case "TUT":
@@ -111,17 +111,17 @@ namespace BeaconTest.iOS
 
         private void GetModule()
 		{
-			studentTimetable = DataAccess.GetStudentTimetable().Result;
+			lecturerTimetable = DataAccess.GetLecturerTimetable().Result;
             //studentModule = studentTimetable.GetCurrentModule();
-			studentModule = studentTimetable.GetCurrentModule(CommonClass.moduleRowNumber);
-            if (studentModule != null)
+			lecturerModule = lecturerTimetable.GetCurrentModule(CommonClass.moduleRowNumber);
+			if (lecturerModule != null)
             {
                 InvokeOnMainThread(() =>
                 {
-					ModuleNameLabel.Text = studentModule.abbr + " (" + studentTimetable.GetCurrentModule().code + ")";
-					TimePeriodLabel.Text = studentModule.time;
-					LocationLabel.Text = studentModule.location;
-					AttendanceCodeLabel.Text = SharedData.testATS;
+					ModuleNameLabel.Text = lecturerModule.abbr + " (" + lecturerModule.code + ")";
+					TimePeriodLabel.Text = lecturerModule.time;
+					LocationLabel.Text = lecturerModule.location;
+					AttendanceCodeLabel.Text = lecturerModule.atscode;
 					UserDialogs.Instance.HideLoading();
 					InitBeacon();
                 });

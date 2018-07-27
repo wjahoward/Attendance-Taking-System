@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeaconTest.iOS", "BeaconTest.iOS.csproj", "{C87C25DB-29DA-4F9B-B39D-93F40244D7ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C87C25DB-29DA-4F9B-B39D-93F40244D7ED}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{C87C25DB-29DA-4F9B-B39D-93F40244D7ED}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{C87C25DB-29DA-4F9B-B39D-93F40244D7ED}.Release|iPhone.ActiveCfg = Release|iPhone
+		{C87C25DB-29DA-4F9B-B39D-93F40244D7ED}.Release|iPhone.Build.0 = Release|iPhone
+		{C87C25DB-29DA-4F9B-B39D-93F40244D7ED}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{C87C25DB-29DA-4F9B-B39D-93F40244D7ED}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{C87C25DB-29DA-4F9B-B39D-93F40244D7ED}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{C87C25DB-29DA-4F9B-B39D-93F40244D7ED}.Debug|iPhone.Build.0 = Debug|iPhone
+	EndGlobalSection
+EndGlobal
