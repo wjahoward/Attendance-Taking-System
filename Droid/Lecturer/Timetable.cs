@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using Acr.UserDialogs;
 using AltBeaconOrg.BoundBeacon;
 using Android.App;
@@ -21,7 +22,7 @@ using BeaconTest.Models;
 
 namespace BeaconTest.Droid
 {
-    [Activity(Label = "Lecturer", ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "Timetable", ScreenOrientation = ScreenOrientation.Portrait)]
     public class Timetable : Activity, IDialogInterfaceOnDismissListener
     {
         public AdvertiseCallback advertiseCallback;
@@ -32,6 +33,8 @@ namespace BeaconTest.Droid
         AlertDialog.Builder builder;
 
         int indexOfLesson = 0;
+
+        System.Timers.Timer aTimer = new System.Timers.Timer();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -85,31 +88,19 @@ namespace BeaconTest.Droid
 
         private void AlertRetryClick(object sender, DialogClickEventArgs e)
         {
-            this.CheckNetworkAvailable();
-        }
-
-        private void CheckNetworkRechability()
-        {
-            Thread checkNetworkActiveThread = new Thread(new ThreadStart(CheckNetworkAvailable));
-            checkNetworkActiveThread.Start();
+            CheckNetworkAvailable();
         }
 
         private async void CheckNetworkAvailable()
         {
             bool isNetwork = await Task.Run(() => this.NetworkRechableOrNot());
-            bool isDialogShowing = false;
 
             if (!isNetwork)
             {
                 RunOnUiThread(() => {
                     try
                     {
-
-                        if (!isDialogShowing)
-                        {
-                            isDialogShowing = true;
                             builder.Show();
-                        }
                     }
                     catch (Exception ex)
                     {
@@ -168,12 +159,13 @@ namespace BeaconTest.Droid
             else
             {
                 VerifyBle();
+
                 timeTableListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) =>
                 {
                     CommonClass.moduleRowNumber = dataSource[e.Position].Id;
 
-                    //string currentTimeString = DateTime.Now.ToShortTimeString();
-                    string currentTimeString = "08:00"; // change to actual real time before testing!!
+                    //string currentTimeString = DateTime.Now.ToShortTimeString(); - change to actual real time before testing!!
+                    string currentTimeString = "08:00"; // adjust accordingly to your time
                     TimeSpan currentTime = TimeSpan.Parse(currentTimeString);
                     //Console.WriteLine("Current time: {0}", currentTime);
 
@@ -183,8 +175,17 @@ namespace BeaconTest.Droid
                     TimeSpan moduleEndTime = TimeSpan.Parse(moduleEndTimeString);
                     //Console.WriteLine("Module start time: {0}", moduleStartTime);
 
-                    TimeSpan maxTime = moduleStartTime + TimeSpan.Parse("00:15:00");
+                    /*TimeSpan maxTime = moduleStartTime + TimeSpan.Parse("00:15:00");*/ // uncomment before testing!!
+                    TimeSpan maxTime = currentTime + TimeSpan.Parse("00:01:00");
 
+                    Console.WriteLine(currentTime);
+
+                    // bring the maxTime to Time method
+                    CommonClass.maxTimeCheck = maxTime;
+
+                    // If lesson is already over and the lecturer wants to check the attendance for the previous lesson
+                    // It will navigate him to the webview, which he can log in with his or her credentials
+                    // To be able to view that lesson
                     if (currentTime > moduleStartTime && (currentTime >= moduleEndTime || currentTime > maxTime))
                     {
                         StartActivity(typeof(LecturerAttendanceWebView));
@@ -205,6 +206,7 @@ namespace BeaconTest.Droid
                     {
                         StartActivity(typeof(ErrorGenerating));
                     }
+                    //StartActivity(typeof(BeaconTransmitActivity));
                 };
             }
         }
@@ -215,7 +217,7 @@ namespace BeaconTest.Droid
             {
                 var builder = new AlertDialog.Builder(this);
                 builder.SetTitle("Bluetooth not enabled");
-                builder.SetMessage("Please enable bluetooth on your phone and restart the app");
+                builder.SetMessage("Please enable bluetooth on your phone to generate attendance code!");
                 EventHandler<DialogClickEventArgs> handler = null;
                 builder.SetPositiveButton(Android.Resource.String.Ok, handler);
                 builder.SetOnDismissListener(this);

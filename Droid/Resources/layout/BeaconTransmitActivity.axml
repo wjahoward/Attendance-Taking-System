@@ -75,11 +75,11 @@
         android:textColor="#007AFF" />
     <Button
         android:text="View Attendance"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
+        android:layout_width="155dp"
+        android:layout_height="35dp"
         android:id="@+id/viewAttendanceButton"
         android:layout_gravity="center"
-        android:background="#ff0000"
-        android:layout_marginTop="10dp"
+        android:background="@drawable/btnStyle2"
+        android:layout_marginTop="20dp"
         android:textColor="#ffffff" />
 </LinearLayout>

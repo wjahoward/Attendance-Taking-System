@@ -28,7 +28,7 @@ namespace BeaconTest.Droid
         //IList is non-generic collection object that can be individually access by index
         IList<Long> dataFields = new List<Long>();
 
-        public void Transmit(int power, string atscode)
+        public void Transmit(int power, string atscode, bool transmit)
         {
             //get the bluetooth service of the application and let Bluetooth manager manage the service
             BluetoothManager bm = (BluetoothManager)Application.Context.
@@ -38,30 +38,96 @@ namespace BeaconTest.Droid
             BluetoothAdapter bt = bm.Adapter;
 
             //if bluetooth is enabled
-            if (bt.IsEnabled)
+            //if (bt.IsEnabled)
+            //{
+            //    isSupported = bt.IsMultipleAdvertisementSupported;
+            //}
+
+            //string atsCode = atscode;
+            //string atsCode1stHalf = atsCode.Substring(0, 3);
+            //string atsCode2ndHalf = atsCode.Substring(3, 3);
+
+            //Beacon b = new Beacon.Builder()
+            //    .SetId1(DataAccess.LecturerGetBeaconKey())
+            //    .SetId2(atsCode1stHalf)
+            //    .SetId3(atsCode2ndHalf)
+            //    .SetManufacturer(0x4C)
+            //    .SetTxPower(power)
+            //    .Build();
+
+            //BeaconParser bp = new BeaconParser()
+            //    .SetBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24");
+
+            //AltBeaconOrg.BoundBeacon.BeaconTransmitter beaconTransmitter = new AltBeaconOrg.BoundBeacon.BeaconTransmitter(Application.Context, bp);
+
+            //beaconTransmitter.StartAdvertising(b);
+
+            if (transmit == true)
             {
-                isSupported = bt.IsMultipleAdvertisementSupported;
+
+                if (bt.IsEnabled)
+                {
+                    isSupported = bt.IsMultipleAdvertisementSupported;
+                }
+
+                string atsCode = atscode;
+                string atsCode1stHalf = atsCode.Substring(0, 3);
+                string atsCode2ndHalf = atsCode.Substring(3, 3);
+
+                //string atsCode1stHalfEncrypted = Encryption(atsCode1stHalf);
+                //string atsCode2ndHalfEncrypted = Encryption(atsCode2ndHalf);
+
+                //string atsCode1stHalfDecrypted = Decryption(atsCode1stHalfEncrypted);
+                //string atsCode2ndHalfDecrypted = Decryption(atsCode2ndHalfEncrypted);
+
+                Beacon b = new Beacon.Builder()
+                    .SetId1(DataAccess.LecturerGetBeaconKey())
+                    .SetId2(atsCode1stHalf)
+                    .SetId3(atsCode2ndHalf)
+                    .SetManufacturer(0x4C)
+                    .SetTxPower(power)
+                    .Build();
+
+                BeaconParser bp = new BeaconParser()
+                    .SetBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24");
+
+                AltBeaconOrg.BoundBeacon.BeaconTransmitter beaconTransmitter = new AltBeaconOrg.BoundBeacon.BeaconTransmitter(Application.Context, bp);
+
+                beaconTransmitter.StartAdvertising(b);
             }
 
-            //string atsCode = SharedData.testATS.ToString();
-            string atsCode = atscode;
-            string atsCode1stHalf = atsCode.Substring(0, 3);
-            string atsCode2ndHalf = atsCode.Substring(3, 3);
+            else
+            {
+                bt.Disable();
+            }
 
-            Beacon b = new Beacon.Builder()
-                .SetId1(DataAccess.LecturerGetBeaconKey())
-                .SetId2(atsCode1stHalf)
-                .SetId3(atsCode2ndHalf)
-                .SetManufacturer(0x4C)
-                .SetTxPower(power)
-                .Build();
-
-            BeaconParser bp = new BeaconParser()
-                .SetBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24");
-
-            AltBeaconOrg.BoundBeacon.BeaconTransmitter beaconTransmitter = new AltBeaconOrg.BoundBeacon.BeaconTransmitter(Application.Context, bp);
-
-            beaconTransmitter.StartAdvertising(b);
         }
+
+        //private string Encryption(string atscode)
+        //{
+        //    // Encryption
+        //    // string input = "foo";
+        //    byte xorConstantEncryption = 0x53;
+        //    byte[] dataEncryption = Encoding.UTF8.GetBytes(atscode);
+        //    for (int i = 0; i < dataEncryption.Length; i++)
+        //    {
+        //        dataEncryption[i] = (byte)(dataEncryption[i] ^ xorConstantEncryption);
+        //    }
+        //    string outputEncryption = Convert.ToBase64String(dataEncryption);
+        //    return outputEncryption;
+        //}
+
+        //private string Decryption(string atsCodeEncrypted)
+        //{
+        //    // Decryption
+        //    byte xorConstantDecryption = 0x53;
+        //    byte[] dataDecryption = Convert.FromBase64String(atsCodeEncrypted);
+        //    for (int i = 0; i < dataDecryption.Length; i++)
+        //    {
+        //        dataDecryption[i] = (byte)(dataDecryption[i] ^ xorConstantDecryption);
+        //    }
+        //    string plainTextDecryption = Encoding.UTF8.GetString(dataDecryption);
+        //    return plainTextDecryption;
+        //}
     }
 }

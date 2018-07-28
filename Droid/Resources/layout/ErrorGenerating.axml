@@ -20,15 +20,14 @@
         android:layout_gravity="center"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="20dp"
         android:textColor="#ACACAC" />
     <Button
         android:text="Back"
-        android:layout_width="70dp"
-        android:layout_height="30dp"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
         android:id="@+id/backButton"
         android:layout_gravity="center"
-        android:layout_marginTop="70dp"
-        android:background="#ff0000"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/btnStyle2"
         android:textColor="#ffffff" />
 </LinearLayout>

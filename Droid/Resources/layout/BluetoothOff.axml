@@ -14,19 +14,21 @@
     <TextView
         android:text="Bluetooth is not turned on. Please check that Bluetooth is turned on and try again."
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView1"
         android:gravity="center"
-        android:textColor="#ACACAC"
-        android:lines="3" />
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="-20dp"
+        android:textColor="#ACACAC" />
     <Button
         android:text="Retry"
-        android:layout_width="70dp"
-        android:layout_height="30dp"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
         android:id="@+id/retryBluetoothButton"
         android:layout_gravity="center"
-        android:layout_marginTop="70dp"
-        android:background="#ff0000"
+        android:layout_marginTop="38dp"
+        android:background="@drawable/btnStyle2"
         android:textColor="#ffffff" />
 </LinearLayout>

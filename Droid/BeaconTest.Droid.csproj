@@ -143,7 +143,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BluetoothConstantCheck.cs" />
     <Compile Include="CommonClass.cs" />
     <Compile Include="CustomAdapter.cs" />
     <Compile Include="Lecturer\BeaconTransmitActivity.cs" />
@@ -151,7 +150,9 @@
     <Compile Include="Lecturer\LecturerAttendanceWebView.cs" />
     <Compile Include="Lecturer\LecturerBluetoothOff.cs" />
     <Compile Include="Lecturer\LectureBluetoothOn.cs" />
+    <Compile Include="Lecturer\LecturerBluetoothOffWebView.cs" />
     <Compile Include="Lecturer\LecturerModuleTableViewItem.cs" />
+    <Compile Include="Lecturer\LecturerTransmitBluetoothOff.cs" />
     <Compile Include="Student\EnterCode.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="Activities\BaseActivity.cs" />
