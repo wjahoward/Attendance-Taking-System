@@ -174,18 +174,19 @@ namespace BeaconTest.Droid
             //use await if need to wait for specific work before updating ui elements
             await Task.Run(() =>
             {
-                if(CommonClass.count <= 3)
-                {
+                //if(CommonClass.count <= 3)
+                //{
                     if (e.Beacons.Count > 0)
                     {
                         /*continue beacon operations in the background, so that the view will continue 
                          displaying to the user*/
-                        beaconManager.SetBackgroundMode(true);
+                        //beaconManager.SetBackgroundMode(true);
                         string id = e.Beacons.First().Id1.ToString();
                         foreach (Beacon beacon in e.Beacons)
                         {
                             if (beacon.Id1.ToString().Equals(DataAccess.LecturerGetBeaconKey().ToLower()))
                             {
+                                beaconManager.SetBackgroundMode(true);
                                 //string atsCode = beacon.Id2.ToString() + beacon.Id3.ToString();
                                 string atsCode = beacon.Id2.ToString().Substring(0, 1) + "****" + beacon.Id3.ToString().Substring(2);
                                 Console.WriteLine(atsCode);
@@ -209,7 +210,7 @@ namespace BeaconTest.Droid
 
                         GoToNotWithinRange();
                     }
-                }
+                //}
             });
         }
 
@@ -217,11 +218,14 @@ namespace BeaconTest.Droid
         {
             await Task.Run(() =>
             {
-                RunOnUiThread(() =>
+                if(CommonClass.count <= 3)
                 {
-                    StartActivity(typeof(NotWithinRange));
-                });
-                Finish();
+                    RunOnUiThread(() =>
+                    {
+                        StartActivity(typeof(NotWithinRange));
+                    });
+                    Finish();
+                }
             });
         }
 
