@@ -192,6 +192,7 @@ namespace BeaconTest.iOS
 
         private void InitBeacon()
 		{
+            //testing
                 string atsCode = lecturerModule.atscode;
                 string atsCode1stHalf = atsCode.Substring(0, 3);
                 string atsCode2ndHalf = atsCode.Substring(3, 3);
