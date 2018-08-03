@@ -356,12 +356,12 @@ namespace BeaconTest.iOS
                     {
                         Debug.WriteLine("Found Beacon");
 
-                        Debug.WriteLine(e.Beacons[0].ProximityUuid);
+                        Console.WriteLine(e.Beacons[0].ProximityUuid);
                         atsCode = e.Beacons[0].Major.ToString() + e.Beacons[0].Minor.ToString();
 
-                        //string atsCodeMajor = Decryption(e.Beacons[0].Major.ToString()).ToString();
-                        //string atsCodeMinor = Decryption(e.Beacons[0].Minor.ToString()).ToString();
-                        //atsCode = atsCodeMajor + atsCodeMinor;
+                        string atsCodeMajor = Decryption(e.Beacons[0].Major.ToString()).ToString();
+                        string atsCodeMinor = Decryption(e.Beacons[0].Minor.ToString()).ToString();
+                        atsCode = atsCodeMajor + atsCodeMinor;
 
                         Debug.WriteLine(atsCode);
 
