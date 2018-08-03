@@ -18,7 +18,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: phobussng@gmail.com (3TX998924T)</CodesignKey>
+    <CodesignKey>iPhone Developer: Howard Wang (2G48N72G27)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchFastDev>true</MtouchFastDev>
@@ -27,7 +27,7 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>iOS Team Provisioning Profile: com.xamarin.BeaconTestiOS</CodesignProvision>
+    <CodesignProvision>iOS Team Provisioning Profile: *</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>pdbonly</DebugType>
@@ -209,6 +209,14 @@
     <Compile Include="Student\BeaconOutOfRangeController.designer.cs">
       <DependentUpon>BeaconOutOfRangeController.cs</DependentUpon>
     </Compile>
+    <Compile Include="SplashScreenController.cs" />
+    <Compile Include="SplashScreenController.designer.cs">
+      <DependentUpon>SplashScreenController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lecturer\Generate\LecturerAttendanceAfterGeneratingController.cs" />
+    <Compile Include="Lecturer\Generate\LecturerAttendanceAfterGeneratingController.designer.cs">
+      <DependentUpon>LecturerAttendanceAfterGeneratingController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -219,6 +227,18 @@
     <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\New UI-01.jpg" />
+    <BundleResource Include="Resources\Asset1.png" />
+    <BundleResource Include="Resources\Lecture Hall.jpg" />
+    <BundleResource Include="Resources\Time Icon-01.png" />
+    <BundleResource Include="Resources\Book.PNG" />
+    <BundleResource Include="Resources\Book Icon-26.png" />
+    <BundleResource Include="Resources\Lecture Hall %28Darkened%29.jpg" />
+  </ItemGroup>
   <Import Project="..\BeaconTest\BeaconTest.projitems" Label="Shared" Condition="Exists('..\BeaconTest\BeaconTest.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

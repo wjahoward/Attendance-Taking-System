@@ -28,11 +28,23 @@ namespace BeaconTest.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView LectureAttendanceIcon { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel LocationLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel ModuleCodeLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel ModuleNameLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel ModuleTypeLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -41,6 +53,10 @@ namespace BeaconTest.iOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton StudentSubmitButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView TimeAttendanceIcon { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -67,14 +83,29 @@ namespace BeaconTest.iOS
                 FoundBeacon = null;
             }
 
+            if (LectureAttendanceIcon != null) {
+                LectureAttendanceIcon.Dispose ();
+                LectureAttendanceIcon = null;
+            }
+
             if (LocationLabel != null) {
                 LocationLabel.Dispose ();
                 LocationLabel = null;
             }
 
+            if (ModuleCodeLabel != null) {
+                ModuleCodeLabel.Dispose ();
+                ModuleCodeLabel = null;
+            }
+
             if (ModuleNameLabel != null) {
                 ModuleNameLabel.Dispose ();
                 ModuleNameLabel = null;
+            }
+
+            if (ModuleTypeLabel != null) {
+                ModuleTypeLabel.Dispose ();
+                ModuleTypeLabel = null;
             }
 
             if (StudentAttendanceIcon != null) {
@@ -85,6 +116,11 @@ namespace BeaconTest.iOS
             if (StudentSubmitButton != null) {
                 StudentSubmitButton.Dispose ();
                 StudentSubmitButton = null;
+            }
+
+            if (TimeAttendanceIcon != null) {
+                TimeAttendanceIcon.Dispose ();
+                TimeAttendanceIcon = null;
             }
 
             if (TimePeriodLabel != null) {

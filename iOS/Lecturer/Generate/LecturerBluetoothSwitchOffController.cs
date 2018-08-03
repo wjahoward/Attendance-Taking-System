@@ -16,8 +16,7 @@ namespace BeaconTest.iOS
             base.ViewDidLoad();
 
             RetryButton.TouchUpInside += (object sender, EventArgs e) => {
-
-                if (CommonClass.checkBluetooth == false) // rmb change to true on actual iphone device
+                if (CommonClass.checkBluetooth == true) // rmb change to true on actual iphone device
                 {
                     this.NavigationController.PopViewController(true);
                 }
@@ -28,12 +27,13 @@ namespace BeaconTest.iOS
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
+
+            NavigationController.NavigationBarHidden = true;
         }
 
         public override void DidReceiveMemoryWarning()
         {
             base.DidReceiveMemoryWarning();
-            // Release any cached data, images, etc that aren't in use.
         }
     }
 }

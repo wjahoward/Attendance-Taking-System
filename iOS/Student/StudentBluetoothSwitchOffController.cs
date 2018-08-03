@@ -7,7 +7,7 @@ namespace BeaconTest.iOS
 {
     public partial class StudentBluetoothSwitchOffController : UIViewController
     {
-        public StudentBluetoothSwitchOffController (IntPtr handle) : base (handle)
+        public StudentBluetoothSwitchOffController(IntPtr handle) : base(handle)
         {
         }
 
@@ -15,10 +15,12 @@ namespace BeaconTest.iOS
         {
             base.ViewDidLoad();
 
-            RetryButton.TouchUpInside += (object sender, EventArgs e) => {
+            NavigationController.NavigationBarHidden = true;
 
-				var bluetoothManager = new CBCentralManager(new CbCentralDelegate(), CoreFoundation.DispatchQueue.DefaultGlobalQueue,
-                                                       new CBCentralInitOptions { ShowPowerAlert = true });
+            CommonClass.checkBluetoothRangingOnce = true;
+
+            RetryButton.TouchUpInside += (object sender, EventArgs e) =>
+            {
 
                 if (CommonClass.checkBluetooth == true)
                 {
@@ -36,27 +38,14 @@ namespace BeaconTest.iOS
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
+
+            NavigationController.NavigationBarHidden = true;
         }
 
-		public override void DidReceiveMemoryWarning()
-		{
-			base.DidReceiveMemoryWarning();
-			// Release any cached data, images, etc that aren't in use.
-		}
-
-		public class CbCentralDelegate : CBCentralManagerDelegate
+        public override void DidReceiveMemoryWarning()
         {
-            public override void UpdatedState(CBCentralManager central)
-            {
-                if (central.State == CBCentralManagerState.PoweredOn)
-                {
-                    CommonClass.checkBluetooth = true;
-                }
-                else
-                {
-                    CommonClass.checkBluetooth = false;
-                }
-            }
+            base.DidReceiveMemoryWarning();
+            // Release any cached data, images, etc that aren't in use.
         }
     }
 }

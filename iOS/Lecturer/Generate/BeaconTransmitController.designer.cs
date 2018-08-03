@@ -20,6 +20,18 @@ namespace BeaconTest.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField LecturerAttendanceCodeTextField { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton LecturerOverrideAttendanceCodeButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton LecturerOverrideButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel LocationLabel { get; set; }
 
         [Outlet]
@@ -34,11 +46,30 @@ namespace BeaconTest.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton ViewAttendanceButton { get; set; }
 
+        [Action ("LecturerAttendanceCodeTextFieldTextChanged:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void LecturerAttendanceCodeTextFieldTextChanged (UIKit.UITextField sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (AttendanceCodeLabel != null) {
                 AttendanceCodeLabel.Dispose ();
                 AttendanceCodeLabel = null;
+            }
+
+            if (LecturerAttendanceCodeTextField != null) {
+                LecturerAttendanceCodeTextField.Dispose ();
+                LecturerAttendanceCodeTextField = null;
+            }
+
+            if (LecturerOverrideAttendanceCodeButton != null) {
+                LecturerOverrideAttendanceCodeButton.Dispose ();
+                LecturerOverrideAttendanceCodeButton = null;
+            }
+
+            if (LecturerOverrideButton != null) {
+                LecturerOverrideButton.Dispose ();
+                LecturerOverrideButton = null;
             }
 
             if (LocationLabel != null) {

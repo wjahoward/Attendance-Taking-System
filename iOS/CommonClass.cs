@@ -5,6 +5,19 @@ namespace BeaconTest.iOS
     {
 		public static int moduleRowNumber;
         public static bool checkBluetooth;
-        public static int segmentNumber;
+
+        public static string atscode;
+        public static string moduleType;
+
+        public static bool beaconTransmitBluetoothThreadCheck = true;
+
+
+        public static bool lecturerAttendanceBluetoothThreadCheck = true;
+        public static bool lecturerAttendancenNetworkThreadCheck = true;
+
+        public static TimeSpan maxTimeCheck;
+
+        public static bool checkBluetoothRangingOnce = false;
+
     }
 }
