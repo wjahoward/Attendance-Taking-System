@@ -169,7 +169,7 @@
     <Compile Include="Student.cs" />
     <Compile Include="Student\StudentBluetoothOff.cs" />
     <Compile Include="Student\StudentSuccessfulSubmission.cs" />
-    <Compile Include="Student\CommonClass.cs" />
+    <Compile Include="CommonClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AboutAssets.txt" />

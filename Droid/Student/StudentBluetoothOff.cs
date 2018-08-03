@@ -25,13 +25,28 @@ namespace BeaconTest.Droid.Student
 
             retryBluetooth = FindViewById<Button>(Resource.Id.retryBluetoothButton);
 
-            retryBluetooth.Click += delegate
+            //retryBluetooth.Click += delegate
+            //{
+            //    if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability() == false)
+            //    {
+            //        StartActivity(typeof(EnterCode));
+            //    }
+            //};
+            retryBluetooth.Click += RetryBluetoothOnClick;
+        }
+
+        private void RetryBluetoothOnClick(object sender, EventArgs e)
+        {
+            if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability() == false)
             {
-                if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability() == false)
-                {
-                    StartActivity(typeof(EnterCode));
-                }
-            };
+                RunOnUiThread(() => StartActivity(typeof(EnterCode)));
+                Finish();
+            }
+        }
+
+        public override void OnBackPressed()
+        {
+            return;
         }
     };
 }

@@ -31,15 +31,22 @@ namespace BeaconTest.Droid.Student
             retryButton = FindViewById<Button>(Resource.Id.retryButton);
             retryButton.Click += RetryButtonOnClick;
 
-            VerifyBle();
+            //VerifyBle();
         }
 
-        private void VerifyBle()
+        async void VerifyBle()
         {
-            if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability())
+            await Task.Run(() =>
             {
-                StartActivity(typeof(StudentBluetoothOff));
-            }
+                if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability())
+                {
+                    RunOnUiThread(() =>
+                    {
+                        StartActivity(typeof(StudentBluetoothOff));
+                    });
+                    Finish();
+                }
+            });
         }
 
         async void RetryButtonOnClick(object sender, EventArgs e)
