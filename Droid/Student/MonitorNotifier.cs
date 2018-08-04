@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
+//contains various methods for monitoring a beacon
 namespace BeaconTest.Droid
 {
     public class MonitorEventArgs : EventArgs

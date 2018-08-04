@@ -102,6 +102,7 @@ namespace BeaconTest.Droid
         {
             //UserDialogs.Instance.ShowLoading("Logging in");
 
+            //user is only allowed to login if they are connected to wifi
             if (this.IsSPWifiConnected())
             {
                 //submitBtn.Enabled = true;
@@ -120,6 +121,7 @@ namespace BeaconTest.Droid
 
         private void Login()
         {
+            //using default login credentials for student and lecturer respectively
             if ((username.Equals("s12345") && pwd.Equals("Te@cher123")) || (username.Equals("p1234567") && pwd.Equals("R@ndom123"))) {
                 //UserDialogs.Instance.HideLoading();
                 //username = s12345, password = Te@cher123

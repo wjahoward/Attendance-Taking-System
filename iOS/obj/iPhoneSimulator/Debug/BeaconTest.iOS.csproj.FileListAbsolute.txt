@@ -80,3 +80,38 @@ D:/My stuff/School_Years/Y3S1/FYP3/iOS/obj/iPhoneSimulator/Debug/BeaconTest.iOS.
 /Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/BeaconTest.iOS.csproj.CoreCompileInputs.cache
 /Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/BeaconTest.iOS.exe
 /Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/BeaconTest.iOS.pdb
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\BeaconTest.iOS.exe
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\BeaconTest.iOS.pdb
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\Acr.UserDialogs.dll
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\BTProgressHUD.dll
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\Newtonsoft.Json.dll
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.Abstractions.dll
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.dll
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.Abstractions.dll
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.dll
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.Abstractions.dll
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.dll
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\TestFairy.iOS.dll
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.Abstractions.pdb
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.Abstractions.xml
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.pdb
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.xml
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\Newtonsoft.Json.xml
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.Abstractions.pdb
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.Abstractions.xml
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.xml
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.Abstractions.pdb
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.Abstractions.xml
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.pdb
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.xml
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\obj\iPhoneSimulator\Debug\coremlc\_PartialAppManifest.items
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\obj\iPhoneSimulator\Debug\coremlc\_BundleResourceWithLogicalName.items
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\obj\iPhoneSimulator\Debug\optimized\
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csprojAssemblyReference.cache
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csproj.CoreCompileInputs.cache
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csproj.CopyComplete
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.exe
+D:\My stuff\School_Years\Y3S1\FYP github versions\FYP4\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.pdb

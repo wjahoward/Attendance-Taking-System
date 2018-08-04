@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace BeaconTest.Droid.Student
 {
-    [Activity(Label = "BTReady", ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "BTReady", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait, NoHistory = true)]
     public class StudentBluetoothOff : Activity
     {
         Button retryBluetooth;
@@ -37,6 +37,8 @@ namespace BeaconTest.Droid.Student
 
         private void RetryBluetoothOnClick(object sender, EventArgs e)
         {
+            /*if bluetooth is enabled, student is taken to the EnterCode activity, else they will remain on this
+             activity*/
             if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability() == false)
             {
                 RunOnUiThread(() => StartActivity(typeof(EnterCode)));
@@ -44,6 +46,7 @@ namespace BeaconTest.Droid.Student
             }
         }
 
+        //prevents user from going back to the previous page
         public override void OnBackPressed()
         {
             return;

@@ -11,6 +11,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
+//contains methods for raging a beacon
 namespace BeaconTest.Droid
 {
     public class RangeEventArgs : EventArgs

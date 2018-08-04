@@ -30,23 +30,6 @@ namespace BeaconTest.Droid.Student
             base.OnCreate(savedInstanceState);
             retryButton = FindViewById<Button>(Resource.Id.retryButton);
             retryButton.Click += RetryButtonOnClick;
-
-            //VerifyBle();
-        }
-
-        async void VerifyBle()
-        {
-            await Task.Run(() =>
-            {
-                if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability())
-                {
-                    RunOnUiThread(() =>
-                    {
-                        StartActivity(typeof(StudentBluetoothOff));
-                    });
-                    Finish();
-                }
-            });
         }
 
         async void RetryButtonOnClick(object sender, EventArgs e)
@@ -55,6 +38,7 @@ namespace BeaconTest.Droid.Student
             {
                 CommonClass.count++;
 
+                //students can only retry aka range for the lecturer's phone 3 times
                 if (CommonClass.count <= 3)
                 {
                     RunOnUiThread(() =>
@@ -63,6 +47,7 @@ namespace BeaconTest.Droid.Student
                     });
                     Finish();
                 }
+                //if after 3 times still cannot detect lecuter's phone, contigency plan will activate
                 else
                 {
                     RunOnUiThread(() =>
@@ -73,14 +58,20 @@ namespace BeaconTest.Droid.Student
                         ad.SetPositiveButton("OK", delegate
                         {
                             ad.Dispose();
-                            StartActivity(typeof(EnterCode));
                             Finish();
+                            StartActivity(typeof(EnterCode));
                         });
                         ad.Show();
                     });
                 }
                 //Console.WriteLine("Retry button was clicked: " + count);
             });
+        }
+
+        //prevents user from going back to the previous page
+        public override void OnBackPressed()
+        {
+            return;
         }
     }
 }
