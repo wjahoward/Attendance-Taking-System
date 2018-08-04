@@ -13,6 +13,7 @@ using Plugin.Connectivity;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.Timers;
+using SystemConfiguration;
 
 namespace BeaconTest.iOS
 {
@@ -25,8 +26,13 @@ namespace BeaconTest.iOS
 
         CLBeaconRegion beaconRegion;
 
-        UIAlertController okAlertController;
+        UIAlertController okAlertOverrideATSController;
+        UIAlertController okAlertLessonTimeOutController;
+        UIAlertController okAlertNetworkController;
 
+        // purpose of the timer is to check once the current time reaches 15 minutes of the start time of the lesson
+        // it will prompt and inform that the user the current time has already reached 15 minutes so as to prevent
+        // the continuation transmission of BLE signals and disallow the students to able to range for the phone
         System.Timers.Timer beaconTransmitTimer = new System.Timers.Timer();
 
         public BeaconTransmitController(IntPtr handle) : base(handle)
@@ -47,10 +53,6 @@ namespace BeaconTest.iOS
         {
             base.ViewDidLoad();
 
-            /*this.NavigationController.NavigationBar.BarTintColor = UIColor.FromRGB(BeaconTest.SharedData.primaryColourRGB[0], BeaconTest.SharedData.primaryColourRGB[1], BeaconTest.SharedData.primaryColourRGB[2]);
-            this.NavigationController.NavigationBar.TintColor = UIColor.White;
-            this.NavigationController.NavigationBar.TitleTextAttributes = new UIStringAttributes();*/
-
             LecturerAttendanceCodeTextField.ShouldReturn = delegate
             {
                 LecturerAttendanceCodeTextField.ResignFirstResponder();
@@ -69,44 +71,62 @@ namespace BeaconTest.iOS
                 LecturerAttendanceCodeTextField.Selected = true;
             };
 
+            // the overriding of ATS code is meant for field testing purpose, and will not be implemented if 
+            // it is used in a production environment. So during field testing, after the lecturer generates
+            // the legitimate ATS code from the lesson, the lecturer will make sure of this ATS code and type in that
+            // ATS code, overriding the ATS code from the dummy lecturer's timetable data. After the ATS code has been 
+            // overrided, while transmitting the BLE signals with that ATS code, the students will be able to range for that
+            // phone with that ATS Code (upon successful detection of phone) and able to submit their attendance code successfully
             LecturerOverrideButton.TouchUpInside += async (object sender, EventArgs e) =>
             {
                 UserDialogs.Instance.ShowLoading("Overriding ATS code in progress...");
 
-                if (CheckInternetStatus() == false)
+                if (CheckConnectToSPWiFi() == false)
                 {
-                    okAlertController = UIAlertController.Create("", "Please turn on Wifi to override ATS Code!", UIAlertControllerStyle.Alert);
+                    okAlertOverrideATSController = UIAlertController.Create("", "Please turn on SP WiFi to override ATS Code!", UIAlertControllerStyle.Alert);
                 }
 
                 else {
+                    // try-catch is necessary to override the ATS since is POST to a dummy URL which requires Internet
+                    // assuming in an event while trying to POST to a dummy URL, the phone that is connected to SP WiFi,
+                    // suddenly is disconnected from SP WiFi, without a try-catch, the app will crash. Therefore, having 
+                    // a try-catch to check if is connected to SP WiFi is crucial
                     try
                     {
                         lecturerModule.atscode = Convert.ToString(LecturerAttendanceCodeTextField.Text);
                         await DataAccess.LecturerOverrideATS(lecturerModule);
                         AttendanceCodeLabel.Text = lecturerModule.atscode;
                         LecturerAttendanceCodeTextField.Text = "";
+                        LecturerAttendanceCodeTextField.Hidden = true;
                         LecturerOverrideButton.Hidden = true;
-                        okAlertController = UIAlertController.Create("", "You have successfully override the ATS Code!", UIAlertControllerStyle.Alert);
+                        okAlertOverrideATSController = UIAlertController.Create("", "You have successfully override the ATS Code!", UIAlertControllerStyle.Alert);
 
-                        peripheralManager.StopAdvertising();
-                        InitBeacon();
+                        peripheralManager.StopAdvertising(); // stop transmitting BLE signals
+                        InitBeacon(); //re-transmit with new major and minor values of ATS code 
                     }
                     catch (Exception ex)
                     {
-                        okAlertController = UIAlertController.Create("", "Please turn on Wifi to override ATS Code!", UIAlertControllerStyle.Alert);
+                        okAlertOverrideATSController = UIAlertController.Create("", "Please turn on Wifi to override ATS Code!", UIAlertControllerStyle.Alert);
                     }
                 }
 
-                okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+                okAlertOverrideATSController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
 
                 UserDialogs.Instance.HideLoading();
 
-                PresentViewController(okAlertController, true, null);
+                PresentViewController(okAlertOverrideATSController, true, null);
             };
 
+            ViewAttendanceButton.Layer.CornerRadius = SharedData.buttonCornerRadius;
             ViewAttendanceButton.TouchUpInside += (object sender, EventArgs e) =>
             {
-                CommonClass.beaconTransmitBluetoothThreadCheck = false;
+                if (LecturerAttendanceCodeTextField.Hidden == false || LecturerOverrideButton.Hidden == false)
+                {
+                    LecturerAttendanceCodeTextField.Hidden = true;
+                    LecturerOverrideButton.Hidden = true;
+                }
+
+                CommonClass.beaconTransmitBluetoothThreadCheck = false; // stop the threading
                 peripheralManager.StopAdvertising();
                 beaconTransmitTimer.Stop();
             };
@@ -123,9 +143,8 @@ namespace BeaconTest.iOS
 
             CommonClass.beaconTransmitBluetoothThreadCheck = true;
 
-            // uncomment the timer lines to make the session out works
-            //beaconTransmitTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            //beaconTransmitTimer.Start();
+            beaconTransmitTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            beaconTransmitTimer.Start();
 
             UserDialogs.Instance.ShowLoading("Retrieving module info...");
             ThreadPool.QueueUserWorkItem(o => GetModule());
@@ -140,7 +159,8 @@ namespace BeaconTest.iOS
             TimeSpan currentTimeTimeSpan = TimeSpan.Parse(formattedCurrentTime);
             Console.WriteLine(currentTimeTimeSpan);
 
-            if (currentTimeTimeSpan >= CommonClass.maxTimeCheck)
+            // if the current time reaches past at least 15 minutes of start time of lesson
+            if (currentTimeTimeSpan >= CommonClass.maxTimeCheck) 
             {
                 peripheralManager.StopAdvertising();
 
@@ -148,20 +168,21 @@ namespace BeaconTest.iOS
 
                 InvokeOnMainThread(() =>
                 {
-                    okAlertController = UIAlertController.Create("Lesson Timeout", "You have reached 15 minutes of the lesson, please proceed back to Timetable page!", UIAlertControllerStyle.Alert);
+                    okAlertLessonTimeOutController = UIAlertController.Create("Lesson timeout", "You have reached 15 minutes of the lesson, please proceed back to Timetable page!", UIAlertControllerStyle.Alert);
 
-                    okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, TimeIsUp));
+                    okAlertLessonTimeOutController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, TimeIsUp));
 
-                    PresentViewController(okAlertController, true, null);
+                    PresentViewController(okAlertLessonTimeOutController, true, null);
                 });
             }
         }
 
         private void TimeIsUp(UIAlertAction obj)
         {
-            this.NavigationController.PopViewController(true);
+            this.NavigationController.PopViewController(true); // navigate back to LecturerGenerateController page
         }
 
+        // customise the keyboard with a "Done" button
         protected void AddDoneButtonToNumericKeyboard(UITextField textField)
         {
             UIToolbar toolbar = new UIToolbar(new RectangleF(0.0f, 0.0f, 50.0f, 44.0f));
@@ -180,6 +201,9 @@ namespace BeaconTest.iOS
 
         partial void LecturerAttendanceCodeTextFieldTextChanged(UITextField sender)
         {
+            // since ATS code is of 6 digits
+            // only when the user types a 6 digit number only then the submit button will appear
+            // and override the ATS code
             if (LecturerAttendanceCodeTextField.Text.Length == 6)
             {
                 LecturerOverrideButton.Hidden = false;
@@ -190,23 +214,35 @@ namespace BeaconTest.iOS
             }
         }
 
+        // start to setup phone as beacon and transmit BLE signals
         private void InitBeacon()
 		{
-            //testing
-                string atsCode = lecturerModule.atscode;
-                string atsCode1stHalf = atsCode.Substring(0, 3);
-                string atsCode2ndHalf = atsCode.Substring(3, 3);
+            string atsCode = lecturerModule.atscode;
+            string atsCode1stHalf = atsCode.Substring(0, 3);
+            string atsCode2ndHalf = atsCode.Substring(3, 3);
 
-                beaconRegion = new CLBeaconRegion(new NSUuid(DataAccess.StudentGetBeaconKey()), (ushort)int.Parse(atsCode1stHalf), (ushort)int.Parse(atsCode2ndHalf), SharedData.beaconId);
+            // simple encryption to prevent other users using the third-party app such as Locate to be
+            // able to know what is the ATS code
+            string atsCode1stHalfEncrypted = Encryption(atsCode1stHalf).ToString();
+            string atsCode2ndHalfEncrypted = Encryption(atsCode2ndHalf).ToString();
 
-                //power - the received signal strength indicator (RSSI) value (measured in decibels) of the beacon from one meter away
-                var power = BeaconPower();
+            beaconRegion = new CLBeaconRegion(new NSUuid(DataAccess.LecturerGetBeaconKey()), (ushort)int.Parse(atsCode1stHalfEncrypted), (ushort)int.Parse(atsCode2ndHalfEncrypted), SharedData.beaconId);
+           
+            //power - the received signal strength indicator (RSSI) value (measured in decibels) of the beacon from one meter away
+            var power = BeaconPower();
 
-                var peripheralData = beaconRegion.GetPeripheralData(power);
-                peripheralDelegate = new BTPeripheralDelegate();
-                peripheralManager.StartAdvertising(peripheralData);
+            var peripheralData = beaconRegion.GetPeripheralData(power);
+            peripheralDelegate = new BTPeripheralDelegate();
+            peripheralManager.StartAdvertising(peripheralData);
 		}
 
+        private int Encryption(string atscode) {
+            int numberATSCode = Convert.ToInt32(atscode);
+            int newATSCodeEncrypted = (numberATSCode * 5 + 136) * 7;
+            return newATSCodeEncrypted;
+        }
+
+        // adjustment of power based on type of module
 		private NSNumber BeaconPower()
 		{
 			switch(lecturerModule.type){
@@ -239,11 +275,11 @@ namespace BeaconTest.iOS
 
         private void GetModule()
         {
-            if (CheckInternetStatus() == false)
+            if (CheckConnectToSPWiFi() == false)
             {
                 InvokeOnMainThread(() =>
                 {
-                    ShowAlertDialog();
+                    ShowNoNetworkController();
                 });
             }
             else
@@ -262,6 +298,11 @@ namespace BeaconTest.iOS
                             AttendanceCodeLabel.Text = lecturerModule.atscode;
                             UserDialogs.Instance.HideLoading();
 
+                            // purpose of this is to bring the values of lecturerModule.atscode and lecturerModule.type
+                            // to LecturerAttendanceController as if the user at LecturerAttendanceController page turn off
+                            // Bluetooth, transmission of BLE signals will be stopped. Therefore, if the user turn on Bluetooth
+                            // and retry, the phone will once again become a beacon transmitting the BLE signals with the correct
+                            // atscode and BeaconPower - transmission power is based on the type of module
                             CommonClass.atscode = lecturerModule.atscode;
                             CommonClass.moduleType = lecturerModule.type;
 
@@ -270,7 +311,7 @@ namespace BeaconTest.iOS
                                 InitBeacon();
                             }
 
-                            CheckBluetoothRechability();
+                            CheckBluetoothRechability(); // thread that checks bluetooth constantly
                         });
                     }
                     else
@@ -289,26 +330,18 @@ namespace BeaconTest.iOS
                 {
                     InvokeOnMainThread(() =>
                     {
-                        ShowAlertDialog();
+                        ShowNoNetworkController();
                     });
                 }
             }
 		}
 
-        private void ShowAlertDialog() {
-            okAlertController = UIAlertController.Create("SP Wifi not enabled", "Please turn on SP Wifi", UIAlertControllerStyle.Alert);
+        private void ShowNoNetworkController() {
+            okAlertNetworkController = UIAlertController.Create("SP WiFi not enabled", "Please turn on SP WiFi", UIAlertControllerStyle.Alert);
 
-            okAlertController.AddAction(UIAlertAction.Create("Retry", UIAlertActionStyle.Default, AlertRetryClick));
-            okAlertController.AddAction(UIAlertAction.Create("Settings", UIAlertActionStyle.Default, GoToWifiSettingsClick));
+            okAlertNetworkController.AddAction(UIAlertAction.Create("Retry", UIAlertActionStyle.Default, AlertRetryClick));
 
-            PresentViewController(okAlertController, true, null);
-        }
-
-        private void GoToWifiSettingsClick(UIAlertAction obj)
-        {
-            var url = new NSUrl("App-prefs:root=WIFI");
-            UIApplication.SharedApplication.OpenUrl(url);
-            PresentViewController(okAlertController, true, null);
+            PresentViewController(okAlertNetworkController, true, null);
         }
 
         private void AlertRetryClick(UIAlertAction obj)
@@ -318,13 +351,9 @@ namespace BeaconTest.iOS
             });
         }
 
-        public bool CheckInternetStatus()
+        public bool CheckConnectToSPWiFi()
         {
             NetworkStatus internetStatus = Reachability.InternetConnectionStatus();
-
-            Debug.WriteLine(internetStatus);
-
-            var url = new NSUrl("App-prefs:root=WIFI");
 
             if (internetStatus.Equals(NetworkStatus.NotReachable))
             {
@@ -332,10 +361,31 @@ namespace BeaconTest.iOS
             }
             else
             {
-                return true;
+                try
+                {
+                    NSDictionary dict;
+                    var status = CaptiveNetwork.TryCopyCurrentNetworkInfo("en0", out dict);
+                    var ssid = dict[CaptiveNetwork.NetworkInfoKeySSID];
+                    string network = ssid.ToString();
+
+                    if (network == "SPStaff")
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        ShowNoNetworkController();
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
             }
         }
 
+        // constant check for Bluetooth
         private void CheckBluetoothRechability()
         {
             Thread checkBluetoothActiveThread = new Thread(new ThreadStart(CheckBluetoothAvailable));
@@ -346,7 +396,7 @@ namespace BeaconTest.iOS
         {
             if (CommonClass.beaconTransmitBluetoothThreadCheck == true)
             {
-                bool isBluetooth = await Task.Run(() => this.BluetoothRechableOrNot());
+                bool isBluetooth = await Task.Run(() => this.BluetoothRechableOrNot()); // check is to see if Bluetooth is enabled
 
                 if (!isBluetooth)
                 {
@@ -354,10 +404,22 @@ namespace BeaconTest.iOS
                     {
                         try
                         {
+                            // when the user navigates back to this page, instead of setting the module name, time period
+                            // location and attendance code already shown, it will "refresh" to showing the defaults
+                            // i.e. when the user first navigates to this page, after retrieving the module information
+                            // the texts of the respective labels will be changed accordingly i.e. ModuleNameLabel.Text is BA,
+                            // When the user navigates to another page and goes back to this page, the ModuleNameLabel.Text will
+                            // still show 'BA', which should not show 'BA' since it should be 'refreshed'.
                             ModuleNameLabel.Text = "Module Name";
                             TimePeriodLabel.Text = "Time Period";
                             LocationLabel.Text = "Location";
                             AttendanceCodeLabel.Text = "Attendance Code";
+
+                            if (LecturerAttendanceCodeTextField.Hidden == false || LecturerOverrideButton.Hidden == false)
+                            {
+                                LecturerAttendanceCodeTextField.Hidden = true;
+                                LecturerOverrideButton.Hidden = true;
+                            }
 
                             peripheralManager.StopAdvertising();
 

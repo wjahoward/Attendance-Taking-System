@@ -11,6 +11,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
+using SystemConfiguration;
 using UIKit;
 
 namespace BeaconTest.iOS
@@ -21,17 +22,14 @@ namespace BeaconTest.iOS
         CBPeripheralManager peripheralManager;
         CLBeaconRegion beaconRegion;
 
-        UIAlertController okAlertController;
+        UIAlertController okAlertLessonTimeOutController;
 
+        // purpose of the timer is to check once the current time reaches 15 minutes of the start time of the lesson
+        // it will prompt and inform that the user the current time has already reached 15 minutes so as to prevent
+        // the continuation transmission of BLE signals and disallow the students to be able to range for the phone
         System.Timers.Timer lecturerAttendanceTimer = new System.Timers.Timer();
 
-        void ScrollView_Scrolled(object sender, EventArgs e)
-        {
-            AttendanceWebView.LoadRequest(new NSUrlRequest(new NSUrl("www.google.com")));
-        }
-
-        //string loadURL = "https://ats.sf.sp.edu.sg/psc/cs90atstd/EMPLOYEE/HRMS/s/WEBLIB_A_ATS.ISCRIPT2.FieldFormula.IScript_GetLecturerClasses?&cmd=login";
-        string loadURL = "https://www.google.com";
+        string loadURL = "https://ats.sf.sp.edu.sg/psc/cs90atstd/EMPLOYEE/HRMS/s/WEBLIB_A_ATS.ISCRIPT2.FieldFormula.IScript_GetLecturerClasses?&cmd=login";
         string currentURL;
 
         public LecturerAttendanceController(IntPtr handle) : base(handle)
@@ -40,33 +38,28 @@ namespace BeaconTest.iOS
             peripheralManager = new CBPeripheralManager(peripheralDelegate, DispatchQueue.DefaultGlobalQueue);
         }
 
-        public override void ViewDidLoad()
-        {
-            //CheckNetworkReachability();
-        }
-
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
 
             NavigationController.NavigationBarHidden = false;
 
-            // uncomment the timer lines to make the session out works
-            //lecturerAttendanceTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            //lecturerAttendanceTimer.Start();
+            lecturerAttendanceTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            lecturerAttendanceTimer.Start();
 
             CommonClass.lecturerAttendanceBluetoothThreadCheck = true;
-            CommonClass.lecturerAttendancenNetworkThreadCheck = true;
+            CommonClass.lecturerAttendanceNetworkThreadCheck = true;
 
-            CheckNetwork();
+            CheckSPNetwork();
         }
 
+        // if navigate back to BeaconTransmitController page
 		public override void ViewDidDisappear(bool animated)
 		{
             base.ViewDidDisappear(animated);
 
             CommonClass.lecturerAttendanceBluetoothThreadCheck = false;
-            CommonClass.lecturerAttendancenNetworkThreadCheck = false;
+            CommonClass.lecturerAttendanceNetworkThreadCheck = false;
 
             peripheralManager.StopAdvertising();
 
@@ -90,11 +83,11 @@ namespace BeaconTest.iOS
 
                 InvokeOnMainThread(() =>
                 {
-                    okAlertController = UIAlertController.Create("Lesson Timeout", "You have reached 15 minutes of the lesson, please proceed back to Timetable page!", UIAlertControllerStyle.Alert);
+                    okAlertLessonTimeOutController = UIAlertController.Create("Lesson timeout", "You have reached 15 minutes of the lesson, please proceed back to Timetable page", UIAlertControllerStyle.Alert);
 
-                    okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, TimeIsUp));
+                    okAlertLessonTimeOutController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, TimeIsUp));
 
-                    PresentViewController(okAlertController, true, null);
+                    PresentViewController(okAlertLessonTimeOutController, true, null);
                 });
             }
         }
@@ -109,44 +102,40 @@ namespace BeaconTest.iOS
             }
         }
 
-        private void ShowAlertDialog()
+        private void ShowNoNetworkController()
         {
             //Create Alert
-            okAlertController = UIAlertController.Create("SP Wifi not enabled", "Please turn on SP Wifi", UIAlertControllerStyle.Alert);
+            UIAlertController okAlertNetworkController = UIAlertController.Create("SP WiFi not enabled", "Please turn on SP WiFi", UIAlertControllerStyle.Alert);
 
             //Add Action
-            okAlertController.AddAction(UIAlertAction.Create("Retry", UIAlertActionStyle.Default, AlertRetryClick));
-            okAlertController.AddAction(UIAlertAction.Create("Settings", UIAlertActionStyle.Default, GoToWifiSettingsClick));
+            okAlertNetworkController.AddAction(UIAlertAction.Create("Retry", UIAlertActionStyle.Default, AlertRetryClick));
 
             // Present Alert
-            PresentViewController(okAlertController, true, null);
-        }
-
-        private void GoToWifiSettingsClick(UIAlertAction obj)
-        {
-            var url = new NSUrl("App-prefs:root=WIFI");
-            UIApplication.SharedApplication.OpenUrl(url);
-            PresentViewController(okAlertController, true, null);
+            PresentViewController(okAlertNetworkController, true, null);
         }
 
         private void AlertRetryClick(UIAlertAction obj)
         {
-            CheckNetwork();
+            CheckSPNetwork();
         }
 
-        private void CheckNetwork()
+        private void CheckSPNetwork()
         {
-            if (CheckInternetStatus() == false)
+            CheckSPNetworkReachability();
+            if (CheckConnectToSPWiFi() == false)
             {
-                ShowAlertDialog();
+                ShowNoNetworkController();
             }
             else
             {
-                CheckNetworkReachability();
                 try {
-                    InitBeacon();
-                    CheckBluetoothAvailable();
+                    CommonClass.lecturerAttendanceBluetoothThreadCheck = true; // start threading
 
+                    InitBeacon();
+
+                    // inital check if "currentURL" variable has value, else it will load the "loadURL" variable
+                    // only when "currentURL" variable has value, then it will load the "currentURL" variable
+                    // since it will change depending on the current URL the user is on
                     if (currentURL != null)
                     {
                         AttendanceWebView.LoadRequest(new NSUrlRequest(new NSUrl(currentURL)));
@@ -161,17 +150,22 @@ namespace BeaconTest.iOS
                     {
                         if (currentURL != null)
                         {
+                            // "currentURL" variable is based on the current web page of the web view the user is on
                             currentURL = AttendanceWebView.Request.Url.AbsoluteString;
                         }
                         else
                         {
+                            // "currentURL" variable will have the value of "loadURL" variable first 
+                            // since it will be null in the beginning
                             currentURL = loadURL;
                         }
                         AttendanceWebView.ScrollView.Delegate = new UIScrollViewDelegate(AttendanceWebView, currentURL);
                     };
+
+                    CheckBluetoothAvailable();
                 }
                 catch (Exception ex) {
-                    ShowAlertDialog();
+                    ShowNoNetworkController();
                 }
             }
         }
@@ -187,26 +181,18 @@ namespace BeaconTest.iOS
                 this.currentURLWebview = currentURL;
             }
 
+            // allows the user to pull to refresh
             [Export("scrollViewDidEndDragging:willDecelerate:")]
             public void DraggingEnded(UIScrollView scrollView, bool willDecelerate)
             {
                 attendanceWebView.LoadRequest(new NSUrlRequest(new NSUrl(currentURLWebview)));
             }
 
+            // the web view loads the current URL
             [Export("scrollViewDidEndDecelerating:")]
             public void DecelerationEnded(UIScrollView scrollView)
             {
                 attendanceWebView.LoadRequest(new NSUrlRequest(new NSUrl(currentURLWebview)));
-            }
-
-            [Export("scrollViewDidScroll:")]
-            public void Scrolled(UIScrollView scrollView)
-            {
-                var translation = scrollView.PanGestureRecognizer.TranslationInView(scrollView.Superview);
-                if (translation.Y > 0)
-                {
-                    Console.WriteLine($"Scrolling {(translation.Y > 0 ? "Down" : "Up")}");
-                }
             }
         }
 
@@ -216,7 +202,10 @@ namespace BeaconTest.iOS
             string atsCode1stHalf = atsCode.Substring(0, 3);
             string atsCode2ndHalf = atsCode.Substring(3, 3);
 
-            beaconRegion = new CLBeaconRegion(new NSUuid(DataAccess.StudentGetBeaconKey()), (ushort)int.Parse(atsCode1stHalf), (ushort)int.Parse(atsCode2ndHalf), SharedData.beaconId);
+            string atsCode1stHalfEncrypted = Encryption(atsCode1stHalf).ToString();
+            string atsCode2ndHalfEncrypted = Encryption(atsCode2ndHalf).ToString();
+
+            beaconRegion = new CLBeaconRegion(new NSUuid(DataAccess.StudentGetBeaconKey()), (ushort)int.Parse(atsCode1stHalfEncrypted), (ushort)int.Parse(atsCode2ndHalfEncrypted), SharedData.beaconId);
 
             //power - the received signal strength indicator (RSSI) value (measured in decibels) of the beacon from one meter away
             var power = BeaconPower();
@@ -226,10 +215,15 @@ namespace BeaconTest.iOS
             peripheralManager.StartAdvertising(peripheralData);
         }
 
+        private int Encryption(string atscode)
+        {
+            int numberATSCode = Convert.ToInt32(atscode);
+            int newATSCodeEncrypted = (numberATSCode * 5 + 136) * 7;
+            return newATSCodeEncrypted;
+        }
+
         public class BTPeripheralDelegate : CBPeripheralManagerDelegate
         {
-            public bool bluetoothAvailable = true;
-
             public override void StateUpdated(CBPeripheralManager peripheral)
             {
                 if (peripheral.State == CBPeripheralManagerState.PoweredOn)
@@ -257,13 +251,9 @@ namespace BeaconTest.iOS
             return null;
         }
 
-        public bool CheckInternetStatus()
+        public bool CheckConnectToSPWiFi()
         {
             NetworkStatus internetStatus = Reachability.InternetConnectionStatus();
-
-            Debug.WriteLine(internetStatus);
-
-            var url = new NSUrl("App-prefs:root=WIFI");
 
             if (internetStatus.Equals(NetworkStatus.NotReachable))
             {
@@ -271,14 +261,28 @@ namespace BeaconTest.iOS
             }
             else
             {
-                return true;
-            }
-        }
+                try
+                {
+                    NSDictionary dict;
+                    var status = CaptiveNetwork.TryCopyCurrentNetworkInfo("en0", out dict);
+                    var ssid = dict[CaptiveNetwork.NetworkInfoKeySSID];
+                    string network = ssid.ToString();
 
-        private void CheckBluetoothRechability()
-        {
-            Thread checkBluetoothActiveThread = new Thread(new ThreadStart(CheckBluetoothAvailable));
-            checkBluetoothActiveThread.Start();
+                    if (network == "SPStaff")
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        ShowNoNetworkController();
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+            }
         }
 
         private async void CheckBluetoothAvailable()
@@ -293,9 +297,8 @@ namespace BeaconTest.iOS
                     {
                         try
                         {
-                            CommonClass.lecturerAttendancenNetworkThreadCheck = false;
-                            peripheralManager.StopAdvertising();
-
+                            CommonClass.lecturerAttendanceNetworkThreadCheck = false;
+                            CommonClass.lecturerAttendanceBluetoothThreadCheck = false;
                             var lecturerBluetoothSwitchOffController = UIStoryboard.FromName("Main", null).InstantiateViewController("LecturerBluetoothSwitchOffController");
                             this.NavigationController.PushViewController(lecturerBluetoothSwitchOffController, true);
                         }
@@ -324,17 +327,18 @@ namespace BeaconTest.iOS
             return true;
         }
 
-        private void CheckNetworkReachability()
+        // constant check for SP WiFi
+        private void CheckSPNetworkReachability()
         {
-            Thread checkNetworkActiveThread = new Thread(new ThreadStart(CheckNetworkAvailable));
-            checkNetworkActiveThread.Start();
+            Thread checkSPNetworkActiveThread = new Thread(new ThreadStart(CheckSPNetworkAvailable));
+            checkSPNetworkActiveThread.Start();
         }
 
-        private async void CheckNetworkAvailable()
+        private async void CheckSPNetworkAvailable()
         {
-            if (CommonClass.lecturerAttendancenNetworkThreadCheck == true)
+            if (CommonClass.lecturerAttendanceNetworkThreadCheck == true)
             {
-                bool isNetwork = await Task.Run(() => this.CheckInternetStatus());
+                bool isNetwork = await Task.Run(() => this.CheckConnectToSPWiFi());
 
                 if (!isNetwork)
                 {
@@ -342,18 +346,18 @@ namespace BeaconTest.iOS
                     {
                         try
                         {
-                            Console.WriteLine("ShowAlertDialog - CheckNetworkAvailable");
-                            ShowAlertDialog();
+                            CommonClass.lecturerAttendanceBluetoothThreadCheck = false;
+                            ShowNoNetworkController();
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("NetworkReachability -> CheckNetworkRechability:" + ex.Message);
+                            Console.WriteLine("NetworkReachability -> CheckSPNetworkReachability:" + ex.Message);
                         }
                     });
                 }
                 else
                 {
-                    CheckNetworkAvailable();
+                    CheckSPNetworkAvailable();
                 }
             }
             else {

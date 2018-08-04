@@ -5,6 +5,7 @@ using Acr.UserDialogs;
 using CoreBluetooth;
 using Foundation;
 using Plugin.Connectivity;
+using SystemConfiguration;
 using UIKit;
 
 namespace BeaconTest.iOS
@@ -34,13 +35,13 @@ namespace BeaconTest.iOS
                 return true;
             };
 
-			LoginButton.Layer.CornerRadius = BeaconTest.SharedData.buttonCornerRadius;
+			LoginButton.Layer.CornerRadius = SharedData.buttonCornerRadius; // customised Login button to having curve edges
 
 			LoginButton.TouchUpInside += (object sender, EventArgs e) => {
 
-				if(CheckInternetStatus() == true)
+                if (CheckConnectToSPWiFi() == true) // check if connected to SP WiFi
 				{
-					username = UsernameTextField.Text;
+                    username = UsernameTextField.Text.TrimEnd();
                     password = PasswordField.Text;               
 
 					UserDialogs.Instance.ShowLoading("Logging in...");
@@ -53,7 +54,9 @@ namespace BeaconTest.iOS
 		{
 			base.ViewDidAppear(animated);                  
 
-			CheckInternetStatus();
+            // when the user starts to launch the application
+            // it will check if the user has already or not connected to SP WiFi
+            CheckConnectToSPWiFi(); 
 		}
 
 		public override void DidReceiveMemoryWarning()
@@ -62,33 +65,59 @@ namespace BeaconTest.iOS
             // Release any cached data, images, etc that aren't in use.
         }
         
-		public bool CheckInternetStatus()
+		public bool CheckConnectToSPWiFi()
 		{
-			NetworkStatus internetStatus = Reachability.InternetConnectionStatus();
+            NetworkStatus internetStatus = Reachability.InternetConnectionStatus();
 
-			var url = new NSUrl("App-prefs:root=WIFI");
+            if (internetStatus.Equals(NetworkStatus.NotReachable)) // if there is no Internet
+            {
+                ShowNoNetworkController();
+                return false;
+            }
+            else
+            {
+                // the below codes are to check if the phone is connected to a specific SSID
+                // the reason why require try-catch is because if the phone is not connected to Internet
+                // while checking for that SSID, it will crash since is not connected to WiFi 
+                // and the "dict" value will be null, therefore having a try-catch expression is necessary
+                try
+                {
+                    NSDictionary dict;
+                    var status = CaptiveNetwork.TryCopyCurrentNetworkInfo("en0", out dict);
+                    var ssid = dict[CaptiveNetwork.NetworkInfoKeySSID];
+                    string network = ssid.ToString();
 
-			if (internetStatus.Equals(NetworkStatus.NotReachable))
-			{
-				PresentViewController(CustomAlert.CreateUIAlertController("No Internet Connection", "Internet connection is required for this app to function properly", "Go to settings", "App-prefs:root=WIFI"), true, null);
-
-				return false;
-			}
-			else
-			{
-				return true;
-			}
+                    if (network == "SPStudent" || network == "SPStaff") // check to see if is connected to SP WiFi
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        ShowNoNetworkController();
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ShowNoNetworkController();
+                    return false;
+                }
+            }
 		}
+
+        private void ShowNoNetworkController() {
+            UIAlertController okAlertNetworkController = UIAlertController.Create("Device not connected to SP WiFi", "Please connect to SP WiFi on your phone", UIAlertControllerStyle.Alert);
+
+            okAlertNetworkController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+
+            PresentViewController(okAlertNetworkController, true, null);
+        }
 
         public void Login()
         {
-            //username = "p1234567";
-            //password = "R@ndom123";
-            //username = "S12345"; // rmb delete this later
-            //password = "Te@cher123"; // rmb delete this later
             InvokeOnMainThread(() =>
             {
-                // accepts both capital and small letters of username
+                // accepts both capital and small letters for username text field
                 if ((username.Equals(("s12345"), StringComparison.OrdinalIgnoreCase) && password.Equals("Te@cher123")) || (username.Equals(("p1234567"), StringComparison.OrdinalIgnoreCase) && password.Equals("R@ndom123")))
                 {
                     UserDialogs.Instance.HideLoading();
@@ -116,16 +145,15 @@ namespace BeaconTest.iOS
                     UserDialogs.Instance.HideLoading();
 
                     //Create Alert
-                    var okAlertController = UIAlertController.Create("Invalid Login Credentials", "The username or password you have entered is invalid", UIAlertControllerStyle.Alert);
+                    UIAlertController invalidCredentialsController = UIAlertController.Create("Invalid login credentials", "The username or password you have entered is invalid", UIAlertControllerStyle.Alert);
 
                     //Add Action
-                    okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+                    invalidCredentialsController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
 
                     // Present Alert
-                    PresentViewController(okAlertController, true, null);
+                    PresentViewController(invalidCredentialsController, true, null);
                 }
             });
         }
     }
 }
-

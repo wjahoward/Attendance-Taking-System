@@ -1,35 +1,82 @@
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\BeaconTest.iOS.exe
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\BeaconTest.iOS.pdb
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\Acr.UserDialogs.dll
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\BTProgressHUD.dll
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\Newtonsoft.Json.dll
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.Abstractions.dll
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.dll
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.Abstractions.dll
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.dll
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.Abstractions.dll
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.dll
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\TestFairy.iOS.dll
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.Abstractions.pdb
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.Abstractions.xml
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.pdb
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\Plugin.BLE.xml
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\Newtonsoft.Json.xml
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.Abstractions.pdb
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.Abstractions.xml
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\Plugin.Share.xml
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.Abstractions.pdb
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.Abstractions.xml
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.pdb
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\bin\iPhoneSimulator\Debug\Plugin.Connectivity.xml
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\obj\iPhoneSimulator\Debug\coremlc\_PartialAppManifest.items
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\obj\iPhoneSimulator\Debug\coremlc\_BundleResourceWithLogicalName.items
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\obj\iPhoneSimulator\Debug\optimized\
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csprojAssemblyReference.cache
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csproj.CoreCompileInputs.cache
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.csproj.CopyComplete
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.exe
-D:\My stuff\School_Years\Y3S1\FYP3\iOS\obj\iPhoneSimulator\Debug\BeaconTest.iOS.pdb
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/BeaconTest.iOS.exe
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/BeaconTest.iOS.pdb
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/Acr.UserDialogs.dll
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/BTProgressHUD.dll
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.dll
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/Plugin.BLE.Abstractions.dll
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/Plugin.BLE.dll
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/Plugin.Connectivity.Abstractions.dll
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/Plugin.Connectivity.dll
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/Plugin.Share.Abstractions.dll
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/Plugin.Share.dll
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/TestFairy.iOS.dll
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/Plugin.BLE.Abstractions.pdb
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/Plugin.BLE.Abstractions.xml
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/Plugin.BLE.pdb
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/Plugin.BLE.xml
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.xml
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/Plugin.Share.Abstractions.pdb
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/Plugin.Share.Abstractions.xml
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/Plugin.Share.xml
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/Plugin.Connectivity.Abstractions.pdb
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/Plugin.Connectivity.Abstractions.xml
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/Plugin.Connectivity.pdb
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/bin/iPhoneSimulator/Debug/Plugin.Connectivity.xml
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/obj/iPhoneSimulator/Debug/ibtool/_BundleResourceWithLogicalName.items
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/obj/iPhoneSimulator/Debug/actool/_PartialAppManifest.items
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/obj/iPhoneSimulator/Debug/actool/_BundleResourceWithLogicalName.items
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/obj/iPhoneSimulator/Debug/coremlc/_PartialAppManifest.items
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/obj/iPhoneSimulator/Debug/coremlc/_BundleResourceWithLogicalName.items
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/obj/iPhoneSimulator/Debug/optimized/
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/obj/iPhoneSimulator/Debug/BeaconTest.iOS.csprojAssemblyReference.cache
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/obj/iPhoneSimulator/Debug/BeaconTest.iOS.csproj.CoreCompileInputs.cache
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/obj/iPhoneSimulator/Debug/BeaconTest.iOS.csproj.CopyComplete
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/obj/iPhoneSimulator/Debug/BeaconTest.iOS.exe
+D:/My stuff/School_Years/Y3S1/FYP3/iOS/obj/iPhoneSimulator/Debug/BeaconTest.iOS.pdb
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/BeaconTest.iOS.exe
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/BeaconTest.iOS.pdb
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/Acr.UserDialogs.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/BTProgressHUD.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/Plugin.BLE.Abstractions.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/Plugin.BLE.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/Plugin.Connectivity.Abstractions.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/Plugin.Connectivity.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/Plugin.Share.Abstractions.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/Plugin.Share.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/TestFairy.iOS.dll
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/Plugin.BLE.Abstractions.pdb
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/Plugin.BLE.Abstractions.xml
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/Plugin.BLE.pdb
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/Plugin.BLE.xml
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.xml
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/Plugin.Share.Abstractions.pdb
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/Plugin.Share.Abstractions.xml
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/Plugin.Share.xml
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/Plugin.Connectivity.Abstractions.pdb
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/Plugin.Connectivity.Abstractions.xml
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/Plugin.Connectivity.pdb
+/Users/admin/Desktop/FYP/iOS/bin/iPhoneSimulator/Debug/Plugin.Connectivity.xml
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/ibtool/_BundleResourceWithLogicalName.items
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/actool/_PartialAppManifest.items
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/actool/_BundleResourceWithLogicalName.items
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/coremlc/_PartialAppManifest.items
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/coremlc/_BundleResourceWithLogicalName.items
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/Cross Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/Time Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/Tick Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/Bluetooth Devices Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/User Profile Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/Retry Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/Bluetooth Device Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/Bluetooth Transmission Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/Location Icon.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/Asset1.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/Time Icon-01.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/Book.PNG
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/Book Icon-26.png
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/BeaconTest.iOS.csprojResolveAssemblyReference.cache
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/BeaconTest.iOS.csproj.CoreCompileInputs.cache
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/BeaconTest.iOS.exe
+/Users/admin/Desktop/FYP/iOS/obj/iPhoneSimulator/Debug/BeaconTest.iOS.pdb

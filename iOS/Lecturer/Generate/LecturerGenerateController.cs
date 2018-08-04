@@ -12,16 +12,15 @@ using CoreFoundation;
 using System.Threading.Tasks;
 using Plugin.Connectivity;
 using Plugin.BLE.Abstractions.Contracts;
+using SystemConfiguration;
 
 namespace BeaconTest.iOS
 {
     public partial class LecturerGenerateController : UITableViewController
     {
         UITableView tableView;
-		List<LecturerModuleTableViewItem> attendanceTableViewItems = new List<LecturerModuleTableViewItem>();
-		LecturerTimetable lecturerTimetable;
-
-        UIAlertController okAlertController;
+        List<LecturerModuleTableViewItem> attendanceTableViewItems = new List<LecturerModuleTableViewItem>();
+        LecturerTimetable lecturerTimetable;
 
         public LecturerGenerateController(IntPtr handle) : base(handle)
         {
@@ -34,6 +33,7 @@ namespace BeaconTest.iOS
 
             await CheckBluetooth();
 
+            // customise the Navigation Bar
             this.NavigationController.NavigationBar.BarTintColor = UIColor.FromRGB(BeaconTest.SharedData.primaryColourRGB[0], BeaconTest.SharedData.primaryColourRGB[1], BeaconTest.SharedData.primaryColourRGB[2]);
             this.NavigationController.NavigationBar.TintColor = UIColor.White;
             this.NavigationController.NavigationBar.TitleTextAttributes = new UIStringAttributes()
@@ -47,46 +47,57 @@ namespace BeaconTest.iOS
             frame.Height = 0;
             frame.Width = 0;
             tableView.TableFooterView = new UIView(frame);
+        }
+
+        public override void ViewDidAppear(bool animated)
+        {
+            base.ViewDidAppear(animated);
+
+            NavigationController.NavigationBarHidden = false;
 
             UserDialogs.Instance.ShowLoading("Retrieving timetable info...");
             ThreadPool.QueueUserWorkItem(o => GetTimetable());
         }
 
-		public override void ViewDidAppear(bool animated)
-		{
-            base.ViewDidAppear(animated);
-
-            NavigationController.NavigationBarHidden = false;
-		}
-
-        private async Task CheckBluetooth() {
+        private async Task CheckBluetooth()
+        {
             var state = await GetBluetoothState(Plugin.BLE.CrossBluetoothLE.Current);
-            if (state == BluetoothState.Off) {
+            if (state == BluetoothState.Off)
+            {
                 CommonClass.checkBluetooth = false;
             }
-            else {
+            else
+            {
                 CommonClass.checkBluetooth = true;
             }
 
+            // every time the user enables and disables Bluetooth 
+            // it will check the changed and updated state of Bluetooth
             Plugin.BLE.CrossBluetoothLE.Current.StateChanged += (o, e) =>
             {
-                if (e.NewState == BluetoothState.Off) {
+                if (e.NewState == BluetoothState.Off)
+                {
                     CommonClass.checkBluetooth = false;
                 }
-                else {
+                else
+                {
                     CommonClass.checkBluetooth = true;
                 }
             };
         }
 
-        private Task<BluetoothState> GetBluetoothState(IBluetoothLE ble) {
+        // this method is to find the current state of Bluetooth if it is unknown
+        private Task<BluetoothState> GetBluetoothState(IBluetoothLE ble)
+        {
             var tcs = new TaskCompletionSource<BluetoothState>();
 
-            if (ble.State != BluetoothState.Unknown) {
+            if (ble.State != BluetoothState.Unknown)
+            {
                 tcs.SetResult(ble.State);
             }
 
-            else {
+            else
+            {
                 EventHandler<Plugin.BLE.Abstractions.EventArgs.BluetoothStateChangedArgs> handler = null;
                 handler += (o, e) =>
                 {
@@ -99,17 +110,21 @@ namespace BeaconTest.iOS
             return tcs.Task;
         }
 
-		private void GetTimetable()
+        private void GetTimetable()
         {
-            if (CheckInternetStatus() == false)
+            if (CheckConnectToSPWiFi() == false)
             {
                 InvokeOnMainThread(() =>
                 {
-                    ShowAlertDialog();
+                    ShowNoNetworkController();
                 });
             }
             else
             {
+                // try-catch is necessary since the getting of lecturer's timetable data is from a dummy URL
+                // which requires Internet. Assuming in an event while trying to get lecturer's timetable data,
+                // the phone that is connected to SP WiFi, suddenly is disconnected from SP WiFi, without a try-catch,
+                // the app will crash. Therefore, having a try-catch to check if is connected to SP WiFi is crucial
                 try
                 {
                     lecturerTimetable = DataAccess.GetLecturerTimetable().Result;
@@ -126,44 +141,34 @@ namespace BeaconTest.iOS
                 {
                     InvokeOnMainThread(() =>
                     {
-                        ShowAlertDialog();
+                        ShowNoNetworkController();
                     });
                 }
             }
         }
 
-        private void ShowAlertDialog() {
+        private void ShowNoNetworkController()
+        {
             //Create Alert
-            okAlertController = UIAlertController.Create("SP Wifi not enabled", "Please turn on SP Wifi", UIAlertControllerStyle.Alert);
+            UIAlertController okAlertNetworkController = UIAlertController.Create("SP Wifi not enabled", "Please turn on SP Wifi", UIAlertControllerStyle.Alert);
 
             //Add Action
-            okAlertController.AddAction(UIAlertAction.Create("Settings", UIAlertActionStyle.Default, GoToWifiSettingsClick));
-            okAlertController.AddAction(UIAlertAction.Create("Retry", UIAlertActionStyle.Default, AlertRetryClick));
-            // Present Alert
-            PresentViewController(okAlertController, true, null);
-        }
+            okAlertNetworkController.AddAction(UIAlertAction.Create("Retry", UIAlertActionStyle.Default, AlertRetryClick));
 
-		private void GoToWifiSettingsClick(UIAlertAction obj)
-        {
-            var url = new NSUrl("App-prefs:root=WIFI");
-            UIApplication.SharedApplication.OpenUrl(url);
-            PresentViewController(okAlertController, true, null);
+            // Present Alert
+            PresentViewController(okAlertNetworkController, true, null);
         }
 
         private void AlertRetryClick(UIAlertAction obj)
         {
             InvokeOnMainThread(() => {
-                GetTimetable();  
+                GetTimetable(); 
             });
         }
 
-        public bool CheckInternetStatus()
+        public bool CheckConnectToSPWiFi()
         {
             NetworkStatus internetStatus = Reachability.InternetConnectionStatus();
-
-            Debug.WriteLine(internetStatus); 
-
-            var url = new NSUrl("App-prefs:root=WIFI");
 
             if (internetStatus.Equals(NetworkStatus.NotReachable))
             {
@@ -171,40 +176,78 @@ namespace BeaconTest.iOS
             }
             else
             {
-                return true;
+                try
+                {
+                    NSDictionary dict;
+                    var status = CaptiveNetwork.TryCopyCurrentNetworkInfo("en0", out dict);
+                    var ssid = dict[CaptiveNetwork.NetworkInfoKeySSID];
+                    string network = ssid.ToString();
+
+                    if (network == "SPStudent" || network == "SPStaff") 
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        ShowNoNetworkController();
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
             }
         }
 
         private void SetTableData()
-		{
-			foreach(LecturerModule module in lecturerTimetable.modules)
-			{
-				if(!module.abbr.Equals(""))
-				{
-					attendanceTableViewItems.Add(new LecturerModuleTableViewItem(module.abbr) { ModuleCode = module.code, Venue = module.location, Time = module.time });
-				}
-				else
-				{
-					attendanceTableViewItems.Add(new LecturerModuleTableViewItem("No lesson") { ModuleCode = "", Venue = "", Time = "" });
-					tableView.AllowsSelection = false;
-				}
-			}
+        {
+            foreach (LecturerModule module in lecturerTimetable.modules)
+            {
+                if (!module.abbr.Equals(""))
+                {
+                    // the purpose of having to check whether attendanceTableViewItems.Count is equivalent to
+                    // lecturerTimetable.modules.Count is assuming if the user navigates to another page
+                    // i.e. LecturerBluetoothSwitchOffController page as Bluetooth has to be enabled first before 
+                    // able to generate he attendance for that lesson. At that page, after the user has enabed Bluetooth
+                    // and navigated back to the LecturerGenerateController page, the attendanceTableViewItems will
+                    // add those modules that were already been added when the user first navigates to 
+                    // LectureGenerateController page. So if attendanceTableViewItems.Count is equivalent to 
+                    // lecturerTimetable.modules.Count, attendanceTableVieItems will not add in any more
+                    // module.
+
+                    if (attendanceTableViewItems.Count != lecturerTimetable.modules.Count)
+                    {
+                        attendanceTableViewItems.Add(new LecturerModuleTableViewItem(module.abbr) { ModuleCode = module.code, Venue = module.location, Time = module.time });
+                    }
+                }
+
+                else
+                {
+                    if (attendanceTableViewItems.Count != lecturerTimetable.modules.Count)
+                    {
+                        attendanceTableViewItems.Add(new LecturerModuleTableViewItem("No lesson") { ModuleCode = "", Venue = "", Time = "" });
+                        tableView.AllowsSelection = false;
+                    }
+                }
+            }
             var tableSource = new TableSource(attendanceTableViewItems, this.NavigationController);
             tableView.Source = tableSource;
 
-            VerifyBle();
+            VerifyBle(); // when the user navigates to this page, it will check if user enables Bluetooth
 
-			tableView.ReloadData();
-		}
+            tableView.ReloadData(); 
+        }
 
-        private void VerifyBle() {
+        private void VerifyBle()
+        {
             if (CommonClass.checkBluetooth == false)
             {
-                okAlertController = UIAlertController.Create("Bluetooth not enabled", "Please enable Bluetooth on your phone to generate attendance code!", UIAlertControllerStyle.Alert);
+                UIAlertController okBluetoothAlertController = UIAlertController.Create("Bluetooth not enabled", "Please enable Bluetooth on your phone to generate attendance code!", UIAlertControllerStyle.Alert);
 
-                okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+                okBluetoothAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
 
-                PresentViewController(okAlertController, true, null);
+                PresentViewController(okBluetoothAlertController, true, null);
             }
         }
 
@@ -228,51 +271,47 @@ namespace BeaconTest.iOS
             public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
             {
                 var cell = tableView.DequeueReusableCell(cellIdentifier) as LecturerModuleCell;
-				if (cell == null)
-				{
-					cell = new LecturerModuleCell(cellIdentifier);
-					if (attendanceTableViewItems[0].ModuleName.Equals("No lesson"))
+                if (cell == null)
+                {
+                    cell = new LecturerModuleCell(cellIdentifier);
+                    if (attendanceTableViewItems[0].ModuleName.Equals("No lesson"))
                     {
-						cell.generateLabel.Hidden = true;
+                        cell.generateLabel.Hidden = true;
                     }
-				}
-				
-                Debug.WriteLine(attendanceTableViewItems[0].ModuleName);
+                }
+
                 if (indexPath.Row <= attendanceTableViewItems.Count - 1)
                 {
                     cell.UpdateCell(attendanceTableViewItems[indexPath.Row].ModuleName
-					                , attendanceTableViewItems[indexPath.Row].ModuleCode
-					                , attendanceTableViewItems[indexPath.Row].Venue
-					                , attendanceTableViewItems[indexPath.Row].Time);
+                                    , attendanceTableViewItems[indexPath.Row].ModuleCode
+                                    , attendanceTableViewItems[indexPath.Row].Venue
+                                    , attendanceTableViewItems[indexPath.Row].Time);
                 }
+
                 return cell;
             }
 
             public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
             {
-                //base.RowSelected(tableView, indexPath);
-                //string currentTimeString = DateTime.Now.ToString("mm/dd/yyyy HH:mm:ss");
-                //string currentTimeSubstring = currentTimeString.Substring(11, 8);
-                string currentTimeString = "08:00";
-                TimeSpan currentTime = TimeSpan.Parse(currentTimeString);
-                //TimeSpan currentTime = TimeSpan.Parse(currentTimeSubstring);
-                //Console.WriteLine("Current time: {0}", currentTimeSubstring);
+                string currentTimeString = DateTime.Now.ToString("mm/dd/yyyy HH:mm:ss");
+                string currentTimeSubstring = currentTimeString.Substring(11, 8);
+                TimeSpan currentTime = TimeSpan.Parse(currentTimeSubstring);
 
                 string moduleStartTimeString = attendanceTableViewItems[indexPath.Row].Time.Substring(0, 5);
-                //string moduleStartTimeString = "12:10";
                 TimeSpan moduleStartTime = TimeSpan.Parse(moduleStartTimeString);
+
                 string moduleEndTimeString = attendanceTableViewItems[indexPath.Row].Time.Substring(6, 5);
                 TimeSpan moduleEndTime = TimeSpan.Parse(moduleEndTimeString);
 
                 TimeSpan maxTime = moduleStartTime + TimeSpan.Parse("00:15:00");
 
-                CommonClass.maxTimeCheck = maxTime;
+                // this will be "brought" to BeaconTransmitController and LecturerAttendanceController to check 
+                // if the current time exceeds this value if exceeds, it will prompt the user and the user will 
+                // be navigated to this controller page.
+                CommonClass.maxTimeCheck = maxTime; 
 
-                /* the attendance view need fixing*/
-                //var lecturerAttendanceController = UIStoryboard.FromName("Main", null).InstantiateViewController("LecturerAttendanceController");
-                //navigationController.PushViewController(lecturerAttendanceController, true);
-
-                if (currentTime > moduleStartTime && (currentTime >= moduleEndTime || currentTime > maxTime))
+                // if current time exceeds the time of the current lesson by minimally at a duration of 15 minutes
+                if (currentTime > moduleStartTime && (currentTime >= moduleEndTime || currentTime >= maxTime)) 
                 {
                     var lecturerAttendanceAfterGeneratingController = UIStoryboard.FromName("Main", null).InstantiateViewController("LecturerAttendanceAfterGeneratingController");
                     navigationController.PushViewController(lecturerAttendanceAfterGeneratingController, true);
@@ -280,27 +319,31 @@ namespace BeaconTest.iOS
 
                 else if (currentTime >= moduleStartTime && currentTime <= maxTime)
                 {
-                    if (CommonClass.checkBluetooth == true) // If Bluetooth is enabled
+                    if (CommonClass.checkBluetooth == true) // if Bluetooth is enabled
                     {
                         var beaconTransmitController = UIStoryboard.FromName("Main", null).InstantiateViewController("BeaconTransmitController");
                         navigationController.PushViewController(beaconTransmitController, true);
+                        // this is to get the current module that the user clicks, 'bringing' this value to
+                        // BeaconTransmitController which will allow it to be able to 'identify' which module did the
+                        // user click on LecturerGenerateController page previously
                         CommonClass.moduleRowNumber = indexPath.Row;
                     }
-                    else
+                    else // if Bluetooth is not enabled
                     {
                         var lecturerBluetoothSwitchOffController = UIStoryboard.FromName("Main", null).InstantiateViewController("LecturerBluetoothSwitchOffController");
                         navigationController.PushViewController(lecturerBluetoothSwitchOffController, true);
                     }
                 }
-                else
+
+                // if current time is not the time of that lesson
+                // i.e. assuming the current time is 8am, if the lecturer has another lesson that starts at 10am and he accidentally clicks on that lesson
+                // it will navigate him to the errorGeneratingAttendanceController page
+                else 
                 {
                     var errorGeneratingAttendanceController = UIStoryboard.FromName("Main", null).InstantiateViewController("ErrorGeneratingAttendanceController");
                     navigationController.PushViewController(errorGeneratingAttendanceController, true);
                 }
-                //var beaconTransmitController = UIStoryboard.FromName("Main", null).InstantiateViewController("BeaconTransmitController");
-                //navigationController.PushViewController(beaconTransmitController, true);
-                //CommonClass.moduleRowNumber = indexPath.Row;
             }
-		}
+        }
     }
 }

@@ -3,22 +3,15 @@ using Plugin.Connectivity;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using SystemConfiguration;
 using UIKit;
 
 namespace BeaconTest.iOS
 {
     public partial class LecturerAttendanceAfterGeneratingController : UIViewController
     {
-        UIAlertController okAlertController;
-
-        //string loadURL = "https://ats.sf.sp.edu.sg/psc/cs90atstd/EMPLOYEE/HRMS/s/WEBLIB_A_ATS.ISCRIPT2.FieldFormula.IScript_GetLecturerClasses?&cmd=login";
-        string loadURL = "https://www.google.com";
+        string loadURL = "https://ats.sf.sp.edu.sg/psc/cs90atstd/EMPLOYEE/HRMS/s/WEBLIB_A_ATS.ISCRIPT2.FieldFormula.IScript_GetLecturerClasses?&cmd=login";
         string currentURL;
-
-        void ScrollView_Scrolled(object sender, EventArgs e)
-        {
-            LecturerAttendanceAfterGenerateWebView.LoadRequest(new NSUrlRequest(new NSUrl("www.google.com")));
-        }
 
         public LecturerAttendanceAfterGeneratingController (IntPtr handle) : base (handle)
         {
@@ -28,18 +21,18 @@ namespace BeaconTest.iOS
 		{
             base.ViewDidLoad();
 
-            CheckNetwork();
+            CheckSPNetwork();
 		}
 
-        private void CheckNetworkReachability()
+        private void CheckSPNetworkReachability()
         {
-            Thread checkNetworkActiveThread = new Thread(new ThreadStart(CheckNetworkAvailable));
-            checkNetworkActiveThread.Start();
+            Thread checkSPNetworkActiveThread = new Thread(new ThreadStart(CheckSPNetworkAvailable));
+            checkSPNetworkActiveThread.Start();
         }
 
-        private async void CheckNetworkAvailable()
+        private async void CheckSPNetworkAvailable()
         {
-            bool isNetwork = await Task.Run(() => this.CheckInternetStatus());
+            bool isNetwork = await Task.Run(() => this.CheckConnectToSPWiFi());
 
             if (!isNetwork)
             {
@@ -47,55 +40,43 @@ namespace BeaconTest.iOS
                 {
                     try
                     {
-                        Console.WriteLine("ShowAlertDialog - CheckNetworkAvailable");
-                        ShowAlertDialog();
+                        ShowNoNetworkController();
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("NetworkReachability -> CheckNetworkRechability:" + ex.Message);
+                        Console.WriteLine("NetworkReachability -> CheckSPNetworkReachability:" + ex.Message);
                     }
                 });
             }
             else
             {
-                CheckNetworkAvailable();
+                CheckSPNetworkAvailable();
             }
         }
 
-        private void ShowAlertDialog()
+        private void ShowNoNetworkController()
         {
-            //Create Alert
-            okAlertController = UIAlertController.Create("SP Wifi not enabled", "Please turn on SP Wifi", UIAlertControllerStyle.Alert);
+            UIAlertController okAlertNetworkController = UIAlertController.Create("SP WiFi not enabled", "Please turn on SP WiFi", UIAlertControllerStyle.Alert);
 
-            //Add Action
-            okAlertController.AddAction(UIAlertAction.Create("Retry", UIAlertActionStyle.Default, AlertRetryClick));
-            okAlertController.AddAction(UIAlertAction.Create("Settings", UIAlertActionStyle.Default, GoToWifiSettingsClick));
+            okAlertNetworkController.AddAction(UIAlertAction.Create("Retry", UIAlertActionStyle.Default, AlertRetryClick));
 
-            // Present Alert
-            PresentViewController(okAlertController, true, null);
-        }
-
-        private void GoToWifiSettingsClick(UIAlertAction obj)
-        {
-            var url = new NSUrl("App-prefs:root=WIFI");
-            UIApplication.SharedApplication.OpenUrl(url);
-            PresentViewController(okAlertController, true, null);
+            PresentViewController(okAlertNetworkController, true, null);
         }
 
         private void AlertRetryClick(UIAlertAction obj)
         {
-            CheckNetwork();
+            CheckSPNetwork();
         }
 
-        private void CheckNetwork()
+        private void CheckSPNetwork()
         {
-            if (CheckInternetStatus() == false)
+            if (CheckConnectToSPWiFi() == false)
             {
-                ShowAlertDialog();
+                ShowNoNetworkController();
             }
             else
             {
-                CheckNetworkReachability();
+                CheckSPNetworkReachability();
                 try
                 {
                     if (currentURL != null)
@@ -111,7 +92,7 @@ namespace BeaconTest.iOS
                     {
                         if (currentURL != null)
                         {
-                            currentURL = LecturerAttendanceAfterGenerateWebView.Request.Url.AbsoluteString;
+                            currentURL = LecturerAttendanceAfterGenerateWebView.Request.Url.AbsoluteString; 
                         }
                         else
                         {
@@ -122,16 +103,14 @@ namespace BeaconTest.iOS
                 }
                 catch (Exception ex)
                 {
-                    ShowAlertDialog();
+                    ShowNoNetworkController();
                 }
             }
         }
 
-        public bool CheckInternetStatus()
+        public bool CheckConnectToSPWiFi()
         {
             NetworkStatus internetStatus = Reachability.InternetConnectionStatus();
-
-            var url = new NSUrl("App-prefs:root=WIFI");
 
             if (internetStatus.Equals(NetworkStatus.NotReachable))
             {
@@ -139,7 +118,27 @@ namespace BeaconTest.iOS
             }
             else
             {
-                return true;
+                try
+                {
+                    NSDictionary dict;
+                    var status = CaptiveNetwork.TryCopyCurrentNetworkInfo("en0", out dict);
+                    var ssid = dict[CaptiveNetwork.NetworkInfoKeySSID];
+                    string network = ssid.ToString();
+
+                    if (network == "SPStaff")
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        ShowNoNetworkController();
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
             }
         }
 
@@ -166,16 +165,6 @@ namespace BeaconTest.iOS
                 attendanceWebView.LoadRequest(new NSUrlRequest(new NSUrl(currentURLWebview)));
             }
 
-            [Export("scrollViewDidScroll:")]
-            public void Scrolled(UIScrollView scrollView)
-            {
-                var translation = scrollView.PanGestureRecognizer.TranslationInView(scrollView.Superview);
-                if (translation.Y > 0)
-                {
-                    Console.WriteLine($"Scrolling {(translation.Y > 0 ? "Down" : "Up")}");
-                }
-            }
         }
-
     }
 }

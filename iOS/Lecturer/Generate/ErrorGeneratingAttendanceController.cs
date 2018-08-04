@@ -17,6 +17,8 @@ namespace BeaconTest.iOS
 			textLabel.LineBreakMode = UILineBreakMode.WordWrap;
 			textLabel.Lines = 0;
 
+            BackButton.Layer.CornerRadius = SharedData.buttonCornerRadius;
+
             BackButton.TouchUpInside += (object sender, EventArgs e) => {
 
                     this.NavigationController.PopViewController(true);

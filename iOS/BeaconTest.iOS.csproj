@@ -213,8 +213,8 @@
     <Compile Include="SplashScreenController.designer.cs">
       <DependentUpon>SplashScreenController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lecturer\Generate\LecturerAttendanceAfterGeneratingController.cs" />
-    <Compile Include="Lecturer\Generate\LecturerAttendanceAfterGeneratingController.designer.cs">
+    <Compile Include="Lecturer\Attendance\LecturerAttendanceAfterGeneratingController.cs" />
+    <Compile Include="Lecturer\Attendance\LecturerAttendanceAfterGeneratingController.designer.cs">
       <DependentUpon>LecturerAttendanceAfterGeneratingController.cs</DependentUpon>
     </Compile>
   </ItemGroup>

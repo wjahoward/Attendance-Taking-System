@@ -24,6 +24,10 @@ namespace BeaconTest.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField EnterAttendanceCodeFieldManuallyIfUnableToRangeTextField { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel FoundBeacon { get; set; }
 
         [Outlet]
@@ -62,6 +66,10 @@ namespace BeaconTest.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel TimePeriodLabel { get; set; }
 
+        [Action ("AttendanceCodeManuallyTextField:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void AttendanceCodeManuallyTextField (UIKit.UITextField sender);
+
         [Action ("AttendanceCodeTextFieldTextChanged:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void AttendanceCodeTextFieldTextChanged (UIKit.UITextField sender);
@@ -76,6 +84,11 @@ namespace BeaconTest.iOS
             if (EnterAttendanceCodeButton != null) {
                 EnterAttendanceCodeButton.Dispose ();
                 EnterAttendanceCodeButton = null;
+            }
+
+            if (EnterAttendanceCodeFieldManuallyIfUnableToRangeTextField != null) {
+                EnterAttendanceCodeFieldManuallyIfUnableToRangeTextField.Dispose ();
+                EnterAttendanceCodeFieldManuallyIfUnableToRangeTextField = null;
             }
 
             if (FoundBeacon != null) {

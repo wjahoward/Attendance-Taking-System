@@ -15,6 +15,8 @@ namespace BeaconTest.iOS
         {
             base.ViewDidLoad();
 
+            RetryButton.Layer.CornerRadius = SharedData.buttonCornerRadius;
+
             RetryButton.TouchUpInside += (object sender, EventArgs e) => {
                 if (CommonClass.checkBluetooth == true) // rmb change to true on actual iphone device
                 {

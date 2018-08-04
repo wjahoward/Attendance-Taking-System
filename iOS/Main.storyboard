@@ -54,7 +54,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.22745098039215686" green="0.86274509803921573" blue="0.76470588235294112" alpha="1"/>
+                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.31764705882352939" green="0.86274509803921573" blue="0.70196078431372544" alpha="1"/>
                     </view>
                     <navigationItem title="Login" id="2856" key="navigationItem"/>
                     <connections>
@@ -133,7 +133,7 @@
                                 <state key="normal" title="Override ATS manually"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES"/>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="80225" translatesAutoresizingMaskIntoConstraints="NO" hidden="YES" placeholder="ATS" clearButtonMode="whileEditing" fixedFrame="YES">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="80225" translatesAutoresizingMaskIntoConstraints="NO" hidden="YES" placeholder="ATS Code" clearButtonMode="whileEditing" fixedFrame="YES">
                                 <rect key="frame" x="106" y="414" width="160" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -190,7 +190,7 @@
                         <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="6072" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" minimumFontSize="10" text="Searching for phone" textAlignment="center">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" id="6072" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" minimumFontSize="10" text="Ranging for phone" textAlignment="center">
                                 <rect key="frame" x="96" y="426" width="189" height="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -231,7 +231,7 @@
                                 <state key="normal" title="Enter ATS manually"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES"/>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="30100" translatesAutoresizingMaskIntoConstraints="NO" hidden="YES" placeholder="ATS" clearButtonMode="whileEditing" fixedFrame="YES">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="30100" translatesAutoresizingMaskIntoConstraints="NO" hidden="YES" placeholder="ATS Code" clearButtonMode="whileEditing" fixedFrame="YES">
                                 <rect key="frame" x="104" y="473" width="160" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -279,6 +279,19 @@
                                 <rect key="frame" x="165" y="88" width="45" height="40"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="83428" translatesAutoresizingMaskIntoConstraints="NO" hidden="YES" placeholder="ATS" clearButtonMode="whileEditing" fixedFrame="YES">
+                                <rect key="frame" x="103" y="426" width="160" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="tel" keyboardType="numberPad" returnKeyType="done"/>
+                                <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="AttendanceCodeTextFieldTextChanged:" destination="83430" id="83429" eventType="editingChanged"/>
+                                    <action selector="AttendanceCodeTextFieldTextChanged:" destination="83430" id="83431" eventType="editingDidEnd"/>
+                                    <action selector="AttendanceCodeManuallyTextField:" destination="2874" id="83972" eventType="editingChanged"/>
+                                    <action selector="AttendanceCodeManuallyTextField:" destination="2874" id="83973" eventType="editingDidEnd"/>
+                                </connections>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
@@ -294,6 +307,7 @@
                         <outlet property="ModuleNameLabel" destination="82176" id="name-outlet-82176"/>
                         <outlet property="ModuleCodeLabel" destination="82177" id="name-outlet-82177"/>
                         <outlet property="TimeAttendanceIcon" destination="82179" id="name-outlet-82179"/>
+                        <outlet property="EnterAttendanceCodeFieldManuallyIfUnableToRangeTextField" destination="83428" id="name-outlet-83428"/>
                     </connections>
                     <navigationItem title="Title" id="46349" key="navigationItem"/>
                 </viewController>
@@ -665,7 +679,7 @@
                     <view key="view" contentMode="scaleToFill" id="79927">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.27058823529411763" green="0.85882352941176465" blue="0.76470588235294112" alpha="1"/>
+                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.37647058823529411" green="0.85882352941176465" blue="0.72156862745098038" alpha="1"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="79959" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Asset1.png">
                                 <rect key="frame" x="107" y="255" width="199" height="119"/>

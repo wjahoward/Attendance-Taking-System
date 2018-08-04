@@ -19,6 +19,8 @@ namespace BeaconTest.iOS
 
             CommonClass.checkBluetoothRangingOnce = true;
 
+            RetryButton.Layer.CornerRadius = SharedData.buttonCornerRadius;
+
             RetryButton.TouchUpInside += (object sender, EventArgs e) =>
             {
 

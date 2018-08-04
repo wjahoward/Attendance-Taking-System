@@ -6,8 +6,6 @@ namespace BeaconTest.iOS
 {
     public partial class BeaconOutOfRangeController : UIViewController
     {
-        UIAlertController unableToDetectController;
-
         partial void OutOfRangeRetry(UIButton sender)
         {
             if (SharedData.currentRetry <= SharedData.maxRetry)
@@ -17,20 +15,20 @@ namespace BeaconTest.iOS
                 this.PresentViewController(viewController, true, null);
             }
 
+            // this is to allow the user to manually submit ATS code if the user is still unable to detect after
+            // retrying for 3 times
             else
             {
                 ShowUnableToDetectDialog();
             }
         }
 
-        private void ShowUnableToDetectDialog() {
-            // Create Alert
-            unableToDetectController = UIAlertController.Create("Unable to detect phone", "Unable to detect lecturer's phone, would you like to enter ATS manually?", UIAlertControllerStyle.Alert);
+        private void ShowUnableToDetectDialog() 
+        {
+            UIAlertController unableToDetectController = UIAlertController.Create("Unable to detect phone", "Unable to detect lecturer's phone, would you like to enter ATS manually?", UIAlertControllerStyle.Alert);
 
-            // Add Action
             unableToDetectController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, EnterATSManually));
 
-            // Present Alert
             PresentViewController(unableToDetectController, true, null);
         }
 
@@ -45,6 +43,5 @@ namespace BeaconTest.iOS
         {
 
         }
-
     }
 }
