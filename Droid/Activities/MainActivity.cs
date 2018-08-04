@@ -2,16 +2,11 @@
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
-using Android.Views;
 using Android.Widget;
-using Android.Support.V4.App;
-using Android.Support.V4.View;
-using Android.Support.Design.Widget;
 using System;
 using Android.Net.Wifi;
 using Acr.UserDialogs;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace BeaconTest.Droid
 {
@@ -28,52 +23,24 @@ namespace BeaconTest.Droid
         string pwd;
         EditText Username;
         EditText Pwd;
-        ListView Lesson;
-
-        //ViewPager pager;
-        //TabsAdapter adapter;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            //SetContentView(Resource.Layout.Login);
-
             Button submitBtn = FindViewById<Button>(Resource.Id.LoginButton);
             Username = FindViewById<EditText>(Resource.Id.usernameInput);
             Pwd = FindViewById<EditText>(Resource.Id.passwordInput);
 
-            if (this.IsSPWifiConnected() == false)
+            if (IsSPWifiConnected() == false)
             {
                 ShowAlertDialog();
             }
 
             submitBtn.Click += LoginButtonOnClick;
-
-            //UserDialogs.Init(this);
-
-            //if (this.IsWifiConnected() == false)
-            //{
-            //    //submitBtn.Enabled = true;
-
-            //    submitBtn.Click += LoginButtonOnClick;
-            //}
-            //else
-            //{
-            //    AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
-            //    alertDialog.SetTitle("Device not connected to wifi");
-            //    alertDialog.SetMessage("Please enable wifi connection on your phone");
-            //    alertDialog.SetPositiveButton("OK", delegate
-            //    {
-            //        alertDialog.Dispose();
-            //    });
-            //    alertDialog.Show();
-
-            //    //submitBtn.Enabled = false;
-            //}
         }
 
-        //checks whether wifi is switched on and connected to a wifi network
+        //checks whether SP Wifi is switched on and is connected to SP WiFi network
         private bool IsSPWifiConnected()
         {
             var wifiManager = Application.Context.GetSystemService(Context.WifiService) as WifiManager;
@@ -100,13 +67,9 @@ namespace BeaconTest.Droid
 
         private void LoginButtonOnClick(object sender, EventArgs args)
         {
-            //UserDialogs.Instance.ShowLoading("Logging in");
-
-            //user is only allowed to login if they are connected to wifi
-            if (this.IsSPWifiConnected())
+            if (IsSPWifiConnected())
             {
-                //submitBtn.Enabled = true;
-                username = Username.Text.TrimEnd();
+                username = Username.Text.TrimEnd(); // accept empty spaces at the end of the username
                 pwd = Pwd.Text;
 
                 UserDialogs.Init(this);
@@ -121,17 +84,16 @@ namespace BeaconTest.Droid
 
         private void Login()
         {
-            //using default login credentials for student and lecturer respectively
-            if ((username.Equals("s12345") && pwd.Equals("Te@cher123")) || (username.Equals("p1234567") && pwd.Equals("R@ndom123"))) {
-                //UserDialogs.Instance.HideLoading();
-                //username = s12345, password = Te@cher123
-                if (username.StartsWith("s", StringComparison.Ordinal))
+            // allows both lower and upper case of letter
+            if ((username.Equals(("s12345"), StringComparison.OrdinalIgnoreCase) && pwd.Equals("Te@cher123")) || (username.Equals(("p1234567"), StringComparison.OrdinalIgnoreCase) && pwd.Equals("R@ndom123")))
+            {
+                if (username.StartsWith("s", StringComparison.OrdinalIgnoreCase)) 
                 {
                     RunOnUiThread(() => StartActivity(typeof(Timetable)));
                     Finish();
                 }
-                //username = p1234567, password = R@ndom123
-                else if (username.StartsWith("p", StringComparison.Ordinal))
+
+                else if (username.StartsWith("p", StringComparison.OrdinalIgnoreCase))
                 {
                     RunOnUiThread(() => StartActivity(typeof(EnterCode)));
                     //for resetting count when student logs out
@@ -141,16 +103,11 @@ namespace BeaconTest.Droid
             }
             else
             {
-                //RunOnUiThread(() => UserDialogs.Instance.HideLoading());
                 RunOnUiThread(() =>
                 {
                     AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
                     alertDialog.SetTitle("Invalid login credentials");
                     alertDialog.SetMessage("The username or password you have entered is invalid");
-                    //alertDialog.SetNeutralButton("OK", delegate
-                    //{
-                    //    alertDialog.Dispose();
-                    //});
                     alertDialog.SetPositiveButton("OK", (object sender, DialogClickEventArgs e) =>
                     {
                         alertDialog.Dispose();
@@ -161,36 +118,9 @@ namespace BeaconTest.Droid
             }
         }
 
-        public override void OnBackPressed()
+        public override void OnBackPressed() // destroy the application upon pressing the hardware back button
         {
             Process.KillProcess(Process.MyPid());
         }
-
-        /*class TabsAdapter : FragmentStatePagerAdapter
-        {
-            string[] titles;
-
-            public override int Count => titles.Length;
-
-            public TabsAdapter(Context context, Android.Support.V4.App.FragmentManager fm) : base(fm)
-            {
-                titles = context.Resources.GetTextArray(Resource.Array.sections);
-            }
-
-            public override Java.Lang.ICharSequence GetPageTitleFormatted(int position) =>
-                                new Java.Lang.String(titles[position]);
-
-            public override Android.Support.V4.App.Fragment GetItem(int position)
-            {
-                switch (position)
-                {
-                    case 0: return BrowseFragment.NewInstance();
-                    case 1: return AboutFragment.NewInstance();
-                }
-                return null;
-            }
-
-            public override int GetItemPosition(Java.Lang.Object frag) => PositionNone;
-        }*/
     }
 }

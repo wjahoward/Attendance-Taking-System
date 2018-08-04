@@ -147,8 +147,8 @@
     <Compile Include="Lecturer\BeaconTransmitActivity.cs" />
     <Compile Include="Lecturer\ErrorGenerating.cs" />
     <Compile Include="Lecturer\LecturerAttendanceWebView.cs" />
+    <Compile Include="Lecturer\LecturerAttendanceWebViewAfterGeneratingATS.cs" />
     <Compile Include="Lecturer\LecturerBluetoothOff.cs" />
-    <Compile Include="Lecturer\LectureBluetoothOn.cs" />
     <Compile Include="Lecturer\LecturerBluetoothOffWebView.cs" />
     <Compile Include="Lecturer\LecturerModuleTableViewItem.cs" />
     <Compile Include="Lecturer\LecturerTransmitBluetoothOff.cs" />

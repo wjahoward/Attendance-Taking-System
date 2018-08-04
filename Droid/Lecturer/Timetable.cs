@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Timers;
 using Acr.UserDialogs;
 using AltBeaconOrg.BoundBeacon;
 using Android.App;
@@ -14,8 +10,6 @@ using Android.Content;
 using Android.Content.PM;
 using Android.Net.Wifi;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using BeaconTest.Droid.Lecturer;
 using BeaconTest.Models;
@@ -26,15 +20,14 @@ namespace BeaconTest.Droid
     public class Timetable : Activity, IDialogInterfaceOnDismissListener
     {
         public AdvertiseCallback advertiseCallback;
+
         ListView timeTableListView;
         LecturerTimetable lecturerTimetable;
-        List<LecturerModuleTableViewItem> dataSource = new List<LecturerModuleTableViewItem>();
+        List<LecturerModuleTableViewItem> dataSource = new List<LecturerModuleTableViewItem>(); // to be added into the timeTableListView
 
         AlertDialog.Builder builder;
 
-        int indexOfLesson = 0;
-
-        System.Timers.Timer aTimer = new System.Timers.Timer();
+        int indexOfLesson = 0; // indicates the index of the lesson from the timeTableListView i.e. index 0 stands for lesson 1, index 1 stands for lesson 2..
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -42,24 +35,18 @@ namespace BeaconTest.Droid
 
             base.OnCreate(savedInstanceState);
 
-            // Create your application here
-
             UserDialogs.Init(this);
 
             UserDialogs.Instance.ShowLoading("Retrieving timetable info...");
 
             ThreadPool.QueueUserWorkItem(o => GetTimetable());
-
-            //ThreadPool.QueueUserWorkItem(o => VerifyBle());
-        }
-
-        public override void OnBackPressed()
-        {
-            return;
         }
 
         private void GetTimetable()
         {
+            /* try-catch to see if while getting the lecturer's timetable data, WiFi is not enabled
+            if WiFi is not enabled suddenly while getting the lecturer's timetable data
+            it will catch that issue and an Alert Dialog will be shown. */
             try
             {
                 lecturerTimetable = DataAccess.GetLecturerTimetable().Result;
@@ -68,7 +55,7 @@ namespace BeaconTest.Droid
                     RunOnUiThread(() =>
                     {
                         UserDialogs.Instance.HideLoading();
-                        SetTableData(lecturerTimetable);
+                        SetTableData(lecturerTimetable); // setting lecturer's timetable data on timeTableListView
                     });
                 }
             }
@@ -93,14 +80,14 @@ namespace BeaconTest.Droid
 
         private async void CheckNetworkAvailable()
         {
-            bool isNetwork = await Task.Run(() => this.NetworkRechableOrNot());
+            bool isNetwork = await Task.Run(() => this.NetworkRechableOrNot()); // check to see if phone is connected to SP WiFi
 
-            if (!isNetwork)
+            if (!isNetwork) // if phone is not connected to SP WiFi
             {
                 RunOnUiThread(() => {
                     try
                     {
-                            builder.Show();
+                        builder.Show();
                     }
                     catch (Exception ex)
                     {
@@ -120,7 +107,6 @@ namespace BeaconTest.Droid
 
             if (wifiManager != null)
             {
-                // can edit such that it must be connected to SPStaff wifi
                 //return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID == "\"SPStudent\"");
                 return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID != "<unknown ssid>");
             }
@@ -154,66 +140,68 @@ namespace BeaconTest.Droid
                 timeTableListView.Divider = null;
                 timeTableListView.DividerHeight = 0;
 
-                timeTableListView.SetSelector(Android.Resource.Color.Transparent); // No highlight ripple effect if user clicks on listview
+                timeTableListView.SetSelector(Android.Resource.Color.Transparent); // remove highlight ripple effect if user clicks on listview
             }
             else
             {
-                VerifyBle();
+                VerifyBle(); // check to see if Bluetooth is enabled
 
                 timeTableListView.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) =>
                 {
-                    CommonClass.moduleRowNumber = dataSource[e.Position].Id;
+                    SharedData.moduleRowNumber = dataSource[e.Position].Id; // the index of that lesson
 
-                    //string currentTimeString = DateTime.Now.ToShortTimeString(); - change to actual real time before testing!!
-                    string currentTimeString = "08:00"; // adjust accordingly to your time
+                    DateTime currentDateTime = DateTime.Now;
+                    string currentTimeString = currentDateTime.ToString("HH:mm:ss");
                     TimeSpan currentTime = TimeSpan.Parse(currentTimeString);
-                    //Console.WriteLine("Current time: {0}", currentTime);
 
                     string moduleStartTimeString = dataSource[e.Position].Time.Substring(0, 5);
                     TimeSpan moduleStartTime = TimeSpan.Parse(moduleStartTimeString);
+
                     string moduleEndTimeString = dataSource[e.Position].Time.Substring(6, 5);
                     TimeSpan moduleEndTime = TimeSpan.Parse(moduleEndTimeString);
-                    //Console.WriteLine("Module start time: {0}", moduleStartTime);
 
-                    /*TimeSpan maxTime = moduleStartTime + TimeSpan.Parse("00:15:00");*/ // uncomment before testing!!
-                    TimeSpan maxTime = currentTime + TimeSpan.Parse("00:01:00");
-
-                    Console.WriteLine(currentTime);
+                    // duration of showing atscode is at a maximum of 15 minutes
+                    TimeSpan maxTime = currentTime + TimeSpan.Parse("00:00:30");
 
                     // bring the maxTime to Time method
                     CommonClass.maxTimeCheck = maxTime;
 
-                    // If lesson is already over and the lecturer wants to check the attendance for the previous lesson
-                    // It will navigate him to the webview, which he can log in with his or her credentials
-                    // To be able to view that lesson
-                    if (currentTime > moduleStartTime && (currentTime >= moduleEndTime || currentTime > maxTime))
+                    /* if the lesson is already over and the lecturer wants to check the attendance for the previous lesson
+                     it will navigate him to the webview, which he can log in with his or her credentials
+                     to be able to view the attedance for that lesson */
+                    if (currentTime > moduleStartTime && (currentTime >= moduleEndTime || currentTime >= maxTime))
+                    // if current time exceeds the time of that particular lesson
                     {
-                        StartActivity(typeof(LecturerAttendanceWebView));
+                        StartActivity(typeof(LecturerAttendanceWebViewAfterGeneratingATS));
                     }
 
-                    else if (currentTime >= moduleStartTime && currentTime <= maxTime)
+                    else if (currentTime >= moduleStartTime && currentTime <= maxTime) // if current time does not exceed the time of that particular lesson
                     {
-                        if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability() == false) // If Bluetooth is enabled
+                        if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability() == false) // if Bluetooth is enabled
                         {
                             StartActivity(typeof(BeaconTransmitActivity));
                         }
-                        else
+                        else // if Bluetooth is not enabled
                         {
                             StartActivity(typeof(LecturerBluetoothOff));
                         }
                     }
                     else
+                    /* if current time is not within the time for the lecturer to generate attendance code for that lesson
+                    i.e.a lecturer has two lessons, first lesson starts at 8am to 10am, and second lesson starts at 10am to 12pm
+                    assuming the time is 8am, if the lecturer accidentally clicks on the second lesson(starting at 10am to 12pm)
+                    it will navigate the lecturer to the ErrorGenerating page, which means the lecturer is unable to generates attendance code
+                    for that lesson until the time reaches 10am */
                     {
                         StartActivity(typeof(ErrorGenerating));
                     }
-                    //StartActivity(typeof(BeaconTransmitActivity));
                 };
             }
         }
 
         private bool VerifyBle()
         {
-            if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability())
+            if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability()) // if Bluetooth is not enabled
             {
                 var builder = new AlertDialog.Builder(this);
                 builder.SetTitle("Bluetooth not enabled");
@@ -225,6 +213,11 @@ namespace BeaconTest.Droid
                 return false;
             }
             return true;
+        }
+
+        public override void OnBackPressed()
+        {
+            return; // prevent the users from going back to Login Page upon pressing the hardware back button
         }
 
         public void OnDismiss(IDialogInterface dialog)

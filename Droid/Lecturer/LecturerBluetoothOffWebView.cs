@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using AltBeaconOrg.BoundBeacon;
+﻿using AltBeaconOrg.BoundBeacon;
 using Android.App;
-using Android.Content;
 using Android.Content.PM;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 
 namespace BeaconTest.Droid.Lecturer
@@ -29,7 +22,6 @@ namespace BeaconTest.Droid.Lecturer
             {
                 if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability() == false)
                 {
-                    CommonClass.transmittedOnce = false;
                     StartActivity(typeof(LecturerAttendanceWebView));
                 }
             };

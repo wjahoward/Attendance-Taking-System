@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Permissions;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
@@ -11,10 +7,8 @@ using AltBeaconOrg.BoundBeacon;
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
-using Android.Net;
 using Android.Net.Wifi;
 using Android.OS;
-using Android.Runtime;
 using Android.Text;
 using Android.Views;
 using Android.Views.InputMethods;
@@ -26,11 +20,10 @@ namespace BeaconTest.Droid.Lecturer
     [Activity(Label = "BeaconTransmitActivity", ScreenOrientation = ScreenOrientation.Portrait)]
     public class BeaconTransmitActivity : Activity, IDialogInterfaceOnDismissListener
     {
-        //StudentModule studentModule;
         LecturerModule lecturerModule;
 
         TextView moduleNameTextView, timeTextView, locationTextView, attendanceCodeTextView, overrideAttendanceCodeTextView;
-        ImageView studentAttendanceImageView, signalSmallestImageView, signalMediumImageView, signalLargeImageView;
+        ImageView studentAttendanceImageView;
         Button lecturerViewAttendanceButton, overrideATSButton;
         EditText attendanceCodeEditText;
 
@@ -38,9 +31,7 @@ namespace BeaconTest.Droid.Lecturer
 
         InputMethodManager manager;
 
-        System.Timers.Timer aTimer = new System.Timers.Timer();
-
-        bool ableToTransmit;
+        System.Timers.Timer beaconTransmitTimer = new System.Timers.Timer();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -58,25 +49,17 @@ namespace BeaconTest.Droid.Lecturer
             overrideAttendanceCodeTextView = FindViewById<TextView>(Resource.Id.overrideAttendanceCodeTextView);
             attendanceCodeEditText = FindViewById<EditText>(Resource.Id.attendanceCodeEditText);
 
-            //signalSmallestImageView = FindViewById<ImageView>(Resource.Id.signalSmallest);
-            //signalMediumImageView = FindViewById<ImageView>(Resource.Id.signalMedium);
-            //signalLargeImageView = FindViewById<ImageView>(Resource.Id.signalLarge);
+            overrideAttendanceCodeTextView.Click += OverrideATSTextViewClick;
 
-            overrideAttendanceCodeTextView.Click += overrideATSClick;
-
-            lecturerViewAttendanceButton.Click += buttonClick;
+            lecturerViewAttendanceButton.Click += LecturerViewAttendanceOnClick;
 
             attendanceCodeEditText.TextChanged += AttendanceCodeEditTextChanged;
 
-            overrideATSButton.Click += overrideATSButtonOnClick;
+            overrideATSButton.Click += OverrideATSButtonOnClick;
 
             manager = (InputMethodManager)GetSystemService(Context.InputMethodService);
 
             CommonClass.threadCheckBeaconTransmit = true;
-
-            // uncomment the timer lines to make the session out works
-            //aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            //aTimer.Start();
 
             UserDialogs.Init(this);
 
@@ -85,40 +68,94 @@ namespace BeaconTest.Droid.Lecturer
             ThreadPool.QueueUserWorkItem(o => GetModule());
         }
 
-        //private void OnTimedEvent(object source, ElapsedEventArgs e)
-        //{
-        //    DateTime currentTime = DateTime.Now;
-        //    currentTime += new TimeSpan(0, 0, 1);
+        private void GetModule()
+        {
+            try
+            {
+                LecturerTimetable lecturerTimetable = DataAccess.GetLecturerTimetable().Result;
+                lecturerModule = lecturerTimetable.GetCurrentModule(SharedData.moduleRowNumber);
+                if (lecturerModule != null)
+                {
+                    RunOnUiThread(() => moduleNameTextView.Text = lecturerModule.abbr + " (" + lecturerModule.code + ")");
+                    RunOnUiThread(() => timeTextView.Text = lecturerModule.time);
+                    RunOnUiThread(() => locationTextView.Text = lecturerModule.location);
+                    RunOnUiThread(() => attendanceCodeTextView.Text = lecturerModule.atscode);
+                    RunOnUiThread(() => UserDialogs.Instance.HideLoading());
 
-        //    Console.WriteLine(currentTime);
-        //    string formattedCurrentTime = currentTime.ToString("HH:mm:ss");
-        //    TimeSpan currentTimeTimeSpan = TimeSpan.Parse(formattedCurrentTime);    
+                    BeaconTransmit(BeaconPower(), lecturerModule.atscode);
 
-        //    if (currentTimeTimeSpan >= CommonClass.maxTimeCheck)
-        //    {
-        //        ableToTransmit = false;
-        //        BeaconTransmit(BeaconPower(), lecturerModule.atscode, ableToTransmit);
+                    // comment the below 2 lines to not start the timer
+                    beaconTransmitTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+                    beaconTransmitTimer.Start();
 
-        //        StopThreadingTemporarily();
+                    CheckBluetoothRechability();
+                }
+                else
+                {
+                    RunOnUiThread(() => moduleNameTextView.Text = "No lessons today");
+                    RunOnUiThread(() => timeTextView.Visibility = ViewStates.Gone);
+                    RunOnUiThread(() => locationTextView.Visibility = ViewStates.Gone);
+                    RunOnUiThread(() => attendanceCodeTextView.Visibility = ViewStates.Gone);
+                    RunOnUiThread(() => studentAttendanceImageView.Visibility = ViewStates.Gone);
+                    RunOnUiThread(() => UserDialogs.Instance.HideLoading());
+                }
+            }
 
-        //        aTimer.Stop();
+            catch (Exception ex)
+            {
+                builder = new AlertDialog.Builder(this);
+                builder.SetTitle("SP Wifi not enabled");
+                builder.SetMessage("Please turn on SP Wifi!");
+                builder.SetPositiveButton(Android.Resource.String.Ok, AlertRetryClick);
+                builder.SetCancelable(false);
+                builder.SetOnDismissListener(this);
 
-        //        builder = new AlertDialog.Builder(this);
-        //        builder.SetTitle("Lesson timeout");
-        //        builder.SetMessage("You have reached 15 minutes of the lesson, please proceed back to Timetable page!");
-        //        builder.SetPositiveButton(Android.Resource.String.Ok, TimeIsUp);
-        //        builder.SetCancelable(false);
-        //        builder.SetOnDismissListener(this);
-        //        RunOnUiThread(() => builder.Show());
-        //    }
-        //}
+                RunOnUiThread(() => builder.Show());
+            }
+        }
 
-        //private void TimeIsUp(object sender, DialogClickEventArgs e)
-        //{
-        //    StartActivity(typeof(Timetable));
-        //}
+        private void AlertRetryClick(object sender, DialogClickEventArgs e)
+        {
+            CheckNetworkAvailable();
+        }
 
-        private void CheckBluetoothRechability()
+        private async void CheckNetworkAvailable()
+        {
+            bool isNetwork = await Task.Run(() => NetworkRechableOrNot());
+
+            if (!isNetwork)
+            {
+                RunOnUiThread(() =>
+                {
+                    try
+                    {
+                        builder.Show();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("NetworkReachability -> CheckNetworkRechability:" + ex.Message);
+                    }
+                });
+            }
+            else
+            {
+                GetModule();
+            }
+        }
+
+        private bool NetworkRechableOrNot()
+        {
+            var wifiManager = Application.Context.GetSystemService(Context.WifiService) as WifiManager;
+
+            if (wifiManager != null)
+            {
+                //return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && (wifiManager.ConnectionInfo.SSID == "\"SPStudent\"" || wifiManager.ConnectionInfo.SSID == "\"SPStaff\"")); - check if connect to SP Network   
+                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID != "<unknown ssid>");
+            }
+            return false;
+        }
+
+        private void CheckBluetoothRechability() // constant check for Bluetooth
         {
             Thread checkBluetoothActiveThread = new Thread(new ThreadStart(CheckBluetoothAvailable));
             checkBluetoothActiveThread.Start();
@@ -164,7 +201,27 @@ namespace BeaconTest.Droid.Lecturer
             return true;
         }
 
-        private void overrideATSClick(object sender, EventArgs e)
+        private void BeaconTransmit(int power, string atscode) // start transmitting the beacons
+        {
+            BeaconTransmitter bTransmitter = new BeaconTransmitter();
+            bTransmitter.Transmit(power, atscode);
+        }
+
+        private int BeaconPower() // adjustment of beacon power based on the type of module
+        {
+            switch (lecturerModule.type)
+            {
+                case "LAB":
+                    return -84;
+                case "TUT":
+                    return -84;
+                case "LEC":
+                    return -81;
+            }
+            return 0;
+        }
+
+        private void OverrideATSTextViewClick(object sender, EventArgs e)
         {
             attendanceCodeEditText.Visibility = ViewStates.Visible;
             attendanceCodeEditText.RequestFocus();
@@ -173,6 +230,7 @@ namespace BeaconTest.Droid.Lecturer
 
         private void AttendanceCodeEditTextChanged(object sender, TextChangedEventArgs e)
         {
+            // only if the length of the ATS code inputted by the user is of 6 digits then the override ATS button will be shown
             if (attendanceCodeEditText.Text.Length == 6)
             {
                 overrideATSButton.Visibility = ViewStates.Visible;
@@ -183,7 +241,7 @@ namespace BeaconTest.Droid.Lecturer
             }
         }
 
-        async void overrideATSButtonOnClick(object sender, EventArgs e)
+        async void OverrideATSButtonOnClick(object sender, EventArgs e)
         {
             var builderOverride = new AlertDialog.Builder(this);
             string message = "";
@@ -191,8 +249,11 @@ namespace BeaconTest.Droid.Lecturer
             {
                 lecturerModule.atscode = Convert.ToString(attendanceCodeEditText.Text);
                 await DataAccess.LecturerOverrideATS(lecturerModule);
-                attendanceCodeTextView.Text = attendanceCodeEditText.Text;
+
+                attendanceCodeTextView.Text = lecturerModule.atscode;
+                attendanceCodeEditText.Visibility = ViewStates.Gone;
                 attendanceCodeEditText.SetText("", TextView.BufferType.Normal);
+
                 manager.HideSoftInputFromWindow(attendanceCodeEditText.WindowToken, 0);
                 message = "You have successfully override the ATS Code!";
                 builderOverride.SetPositiveButton(Android.Resource.String.Ok, RefreshBeacon);
@@ -209,19 +270,18 @@ namespace BeaconTest.Droid.Lecturer
             RunOnUiThread(() => builderOverride.Show());
         }
 
-        // To be continued.. - not done
-        private void RefreshBeacon(object sender, DialogClickEventArgs e)
+        private void RefreshBeacon(object sender, DialogClickEventArgs e) // re-transmit BLE signals with new major and minor values
         {
-            CommonClass.transmittedOnce = false;
-            Console.WriteLine(BeaconPower());
-            BeaconTransmit(BeaconPower(), lecturerModule.atscode, false);
+            CommonClass.beaconTransmitter.StopAdvertising();
+            BeaconTransmit(BeaconPower(), lecturerModule.atscode);
         }
 
-
-        private void buttonClick(object sender, EventArgs e)
+        private void LecturerViewAttendanceOnClick(object sender, EventArgs e)
         {
             StopThreadingTemporarily();
-            aTimer.Stop();
+            beaconTransmitTimer.Stop();
+            CommonClass.beaconTransmitter.StopAdvertising();
+
             StartActivity(typeof(LecturerAttendanceWebView));
         }
 
@@ -230,153 +290,37 @@ namespace BeaconTest.Droid.Lecturer
             CommonClass.threadCheckBeaconTransmit = false;
         }
 
-        private void GetModule()
+        private void OnTimedEvent(object source, ElapsedEventArgs e)
         {
-            try
+            DateTime currentTime = DateTime.Now;
+            currentTime += new TimeSpan(0, 0, 1);
+            Console.WriteLine(currentTime);
+
+            string formattedCurrentTime = currentTime.ToString("HH:mm:ss");
+            TimeSpan currentTimeTimeSpan = TimeSpan.Parse(formattedCurrentTime);
+
+            if (currentTimeTimeSpan >= CommonClass.maxTimeCheck)
             {
-                LecturerTimetable lecturerTimetable = DataAccess.GetLecturerTimetable().Result;
-                lecturerModule = lecturerTimetable.GetCurrentModule(CommonClass.moduleRowNumber);
-                if (lecturerModule != null)
-                {
-                    RunOnUiThread(() => moduleNameTextView.Text = lecturerModule.abbr + " (" + lecturerModule.code + ")");
-                    RunOnUiThread(() => timeTextView.Text = lecturerModule.time);
-                    RunOnUiThread(() => locationTextView.Text = lecturerModule.location);
-                    RunOnUiThread(() => attendanceCodeTextView.Text = lecturerModule.atscode);
-                    RunOnUiThread(() => UserDialogs.Instance.HideLoading());
+                StopThreadingTemporarily();
 
-                    //BeaconTransmitter bTransmitter = new BeaconTransmitter();
-                    //bTransmitter.Transmit(BeaconPower(), lecturerModule.atscode);
+                CommonClass.bluetoothAdapter.Disable();
 
-                    if (CommonClass.transmittedOnce == false)
-                    {
-                        ableToTransmit = true;
-                        BeaconTransmit(BeaconPower(), lecturerModule.atscode, ableToTransmit);
-                    }
+                beaconTransmitTimer.Stop();
 
-                    CheckBluetoothRechability();
-                }
-                else
-                {
-                    RunOnUiThread(() => moduleNameTextView.Text = "No lessons today");
-                    RunOnUiThread(() => timeTextView.Visibility = ViewStates.Gone);
-                    RunOnUiThread(() => locationTextView.Visibility = ViewStates.Gone);
-                    RunOnUiThread(() => attendanceCodeTextView.Visibility = ViewStates.Gone);
-                    RunOnUiThread(() => studentAttendanceImageView.Visibility = ViewStates.Gone);
-                    RunOnUiThread(() => UserDialogs.Instance.HideLoading());
-                }
-            }
-
-            catch (Exception ex)
-            {
                 builder = new AlertDialog.Builder(this);
-                builder.SetTitle("SP Wifi not enabled");
-                builder.SetMessage("Please turn on SP Wifi!");
-                builder.SetPositiveButton(Android.Resource.String.Ok, AlertRetryClick);
+                builder.SetTitle("Lesson timeout");
+                builder.SetMessage("You have reached 15 minutes of the lesson, please proceed back to Timetable page!");
+                builder.SetPositiveButton(Android.Resource.String.Ok, TimeIsUp);
                 builder.SetCancelable(false);
                 builder.SetOnDismissListener(this);
-
                 RunOnUiThread(() => builder.Show());
             }
         }
 
-        private void BeaconTransmit(int power, string atscode, bool ableToTransmit)
+        private void TimeIsUp(object sender, DialogClickEventArgs e)
         {
-            BeaconTransmitter bTransmitter = new BeaconTransmitter();
-            bTransmitter.Transmit(power, atscode, ableToTransmit);
-
-            if (ableToTransmit == true)
-            {
-                CommonClass.transmittedOnce = true;
-            }
-            else
-            {
-                CommonClass.transmittedOnce = false;
-            }
+            StartActivity(typeof(Timetable));
         }
-
-        private void AlertRetryClick(object sender, DialogClickEventArgs e)
-        {
-            CheckNetworkAvailable();
-        }
-
-        private async void CheckNetworkAvailable()
-        {
-            bool isNetwork = await Task.Run(() => NetworkRechableOrNot());
-
-            if (!isNetwork)
-            {
-                RunOnUiThread(() =>
-                {
-                    try
-                    {
-                        builder.Show();
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("NetworkReachability -> CheckNetworkRechability:" + ex.Message);
-                    }
-                });
-            }
-            else
-            {
-                GetModule();
-            }
-        }
-
-        private bool NetworkRechableOrNot()
-        {
-            var wifiManager = Application.Context.GetSystemService(Context.WifiService) as WifiManager;
-
-            if (wifiManager != null)
-            {
-                //return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && (wifiManager.ConnectionInfo.SSID == "\"SPStudent\"" || wifiManager.ConnectionInfo.SSID == "\"SPStaff\"")); - check if connect to SP Network   
-                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID != "<unknown ssid>");
-            }
-            return false;
-        }
-
-        private int BeaconPower()
-        {
-            switch (lecturerModule.type)
-            {
-                case "LAB":
-                    return -84;
-                case "TUT":
-                    return -84;
-                case "LEC":
-                    return -81;
-            }
-            return 0;
-        }
-
-        //private bool VerifyBle()
-        //{
-        //    if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability())
-        //    {
-        //        var builder = new AlertDialog.Builder(this);
-        //        builder.SetTitle("Bluetooth not enabled");
-        //        builder.SetMessage("Please enable bluetooth on your phone and restart the app");
-        //        EventHandler<DialogClickEventArgs> handler = null;
-        //        builder.SetPositiveButton(Android.Resource.String.Ok, handler);
-
-        //        builder.SetOnDismissListener(this);
-        //        RunOnUiThread(() => builder.Show());
-        //        //return false;
-        //    }
-        //    return true;
-        //}
-
-        //private void handler(object sender, DialogClickEventArgs e)
-        //{
-        //    var myButton = sender as Button;
-        //    if (myButton != null)
-        //    {
-        //        if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability())
-        //        {
-        //            VerifyBle();
-        //        }
-        //    }
-        //}
 
         public override void OnBackPressed()
         {

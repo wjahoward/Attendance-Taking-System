@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using AltBeaconOrg.BoundBeacon;
+﻿using AltBeaconOrg.BoundBeacon;
 using Android.App;
-using Android.Content;
 using Android.Content.PM;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 
 namespace BeaconTest.Droid.Lecturer
@@ -27,9 +20,8 @@ namespace BeaconTest.Droid.Lecturer
 
             retryBluetooth.Click += delegate
             {
-                if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability() == false)
+                if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability() == false) // if Bluetooth is enabled
                 {
-                    CommonClass.transmittedOnce = false;
                     StartActivity(typeof(BeaconTransmitActivity));
                 }
             };

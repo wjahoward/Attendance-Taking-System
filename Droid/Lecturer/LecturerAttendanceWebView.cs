@@ -1,22 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using AltBeaconOrg.BoundBeacon;
-using Android;
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
 using Android.Net.Wifi;
 using Android.OS;
-using Android.Runtime;
 using Android.Support.V4.Widget;
 using Android.Views;
 using Android.Webkit;
-using Android.Widget;
 using BeaconTest.Droid.Lecturer;
 using BeaconTest.Models;
 
@@ -33,9 +27,9 @@ namespace BeaconTest.Droid
         AlertDialog.Builder builder;
         Thread checkBluetoothActiveThread;
 
-        bool ableToTransmit;
+        string loadURL = "https://ats.sf.sp.edu.sg/psc/cs90atstd/EMPLOYEE/HRMS/s/WEBLIB_A_ATS.ISCRIPT2.FieldFormula.IScript_GetLecturerClasses?&cmd=login";
 
-        System.Timers.Timer aTimer = new System.Timers.Timer();
+        System.Timers.Timer lecturerAttendanceTimer = new System.Timers.Timer();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -45,79 +39,76 @@ namespace BeaconTest.Droid
 
             CommonClass.threadCheckWebView = true;
 
-            //aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            //aTimer.Start();
-
             ThreadPool.QueueUserWorkItem(o => GetModule());
 
             swipe = FindViewById<SwipeRefreshLayout>(Resource.Id.swipe);
 
             webView = FindViewById<WebView>(Resource.Id.attendance);
             webView.Settings.JavaScriptEnabled = true;
-            //webView.LoadUrl("https://ats.sf.sp.edu.sg/psc/cs90atstd/EMPLOYEE/HRMS/s/WEBLIB_A_ATS.ISCRIPT2.FieldFormula.IScript_GetLecturerClasses?&cmd=login");
 
             if (CommonClass.url == null)
             {
-                webView.LoadUrl("https://www.google.com");
+                webView.LoadUrl(loadURL); // loading of default URL
             }
             else
             {
-                webView.LoadUrl(CommonClass.url);
+                webView.LoadUrl(CommonClass.url); 
             }
 
             webView.SetWebViewClient(new HelloWebViewClient(swipe));
 
-            swipe.Refresh += HandleRefresh;
+            swipe.Refresh += HandleRefresh; // when the user attempts to pull to refresh
         }
 
-        //private void OnTimedEvent(object source, ElapsedEventArgs e)
-        //{
-        //    DateTime currentTime = DateTime.Now;
-        //    currentTime += new TimeSpan(0, 0, 1);
+        void HandleRefresh(object sender, EventArgs e)
+        {
+            swipe.Refreshing = true;
+            webView.LoadUrl(webView.Url);
+            webView.SetWebViewClient(new HelloWebViewClient(swipe));
+        }
 
-        //    Console.WriteLine(currentTime);
-        //    string formattedCurrentTime = currentTime.ToString("HH:mm:ss");
-        //    TimeSpan currentTimeTimeSpan = TimeSpan.Parse(formattedCurrentTime);
+        public class HelloWebViewClient : WebViewClient
+        {
+            public SwipeRefreshLayout mSwipe;
 
-        //    if (currentTimeTimeSpan >= CommonClass.maxTimeCheck)
-        //    {
-        //        ableToTransmit = false;
-        //        BeaconTransmit(BeaconPower(), lecturerModule.atscode, ableToTransmit);
+            public HelloWebViewClient(SwipeRefreshLayout mSwipe)
+            {
+                this.mSwipe = mSwipe;
+            }
 
-        //        StopThreadingTemporarily();
+            public override void OnPageFinished(WebView view, string url)
+            {
+                mSwipe.Refreshing = false;
+                CommonClass.url = url; // store the current URL the user is on
+                base.OnPageFinished(view, url);
+            }
+        }
 
-        //        aTimer.Stop();
+        /* if the user goes to more than one web page and wants to go back to the previous web page in the web view 
+        by pressing the hardware back button */
+        public override bool OnKeyDown(Keycode keyCode, KeyEvent e) 
+        {
+            if (keyCode == Keycode.Back && webView.CanGoBack())
+            {
+                webView.GoBack();
+                return true;
+            }
+            return base.OnKeyDown(keyCode, e);
+        }
 
-        //        builder = new AlertDialog.Builder(this);
-        //        builder.SetTitle("Lesson timeout");
-        //        builder.SetMessage("You have reached 15 minutes of the lesson, please proceed back to Timetable page!");
-        //        builder.SetPositiveButton(Android.Resource.String.Ok, TimeIsUp);
-        //        builder.SetCancelable(false);
-        //        builder.SetOnDismissListener(this);
-        //        RunOnUiThread(() => builder.Show());
-        //    }
-        //}
-
-        //private void TimeIsUp(object sender, DialogClickEventArgs e)
-        //{
-        //    StopThreadingTemporarily();
-        //    StartActivity(typeof(Timetable));
-        //}
-
-        // In case the person switches off Bluetooth and re-transmit the BLE signals
+        // in case the user switches off Bluetooth and re-transmit the BLE signals
         private void GetModule()
         {
             try
             {
                 LecturerTimetable lecturerTimetable = DataAccess.GetLecturerTimetable().Result;
-                lecturerModule = lecturerTimetable.GetCurrentModule(CommonClass.moduleRowNumber);
+                lecturerModule = lecturerTimetable.GetCurrentModule(SharedData.moduleRowNumber);
                 if (lecturerModule != null)
                 {
-                    if (CommonClass.transmittedOnce == false)
-                    {
-                        ableToTransmit = true;
-                        BeaconTransmit(BeaconPower(), lecturerModule.atscode, ableToTransmit);
-                    }
+                    lecturerAttendanceTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+                    lecturerAttendanceTimer.Start();
+
+                    BeaconTransmit(BeaconPower(), lecturerModule.atscode);
 
                     CheckBluetoothRechability();
                 }
@@ -136,19 +127,10 @@ namespace BeaconTest.Droid
             }
         }
 
-        private void BeaconTransmit(int power, string atscode, bool ableToTransmit)
+        private void BeaconTransmit(int power, string atscode)
         {
             BeaconTransmitter bTransmitter = new BeaconTransmitter();
-            bTransmitter.Transmit(power, atscode, ableToTransmit);
-
-            if (ableToTransmit == true)
-            {
-                CommonClass.transmittedOnce = true;
-            }
-            else
-            {
-                CommonClass.transmittedOnce = false;
-            }
+            bTransmitter.Transmit(power, atscode);
         }
 
         private void AlertRetryClick(object sender, DialogClickEventArgs e)
@@ -252,63 +234,53 @@ namespace BeaconTest.Droid
             return true;
         }
 
-        void HandleRefresh(object sender, EventArgs e)
-        {
-            swipe.Refreshing = true;
-            webView.LoadUrl(webView.Url);
-            webView.SetWebViewClient(new HelloWebViewClient(swipe));
-        }
-
-        public class HelloWebViewClient : WebViewClient
-        {
-            public SwipeRefreshLayout mSwipe;
-
-            public HelloWebViewClient(SwipeRefreshLayout mSwipe)
-            {
-                this.mSwipe = mSwipe;
-            }
-
-            // check whether need remove this
-            //public override bool ShouldOverrideUrlLoading(WebView view, IWebResourceRequest request)
-            //{
-            //    view.LoadUrl(request.Url.ToString());
-            //    return false;
-            //}
-
-            // check whether need remove this 
-            //public override void OnPageStarted(WebView view, string url, Android.Graphics.Bitmap favicon)
-            //{
-            //    base.OnPageStarted(view, url, favicon);
-            //}
-
-            public override void OnPageFinished(WebView view, string url)
-            {
-                mSwipe.Refreshing = false;
-                CommonClass.url = url;
-                base.OnPageFinished(view, url);
-            }
-        }
-
-        public override bool OnKeyDown(Keycode keyCode, KeyEvent e)
-        {
-            if (keyCode == Keycode.Back && webView.CanGoBack())
-            {
-                webView.GoBack();
-                return true;
-            }
-            return base.OnKeyDown(keyCode, e);
-        }
-
         public override void OnBackPressed()
         {
             StopThreadingTemporarily();
-            aTimer.Stop();
+            lecturerAttendanceTimer.Stop();
+
+            CommonClass.beaconTransmitter.StopAdvertising();
+
             StartActivity(typeof(BeaconTransmitActivity));
         }
 
         private void StopThreadingTemporarily()
         {
             CommonClass.threadCheckWebView = false;
+        }
+
+        private void OnTimedEvent(object source, ElapsedEventArgs e)
+        {
+            DateTime currentTime = DateTime.Now;
+            currentTime += new TimeSpan(0, 0, 1);
+
+            string formattedCurrentTime = currentTime.ToString("HH:mm:ss");
+            TimeSpan currentTimeTimeSpan = TimeSpan.Parse(formattedCurrentTime);
+
+            if (currentTimeTimeSpan >= CommonClass.maxTimeCheck)
+            {
+                StopThreadingTemporarily();
+
+                CommonClass.bluetoothAdapter.Disable();
+
+                lecturerAttendanceTimer.Stop();
+
+                builder = new AlertDialog.Builder(this);
+                builder.SetTitle("Lesson timeout");
+                builder.SetMessage("You have reached 15 minutes of the lesson, please proceed back to Timetable page!");
+                builder.SetPositiveButton(Android.Resource.String.Ok, TimeIsUp);
+                builder.SetCancelable(false);
+                builder.SetOnDismissListener(this);
+                RunOnUiThread(() => builder.Show());
+            }
+        }
+
+        private void TimeIsUp(object sender, DialogClickEventArgs e)
+        {
+            CommonClass.url = null; // set to null value
+
+            StopThreadingTemporarily();
+            StartActivity(typeof(Timetable));
         }
 
         public void OnDismiss(IDialogInterface dialog)

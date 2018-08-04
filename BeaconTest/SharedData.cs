@@ -26,5 +26,7 @@ namespace BeaconTest
 
 		public static int maxRetry = 3;
 		public static int currentRetry = 0;
+
+        public static int moduleRowNumber;
     }
 }

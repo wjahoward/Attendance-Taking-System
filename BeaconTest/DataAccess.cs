@@ -41,8 +41,8 @@ namespace BeaconTest
 			var url = AuthenticationUrl + urlParameters;
 			client.BaseAddress = new Uri(url);
 
-			// List data response.
-			HttpResponseMessage response = client.GetAsync(url).Result;  // Blocking call!
+			// list data response.
+			HttpResponseMessage response = client.GetAsync(url).Result;  // blocking call!
 			if (response.IsSuccessStatusCode)
 			{
 				var responseString = await response.Content.ReadAsStringAsync();
@@ -55,40 +55,6 @@ namespace BeaconTest
 				return false;
 			}
 		}
-
-		/*public static async Task<bool> LecturerGenerateATS(LecturerBeacon lecturerBeacon)
-		{
-			var uri = new Uri(LecturerPostUrl);
-
-			var json = JsonConvert.SerializeObject(lecturerBeacon);
-			var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-			client.DefaultRequestHeaders
-				 .Accept
-				 .Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-			content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json");
-			content.Headers.ContentLength = null;
-			Debug.WriteLine(content.ToString());
-
-			HttpResponseMessage response = client.PostAsync(uri, content).Result;
-
-			if (response.IsSuccessStatusCode)
-			{
-				var responseString = await response.Content.ReadAsStringAsync();
-				Debug.WriteLine("LecturerBeacon successfully submitted.");
-				return true;
-			}
-			else
-			{
-				Debug.WriteLine(content.ReadAsStringAsync());
-				Debug.WriteLine(response.RequestMessage);
-				Debug.WriteLine(response.StatusCode);
-				var responseString = await response.Content.ReadAsStringAsync();
-				Debug.WriteLine(responseString);
-			}
-			return false;
-		}*/
 
 		public static async Task<bool> StudentSubmitATS(StudentSubmission studentSubmission)
 		{
@@ -158,36 +124,14 @@ namespace BeaconTest
             return false;
         }
 
-        /*public static async Task<LecturerBeacon> StudentGetBeacon()
-		{
-			string urlParameters = "/p1234567";
-			var url = StudentUrl + urlParameters;
-			client.BaseAddress = new Uri(url);
-
-			// List data response.
-			HttpResponseMessage response = client.GetAsync(url).Result;  // Blocking call!
-			if (response.IsSuccessStatusCode)
-			{
-				var responseString = await response.Content.ReadAsStringAsync();
-				Debug.WriteLine(responseString);
-				LecturerBeacon lecturerBeacon = JsonConvert.DeserializeObject<LecturerBeacon>(responseString);
-				return lecturerBeacon;
-			}
-			else
-			{
-				Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
-				return null;
-			}
-		}*/
-
         public static async Task<StudentTimetable> GetStudentTimetable()
 		{
-			string urlParameters = "id=1626133" + "&DDMMYY=" + "250618";//DateTime.UtcNow.ToString("ddMMyy");
+			string urlParameters = "id=1626133" + "&DDMMYY=" + "250618"; // For dynamic date: change '250618' to 'DateTime.UtcNow.ToString("ddMMyy")';
 			var url = StudentTimetableURL + urlParameters;
 			client.BaseAddress = new Uri(url);
 
-			// List data response.
-			HttpResponseMessage response = client.GetAsync(url).Result;  // Blocking call!
+			// list data response.
+			HttpResponseMessage response = client.GetAsync(url).Result;  // blocking call!
 			if (response.IsSuccessStatusCode)
 			{
 				var responseString = await response.Content.ReadAsStringAsync();
@@ -208,8 +152,8 @@ namespace BeaconTest
             var url = LecturerTimetableURL;
             client.BaseAddress = new Uri(url);
 
-            // List data response.
-            HttpResponseMessage response = client.GetAsync(url).Result;  // Blocking call!
+            // list data response.
+            HttpResponseMessage response = client.GetAsync(url).Result;  // blocking call!
             if (response.IsSuccessStatusCode)
             {
                 var responseString = await response.Content.ReadAsStringAsync();
@@ -254,7 +198,7 @@ namespace BeaconTest
         public static string LecturerGetBeaconKey()
         {
             lecturerTimetable = GetLecturerTimetable().Result;
-            lecturerModule = lecturerTimetable.GetCurrentModule();
+            lecturerModule = lecturerTimetable.GetCurrentModule(SharedData.moduleRowNumber);
 
             if (lecturerModule != null && !lecturerModule.abbr.Equals(""))
             {
@@ -276,10 +220,5 @@ namespace BeaconTest
                 return null;
             }
         }
-
-        public static int GetATS()
-		{
-			return int.Parse(SharedData.testATS);
-		}
 	}
 }
