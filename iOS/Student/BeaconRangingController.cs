@@ -1,14 +1,10 @@
 ﻿using System;
 using CoreLocation;
-using CoreBluetooth;
-using CoreFoundation;
 using Foundation;
 using UIKit;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using BeaconTest.Models;
-using System.Text;
 using System.Threading;
 using Acr.UserDialogs;
 using System.Drawing;
@@ -69,8 +65,8 @@ namespace BeaconTest.iOS
         {
             base.ViewDidAppear(animated);
 
-            // this is to check if the user has already tried to range for the beacon (at least once)
-            // and turn off Bluetooth
+            /* this is to check if the user has already tried to range for the beacon (at least once)
+            and turn off Bluetooth */
             CommonClass.checkBluetoothRangingOnce = false;
 
             StudentSubmitButton.Layer.CornerRadius = SharedData.buttonCornerRadius;
@@ -359,19 +355,10 @@ namespace BeaconTest.iOS
         {
             locationManager = new CLLocationManager();
             locationManager.AuthorizationChanged += LocationManager_AuthorizationChanged;
-            //locationManager.RangingBeaconsDidFailForRegion += rangingBeaconsDidFailForRegion;
             locationManager.RegionEntered += LocationManager_RegionEntered;
             locationManager.RegionLeft += LocationManager_RegionLeft;
             locationManager.DidRangeBeacons += LocationManager_DidRangeBeacons;
             locationManager.RequestAlwaysAuthorization();
-        }
-
-        private void rangingBeaconsDidFailForRegion(object sender, CLRegionBeaconsFailedEventArgs e)
-        {
-            InvokeOnMainThread(() =>
-            {
-
-            });
         }
 
         private void LocationManager_RegionLeft(object sender, CLRegionEventArgs e)
@@ -407,11 +394,11 @@ namespace BeaconTest.iOS
                             EnterAttendanceCodeFieldManuallyIfUnableToRangeTextField.Hidden = true;
                             AttendanceCodeTextField.Hidden = false;
 
-                            // this is to prevent the user to know what is the exact atsCode
-                            // otherwise the user can pass the atsCode to his other friends, and assuming
-                            // they are keying in the ATS code manually, which defeats the purpose of having
-                            // this transmission and ranging process
-                            // note: Submission of ATS Code manually is for contingency plan
+                            /* this is to prevent the user to know what is the exact atsCode
+                            otherwise the user can pass the atsCode to his other friends, and assuming
+                            hey are keying in the ATS code manually, which defeats the purpose of having
+                            this transmission and ranging process
+                            note: Submission of ATS Code manually is for contingency plan */
                             AttendanceCodeTextField.Text = atsCode.Substring(0, 1) + "****" + atsCode.Substring(5, 1);
                             AttendanceCodeTextField.UserInteractionEnabled = false;
                         });
@@ -455,6 +442,7 @@ namespace BeaconTest.iOS
             }
         }
 
+        // decryption of encrypted ATS code
         private int Decryption(string encryptedCode)
         {
             int numberATSCode = Convert.ToInt32(encryptedCode);

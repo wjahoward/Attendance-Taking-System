@@ -1,12 +1,9 @@
-using BeaconTest.Models;
 using CoreBluetooth;
 using CoreFoundation;
-using CoreGraphics;
 using CoreLocation;
 using Foundation;
 using Plugin.Connectivity;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
@@ -24,9 +21,9 @@ namespace BeaconTest.iOS
 
         UIAlertController okAlertLessonTimeOutController;
 
-        // purpose of the timer is to check once the current time reaches 15 minutes of the start time of the lesson
-        // it will prompt and inform that the user the current time has already reached 15 minutes so as to prevent
-        // the continuation transmission of BLE signals and disallow the students to be able to range for the phone
+        /* purpose of the timer is to check once the current time reaches 15 minutes of the start time of the lesson
+        it will prompt and inform that the user the current time has already reached 15 minutes so as to prevent
+        the continuation transmission of BLE signals and disallow the students to be able to range for the phone */
         System.Timers.Timer lecturerAttendanceTimer = new System.Timers.Timer();
 
         string loadURL = "https://ats.sf.sp.edu.sg/psc/cs90atstd/EMPLOYEE/HRMS/s/WEBLIB_A_ATS.ISCRIPT2.FieldFormula.IScript_GetLecturerClasses?&cmd=login";
@@ -44,6 +41,7 @@ namespace BeaconTest.iOS
 
             NavigationController.NavigationBarHidden = false;
 
+            // can comment out the below 2 lines to not start the timer
             lecturerAttendanceTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             lecturerAttendanceTimer.Start();
 
@@ -133,9 +131,9 @@ namespace BeaconTest.iOS
 
                     InitBeacon();
 
-                    // inital check if "currentURL" variable has value, else it will load the "loadURL" variable
-                    // only when "currentURL" variable has value, then it will load the "currentURL" variable
-                    // since it will change depending on the current URL the user is on
+                    /* inital check if "currentURL" variable has value, else it will load the "loadURL" variable
+                    only when "currentURL" variable has value, then it will load the "currentURL" variable
+                    since it will change depending on the current URL the user is on */
                     if (currentURL != null)
                     {
                         AttendanceWebView.LoadRequest(new NSUrlRequest(new NSUrl(currentURL)));
@@ -155,8 +153,8 @@ namespace BeaconTest.iOS
                         }
                         else
                         {
-                            // "currentURL" variable will have the value of "loadURL" variable first 
-                            // since it will be null in the beginning
+                            /* "currentURL" variable will have the value of "loadURL" variable first 
+                            since it will be null in the beginning */
                             currentURL = loadURL;
                         }
                         AttendanceWebView.ScrollView.Delegate = new UIScrollViewDelegate(AttendanceWebView, currentURL);

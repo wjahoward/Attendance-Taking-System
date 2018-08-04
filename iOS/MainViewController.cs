@@ -54,8 +54,8 @@ namespace BeaconTest.iOS
 		{
 			base.ViewDidAppear(animated);                  
 
-            // when the user starts to launch the application
-            // it will check if the user has already or not connected to SP WiFi
+            /* when the user starts to launch the application
+            it will check if the user has already or not connected to SP WiFi */
             CheckConnectToSPWiFi(); 
 		}
 
@@ -76,10 +76,10 @@ namespace BeaconTest.iOS
             }
             else
             {
-                // the below codes are to check if the phone is connected to a specific SSID
-                // the reason why require try-catch is because if the phone is not connected to Internet
-                // while checking for that SSID, it will crash since is not connected to WiFi 
-                // and the "dict" value will be null, therefore having a try-catch expression is necessary
+                /* the below codes are to check if the phone is connected to a specific SSID
+                the reason why require try-catch is because if the phone is not connected to Internet
+                while checking for that SSID, it will crash since is not connected to WiFi 
+                and the "dict" value will be null, therefore having a try-catch expression is necessary */
                 try
                 {
                     NSDictionary dict;

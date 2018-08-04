@@ -4,11 +4,8 @@ using CoreGraphics;
 using Foundation;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Threading;
 using UIKit;
-using CoreBluetooth;
-using CoreFoundation;
 using System.Threading.Tasks;
 using Plugin.Connectivity;
 using Plugin.BLE.Abstractions.Contracts;
@@ -71,8 +68,8 @@ namespace BeaconTest.iOS
                 CommonClass.checkBluetooth = true;
             }
 
-            // every time the user enables and disables Bluetooth 
-            // it will check the changed and updated state of Bluetooth
+            /* every time the user enables and disables Bluetooth 
+            it will check the changed and updated state of Bluetooth */
             Plugin.BLE.CrossBluetoothLE.Current.StateChanged += (o, e) =>
             {
                 if (e.NewState == BluetoothState.Off)
@@ -121,10 +118,10 @@ namespace BeaconTest.iOS
             }
             else
             {
-                // try-catch is necessary since the getting of lecturer's timetable data is from a dummy URL
-                // which requires Internet. Assuming in an event while trying to get lecturer's timetable data,
-                // the phone that is connected to SP WiFi, suddenly is disconnected from SP WiFi, without a try-catch,
-                // the app will crash. Therefore, having a try-catch to check if is connected to SP WiFi is crucial
+                /* try-catch is necessary since the getting of lecturer's timetable data is from a dummy URL
+                which requires Internet. Assuming in an event while trying to get lecturer's timetable data,
+                the phone that is connected to SP WiFi, suddenly is disconnected from SP WiFi, without a try-catch,
+                the app will crash. Therefore, having a try-catch to check if is connected to SP WiFi is crucial */
                 try
                 {
                     lecturerTimetable = DataAccess.GetLecturerTimetable().Result;
@@ -206,15 +203,15 @@ namespace BeaconTest.iOS
             {
                 if (!module.abbr.Equals(""))
                 {
-                    // the purpose of having to check whether attendanceTableViewItems.Count is equivalent to
-                    // lecturerTimetable.modules.Count is assuming if the user navigates to another page
-                    // i.e. LecturerBluetoothSwitchOffController page as Bluetooth has to be enabled first before 
-                    // able to generate he attendance for that lesson. At that page, after the user has enabed Bluetooth
-                    // and navigated back to the LecturerGenerateController page, the attendanceTableViewItems will
-                    // add those modules that were already been added when the user first navigates to 
-                    // LectureGenerateController page. So if attendanceTableViewItems.Count is equivalent to 
-                    // lecturerTimetable.modules.Count, attendanceTableVieItems will not add in any more
-                    // module.
+                    /* the purpose of having to check whether attendanceTableViewItems.Count is equivalent to
+                    lecturerTimetable.modules.Count is assuming if the user navigates to another page
+                    i.e. LecturerBluetoothSwitchOffController page as Bluetooth has to be enabled first before 
+                    able to generate he attendance for that lesson. At that page, after the user has enabed Bluetooth
+                    and navigated back to the LecturerGenerateController page, the attendanceTableViewItems will
+                    add those modules that were already been added when the user first navigates to 
+                    LectureGenerateController page. So if attendanceTableViewItems.Count is equivalent to 
+                    lecturerTimetable.modules.Count, attendanceTableVieItems will not add in any more
+                    module. */
 
                     if (attendanceTableViewItems.Count != lecturerTimetable.modules.Count)
                     {
@@ -305,9 +302,9 @@ namespace BeaconTest.iOS
 
                 TimeSpan maxTime = moduleStartTime + TimeSpan.Parse("00:15:00");
 
-                // this will be "brought" to BeaconTransmitController and LecturerAttendanceController to check 
-                // if the current time exceeds this value if exceeds, it will prompt the user and the user will 
-                // be navigated to this controller page.
+                /* this will be "brought" to BeaconTransmitController and LecturerAttendanceController to check 
+                if the current time exceeds this value if exceeds, it will prompt the user and the user will 
+                be navigated to this controller page. */
                 CommonClass.maxTimeCheck = maxTime; 
 
                 // if current time exceeds the time of the current lesson by minimally at a duration of 15 minutes
@@ -323,9 +320,9 @@ namespace BeaconTest.iOS
                     {
                         var beaconTransmitController = UIStoryboard.FromName("Main", null).InstantiateViewController("BeaconTransmitController");
                         navigationController.PushViewController(beaconTransmitController, true);
-                        // this is to get the current module that the user clicks, 'bringing' this value to
-                        // BeaconTransmitController which will allow it to be able to 'identify' which module did the
-                        // user click on LecturerGenerateController page previously
+                        /* this is to get the current module that the user clicks, 'bringing' this value to
+                        BeaconTransmitController which will allow it to be able to 'identify' which module did the
+                        user click on LecturerGenerateController page previously */
                         CommonClass.moduleRowNumber = indexPath.Row;
                     }
                     else // if Bluetooth is not enabled
@@ -335,9 +332,9 @@ namespace BeaconTest.iOS
                     }
                 }
 
-                // if current time is not the time of that lesson
-                // i.e. assuming the current time is 8am, if the lecturer has another lesson that starts at 10am and he accidentally clicks on that lesson
-                // it will navigate him to the errorGeneratingAttendanceController page
+                /* if current time is not the time of that lesson
+                i.e. assuming the current time is 8am, if the lecturer has another lesson that starts at 10am and he accidentally clicks on that lesson
+                it will navigate him to the errorGeneratingAttendanceController page */
                 else 
                 {
                     var errorGeneratingAttendanceController = UIStoryboard.FromName("Main", null).InstantiateViewController("ErrorGeneratingAttendanceController");

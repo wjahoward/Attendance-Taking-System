@@ -1,4 +1,3 @@
-using Foundation;
 using System;
 using UIKit;
 
@@ -20,8 +19,7 @@ namespace BeaconTest.iOS
             BackButton.Layer.CornerRadius = SharedData.buttonCornerRadius;
 
             BackButton.TouchUpInside += (object sender, EventArgs e) => {
-
-                    this.NavigationController.PopViewController(true);
+               this.NavigationController.PopViewController(true);
             };
         }
 

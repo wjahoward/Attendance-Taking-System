@@ -1,6 +1,5 @@
 ﻿using System;
 using UIKit;
-using CoreGraphics;
 using Foundation;
 using CoreLocation;
 using CoreBluetooth;
@@ -30,9 +29,9 @@ namespace BeaconTest.iOS
         UIAlertController okAlertLessonTimeOutController;
         UIAlertController okAlertNetworkController;
 
-        // purpose of the timer is to check once the current time reaches 15 minutes of the start time of the lesson
-        // it will prompt and inform that the user the current time has already reached 15 minutes so as to prevent
-        // the continuation transmission of BLE signals and disallow the students to able to range for the phone
+        /* purpose of the timer is to check once the current time reaches 15 minutes of the start time of the lesson
+        it will prompt and inform that the user the current time has already reached 15 minutes so as to prevent
+        the continuation transmission of BLE signals and disallow the students to able to range for the phone */
         System.Timers.Timer beaconTransmitTimer = new System.Timers.Timer();
 
         public BeaconTransmitController(IntPtr handle) : base(handle)
@@ -61,7 +60,7 @@ namespace BeaconTest.iOS
 
             AddDoneButtonToNumericKeyboard(LecturerAttendanceCodeTextField);
 
-            LecturerOverrideButton.Layer.CornerRadius = BeaconTest.SharedData.buttonCornerRadius;
+            LecturerOverrideButton.Layer.CornerRadius = SharedData.buttonCornerRadius;
             LecturerOverrideButton.Hidden = true;
 
             LecturerOverrideAttendanceCodeButton.TouchUpInside += (object sender, EventArgs e) =>
@@ -71,12 +70,12 @@ namespace BeaconTest.iOS
                 LecturerAttendanceCodeTextField.Selected = true;
             };
 
-            // the overriding of ATS code is meant for field testing purpose, and will not be implemented if 
-            // it is used in a production environment. So during field testing, after the lecturer generates
-            // the legitimate ATS code from the lesson, the lecturer will make sure of this ATS code and type in that
-            // ATS code, overriding the ATS code from the dummy lecturer's timetable data. After the ATS code has been 
-            // overrided, while transmitting the BLE signals with that ATS code, the students will be able to range for that
-            // phone with that ATS Code (upon successful detection of phone) and able to submit their attendance code successfully
+            /* the overriding of ATS code is meant for field testing purpose, and will not be implemented if 
+            it is used in a production environment. So during field testing, after the lecturer generates
+            the legitimate ATS code from the lesson, the lecturer will make sure of this ATS code and type in that
+            ATS code, overriding the ATS code from the dummy lecturer's timetable data. After the ATS code has been 
+            overrided, while transmitting the BLE signals with that ATS code, the students will be able to range for that
+            phone with that ATS Code (upon successful detection of phone) and able to submit their attendance code successfully */
             LecturerOverrideButton.TouchUpInside += async (object sender, EventArgs e) =>
             {
                 UserDialogs.Instance.ShowLoading("Overriding ATS code in progress...");
@@ -87,10 +86,10 @@ namespace BeaconTest.iOS
                 }
 
                 else {
-                    // try-catch is necessary to override the ATS since is POST to a dummy URL which requires Internet
-                    // assuming in an event while trying to POST to a dummy URL, the phone that is connected to SP WiFi,
-                    // suddenly is disconnected from SP WiFi, without a try-catch, the app will crash. Therefore, having 
-                    // a try-catch to check if is connected to SP WiFi is crucial
+                    /* try-catch is necessary to override the ATS since is POST to a dummy URL which requires Internet
+                    assuming in an event while trying to POST to a dummy URL, the phone that is connected to SP WiFi,
+                    suddenly is disconnected from SP WiFi, without a try-catch, the app will crash. Therefore, having 
+                    a try-catch to check if is connected to SP WiFi is crucial */
                     try
                     {
                         lecturerModule.atscode = Convert.ToString(LecturerAttendanceCodeTextField.Text);
@@ -143,6 +142,7 @@ namespace BeaconTest.iOS
 
             CommonClass.beaconTransmitBluetoothThreadCheck = true;
 
+            // can comment out the below 2 lines to not start the timer
             beaconTransmitTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             beaconTransmitTimer.Start();
 
@@ -201,9 +201,9 @@ namespace BeaconTest.iOS
 
         partial void LecturerAttendanceCodeTextFieldTextChanged(UITextField sender)
         {
-            // since ATS code is of 6 digits
-            // only when the user types a 6 digit number only then the submit button will appear
-            // and override the ATS code
+            /*since ATS code is of 6 digits
+            only when the user types a 6 digit number only then the submit button will appear
+            and override the ATS code */
             if (LecturerAttendanceCodeTextField.Text.Length == 6)
             {
                 LecturerOverrideButton.Hidden = false;
@@ -221,8 +221,8 @@ namespace BeaconTest.iOS
             string atsCode1stHalf = atsCode.Substring(0, 3);
             string atsCode2ndHalf = atsCode.Substring(3, 3);
 
-            // simple encryption to prevent other users using the third-party app such as Locate to be
-            // able to know what is the ATS code
+            /* simple encryption to prevent other users using the third-party app such as Locate to be
+            able to know what is the ATS code */
             string atsCode1stHalfEncrypted = Encryption(atsCode1stHalf).ToString();
             string atsCode2ndHalfEncrypted = Encryption(atsCode2ndHalf).ToString();
 
@@ -236,7 +236,9 @@ namespace BeaconTest.iOS
             peripheralManager.StartAdvertising(peripheralData);
 		}
 
-        private int Encryption(string atscode) {
+        // encryption of ATS code
+        private int Encryption(string atscode) 
+        {
             int numberATSCode = Convert.ToInt32(atscode);
             int newATSCodeEncrypted = (numberATSCode * 5 + 136) * 7;
             return newATSCodeEncrypted;
@@ -298,11 +300,11 @@ namespace BeaconTest.iOS
                             AttendanceCodeLabel.Text = lecturerModule.atscode;
                             UserDialogs.Instance.HideLoading();
 
-                            // purpose of this is to bring the values of lecturerModule.atscode and lecturerModule.type
-                            // to LecturerAttendanceController as if the user at LecturerAttendanceController page turn off
-                            // Bluetooth, transmission of BLE signals will be stopped. Therefore, if the user turn on Bluetooth
-                            // and retry, the phone will once again become a beacon transmitting the BLE signals with the correct
-                            // atscode and BeaconPower - transmission power is based on the type of module
+                            /* purpose of this is to bring the values of lecturerModule.atscode and lecturerModule.type
+                            to LecturerAttendanceController as if the user at LecturerAttendanceController page turn off
+                            Bluetooth, transmission of BLE signals will be stopped. Therefore, if the user turn on Bluetooth
+                            and retry, the phone will once again become a beacon transmitting the BLE signals with the correct
+                            atscode and BeaconPower - transmission power is based on the type of module */
                             CommonClass.atscode = lecturerModule.atscode;
                             CommonClass.moduleType = lecturerModule.type;
 
@@ -404,12 +406,12 @@ namespace BeaconTest.iOS
                     {
                         try
                         {
-                            // when the user navigates back to this page, instead of setting the module name, time period
-                            // location and attendance code already shown, it will "refresh" to showing the defaults
-                            // i.e. when the user first navigates to this page, after retrieving the module information
-                            // the texts of the respective labels will be changed accordingly i.e. ModuleNameLabel.Text is BA,
-                            // When the user navigates to another page and goes back to this page, the ModuleNameLabel.Text will
-                            // still show 'BA', which should not show 'BA' since it should be 'refreshed'.
+                            /* when the user navigates back to this page, instead of setting the module name, time period
+                            location and attendance code already shown, it will "refresh" to showing the defaults
+                            i.e. when the user first navigates to this page, after retrieving the module information
+                            the texts of the respective labels will be changed accordingly i.e. ModuleNameLabel.Text is BA,
+                            When the user navigates to another page and goes back to this page, the ModuleNameLabel.Text will
+                            still show 'BA', which should not show 'BA' since it should be 'refreshed'. */
                             ModuleNameLabel.Text = "Module Name";
                             TimePeriodLabel.Text = "Time Period";
                             LocationLabel.Text = "Location";
