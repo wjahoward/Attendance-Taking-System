@@ -2629,5 +2629,3 @@ D:\My stuff\School_Years\Y3S1\FYP github versions\FYP5\Droid\bin\Debug\Plugin.Co
 D:\My stuff\School_Years\Y3S1\FYP github versions\FYP5\Droid\bin\Debug\Plugin.Connectivity.dll
 D:\My stuff\School_Years\Y3S1\FYP github versions\FYP5\Droid\bin\Debug\Plugin.Share.Abstractions.dll
 D:\My stuff\School_Years\Y3S1\FYP github versions\FYP5\Droid\bin\Debug\Plugin.Share.dll
-D:\My stuff\School_Years\Y3S1\FYP github versions\FYP5\Droid\bin\Debug\BeaconTest.Droid.dll
-D:\My stuff\School_Years\Y3S1\FYP github versions\FYP5\Droid\obj\Debug\linksrc\BeaconTest.Droid.dll.mdb

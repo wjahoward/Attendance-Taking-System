@@ -149,8 +149,7 @@ namespace BeaconTest.Droid.Lecturer
 
             if (wifiManager != null)
             {
-                //return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && (wifiManager.ConnectionInfo.SSID == "\"SPStudent\"" || wifiManager.ConnectionInfo.SSID == "\"SPStaff\"")); - check if connect to SP Network   
-                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID != "<unknown ssid>");
+                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && (wifiManager.ConnectionInfo.SSID == "\"SPStaff\""));
             }
             return false;
         }
@@ -254,7 +253,7 @@ namespace BeaconTest.Droid.Lecturer
                 attendanceCodeEditText.Visibility = ViewStates.Gone;
                 attendanceCodeEditText.SetText("", TextView.BufferType.Normal);
 
-                manager.HideSoftInputFromWindow(attendanceCodeEditText.WindowToken, 0);
+                manager.HideSoftInputFromWindow(attendanceCodeEditText.WindowToken, 0); // hides the keyboard
                 message = "You have successfully override the ATS Code!";
                 builderOverride.SetPositiveButton(Android.Resource.String.Ok, RefreshBeacon);
             }
