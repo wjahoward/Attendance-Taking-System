@@ -472,7 +472,7 @@ namespace BeaconTest.Droid
                 else
                 {
                     //if bluetooth is not enabled
-                    if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability())
+                    if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability() && CommonClass.count <= 3)
                     {
                         //stop all monitoring and ranging proccesses
                         beaconManager.StopMonitoringBeaconsInRegion(tagRegion);
