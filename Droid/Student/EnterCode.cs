@@ -45,10 +45,10 @@ namespace BeaconTest.Droid
 
         StudentTimetable studentTimetable;
         StudentModule studentModule;
-        ImageView studentAttendanceImageView;
+        ImageView studentAttendanceImageView, lectureHallImageView, timeImageView;
         EditText attendanceCodeEditText;
 
-        TextView moduleNameTextView, timeTextView, locationTextView, enterAttendanceCodeTextView, findingBeaconTextView;
+        TextView moduleNameTextView, moduleCodeTextView, lessonTypeTextView, timeTextView, locationTextView, enterAttendanceCodeTextView, findingBeaconTextView, noLessonTextView;
         Button submitBtn;
 
         string lecturerBeaconKey;
@@ -67,12 +67,17 @@ namespace BeaconTest.Droid
 
             // Create your application here
             moduleNameTextView = FindViewById<TextView>(Resource.Id.moduleNameTextView);
+            moduleCodeTextView = FindViewById<TextView>(Resource.Id.moduleCodeTextView);
+            lessonTypeTextView = FindViewById<TextView>(Resource.Id.lessonTypeTextView);
             timeTextView = FindViewById<TextView>(Resource.Id.timeTextView);
             locationTextView = FindViewById<TextView>(Resource.Id.locationTextView);
+            lectureHallImageView = FindViewById<ImageView>(Resource.Id.lectureHallImageView);
+            timeImageView = FindViewById<ImageView>(Resource.Id.timeImageView);
             studentAttendanceImageView = FindViewById<ImageView>(Resource.Id.studentAttendanceImageView);
             attendanceCodeEditText = FindViewById<EditText>(Resource.Id.attendanceCodeEditText);
             enterAttendanceCodeTextView = FindViewById<TextView>(Resource.Id.enterAttendanceCodeTextView);
             findingBeaconTextView = FindViewById<TextView>(Resource.Id.findingBeaconTextView);
+            noLessonTextView = FindViewById<TextView>(Resource.Id.noLessonTextView);
 
             submitBtn = FindViewById<Button>(Resource.Id.submitBtn);
             submitBtn.Visibility = ViewStates.Invisible;
@@ -152,11 +157,13 @@ namespace BeaconTest.Droid
 
                 lecturerBeaconKey = DataAccess.LecturerGetBeaconKey().ToLower();
 
-                if (studentModule != null)
+                if (studentModule.abbr != "")
                 {
                     RunOnUiThread(() =>
                     {
-                        moduleNameTextView.Text = studentModule.abbr + " (" + studentModule.code + ")";
+                        moduleNameTextView.Text = studentModule.abbr;
+                        moduleCodeTextView.Text = studentModule.code;
+                        lessonTypeTextView.Text = studentModule.type;
                         timeTextView.Text = studentModule.time;
                         locationTextView.Text = studentModule.location;
                         UserDialogs.Instance.HideLoading();
@@ -184,11 +191,15 @@ namespace BeaconTest.Droid
                 {
                     RunOnUiThread(() =>
                     {
-                        moduleNameTextView.Text = "No lessons today";
+                        noLessonTextView.Visibility = ViewStates.Visible;
+                        moduleNameTextView.Visibility = ViewStates.Gone;
+                        moduleCodeTextView.Visibility = ViewStates.Gone;
                         timeTextView.Visibility = ViewStates.Gone;
                         locationTextView.Visibility = ViewStates.Gone;
                         studentAttendanceImageView.Visibility = ViewStates.Gone;
                         attendanceCodeEditText.Visibility = ViewStates.Gone;
+                        timeImageView.Visibility = ViewStates.Gone;
+                        enterAttendanceCodeTextView.Visibility = ViewStates.Gone;
                         UserDialogs.Instance.HideLoading();
                     });
                 }

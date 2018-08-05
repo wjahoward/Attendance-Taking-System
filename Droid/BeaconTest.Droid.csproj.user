@@ -3,7 +3,7 @@
   <PropertyGroup>
     <SelectedDevice>HUAWEI ATU-L22</SelectedDevice>
     <DefaultDevice>Testing</DefaultDevice>
-    <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
+    <AndroidDesignerPreferredDevice>Galaxy Nexus</AndroidDesignerPreferredDevice>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <Run>am start -n "com.xamarin.BeaconTest/BeaconTest.Droid.SplashActivity"</Run>

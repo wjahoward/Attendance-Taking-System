@@ -123,7 +123,7 @@ namespace BeaconTest.Droid
                 }
                 else
                 {
-                    dataSource.Add(new LecturerModuleTableViewItem("No lesson") { ModuleCode = "", Venue = "", Time = "" });
+                    dataSource.Add(new LecturerModuleTableViewItem("No lesson today") { ModuleCode = "", Venue = "", Time = "" });
                 }
             }
             DisplayTimetableListView();
