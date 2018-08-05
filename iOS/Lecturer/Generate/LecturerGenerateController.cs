@@ -180,7 +180,7 @@ namespace BeaconTest.iOS
                     var ssid = dict[CaptiveNetwork.NetworkInfoKeySSID];
                     string network = ssid.ToString();
 
-                    if (network == "SPStudent" || network == "SPStaff") 
+                    if (network == "SPStaff") 
                     {
                         return true;
                     }
@@ -323,7 +323,7 @@ namespace BeaconTest.iOS
                         /* this is to get the current module that the user clicks, 'bringing' this value to
                         BeaconTransmitController which will allow it to be able to 'identify' which module did the
                         user click on LecturerGenerateController page previously */
-                        CommonClass.moduleRowNumber = indexPath.Row;
+                        SharedData.moduleRowNumber = indexPath.Row;
                     }
                     else // if Bluetooth is not enabled
                     {

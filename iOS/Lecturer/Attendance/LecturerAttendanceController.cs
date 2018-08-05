@@ -42,8 +42,8 @@ namespace BeaconTest.iOS
             NavigationController.NavigationBarHidden = false;
 
             // can comment out the below 2 lines to not start the timer
-            lecturerAttendanceTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            lecturerAttendanceTimer.Start();
+            //lecturerAttendanceTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            //lecturerAttendanceTimer.Start();
 
             CommonClass.lecturerAttendanceBluetoothThreadCheck = true;
             CommonClass.lecturerAttendanceNetworkThreadCheck = true;
@@ -203,7 +203,7 @@ namespace BeaconTest.iOS
             string atsCode1stHalfEncrypted = Encryption(atsCode1stHalf).ToString();
             string atsCode2ndHalfEncrypted = Encryption(atsCode2ndHalf).ToString();
 
-            beaconRegion = new CLBeaconRegion(new NSUuid(DataAccess.StudentGetBeaconKey()), (ushort)int.Parse(atsCode1stHalfEncrypted), (ushort)int.Parse(atsCode2ndHalfEncrypted), SharedData.beaconId);
+            beaconRegion = new CLBeaconRegion(new NSUuid(DataAccess.LecturerGetBeaconKey()), (ushort)int.Parse(atsCode1stHalfEncrypted), (ushort)int.Parse(atsCode2ndHalfEncrypted), SharedData.beaconId);
 
             //power - the received signal strength indicator (RSSI) value (measured in decibels) of the beacon from one meter away
             var power = BeaconPower();

@@ -200,7 +200,7 @@ namespace BeaconTest.iOS
                             ModuleTypeLabel.Hidden = true;
                             StudentAttendanceIcon.Hidden = true;
                             TimeAttendanceIcon.Hidden = true;
-                            ModuleNameLabel.Text = "No lessons today";
+                            ModuleNameLabel.Text = "No lesson today";
                             TimePeriodLabel.Hidden = true;
                             LocationLabel.Hidden = true;
                             FoundBeacon.Hidden = true;

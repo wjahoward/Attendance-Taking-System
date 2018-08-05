@@ -143,13 +143,14 @@ namespace BeaconTest.iOS
             CommonClass.beaconTransmitBluetoothThreadCheck = true;
 
             // can comment out the below 2 lines to not start the timer
-            beaconTransmitTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            beaconTransmitTimer.Start();
+            //beaconTransmitTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            //beaconTransmitTimer.Start();
 
             UserDialogs.Instance.ShowLoading("Retrieving module info...");
             ThreadPool.QueueUserWorkItem(o => GetModule());
         }
 
+        // below is the method when the timer starts
         private void OnTimedEvent(object source, ElapsedEventArgs e)
         {
             DateTime currentTime = DateTime.Now;
@@ -289,7 +290,7 @@ namespace BeaconTest.iOS
                 try
                 {
                     lecturerTimetable = DataAccess.GetLecturerTimetable().Result;
-                    lecturerModule = lecturerTimetable.GetCurrentModule(CommonClass.moduleRowNumber);
+                    lecturerModule = lecturerTimetable.GetCurrentModule(SharedData.moduleRowNumber);
                     if (lecturerModule != null)
                     {
                         InvokeOnMainThread(() =>

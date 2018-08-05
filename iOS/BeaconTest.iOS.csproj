@@ -235,9 +235,9 @@
     <BundleResource Include="Resources\Asset1.png" />
     <BundleResource Include="Resources\Lecture Hall.jpg" />
     <BundleResource Include="Resources\Time Icon-01.png" />
-    <BundleResource Include="Resources\Book.PNG" />
     <BundleResource Include="Resources\Book Icon-26.png" />
     <BundleResource Include="Resources\Lecture Hall %28Darkened%29.jpg" />
+    <BundleResource Include="Resources\bookTest.png" />
   </ItemGroup>
   <Import Project="..\BeaconTest\BeaconTest.projitems" Label="Shared" Condition="Exists('..\BeaconTest\BeaconTest.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
