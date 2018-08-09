@@ -3,50 +3,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF">
-    <ImageView
-        android:layout_width="450dp"
-        android:layout_height="260dp"
-        android:src="@drawable/LectureHallDefault"
-        android:id="@+id/lectureHallImageView"
-        android:layout_marginTop="-55dp" />
-    <TextView
-        android:text="No lesson today"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/noLessonTextView"
-        android:layout_marginTop="65dp"
-        android:layout_marginLeft="105dp"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        android:visibility="gone" />
-    <TextView
-        android:text=""
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/moduleNameTextView"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="187dp"
-        android:textColor="#ffffff"
-        android:textStyle="bold" />
-    <TextView
-        android:text=""
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/moduleCodeTextView"
-        android:layout_marginTop="105dp"
-        android:layout_marginLeft="180dp"
-        android:textColor="#ffffff" />
+        android:id="@+id/lectureHallAndClassLayout">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/LectureHallDefault"
+            android:id="@+id/lectureHallImageView"
+            android:adjustViewBounds="true" />
+        <TextView
+            android:text="No lesson today"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/noLessonTextView"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+        <TextView
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/moduleNameTextView"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:layout_centerInParent="true" />
+        <TextView
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/moduleCodeTextView"
+            android:textColor="#ffffff"
+            android:layout_centerInParent="true"
+            android:paddingTop="90dp" />
+    </RelativeLayout>
     <TextView
         android:text=""
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/lessonTypeTextView"
-        android:layout_marginTop="200dp"
-        android:layout_marginLeft="170dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/lectureHallAndClassLayout"
+        android:paddingTop="30dp"
+        android:paddingBottom="17dp"
         android:textColor="#000000" />
     <TextView
         android:text=""
@@ -54,41 +59,51 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/locationTextView"
-        android:layout_marginTop="255dp"
-        android:layout_marginLeft="180dp"
-        android:textColor="#000000" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/lessonTypeTextView"
+        android:paddingTop="5dp"
+        android:paddingLeft="9dp"
+        android:paddingBottom="30dp"
+        android:textColor="#000000"
+        android:layout_alignStart="@id/lessonTypeTextView" />
     <ImageView
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:src="@drawable/Asset2"
         android:id="@+id/studentAttendanceImageView"
-        android:layout_marginTop="250dp"
-        android:layout_marginLeft="130dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/lessonTypeTextView"
+        android:layout_toLeftOf="@id/locationTextView" />
     <TextView
         android:text=""
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/timeTextView"
-        android:layout_marginTop="315dp"
-        android:layout_marginLeft="165dp"
-        android:textColor="#000000" />
+        android:layout_below="@id/locationTextView"
+        android:textColor="#000000"
+        android:layout_centerInParent="true"
+        android:layout_alignStart="@id/lessonTypeTextView" />
     <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@drawable/clock"
         android:id="@+id/timeImageView"
-        android:layout_marginTop="313dp"
-        android:layout_marginLeft="115dp" />
+        android:layout_toLeftOf="@id/timeTextView"
+        android:layout_below="@id/locationTextView"
+        android:paddingRight="9dp"
+        android:paddingBottom="12dp" />
     <TextView
         android:text=""
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/findingBeaconTextView"
-        android:layout_marginTop="370dp"
-        android:layout_marginLeft="120dp"
-        android:textColor="#000000" />
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        android:layout_below="@id/timeTextView"
+        android:paddingTop="35dp"
+        android:paddingBottom="27dp" />
     <EditText
         android:hint="ATS Code"
         android:textSize="15dp"
@@ -96,26 +111,28 @@
         android:background="@drawable/edittextstyleforatscode"
         android:layout_height="25dp"
         android:layout_width="255dp"
-        android:layout_marginTop="410dp"
-        android:layout_marginLeft="60dp"
-        android:visibility="gone"
-        android:inputType="number" />
+        android:layout_centerHorizontal="true"
+        android:inputType="number"
+        android:layout_below="@id/findingBeaconTextView"
+        android:visibility="gone" />
     <TextView
         android:text="Enter ATS manually"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/enterAttendanceCodeTextView"
-        android:layout_marginTop="460dp"
-        android:layout_marginLeft="110dp"
-        android:textColor="#007AFF" />
+        android:textColor="#007AFF"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/attendanceCodeEditText"
+        android:paddingTop="27dp"
+        android:paddingBottom="30dp" />
     <Button
         android:text="Submit"
         android:layout_width="155dp"
         android:layout_height="35dp"
         android:id="@+id/submitBtn"
-        android:layout_marginTop="500dp"
-        android:layout_marginLeft="107dp"
         android:background="@drawable/btnStyle2"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/enterAttendanceCodeTextView" />
 </RelativeLayout>

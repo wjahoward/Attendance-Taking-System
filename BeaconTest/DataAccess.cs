@@ -21,9 +21,10 @@ namespace BeaconTest
 		private static string AuthenticationUrl = "https://testingfyp.azurewebsites.net/api/Authentication";
 		private static string LecturerPostUrl = "https://testingfyp.azurewebsites.net/api/Lecturer";
 		private static string StudentUrl = "https://testingfyp.azurewebsites.net/api/Student";
-		private static string StudentTimetableURL = "http://mobileappnew.sp.edu.sg/spTimeTable/source/sptt.php?";
+		//private static string StudentTimetableURL = "http://mobileappnew.sp.edu.sg/spTimeTable/source/sptt.php?";
         private static string LecturerTimetableURL = "https://dummylecturertimetabledata.azurewebsites.net/api/Lecturer";
         public static string OverrideATSLecturerTimetableURL = "https://dummylecturertimetabledata.azurewebsites.net/api/Lecturer";
+        public static string StudentTimetableURL = "https://dummylecturertimetabledata.azurewebsites.net/api/Student";
 
         public static string NoInternetConnection = "No Internet Connection";
 
@@ -126,8 +127,9 @@ namespace BeaconTest
 
         public static async Task<StudentTimetable> GetStudentTimetable()
 		{
-			string urlParameters = "id=1626133" + "&DDMMYY=" + "250618"; // For dynamic date: change '250618' to 'DateTime.UtcNow.ToString("ddMMyy")';
-			var url = StudentTimetableURL + urlParameters;
+            //string urlParameters = "id=1626133" + "&DDMMYY=" + "250618"; // For dynamic date: change '250618' to 'DateTime.UtcNow.ToString("ddMMyy")';
+            //var url = StudentTimetableURL + urlParameters;
+            var url = StudentTimetableURL;
 			client.BaseAddress = new Uri(url);
 
 			// list data response.
