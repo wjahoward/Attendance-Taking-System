@@ -11,6 +11,7 @@ using BeaconTest.Models;
 using Newtonsoft.Json;
 using System.Text;
 using System.Linq;
+using System.Collections.ObjectModel;
 
 namespace BeaconTest
 {
@@ -25,6 +26,8 @@ namespace BeaconTest
         private static string LecturerTimetableURL = "https://dummylecturertimetabledata.azurewebsites.net/api/Lecturer";
         public static string OverrideATSLecturerTimetableURL = "https://dummylecturertimetabledata.azurewebsites.net/api/Lecturer";
         public static string StudentTimetableURL = "https://dummylecturertimetabledata.azurewebsites.net/api/Student";
+        private static string StudentSubmissionURL = "http://dummylecturertimetable.azurewebsites.net/api/StudentSubmission";
+        private static string StudentAttendanceURL = "http://dummylecturertimetable.azurewebsites.net/api/StudentAttendance";
 
         public static string NoInternetConnection = "No Internet Connection";
 
@@ -57,39 +60,39 @@ namespace BeaconTest
 			}
 		}
 
-		public static async Task<bool> StudentSubmitATS(StudentSubmission studentSubmission)
-		{
-			var uri = new Uri(StudentUrl);
+        public static async Task<bool> StudentSubmitATS(StudentSubmission studentSubmission)
+        {
+            var uri = new Uri(StudentSubmissionURL);
 
-			var json = JsonConvert.SerializeObject(studentSubmission);
-			var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var json = JsonConvert.SerializeObject(studentSubmission);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-			client.DefaultRequestHeaders
-				 .Accept
-				 .Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            client.DefaultRequestHeaders
+                 .Accept
+                 .Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-			content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json");
-			content.Headers.ContentLength = null;
-			Debug.WriteLine(content.ToString());
+            content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json");
+            content.Headers.ContentLength = null;
+            Debug.WriteLine(content.ToString());
 
-			HttpResponseMessage response = client.PostAsync(uri, content).Result;
+            HttpResponseMessage response = client.PostAsync(uri, content).Result;
 
-			if (response.IsSuccessStatusCode)
-			{
-				var responseString = await response.Content.ReadAsStringAsync();
-				Debug.WriteLine("Student Submission successfully submitted.");
-				return true;
-			}
-			else
-			{
-				Debug.WriteLine(content.ReadAsStringAsync());
-				Debug.WriteLine(response.RequestMessage);
-				Debug.WriteLine(response.StatusCode);
-				var responseString = await response.Content.ReadAsStringAsync();
-				Debug.WriteLine(responseString);
-			}
-			return false;
-		}
+            if (response.IsSuccessStatusCode)
+            {
+                var responseString = await response.Content.ReadAsStringAsync();
+                Debug.WriteLine("Student Submission successfully submitted.");
+                return true;
+            }
+            else
+            {
+                Debug.WriteLine(content.ReadAsStringAsync());
+                Debug.WriteLine(response.RequestMessage);
+                Debug.WriteLine(response.StatusCode);
+                var responseString = await response.Content.ReadAsStringAsync();
+                Debug.WriteLine(responseString);
+            }
+            return false;
+        }
 
         public static async Task<bool> LecturerOverrideATS(LecturerModule lecturerModule)
         {
@@ -148,6 +151,34 @@ namespace BeaconTest
 				return null;
 			}
 		}
+
+        public static async Task<ObservableCollection<StudentSubmission>> GetStudentAttendance()
+        {
+            var url = StudentAttendanceURL;
+            client.BaseAddress = new Uri(url);
+
+            ObservableCollection<StudentSubmission> studentSubmissionList = new ObservableCollection<StudentSubmission>();
+
+            // list data response.
+            HttpResponseMessage response = client.GetAsync(url).Result;  // blocking call!
+            if (response.IsSuccessStatusCode)
+            {
+                var responseString = await response.Content.ReadAsStringAsync();
+                //StudentAttendance studentAttendance = JsonConvert.DeserializeObject<StudentAttendance>(responseString);
+                dynamic studentAttendance = JsonConvert.DeserializeObject<dynamic>(responseString);
+                for (int i = 0; i < studentAttendance.Count; i++)
+                {
+                    studentSubmissionList.Add(new StudentSubmission { AdmissionId = studentAttendance[i].AdmissionId, DateSubmitted = Convert.ToDateTime(studentAttendance[i].DateSubmitted.ToString()) });
+                }
+
+                return studentSubmissionList;
+            }
+            else
+            {
+                Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
+                return null;
+            }
+        }
 
         public static async Task<LecturerTimetable> GetLecturerTimetable()
         {

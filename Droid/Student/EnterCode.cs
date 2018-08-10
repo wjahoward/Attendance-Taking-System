@@ -19,6 +19,9 @@ using Android.Widget;
 using BeaconTest.Droid.Student;
 using BeaconTest.Models;
 
+// This is for fyp showcase
+// This version is for ListView - remove the await DataAccess... == true that lines before presentation
+
 namespace BeaconTest.Droid
 {
     /*This activity uses SingleTask as its launchmode, which means another instance of this activity will not be
@@ -395,6 +398,13 @@ namespace BeaconTest.Droid
                 }
                 else
                 {
+                    RunOnUiThread(async () =>
+                    {
+                        StudentSubmission studentSubmission = new StudentSubmission();
+                        studentSubmission.AdmissionId = "p7654321";
+                        studentSubmission.DateSubmitted = DateTime.Now;
+                        await DataAccess.StudentSubmitATS(studentSubmission);
+                    });
                     RunOnUiThread(() =>
                     {
                         AlertDialog.Builder ad = new AlertDialog.Builder(this);

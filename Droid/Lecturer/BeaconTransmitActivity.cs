@@ -149,7 +149,7 @@ namespace BeaconTest.Droid.Lecturer
 
             if (wifiManager != null)
             {
-                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && (wifiManager.ConnectionInfo.SSID == "\"SPStaff\""));
+                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && (wifiManager.ConnectionInfo.SSID == "\"SPStudent\""));
             }
             return false;
         }
@@ -281,7 +281,7 @@ namespace BeaconTest.Droid.Lecturer
             beaconTransmitTimer.Stop();
             CommonClass.beaconTransmitter.StopAdvertising();
 
-            StartActivity(typeof(LecturerAttendanceWebView));
+            StartActivity(typeof(LecturerAttendanceListView));
         }
 
         private void StopThreadingTemporarily()

@@ -28,5 +28,8 @@ namespace BeaconTest
 		public static int currentRetry = 0;
 
         public static int moduleRowNumber;
+
+        // for listview purpose
+        public static string admissionId;
     }
 }

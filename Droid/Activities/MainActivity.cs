@@ -95,6 +95,7 @@ namespace BeaconTest.Droid
 
                 else if (username.StartsWith("p", StringComparison.OrdinalIgnoreCase))
                 {
+                    SharedData.admissionId = username;
                     RunOnUiThread(() => StartActivity(typeof(EnterCode)));
                     //for resetting count when student logs out
                     CommonClass.count = 0;

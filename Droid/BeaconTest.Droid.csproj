@@ -52,6 +52,7 @@
       <HintPath>..\packages\AndroidAltBeaconLibrary.2.7.0\lib\AndroidAltBeaconLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Java.Interop" />
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -145,13 +146,17 @@
   <ItemGroup>
     <Compile Include="CustomAdapter.cs" />
     <Compile Include="Lecturer\BeaconTransmitActivity.cs" />
+    <Compile Include="Lecturer\CustomAdapterLecturerListView.cs" />
     <Compile Include="Lecturer\ErrorGenerating.cs" />
+    <Compile Include="Lecturer\LecturerAttendanceListView.cs" />
     <Compile Include="Lecturer\LecturerAttendanceWebView.cs" />
     <Compile Include="Lecturer\LecturerAttendanceWebViewAfterGeneratingATS.cs" />
     <Compile Include="Lecturer\LecturerBluetoothOff.cs" />
+    <Compile Include="Lecturer\LecturerBluetoothOffListView.cs" />
     <Compile Include="Lecturer\LecturerBluetoothOffWebView.cs" />
     <Compile Include="Lecturer\LecturerModuleTableViewItem.cs" />
     <Compile Include="Lecturer\LecturerTransmitBluetoothOff.cs" />
+    <Compile Include="Lecturer\StudentAttendanceSubmissionTableViewItem.cs" />
     <Compile Include="Student\EnterCode.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="Activities\BaseActivity.cs" />
@@ -316,6 +321,16 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xhdpi\LectureHallDefault.jpg">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\LecturerAttendanceListView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\list_view_data_template_lecturer_listview.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
