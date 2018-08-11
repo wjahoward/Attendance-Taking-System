@@ -14,5 +14,8 @@ namespace BeaconTest.iOS
     [Register ("LecturerListViewAttendanceController")]
     partial class LecturerListViewAttendanceController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }

@@ -266,7 +266,7 @@ namespace BeaconTest.iOS
                     var ssid = dict[CaptiveNetwork.NetworkInfoKeySSID];
                     string network = ssid.ToString();
 
-                    if (network == "SPStaff")
+                    if (network == "SINGTEL-7E15")
                     {
                         return true;
                     }

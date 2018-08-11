@@ -14,5 +14,16 @@ namespace BeaconTest.iOS
     [Register ("LecturerAttendanceListViewController")]
     partial class LecturerAttendanceListViewController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITableView StudentAttendanceTableView { get; set; }
+
+        void ReleaseDesignerOutlets ()
+        {
+            if (StudentAttendanceTableView != null) {
+                StudentAttendanceTableView.Dispose ();
+                StudentAttendanceTableView = null;
+            }
+        }
     }
 }

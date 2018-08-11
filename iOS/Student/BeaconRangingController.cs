@@ -80,7 +80,15 @@ namespace BeaconTest.iOS
             {
                 if (CheckConnectToSPWiFi() == true)
                 {
-                    ShowSubmittedATSDialog();
+                    try
+                    {
+                        SubmissionProcess();
+                        ShowSubmittedATSDialog();
+                    }
+
+                    catch (Exception ex) {
+                        NoNetworkBeforeSubmitATS();
+                    }
                 }
                 else 
                 {
@@ -93,6 +101,13 @@ namespace BeaconTest.iOS
                 AttendanceCodeTextField.Hidden = false;
                 AttendanceCodeTextField.Selected = true;
             };
+        }
+
+        private async void SubmissionProcess() {
+            StudentSubmission studentSubmission = new StudentSubmission();
+            studentSubmission.AdmissionId = SharedData.admissionId;
+            studentSubmission.DateSubmitted = DateTime.Now;
+            await DataAccess.StudentSubmitATS(studentSubmission);
         }
 
         private void ShowSubmittedATSDialog() {
@@ -334,7 +349,7 @@ namespace BeaconTest.iOS
                     var ssid = dict[CaptiveNetwork.NetworkInfoKeySSID];
                     string network = ssid.ToString();
 
-                    if (network != "SPStudent")
+                    if (network != "SINGTEL-7E15")
                     {
                         return false;
                     }

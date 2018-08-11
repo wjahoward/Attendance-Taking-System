@@ -180,6 +180,33 @@ namespace BeaconTest
             }
         }
 
+        public static async Task<ObservableCollection<StudentSubmission>> GetStudentAttendanceIOS()
+        {
+            var url = StudentAttendanceURL;
+            client.BaseAddress = new Uri(url);
+
+            ObservableCollection<StudentSubmission> studentSubmissionList = new ObservableCollection<StudentSubmission>();
+
+            // list data response.
+            HttpResponseMessage response = client.GetAsync(url).Result;  // blocking call!
+            if (response.IsSuccessStatusCode)
+            {
+                var responseString = await response.Content.ReadAsStringAsync();
+                dynamic studentAttendance = JsonConvert.DeserializeObject<dynamic>(responseString);
+                for (int i = 0; i < studentAttendance.Count; i++)
+                {
+                    studentSubmissionList.Add(new StudentSubmission { AdmissionId = studentAttendance[i].AdmissionId, DateSubmitted = studentAttendance[i].DateSubmitted });
+                }
+
+                return studentSubmissionList;
+            }
+            else
+            {
+                Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);
+                return null;
+            }
+        }
+
         public static async Task<LecturerTimetable> GetLecturerTimetable()
         {
             var url = LecturerTimetableURL;

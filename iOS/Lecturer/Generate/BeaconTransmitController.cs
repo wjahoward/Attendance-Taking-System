@@ -126,6 +126,9 @@ namespace BeaconTest.iOS
                 }
 
                 CommonClass.beaconTransmitBluetoothThreadCheck = false; // stop the threading
+                CommonClass.lecturerListViewWentOnce = false;
+                CommonClass.checkBluetoothOnceBeforeSwipe = false;
+
                 peripheralManager.StopAdvertising();
                 beaconTransmitTimer.Stop();
             };
@@ -143,8 +146,8 @@ namespace BeaconTest.iOS
             CommonClass.beaconTransmitBluetoothThreadCheck = true;
 
             // can comment out the below 2 lines to not start the timer
-            //beaconTransmitTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            //beaconTransmitTimer.Start();
+            beaconTransmitTimer.Elapsed += OnTimedEvent;
+            beaconTransmitTimer.Start();
 
             UserDialogs.Instance.ShowLoading("Retrieving module info...");
             ThreadPool.QueueUserWorkItem(o => GetModule());
@@ -371,7 +374,7 @@ namespace BeaconTest.iOS
                     var ssid = dict[CaptiveNetwork.NetworkInfoKeySSID];
                     string network = ssid.ToString();
 
-                    if (network == "SPStaff")
+                    if (network == "SINGTEL-7E15")
                     {
                         return true;
                     }

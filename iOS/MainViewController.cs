@@ -87,7 +87,7 @@ namespace BeaconTest.iOS
                     var ssid = dict[CaptiveNetwork.NetworkInfoKeySSID];
                     string network = ssid.ToString();
 
-                    if (network == "SPStudent" || network == "SPStaff") // check to see if is connected to SP WiFi
+                    if (network == "SINGTEL-7E15" || network == "SPStaff") // check to see if is connected to SP WiFi
                     {
                         return true;
                     }
@@ -132,6 +132,7 @@ namespace BeaconTest.iOS
                     }
                     else if (username.StartsWith("p", StringComparison.OrdinalIgnoreCase))
                     {
+                        SharedData.admissionId = username;
                         var viewController = this.Storyboard.InstantiateViewController("StudentNavigationController");
 
                         if (viewController != null)

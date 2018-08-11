@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace BeaconTest.iOS
 {
     // this CommonClass is basically a class that 'brings' the value of that variable to other classes where applicable
@@ -13,12 +15,23 @@ namespace BeaconTest.iOS
         public static string moduleType;
 
         public static bool beaconTransmitBluetoothThreadCheck = true;
-
         public static bool lecturerAttendanceBluetoothThreadCheck = true;
+        public static bool lecturerListViewAttendanceBluetoothThreadCheck = true;
+
         public static bool lecturerAttendanceNetworkThreadCheck = true;
+        public static bool lecturerListViewAttendanceNetworkThreadCheck = true;
 
         public static bool checkBluetoothRangingOnce = false;
 
         public static TimeSpan maxTimeCheck;
+
+        public static int testing;
+        public static List<LecturerListViewTableViewItem> testingList;
+        public static bool lecturerListViewWentOnce;
+
+        public static LecturerListViewCell lecturerListViewCell;
+        public static bool check;
+
+        public static bool checkBluetoothOnceBeforeSwipe = false;
     }
 }

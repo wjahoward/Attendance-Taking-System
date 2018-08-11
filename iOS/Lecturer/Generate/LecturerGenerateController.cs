@@ -180,7 +180,7 @@ namespace BeaconTest.iOS
                     var ssid = dict[CaptiveNetwork.NetworkInfoKeySSID];
                     string network = ssid.ToString();
 
-                    if (network == "SPStaff") 
+                    if (network == "SINGTEL-7E15") 
                     {
                         return true;
                     }
@@ -300,7 +300,7 @@ namespace BeaconTest.iOS
                 string moduleEndTimeString = attendanceTableViewItems[indexPath.Row].Time.Substring(6, 5);
                 TimeSpan moduleEndTime = TimeSpan.Parse(moduleEndTimeString);
 
-                TimeSpan maxTime = moduleStartTime + TimeSpan.Parse("00:15:00");
+                TimeSpan maxTime = currentTime + TimeSpan.Parse("00:01:00");
 
                 /* this will be "brought" to BeaconTransmitController and LecturerAttendanceController to check 
                 if the current time exceeds this value if exceeds, it will prompt the user and the user will 
@@ -308,7 +308,7 @@ namespace BeaconTest.iOS
                 CommonClass.maxTimeCheck = maxTime; 
 
                 // if current time exceeds the time of the current lesson by minimally at a duration of 15 minutes
-                if (currentTime > moduleStartTime && (currentTime >= moduleEndTime || currentTime >= maxTime)) 
+                /*if (currentTime > moduleStartTime && (currentTime >= moduleEndTime || currentTime >= maxTime)) 
                 {
                     var lecturerAttendanceAfterGeneratingController = UIStoryboard.FromName("Main", null).InstantiateViewController("LecturerAttendanceAfterGeneratingController");
                     navigationController.PushViewController(lecturerAttendanceAfterGeneratingController, true);
@@ -319,27 +319,33 @@ namespace BeaconTest.iOS
                     if (CommonClass.checkBluetooth == true) // if Bluetooth is enabled
                     {
                         var beaconTransmitController = UIStoryboard.FromName("Main", null).InstantiateViewController("BeaconTransmitController");
-                        navigationController.PushViewController(beaconTransmitController, true);
+                        navigationController.PushViewController(beaconTransmitController, true);*/
                         /* this is to get the current module that the user clicks, 'bringing' this value to
                         BeaconTransmitController which will allow it to be able to 'identify' which module did the
                         user click on LecturerGenerateController page previously */
-                        SharedData.moduleRowNumber = indexPath.Row;
+                        /*SharedData.moduleRowNumber = indexPath.Row;
                     }
                     else // if Bluetooth is not enabled
                     {
                         var lecturerBluetoothSwitchOffController = UIStoryboard.FromName("Main", null).InstantiateViewController("LecturerBluetoothSwitchOffController");
                         navigationController.PushViewController(lecturerBluetoothSwitchOffController, true);
                     }
-                }
+                }*/
 
                 /* if current time is not the time of that lesson
                 i.e. assuming the current time is 8am, if the lecturer has another lesson that starts at 10am and he accidentally clicks on that lesson
                 it will navigate him to the errorGeneratingAttendanceController page */
-                else 
+                /*else 
                 {
                     var errorGeneratingAttendanceController = UIStoryboard.FromName("Main", null).InstantiateViewController("ErrorGeneratingAttendanceController");
                     navigationController.PushViewController(errorGeneratingAttendanceController, true);
-                }
+                }*/
+                var beaconTransmitController = UIStoryboard.FromName("Main", null).InstantiateViewController("BeaconTransmitController");
+                navigationController.PushViewController(beaconTransmitController, true); 
+                        /* this is to get the current module that the user clicks, 'bringing' this value to
+                        BeaconTransmitController which will allow it to be able to 'identify' which module did the
+                        user click on LecturerGenerateController page previously */
+                SharedData.moduleRowNumber = indexPath.Row;
             }
         }
     }
