@@ -261,8 +261,7 @@ namespace BeaconTest.Droid
 
             if (wifiManager != null)
             {
-                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID == "\"SPStudent\"");
-                //return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID != "<unknown ssid>");
+                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID != "<unknown ssid>");
             }
             return false;
         }
@@ -400,10 +399,25 @@ namespace BeaconTest.Droid
                 {
                     RunOnUiThread(async () =>
                     {
-                        StudentSubmission studentSubmission = new StudentSubmission();
-                        studentSubmission.AdmissionId = "p7654321";
-                        studentSubmission.DateSubmitted = DateTime.Now;
-                        await DataAccess.StudentSubmitATS(studentSubmission);
+                        try
+                        {
+                            StudentSubmission studentSubmission = new StudentSubmission();
+                            studentSubmission.AdmissionId = SharedData.admissionId;
+                            studentSubmission.DateSubmitted = DateTime.Now;
+                            await DataAccess.StudentSubmitATS(studentSubmission);
+                        }
+
+                        catch (Exception ex)
+                        {
+                            builder = new AlertDialog.Builder(this);
+                            builder.SetTitle("SP Wifi not enabled");
+                            builder.SetMessage("Please turn on SP Wifi!");
+                            builder.SetPositiveButton(Android.Resource.String.Ok, AlertRetryNoNetworkClick);
+                            builder.SetCancelable(false);
+                            builder.SetOnDismissListener(this);
+
+                            RunOnUiThread(() => builder.Show());
+                        }
                     });
                     RunOnUiThread(() =>
                     {
@@ -428,6 +442,36 @@ namespace BeaconTest.Droid
                     });
                 }
             });
+        }
+
+        private void AlertRetryNoNetworkClick(object sender, DialogClickEventArgs e)
+        {
+            CheckNetworkAvailableNoNetwork();
+        }
+
+        private async void CheckNetworkAvailableNoNetwork()
+        {
+            bool isNetwork = await Task.Run(() => NetworkRechableOrNot());
+
+            if (!isNetwork)
+            {
+                RunOnUiThread(() =>
+                {
+                    try
+                    {
+                        builder.Show();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("NetworkReachability -> CheckNetworkRechability:" + ex.Message);
+                    }
+                });
+            }
+            //if wifi is enabled, reload student's module
+            else
+            {
+                
+            }
         }
 
         async void RangingBeaconsInRegion(object sender, RangeEventArgs e)

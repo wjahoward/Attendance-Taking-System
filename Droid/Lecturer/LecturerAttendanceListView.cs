@@ -30,6 +30,7 @@ namespace BeaconTest.Droid
         ListView timeTableListView;
 
         LecturerModule lecturerModule;
+        private const string unknownssid = "<unknown ssid>";
 
         ObservableCollection<StudentSubmission> studentSubmissonList = new ObservableCollection<StudentSubmission>();
 
@@ -137,7 +138,7 @@ namespace BeaconTest.Droid
 
             if (wifiManager != null)
             {
-                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && (wifiManager.ConnectionInfo.SSID == "\"SPStudent\""));
+                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID != unknownssid);
             }
             return false;
         }

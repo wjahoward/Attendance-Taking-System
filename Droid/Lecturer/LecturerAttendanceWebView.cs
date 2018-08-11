@@ -23,6 +23,7 @@ namespace BeaconTest.Droid
         SwipeRefreshLayout swipe;
 
         LecturerModule lecturerModule;
+        private const string unknownssid = "<unknown ssid>";
 
         AlertDialog.Builder builder;
         Thread checkBluetoothActiveThread;
@@ -168,7 +169,7 @@ namespace BeaconTest.Droid
 
             if (wifiManager != null)
             {
-                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && (wifiManager.ConnectionInfo.SSID == "\"SPStaff\""));
+                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID != unknownssid);
             }
             return false;
         }

@@ -43,7 +43,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="15dp"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:textColor="#F44D71" />
     <EditText
         android:hint="ATS Code"
         android:textSize="12dp"

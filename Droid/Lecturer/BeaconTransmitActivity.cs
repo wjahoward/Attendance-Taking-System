@@ -21,6 +21,7 @@ namespace BeaconTest.Droid.Lecturer
     public class BeaconTransmitActivity : Activity, IDialogInterfaceOnDismissListener
     {
         LecturerModule lecturerModule;
+        private const string unknownssid = "<unknown ssid>";
 
         TextView moduleNameTextView, timeTextView, locationTextView, attendanceCodeTextView, overrideAttendanceCodeTextView;
         ImageView studentAttendanceImageView;
@@ -149,7 +150,7 @@ namespace BeaconTest.Droid.Lecturer
 
             if (wifiManager != null)
             {
-                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && (wifiManager.ConnectionInfo.SSID == "\"SPStudent\""));
+                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID != unknownssid);
             }
             return false;
         }
