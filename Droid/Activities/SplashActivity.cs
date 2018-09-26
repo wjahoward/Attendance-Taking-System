@@ -5,6 +5,8 @@ using Android.Support.V7.App;
 
 namespace BeaconTest.Droid
 {
+    // first main page to be shown on the mobile application
+
     [Activity(Label = "@string/app_name", Theme = "@style/SplashTheme", MainLauncher = true)]
     public class SplashActivity : AppCompatActivity
     {

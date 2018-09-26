@@ -13,16 +13,19 @@ namespace BeaconTest.Droid
     {
         bool isSupported;
 
-        //IList is non-generic collection object that can be individually access by index
+        // IList is non-generic collection object that can be individually access by index
+
         IList<Long> dataFields = new List<Long>();
 
         public void Transmit(int power, string atscode)
         {
-            //get the bluetooth service of the application and let Bluetooth manager manage the service
+            // get the bluetooth service of the application and let Bluetooth manager manage the service
+
             BluetoothManager bm = (BluetoothManager)Application.Context.
                 GetSystemService(Context.BluetoothService);
 
-            //get the adapter of the bluetooth service and let bt reference it
+            // get the adapter of the bluetooth service and let bt reference it
+
             BluetoothAdapter bt = bm.Adapter;
 
             CommonClass.bluetoothAdapter = bt;
@@ -36,6 +39,7 @@ namespace BeaconTest.Droid
             string atsCode2ndHalf = atscode.Substring(3, 3);
 
             // encryption of ATS code
+
             string atscode1stHalfEncrypted = Encryption(atsCode1stHalf).ToString();
             string atscode2ndHalfEncrypted = Encryption(atsCode2ndHalf).ToString();
 

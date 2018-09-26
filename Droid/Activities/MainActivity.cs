@@ -83,7 +83,7 @@ namespace BeaconTest.Droid
 
         private void Login()
         {
-            // allows both lower and upper case of letter
+            // allows both lower and upper case of letter for username
             if ((username.Equals(("s12345"), StringComparison.OrdinalIgnoreCase) && pwd.Equals("Te@cher123")) || (username.Equals(("p1234567"), StringComparison.OrdinalIgnoreCase) && pwd.Equals("R@ndom123")))
             {
                 if (username.StartsWith("s", StringComparison.OrdinalIgnoreCase)) 

@@ -28,7 +28,7 @@ namespace BeaconTest.Droid
 
         AlertDialog.Builder builder;
 
-        int indexOfLesson = 0; // indicates the index of the lesson from the timeTableListView i.e. index 0 stands for lesson 1, index 1 stands for lesson 2..
+        int indexOfLesson = 0; // indicates the index of the lesson from the timeTableListView i.e. index 0 stands for lesson 1, index 1 stands for lesson 2, index 2 stands for lesson 3 and so on..
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -48,6 +48,7 @@ namespace BeaconTest.Droid
             /* try-catch to see if while getting the lecturer's timetable data, WiFi is not enabled
             if WiFi is not enabled suddenly while getting the lecturer's timetable data
             it will catch that issue and an Alert Dialog will be shown. */
+
             try
             {
                 lecturerTimetable = DataAccess.GetLecturerTimetable().Result;
@@ -83,7 +84,7 @@ namespace BeaconTest.Droid
         {
             bool isNetwork = await Task.Run(() => this.NetworkRechableOrNot()); // check to see if phone is connected to SP WiFi
 
-            if (!isNetwork) // if phone is not connected to SP WiFi
+            if (!isNetwork) // if phone is not connected to SP WiFi, will continue to show the AlertDialog until phone is connected to SPWifi
             {
                 RunOnUiThread(() => {
                     try
@@ -98,7 +99,13 @@ namespace BeaconTest.Droid
             }
             else
             {
-                GetTimetable();
+
+                /* regardless if is or not connected to SPWifi, 
+                 when the user presses on Retry button,
+                 it will check again if whether is connected to SPWifi.
+                 If no, it will go back to AlertRetryClick, and then to CheckNetworkAvailable method */
+
+                GetTimetable(); 
             }
         }
 
@@ -108,7 +115,7 @@ namespace BeaconTest.Droid
 
             if (wifiManager != null)
             {
-                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID != unknownssid);
+                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID == "\"SPStaff\"");
             }
             return false;
         }
@@ -140,7 +147,9 @@ namespace BeaconTest.Droid
                 timeTableListView.Divider = null;
                 timeTableListView.DividerHeight = 0;
 
-                timeTableListView.SetSelector(Android.Resource.Color.Transparent); // remove highlight ripple effect if user clicks on listview
+                // remove highlight ripple effect if user clicks on listview
+
+                timeTableListView.SetSelector(Android.Resource.Color.Transparent); 
             }
             else
             {
@@ -161,9 +170,11 @@ namespace BeaconTest.Droid
                     TimeSpan moduleEndTime = TimeSpan.Parse(moduleEndTimeString);
 
                     // duration of showing atscode is at a maximum of 15 minutes
+
                     TimeSpan maxTime = currentTime + TimeSpan.Parse("00:15:00");
 
                     // bring the maxTime to Time method
+
                     CommonClass.maxTimeCheck = maxTime;
 
                     /* if the lesson is already over and the lecturer wants to check the attendance for the previous lesson
@@ -191,10 +202,10 @@ namespace BeaconTest.Droid
                     }
 
                     /* if current time is not within the time for the lecturer to generate attendance code for that lesson
-                    //i.e.a lecturer has two lessons, first lesson starts at 8am to 10am, and second lesson starts at 10am to 12pm
-                    //assuming the time is 8am, if the lecturer accidentally clicks on the second lesson(starting at 10am to 12pm)
-                    //it will navigate the lecturer to the ErrorGenerating page, which means the lecturer is unable to generates attendance code
-                    //for that lesson until the time reaches 10am */
+                    i.e. a lecturer has two lessons, first lesson starts at 8am to 10am, and second lesson starts at 10am to 12pm
+                    assuming the time is 8am, if the lecturer accidentally clicks on the second lesson(starting at 10am to 12pm)
+                    it will navigate the lecturer to the ErrorGenerating page, which means the lecturer is unable to generates attendance
+                    code for that lesson until the time reaches 10am */
 
                     else
                     {

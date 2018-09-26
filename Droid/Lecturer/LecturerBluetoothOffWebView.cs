@@ -20,14 +20,14 @@ namespace BeaconTest.Droid.Lecturer
 
             retryBluetooth.Click += delegate
             {
-                if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability() == false)
+                if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability() == false) // if Bluetooth is enabled
                 {
                     StartActivity(typeof(LecturerAttendanceWebView));
                 }
             };
         }
 
-        public override void OnBackPressed()
+        public override void OnBackPressed() // prevent user to navigate to previous page
         {
             return;
         }

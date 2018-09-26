@@ -232,6 +232,7 @@ namespace BeaconTest.Droid.Lecturer
         private void AttendanceCodeEditTextChanged(object sender, TextChangedEventArgs e)
         {
             // only if the length of the ATS code inputted by the user is of 6 digits then the override ATS button will be shown
+
             if (attendanceCodeEditText.Text.Length == 6)
             {
                 overrideATSButton.Visibility = ViewStates.Visible;
@@ -323,7 +324,14 @@ namespace BeaconTest.Droid.Lecturer
             StartActivity(typeof(Timetable));
         }
 
-        public override void OnBackPressed()
+        /* prevents the user from navigating back to Timetable.cs page.
+         Reason being is because if while transmission of BLE signals and the user navigates back to Timetable.cs page,
+         need to take into consideration of checking if Bluetooth is disabled, need to have no Bluetooth off page,
+         which this does not make sense since when the user first navigates to Timetable.cs page,
+         there should not be having any thread running continuously to check the consistency of enabling Bluetooth 
+         since there is no transmission of BLE signals yet */
+
+        public override void OnBackPressed() 
         {
             return;
         }

@@ -20,7 +20,7 @@ namespace BeaconTest.Droid.Lecturer
 
             retryBluetooth.Click += delegate
             {
-                if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability() == false)
+                if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability() == false) // if Bluetooth is enabled
                 {
                     StartActivity(typeof(Timetable));
                 }

@@ -27,7 +27,7 @@ namespace BeaconTest.Droid.Lecturer
             };
         }
 
-        public override void OnBackPressed()
+        public override void OnBackPressed() // prevent user to navigate to previous page
         {
             return;
         }
