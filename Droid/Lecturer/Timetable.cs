@@ -161,7 +161,7 @@ namespace BeaconTest.Droid
                     TimeSpan moduleEndTime = TimeSpan.Parse(moduleEndTimeString);
 
                     // duration of showing atscode is at a maximum of 15 minutes
-                    TimeSpan maxTime = currentTime + TimeSpan.Parse("00:01:00");
+                    TimeSpan maxTime = currentTime + TimeSpan.Parse("00:15:00");
 
                     // bring the maxTime to Time method
                     CommonClass.maxTimeCheck = maxTime;
@@ -169,33 +169,37 @@ namespace BeaconTest.Droid
                     /* if the lesson is already over and the lecturer wants to check the attendance for the previous lesson
                      it will navigate him to the webview, which he can log in with his or her credentials
                      to be able to view the attedance for that lesson */
-                    //if (currentTime > moduleStartTime && (currentTime >= moduleEndTime || currentTime >= maxTime))
-                    //// if current time exceeds the time of that particular lesson
-                    //{
-                    //    StartActivity(typeof(LecturerAttendanceWebViewAfterGeneratingATS));
-                    //}
 
-                    //else if (currentTime >= moduleStartTime && currentTime <= maxTime) // if current time does not exceed the time of that particular lesson
-                    //{
-                    //    if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability() == false) // if Bluetooth is enabled
-                    //    {
-                    //        StartActivity(typeof(BeaconTransmitActivity));
-                    //    }
-                    //    else // if Bluetooth is not enabled
-                    //    {
-                    //        StartActivity(typeof(LecturerBluetoothOff));
-                    //    }
-                    //}
-                    //else
-                    ///* if current time is not within the time for the lecturer to generate attendance code for that lesson
+                    if (currentTime > moduleStartTime && (currentTime >= moduleEndTime || currentTime >= maxTime))
+
+                    // if current time exceeds the time of that particular lesson
+
+                    {
+                        StartActivity(typeof(LecturerAttendanceWebViewAfterGeneratingATS));
+                    }
+
+                    else if (currentTime >= moduleStartTime && currentTime <= maxTime) // if current time does not exceed the time of that particular lesson
+                    {
+                        if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability() == false) // if Bluetooth is enabled
+                        {
+                            StartActivity(typeof(BeaconTransmitActivity));
+                        }
+                        else // if Bluetooth is not enabled
+                        {
+                            StartActivity(typeof(LecturerBluetoothOff));
+                        }
+                    }
+
+                    /* if current time is not within the time for the lecturer to generate attendance code for that lesson
                     //i.e.a lecturer has two lessons, first lesson starts at 8am to 10am, and second lesson starts at 10am to 12pm
                     //assuming the time is 8am, if the lecturer accidentally clicks on the second lesson(starting at 10am to 12pm)
                     //it will navigate the lecturer to the ErrorGenerating page, which means the lecturer is unable to generates attendance code
                     //for that lesson until the time reaches 10am */
-                    //{
-                    //    StartActivity(typeof(ErrorGenerating));
-                    //}
-                    StartActivity(typeof(BeaconTransmitActivity));
+
+                    else
+                    {
+                        StartActivity(typeof(ErrorGenerating));
+                    }
                 };
             }
         }

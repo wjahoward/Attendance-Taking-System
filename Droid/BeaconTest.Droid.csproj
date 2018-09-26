@@ -146,17 +146,13 @@
   <ItemGroup>
     <Compile Include="CustomAdapter.cs" />
     <Compile Include="Lecturer\BeaconTransmitActivity.cs" />
-    <Compile Include="Lecturer\CustomAdapterLecturerListView.cs" />
     <Compile Include="Lecturer\ErrorGenerating.cs" />
-    <Compile Include="Lecturer\LecturerAttendanceListView.cs" />
     <Compile Include="Lecturer\LecturerAttendanceWebView.cs" />
     <Compile Include="Lecturer\LecturerAttendanceWebViewAfterGeneratingATS.cs" />
     <Compile Include="Lecturer\LecturerBluetoothOff.cs" />
-    <Compile Include="Lecturer\LecturerBluetoothOffListView.cs" />
     <Compile Include="Lecturer\LecturerBluetoothOffWebView.cs" />
     <Compile Include="Lecturer\LecturerModuleTableViewItem.cs" />
     <Compile Include="Lecturer\LecturerTransmitBluetoothOff.cs" />
-    <Compile Include="Lecturer\StudentAttendanceSubmissionTableViewItem.cs" />
     <Compile Include="Student\EnterCode.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="Activities\BaseActivity.cs" />
@@ -171,7 +167,6 @@
     <Compile Include="Student\MonitorNotifier.cs" />
     <Compile Include="Student\NotWithinRange.cs" />
     <Compile Include="Student\RangeNotifier.cs" />
-    <Compile Include="Student.cs" />
     <Compile Include="Student\StudentBluetoothOff.cs" />
     <Compile Include="Student\StudentSuccessfulSubmission.cs" />
     <Compile Include="CommonClass.cs" />

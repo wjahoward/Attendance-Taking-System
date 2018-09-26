@@ -85,9 +85,10 @@ namespace BeaconTest.Droid.Lecturer
 
                     BeaconTransmit(BeaconPower(), lecturerModule.atscode);
 
-                    // comment the below 2 lines to not start the timer
-                    beaconTransmitTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-                    beaconTransmitTimer.Start();
+                    // comment out the below 2 lines to start the timer
+
+                    // beaconTransmitTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+                    // beaconTransmitTimer.Start();
 
                     CheckBluetoothRechability();
                 }
@@ -150,7 +151,7 @@ namespace BeaconTest.Droid.Lecturer
 
             if (wifiManager != null)
             {
-                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID != unknownssid);
+                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID == "\"SPStaff\"");
             }
             return false;
         }
@@ -282,7 +283,7 @@ namespace BeaconTest.Droid.Lecturer
             beaconTransmitTimer.Stop();
             CommonClass.beaconTransmitter.StopAdvertising();
 
-            StartActivity(typeof(LecturerAttendanceListView));
+            StartActivity(typeof(LecturerAttendanceWebView));
         }
 
         private void StopThreadingTemporarily()
