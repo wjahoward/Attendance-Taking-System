@@ -4,6 +4,7 @@ using System;
 namespace BeaconTest.Droid
 {
     //this class is used for passing variables from one activity to another
+
     public static class CommonClass
     {
         public static int count;

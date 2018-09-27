@@ -41,6 +41,7 @@ namespace BeaconTest.Droid
         }
 
         //checks whether SP Wifi is switched on and is connected to SP WiFi network
+
         private bool IsSPWifiConnected()
         {
             var wifiManager = Application.Context.GetSystemService(Context.WifiService) as WifiManager;
@@ -71,8 +72,17 @@ namespace BeaconTest.Droid
                 username = Username.Text.TrimEnd(); // accept empty spaces at the end of the username
                 pwd = Pwd.Text;
 
+                // initialising the user dialog, and then showing a loading dialog box (spinner)
+
                 UserDialogs.Init(this);
                 UserDialogs.Instance.ShowLoading("Logging in...");
+
+                /* A thread pool is a group of pre-instantiated, idle threads
+                 which stands ready to be given work. These are preffered over instantiating new 
+                 threads for each task when there is a lare number of short tasks to be done rather
+                 than a small number of long ones. This prevents having to incur the overhead of creating 
+                 a thread a large number of times. Basically, you can think a way of a bit of similarity of how a method works */
+
                 ThreadPool.QueueUserWorkItem(o => Login());
             }
             else
@@ -84,6 +94,7 @@ namespace BeaconTest.Droid
         private void Login()
         {
             // allows both lower and upper case of letter for username
+
             if ((username.Equals(("s12345"), StringComparison.OrdinalIgnoreCase) && pwd.Equals("Te@cher123")) || (username.Equals(("p1234567"), StringComparison.OrdinalIgnoreCase) && pwd.Equals("R@ndom123")))
             {
                 if (username.StartsWith("s", StringComparison.OrdinalIgnoreCase)) 
@@ -96,7 +107,9 @@ namespace BeaconTest.Droid
                 {
                     SharedData.admissionId = username;
                     RunOnUiThread(() => StartActivity(typeof(EnterCode)));
+
                     //for resetting count when student logs out
+
                     CommonClass.count = 0;
                     Finish();
                 }

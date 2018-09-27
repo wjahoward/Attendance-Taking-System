@@ -29,7 +29,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)SharedData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Lecturer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Student.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ATS.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\StudentSubmission.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\StudentModule.cs" />
   </ItemGroup>

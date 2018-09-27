@@ -80,13 +80,26 @@ namespace BeaconTest.Droid
             public override void OnPageFinished(WebView view, string url)
             {
                 mSwipe.Refreshing = false;
-                CommonClass.url = url; // store the current URL the user is on
+
+                // store the current URL the user is on
+
+                /* generally the purpose of CommonClass.url is for example when the user is at the Webview, 
+                 and navigating from page A to page B and to page C.
+                 Assuming in a situation when suddenly Bluetooth is switched off,
+                 it will result in the user in navigating to LecturerBluetoothOffWebView.cs page,
+                 and upon pressing the Retry button when Bluetooth is enabled, 
+                 if there is no CommonClass.url, 
+                 the user will navigate back to page A and has to click buttons in order to get back to page C,
+                 which is troublesome for the user. */
+
+                CommonClass.url = url; 
                 base.OnPageFinished(view, url);
             }
         }
 
         /* if the user goes to more than one web page and wants to go back to the previous web page in the web view 
         by pressing the hardware back button */
+
         public override bool OnKeyDown(Keycode keyCode, KeyEvent e) 
         {
             if (keyCode == Keycode.Back && webView.CanGoBack())
@@ -98,6 +111,7 @@ namespace BeaconTest.Droid
         }
 
         // in case the user switches off Bluetooth and re-transmit the BLE signals
+
         private void GetModule()
         {
             try
@@ -169,7 +183,7 @@ namespace BeaconTest.Droid
 
             if (wifiManager != null)
             {
-                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID != unknownssid);
+                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID == "\"SPStaff\"");
             }
             return false;
         }

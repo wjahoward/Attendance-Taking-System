@@ -18,6 +18,10 @@ using BeaconTest.Models;
 namespace BeaconTest.Droid.Lecturer
 {
     [Activity(Label = "BeaconTransmitActivity", ScreenOrientation = ScreenOrientation.Portrait)]
+
+    /* once navigates to this page or when the user navigates to other pages upon navigating to this page,
+     checking whether Bluetooth is enabled is crucial since is transmitting BLE signals within the first 15 minutes of the start time of the lesson */
+
     public class BeaconTransmitActivity : Activity, IDialogInterfaceOnDismissListener
     {
         LecturerModule lecturerModule;
@@ -59,6 +63,11 @@ namespace BeaconTest.Droid.Lecturer
             overrideATSButton.Click += OverrideATSButtonOnClick;
 
             manager = (InputMethodManager)GetSystemService(Context.InputMethodService);
+
+            /* whenever the user first navigates to this page,
+             by default the CommonClass.threadCheckBeaconTransmit will have a boolean value of true 
+             so as to monitor whether is the Bluetooth is enabled or not continuously,
+             until the user navigates to another page when the thread will be stopped */
 
             CommonClass.threadCheckBeaconTransmit = true;
 
@@ -202,7 +211,7 @@ namespace BeaconTest.Droid.Lecturer
             return true;
         }
 
-        private void BeaconTransmit(int power, string atscode) // start transmitting the beacons
+        private void BeaconTransmit(int power, string atscode) // start transmitting the beacon
         {
             BeaconTransmitter bTransmitter = new BeaconTransmitter();
             bTransmitter.Transmit(power, atscode);
@@ -282,10 +291,22 @@ namespace BeaconTest.Droid.Lecturer
         {
             StopThreadingTemporarily();
             beaconTransmitTimer.Stop();
+
+            // KIV this below code
+
+            /* similarily to iOS side, 
+             upon transmitting for the first time,
+             when navigating to other pages,
+             it will transmit as another iBeacon, which there will be two same iBeacons transmitting at the same time */
+
             CommonClass.beaconTransmitter.StopAdvertising();
 
             StartActivity(typeof(LecturerAttendanceWebView));
         }
+
+        /* previously we tried to use thread.abort etc - basically methods to try and delete thread.
+         However, none of the methods works successfully and thus we have to use CommonClass.threadCheckBeaconTransmit
+         to have a boolean value of false in order to stop the threading */
 
         private void StopThreadingTemporarily()
         {
@@ -305,7 +326,11 @@ namespace BeaconTest.Droid.Lecturer
             {
                 StopThreadingTemporarily();
 
-                CommonClass.bluetoothAdapter.Disable();
+                CommonClass.bluetoothAdapter.Disable(); // automatically turn off Bluetooth - can only be done in Android, iOS not possible
+
+                /* when the current lesson has reached 15 minutes of the start time of the lesson.
+                i.e. the lesson starts from 8am to 10am, 
+                once the time reaches 8.15am, it will show the AlertDialog that 'time is up' */
 
                 beaconTransmitTimer.Stop();
 

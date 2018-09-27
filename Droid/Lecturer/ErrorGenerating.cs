@@ -25,6 +25,8 @@ namespace BeaconTest.Droid.Lecturer
             };
         }
 
+        // when the user presses on the hardware back button
+
         public override void OnBackPressed()
         {
             var i = new Intent(this, typeof(Timetable)).SetFlags(ActivityFlags.ReorderToFront);

@@ -9,6 +9,10 @@ using Android.Webkit;
 namespace BeaconTest.Droid.Lecturer
 {
     [Activity(Label = "LecturerAttendanceWebView", ScreenOrientation = ScreenOrientation.Portrait)]
+
+    /* this class is similar to LecturerAttendanceWebView.cs,
+     just that there is no checking of Bluetooth and retrieving of lecturer's timetable data */
+
     public class LecturerAttendanceWebViewAfterGeneratingATS : Activity
     {
         WebView webView;

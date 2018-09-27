@@ -15,6 +15,12 @@ using System.Collections.ObjectModel;
 
 namespace BeaconTest
 {
+    /* in general,
+     for this class,
+     these methods are to be in try-catch method as they require phone to be connected to SPWifi in order to execute the respective
+     methods smoothly; otherwise, this will result in errors.
+     These methods are dealing with JSON data */
+
 	public static class DataAccess
 	{
 		static HttpClient client = new HttpClient();
@@ -35,6 +41,40 @@ namespace BeaconTest
         public static LecturerModule lecturerModule;
 
         public static string beaconKey;
+
+        public static async Task<bool> StudentSubmitATS(StudentSubmission studentSubmission)
+        {
+            var uri = new Uri(StudentSubmissionURL);
+
+            var json = JsonConvert.SerializeObject(studentSubmission);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            client.DefaultRequestHeaders
+                 .Accept
+                 .Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            content.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json");
+            content.Headers.ContentLength = null;
+            Debug.WriteLine(content.ToString());
+
+            HttpResponseMessage response = client.PostAsync(uri, content).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                var responseString = await response.Content.ReadAsStringAsync();
+                Debug.WriteLine("Student Submission successfully submitted.");
+                return true;
+            }
+            else
+            {
+                Debug.WriteLine(content.ReadAsStringAsync());
+                Debug.WriteLine(response.RequestMessage);
+                Debug.WriteLine(response.StatusCode);
+                var responseString = await response.Content.ReadAsStringAsync();
+                Debug.WriteLine(responseString);
+            }
+            return false;
+        }
 
         public static async Task<bool> LecturerOverrideATS(LecturerModule lecturerModule)
         {
@@ -72,8 +112,6 @@ namespace BeaconTest
 
         public static async Task<StudentTimetable> GetStudentTimetable()
 		{
-            //string urlParameters = "id=1626133" + "&DDMMYY=" + "250618"; // For dynamic date: change '250618' to 'DateTime.UtcNow.ToString("ddMMyy")';
-            //var url = StudentTimetableURL + urlParameters;
             var url = StudentTimetableURL;
 			client.BaseAddress = new Uri(url);
 
@@ -106,7 +144,6 @@ namespace BeaconTest
             if (response.IsSuccessStatusCode)
             {
                 var responseString = await response.Content.ReadAsStringAsync();
-                //StudentAttendance studentAttendance = JsonConvert.DeserializeObject<StudentAttendance>(responseString);
                 dynamic studentAttendance = JsonConvert.DeserializeObject<dynamic>(responseString);
                 for (int i = 0; i < studentAttendance.Count; i++)
                 {

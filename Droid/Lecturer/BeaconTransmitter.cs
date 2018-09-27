@@ -43,6 +43,8 @@ namespace BeaconTest.Droid
             string atscode1stHalfEncrypted = Encryption(atsCode1stHalf).ToString();
             string atscode2ndHalfEncrypted = Encryption(atsCode2ndHalf).ToString();
 
+            // initialising the beacon
+
             Beacon b = new Beacon.Builder()
                 .SetId1(DataAccess.LecturerGetBeaconKey())
                 .SetId2(atscode1stHalfEncrypted)
@@ -56,10 +58,18 @@ namespace BeaconTest.Droid
 
             AltBeaconOrg.BoundBeacon.BeaconTransmitter beaconTransmitter = new AltBeaconOrg.BoundBeacon.BeaconTransmitter(Application.Context, bp);
 
+            /* the reason why we use CommonClass.beaconTransmitter is because we also want to stop the beaconTransmitter
+             from advertising as stated from the reasons from the various classes.
+             We tried to include in this method to stop advertising. 
+             However, it does not seem to work. 
+             Therefore, we have to use CommonClass.beaconTransmitter in order to stop advertising */
+
             CommonClass.beaconTransmitter = beaconTransmitter;
 
             beaconTransmitter.StartAdvertising(b);
         }
+
+        // simple mathematical calculation to encrypt the ATS code - Major and Minor values
 
         private int Encryption(string atscode)
         {
