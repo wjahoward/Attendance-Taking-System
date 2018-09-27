@@ -11,11 +11,12 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-//contains methods for raging a beacon
+//contains methods for ranging a beacon
 namespace BeaconTest.Droid
 {
     public class RangeEventArgs : EventArgs
     {
+        //a Region consists of a UUID, Major and Minor values
         public Region Region { get; set; }
         public ICollection<Beacon> Beacons { get; set; }
     }

@@ -13,6 +13,7 @@ using Android.Widget;
 
 namespace BeaconTest.Droid.Student
 {
+    //this class is not used
     [Activity(Label = "EnterCode", ScreenOrientation = ScreenOrientation.Portrait)]
     public class StudentSuccessfulSubmission : Activity
     {

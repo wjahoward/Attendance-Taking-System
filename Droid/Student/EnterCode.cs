@@ -123,6 +123,7 @@ namespace BeaconTest.Droid
         {
             if (!BeaconManager.GetInstanceForApplication(this).CheckAvailability())
             {
+                //update the UI on the UI thread
                 RunOnUiThread(() =>
                 {
                     StartActivity(typeof(StudentBluetoothOff));

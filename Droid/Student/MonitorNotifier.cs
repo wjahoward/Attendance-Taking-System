@@ -15,6 +15,7 @@ namespace BeaconTest.Droid
 {
     public class MonitorEventArgs : EventArgs
     {
+        //a Region consists of a UUID, Major and Minor values
         public Region Region { get; set; }
 
         /*purpose of state is to persist the region state to non-volatie storage, so that even the app 

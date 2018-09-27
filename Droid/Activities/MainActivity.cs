@@ -48,6 +48,7 @@ namespace BeaconTest.Droid
 
             if (wifiManager != null)
             {
+                //return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID != "<unknown ssid>");
                 return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && (wifiManager.ConnectionInfo.SSID == "\"SPStudent\"" || wifiManager.ConnectionInfo.SSID == "\"SPStaff\"")); // check if connect to SPWifi   
             }
             return false;
@@ -79,7 +80,7 @@ namespace BeaconTest.Droid
 
                 /* A thread pool is a group of pre-instantiated, idle threads
                  which stands ready to be given work. These are preffered over instantiating new 
-                 threads for each task when there is a lare number of short tasks to be done rather
+                 threads for each task when there is a large number of short tasks to be done rather
                  than a small number of long ones. This prevents having to incur the overhead of creating 
                  a thread a large number of times. Basically, you can think a way of a bit of similarity of how a method works */
 
