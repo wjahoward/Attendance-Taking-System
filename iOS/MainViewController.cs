@@ -12,6 +12,8 @@ namespace BeaconTest.iOS
 {
     public partial class MainViewController : UIViewController
     {
+        // testing
+
         string username;
         string password;
 
