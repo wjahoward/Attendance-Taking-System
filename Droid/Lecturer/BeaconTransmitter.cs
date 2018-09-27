@@ -53,6 +53,8 @@ namespace BeaconTest.Droid
                 .SetTxPower(power)
                 .Build();
 
+            // setBeaconLayout is the one that allows the phone to transmit as an iBeacon
+
             BeaconParser bp = new BeaconParser()
                 .SetBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24");
 

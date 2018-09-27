@@ -170,8 +170,9 @@ namespace BeaconTest.Droid
                     TimeSpan moduleEndTime = TimeSpan.Parse(moduleEndTimeString);
 
                     // duration of showing atscode is at a maximum of 15 minutes
+                    // i.e. if lesson starts at 8am, once time reaches 8.15am onwards can only view the attendance for that lesson
 
-                    TimeSpan maxTime = currentTime + TimeSpan.Parse("00:15:00");
+                    TimeSpan maxTime = moduleStartTime + TimeSpan.Parse("00:15:00");
 
                     // bring the maxTime to Time method
 
