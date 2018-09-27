@@ -24,6 +24,7 @@ namespace BeaconTest.iOS
         /* purpose of the timer is to check once the current time reaches 15 minutes of the start time of the lesson
         it will prompt and inform that the user the current time has already reached 15 minutes so as to prevent
         the continuation transmission of BLE signals and disallow the students to be able to range for the phone */
+		
         System.Timers.Timer lecturerAttendanceTimer = new System.Timers.Timer();
 
         string loadURL = "https://ats.sf.sp.edu.sg/psc/cs90atstd/EMPLOYEE/HRMS/s/WEBLIB_A_ATS.ISCRIPT2.FieldFormula.IScript_GetLecturerClasses?&cmd=login";
@@ -41,17 +42,29 @@ namespace BeaconTest.iOS
 
             NavigationController.NavigationBarHidden = false;
 
-            // can comment out the below 2 lines to not start the timer
-            //lecturerAttendanceTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            //lecturerAttendanceTimer.Start();
+            // can comment out the below 2 lines to start the timer
+            // lecturerAttendanceTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+            // lecturerAttendanceTimer.Start();
 
             CommonClass.lecturerAttendanceBluetoothThreadCheck = true;
+
+            /* the reason why for network there is a thread only for WebView and not BeaconTransmitController,
+            is because for BeaconTransmitController, there will be checking of network only when retrieving 
+            one lecturer's module from the lecturer's timetable data, which is 'one-time off'. However, for
+            Webview, whenever the user navigates to another page or (pull to refresh) refresh the current page,
+            for our mobile application, we did not code in a way that it will show that it is a web page that 
+            states "You are not connected to Wifi". So, therefore, for our case we have to create a thread
+            to ensure Wifi is connected at all times when at the WebView; otherwise, if let say when is not connected
+            to SPWifi - SPStaff, the user clicks this button or refresh, it will result in showing a blank page
+            which shouldn't be the case */
+
             CommonClass.lecturerAttendanceNetworkThreadCheck = true;
 
             CheckSPNetwork();
         }
 
-        // if navigate back to BeaconTransmitController page
+        // if navigate back to BeaconTransmitController page or other pages
+
 		public override void ViewDidDisappear(bool animated)
 		{
             base.ViewDidDisappear(animated);
@@ -131,9 +144,11 @@ namespace BeaconTest.iOS
 
                     InitBeacon();
 
-                    /* inital check if "currentURL" variable has value, else it will load the "loadURL" variable
-                    only when "currentURL" variable has value, then it will load the "currentURL" variable
-                    since it will change depending on the current URL the user is on */
+                    /* inital check if "currentURL" variable has value, else it will load the "loadURL" variable,
+                     which the loadURL is the default URL when the user first navigates and see (which is the ats.sf...)
+                     web page only when "currentURL" variable has value, then it will load the "currentURL" variable
+                     since it will change depending on the current URL the user is on */
+					
                     if (currentURL != null)
                     {
                         AttendanceWebView.LoadRequest(new NSUrlRequest(new NSUrl(currentURL)));
@@ -149,12 +164,14 @@ namespace BeaconTest.iOS
                         if (currentURL != null)
                         {
                             // "currentURL" variable is based on the current web page of the web view the user is on
+
                             currentURL = AttendanceWebView.Request.Url.AbsoluteString;
                         }
                         else
                         {
                             /* "currentURL" variable will have the value of "loadURL" variable first 
                             since it will be null in the beginning */
+							
                             currentURL = loadURL;
                         }
                         AttendanceWebView.ScrollView.Delegate = new UIScrollViewDelegate(AttendanceWebView, currentURL);
@@ -180,6 +197,7 @@ namespace BeaconTest.iOS
             }
 
             // allows the user to pull to refresh
+
             [Export("scrollViewDidEndDragging:willDecelerate:")]
             public void DraggingEnded(UIScrollView scrollView, bool willDecelerate)
             {
@@ -187,6 +205,7 @@ namespace BeaconTest.iOS
             }
 
             // the web view loads the current URL
+
             [Export("scrollViewDidEndDecelerating:")]
             public void DecelerationEnded(UIScrollView scrollView)
             {
@@ -206,7 +225,8 @@ namespace BeaconTest.iOS
             beaconRegion = new CLBeaconRegion(new NSUuid(DataAccess.LecturerGetBeaconKey()), (ushort)int.Parse(atsCode1stHalfEncrypted), (ushort)int.Parse(atsCode2ndHalfEncrypted), SharedData.beaconId);
 
             //power - the received signal strength indicator (RSSI) value (measured in decibels) of the beacon from one meter away
-            var power = BeaconPower();
+            
+			var power = BeaconPower();
 
             var peripheralData = beaconRegion.GetPeripheralData(power);
             peripheralDelegate = new BTPeripheralDelegate();
@@ -266,7 +286,7 @@ namespace BeaconTest.iOS
                     var ssid = dict[CaptiveNetwork.NetworkInfoKeySSID];
                     string network = ssid.ToString();
 
-                    if (network == "SINGTEL-7E15")
+                    if (network == "SPStaff")
                     {
                         return true;
                     }

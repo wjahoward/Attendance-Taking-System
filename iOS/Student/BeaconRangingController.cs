@@ -66,7 +66,8 @@ namespace BeaconTest.iOS
             base.ViewDidAppear(animated);
 
             /* this is to check if the user has already tried to range for the beacon (at least once)
-            and turn off Bluetooth */
+            and if turn off Bluetooth */
+			// KIV this!!
             CommonClass.checkBluetoothRangingOnce = false;
 
             StudentSubmitButton.Layer.CornerRadius = SharedData.buttonCornerRadius;
@@ -113,6 +114,7 @@ namespace BeaconTest.iOS
         private void ShowSubmittedATSDialog() {
 
             // reset the number of retries to 0 if student wants to submit ATS code again - range for phone
+
             SharedData.currentRetry = 0;
 
             okAlertSubmitATSSuccessController = UIAlertController.Create("Success", "You have successfully submitted your attendance!", UIAlertControllerStyle.Alert);
@@ -142,6 +144,7 @@ namespace BeaconTest.iOS
         partial void AttendanceCodeManuallyTextField(UITextField sender)
         {
             // ensure the number inputted is of 6 digit
+
             if (EnterAttendanceCodeFieldManuallyIfUnableToRangeTextField.Text.Length == 6)
             {
                 StudentSubmitButton.Hidden = false;
@@ -155,6 +158,7 @@ namespace BeaconTest.iOS
         partial void AttendanceCodeTextFieldTextChanged(UITextField sender)
         {
             // ensure the number inputted is of 6 digit
+
             if (AttendanceCodeTextField.Text.Length == 6)
             {
                 StudentSubmitButton.Hidden = false;
@@ -193,7 +197,8 @@ namespace BeaconTest.iOS
                             UserDialogs.Instance.HideLoading();
 
                             // if the number of retries user tried to range for the phone is less than or equal to 3
-                            if (SharedData.currentRetry <= 3) {
+                            
+							if (SharedData.currentRetry <= 3) {
                                 await CheckBluetooth();
                                 if (CommonClass.checkBluetooth == true)
                                 {
@@ -201,7 +206,9 @@ namespace BeaconTest.iOS
                                     InitLocationManager();
                                 }
                             }
+
                             // else if user unable to range for phone after 3 retries
+
                             else {
                                 CantRangeForBeacon();
                             }
@@ -349,7 +356,7 @@ namespace BeaconTest.iOS
                     var ssid = dict[CaptiveNetwork.NetworkInfoKeySSID];
                     string network = ssid.ToString();
 
-                    if (network != "SINGTEL-7E15")
+                    if (network != "SPStudent")
                     {
                         return false;
                     }
@@ -366,6 +373,7 @@ namespace BeaconTest.iOS
         }
 
         // methods involved during ranging
+
         private void InitLocationManager()
         {
             locationManager = new CLLocationManager();
@@ -398,6 +406,7 @@ namespace BeaconTest.iOS
                             atsCode = e.Beacons[0].Major.ToString() + e.Beacons[0].Minor.ToString();
 
                             // decryption of encrypted atsCode transmitted by lecturer's phone
+
                             string atsCodeMajor = Decryption(e.Beacons[0].Major.ToString()).ToString();
                             string atsCodeMinor = Decryption(e.Beacons[0].Minor.ToString()).ToString();
                             atsCode = atsCodeMajor + atsCodeMinor;
@@ -414,6 +423,7 @@ namespace BeaconTest.iOS
                             hey are keying in the ATS code manually, which defeats the purpose of having
                             this transmission and ranging process
                             note: Submission of ATS Code manually is for contingency plan */
+							
                             AttendanceCodeTextField.Text = atsCode.Substring(0, 1) + "****" + atsCode.Substring(5, 1);
                             AttendanceCodeTextField.UserInteractionEnabled = false;
                         });
@@ -425,9 +435,11 @@ namespace BeaconTest.iOS
                     InvokeOnMainThread(() =>
                     {
                         // stop ranging when user goes to BeaconOutOfRangeController page
+
                         locationManager.DidRangeBeacons -= LocationManager_DidRangeBeacons;
 
                         // increment the number of tries the user has tried to range for the phone
+
                         SharedData.currentRetry += 1;
 
                         var viewController = this.Storyboard.InstantiateViewController("BeaconOutOfRangeController");
@@ -458,6 +470,7 @@ namespace BeaconTest.iOS
         }
 
         // decryption of encrypted ATS code
+
         private int Decryption(string encryptedCode)
         {
             int numberATSCode = Convert.ToInt32(encryptedCode);

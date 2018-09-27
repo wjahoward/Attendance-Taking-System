@@ -12,8 +12,6 @@ namespace BeaconTest.iOS
 {
     public partial class MainViewController : UIViewController
     {
-        // testing
-
         string username;
         string password;
 
@@ -24,6 +22,9 @@ namespace BeaconTest.iOS
         public override void ViewDidLoad()
         {
 			base.ViewDidLoad();      
+
+			/* ShouldReturn method: when the user finishes typing the username,
+            the user can press the return button and the keyboard will disappear */
 
 			UsernameTextField.ShouldReturn = delegate
             {
@@ -43,10 +44,26 @@ namespace BeaconTest.iOS
 
                 if (CheckConnectToSPWiFi() == true) // check if connected to SP WiFi
 				{
+
+                    /* TrimEnd method is basically to remove empty spaces after the user types 
+                    the username text field
+                    i.e. if a user types p1234567(space)(space),
+                    it will still be treated as only p1234567, without the 2 blank spaces */
+
                     username = UsernameTextField.Text.TrimEnd();
                     password = PasswordField.Text;               
 
+					// shows a loading dialog box (spinner)
+
 					UserDialogs.Instance.ShowLoading("Logging in...");
+
+                    /* A thread pool is a group of pre-instantiated, idle threads
+                    which stand ready to be given work. These are preferred over instantiating new
+                    threads for each task when there is a large number of short tasks to be done rather
+                    than a small number of long ones. This prevents having to incur the overhead of creating 
+                    a thread a large number of times. Basically, you can think in a way of a bit of similarity 
+                    of how a method works */
+
                     ThreadPool.QueueUserWorkItem(o => Login()); 
 				}
             };
@@ -58,6 +75,7 @@ namespace BeaconTest.iOS
 
             /* when the user starts to launch the application
             it will check if the user has already or not connected to SP WiFi */
+			
             CheckConnectToSPWiFi(); 
 		}
 
@@ -82,6 +100,10 @@ namespace BeaconTest.iOS
                 the reason why require try-catch is because if the phone is not connected to Internet
                 while checking for that SSID, it will crash since is not connected to WiFi 
                 and the "dict" value will be null, therefore having a try-catch expression is necessary */
+
+                /* in short, the below codes are to check for the SSID whether is it either connected to 
+                SPStaff or SPStudent */
+
                 try
                 {
                     NSDictionary dict;
@@ -89,7 +111,7 @@ namespace BeaconTest.iOS
                     var ssid = dict[CaptiveNetwork.NetworkInfoKeySSID];
                     string network = ssid.ToString();
 
-                    if (network == "SINGTEL-7E15" || network == "SPStaff") // check to see if is connected to SP WiFi
+                    if (network == "SPStudent" || network == "SPStaff") // check to see if is connected to SP WiFi
                     {
                         return true;
                     }
@@ -99,6 +121,9 @@ namespace BeaconTest.iOS
                         return false;
                     }
                 }
+
+                // even if network is present but not connected to correct SSID, it will still show the alert dialog
+
                 catch (Exception ex)
                 {
                     ShowNoNetworkController();
@@ -106,6 +131,8 @@ namespace BeaconTest.iOS
                 }
             }
 		}
+
+        // shows alert dialog to indicate the user is not connected to SPWifi - SPStaff or SPStudent
 
         private void ShowNoNetworkController() {
             UIAlertController okAlertNetworkController = UIAlertController.Create("Device not connected to SP WiFi", "Please connect to SP WiFi on your phone", UIAlertControllerStyle.Alert);
@@ -117,6 +144,12 @@ namespace BeaconTest.iOS
 
         public void Login()
         {
+
+			/* once a ThreadPool.QueueUserWorkItem() method is initialised,
+            particular methods onwards use InvokeOnMainThread() method,
+            which is running those particular 'main codes' in that method.
+            InvokeOnMainThread() is similar to RunOnUiThread() in Android */
+
             InvokeOnMainThread(() =>
             {
                 // accepts both capital and small letters for username text field
@@ -129,6 +162,9 @@ namespace BeaconTest.iOS
 
                         if (viewController != null)
                         {
+
+                            // navigates to LecturerNavigationController page
+
                             this.PresentViewController(viewController, true, null);
                         }
                     }
@@ -139,6 +175,9 @@ namespace BeaconTest.iOS
 
                         if (viewController != null)
                         {
+
+                            // navigates to StudentNavigationController page
+
                             this.PresentViewController(viewController, true, null);
                         }
                     }

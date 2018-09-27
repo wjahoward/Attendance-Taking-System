@@ -31,12 +31,15 @@ namespace BeaconTest.iOS
             await CheckBluetooth();
 
             // customise the Navigation Bar
+
             this.NavigationController.NavigationBar.BarTintColor = UIColor.FromRGB(BeaconTest.SharedData.primaryColourRGB[0], BeaconTest.SharedData.primaryColourRGB[1], BeaconTest.SharedData.primaryColourRGB[2]);
             this.NavigationController.NavigationBar.TintColor = UIColor.White;
             this.NavigationController.NavigationBar.TitleTextAttributes = new UIStringAttributes()
             {
                 ForegroundColor = UIColor.White
             };
+
+            // creating and setting up UITableView object
 
             tableView = TimetableTableView; // defaults to Plain style
             tableView.RowHeight = 120;
@@ -56,8 +59,24 @@ namespace BeaconTest.iOS
             ThreadPool.QueueUserWorkItem(o => GetTimetable());
         }
 
+        /* there are some strange things that occur in iOS and not in Android.
+        For example, for Android, when you check for the first time,
+        it will automatically check immediately if Bluetooth is enabled or not.
+        However, for iOS, when you check for the first time, it will not check
+        automatically if Blueooth is enabled or not, 
+        but 'requires second time' then will check if Bluetooth is enabled or not */
+
         private async Task CheckBluetooth()
         {
+            /* check for the first time when the user navigates to this controller page and 
+             and check for the current state of the Bluetooth */
+
+            /* once the user navigates to this controller page, it will continue to check the
+             status of Bluetooth throughout, therefore we use CommonClass.checkBluetooth which this
+             variable will be passed to other classes and easier to verify whether if Bluetooth is enabled
+             or not, rather than if initialise one variable here and there to check if Bluetooth is enabled
+             or not which this will be troublesome */
+
             var state = await GetBluetoothState(Plugin.BLE.CrossBluetoothLE.Current);
             if (state == BluetoothState.Off)
             {
@@ -70,6 +89,7 @@ namespace BeaconTest.iOS
 
             /* every time the user enables and disables Bluetooth 
             it will check the changed and updated state of Bluetooth */
+			
             Plugin.BLE.CrossBluetoothLE.Current.StateChanged += (o, e) =>
             {
                 if (e.NewState == BluetoothState.Off)
@@ -83,7 +103,8 @@ namespace BeaconTest.iOS
             };
         }
 
-        // this method is to find the current state of Bluetooth if it is unknown
+		// this method is to find the current state of Bluetooth (either on or off) if it is unknown
+
         private Task<BluetoothState> GetBluetoothState(IBluetoothLE ble)
         {
             var tcs = new TaskCompletionSource<BluetoothState>();
@@ -122,6 +143,7 @@ namespace BeaconTest.iOS
                 which requires Internet. Assuming in an event while trying to get lecturer's timetable data,
                 the phone that is connected to SP WiFi, suddenly is disconnected from SP WiFi, without a try-catch,
                 the app will crash. Therefore, having a try-catch to check if is connected to SP WiFi is crucial */
+				
                 try
                 {
                     lecturerTimetable = DataAccess.GetLecturerTimetable().Result;
@@ -147,12 +169,15 @@ namespace BeaconTest.iOS
         private void ShowNoNetworkController()
         {
             //Create Alert
+
             UIAlertController okAlertNetworkController = UIAlertController.Create("SP Wifi not enabled", "Please turn on SP Wifi", UIAlertControllerStyle.Alert);
 
             //Add Action
+
             okAlertNetworkController.AddAction(UIAlertAction.Create("Retry", UIAlertActionStyle.Default, AlertRetryClick));
 
             // Present Alert
+
             PresentViewController(okAlertNetworkController, true, null);
         }
 
@@ -180,7 +205,7 @@ namespace BeaconTest.iOS
                     var ssid = dict[CaptiveNetwork.NetworkInfoKeySSID];
                     string network = ssid.ToString();
 
-                    if (network == "SINGTEL-7E15") 
+                    if (network == "SPStaff") 
                     {
                         return true;
                     }
@@ -213,6 +238,11 @@ namespace BeaconTest.iOS
                     lecturerTimetable.modules.Count, attendanceTableVieItems will not add in any more
                     module. */
 
+                    /* in summary, assuming if the user has already been to this controller page once,
+                     if the user navigates to another page and wants to go back to this page again, 
+                     it would refresh, reload and add those repeated mdoules that were already been shown
+                     when the user first navigates. Hence, having a if-else is important */
+
                     if (attendanceTableViewItems.Count != lecturerTimetable.modules.Count)
                     {
                         attendanceTableViewItems.Add(new LecturerModuleTableViewItem(module.abbr) { ModuleCode = module.code, Venue = module.location, Time = module.time });
@@ -224,7 +254,10 @@ namespace BeaconTest.iOS
                     if (attendanceTableViewItems.Count != lecturerTimetable.modules.Count)
                     {
                         attendanceTableViewItems.Add(new LecturerModuleTableViewItem("No lesson") { ModuleCode = "", Venue = "", Time = "" });
-                        tableView.AllowsSelection = false;
+                        
+                        // when the user presses on the tableView, nothing would happen
+
+						tableView.AllowsSelection = false;
                     }
                 }
             }
@@ -232,6 +265,8 @@ namespace BeaconTest.iOS
             tableView.Source = tableSource;
 
             VerifyBle(); // when the user navigates to this page, it will check if user enables Bluetooth
+
+			// reloads all the data (rows and sections of the tableview) that is used to construct the tableview
 
             tableView.ReloadData(); 
         }
@@ -288,64 +323,67 @@ namespace BeaconTest.iOS
                 return cell;
             }
 
-            public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
-            {
-                string currentTimeString = DateTime.Now.ToString("mm/dd/yyyy HH:mm:ss");
-                string currentTimeSubstring = currentTimeString.Substring(11, 8);
-                TimeSpan currentTime = TimeSpan.Parse(currentTimeSubstring);
+			public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+			{
+				string currentTimeString = DateTime.Now.ToString("mm/dd/yyyy HH:mm:ss");
+				string currentTimeSubstring = currentTimeString.Substring(11, 8);
+				TimeSpan currentTime = TimeSpan.Parse(currentTimeSubstring);
 
-                string moduleStartTimeString = attendanceTableViewItems[indexPath.Row].Time.Substring(0, 5);
-                TimeSpan moduleStartTime = TimeSpan.Parse(moduleStartTimeString);
+				string moduleStartTimeString = attendanceTableViewItems[indexPath.Row].Time.Substring(0, 5);
+				TimeSpan moduleStartTime = TimeSpan.Parse(moduleStartTimeString);
 
-                string moduleEndTimeString = attendanceTableViewItems[indexPath.Row].Time.Substring(6, 5);
-                TimeSpan moduleEndTime = TimeSpan.Parse(moduleEndTimeString);
+				string moduleEndTimeString = attendanceTableViewItems[indexPath.Row].Time.Substring(6, 5);
+				TimeSpan moduleEndTime = TimeSpan.Parse(moduleEndTimeString);
 
-                TimeSpan maxTime = currentTime + TimeSpan.Parse("00:01:00");
+				TimeSpan maxTime = moduleStartTime + TimeSpan.Parse("00:15:00");
 
-                /* this will be "brought" to BeaconTransmitController and LecturerAttendanceController to check 
+				/* this will be "brought" to BeaconTransmitController and LecturerAttendanceController to check 
                 if the current time exceeds this value if exceeds, it will prompt the user and the user will 
                 be navigated to this controller page. */
-                CommonClass.maxTimeCheck = maxTime; 
 
-                // if current time exceeds the time of the current lesson by minimally at a duration of 15 minutes
-                /*if (currentTime > moduleStartTime && (currentTime >= moduleEndTime || currentTime >= maxTime)) 
-                {
-                    var lecturerAttendanceAfterGeneratingController = UIStoryboard.FromName("Main", null).InstantiateViewController("LecturerAttendanceAfterGeneratingController");
-                    navigationController.PushViewController(lecturerAttendanceAfterGeneratingController, true);
-                }
+				CommonClass.maxTimeCheck = maxTime;
 
-                else if (currentTime >= moduleStartTime && currentTime <= maxTime)
-                {
-                    if (CommonClass.checkBluetooth == true) // if Bluetooth is enabled
-                    {
-                        var beaconTransmitController = UIStoryboard.FromName("Main", null).InstantiateViewController("BeaconTransmitController");
-                        navigationController.PushViewController(beaconTransmitController, true);*/
-                        /* this is to get the current module that the user clicks, 'bringing' this value to
+				// if current time exceeds the time of the current lesson by minimally at a duration of 15 minutes
+
+				if (currentTime > moduleStartTime && (currentTime >= moduleEndTime || currentTime >= maxTime))
+				{
+					var lecturerAttendanceAfterGeneratingController = UIStoryboard.FromName("Main", null).InstantiateViewController("LecturerAttendanceAfterGeneratingController");
+					navigationController.PushViewController(lecturerAttendanceAfterGeneratingController, true);
+				}
+
+				/* if current time is within the 15 minutes of the lesson.
+                i.e. if the lesson starts at 8am, this else-if will work if the current time is between
+                08:00:00 and 08:14:59 */
+
+				else if (currentTime >= moduleStartTime && currentTime <= maxTime)
+				{
+					if (CommonClass.checkBluetooth == true) // if Bluetooth is enabled
+					{
+						var beaconTransmitController = UIStoryboard.FromName("Main", null).InstantiateViewController("BeaconTransmitController");
+						navigationController.PushViewController(beaconTransmitController, true);
+
+						/* this is to get the current module that the user clicks, 'bringing' this value to
                         BeaconTransmitController which will allow it to be able to 'identify' which module did the
                         user click on LecturerGenerateController page previously */
-                        /*SharedData.moduleRowNumber = indexPath.Row;
-                    }
-                    else // if Bluetooth is not enabled
-                    {
-                        var lecturerBluetoothSwitchOffController = UIStoryboard.FromName("Main", null).InstantiateViewController("LecturerBluetoothSwitchOffController");
-                        navigationController.PushViewController(lecturerBluetoothSwitchOffController, true);
-                    }
-                }*/
 
-                /* if current time is not the time of that lesson
+						SharedData.moduleRowNumber = indexPath.Row;
+					}
+					else // if Bluetooth is not enabled
+					{
+						var lecturerBluetoothSwitchOffController = UIStoryboard.FromName("Main", null).InstantiateViewController("LecturerBluetoothSwitchOffController");
+						navigationController.PushViewController(lecturerBluetoothSwitchOffController, true);
+					}
+				}
+
+				/* if current time is not the time of that lesson
                 i.e. assuming the current time is 8am, if the lecturer has another lesson that starts at 10am and he accidentally clicks on that lesson
                 it will navigate him to the errorGeneratingAttendanceController page */
-                /*else 
-                {
-                    var errorGeneratingAttendanceController = UIStoryboard.FromName("Main", null).InstantiateViewController("ErrorGeneratingAttendanceController");
-                    navigationController.PushViewController(errorGeneratingAttendanceController, true);
-                }*/
-                var beaconTransmitController = UIStoryboard.FromName("Main", null).InstantiateViewController("BeaconTransmitController");
-                navigationController.PushViewController(beaconTransmitController, true); 
-                        /* this is to get the current module that the user clicks, 'bringing' this value to
-                        BeaconTransmitController which will allow it to be able to 'identify' which module did the
-                        user click on LecturerGenerateController page previously */
-                SharedData.moduleRowNumber = indexPath.Row;
+
+				else
+				{
+					var errorGeneratingAttendanceController = UIStoryboard.FromName("Main", null).InstantiateViewController("ErrorGeneratingAttendanceController");
+					navigationController.PushViewController(errorGeneratingAttendanceController, true);
+				}
             }
         }
     }

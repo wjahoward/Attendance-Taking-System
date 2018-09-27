@@ -18,8 +18,12 @@ namespace BeaconTest.iOS
             RetryButton.Layer.CornerRadius = SharedData.buttonCornerRadius;
 
             RetryButton.TouchUpInside += (object sender, EventArgs e) => {
-                if (CommonClass.checkBluetooth == true) // rmb change to true on actual iphone device
+				
+                if (CommonClass.checkBluetooth == true) // if Bluetooth is enabled
                 {
+
+                    // return back to the previous page upon pressing Retry button
+
                     this.NavigationController.PopViewController(true);
                 }
 

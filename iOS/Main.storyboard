@@ -113,7 +113,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue id="91789" destination="90540" kind="push"/>
+                                    <segue id="92129" destination="78083" kind="push"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="23560" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="Location Icon.png">
@@ -730,137 +730,13 @@
             </objects>
             <point key="canvasLocation" x="2506" y="-1246"/>
         </scene>
-        <scene sceneID="84830">
-            <objects>
-                <tableViewController id="84831" sceneMemberID="viewController" customClass="LecturerAttendanceListViewController" storyboardIdentifier="LecturerAttendanceListViewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="84833">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="84836">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="84836" id="84837">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <accessibility key="accessibilityConfiguration" label="Test"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="84831" id="84834"/>
-                            <outlet property="delegate" destination="84831" id="84835"/>
-                        </connections>
-                    </tableView>
-                    <connections>
-                        <outlet property="StudentAttendanceTableView" destination="84833" id="name-outlet-84833"/>
-                    </connections>
-                    <navigationItem title="Timetable" id="90532" key="navigationItem">
-                        <accessibility key="accessibilityConfiguration">
-                            <accessibilityTraits key="traits" notEnabled="YES"/>
-                        </accessibility>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="84838" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1942" y="-1250"/>
-        </scene>
-        <scene sceneID="90539">
-            <objects>
-                <tableViewController id="90540" sceneMemberID="viewController" customClass="LecturerAttendanceViewStudentListView" storyboardIdentifier="LecturerAttendanceViewStudentListVie">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="90542" allowsSelection="NO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="90545">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="90545" id="90546">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="90540" id="90543"/>
-                            <outlet property="delegate" destination="90540" id="90544"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Student Attendance" id="90541"/>
-                    <connections>
-                        <outlet property="StudentAttendanceTableView" destination="90542" id="name-outlet-90542"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="90547" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1228" y="-1239"/>
-        </scene>
-        <scene sceneID="90548">
-            <objects>
-                <navigationController id="90549" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="90551">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="90540" kind="relationship" relationship="rootViewController" id="90550"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="90552" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="688" y="-1239"/>
-        </scene>
-        <scene sceneID="90559">
-            <objects>
-                <tableViewController id="90560" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="90562">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="90565">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="90565" id="90566">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="90560" id="90563"/>
-                            <outlet property="delegate" destination="90560" id="90564"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Student Attendance" id="90561"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="90567" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3158" y="-1239"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Location Icon.png" width="534" height="535"/>
         <image name="Bluetooth Transmission Icon.png" width="534" height="534"/>
         <image name="Time Icon.png" width="535" height="534"/>
         <image name="Bluetooth Device Icon.png" width="535" height="534"/>
-        <image name="First" width="32" height="30"/>
-        <image name="Second" width="32" height="30"/>
-        <image name="XamarinLogo" width="220" height="51"/>
-        <image name="Picture" width="534" height="535"/>
-        <image name="Cross Icon.png" width="535" height="535"/>
-        <image name="Tick Icon.png" width="535" height="535"/>
-        <image name="Bluetooth Devices Icon.png" width="534" height="534"/>
-        <image name="User Profile Icon.png" width="534" height="535"/>
-        <image name="Retry Icon.png" width="534" height="534"/>
-        <image name="New UI-01.jpg" width="3125" height="5550"/>
         <image name="Asset1.png" width="190" height="119"/>
         <image name="Lecture Hall.jpg" width="1920" height="800"/>
-        <image name="Time Icon-01.png" width="2134" height="2134"/>
-        <image name="Book Icon-26.png" width="2134" height="2134"/>
-        <image name="Lecture Hall (Darkened).jpg" width="3126" height="1402"/>
-        <image name="bookTest.png" width="512" height="512"/>
     </resources>
 </document>

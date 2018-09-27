@@ -48,20 +48,17 @@ namespace BeaconTest.iOS
 			ContentView.AddSubviews(new UIView[] { moduleNameLabel, moduleCodeLabel, venueLabel, timeLabel, generateLabel, imageView });
 
         }
-        /*public void UpdateCell(string caption, string subtitle, UIImage image)
-        {
-            imageView.Image = image;
-            headingLabel.Text = caption;
-            subheadingLabel.Text = subtitle;
-        }*/
+        
+        // update each cell of the tableview found in LecturerGenerateController.cs
+
         public void UpdateCell(string caption, string subtitle, string venue, string time)
         {
-            //imageView.Image = image;
             moduleNameLabel.Text = caption;
             moduleCodeLabel.Text = subtitle;
 			venueLabel.Text = venue;
 			timeLabel.Text = time;
         }
+
         public override void LayoutSubviews()
         {
             base.LayoutSubviews();

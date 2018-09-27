@@ -17,6 +17,7 @@ namespace BeaconTest.iOS
 
             /* this is to allow the user to manually submit ATS code if the user is still unable to detect after
             retrying for 3 times */
+			
             else
             {
                 ShowUnableToDetectDialog();

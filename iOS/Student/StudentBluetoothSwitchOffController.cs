@@ -17,14 +17,14 @@ namespace BeaconTest.iOS
 
             NavigationController.NavigationBarHidden = true;
 
-            CommonClass.checkBluetoothRangingOnce = true;
+            //CommonClass.checkBluetoothRangingOnce = true;
 
             RetryButton.Layer.CornerRadius = SharedData.buttonCornerRadius;
 
             RetryButton.TouchUpInside += (object sender, EventArgs e) =>
             {
 
-                if (CommonClass.checkBluetooth == true)
+                if (CommonClass.checkBluetooth == true) // if Bluetooth is enabled
                 {
                     var viewController = this.Storyboard.InstantiateViewController("StudentNavigationController");
 

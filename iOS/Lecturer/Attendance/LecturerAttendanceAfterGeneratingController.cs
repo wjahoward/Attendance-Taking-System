@@ -10,6 +10,9 @@ namespace BeaconTest.iOS
 {
     public partial class LecturerAttendanceAfterGeneratingController : UIViewController
     {
+        /* this class is actually the same as LecturerAttendanceController.cs,
+        just that there is no checking of Bluetooth since there is no transmission of BLE signals */
+
         string loadURL = "https://ats.sf.sp.edu.sg/psc/cs90atstd/EMPLOYEE/HRMS/s/WEBLIB_A_ATS.ISCRIPT2.FieldFormula.IScript_GetLecturerClasses?&cmd=login";
         string currentURL;
 
