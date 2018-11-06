@@ -317,7 +317,8 @@ namespace BeaconTest.iOS
                         {
                             CommonClass.lecturerAttendanceNetworkThreadCheck = false;
                             CommonClass.lecturerAttendanceBluetoothThreadCheck = false;
-                            var lecturerBluetoothSwitchOffController = UIStoryboard.FromName("Main", null).InstantiateViewController("LecturerBluetoothSwitchOffController");
+                            var lecturerBluetoothSwitchOffController = UIStoryboard.FromName("Main", null)
+                            .InstantiateViewController("LecturerBluetoothSwitchOffController");
                             this.NavigationController.PushViewController(lecturerBluetoothSwitchOffController, true);
                         }
                         catch (Exception ex)

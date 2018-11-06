@@ -13,6 +13,7 @@ using Android.Widget;
 
 namespace BeaconTest.Droid.Student
 {
+    //this class handles activities where the student did not enable bluetooth on their phone
     [Activity(Label = "BTReady", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait, NoHistory = true)]
     public class StudentBluetoothOff : Activity
     {

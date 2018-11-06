@@ -10,13 +10,17 @@ using System.Threading;
 
 namespace BeaconTest.Droid
 {
+    //this class handles login functionality
     [Activity(Label = "@string/app_name", Icon = "@mipmap/icon",
         LaunchMode = LaunchMode.SingleInstance,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
         ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : BaseActivity
     {
+        //set the layout of this class as the login page
         protected override int LayoutResource => Resource.Layout.Login;
+
+        //this is for checking if wifi is enabled
         private const string unknownssid = "<unknown ssid>";
 
         string username;
@@ -48,8 +52,11 @@ namespace BeaconTest.Droid
 
             if (wifiManager != null)
             {
+                //if you want to test at home using home wifi, then uncomment this line of code and comment the code on checking if connect to SPWifi
                 //return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID != "<unknown ssid>");
-                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && (wifiManager.ConnectionInfo.SSID == "\"SPStudent\"" || wifiManager.ConnectionInfo.SSID == "\"SPStaff\"")); // check if connect to SPWifi   
+                
+                //check if connect to SPWifi   
+                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && (wifiManager.ConnectionInfo.SSID == "\"SPStudent\"" || wifiManager.ConnectionInfo.SSID == "\"SPStaff\"")); 
             }
             return false;
         }

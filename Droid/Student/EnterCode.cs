@@ -46,8 +46,10 @@ namespace BeaconTest.Droid
 
         AlertDialog.Builder builder;
 
+        //variables to represent student's timetable and module respectively
         StudentTimetable studentTimetable;
         StudentModule studentModule;
+
         ImageView studentAttendanceImageView, lectureHallImageView, timeImageView;
         EditText attendanceCodeEditText;
 
@@ -262,7 +264,8 @@ namespace BeaconTest.Droid
 
             if (wifiManager != null)
             {
-                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 && wifiManager.ConnectionInfo.SSID != "<unknown ssid>");
+                return wifiManager.IsWifiEnabled && (wifiManager.ConnectionInfo.NetworkId != -1 
+                    && wifiManager.ConnectionInfo.SSID != "<unknown ssid>");
             }
             return false;
         }
@@ -508,7 +511,8 @@ namespace BeaconTest.Droid
                             //string atsCode = atsCode1stHalfDecrypted + atsCode2ndHalfDecrypted;
 
                             //shows only the first and last digit of the ats code
-                            string atsCodeHidden = atsCode1stHalfDecrypted.ToString().Substring(0,1) + "****" + atsCode2ndHalfDecrypted.ToString().Substring(2);
+                            string atsCodeHidden = atsCode1stHalfDecrypted.ToString().Substring(0,1) + "****" 
+                            + atsCode2ndHalfDecrypted.ToString().Substring(2);
 
                             //updates the UI respectively
                             RunOnUiThread(() =>

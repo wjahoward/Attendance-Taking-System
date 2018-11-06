@@ -15,11 +15,13 @@ using Android.Widget;
 
 namespace BeaconTest.Droid.Student
 {
+    //this class handles activities where the student's phone is not in range of the lecturer's phone
     [Activity(Label = "NotWithinRange", LaunchMode = LaunchMode.SingleTask, ScreenOrientation = ScreenOrientation.Portrait, NoHistory = true)]
     public class NotWithinRange : Activity
     {
         Button retryButton;
 
+        //default constructor
         public NotWithinRange()
         {
         }

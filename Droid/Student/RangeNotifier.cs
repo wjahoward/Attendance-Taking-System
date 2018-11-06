@@ -18,6 +18,8 @@ namespace BeaconTest.Droid
     {
         //a Region consists of a UUID, Major and Minor values
         public Region Region { get; set; }
+
+        //a collection of beacons that was detected during ranging
         public ICollection<Beacon> Beacons { get; set; }
     }
 
